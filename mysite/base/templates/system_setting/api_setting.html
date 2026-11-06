@@ -1,0 +1,365 @@
+{% load i18n %}
+<div class="api-setting-form">
+  <form action="" id="id_apiSettingForm" class="layui-form" lay-filter="apiSettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"><i class="fa fa-cloud-upload"></i><span style="padding-left: 5px">{% trans 'apiSetting_otherSetting' %}</span></div>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="layui-card-body" style="padding: 20px 0 0px 60px">
+                    <div class="layui-form-item">
+                      <div class="layui-inline">
+                        <label for="api_user_name" class="layui-form-label" style="padding-right:10px;">{% trans 'user_name' %}<span
+                          class="required">*</span></label>
+                        <div class="layui-input-inline">
+                          <input type="text" id="api_user_name" name="api_username" autocomplete="off" placeholder=""
+                                 lay-verify="required" class="layui-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-form-item">
+                      <div class="layui-inline">
+                        <label for="api_user_password" class="layui-form-label" style="padding-right:10px;">{% trans 'user_password' %}<span
+                          class="required">*</span></label>
+                        <div class="layui-input-inline">
+                          <input type="password" id="api_user_password" name="api_userpassword" autocomplete="off" placeholder=""
+                                 lay-verify="required" class="layui-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-form-item">
+                      <div class="layui-inline">
+                        <label for="api_url" class="layui-form-label" style="padding-right:10px;">{% trans 'apiSetting_apiurl' %}<span
+                          class="required">*</span></label>
+                        <div class="layui-input-inline">
+                          <input type="text" id="api_url" name="api_url" autocomplete="off" placeholder=""
+                                 lay-verify="required" class="layui-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-form-item">
+                      <div class="layui-inline">
+                        <label for="api_datatemplate" class="layui-form-label" style="padding-right:10px;">{% trans 'api_dataTemplate' %}<span
+                          class="required">*</span></label>
+                        <div class="layui-input-inline">
+                          <textarea id="api_datatemplate" name="api_dataTemplate" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)" autocomplete="off" placeholder=""
+                                    lay-verify="required" class="layui-textarea" onpaste="return false;"></textarea>
+                        </div>
+                        </div>
+                      </div>
+                    <div class="layui-form-item">
+                      <div class="layui-inline">
+                        <label for="api_intervaltime" class="layui-form-label" style="padding-right:10px;">{% trans 'api_intervaltime' %}
+                        <span class="required">*</span></label>
+                        <div class="layui-input-inline">
+                          <input type="number" id="api_intervaltime" name="api_intervalTime" autocomplete="off" placeholder=""
+                                 class="layui-input" value="1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-form-item">
+                      <div class="layui-inline">
+                        <label for="api_lastsynctime" class="layui-form-label" style="padding-right:10px;">{% trans 'api_lastdatasync' %}</label>
+                        <div class="layui-input-inline">
+                          <input type="text" id="api_lastsynctime" name="api_lastsyncTime" autocomplete="off" placeholder=""
+                                 class="layui-input" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" id="api-status" name="api_enable" lay-skin="primary"  lay-filter="idletime" title="{% trans 'Enable' %} ">
+                    </div>                    
+                  </div>
+                </td>
+                <td style="vertical-align:top;padding: 20px 0 0px 45px;">
+                    <div class="layui-form-item">
+                      <div class="layui-input-block" style="margin-left: 20px;">
+                        <table class="task-template-help-table">
+                          <tbody class="layui-form-mid layui-word-aux">
+                          <tr>
+                            <td>{% trans 'psnl_model_company' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="company_name">{company_name}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_employeeCode' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="emp_code">{emp_code}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'emp_field_firstName' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="first_name">{first_name}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'emp_field_lastName' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="last_name">{last_name}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'department_filed_name' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="dept_name">{dept_name}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'position_field_name' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="position_name">{position_name}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_punchDateTime' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="punch_datetime">{punch_datetime}</code></td>
+                          </tr>
+                           <tr>
+                            <td>{% trans 'transaction_field_punchDate' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="punch_date">{punch_date}</code></td>
+                          </tr>
+                          <tr>
+                             <td>{% trans 'transaction_punch_time' %}</td>
+                             <td><code draggable="true" ondragstart="drag(event)"
+                                       id="punch_time">{punch_time}</code></td>
+                           </tr>
+                           <tr>
+                           <tr>
+                            <td>{% trans 'transaction_field_punchState' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="punch_state">{punch_state}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_verifyType' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="verify_type">{verify_type}</code></td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                </td>
+                <td style="vertical-align:top;padding: 20px 0 0px 45px;">
+                    <div class="layui-form-item">
+                      <div class="layui-input-block" style="margin-left: 20px;">
+                        <table class="task-template-help-table">
+                          <tbody class="layui-form-mid layui-word-aux">
+                          <tr>
+                            <td>{% trans 'transaction_field_workCode' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="work_code">{work_code}</code></td>
+                          </tr>
+                           <tr>
+                            <td>{% trans 'transaction_field_gpsLocation' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="gps_location">{gps_location}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_longitude' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="longitude">{longitude}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_latitude' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="latitude">{latitude}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_areaAlias' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="area_name">{area_name}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_terminalSN' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="terminal_sn">{terminal_sn}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_terminal_alias' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="terminal_alias">{terminal_alias}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_uploadTime' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="upload_time">{upload_time}</code></td>
+                          </tr>
+
+                          <tr>
+                            <td>{% trans 'transaction_field_temperatue' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="temperature">{temperature}</code></td>
+                          </tr>
+                          <tr>
+                            <td>{% trans 'transaction_field_mask_flag' %}</td>
+                            <td><code draggable="true" ondragstart="drag(event)"
+                                      id="mask_flag">{mask_flag}</code></td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="" style="padding: 25px">
+            <strong  style="color: #ff0019; ">Note:</strong> JSON Data Format
+            <p style="padding-left: 40px">[{'COMPANY_NAME': 'COMPANY', 'EMP_CODE': '1234', 'FIRST_NAME': 'XYZ', 'LAST_NAME': '', 'DEPT_NAME': 'Department', 'POSITION_NAME': 'Position', 'PUNCH_DATETIME': '04-03-2024
+             09:00:00', 'PUNCH_TIME': '09:00:00', 'PUNCH_STATE': 'Check In', 'VERIFY_TYPE': 'Automatic', 'WORK_CODE': '', 'GPS_LOCATION': '', 'LONGITUDE': '', 'LATITUDE': '', 'AREA_NAME': '', 'TERMINAL_SN': '', 'TERMINAL_ALIAS': '', 'UPLOAD_TIME': '2024-03-04 10:06:40.373376', 'TEMPERATURE': '', 'MASK_FLAG': ''}]
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block layui-inline">
+          <button class="layui-btn" id="whatsappSubmit" lay-submit="" lay-filter="smsSubmit">{% trans 'smsSetting_submit' %}</button>
+        </div>
+        {% comment %}<div class="layui-inline" id="apiClearDiv">{% endcomment %}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+   function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    function drag(ev) {
+      ev.dataTransfer.setData("Text", ev.target.id);
+    }
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("Text");
+      var base_val = $("#api_datatemplate").val();
+      if (base_val.indexOf(data) === -1) {
+        var formattedData = base_val.length === 0 ? data : ', ' + data;
+        $("#api_datatemplate").val(base_val + formattedData);
+      }
+    }
+
+    $(function () {
+        $(document)
+        .on('drop dragover', 'input, textarea:not(#api_datatemplate)', e => e.preventDefault())
+        .on('keydown', '#api_datatemplate', function (e) {
+            if (e.key !== 'Backspace') return e.preventDefault();
+            const text_area = this;
+            const value = text_area.value;
+            let cursor = text_area.selectionStart;
+            if (!value || cursor === 0) {
+                e.preventDefault();
+                return;
+            }
+            e.preventDefault();
+            while (cursor > 0 && /[ ,]/.test(value[cursor - 1])) cursor--;
+            let field_start = value.lastIndexOf(',', cursor - 1) + 1;
+            let field_end = value.indexOf(',', cursor);
+            if (field_end === -1) field_end = value.length;
+            const newVal =
+               value.slice(0, field_start) +
+               (value[field_end] === ',' ? value.slice(field_end + 1) : value.slice(field_end));
+            text_area.value = newVal;
+            text_area.selectionStart = text_area.selectionEnd = field_start;
+        });
+    });
+
+    layui.use('form', function () {
+        var form = layui.form, $ = layui.jquery ;
+        var maxHeight = window.innerHeight - 140;
+        $('.api-setting-form').css({
+        'height': maxHeight,
+        'overflow-y': 'auto',
+          'overflow-x':'hidden'
+      });
+        form.render();
+        form.on('submit(smsSubmit)', function (data) {
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                api_username: data.field['api_username'],
+                api_userpassword: data.field['api_userpassword'],
+                api_url: data.field['api_url'],
+                api_dataTemplate: data.field['api_dataTemplate'],
+                api_intervalTime: data.field['api_intervalTime'],
+                api_lastsyncTime: data.field['api_lastsyncTime'],
+                api_enable: data.field['api_enable']
+            };
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/api/systemSetting/"
+                , type: "POST"
+                , data: {'name': 'api_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+                , dataType: "json"
+                , success: function (response, xhr) {
+                    layer.close(loadIndex);
+                    layer.msg(gettext('action_notification_successful'), {icon: 6});
+                    //document.getElementById('apiClearDiv').innerHTML= "<button class='layui-btn' id='apiClear' lay-submit='' lay-filter='apiClear'>{% trans 'clear_system_settings' %}</button>"
+                }
+                , error: function (xhr, error, e) {
+                    layer.close(loadIndex);
+                    if (xhr.responseJSON.value) {
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    } else {
+                        layer.msg(gettext('action_notification_failed'), {icon: 5});
+                    }
+                }
+            });
+            return false
+        });
+
+        form.on('submit(apiClear)', function (data) {
+            var csrf = data.field['csrfmiddlewaretoken'];
+
+             layer.confirm(gettext("confirm_be_sure"),
+            {
+                title: gettext("btn_confirm")
+                , icon: 3
+                , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+            },
+            function (index) {
+                var loadIndex = layer.load();
+                $.ajax({
+                    url: "/base/clear_system_settings/"
+                    , type: "POST"
+                    , data: {'name': 'api_setting', csrfmiddlewaretoken: csrf}
+                    , dataType: "json"
+                    , success: function (response, xhr) {
+                        document.getElementById("id_apiSettingForm").reset();
+                        layer.close(loadIndex);
+                        layer.msg(gettext('action_notification_successful'), {icon: 6});
+                        document.getElementById('apiClearDiv').innerHTML= ""
+                    }
+                    , error: function (xhr, error, e) {
+                        layer.close(loadIndex);
+                        if (xhr.responseJSON.value) {
+                            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                        } else {
+                            layer.msg(gettext('action_notification_failed'), {icon: 5});
+                        }
+                    }
+                });
+                layer.close(index);
+            });
+            return false
+        });
+
+        $.ajax({
+            url: "/base/api/systemSetting/?name=api_setting"
+            , type: "GET"
+            , dataType: "json"
+            , success: function (response, xhr) {
+                var val = response.data[0];
+                if (val) {
+                    var val_dict = JSON.parse(val.value);
+                    form.val('apiSettingForm', val_dict);
+                    //document.getElementById('apiClearDiv').innerHTML= "<button class='layui-btn' id='apiClear' lay-submit='' lay-filter='apiClear'>{% trans 'clear_system_settings' %}</button>"
+                }
+            }
+            , error: function (xhr, error, e) {
+
+            }
+        });
+    })
+</script>

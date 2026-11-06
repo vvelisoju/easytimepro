@@ -1,0 +1,35 @@
+{% load i18n %}
+<li class="dropdown-submenu filter-date">
+	<a>{% include "xadmin/filters/filter_or_exclude.html" %}<i
+		class="fa fa-fw fa-filter {% if spec.is_used %}text-success{% else %}text-muted{% endif %}"></i> {{ title }}</a>
+	<ul class="dropdown-menu">
+		{% for choice in choices %}
+			<li{% if choice.selected %} class="active"{% endif %}>
+				<a class="{% if not forloop.first %}filter-option{% else %}filter-option-default{% endif %}"
+					 href="javascript:void(0)" data-ref="{{ choice.query_string|iriencode }}">{{ choice.display }}</a></li>
+		{% endfor %}
+		<li class="dropdown-submenu menu-time-range"><a>{% trans "Time Range" %}</a>
+			<div class="dropdown-menu {% if is_bidi_language %}left{% else %}right{% endif %}">
+				<div class="arrow"></div>
+				<div class="popover-content">
+					<form method="get" action="" class="clearfix time-span">
+						{{ form_params|safe }}
+						<div class="input-group bootstrap-clockpicker">
+							<span class="input-group-addon"><i class="fa fa-fw fa-clock-o"></i></span>
+							<input type="text" name="{{ since_name }}" value="" class="time-field form-control" size="10"
+										 required="" id="id_{{ since_name }}">
+							<span class="input-group-btn"><button class="btn btn-default" type="button">{% trans "Now" %}</button></span>
+						</div>
+						<div class="input-group bootstrap-clockpicker">
+							<span class="input-group-addon"><i class="fa fa-fw fa-clock-o"></i></span>
+							<input type="text" name="{{ until_name }}" value="" class="time-field form-control input-group" size="10"
+										 required="" id="id_{{ until_name }}">
+							<span class="input-group-btn"><button class="btn btn-default" type="button">{% trans "Now" %}</button></span>
+						</div>
+						<button type="submit" class="btn btn-success btn-block">{% trans "btn_apply" %}</button>
+					</form>
+				</div>
+			</div>
+		</li>
+	</ul>
+</li>

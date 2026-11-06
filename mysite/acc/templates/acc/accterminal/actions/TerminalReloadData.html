@@ -1,0 +1,19 @@
+{% load i18n common %}
+<div style="padding: 10px;min-height: 100px;width: 360px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_switch f.Timezone %}
+        {% layui_switch f.Holiday %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_switch f.Group %}
+        {% layui_switch f.Combination %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_switch f.Privilege %}
+      </div>
+    {% endwith %}
+  </form>
+</div>

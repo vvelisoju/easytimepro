@@ -1,0 +1,12 @@
+{% autoescape off %}
+  <div class="layui-fluid">
+    <div class="layui-card">
+      <div class="layui-card-body module">
+        {% block edit_form %}
+        {% endblock edit_form %}
+      </div>
+    </div>
+  </div>
+  {% block page_script %}
+  {% endblock page_script %}
+{% endautoescape %}

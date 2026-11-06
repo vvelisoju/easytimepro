@@ -1,0 +1,6 @@
+{% extends 'base_pdf_classic_report.html' %}
+{% load i18n %}
+{% block declaimer %}
+    <br>
+        <p style="color:black; font-size: 10px;">{% trans 'disclaimer_unregistered_users_reports' %}</p>
+{% endblock %}

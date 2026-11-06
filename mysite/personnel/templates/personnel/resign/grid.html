@@ -1,0 +1,12 @@
+{% extends "data_grid.html" %}
+{% load i18n %}
+{% load iclock_tags %}
+{% block grid_opt_update %}
+  $.extend(true, dimension, {
+    actions: {
+      GeneralActionNew: [1020, 600],
+      AddEmployeeResign: [1020, 600],
+      GeneralActionDelete: ['auto', 'auto'],
+    }
+  });
+{% endblock grid_opt_update %}

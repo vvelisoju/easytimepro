@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="918.5" height="216.283" viewBox="0 0 918.5 216.283">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00425e;
+        opacity: 0.8;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" y1="0.469" x2="0.994" y2="0.341" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00a1d4"/>
+      <stop offset="1" stop-color="#417686"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-912.5 -257)">
+    <path id="Path_9" data-name="Path 9" class="cls-1" d="M1423,41l-758.069.5h-.4A79.516,79.516,0,0,0,585,121V238.638S991.5,89.5,1054.5,165.5,1503,143.918,1503,143.918V121A80,80,0,0,0,1423,41Z" transform="translate(328 216)"/>
+    <path id="Path_12" data-name="Path 12" class="cls-2" d="M1423.456,41l-758.482.478h-.4C620.634,41.469,585.008,80.722,585,122.7V230.283s364.729-185.01,469.756-70.271S1503.5,139.381,1503.5,139.381V117.473C1503.5,75.238,1467.663,41,1423.456,41Z" transform="translate(327.5 243)"/>
+  </g>
+</svg>

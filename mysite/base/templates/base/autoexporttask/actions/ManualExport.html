@@ -1,0 +1,56 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div style="padding: 10px;min-height: 150px;height: 250px;">
+  <form id="autoexxporttask_manualexport" action="" class="layui-form action-form" lay-filter="manualExportForm">
+    {% csrf_token %}
+    <div class=layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label"
+               for="id_manual_start">{% trans 'autoExport_task_manualStart' %}</label>
+          <span class="required">*</span></label>
+        <div class="layui-input-inline">
+          <input type="text" name="manual_start" style="margin-top: 2px;"
+                 class="layui-input layui-datetime"
+                 id="id_manual_start" autocomplete="off" placeholder="">
+        </div>
+      </div>
+    </div>
+    <div class=layui-form-item" style="margin-top: 10px;">
+      <div class="layui-inline">
+        <lable class="layui-form-label" for="id_manual_end">{% trans 'autoExport_task_manualEnd' %}</lable>
+          <span class="required">*</span></label>
+        <div class="layui-input-inline">
+          <input type="text" name="manual_end" style="margin-top: 2px;"
+                 class="layui-input layui-datetime"
+                 id="id_manual_end" autocomplete="off" placeholder="">
+        </div>
+      </div>
+    </div>
+  <div class=layui-form-item" style="margin-top: 18px;">
+    <div class="layui-inline">
+      <lable class="layui-form-label"
+             for="id_query_field">{% trans 'autoExport_task_queryField' %}
+      </lable>
+      <div class="layui-input-inline">
+        <select name="query_field" id="id_query_field">
+          <option value="1">{% trans 'autoExport_queryBy_uploadTime' %}</option>
+          <option value="2">{% trans 'autoExport_queryBy_punchTime' %}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  </form>
+  </div>
+{% endautoescape %}
+
+<script>
+  layui.use(['form'], function () {
+    var form = layui.form;
+    $('input.layui-datetime').each(function () {
+      var laydate = layui.laydate;
+      laydate.render({elem: this, type: 'datetime'});
+    });
+    form.render();
+  })
+</script>

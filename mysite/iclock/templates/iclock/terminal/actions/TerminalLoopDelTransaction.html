@@ -1,0 +1,17 @@
+{% load i18n common %}
+<div style="margin: 10px;min-height: 160px;width: 360px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_mid f.number_reduce %}
+      </div>
+    {% endwith %}
+    <div class="layui-card"><div class="layui-card-body">
+      <div><span style="color: red">*</span><span>{% trans 'form_helpText_title' %}</span></div>
+      <div style="padding: 0 20px;">
+        <p>{% trans 'loopDelTransaction_helpText_tip1' %}</p>
+      </div>
+    </div></div>
+  </form>
+</div>

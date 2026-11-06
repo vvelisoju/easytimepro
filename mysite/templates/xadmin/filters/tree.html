@@ -1,0 +1,21 @@
+{% load i18n %}
+<li class="dropdown-submenu">
+	<a>{% include "xadmin/filters/filter_or_exclude.html" %}<i
+		class="fa fa-fw fa-filter {% if spec.is_used %}text-success{% else %}text-muted{% endif %}"></i> {{ title }}</a>
+	<div class="dropdown-menu menu-height-limited">
+    <div id="{{ field_path }}{{ time_stamp }}" class="layui-form-select tree-select"></div>
+    <script>
+      // #sourceURL={{ field_path }}{{ time_stamp }}.js
+      $(function () {
+        var field_path = '{{ field_path }}', time_stamp = '{{ time_stamp }}';
+        $('#' + field_path + time_stamp).zTreeFilter({
+          name: field_path,
+          stamp: time_stamp,
+          input_type: "{{ input_type }}",
+          data: {{ tree_data |safe }},
+          lookup: {{ lookup|safe }},
+        });
+      });
+    </script>
+	</div>
+</li>

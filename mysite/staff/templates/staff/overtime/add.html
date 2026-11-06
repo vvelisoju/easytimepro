@@ -1,0 +1,53 @@
+{% load i18n %}
+<div id="staff_overtime_add" style="padding: 20px">
+    <form action="" method="post" class="layui-form">
+        {% csrf_token %}
+        <input type="hidden" name="employee" class="layui-hide" value="{{ user.pk }}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'staff_overtime_startTime' %}<span class="required">*</span></label>
+            <div class="layui-input-block">
+              <input id="id_start_time" type="text" name="start_time" lay-verify="start_time" autocomplete="off" placeholder="" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'staff_overtime_endTime' %}<span class="required">*</span></label>
+            <div class="layui-input-block">
+              <input id="id_end_time" type="text" name="end_time" lay-verify="end_time" autocomplete="off" placeholder="" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'staff_overtime_overtimeType' %}<span class="required">*</span></label>
+            <div class="layui-input-block">
+              <select id="id_overtime_type" name="overtime_type" lay-search="" lay-verify="overtime_type" autocomplete="off" placeholder="" class="layui-input"></select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'staff_overtime_applyReason' %}</label>
+            <div class="layui-input-block">
+              <input type="text" id="id_apply_reason" name="apply_reason" lay-verify="apply_reason" autocomplete="off" placeholder="" class="layui-textarea" maxlength="200">
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form', 'laydate'], function(){
+        var form = layui.form, laydate=layui.laydate;
+        laydate.render({
+            elem: '#id_start_time'
+            ,type: 'datetime'
+            ,lang: 'en'
+        });
+        laydate.render({
+            elem: '#id_end_time'
+            ,type: 'datetime'
+            ,lang: 'en'
+        });
+
+        var html = "";
+        html+='<option value="1">'+"{% trans 'normal_overtime' %}"+'</option>';
+        html+='<option value="2">'+"{% trans 'weekend_overtime' %}"+'</option>';
+        html+='<option value="3">'+"{% trans 'holiday_overtime' %}"+'</option>';
+        $("#id_overtime_type").append(html);
+        form.render();
+    })
+</script>

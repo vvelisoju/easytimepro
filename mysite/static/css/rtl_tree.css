@@ -1,0 +1,16 @@
+@charset "UTF-8";
+[dir=rtl] .ztree li span.button.bottom_close::before, [dir=rtl] .ztree li span.button.roots_close::before, [dir=rtl] .ztree li span.button.center_close::before {
+  content: "";
+}
+
+[dir=rtl] .ztree li {
+  text-align: right;
+}
+[dir=rtl] .ztree li span.button {
+  text-align: right;
+}
+[dir=rtl] .ztree li ul {
+  padding: 0 18px 0 0;
+}
+
+/*# sourceMappingURL=rtl_tree.css.map */

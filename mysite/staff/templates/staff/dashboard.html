@@ -1,0 +1,177 @@
+{% load i18n static %}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header"><span id="id_real_time">{% trans 'attendance_analyze' %}</span></div>
+                <div class="layui-card-body">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="layui-card-body">
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md8"></div>
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">{% trans 'attendance_analyze' %}</div>
+                <div class="layui-card-body">
+                    <div id="main_chart" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/echarts/echarts-all.js' %}?v=2.2.7"></script>
+<script>
+    var showTime = function(){
+        var now = new Date();
+        $("#id_real_time").html(now);
+    };
+    setInterval("showTime()", 1000);
+    var option = {
+        tooltip : {
+            show: true,
+            trigger: 'item'
+        },
+        legend: {
+            data:['邮件营销','联盟广告','直接访问','搜索引擎']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                splitArea : {show : true}
+            }
+        ],
+        series : [
+            {
+                name:'邮件营销',
+                type:'bar',
+                itemStyle: {        // 系列级个性化样式，纵向渐变填充
+                    normal: {
+                        borderColor:'red'
+
+                    },
+                    emphasis: {
+                        borderWidth: 5,
+                        borderColor:'green',
+
+                        label : {
+                            show : true,
+                            position : 'top',
+                            formatter : "{a} {b} {c}",
+                            textStyle : {
+                                color: 'blue'
+                            }
+                        }
+                    }
+                },
+                data:[220, 232, 101, 234, 190, 330, 210]
+            },
+            {
+                name:'联盟广告',
+                type:'bar',
+                stack: '总量',
+                data:[120, '-', 451, 134, 190, 230, 110]
+            },
+            {
+                name:'直接访问',
+                type:'bar',
+                stack: '总量',
+                itemStyle: {                // 系列级个性化
+                    normal: {
+                        borderWidth: 6,
+                        borderColor:'tomato',
+                        color: 'red'
+                    },
+                    emphasis: {
+                        borderColor:'red',
+                        color: 'blue'
+                    }
+                },
+                data:[
+                    320, 332, 100, 334,
+                    {
+                        value: 390,
+                        symbolSize : 10,   // 数据级个性化
+                        itemStyle: {
+                            normal: {
+                                color :'lime'
+                            },
+                            emphasis: {
+                                color: 'skyBlue'
+                            }
+                        }
+                    },
+                    330, 320
+                ]
+            },
+            {
+                name:'搜索引擎',
+                type:'bar',
+                barWidth: 40,                   // 系列级个性化，柱形宽度
+                itemStyle: {
+                    normal: {                   // 系列级个性化，横向渐变填充
+                        borderRadius: 5,
+
+                        label : {
+                            show : true,
+                            textStyle : {
+                                fontSize : '20',
+                                fontFamily : '微软雅黑',
+                                fontWeight : 'bold'
+                            }
+                        }
+                    }
+                },
+                data:[
+                    620, 732,
+                    {
+                        value: 701,
+                        itemStyle : { normal: {label : {position: 'inside'}}}
+                    },
+                    734, 890,
+                    {
+                        value: 930,
+                        itemStyle : { normal: {label : {show: false}}}
+                    },
+                    820
+                ],
+                markPoint : {
+                    data : [
+                        {name : '最高', value : 930, xAxis: '周六', yAxis: 930, symbolSize:14}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name : '平均值'},
+                        {type : 'max'},
+                        {type : 'min'}
+                    ]
+                }
+            }
+        ]
+    };
+    var main_chart = echarts.init(document.getElementById('main_chart'));
+    main_chart.setOption(option);
+</script>
+

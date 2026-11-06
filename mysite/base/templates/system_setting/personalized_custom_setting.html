@@ -1,0 +1,85 @@
+{% load i18n %}
+<div class="personalized-custom-setting-form">
+  <form action="" class="layui-form" lay-filter="personalized_custom_form">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            <i class="fa fa-photo (alias)"></i>
+            <span style="padding-left: 5px">{% trans 'Backup path for employee photos' %}</span>
+          </div>
+          <div class="layui-card-body" style="margin: 10px">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="" class="layui-form-label">{% trans 'backup path' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_backup_path_employee_photo" name="backup_path_employee_photo"
+                         placeholder="C:/xxx" class="layui-input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row layui-col-space15">
+      <div class="layui-form-item" style="margin-top: 20px">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit="" lay-filter="thailand_custom_submit">{% trans 'btn_submit' %}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+
+  $(function(){
+    layui.use('form', function(){
+      var form = layui.form;
+      form.render();
+      form.verify({});
+
+      form.on('submit(thailand_custom_submit)', function(data){
+        var csrf = data.field['csrfmiddlewaretoken'];
+        var value = {
+          backup_path_employee_photo: data.field['backup_path_employee_photo']
+        };
+        var loadIndex = layer.load();
+        $.ajax({
+          url: "/base/api/systemSetting/?name=personalized_custom_setting",
+          type: "POST",
+          data: {'name': 'personalized_custom_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf},
+          dataType: "json",
+          success: function(response, xhr){
+            layer.close(loadIndex);
+            layer.msg(gettext('save_successful'), {icon: 6});
+          },
+          error: function(xhr, error, e){
+            layer.close(loadIndex);
+            if(xhr.responseJSON.value){
+                layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+            }else{
+                layer.msg(gettext('save_filed'), {icon: 5});
+            }
+          }
+        });
+        return false;
+      });
+
+      $.ajax({
+        url: "base/api/systemSetting/?name=personalized_custom_setting",
+        type: "GET",
+        dataType: "json",
+        success: function (response, xhr) {
+          var data = response.data[0];
+          if (data){
+            var data = JSON.parse(data.value);
+            form.val('personalized_custom_form', data);
+          }
+        }
+      });
+
+    });
+  })
+</script>

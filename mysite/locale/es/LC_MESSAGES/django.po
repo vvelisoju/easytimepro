@@ -1,0 +1,7087 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "Ingrese correo electrónico autorizado."
+
+msgid "user_field_username"
+msgstr "Usuario"
+
+msgid "user_field_usernameHelpTxt"
+msgstr "Se requiere hasta 30 caracteres, letras, números y únicamente @/./+/-/_ "
+
+msgid "user_field_usernameValidator"
+msgstr "Ingrese un Usuario válido."
+
+msgid "user_field_password"
+msgstr "Contraseña"
+
+msgid "user_field_firstName"
+msgstr "Nombres"
+
+msgid "user_field_lastName"
+msgstr "Apellidos"
+
+msgid "user_field_email"
+msgstr "Correo Electrónico"
+
+msgid "user_field_authorizedDepartment"
+msgstr "Departamento Autorizado"
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "Procesar areas sin seleccionar"
+
+msgid "user_field_authorizedArea"
+msgstr "Area Autorizada"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "Procesar Departamentos sin seleccionar"
+
+msgid "user_field_loginTimes"
+msgstr "Cantidad de inicios de sesión"
+
+msgid "user_field_staff"
+msgstr "Personal"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_active"
+msgstr "Activo"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_superuser"
+msgstr "Super Usuario"
+
+msgid "user_field_dateJoined"
+msgstr "Fecha de Contratación"
+
+msgid "user_field_lastLogin"
+msgstr "Último Inicio de Sesión"
+
+msgid "base_model_user"
+msgstr "Usuario"
+
+msgid "userProfile_field_username"
+msgstr "Nombre de Usuario"
+
+msgid "userProfile_field_pinTabs"
+msgstr ""
+
+msgid "userProfile_field_hideColumns"
+msgstr "Ocultar Columnas"
+
+msgid "userProfile_field_order"
+msgstr "Ordenar Columnas"
+
+msgid "userProfile_field_preferences"
+msgstr "Perfil"
+
+msgid "base_model_userProfile"
+msgstr "Perfil de Usuario"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "Borrar"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "Borrar Registro Seleccionado"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "Borrar registro seleccionado"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "¿Está seguro de borrar {0} {1}?"
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "Are you sure to delete the selected node?"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "Are you sure to delete the selected document?"
+
+msgid "common_action_new"
+msgstr "Nuevo"
+
+msgid "common_action_newDescription"
+msgstr "Nuevo"
+
+msgid "common_action_newHelpTxt"
+msgstr "Nuevo"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "Acción:"
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "Adicionar otro %(verbose_name)s"
+
+msgid "helpers_deleteText_remove"
+msgstr "Remove"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr ""
+
+msgid "bookmark_duplication_echo"
+msgstr "El nombre ya existe, cambiar el nombre o sobreescribir el registro existente."
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "Válido"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "Inválido"
+
+msgid "baseModel_field_createTime"
+msgstr "Crear Horario"
+
+msgid "baseModel_field_createUser"
+msgstr "Crear Usuario"
+
+msgid "baseModel_field_changeTime"
+msgstr "Cambiar Horario"
+
+msgid "baseModel_field_changeUser"
+msgstr "Cambiar Usuario"
+
+msgid "baseModel_field_dataStatus"
+msgstr "Estado de Datos"
+
+msgid "userProfile_languageChange_successful"
+msgstr "Exitoso"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "Inicio de Sesión Inválido"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "Super Usuario es requerido"
+
+msgid "action_not_available"
+msgstr "Acción no disponible"
+
+msgid "hiddenField_save_successful"
+msgstr "Exitoso"
+
+msgid "hiddenField_reset_successful"
+msgstr "Exitoso"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "Prohibido"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "Error de Parámetro"
+
+msgid "columnOrder_save_successful"
+msgstr "Exitoso"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "Error de Parámetro"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "Más de {num} pestañas no es permitido"
+
+msgid "pinTab_saveError_duplicate"
+msgstr "Duplicado"
+
+msgid "duplicate"
+msgstr "Duplicado"
+
+msgid "pinTab_remove_successful"
+msgstr "Exitoso"
+
+msgid "pinTab_action_parameterError"
+msgstr "Error de Parámetro"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "Prohibido"
+
+msgid "login_authorize_license_expired"
+msgstr "La licencia ha expirado"
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "La licencia expirará en %(day)s día(s)"
+
+msgid "booleanFieldFilter_option_all"
+msgstr "Todo"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "Si"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "No"
+
+msgid "fieldFilter_option_all"
+msgstr "Todo"
+
+msgid "textFieldFilter_option_contain"
+msgstr "Contiene"
+
+msgid "textFieldFilter_option_exact"
+msgstr "Exacto"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "Comienza con"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "Termina en"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "Uno de"
+
+msgid "textFieldFilter_option_regex"
+msgstr "Expresión regular"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "Cualquier Fecha"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "Con Fecha"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "Sin Fecha"
+
+msgid "dateFieldFilter_option_today"
+msgstr "Hoy"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "Ayer"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "Últimos 7 días"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "Semana Actual"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "Mes Actual"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "Año Actual"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "Cualquier Hora"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "Con hora"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "Sin Hora"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "En"
+
+msgid "model_bookmarks"
+msgstr "Favoritos"
+
+msgid "report_column_empCode"
+msgstr "Id del Empleado"
+
+msgid "report_column_firstName"
+msgstr "Nombres"
+
+msgid "report_column_lastName"
+msgstr "Apellidos"
+
+msgid "report_column_nickName"
+msgstr "Apodo"
+
+msgid "report_column_gender"
+msgstr "Género"
+
+msgid "report_column_departmentCode"
+msgstr "ID de Departamento"
+
+msgid "report_column_departmentName"
+msgstr "Departamento"
+
+msgid "report_column_positionCode"
+msgstr "ID del Cargo"
+
+msgid "report_column_positionName"
+msgstr "Cargo"
+
+msgid "report_column_workCode"
+msgstr "Código de Trabajo"
+
+msgid "report_column_punchDate"
+msgstr "Fecha"
+
+msgid "report_column_punchTime"
+msgstr "Hora"
+
+msgid "report_column_punchState"
+msgstr "Estado de la Marcación"
+
+msgid "report_column_correctState"
+msgstr "Personalizar Columnas"
+
+msgid "report_column_lateDuration"
+msgstr "Llegadas Tarde"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "Salida Temprana"
+
+msgid "report_column_absentDuration"
+msgstr "Ausente"
+
+msgid "report_column_actualWorkDuration"
+msgstr "Tiempo Trabajado"
+
+msgid "report_column_shortDuration"
+msgstr "Duración "
+
+msgid "report_column_overtimeDuration"
+msgstr "Horas Extras"
+
+msgid "report_column_normalOvertime"
+msgstr "Hora Extra Ordinaria"
+
+msgid "report_column_weekendOvertime"
+msgstr "Hora Extra Dominical"
+
+msgid "report_column_holidayOvertime"
+msgstr "Hora Extra Festivos"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "Permiso por enfermedad"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "Permiso Ocasional"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "Licencia de Maternidad"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "Calamidad Doméstica"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "Vacaciones Anuales"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "Viaje de Negocios"
+
+msgid "report_column_attendanceDate"
+msgstr "Fecha"
+
+msgid "report_column_attendanceWeekday"
+msgstr "Asistencia Diaria"
+
+msgid "report_column_exception"
+msgstr "Permisos"
+
+msgid "report_column_timeIntervalName"
+msgstr "Calendario"
+
+msgid "report_column_checkInTime"
+msgstr "Marcación de Entrada"
+
+msgid "report_column_checkOutTime"
+msgstr "Marcación de Salida"
+
+msgid "report_column_deviceTn"
+msgstr "Dispositivo[In]"
+
+msgid "report_column_deviceOut"
+msgstr "Dispositivo[Out]"
+
+msgid "report_column_workCodeIn"
+msgstr "Código del Empleado[In]"
+
+msgid "report_column_workCodeOut"
+msgstr "Código del Empleado [Out]"
+
+msgid "report_column_clockInTime"
+msgstr "Hora de Entrada"
+
+msgid "report_column_clockOutTime"
+msgstr "Hora de Salida"
+
+msgid "report_column_totalTimeDuration"
+msgstr "Total de Horas"
+
+msgid "report_column_breakOutTime"
+msgstr "Inicio Descanso"
+
+msgid "report_column_breakInTime"
+msgstr "Fin Descanso"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "Tiempo de Descanso"
+
+msgid "report_column_breakTime"
+msgstr "Horario de Descanso"
+
+msgid "report_column_breakLateDuration"
+msgstr "Llegadas Tarde Descanso[BreakTime]"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "Salida Temprana Descanso[BreakTime]"
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "Ausencia Descanso[BreakTime]"
+
+msgid "report_column_totalWorkedDuration"
+msgstr "Total a Trabajar"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "Tiempo Real Trabajado "
+
+msgid "report_column_leaveDuration"
+msgstr "Tiempo de Permiso"
+
+msgid "report_column_trainingDuration"
+msgstr "Entrenamiento"
+
+msgid "report_column_timetableDuration"
+msgstr "Duración del Calendario"
+
+msgid "report_column_attendanceDuration"
+msgstr "Duración Trabajo"
+
+msgid "report_column_breakTimeDuration"
+msgstr "Duración Descanso"
+
+msgid "report_column_approvalOvertime"
+msgstr "Horas Extras Aprobadas"
+
+msgid "report_column_timetableDays"
+msgstr "Días Trabajados"
+
+msgid "report_column_cardNumber"
+msgstr "Número de Tarjeta"
+
+msgid "report_column_firstPunch"
+msgstr "Primera Marcación"
+
+msgid "report_column_lastPunch"
+msgstr "Última Marcación"
+
+msgid "report_column_totalDuration"
+msgstr "Tiempo Total"
+
+msgid "report_column_firstIn"
+msgstr "Primera Marcación Entrada"
+
+msgid "report_column_lastOut"
+msgstr "Última Marcación Salida"
+
+msgid "report_column_exceptionDescription"
+msgstr "Descripción"
+
+msgid "report_column_employeeCount"
+msgstr "Cantidad de Empleados"
+
+msgid "report_column_lateTimes"
+msgstr "Llegadas Tarde(Veces)"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "Salida Temprana(Veces)"
+
+msgid "report_column_absentTimes"
+msgstr "Ausencia(Veces)"
+
+msgid "report_column_punchTimes"
+msgstr "Número Marcaciones"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "Resumen de tiempo"
+
+msgid "report_column_timetable"
+msgstr "Calendario"
+
+msgid "fixed_time"
+msgstr "Tiempo fijo"
+
+msgid "report_column_gpsLocation"
+msgstr "Localización GPS"
+
+msgid "report_column_longitude"
+msgstr "Longitud"
+
+msgid "report_column_latitude"
+msgstr "Latitud"
+
+msgid "report_column_areaAlias"
+msgstr "Area"
+
+msgid "report_column_terminalAlias"
+msgstr "Dispositivo"
+
+msgid "report_column_terminalSN"
+msgstr "Número Serial"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "Transacciones"
+
+msgid "menu_att_dailyStatusReport"
+msgstr "Estado diario"
+
+msgid "menu_att_detailReport"
+msgstr "Resumen Total de Asistencia"
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "Reporte de Asistencia"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "Reporte de Permisos"
+
+msgid "menu_att_FILOReport"
+msgstr "Primera Entrada Última Salida"
+
+msgid "menu_att_exceptionReport"
+msgstr "Excepciones"
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "Reporte por Departamento"
+
+msgid "menu_att_timeCardReport"
+msgstr "Resumen de Asistencia"
+
+msgid "menu_att_lateReport"
+msgstr "Llegadas Tarde"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "Salidas Temprano"
+
+msgid "menu_att_overtimeReport"
+msgstr "Horas Extra"
+
+msgid "menu_att_absentReport"
+msgstr "Ausencias"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "Transacciones Múltiples"
+
+msgid "menu_att_breakTimeReport"
+msgstr "Descanso"
+
+msgid "menu_staff_transactionReport"
+msgstr "Reporte de Transacciones"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "Shift overlap"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "Schedule records cannot be modified by the audit."
+
+msgid "leave_field_employee"
+msgstr "Empleado"
+
+msgid "leave_field_startTime"
+msgstr "Hora Entrada"
+
+msgid "leave_field_endTime"
+msgstr "Hora Salida"
+
+msgid "leave_field_leaveCategory"
+msgstr "Categoria"
+
+msgid "leave_field_reason"
+msgstr "Aplicar Permiso"
+
+msgid "leave_field_approvalState"
+msgstr "Estado"
+
+msgid "leave_field_approvalReason"
+msgstr "Comentarios"
+
+msgid "leave_action_new"
+msgstr "Nuevo"
+
+msgid "leave_action_newDescription"
+msgstr "Nuevo Permiso"
+
+msgid "leave_action_newHelpTxt"
+msgstr "Nuevo Permiso"
+
+msgid "leave_time_invalid_range"
+msgstr "Tiempo de salida inválido, el tiempo de salida debe ser posterior al tiempo de entrada."
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "Tiempo inválido, la hora de incio debe ser posterior a la fecha de contratación del empleado[%s]."
+
+msgid "leave_time_overlap"
+msgstr "%s Tiempo de salida del empleado sobrepuesto"
+
+msgid "select_employee"
+msgstr "Por favor seleccione el empleado"
+
+msgid "manualLog_field_employee"
+msgstr "Empleado"
+
+msgid "manualLog_field_punchTime"
+msgstr "Tiempo de Marcación"
+
+msgid "manualLog_field_punchState"
+msgstr "Estado de Marcación"
+
+msgid "manualLog_field_workCode"
+msgstr "Código de Trabajo"
+
+msgid "manualLog_field_applyReason"
+msgstr "Aplicar Permiso"
+
+msgid "manualLog_field_approvalState"
+msgstr "Estado de Aprobación"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "Comentarios"
+
+msgid "manualLog_Action_new"
+msgstr "Nuevo"
+
+msgid "manualLog_Action_newDescription"
+msgstr "Adicionar marcación manual"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "Adicionar marcación manual"
+
+msgid "manual_log_time_greater_now"
+msgstr "La hora de marcación no puede ser mayor a la actual."
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "Tiempo inválido, la hora de incio debe ser posterior a la fecha de contratación del empleado[%s]."
+
+msgid "manual_log_repeat"
+msgstr "%s Hora de marcación duplicada"
+
+msgid "overtime_field_employee"
+msgstr "Empleado"
+
+msgid "overtime_field_startTime"
+msgstr "Hora de Inicio HE"
+
+msgid "overtime_field_endTime"
+msgstr "Hora Salida HE"
+
+msgid "overtime_field_overtimeType"
+msgstr "Tipo de Hora Extra"
+
+msgid "overtime_field_applyReason"
+msgstr "Aplicar Permiso"
+
+msgid "overtime_field_approvalState"
+msgstr "Estado de Aprobación"
+
+msgid "overtime_field_approvalRemark"
+msgstr "Comentarios"
+
+msgid "overtime_action_new"
+msgstr "Nuevo"
+
+msgid "overtime_action_newDescription"
+msgstr "Nueva Hora Extra"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "Nueva Hora Extra"
+
+msgid "overtime_time_overlap"
+msgstr "%s Hora extra empleado sobrepuesta"
+
+msgid "schedule_action_addSchedule"
+msgstr "Nuevo Calendario"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "Nuevo Calendario"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "Nuevo Calendario"
+
+msgid "please_select_employee"
+msgstr "Por favor seleccionar empleado"
+
+msgid "please_select_department"
+msgstr "Por favor seleccionar departamento"
+
+msgid "please_input_shift_alias"
+msgstr "Detalles de Turno"
+
+msgid "end_date_can_not_less_than_start_date"
+msgstr "Error de fecha de inicio o fecha final"
+
+msgid "please_select_time_intervals"
+msgstr "Please select timetable"
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s(%(name)s) Horario Duplicado de %(start)s a %(end)s"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "Error de periodo de marcación duplicada"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "%(t)s y %(ss)s están sobrepuesto en día %(d)s"
+
+msgid "shift_not_found"
+msgstr "Turno no encontrado"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "El turno(%(shift)s) está en uso"
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "Apodo duplicado(%(alias)s)"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "Nuevo horario temporal"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "Nuevo horario temporal"
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "Nuevo horario temporal"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "Por favor seleccionar empleado"
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "Por favor seleccionar departamento"
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "Por favor seleccionar calendario"
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(timetableA)s y %(timetableB)s está sobrepuesto en  %(date)s"
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "Proceso fallido"
+
+msgid "training_field_employee"
+msgstr "Empleado"
+
+msgid "training_field_startTime"
+msgstr "Hora Entrada"
+
+msgid "training_field_endTime"
+msgstr "Hora Salida"
+
+msgid "training_field_trainingCategory"
+msgstr "Tipo de Entrenamiento"
+
+msgid "training_field_applyReason"
+msgstr "Aplicar Permiso"
+
+msgid "training_field_approvalState"
+msgstr "Estado de Aprobación"
+
+msgid "training_field_approvalRemark"
+msgstr "Comentarios"
+
+msgid "training_action_new"
+msgstr "Nuevo"
+
+msgid "training_action_newDescription"
+msgstr "Nuevo Entrenamiento"
+
+msgid "training_action_newHelpTxt"
+msgstr "Nuevo Entrenamiento"
+
+msgid "training_time_overlap"
+msgstr "%s hora de entrenamiento del empleado sobrepuesta"
+
+msgid "shift_field_timeInterval"
+msgstr "Calendario"
+
+msgid "deptAttRule_field_alias"
+msgstr "Nombre"
+
+msgid "departmentRule_action_batchAdd"
+msgstr "Nuevo"
+
+msgid "departmentRule_action_batchAddDescription"
+msgstr "Nueva regla para múltiples departamentos"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "Nueva regla para múltiples departamentos"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s ya ha sido configurado la regla"
+
+msgid "holiday_field_alias"
+msgstr "Nombre"
+
+msgid "holiday_field_startDate"
+msgstr "Fecha de Inicio"
+
+msgid "holiday_field_duration"
+msgstr "Duración(Días)"
+
+msgid "holiday_field_workType"
+msgstr "Tipo de Trabajo"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "Nuevo"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "Nuevo Festivo"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "Nuevo Festivo"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr ""
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr ""
+
+msgid "calculation_item_actualPresent"
+msgstr "Asistente"
+
+msgid "calculation_item_durationOrShort"
+msgstr "Duración/Corta"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "Total de Tiempo/Total Tiempo Trabajado"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "Tiempo de Descanso/Tiempo Descanso Real"
+
+msgid "calculation_item_timetableDuration"
+msgstr "Duración Calendario"
+
+msgid "calculation_item_late"
+msgstr "Llegadas Tarde"
+
+msgid "calculation_item_earlyLeave"
+msgstr "Salida Temprana"
+
+msgid "calculation_item_leave"
+msgstr "Permiso"
+
+msgid "calculation_item_absent"
+msgstr "Ausencia"
+
+msgid "calculation_item_overtime"
+msgstr "Hora Extra"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "No Hora Entrada"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "No Hora Salida"
+
+msgid "calculation_item_present"
+msgstr "Asistió"
+
+msgid "calculation_item_dayOff"
+msgstr "Día Libre"
+
+msgid "calculation_item_weekend"
+msgstr "Fin de Semana"
+
+msgid "calculation_item_holiday"
+msgstr "Festivo"
+
+msgid "replace_existing_shift_even_using"
+msgstr "Reemplazar turno existente aún si se esta usando"
+
+msgid "remove_overlap_schedule"
+msgstr "Borrar horarios sobrepestos"
+
+msgid "enable_work_on_weekend_as"
+msgstr ""
+
+msgid "work_type"
+msgstr "Trabajo como"
+
+msgid "enable_work_on_day_off_as"
+msgstr ""
+
+msgid "auto_shift"
+msgstr "Turno Automático"
+
+msgid "select_date"
+msgstr ""
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr ""
+
+msgid "Early length cannot exceed Break time."
+msgstr ""
+
+msgid "Break Exceed duration out of Break Range."
+msgstr ""
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr ""
+
+msgid "please_select_time_table"
+msgstr ""
+
+msgid "menu_group_att_rule"
+msgstr "Regla"
+
+msgid "menu_att_globalRule"
+msgstr "Regla Global"
+
+msgid "menu_att_departmentRule"
+msgstr "Regla de Departamento"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "Shift"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "Horario"
+
+msgid "menu_att_breakTime"
+msgstr "Descanso"
+
+msgid "menu_att_timeInterval"
+msgstr "Horario"
+
+msgid "menu_att_shift"
+msgstr "Turno"
+
+msgid "menu_att_schedule"
+msgstr "Calendario"
+
+msgid "menu_att_temporarySchedule"
+msgstr "Horario Temporal"
+
+msgid "menu_att_employeeSchedule"
+msgstr "Horario del Empleado"
+
+msgid "menu_group_approvalManagement"
+msgstr "Aprobaciones"
+
+msgid "menu_att_manualLog"
+msgstr "Marcación Manual"
+
+msgid "menu_att_leave"
+msgstr "Permiso"
+
+msgid "menu_att_overtime"
+msgstr "Hora Extra"
+
+msgid "menu_att_training"
+msgstr "Entrenamiento"
+
+msgid "menu_att_adjustSchedule"
+msgstr "Ajuste de Horario"
+
+msgid "menu_group_att_holiday"
+msgstr "Festivo"
+
+msgid "menu_att_holiday"
+msgstr "Festivo"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "Tipos"
+
+msgid "menu_att_leaveType"
+msgstr "Tipo de Permiso"
+
+msgid "menu_att_trainingType"
+msgstr "Tipo de Entrenamiento"
+
+msgid "menu_group_att_reportSetting"
+msgstr "Configuración de Reporte"
+
+msgid "menu_att_reportSetting"
+msgstr "Configuración de Reporte"
+
+msgid "menu_group_att_transaction"
+msgstr "Transacciones"
+
+msgid "menu_att_transaction"
+msgstr "Transacciones"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "Cálculo"
+
+msgid "menu_att_reportCalculate"
+msgstr "Cálculo"
+
+msgid "menu_group_att_report"
+msgstr "Reporte"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "Monitoreo"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "Resumen de Departamento"
+
+msgid "att_model_attendanceDetail"
+msgstr "Asistencia +"
+
+msgid "att_model_attendanceException"
+msgstr "Attendance Exception"
+
+msgid "att_calc_log"
+msgstr "Registro de Cálculo de Asistencia"
+
+msgid "param_name"
+msgstr ""
+
+msgid "param_value"
+msgstr ""
+
+msgid "att_rule"
+msgstr "Reglas de Asistencia"
+
+msgid "schedule_field_employee"
+msgstr "Employee"
+
+msgid "schedule_field_startDate"
+msgstr "Start Date"
+
+msgid "schedule_field_endDate"
+msgstr "End Date"
+
+msgid "schedule_field_shift"
+msgstr "Shift"
+
+msgid "att_model_schedule"
+msgstr "Schedule"
+
+msgid "deptSchedule_field_department"
+msgstr "Department"
+
+msgid "deptSchedule_field_startDate"
+msgstr "Start Date"
+
+msgid "deptSchedule_field_endDate"
+msgstr "End Date"
+
+msgid "deptSchedule_field_shift"
+msgstr "Shift"
+
+msgid "att_model_deptSchedule"
+msgstr "Department Schedule"
+
+msgid "deptSchedule_action_add"
+msgstr "Add"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "Add department schedule"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "Add department schedule"
+
+msgid "attShift_field_code"
+msgstr "Shift NO."
+
+msgid "attShift_field_alias"
+msgstr "Nombre del Turno"
+
+msgid "attShift_field_cycleUnit"
+msgstr "Unidad"
+
+msgid "attShift_field_cycle"
+msgstr "Ciclo"
+
+msgid "work_on_weekend_as"
+msgstr "Trabajo Fin de Semana como"
+
+msgid "work_on_day_off_as"
+msgstr "Trabajo día libre como"
+
+msgid "attShift_field_autoShift"
+msgstr "Turno Automático"
+
+msgid "shift_name_repeat"
+msgstr "Nombre del turno (%s) ya existe"
+
+msgid "att_model_shift"
+msgstr "Turno"
+
+msgid "breakTime_field_alias"
+msgstr "Nombre"
+
+msgid "breakTime_field_startTime"
+msgstr "Hora de Inicio"
+
+msgid "breakTime_field_endTime"
+msgstr "Hora Final"
+
+msgid "breakTime_field_duration"
+msgstr "Duración Descanso"
+
+msgid "breakTime_field_startMargin"
+msgstr "Break Out Margin"
+
+msgid "breakTime_field_endMargin"
+msgstr "End Time Margin"
+
+msgid "breakTime_field_allowDuration"
+msgstr "Allow Break Time"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "Based On Punch State"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "Periodo de marcación duplicado"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "Periodo de marcación duplicado(m)"
+
+msgid "use_multiple_punch"
+msgstr "Entradas / Salidas Múltiples"
+
+msgid "break_time_calculate_type"
+msgstr "Tipo de Cálculo"
+
+msgid "minimum_break_time"
+msgstr "Mínimo tiempo de descanso"
+
+msgid "consider_break_in_early"
+msgstr "Entrada temprana de descanso"
+
+msgid "break_in_early_as"
+msgstr "Entrada temprana de descanso como"
+
+msgid "consider_break_in_late"
+msgstr "Entrada tarde de descanso"
+
+msgid "breakTime_field_breakInLateAs"
+msgstr ""
+
+msgid "att_model_breakTime"
+msgstr "Break Time"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "Descanso"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "Require Punch Setting"
+
+msgid "changeSchedule_field_employee"
+msgstr "Empleado"
+
+msgid "changeSchedule_field_attDate"
+msgstr "Fecha"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "Horario Anterior"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "Nuevo Horario"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "Aplicar Horario"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "Aplicar Permiso"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "Comentarios"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "Estado"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "Tiempo de aprobación"
+
+msgid "changeSchedule_field_approver"
+msgstr "Aprobador"
+
+msgid "att_model_changeSchedule"
+msgstr "Ajuste de Horario"
+
+msgid "change_schedule"
+msgstr "Ajuste de Horario"
+
+msgid "emp_field_employeeCode"
+msgstr "ID del Empleado"
+
+msgid "emp_field_firstName"
+msgstr "Nombres"
+
+msgid "emp_field_lastName"
+msgstr "Apellidos"
+
+msgid "employee_field_position"
+msgstr "Cargo"
+
+msgid "employee_field_department"
+msgstr "Departamento"
+
+msgid "deptAttRule_field_department"
+msgstr "Departamento"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "Regla"
+
+msgid "att_model_deptAttRule"
+msgstr "Regla de Departamento"
+
+msgid "holiday_field_department"
+msgstr "Departamento"
+
+msgid "att_model_holiday"
+msgstr "Festivo"
+
+msgid "leaveCategory"
+msgstr "Categoria de Permiso"
+
+msgid "leave_field_applyReason"
+msgstr "Aplicar Permiso"
+
+msgid "leave_field_applyTime"
+msgstr "Aplicar Tiempo"
+
+msgid "leave_field_approvalRemark"
+msgstr "Comentarios de Aprobación"
+
+msgid "leave_field_approvalTime"
+msgstr "Tiempo de aprobación"
+
+msgid "leave_field_approvalLevel"
+msgstr "Nivel de aprobación"
+
+msgid "leave_field_approver"
+msgstr "Aprobador"
+
+msgid "leave_approve_audit"
+msgstr "Los registros de permisos no pueden ser modificados por el auditor."
+
+msgid "leaveCategory_field_name"
+msgstr "Nombre"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "Unidad mínima"
+
+msgid "leaveCategory_field_unit"
+msgstr "Unidad"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "Redondear"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "Símbolo de Reporte"
+
+msgid "this_category_name_already_exists."
+msgstr "El tipo de nombre ya existe"
+
+msgid "this_report_symbol_already_exists."
+msgstr "El símbolo de reporte ya se esta usando"
+
+msgid "the_default_category_name_cannot_be_modified"
+msgstr ""
+
+msgid "att_model_leaveCategory"
+msgstr "Tipo de permiso"
+
+msgid "manualLog_field_applyTime"
+msgstr "Aplicar Tiempo"
+
+msgid "manualLog_field_approvalTime"
+msgstr "Tiempo de aprobación"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "Nivel de aprobación"
+
+msgid "manualLog_field_approver"
+msgstr "Aprobador"
+
+msgid "manuallog_employee"
+msgstr "Marcaciones manuales del empleado"
+
+msgid "punch_time"
+msgstr "Hora de Marcación"
+
+msgid "punch_state"
+msgstr "Estado de Marcación"
+
+msgid "work_code"
+msgstr "Código de Trabajo"
+
+msgid "audit_time"
+msgstr "Tiempo de aprobación"
+
+msgid "manuallog_approve_audit"
+msgstr "Las marcaciones manuales no se pueden modificar por el auditor."
+
+msgid "att_model_manualLog"
+msgstr "Marcaciones Manuales"
+
+msgid "overtime_field_applyTime"
+msgstr "Tiempo de aprobación"
+
+msgid "overtime_field_approvalReason"
+msgstr "Comentarios"
+
+msgid "overtime_field_approvalTime"
+msgstr "Tiempo de aprobación"
+
+msgid "overtime_field_approvalLevel"
+msgstr "Nivel de Aprobación"
+
+msgid "overtime_field_approver"
+msgstr "Aprobador"
+
+msgid "overtime_employee"
+msgstr "Horas Extra del Empleado"
+
+msgid "overtime_approve_audit"
+msgstr "Los registros de horas extra no se puede modificar por el auditor."
+
+msgid "att_model_overtime"
+msgstr "Horas Extra"
+
+msgid "reportParam_field_name"
+msgstr "Nombre"
+
+msgid "reportParam_field_value"
+msgstr "Valor"
+
+msgid "att_model_reportParameter"
+msgstr "Reporte de parámetros"
+
+msgid "calculation_item_actualAttendance"
+msgstr "Tiempo Trabajado"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "Horas trabajo requeridas/Duración ausencia"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "Tiempo Total / Tiempo Total Trabajado"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "Descanso / Tiempo de Descanso"
+
+msgid "calculation_item_noCheckIn"
+msgstr "No Marcación de Entrada"
+
+msgid "calculation_item_noCheckOut"
+msgstr "No Marcación de Salida"
+
+msgid "calculation_item_training"
+msgstr "Entrenamiento"
+
+msgid "report_display_checkIn"
+msgstr "Entrada"
+
+msgid "report_display_checkOut"
+msgstr "Salida"
+
+msgid "report_display_breakOut"
+msgstr "Salida Descanso"
+
+msgid "report_display_breakIn"
+msgstr "Entrada Descanso"
+
+msgid "report_display_overtimeIn"
+msgstr "Entrada Hora Extra"
+
+msgid "report_display_overtimeOut"
+msgstr "Salida Hora Extra"
+
+msgid "report_display_unknown"
+msgstr "Desconocido"
+
+msgid "shiftDetail_field_shift"
+msgstr "Turno"
+
+msgid "shiftDetail_field_inTime"
+msgstr "Hora de Entrada"
+
+msgid "shiftDetail_field_outTime"
+msgstr "Hora de Salida"
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "Indexar día"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "Calendario"
+
+msgid "att_model_shiftDetail"
+msgstr "Detalle del Turno"
+
+msgid "tempSchedule_field_employee"
+msgstr "Empleado"
+
+msgid "tempSchedule_field_startTime"
+msgstr "Hora de Inicio"
+
+msgid "tempSchedule_field_endTime"
+msgstr "Hora Fin"
+
+msgid "tempSchedule_field_rule"
+msgstr "Regla de Horario Temporal"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "ID Calendario"
+
+msgid "tempSchedule_field_workType"
+msgstr "Tipo de Trabajo"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "Calendario"
+
+msgid "att_model_tempSchedule"
+msgstr "Calendario Temporal"
+
+msgid "timeInterval_field_alias"
+msgstr "Nombre"
+
+msgid "timeInterval_field_type"
+msgstr "Tipo"
+
+msgid "timeInterval_field_checkIn"
+msgstr "Entrada"
+
+msgid "timeInterval_field_checkOut"
+msgstr "Salida"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "Hora de Entrada"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "Hora de Salida"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "Hora Inicio Salida"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "Check-Out End"
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "Hora Fin Salida"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "(In) Above Margin"
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "(Out) Ahead Margin"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "(Out) Above Margin"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "Attendance Duration"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "Click to set attendance duration by select check-out"
+
+msgid "timeInterval_label_checkOut"
+msgstr "Check-Out"
+
+msgid "timeInterval_txt_days"
+msgstr "Days"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "Maximum 3 Days"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "Check-Out less than check-in"
+
+msgid "timeInterval_checkOut_title"
+msgstr "Check-Out Setting"
+
+msgid "timeInterval_field_inRequired"
+msgstr "Necesario marcar entrada"
+
+msgid "timeInterval_field_outRequired"
+msgstr "Necesario marcar salida"
+
+msgid "timeInterval_field_allowLate"
+msgstr "Permitir llegada tarde"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "Permitir salida temprana"
+
+msgid "timeInterval_field_paidDay"
+msgstr "Día de Trabajo"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "Entrada Temprana HE"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "Mínimo HE (Entrada Temprana)"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "Salida Tarde HE"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "Mínimo HE (Salida Tarde)"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "Cambiar At"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "Múltiple Entrada/Salida"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "Tipo intervalo marcación"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "Periodo de marcación Duplicado"
+
+msgid "timeInterval_field_workTimeType"
+msgstr "Tipo hora de trabajo"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "Tiempo de Trabajo"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "Minutes"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "Acorde a estado de marcación"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "Habilitar HE"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "HE mínimo minuto"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "Minutes"
+
+msgid "timeInterval_field_workType"
+msgstr "Tipo de Trabajo"
+
+msgid "timeInterval_field_breakTime"
+msgstr "Descanso"
+
+msgid "timeinterval_invalid_work_day"
+msgstr "Conteo de día de trabajo inválido, el valor debe estar entre 0.1-9.9"
+
+msgid "time_duration_greater_user_defined"
+msgstr ""
+
+msgid "att_model_timeInterval"
+msgstr "Calendario"
+
+msgid "timeInterval_action_addNormalTimetable"
+msgstr "Add Normal Timetable"
+
+msgid "timeInterval_action_addNormalTimetable_description"
+msgstr "Add Normal Timetable"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "Add Normal Timetable"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "Basic Setting"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "BreakTime Setting"
+
+msgid "timeInterval_tab_overtimeSetting"
+msgstr "Overtime Setting"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "Rule Setting"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "Add Flexible Timetable"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "Add Flexible Timetable"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "Add Flexible Timetable"
+
+msgid "training_field_applyTime"
+msgstr "Aplicar Tiempo"
+
+msgid "training_field_approvalTime"
+msgstr "Tiempo Aprobado"
+
+msgid "training_field_approvalLevel"
+msgstr "Nivel Aprobado"
+
+msgid "training_field_approver"
+msgstr "Aprobador"
+
+msgid "training_approve_audit"
+msgstr "Los registros de entrenamiento no pueden ser modificados por el auditor."
+
+msgid "att_model_training"
+msgstr "Entrenamiento"
+
+msgid "mulTransaction_field_employee"
+msgstr "ID del Empleado"
+
+msgid "mulTransaction_field_dataType"
+msgstr "Tipo de Datos"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "Marcación Normal"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "Descanso"
+
+msgid "mulTransaction_field_date"
+msgstr "Fecha"
+
+msgid "mulTransaction_field_timetable"
+msgstr "Calendario"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "Data Index"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "Hora de Entrada"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "ID Hora de Entrada"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "Hora de Salida"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "ID Hora de Salida"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "Tiempo Total"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "Tiempo Trabajado"
+
+msgid "att_model_multipleTransaction"
+msgstr "Transacciones Múltiples"
+
+msgid "att_model_scheduledTransaction"
+msgstr "Transacciones Horario"
+
+msgid "based_on_schedule"
+msgstr "Acorde a Horario"
+
+msgid "first_check_in"
+msgstr "Primera Marcación"
+
+msgid "last_check_out"
+msgstr "Última Marcación"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "HE deshabilitada"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "Calcular HE"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "Aprobar HE"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "Aprobar prioridad HE"
+
+msgid "attRule_missIn_late"
+msgstr "Llegada Tarde"
+
+msgid "attRule_missIn_absent"
+msgstr "Ausencia"
+
+msgid "attRule_missIn_noComplete"
+msgstr "No completado"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "Salida Temprana"
+
+msgid "attRule_missOut_absent"
+msgstr "Ausencia"
+
+msgid "attRule_missOut_noComplete"
+msgstr "No completado"
+
+msgid "must_check_in"
+msgstr "Debe marcar entrada"
+
+msgid "using_leave_end_time"
+msgstr "Usar hora salida del permiso"
+
+msgid "must_check_out"
+msgstr "Debe marcar salida"
+
+msgid "using_leave_start_time"
+msgstr "Usar hora de inicio del permiso"
+
+msgid "using_training_end_time"
+msgstr "Usar hora de salida del entrenamiento"
+
+msgid "using_training_start_time"
+msgstr "Usasr hora de inicio del entrenamiento"
+
+msgid "boolean_option_no"
+msgstr "No"
+
+msgid "boolean_option_yes"
+msgstr "Si"
+
+msgid "normal_time_interval"
+msgstr "Normal"
+
+msgid "flexible_time_interval"
+msgstr "Flexible"
+
+msgid "based_on_rule"
+msgstr "Acorde a la regla"
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "User defined"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "Normal Work"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "Day Off"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "Weekend"
+
+msgid "shift_OTOption_normalWork"
+msgstr "Trabajo Normal"
+
+msgid "shift_OTOption_normalOT"
+msgstr "HE Normal"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "HE fin de semana"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "Día"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "Semana"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "Mes"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "Horario temporal activado"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "Nuevo horario adicional"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "Trabajo normal"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "HE Normal"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "HE fin de semana"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "HE Festivos"
+
+msgid "approvalStatus_option_pending"
+msgstr "Pendiente"
+
+msgid "approvalStatus_option_reApply"
+msgstr "Volver a aplicar"
+
+msgid "approvalStatus_option_revoke"
+msgstr "Revocar"
+
+msgid "approvalStatus_option_auditing"
+msgstr "Auditando"
+
+msgid "approvalStatus_option_approved"
+msgstr "Aprobado"
+
+msgid "approvalStatus_option_reject"
+msgstr "Rechazado"
+
+msgid "punchState_option_checkIn"
+msgstr "Entrada"
+
+msgid "punchState_option_checkOut"
+msgstr "Salida"
+
+msgid "punchState_option_breakOut"
+msgstr "Descanso"
+
+msgid "punchState_option_breakIn"
+msgstr "Entrada Descanso"
+
+msgid "punchState_option_overtimeIn"
+msgstr "Entrada HE"
+
+msgid "punchState_option_overtimeOut"
+msgstr "Salida _He"
+
+msgid "overtime_option_normalOvertime"
+msgstr "HE Normal"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "HE fin de semana"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "HE Festivo"
+
+msgid "calculationUnit_option_hour"
+msgstr "Hora"
+
+msgid "calculationUnit_option_minute"
+msgstr "Minuto"
+
+msgid "calculationUnit_option_workday"
+msgstr "Día de trabajo"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "HH:MM"
+
+msgid "overtime_option_normalWork"
+msgstr "Trabajo Normal"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "Festivo(%(holiday)s)"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "Fin de Semana"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "Día de Descanso"
+
+msgid "absent_report"
+msgstr "Reporte de Ausencias"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "No Entrada"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "No Salida"
+
+msgid "weekday_option_monday"
+msgstr "Lunes"
+
+msgid "weekday_option_tuesday"
+msgstr "Martes"
+
+msgid "weekday_option_wednesday"
+msgstr "Miércoles"
+
+msgid "weekday_option_thursday"
+msgstr "Jueves"
+
+msgid "weekday_option_friday"
+msgstr "Viernes"
+
+msgid "weekday_option_saturday"
+msgstr "Sábado"
+
+msgid "weekday_option_sunday"
+msgstr "Sunday"
+
+msgid "attRule_globalRule_baseSetting"
+msgstr "Acorde a Configuración"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "Regla de Entrada"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "Acorde a Horario"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "Primera Entrada"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "Regla de Salida"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "Última Salida"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "Regla de HE"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "Periodo de marcación duplicado"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "Configuración fin de semana"
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "Lunes"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "Martes"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "Miércoles"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "Jueves"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "Viernes"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "Sábado"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "Domingo"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "Regla de cálculo"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "Cuando llegada tarde excede"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "minutos contados como ausente"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "Cuando salida temprana excede"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "minutos contados como ausente"
+
+msgid "attRule_globalRule_missIn"
+msgstr "Olvidó marcar entrada como"
+
+msgid "attRule_globalRule_missOut"
+msgstr "Olvidó marcar salida como"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "Item de cálculo"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "Entrada"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "Regla de salida"
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "Descanso Salida"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "Descanso Entrada"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "Entrada HE"
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "Salida H_E"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "Configuración APP"
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "Captura"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "No Requerido"
+
+msgid "attRule_globalRule_required"
+msgstr "Requerido"
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "Código de Trabajo"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "Funciones Rápidas"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "Guardar"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "Empleado"
+
+msgid "schedule_empFrameOption_department"
+msgstr "Departamento"
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "Empleado"
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "Departamento"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "Select all employee"
+
+msgid "schedule_action_shiftCover"
+msgstr "Sobrescribir Turno"
+
+msgid "schedule_action_scheduleCover"
+msgstr "Sobrescribir Horario"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "Calendario"
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "Detalle"
+
+msgid "shiftList_search_shift"
+msgstr "Turno"
+
+msgid "department_tree_selectAll"
+msgstr "Seleccionar Todo"
+
+msgid "department_tree_multipleSelect"
+msgstr "Múltiple selección"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "Seleccionar Sub-departamento"
+
+msgid "calculation_page_empSearch"
+msgstr "Búsqueda de empleado"
+
+msgid "calculation_page_startDate"
+msgstr "Fecha de inicio"
+
+msgid "calculation_page_endDate"
+msgstr "Fecha Fin"
+
+msgid "calculation_page_attCalculate"
+msgstr "Calcular Asistencia"
+
+msgid "emp_field_hireDate"
+msgstr "Fecha de contratación"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "Regla HE"
+
+msgid "report_searchField_startDate"
+msgstr "Fecha de Inicio"
+
+msgid "report_searchField_endDate"
+msgstr "Fecha Fin"
+
+msgid "report_searchField_employee"
+msgstr "Empleado"
+
+msgid "report_column_workDay"
+msgstr "Día de Trabajo"
+
+msgid "report_column_breakDuration"
+msgstr "Descanso"
+
+msgid "report_column_totalDayOff"
+msgstr "Día de descanso"
+
+msgid "report_column_totalWeekend"
+msgstr "Fin de semana(Días)"
+
+msgid "report_column_totalHoliday"
+msgstr "Festivo(Días)"
+
+msgid "report_display_setting"
+msgstr "Configuración de reporte"
+
+msgid "short_date_format"
+msgstr "Formato de fecha corto"
+
+msgid "short_time_format"
+msgstr "Formato de hora corto"
+
+msgid "filter_employee"
+msgstr "Empleado"
+
+msgid "multiple_dept"
+msgstr "Mostrar Departamentos"
+
+msgid "function_key_name"
+msgstr "Nombre función rápida"
+
+msgid "report_items_display"
+msgstr "Reporte de items"
+
+msgid "calculation_item_minimumUnit"
+msgstr "Unidad Mínima"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "Hora"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "Minuto"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "Día de trabajo"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "HH:MM"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "Precisión númerica"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "Redondear hacia abajo"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "Sin redondeo"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "Redondear hacia arriba"
+
+msgid "symbol_in_report"
+msgstr "Símbolo de reporte"
+
+msgid "replace_schedule_as_following_range"
+msgstr ""
+
+msgid "breakTime_number"
+msgstr "Código Descanso"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "Estilo para exportar:"
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "Por defecto"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "Employee Wise"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "Department Wise"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "Date Wise"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "Page Wise"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "Por favor seleccione las fechas de inicio y fin."
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "Por favor seleccione el empleado"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "Cálculo terminado"
+
+msgid "shift_getDetail_error_notFound"
+msgstr ""
+
+msgid "menu_sys_authGroup"
+msgstr "Grupo"
+
+msgid "menu_sys_authUser"
+msgstr "Usuario"
+
+msgid "menu_sys_emailSetting"
+msgstr "Configuración de correo electrónico"
+
+msgid "menu_sys_alertSetting"
+msgstr "Configuración de notificación"
+
+msgid "menu_sys_ftpSetting"
+msgstr "Configuración de FTP"
+
+msgid "menu_sys_filterBookmark"
+msgstr "Favoritos"
+
+msgid "menu_sys_databaseBackup"
+msgstr "Respaldo"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "Migración"
+
+msgid "menu_sys_autoExport"
+msgstr "Exportar Automáticamente"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "Configuración Auxiliar"
+
+msgid "menu_sys_companySetting"
+msgstr "Company Setting"
+
+msgid "menu_line_notify"
+msgstr "Line App Notify"
+
+msgid "menu_group_sys_user"
+msgstr "Usuario"
+
+msgid "menu_group_sys_configuration"
+msgstr "Configuración"
+
+msgid "menu_group_sys_database"
+msgstr "Base de datos"
+
+msgid "menu_group_sys_integration"
+msgstr "Integración"
+
+msgid "menu_group_sys_log"
+msgstr "Registro"
+
+msgid "menu_sys_log"
+msgstr "Registro"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "Fecha de inicio"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "Fecha fin"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "Buscar por"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "Exportar Manualmente"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "Seleccione tarea para ejecutar manualmente"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "Seleccione tarea para ejecutar manualmente"
+
+msgid "user_action_changePassword"
+msgstr "Cambiar contraseña"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "Está seguro de cambiar la contraseña de usuario(s) seleccionado(s)?"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr ""
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "Cambio de contraseña exitoso."
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "Cambiar contraseña"
+
+msgid "adminLog_field_objects"
+msgstr "Objeto"
+
+msgid "group_field_name"
+msgstr "Nombre"
+
+msgid "autoExport_task_error_data"
+msgstr "Datos inválidos"
+
+msgid "autoExport_task_error_email"
+msgstr "Correo electrónico inválido"
+
+msgid "autoExport_task_error_interval"
+msgstr "Valor de intervalo inválido"
+
+msgid "autoExport_task_error_time_point"
+msgstr "Valor de punto de tiempo inválido"
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "Longitud de ID del empleado"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "Nombre de Archivo"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr ""
+
+msgid "password_mismatch_errorMessage"
+msgstr "Las contraseñas son diferentes."
+
+msgid "user_createForm_password"
+msgstr "Contraseña"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "Confirmar contraseña"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "Ingrese la misma contraseña para verificación."
+
+msgid "stmp_server_is_required"
+msgstr "Servidor SMTP es requerido."
+
+msgid "email_account_is_required"
+msgstr "Cuenta de correo electrónico es requerida."
+
+msgid "store_path_is_required"
+msgstr "Archivo SN es requerido."
+
+msgid "store_path_is_wrong"
+msgstr "Ruta de almacenamiento incorrecta."
+
+msgid "autoExport_task_error_data: "
+msgstr "Datos inválidos"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "Longitud de ID del empleado"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "Rango de Tiempo"
+
+msgid "software_category_is_required"
+msgstr "Categoria del software es requerida."
+
+msgid "migrate_fields_is_required"
+msgstr "El campo de migración es requerido."
+
+msgid "migrate_database_type_is_required"
+msgstr "El tipo de migración es requerida."
+
+msgid "migrate_database_address_is_required"
+msgstr "La dirección IP de la migración de la base de datos es requerida."
+
+msgid "migrate_database_port_is_required"
+msgstr "El número de puerto de la migración de la base de datos es requerida."
+
+msgid "migrate_database_name_is_required"
+msgstr "El nombre de la migración de la base de datos es requerida."
+
+msgid "migrate_database_user_is_required"
+msgstr "El nombre de usuario de la migración de la base de datos es requerida."
+
+msgid "migrate_database_password_is_required"
+msgstr "La contraseña de la migración de la base de datos es requerida."
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "Prueba de conexión fallida"
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "Excepción de conexión de la base de datos"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured."
+msgstr "Respaldo fallido, por favor asegurarse que sqlcmd.exe es configurado."
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured."
+msgstr "Respaldo fallido, por favor asegurarse que mysqldump.exe es configurado."
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured."
+msgstr "Respaldo fallido, por favor asegurarse que pg_dump.exe es configurado."
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(engine) respaldo no disponible."
+
+msgid "adminLog_field_user"
+msgstr "Usuario"
+
+msgid "adminLog_field_action"
+msgstr "Acción"
+
+msgid "adminLog_field_contentType"
+msgstr "Tipo de contenido"
+
+msgid "adminLog_field_actionStatus"
+msgstr "Estado"
+
+msgid "actionStatus_option_fail"
+msgstr "Falló"
+
+msgid "actionStatus_option_success"
+msgstr "Exitoso"
+
+msgid "adminLog_field_description"
+msgstr "Descripción"
+
+msgid "adminLog_field_ipAddress"
+msgstr "Dirección IP"
+
+msgid "adminLog_field_routable"
+msgstr "Enrutable"
+
+msgid "adminLog_field_operationTime"
+msgstr "Tiempo de acción"
+
+msgid "base_model_adminLog"
+msgstr "Registro"
+
+msgid "autoExport_task_code"
+msgstr "Código"
+
+msgid "autoExport_task_name"
+msgstr "Nombre"
+
+msgid "autoExport_task_params"
+msgstr "Parámetros"
+
+msgid "auto_export_task"
+msgstr "Exportar automáticamente"
+
+msgid "bookmark_field_title"
+msgstr "Título"
+
+msgid "bookmark_field_user"
+msgstr "Usuario"
+
+msgid "bookmark_field_contentType"
+msgstr "Tipo de contenido"
+
+msgid "bookmark_field_filtersString"
+msgstr "Filtros"
+
+msgid "bookmark_field_isShared"
+msgstr "Es compartido"
+
+msgid "bookmark_field_savedTime"
+msgstr "Tiempo guardado"
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "Título duplicado"
+
+msgid "base_model_bookmark"
+msgstr "Favoritos"
+
+msgid "base_integrationTable_employee"
+msgstr "Empleado"
+
+msgid "base_integrationTable_position"
+msgstr "Cargo"
+
+msgid "base_integrationTable_department"
+msgstr "Departamento"
+
+msgid "base_integrationTable_area"
+msgstr "Área"
+
+msgid "enableStatus_option_enable"
+msgstr "Habilitar"
+
+msgid "enableStatus_option_disable"
+msgstr "Deshabilitar"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "Monitoreo en tiempo real"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "Resumen de asistencia diaria"
+
+msgid "lineNotify_field_department"
+msgstr "Departamento"
+
+msgid "lineNotify_field_includeSubDepartmentSubDepartment"
+msgstr "Incluir Sub-departamento"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "Token"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "Click en el botón de conexión"
+
+msgid "lineNotify_field_messageType"
+msgstr "Tipo de mensaje"
+
+msgid "lineNotify_field_pushTime"
+msgstr "Tiempo push"
+
+msgid "lineNotify_field_isValid"
+msgstr "Es válido"
+
+msgid "lineNotify_field_remark"
+msgstr "Comentaios"
+
+msgid "base_model_lineNotifySetting"
+msgstr "Configuración de notificaciones"
+
+msgid "dbMigrate_field_name"
+msgstr "Nombre de la migración"
+
+msgid "dbMigrate_field_value"
+msgstr "Contenido de la migración"
+
+msgid "model_send_email"
+msgstr "Enviar correo electrónico"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "Contraseña"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "Clave pública"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "Dirección IP FTP"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "Número de puerto"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "Método de autenticación"
+
+msgid "sftpSetting_field_username"
+msgstr "Nombre de usuario"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "Contraseña"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "Clave SSH"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "Contraseña"
+
+msgid "sftp_setting"
+msgstr "Configuración SFTP"
+
+msgid "sysParam_field_name"
+msgstr "Nombre"
+
+msgid "sysParam_field_type"
+msgstr "Tipo"
+
+msgid "sysParam_field_value"
+msgstr "Valor"
+
+msgid "sysParam_default_ruleName"
+msgstr "Reglas de asistencia por defecto"
+
+msgid "system_setting"
+msgstr "Configuración del sistema"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "Fecha desde %(from)s hasta %(to)s"
+
+msgid "reportExport_author"
+msgstr "Autor"
+
+msgid "reportExport_createTime"
+msgstr "Fecha de creación"
+
+msgid "reportExport_page%d"
+msgstr "Página %d"
+
+msgid "user_createFrom_legendInformation"
+msgstr "Información"
+
+msgid "user_createFrom_legendPermission"
+msgstr "Permiso"
+
+msgid "permission_verboseName_add"
+msgstr "Nuevo"
+
+msgid "permission_verboseName_view"
+msgstr "Ver"
+
+msgid "permission_verboseName_change"
+msgstr "Editar"
+
+msgid "permission_verboseName_delete"
+msgstr "Borrar"
+
+msgid "permission_verboseName_changePassword"
+msgstr "Cambiar contraseña"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "Empleado"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "Departamento"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "Cargo"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "Área"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "Renuncia"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "Documento"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "Documento del Empleado"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "Bio-Foto"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "Aprobaciones"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "Gestión de actividades"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "Rol aprobadores"
+
+msgid "permission_verboseName_attDeptAttrule"
+msgstr "Regla de departamento"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "Configuración del reporte"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "Calendario"
+
+msgid "permission_verboseName_attShift"
+msgstr "Turno"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "Registro manual"
+
+msgid "permission_verboseName_attLeave"
+msgstr "Permiso"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "Hora Extra"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "Tipo de permiso"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "Festivo"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "Calcular reporte"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "Reporte de asistencia diaria"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "Reporte de asistencia"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "Resumen de permisos"
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "Total tiempo de tarjeta"
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "Primera entrada Última salida"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "Reporte de excepciones"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "Reporte de departamento"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "Reporte tiempo de tarjeta"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "Reporte llegadas tarde"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "Reporte salidas temprano"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "Reporte de ausencias"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "Transacciones múltiples"
+
+msgid "permission_verboseName_attTraining"
+msgstr "Entrenamiento"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "Descanso"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "Horario"
+
+msgid "permission_verboseName_attSetting"
+msgstr "Configuración de asistencia"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "Horario temporal"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "Tipo de entrenamiento"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "Cambiar horario"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "Reporte de permisos"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "Dispositivo"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "Registro de dispositivos"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "Comandos"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "Cargar registros"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "Bio-Plantilla"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "Mensaje público"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "Mensaje privado"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "Código de trabajo"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "Lista App"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "Anuncio"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "Notificación"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "Registro de acción"
+
+msgid "permission_verboseName_sysUser"
+msgstr "Usuario"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "Grupo"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "Configuración FTP"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "Exportar automáticamente"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "Registro"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "Favoritos"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "Configuración FTP"
+
+msgid "permission_verboseName_psnl"
+msgstr "Personal"
+
+msgid "permission_verboseName_iclock"
+msgstr "Dispostivo"
+
+msgid "permission_verboseName_att"
+msgstr "Asistencia"
+
+msgid "permission_verboseName_sys"
+msgstr "Sistema"
+
+msgid "autoExport_task_manualStart"
+msgstr "Fecha de inicio"
+
+msgid "autoExport_task_manualEnd"
+msgstr "Fecha fin"
+
+msgid "autoExport_task_queryField"
+msgstr "Buscar por"
+
+msgid "autoExport_task_filePrefix"
+msgstr "Nombre de archivo"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "Format Setting"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "Data Filter Setting"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "Export Time Setting"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "Export Path Setting"
+
+msgid "autoExport_task_departments"
+msgstr "Departamento"
+
+msgid "autoExport_task_areas"
+msgstr "Área"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "Plantilla de datos"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "(Por favor arrastrar de izquierda a derecha los campos a exportar de la tabla abajo.)"
+
+msgid "autoExport_task_shortDate"
+msgstr "Fecha corta"
+
+msgid "autoExport_task_shortTime"
+msgstr "Tiempo corto"
+
+msgid "autoExport_task_frequency"
+msgstr "Frecuencia"
+
+msgid "frequency_option_none"
+msgstr "No"
+
+msgid "frequency_option_daily"
+msgstr "Diaria"
+
+msgid "frequency_option_weekly"
+msgstr "Semanalmente"
+
+msgid "frequency_option_monthly"
+msgstr "Mensualmente"
+
+msgid "autoExport_task_exportDay"
+msgstr "Día"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "Cargar hora"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "Tiempo de marcación"
+
+msgid "autoExport_task_interval"
+msgstr "Intervalo"
+
+msgid "autoExport_task_exportFormat"
+msgstr "Formato"
+
+msgid "autoExport_task_exportTime"
+msgstr "Punto de tiempo"
+
+msgid "autoExport_task_deadline"
+msgstr "Fecha límite"
+
+msgid "autoExport_deadline_previous"
+msgstr "Anterior"
+
+msgid "autoExport_deadline_current"
+msgstr "Actual"
+
+msgid "autoExport_task_exportPath"
+msgstr "Ruta para exportar"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "(Ruta: \\Archivos\\temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "Servidor FTP"
+
+msgid "autoExport_task_ftpPath"
+msgstr "Ruta FTP"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "(Formato: /Carpeta/)"
+
+msgid "autoExport_task_exportEmail"
+msgstr "Correo electrónico"
+
+msgid "autoExport_task_empCodeLength"
+msgstr "ID Empleado"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "Longitud de ID Empleado"
+
+msgid "autoExport_task_departmentCode"
+msgstr "Código de departamento"
+
+msgid "autoExport_task_departmentName"
+msgstr "Nombre de departamento"
+
+msgid "autoExport_task_punchTime"
+msgstr "Hora de marcación"
+
+msgid "autoExport_task_verifyType"
+msgstr "Tipo de verificación"
+
+msgid "autoExport_task_workCode"
+msgstr "Código de Trabajo"
+
+msgid "autoExport_task_cardNumber"
+msgstr "Número de tarjeta"
+
+msgid "autoExport_task_areaAlias"
+msgstr "Área"
+
+msgid "autoExport_task_terminalAlias"
+msgstr "Nombre de dispositivo"
+
+msgid "autoExport_task_terminalSN"
+msgstr "Número de serie"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "Migrar desde"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "Base de datos"
+
+msgid "db_sqlserver"
+msgstr "Servidor MSSQL"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "Dirección base de datos"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "Puerto base de datos"
+
+msgid "dataMigrate_front_databaseName"
+msgstr "Nombre base de datos"
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "Usuario base de datos"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "Contraseña de la base de datos"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "Campos a migrar"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "Periodo de migración de transacciones"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "Estado de la migración"
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "Prueba de conexión"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "Migrar"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "Sqlite File"
+
+msgid "dataMigrate_cache_clean"
+msgstr "Clean Cache"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "If it didn't execute migrate, try this to solve."
+
+msgid "exportForm_itemLabel_scope"
+msgstr "Alcance de la exportación:"
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "Página actual"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "Todos los datos"
+
+msgid "line_taken_btn"
+msgstr "Click aquí, para ir al sitio web para obtener token"
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "Attendance Alert Setting"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "When number of late exceeds"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "When number of early-leave exceeds"
+
+msgid "when_number_of_absent_exceed"
+msgstr "Cuando el número de ausencias se excede"
+
+msgid "sending_alert"
+msgstr "Enviar"
+
+msgid "email_sending_frequency"
+msgstr "Frecuencia de envío"
+
+msgid "email_sending_day"
+msgstr "Día"
+
+msgid "email_sending_time"
+msgstr "Hora"
+
+msgid "include_today"
+msgstr "Hoy incluido"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "Current Day"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "Next Day"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "Include current day"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "Approve Alert Setting"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "Email Alert"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "Pop Alert"
+
+msgid "position_right"
+msgstr "Derecha"
+
+msgid "backup_database"
+msgstr "Base de datos"
+
+msgid "backup_database_name"
+msgstr "Nombre de base de datos"
+
+msgid "backup_store_path"
+msgstr "Ruta para guardar respaldo"
+
+msgid "backup_frequency"
+msgstr "Frecuencia"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "Una única vez"
+
+msgid "backup_day"
+msgstr "Día"
+
+msgid "backup_time"
+msgstr "Hora"
+
+msgid "backup_last_backup"
+msgstr "Último respaldo"
+
+msgid "backup_file"
+msgstr "Archivo de respaldo"
+
+msgid "btn_save"
+msgstr "Guarda"
+
+msgid "btn_backup"
+msgstr "Respaldar"
+
+msgid "smtp_server"
+msgstr "Servidor Smtp"
+
+msgid "smtp_server_port"
+msgstr "Puerto"
+
+msgid "enable_ssl"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "Email Account"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "Password"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "Email Address"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "Submit"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "Device Communication Setting"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "Enable Registration Device"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "Enable this option will only allow the device which marked registration device can upload user data."
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "Enable Name Upload"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "Enable Name Upload"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "Enable Card Upload"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "Enable Card Upload"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "Other Setting"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "Photo Backup"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "Employee photo backup path"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "Submit"
+
+msgid "translation_option_english"
+msgstr "Inglés"
+
+msgid "translation_option_korean"
+msgstr "Coreano"
+
+msgid "translation_option_japanese"
+msgstr "Japonés"
+
+msgid "translation_option_spanish"
+msgstr "Español"
+
+msgid "translation_option_thai"
+msgstr "Thailandés"
+
+msgid "translation_option_arabic"
+msgstr "Arábica"
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr ""
+
+msgid "translation_btn_onlineTranslate"
+msgstr "Traducción en línea"
+
+msgid "database_backup_is_under_processing"
+msgstr "El respaldo de base de datos se esta procesando, por favor intente de nuevo más tarde."
+
+msgid "dbMigrate_status_processing"
+msgstr "Procesando"
+
+msgid "dbMigrate_status_finish"
+msgstr "Terminado"
+
+msgid "dbMigrate_status_exception"
+msgstr "Excepción"
+
+msgid "dbMigrate_status_pending"
+msgstr "Pendiente"
+
+msgid "login_authorize_license_missing"
+msgstr "No se encuentra la licencia."
+
+msgid "login_authorize_md5_error"
+msgstr "Los archivos del sistema fueron modificados sin autorización."
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "El número de dispositivos autorizados ha sido excedido"
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "El número de empleados autorizados ha sido excedido"
+
+msgid "login_authorize_license_app_exceed"
+msgstr "El número de apps autorizados ha sido excedido"
+
+msgid "login_authorize_database_error"
+msgstr "La tabla de la base de datos tiene inconsistencias, por favor seleccione y repara la tabla de BD."
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "La conexión de la base de datos falló, %(db_ver)s."
+
+msgid "login_authorize_illegal_username"
+msgstr "Nombre de usuario sin registrar o no autorizado"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "Inicio de sesión fallido, %(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "Inicio de sesión fallido, error de nombre de usuario o contraseña."
+
+msgid "login_authorize_invalid_username"
+msgstr "Nombre de usuario inválido"
+
+msgid "login_authorize_illegal_login"
+msgstr "Inicio de sesión inválido"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "Dispositivo"
+
+msgid "menu_device_terminal"
+msgstr "Dispositivo"
+
+msgid "menu_device_terminalCommand"
+msgstr "Comandos de dispositivo"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "Mensaje"
+
+msgid "menu_device_publicMessage"
+msgstr "Público"
+
+msgid "menu_device_privateMessage"
+msgstr "Privado"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "Datos"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "Código de trabajo"
+
+msgid "menu_device_terminalBioData"
+msgstr "Bio-Plantilla"
+
+msgid "menu_device_transaction"
+msgstr "Transaction"
+
+msgid "menu_group_device_terminalLog"
+msgstr "Registro"
+
+msgid "menu_device_terminalLog"
+msgstr "Registro de dispositivos"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "Cargar registros"
+
+msgid "menu_group_mobile_application"
+msgstr "Mobile App"
+
+msgid "menu_mobile_appList"
+msgstr "Cuentas"
+
+msgid "menu_mobile_announcement"
+msgstr "Anuncio"
+
+msgid "menu_mobile_notification"
+msgstr "Notificación"
+
+msgid "menu_mobile_appActionLog"
+msgstr "Operación de registros"
+
+msgid "privateMessage_field_employee"
+msgstr "Empleado"
+
+msgid "privateMessage_field_startTime"
+msgstr "Hora de inicio"
+
+msgid "privateMessage_field_duration"
+msgstr "Duración"
+
+msgid "privateMessage_field_content"
+msgstr "Contenido"
+
+msgid "privateMsg_action_add"
+msgstr "Nuevo"
+
+msgid "privateMsg_action_addDescription"
+msgstr "Nuevo"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "Nuevo"
+
+msgid "send_message"
+msgstr "Enviar mensaje"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "Está seguro de enviar el mensaje?"
+
+msgid "publicMessage_field_terminal"
+msgstr "Dispositivo"
+
+msgid "publicMessage_field_startTime"
+msgstr "Hora de inicio"
+
+msgid "publicMessage_field_duration"
+msgstr "Duración"
+
+msgid "publicMessage_field_content"
+msgstr "Contenido"
+
+msgid "publicMsg_action_add"
+msgstr "Nuevo"
+
+msgid "publicMsg_action_addDescription"
+msgstr "Nuevo"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "Nuevo"
+
+msgid "terminal_op_reboot"
+msgstr "Reiniciar"
+
+msgid "terminal_op_rebootDescription"
+msgstr "Borrar los datos de asistencia"
+
+msgid "terminal_op_rebootHelp"
+msgstr "Reiniciar"
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "Está seguro de reiniciar el/los dispositivo(s) seleccionado(s)?"
+
+msgid "terminal_op_re-uploadData"
+msgstr "Cargar los datos de usuario"
+
+msgid "terminal_op_re-uploadDataDescription"
+msgstr "Cargar transacciones"
+
+msgid "terminal_op_re-uploadDataHelp"
+msgstr "Cargar los datos de usuario"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "Está seguro the volver a cargar los datos a el/los dispositivo(s) seleccionado(s)?"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "Hora de inicio"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "Hora fin"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "Cargar transacciones"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "Cargar transacciones"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "Cargar transacciones"
+
+msgid "reloadData_field_employee"
+msgstr "Employee"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "Foto del empleado"
+
+msgid "reloadData_field_fingerprint"
+msgstr "Huella"
+
+msgid "reloadData_field_face"
+msgstr "Rostro"
+
+msgid "reloadData_field_palm"
+msgstr "Palma"
+
+msgid "reloadData_field_fingerVein"
+msgstr "Vena"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "Bio-Photo"
+
+msgid "terminal_op_reloadData"
+msgstr "Sincronizar datos al dispositivo"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "Limpiar los datos de asistencia"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "Sincronizar los datos al dispositivo"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "Hora de inicio"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "Hora fin"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "Borrar todo"
+
+msgid "terminal_op_clearData"
+msgstr "Borrar datos"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "Borrar los datos de asistencia"
+
+msgid "terminal_op_clearDataHelp"
+msgstr "Borrar datos"
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "Está seguro de borrar todos los datos seleccionados {0} dispositivo(s)?"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "Borrar los datos de asistencia"
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "Borrar los datos de asistencia"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "Borrar los datos de asistencia"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr " Está seguro de borrar todos las transacciones seleccionadas  {0} dispositivo(s)?"
+
+msgid "terminal_op_readInformation"
+msgstr "Leer información"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "Leer información"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "Leer información"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "Está seguro de leer la información del dispositivo seleccionado?"
+
+msgid "terminal_op_deleteCapture"
+msgstr "Borrar captura"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "Borrar los datos de asistencia"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "Borrar captura"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "Está seguro de borrar la captura seleccionada {0} dispositivo(s)"
+
+msgid "duplicate_punch_period"
+msgstr "Periodo de marcación duplicado (m)"
+
+msgid "minutes/seconds"
+msgstr "Minutos"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "Periodo de marcación duplicado"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "Periodo de marcación duplicado"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "Periodo de marcación duplicado"
+
+msgid "terminal_capture"
+msgstr "Captura"
+
+msgid "capture_no_photo"
+msgstr "No foto"
+
+msgid "capture_take_photo_no_save"
+msgstr "Capturar foto pero no guardar"
+
+msgid "capture_verify_photo_and_save"
+msgstr "Verificar foto y guardar"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "Verificación exitosa y guardar"
+
+msgid "capture_verify_failed_and_save"
+msgstr "Verificación fallida y guardar"
+
+msgid "terminal_op_captureSetting"
+msgstr "Configuración de captura"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "Modificar configuración para habilitar o deshabilitar el guardado de la captura de foto."
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "Modificar configuración para habilitar o deshabilitar el guardado de la captura de foto."
+
+msgid "terminal_captureUpload"
+msgstr "Cargar captura"
+
+msgid "captureUpload_disabled"
+msgstr "Deshabilitar"
+
+msgid "captureUpload_enabled"
+msgstr "Habilitar"
+
+msgid "terminal_op_captureUpload"
+msgstr "Cargar captura"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "Cargar captura"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "Cargar captura"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "Upgrade File"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "Upgrade Firmware"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "Upgrade Firmware"
+
+msgid "action_transactionCorrection_start"
+msgstr "Start Time"
+
+msgid "action_transactionCorrection_end"
+msgstr "End Time"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "Transaction Correction"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "Verify the device transaction count in period"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "Verify the device transaction count in period"
+
+msgid "terminal_field_alias"
+msgstr "Nombre del dispositivo"
+
+msgid "terminal_field_sn"
+msgstr "Número de serie"
+
+msgid "terminal_state"
+msgstr "Estado"
+
+msgid "op_menu_group_dataClean"
+msgstr "Borrar datos"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "Transferencia de datos"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "Menú dispositivo"
+
+msgid "upload_file"
+msgstr "Cargar archivo"
+
+msgid "usb_data_upload"
+msgstr "Cargar transacciones de USB"
+
+msgid "file_format_incorrect"
+msgstr "Formato de archivo incorrecto"
+
+msgid "device_not_found"
+msgstr "Dispositivo no encontrado"
+
+msgid "system_error"
+msgstr "Error de sistema"
+
+msgid "read_file_failed"
+msgstr "Leer archivo fallido"
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "Fila %(row_num)s es incorrecta."
+
+msgid "transaction_column_employeeName"
+msgstr "Nombre"
+
+msgid "transaction_column_employeeLastName"
+msgstr "Apellidos"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "Departamento"
+
+msgid "transaction_column_employeePosition"
+msgstr "Cargo"
+
+msgid "transaction_punch_date"
+msgstr "Fecha"
+
+msgid "transaction_punch_time"
+msgstr "Hora"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "Dispositivo"
+
+msgid "send_work_code"
+msgstr "Enviar a dispositivo"
+
+msgid "send_work_code_to_terminal"
+msgstr "Enviar código de trabajo al dispositivo."
+
+msgid "remove_work_code"
+msgstr "Remover del dispositivo"
+
+msgid "remove_work_code_from_terminal"
+msgstr "Remover el código de trabajo del dispositivo."
+
+msgid "bio_fingerprint"
+msgstr "Huella"
+
+msgid "bio_face"
+msgstr "Rostro"
+
+msgid "bio_finger_vein"
+msgstr "Vena"
+
+msgid "bio_palm"
+msgstr "Palma"
+
+msgid "terminal_verifyOption_password"
+msgstr "Contraseña"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "Huella"
+
+msgid "terminal_verifyOption_badge"
+msgstr "ID Empleado"
+
+msgid "terminal_verifyOption_card"
+msgstr "Tarjeta"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "Huella digital/Contraseña"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "Huella/Tarjeta"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "Contraseña/Tarjeta"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "ID Empleado&Huella"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "Huella&Contraseña"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "Huella&Tarjeta"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "Contraseña&Tarjeta"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "Huella&Contraseña&Tarjeta"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "ID Empleado&Huella&Contraseña"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "Huella & Tarjeta & ID Empleado"
+
+msgid "terminal_verifyOption_face"
+msgstr "Rostro"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "Rostro&Huella"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "Rostro&Contraseña"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "Rostro&Tarjeta"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "Rostro&Huella&Tarjeta"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "Rostro&Huella&Contraseña"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "Vena"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "Vena&Contraseña"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "Vena&Tarjeta"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "Vena&Contraseña&Tarjeta"
+
+msgid "terminal_verifyOption_palm"
+msgstr "Palma"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "Palma&Tarjeta"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "Palma&Rostro"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "Palma&Huella"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "Palma&Huella&Tarjeta"
+
+msgid "terminal_verifyOption_gps"
+msgstr "GPS"
+
+msgid "terminal_verifyOption_other"
+msgstr "Otro"
+
+msgid "transaction_punchState_checkIn"
+msgstr "Entrada"
+
+msgid "transaction_punchState_checkOut"
+msgstr "Salida"
+
+msgid "transaction_punchState_breakOut"
+msgstr "Descanso salida"
+
+msgid "transaction_punchState_breakIn"
+msgstr "Descanso entrada"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "Entrada HE"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "Salida HE"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "Exitoso"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "Parámetro incorrecto"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "Error de transferencia de foto de usuario"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "Error de lectura o escritura de dispositivo"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "Error de transferencia de Bio-Plantilla"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "Usuario no existe"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "Formato inválido de plantilla de huella"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "Plantilla de huella inválido"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "Limitación de la capacidad de dispositivos"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "Dispositivo no soportado"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "Se agoto el tiempo"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "Excepción de datos"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "Dispositivo ocupado"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "Dato demasiado largo"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "Error de memoria del dispositivo"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "Obtener datos del servidor fallido"
+
+msgid "deviceLog_action_powerOn"
+msgstr "Encendido"
+
+msgid "deviceLog_action_powerOff"
+msgstr "Apagado"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "Verificación fallida"
+
+msgid "deviceLog_action_alarm"
+msgstr "Alarma"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "Entre al menú"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "Configuración de actualización"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "Enrolar huella"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "Registrar contraseña"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "Enrolar tarjeta"
+
+msgid "deviceLog_action_deleteUser"
+msgstr "Borrar usuario"
+
+msgid "deviceLog_action_deleteFP"
+msgstr "Borrar huella"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "Borrar contraseña"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "Borrar tarjeta"
+
+msgid "deviceLog_action_cleanData"
+msgstr "Borrar datos"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "Crear tarjeta MF"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "Enrolar tarjeta MF"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "Borrar registro de tarjeta MF"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "Borrar tarjeta MF"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "Cargar datos enrolados a la tarjeta"
+
+msgid "deviceLog_action_migrateDataCard2Device"
+msgstr "Copiar datos en la tarjeta para el dispositivo"
+
+msgid "deviceLog_action_setupTime"
+msgstr "Configurar hora"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "Restaurar a las configuraciones predeterminadas de fabrica"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "Borrar los accesos de entrada"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "Borrar privilegio de administrador"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "Actualizar configuración de control de acceso"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "Actualizar configuración de control de acceso de usuario"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "Actualizar zona horaria"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "Actualizar configuración de combinación de desbloqueo"
+
+msgid "deviceLog_action_unlock"
+msgstr "Desbloquear"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "Enrolar nuevo usuario"
+
+msgid "deviceLog_action_updateFP"
+msgstr "Actualizar huella"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "Alarma de coacción"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "Antipassback"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "Borrar foto de asistencia"
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "Actualizar otro usuario"
+
+msgid "deviceLog_action_holiday"
+msgstr "Festivo"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "Register user photo"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "Actualizar foto de usuario"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "Registrar nombre de usuario"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "Registrar privilegio de usuario"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "Actualizar palma"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "Borrar palma"
+
+msgid "employee_disabled"
+msgstr "Deshabilitar empleado"
+
+msgid "employee_not_found"
+msgstr "Empleado no encontrado"
+
+msgid "terminal_not_found"
+msgstr "Dispositivo no encontrado"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "País"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "Ciudad"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "Compañía"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "Industria"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "Persona de contacto"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "Proveedor"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "Teléfono"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "Correo electrónico"
+
+msgid "license_active_customerInfoForm_address"
+msgstr "Dirección"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "Archivo SN"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "Nombre del archivo debe terminar con -SN.xml"
+
+msgid "license_active_generatingUPKFailed"
+msgstr "La generación del UPK falló"
+
+msgid "license_active_systemFileWasModified"
+msgstr "Archivo de sistema modificado, por favor no modifique el archivo sin autorización."
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "El archivo de licencia no esta disponible."
+
+msgid "license_active_activeSuccessful"
+msgstr "Activación exitosa"
+
+msgid "license_active_onlineActiveFailedServerNoResponse"
+msgstr "La activación en línea falló, el servidor de licencias no responde."
+
+msgid "license_active_snFileIsRequired"
+msgstr "El archivo SN es requerido"
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "La activación en línea falló, el servidor de licencias no configurado."
+
+msgid "online_active_onlineActiveFailed"
+msgstr "La activación en línea falló."
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "Activación exitosa"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "La activación en línea falló, excepción del sistema."
+
+msgid "license_active_snFileIsWrong"
+msgstr "Erro de archivo SN"
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "El UPK en el archivo SN no fue encontrado"
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "La generación del archivo UPK falló, excepción del sistema."
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "Archivo de licencia"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "El nombre del archivo debe terminar con -License.xml"
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "Licencia no encontrada, no se puede actualizar."
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "Actualización de licencia falló."
+
+msgid "online_active_licenseNotFound"
+msgstr "Licencia no encontrada"
+
+msgid "license_expiredDate_permanent"
+msgstr "Permanente"
+
+msgid "license_capacity_unlimited"
+msgstr "Unlimited"
+
+msgid "terminal_field_ipAddress"
+msgstr "Dispositivo IP"
+
+msgid "terminal_field_realIPAddress"
+msgstr "IP real"
+
+msgid "terminal_field_timezone"
+msgstr "Zona horaria"
+
+msgid "terminal_field_area"
+msgstr "Área"
+
+msgid "terminal_field_heartbeat"
+msgstr "Intervalo de solicitud"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "Segundos"
+
+msgid "terminal_field_transferMode"
+msgstr "Transfer Mode"
+
+msgid "transferMode_option_realTime"
+msgstr "Real-Time"
+
+msgid "transferMode_option_timing"
+msgstr "Timing"
+
+msgid "terminal_field_transferInterval"
+msgstr "Intervalo de transferencia"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "Minutos"
+
+msgid "bioData_field_employee"
+msgstr "Empleado"
+
+msgid "bioData_field_bioTemplate"
+msgstr "Plantilla"
+
+msgid "bioData_field_bioIndex"
+msgstr "Bio-Índice"
+
+msgid "bioData_field_templateIndex"
+msgstr "Índice de plantilla"
+
+msgid "bioData_field_bioType"
+msgstr "Bio-Tipo"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "Versión principal"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "Versión opcional"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "Formato"
+
+msgid "bioData_field_isValid"
+msgstr "Es válido"
+
+msgid "bioData_field_isDuress"
+msgstr "Es coacción"
+
+msgid "bioData_field_createTime"
+msgstr "Hora de creación"
+
+msgid "bioData_field_updateTime"
+msgstr "Actualizar hora"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "Número de serie"
+
+msgid "iclock_model_bioData"
+msgstr "Bio-Datos"
+
+msgid "privateMessage_field_lastSend"
+msgstr "Último envío"
+
+msgid "iclock_model_privateMessage"
+msgstr "Mensaje privado"
+
+msgid "publicMessage_field_lastSend"
+msgstr "Último envío"
+
+msgid "iclock_model_publicMessage"
+msgstr "Mensaje público"
+
+msgid "terminal_field_state"
+msgstr "Estado"
+
+msgid "terminal_field_transferTime"
+msgstr "Transferir hora"
+
+msgid "terminal_field_productType"
+msgstr "Tipo de producto"
+
+msgid "terminal_field_isAttendance"
+msgstr "Asistencia"
+
+msgid "terminal_field_isRegistration"
+msgstr "Registration Device"
+
+msgid "terminal_field_purpose"
+msgstr "Propósito"
+
+msgid "terminal_field_accessControllerType"
+msgstr "Controladora de acceso"
+
+msgid "terminal_field_authentication"
+msgstr "Modo de verificación"
+
+msgid "terminal_field_style"
+msgstr "Tipo"
+
+msgid "terminal_field_uploadFlag"
+msgstr "Cargar bandera"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "Versión de firmware"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "Protocolo Push"
+
+msgid "terminal_field_pushVersion"
+msgstr "Versión Push"
+
+msgid "terminal_field_language"
+msgstr "Lenguaje"
+
+msgid "terminal_field_isTft"
+msgstr "Es TFT"
+
+msgid "terminal_field_terminalName"
+msgstr "Modelo del dispositivo"
+
+msgid "terminal_field_platform"
+msgstr "Plataforma"
+
+msgid "terminal_field_oemVendor"
+msgstr "Vendedor"
+
+msgid "terminal_field_logStamp"
+msgstr ""
+
+msgid "terminal_field_operationLogStamp"
+msgstr ""
+
+msgid "terminal_field_captureStamp"
+msgstr ""
+
+msgid "terminal_field_userCount"
+msgstr "Usuario"
+
+msgid "terminal_field_userCapacity"
+msgstr ""
+
+msgid "terminal_field_photoFuncOn"
+msgstr ""
+
+msgid "terminal_field_transactionCount"
+msgstr "Transacción"
+
+msgid "terminal_field_transactionCapacity"
+msgstr ""
+
+msgid "terminal_field_fpFuncOn"
+msgstr ""
+
+msgid "terminal_field_fingerprintCount"
+msgstr "Huella"
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr ""
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr ""
+
+msgid "terminal_field_faceFuncOn"
+msgstr ""
+
+msgid "terminal_field_faceCount"
+msgstr "Rostro"
+
+msgid "terminal_field_faceCapacity"
+msgstr ""
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr ""
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr ""
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "Vena"
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr ""
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr ""
+
+msgid "terminal_field_palmFuncOn"
+msgstr ""
+
+msgid "terminal_field_palmCount"
+msgstr "Palma"
+
+msgid "terminal_field_palmCapacity"
+msgstr ""
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr ""
+
+msgid "terminal_field_lastActivity"
+msgstr "Última actividad"
+
+msgid "terminal_field_uploadTime"
+msgstr "Cargar hora"
+
+msgid "terminal_field_syncTime"
+msgstr "Última sincronización"
+
+msgid "terminal_field_cmdCount"
+msgstr "Cmd"
+
+msgid "iclock_model_terminal"
+msgstr "Dispositivo"
+
+msgid "command_field_terminal"
+msgstr "Despositivo"
+
+msgid "command_field_content"
+msgstr "Contenido"
+
+msgid "command_field_commit_time"
+msgstr "Hora de Ejecución"
+
+msgid "command_field_transferTime"
+msgstr "Transferir hora"
+
+msgid "command_field_returnTime"
+msgstr "Retornar hora"
+
+msgid "command_field_returnValue"
+msgstr "Retornar valor"
+
+msgid "iclock_model_terminalCommand"
+msgstr "Comando"
+
+msgid "terminalEmployee_field_sn"
+msgstr "Número de serie"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "ID Empleado"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "Privilegio"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "Empleado"
+
+msgid "terminalLog_field_terminal"
+msgstr "Dispositivo"
+
+msgid "terminalLog_field_timezone"
+msgstr "Zona horaria"
+
+msgid "terminalLog_field_administrator"
+msgstr "Administrador"
+
+msgid "terminalLog_field_Name"
+msgstr "Acción"
+
+msgid "terminalLog_field_actionTime"
+msgstr "Hora de acción"
+
+msgid "terminalLog_field_object"
+msgstr "Objecto"
+
+msgid "terminalLog_field_param1"
+msgstr "Parámetro"
+
+msgid "terminalLog_field_param2"
+msgstr "Parámetro"
+
+msgid "terminalLog_field_param3"
+msgstr "Parámetro"
+
+msgid "terminalLog_field_uploadTime"
+msgstr "Cargar hora"
+
+msgid "iclock_model_terminalLog"
+msgstr "Registro de dispositivo"
+
+msgid "terminalParameter_field_terminal"
+msgstr "Dispositivo"
+
+msgid "terminalParameter_field_type"
+msgstr "Tipo"
+
+msgid "terminalParameter_field_name"
+msgstr "Nombre"
+
+msgid "terminalParameter_field_value"
+msgstr "Valor"
+
+msgid "iclock_model_terminalParameter"
+msgstr "Parámetro de dispositivo"
+
+msgid "transaction_field_employeeCode"
+msgstr "ID Empleado"
+
+msgid "transaction_field_employee"
+msgstr "Empleado"
+
+msgid "transaction_field_punchTime"
+msgstr "Hora de marcación"
+
+msgid "trans_field_punchState"
+msgstr "Estado de marcación"
+
+msgid "transaction_field_verifyType"
+msgstr "Tipo de verificación"
+
+msgid "transaction_field_workCode"
+msgstr "Código de trabajo"
+
+msgid "transaction_field_terminalSN"
+msgstr "Número de serie"
+
+msgid "transaction_terminal_alias"
+msgstr "Nombre de dispositivo"
+
+msgid "transaction_field_terminal"
+msgstr "Dispositivo"
+
+msgid "transaction_field_areaAlias"
+msgstr "Área"
+
+msgid "transaction_field_longitude"
+msgstr "Longitud"
+
+msgid "transaction_field_latitude"
+msgstr "Latitud"
+
+msgid "transaction_field_gpsLocation"
+msgstr "GPS"
+
+msgid "transaction_field_mobile"
+msgstr "Móvil"
+
+msgid "transaction_field_source"
+msgstr "Fuente"
+
+msgid "transaction_field_purpose"
+msgstr "Propósito"
+
+msgid "transaction_field_crcCode"
+msgstr "Código CRC"
+
+msgid "transaction_field_isAttendance"
+msgstr "Asistencia"
+
+msgid "transaction_field_reserved"
+msgstr "Reservado"
+
+msgid "transaction_field_uploadTime"
+msgstr "Cargar hora"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "Estado de la sincronización"
+
+msgid "transaction_field_synchronized_time"
+msgstr "Sincronizar hora"
+
+msgid "iclock_model_transaction"
+msgstr "Transacciones"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "Dispositivo"
+
+msgid "terminalUploadLog_field_event"
+msgstr "Evento"
+
+msgid "terminalUploadLog_field_content"
+msgstr "Contenido"
+
+msgid "terminalUploadLog_field_count"
+msgstr "Conteo"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "Error conteo"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "Cargar hora"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "Cargar registros de dispositivo"
+
+msgid "terminalWorkCode_field_code"
+msgstr "Código"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "Nombre"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "Última actividad"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "Código de trabajo"
+
+msgid "employee_photo"
+msgstr "Foto"
+
+msgid "biometric_template"
+msgstr "Bio-Plantilla"
+
+msgid "fingerprint"
+msgstr "Huella"
+
+msgid "attendance_capture"
+msgstr "Captura"
+
+msgid "transaction_field_firstName"
+msgstr "Nombres"
+
+msgid "transaction_field_lastName"
+msgstr "Apellidos"
+
+msgid "transaction_field_department"
+msgstr "Departamento"
+
+msgid "transaction_field_position"
+msgstr "Cargo"
+
+msgid "transaction_field_punchDate"
+msgstr "Fecha de marcación"
+
+msgid "transaction_field_area"
+msgstr "Área"
+
+msgid "chart_present"
+msgstr "Asistencia"
+
+msgid "chart_today"
+msgstr "Hoy"
+
+msgid "chart_absent"
+msgstr "Ausencia"
+
+msgid "dashboard_exception"
+msgstr "Excepción de asistencia"
+
+msgid "dashboard_history"
+msgstr "Historial"
+
+msgid "chart_late"
+msgstr "Llegadas tarde"
+
+msgid "chart_early_leave"
+msgstr "Salidas temprano"
+
+msgid "dashboard_real_time_monitor"
+msgstr "Monitoreo en tiempo real"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "Tema"
+
+msgid "announcement_filed_content"
+msgstr "Contenido"
+
+msgid "announcement_filed_emp"
+msgstr "ID Empleado"
+
+msgid "mobile_action_publicNotice"
+msgstr "Anuncio público Push"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "Anuncio público Push"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "Anuncio público Push"
+
+msgid "mobile_action_privateNotice"
+msgstr "Anuncio privado Push"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "Anuncio privado Push"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "Anuncio privado Push"
+
+msgid "title_required"
+msgstr "El título es requerido"
+
+msgid "content_required"
+msgstr "El contenido es requerido"
+
+msgid "appNotice_field_content"
+msgstr "Contenido"
+
+msgid "mobile_action_pushNotification"
+msgstr "Notificación Push"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "Notificación Push"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "Notificación Push"
+
+msgid "announce_all_emp"
+msgstr "Todo"
+
+msgid "announcement_filed_sender"
+msgstr "Remitente"
+
+msgid "announcement_category_public"
+msgstr "Público"
+
+msgid "announcement_category_private"
+msgstr "Privado"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "Android"
+
+msgid "activeStatus_option_active"
+msgstr "Activo"
+
+msgid "activeStatus_option_inactive"
+msgstr "Inactivo"
+
+msgid "notification_category_leave"
+msgstr "Salidas"
+
+msgid "notification_category_overtime"
+msgstr "Horas Extra"
+
+msgid "notification_category_manualLog"
+msgstr "Registro manual"
+
+msgid "notification_category_training"
+msgstr "Entrenamiento"
+
+msgid "notification_category_schedule"
+msgstr "Horario"
+
+msgid "notification_category_announcement"
+msgstr "Anuncio"
+
+msgid "notification_category_exception"
+msgstr "Excepción"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "Anuncio público"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "Anuncio privado"
+
+msgid "notification_subCategory_late"
+msgstr "Llegadas tarde"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "Salidas temprano"
+
+msgid "notification_subCategory_absent"
+msgstr "Ausencia"
+
+msgid "notification_readStatus_unread"
+msgstr "No leído"
+
+msgid "notification_readStatus_read"
+msgstr "Leído"
+
+msgid "appActionLog_status_exception"
+msgstr "Excepción"
+
+msgid "appActionLog_status_successful"
+msgstr "Exitoso"
+
+msgid "announcement_field_category"
+msgstr "Categoria"
+
+msgid "announcement_field_sender"
+msgstr "Remitente"
+
+msgid "announcement_field_systemSender"
+msgstr "Remitente del sistema"
+
+msgid "announcement_field_noticeTime"
+msgstr "Mostrar hora"
+
+msgid "app_model_announcement"
+msgstr "Anuncio"
+
+msgid "actionLog_field_user"
+msgstr "Usuario"
+
+msgid "actionLog_field_client"
+msgstr "Cliente"
+
+msgid "actionLog_field_action"
+msgstr "Acción"
+
+msgid "actionLog_field_params"
+msgstr "Parámetros"
+
+msgid "actionLog_field_describe"
+msgstr "Descripción"
+
+msgid "actionLog_field_status"
+msgstr "Estado"
+
+msgid "actionLog_field_actionTime"
+msgstr "Hora de acción"
+
+msgid "actionLog_field_remoteIp"
+msgstr "IP remota"
+
+msgid "app_model_actionLog"
+msgstr "Registro de acciones"
+
+msgid "appList_field_userName"
+msgstr "Nombre de usuario"
+
+msgid "appList_field_loginTime"
+msgstr "Hora de inicio de sesión"
+
+msgid "appList_field_lastActive"
+msgstr "Última vez activo"
+
+msgid "appList_field_token"
+msgstr "Token"
+
+msgid "appList_field_deviceToken"
+msgstr "Dispositivo Token"
+
+msgid "appList_field_clientId"
+msgstr "ID Cliente"
+
+msgid "appList_field_clientCategory"
+msgstr "Categoría de cliente"
+
+msgid "appList_field_runStatus"
+msgstr "Estado de ejecución"
+
+msgid "appList_field_accessStatus"
+msgstr "Estado APP"
+
+msgid "app_model_appList"
+msgstr "Lista App"
+
+msgid "appNotice_field_receiver"
+msgstr "Destinatario"
+
+msgid "appNotice_field_sender"
+msgstr "Remitente"
+
+msgid "appNotice_field_systemSender"
+msgstr "Remitente del sistema"
+
+msgid "appNotice_field_category"
+msgstr "Categoría"
+
+msgid "appNotice_field_subCategory"
+msgstr "Sub-categoría"
+
+msgid "appNotice_field_source"
+msgstr "Fuente"
+
+msgid "appNotice_field_sendTime"
+msgstr "Hora de envío"
+
+msgid "appNotice_field_readStatus"
+msgstr "Estado de lectura"
+
+msgid "appNotice_field_readTime"
+msgstr "Hora de leído"
+
+msgid "app_model_notification"
+msgstr "Aviso"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "GPS For Employee"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "GPS For Employee"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "Add"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "Add"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "Add"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "Employee"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "Longitude"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "Latitude"
+
+msgid "gpsForEmployee_field_location"
+msgstr "Location"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "Distance(Meters)"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "Meters"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "Start Date"
+
+msgid "Request already processing"
+msgstr "Solicitud"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "Date range overlap"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "GPS For Department"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "GPS For Department"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "Add"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "Add"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "Add"
+
+msgid "gpsForDepartment_field_department"
+msgstr "Department"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "Longitude"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "Latitude"
+
+msgid "manual_log_category_required"
+msgstr "Categoría"
+
+msgid "Data Exception"
+msgstr "Excepción de datos"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "Meters"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "Start Date"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "End Date"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "Date range overlap"
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "Network is not stable, try again."
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "Out of location"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "Empleado %(emp)s horario de aplicación sobrepuesto"
+
+msgid "menu_group_psnl_organization"
+msgstr "Organización"
+
+msgid "menu_psnl_department"
+msgstr "Departamento"
+
+msgid "menu_psnl_position"
+msgstr "Cargo"
+
+msgid "menu_psnl_area"
+msgstr "Área"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "Empleado"
+
+msgid "menu_psnl_employee"
+msgstr "Empleado"
+
+msgid "menu_psnl_resign"
+msgstr "Renuncia"
+
+msgid "menu_psnl_certification"
+msgstr "Documento"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "Documento del empleado"
+
+msgid "menu_psnl_bioPhoto"
+msgstr "Bio-Foto"
+
+msgid "menu_group_workflow"
+msgstr "Flujo de Trabajo"
+
+msgid "menu_workflow_workflowRole"
+msgstr "Rol Aprobadores"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "Gestión de Actividades"
+
+msgid "menu_workflow_workflowNode"
+msgstr "Aprobaciones"
+
+msgid "area_action_adjustEmployee"
+msgstr "Ajustar empleado"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "Ajustar empleado para seleccionar área"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "Ajustar empleado"
+
+msgid "select_none_employee"
+msgstr "Por favor seleccione el empleado."
+
+msgid "bioPhoto_field_approvalState"
+msgstr "Estado de aprvación"
+
+msgid "bioPhoto_field_remark"
+msgstr "Comentario"
+
+msgid "biophoto_approve"
+msgstr "Aprobado"
+
+msgid "approval_can_not_approve_again"
+msgstr "La aprobación no puede ser aprobada de nuevo."
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "La foto del empleado(%(emp_code)s) aprobada"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "La foto del empleado(%(emp_code)s) ya existe)"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "La foto del empleado(%(emp_code)s) no fue encontrada"
+
+msgid "biophoto_qrcode"
+msgstr "Código QR"
+
+msgid "department_action_adjustEmployee"
+msgstr "Ajustar empleado"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "Ajustar empleado para seleccionar departamento"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "Ajustar empleado"
+
+msgid "dataImport_field_file"
+msgstr "File"
+
+msgid "data_import_fileHelpTxt"
+msgstr "import data by .xls file"
+
+msgid "dataImport_action_import"
+msgstr "Import"
+
+msgid "employee_action_resynchronize2Device"
+msgstr "Resynchronize to device"
+
+msgid "employee_action_resynchronize2DeviceConfirmation"
+msgstr "Are you sure to resynchronize user data to device?"
+
+msgid "employee_action_reUploadFromDevice"
+msgstr "Re-upload from device"
+
+msgid "employee_action_reUploadFromDeviceConfirmation"
+msgstr "Are you sure to re-upload the employee data from device?"
+
+msgid "employeeResign_field_date"
+msgstr "Resignation Date"
+
+msgid "employeeResign_field_leaveType"
+msgstr "Resignation Type"
+
+msgid "employeeResign_field_reason"
+msgstr "Reason"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "Disable Attendance"
+
+msgid "employee_action_resignation"
+msgstr "Resignation"
+
+msgid "employee_action_transferDepartment"
+msgstr "Transfer Department"
+
+msgid "transferDepartment_field_remarks"
+msgstr "Remarks"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "Area is required"
+
+msgid "adjust_department"
+msgstr "Ajustar departamento"
+
+msgid "adjust_area"
+msgstr "Ajustar área"
+
+msgid "employee_action_transferPosition"
+msgstr "Transfer Position"
+
+msgid "transferPosition_field_remarks"
+msgstr "Remarks"
+
+msgid "pass_probation"
+msgstr "Periodo de prueba"
+
+msgid "position_transfer"
+msgstr "Ajustar cargo"
+
+msgid "bio_templateType_fingerprint"
+msgstr "Huella"
+
+msgid "bio_templateType_face"
+msgstr "Rostro"
+
+msgid "bio_templateType_fingerVein"
+msgstr "Vena"
+
+msgid "bio_templateType_palm"
+msgstr "Palma"
+
+msgid "delete_biometric_templates"
+msgstr "Borrar plantilla biométrica"
+
+msgid "enable_mobile_application"
+msgstr "Habilitar"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "Está seguro de habilitar la aplicación móvil {0} {1}"
+
+msgid "disable_mobile_application"
+msgstr "Deshabilitar"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr " Está seguro de deshabilitar la aplicación móvil {0} {1}"
+
+msgid "position_action_adjustEmployee"
+msgstr "Ajustar empleado"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "Ajustar empleado al cargo seleccionado"
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "Ajustar empleado"
+
+msgid "resign_field_employee"
+msgstr "Empleado"
+
+msgid "resign_field_resignDate"
+msgstr "Fecha de retiro"
+
+msgid "resign_field_resignType"
+msgstr "Tipo de renuncia"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "Deshabilitar la función de asistencia"
+
+msgid "resign_field_resignReason"
+msgstr "Motivo de renuncia"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "Nuevo"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "Nuevo"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "Nuevo"
+
+msgid "resign_action_reinstatement"
+msgstr "Reintegro"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "Reintegro"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "Reintegro"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "Está seguro del reintegro del empleado {0} {1}?"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "Esta seguro de deshabilitar la función de asistencia {0} {1}"
+
+msgid "area_field_code"
+msgstr "Código de área"
+
+msgid "area_field_name"
+msgstr "Nombre de área"
+
+msgid "area_field_parentArea"
+msgstr "Área superior"
+
+msgid "area_field_employeeCount"
+msgstr "Conteo de empleados"
+
+msgid "area_field_deviceCount"
+msgstr "Conteo de dispositivos"
+
+msgid "area_name_defaultValue"
+msgstr "No autorizado"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "Error en fila %(index)s, el código de área esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del código de área es %(length)s"
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "Error en fila %(index)s, el nombre de área esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del nombre de área es %(length)s"
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr ""
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "Error de base de datos: SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "Borrar falló, esta siendo usado por el empleado"
+
+msgid "certification_field_code"
+msgstr "Código de certificación"
+
+msgid "certification_field_name"
+msgstr "Nombre de certificación"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "Error de datos en fila %(index)s, el código de certificado esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "Error de datos en fila %(index)s, la longitud máxima del código de certificado es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "Error data on row %(index)s, the format should be %(male)s/%(female)s"
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr " Error de datos en fila %(index)s, el nombre de certificado esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr " Error de datos en fila %(index)s, a longitud máxima del nombre de certificado es %(length)s"
+
+msgid "department_field_code"
+msgstr "Código departamento"
+
+msgid "department_filed_name"
+msgstr "Nombre departamento"
+
+msgid "department_field_parentDepartment"
+msgstr "Departamento superior"
+
+msgid "default_department"
+msgstr "Departamento"
+
+msgid "department_filed_employeeCount"
+msgstr "Conteo de empleado"
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "Error en fila %(index)s, el código de departamento esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "Error de datos en fila %(index)s, la longitud máxima del código de departamento es %(length)s"
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "Error de datos en fila %(index)s, el nombre de departamento esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "Error de datos en fila %(index)s, la longitud máxima del nombre de departamento es %(length)s"
+
+msgid "op_menu_group_adjustment"
+msgstr "Ajuste"
+
+msgid "op_menu_group_app"
+msgstr "App"
+
+msgid "op_menu_group_more"
+msgstr "Más"
+
+msgid "emp_field_fingerprint"
+msgstr "Huella"
+
+msgid "emp_field_face"
+msgstr "Rostro"
+
+msgid "emp_field_palm"
+msgstr "Palma"
+
+msgid "emp_field_area"
+msgstr "Área"
+
+msgid "emp_field_cardNumber"
+msgstr "Tarjeta número"
+
+msgid "area_code"
+msgstr "Número Área"
+
+msgid "emp_field_birthday"
+msgstr "Cumpleaños"
+
+msgid "emp_field_gender"
+msgstr "Género"
+
+msgid "emp_field_mobile"
+msgstr "Celular"
+
+msgid "emp_field_email"
+msgstr "Corre electrónico"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "Error en fila %(index)s el código del empleado esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr " Error en fila %(index)s, la longitud máxima del código del empleado es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "El nombre del empleado esta vacío en la (%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del nombre es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del apellido es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del código de cargo es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del nombre del cargo es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del número de la tarjeta es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "Error en fila %(index)s, la longitud máxima del número celular es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr " Error en fila %(index)s, la longitud máxima del correo electrónico es %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "el tipo de correo electrónico %(index)s es inválido"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "La fecha de cumpleaños %(index)s debe ser yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "La fecha de contratación %(index)s deber ser yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr ""
+
+msgid "employeeCert_field_employee"
+msgstr "Empleado"
+
+msgid "employeeCert_field_expireOn"
+msgstr "Fecha de expiración"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "Notificación correo electrónico"
+
+msgid "employeeCert_field_before"
+msgstr "Notificar antes de"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "Nuevo"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "Nuevo"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "Nuevo"
+
+msgid "certification"
+msgstr "Certificación"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr ""
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr ""
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr ""
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr ""
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr ""
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "Error de datos en la fila %(index)s"
+
+msgid "position_field_code"
+msgstr "Código del cargo"
+
+msgid "position_field_name"
+msgstr "Nombre del cargo"
+
+msgid "position_field_parentPosition"
+msgstr "Cargo superior"
+
+msgid "position_field_employeeCount"
+msgstr "Conteo de empleados"
+
+msgid "position_default_value"
+msgstr "Cargo"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "Error de datos en la fila %(index)s, el código del cargo esta vacío"
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "Error de datos en la fila %(index)s, el nombre del cargo esta vacío"
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "Error de datos en la fila %s, el formato debería ser yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr ""
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "Error de datos en la fila %(index)s, tel número del empleado no existe"
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "Error de datos en la fila %(index)s, La fecha de renuncia está vacía"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr ""
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "El tipo de renuncia esta vacío(%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr "Error data on row %(index)s, attendance should be %(expect)s"
+
+msgid "department_field_name"
+msgstr "Nombre del departamento"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "Ignorar"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "Sobrescribir"
+
+msgid "devicePrivilege_option_employee"
+msgstr "Empleado"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "Registrar"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "Administrado del sistema"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "Super administrador"
+
+msgid "employee_genderOption_male"
+msgstr "Masculino"
+
+msgid "employee_genderOption_female"
+msgstr "Femenino"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "Permanente"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "Temporal"
+
+msgid "employee_appStatusOption_enable"
+msgstr "Habilitar"
+
+msgid "employee_appStatusOption_disable"
+msgstr "Deshabilitar"
+
+msgid "employee_appRoleOption_employee"
+msgstr "Empleado"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "Administrador"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "Aplicar modo de grupo"
+
+msgid "employee_verificationOption_any"
+msgstr "Any"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "Huella/Contraseña"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "Huella"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "Únicamente Id de usuario"
+
+msgid "employee_verificationOption_password"
+msgstr "Contraseña"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "Tarjeta únicamente"
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "Fingerprint/Password"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "Fingerprint/Card"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "Password/Card"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "Huella&Contraseña"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "Huella&Tarjeta"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "Contraseña&Tarjeta"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "Id usuario&Huella"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "Huella&Contraseña&Tarjeta"
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "ID Usuario&Huella&Contraseña"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "Huella&Tarjeta/ID usuario"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "Face Only"
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "Face&Fingerprint"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "Face&Password"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "Face&Card"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "Face&Fingerprint&Card"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "Face&Fingerprint&Password"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "Finger Vein"
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "Finger Vein&Password"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "Finger Vein&Card"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "Finger Vein&Password&Card"
+
+msgid "employee_verificationOption_palm"
+msgstr "Palm"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "Palm&Card"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "Palm&Face"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "Palm&Fingerprint"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "Palm&Fingerprint&Face"
+
+msgid "resign_typeOption_pending"
+msgstr "Pendiente"
+
+msgid "resign_typeOption_processing"
+msgstr "Procesando"
+
+msgid "resign_typeOption_done"
+msgstr "Hecho"
+
+msgid "resign_typeOption_quit"
+msgstr "Renuncia"
+
+msgid "resign_typeOption_dismissed"
+msgstr "Despedido"
+
+msgid "resign_typeOption_resign"
+msgstr "Renuncia"
+
+msgid "resign_typeOption_transfer"
+msgstr "Transferido"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "Trabajo sin salario"
+
+msgid "approve_pending"
+msgstr "Pendiente"
+
+msgid "approve_approval_passed"
+msgstr "Paso periodo de prueba"
+
+msgid "approve_rejected"
+msgstr "Rechazado"
+
+msgid "approve_auto_approved"
+msgstr "Auto-aprobado"
+
+msgid "module_parameter_error"
+msgstr "Error de parámetro"
+
+msgid "invalid_file_format"
+msgstr "Formato inválido"
+
+msgid "please_select_file"
+msgstr "Por favor seleccione empleado"
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "El archivo %(index)s es requerido"
+
+msgid "invalid_file_format:%(index)s"
+msgstr "Formato de archivo inválido: %(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "El archivo debe tener una hoja solamente"
+
+msgid "file_data_must_be_more_than_two"
+msgstr ""
+
+msgid "no_matched_fields"
+msgstr ""
+
+msgid "file_data_cannot_be_empty"
+msgstr "Archivo para importación no encontrado"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "Error de base de datos"
+
+msgid "area_field_isDefault"
+msgstr "Predeterminado"
+
+msgid "parent_can_not_itself"
+msgstr "La jerarquía superior no puede ser la misma"
+
+msgid "psnl_model_area"
+msgstr "Área"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "%(name)s contiene sub-area y no puede ser borrada."
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s contiene emplado y no puede ser borrado."
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "%(name)s contiene dispositivo y no puede ser borrado."
+
+msgid "default_area_can_not_be_removed"
+msgstr "El área predeterminada no puede ser borrada"
+
+msgid "assigned_time"
+msgstr "Hora asignada"
+
+msgid "model_assign_area_to_employee"
+msgstr "Empleado"
+
+msgid "bioPhoto_field_employee"
+msgstr "Empleado"
+
+msgid "bioPhoto_field_firstName"
+msgstr "Nombres"
+
+msgid "bioPhoto_field_lastName"
+msgstr "Apellidos"
+
+msgid "bioPhoto_field_email"
+msgstr "Correo electrónico"
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "Número de serie"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "Foto"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "Hora de ejecución"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "Aprobación de hora"
+
+msgid "pnsl_model_bioPhoto"
+msgstr "Bio-Foto"
+
+msgid "psnl_model_certification"
+msgstr "Documento"
+
+msgid "document_is_using_can_not_delete."
+msgstr ""
+
+msgid "department_field_isDefault"
+msgstr "Predeterminado"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr ""
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "%(name)s contiene sub-departamento y no puede ser borrado."
+
+msgid "default_department_can_not_be_removed."
+msgstr "El departamento predeterminado no puede ser borrado."
+
+msgid "psnl_model_department"
+msgstr "Departamento"
+
+msgid "emp_field_localizedName"
+msgstr "Nombre local"
+
+msgid "emp_field_passport_number"
+msgstr "Pasaporte #"
+
+msgid "emp_field_driver_license_automobile"
+msgstr "Licencia conducción vehículos"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "Licencia conducción motos"
+
+msgid "emp_field_photo"
+msgstr "Foto"
+
+msgid "emp_field_selfPassword"
+msgstr "Auto-Contraseña"
+
+msgid "emp_field_devicePassword"
+msgstr "PIN"
+
+msgid "emp_field_devicePrivilege"
+msgstr "Privilegio de dispositivo"
+
+msgid "emp_field_accessGroup"
+msgstr "Grupo de acceso"
+
+msgid "emp_field_accessTimezone"
+msgstr "Acceso zona de tiempo"
+
+msgid "emp_field_address"
+msgstr "Dirección"
+
+msgid "emp_field_postcode"
+msgstr "Código postal"
+
+msgid "emp_field_officeTel"
+msgstr "Teléfono oficina"
+
+msgid "emp_field_contactTel"
+msgstr "Teléfono"
+
+msgid "emp_field_national"
+msgstr "Nacional"
+
+msgid "emp_field_religion"
+msgstr "Religión"
+
+msgid "emp_field_title"
+msgstr "Título"
+
+msgid "emp_field_enrollSN"
+msgstr "Dispositivo de enrolamiento"
+
+msgid "emp_field_SSN"
+msgstr "SSN"
+
+msgid "emp_field_updateTime"
+msgstr "Cargar hora"
+
+msgid "emp_field_verifyMode"
+msgstr "Modo de verificación"
+
+msgid "emp_field_city"
+msgstr "Ciudad"
+
+msgid "emp_field_isAdmin"
+msgstr "Admin"
+
+msgid "emp_field_type"
+msgstr "Tipo de empleo"
+
+msgid "emp_field_enableAtt"
+msgstr "Habilitar asistencia"
+
+msgid "emp_field_enableOvertime"
+msgstr "Habilitar HE"
+
+msgid "emp_field_enableHoliday"
+msgstr "Habilitar festivo"
+
+msgid "emp_field_workflowRole"
+msgstr "Workflow Role"
+
+msgid "employee_certification"
+msgstr "Certificación de empleado"
+
+msgid "emp_field_appStatus"
+msgstr "Estado APP"
+
+msgid "emp_field_appRole"
+msgstr "Rol APP"
+
+msgid "emp_field_lastLogin"
+msgstr "Último inicio de sesión"
+
+msgid "emp_field_isActive"
+msgstr "Activo"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr ""
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "Empleado(%(code)s) no fue encontrado."
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "Borrar rol aprobador fallido: %(message)s"
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "Excepción %(message)s"
+
+msgid "model_employee"
+msgstr "Empleado"
+
+msgid "invalid_picture_format"
+msgstr "Formato de foto inválido"
+
+msgid "personnel_photo_size_must_not_exceed_16kb"
+msgstr "El tamaño máximo de foto es de 16KB"
+
+msgid "employeeCert_field_cert"
+msgstr "Documento"
+
+msgid "pnsl_model_empProfile"
+msgstr "Perfil del empleado"
+
+msgid "position_field_isDefault"
+msgstr "Predeterminado"
+
+msgid "psnl_model_position"
+msgstr "Cargo"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "La jerarquía superior no puede ser la misma"
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "Cargo no puede ser borrado porque contiene una sub-categoría."
+
+msgid "default_position_can_not_be_removed."
+msgstr "El cargo predeterminado no puede ser borrado."
+
+msgid "psnl_model_resign"
+msgstr "Renuncia"
+
+msgid "data_import_labelFile"
+msgstr "Archivo de importación:"
+
+msgid "date_import_labelExistingData"
+msgstr "Datos existentes:"
+
+msgid "data_import_fileTemplateDemo"
+msgstr "Plantilla demo:"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "Descargar plantilla"
+
+msgid "data_import_description"
+msgstr "Descripción"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1.El encabezado en el archivo de plantilla es requerido "
+
+msgid "data_import_areaImportRequired2"
+msgstr "2. El código y nombre son campos requeridos"
+
+msgid "data_import_areaImportRequired3"
+msgstr "3. El Área superior deber ser el código de área"
+
+msgid "data_import_areaImportRequired4"
+msgstr "4.Todos los valores de la columna deben tener formato de texto "
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "Refrescar"
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "Descargar"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1. El encabezado en el archivo de plantilla es requerido"
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2. El código de certificación y nombre son requeridos"
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3. Todos los valores de la columna deben tener formato de texto"
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1. El encabezado en el archivo de plantilla es requerido"
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2. El código y nombre son campos requeridos"
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3. El departamento superior deber se el código de departamento"
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4. Todos los valores de la columna deben tener formato de texto"
+
+msgid "departmentList_search_department"
+msgstr "Departamento"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1. El encabezado en el archivo de plantilla es requerido"
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2. El ID Empleado, Nombres, Número departamento son campos requeridos"
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3. Todos los valores de la columna deben ser en formato de texto"
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4. El número de la tarjeta debe ser único"
+
+msgid "personnel_profile"
+msgstr "Perfil"
+
+msgid "register_fingerprint"
+msgstr "Registrar huella"
+
+msgid "fingerprint_registration"
+msgstr "Registrar"
+
+msgid "download_driver"
+msgstr "Descargar driver"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr ""
+
+msgid "personnel_detail"
+msgstr "Detalle"
+
+msgid "time_attendance_settings"
+msgstr "Configuración de asistencia"
+
+msgid "certification_settings"
+msgstr "Configuración del documento"
+
+msgid "access_controller_settings"
+msgstr "Configuración de la controladora de acceso"
+
+msgid "mobile_app_setting"
+msgstr "Configuración App"
+
+msgid "employee_editPage_addCert"
+msgstr "Nuevo"
+
+msgid "registered_fingerprint:"
+msgstr "Huella registrada:"
+
+msgid "employee_field_employeeCode"
+msgstr "ID Empleado"
+
+msgid "employee_field_employeeFirstName"
+msgstr "Nombres"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "Empleado"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "Seleccionado"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1.El encabezado de la plantilla es requerido"
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2. La certificación, Empleado, notificación de correo electrónico son campos requeridos"
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3. Todos los valores de la columna deben ser en formato de texto"
+
+msgid "data_import_positionImportRequired1"
+msgstr "1. El encabezado de la plantilla es requerido"
+
+msgid "data_import_positionImportRequired2"
+msgstr "2. El código y nombre son campos requeridos"
+
+msgid "data_import_positionImportRequired3"
+msgstr "3. El cargo superior debe ser el código del cargo"
+
+msgid "data_import_positionImportRequired4"
+msgstr "4. Todos los valores de la columna deben ser en formato de texto"
+
+msgid "data_import_resignImportRequired1"
+msgstr "1. El encabezado de la plantilla es requerido"
+
+msgid "data_import_resignImportRequired2"
+msgstr "2. El ID Empleado, Fecha de retiro, Tipo de retiro son campos requeridos"
+
+msgid "data_import_resignImportRequired3"
+msgstr "3. Todos los valores de la columna deben ser en formato de texto"
+
+msgid "BioTime 8.0"
+msgstr ""
+
+msgid "mobile_photo_register"
+msgstr "Registro de foto"
+
+msgid "mobile_employee_code"
+msgstr "ID Empleado"
+
+msgid "mobile_employee_first_name"
+msgstr "Nombres"
+
+msgid "mobile_employee_last_name"
+msgstr "Apellidos"
+
+msgid "mobile_employee_email"
+msgstr "Correo electrónico"
+
+msgid "mobile_photo_enroll"
+msgstr "Enrolar"
+
+msgid "lng_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "lng_option_traditionalChinese"
+msgstr "中文繁體"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "Pусский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Bahasa Indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "menu_personnel"
+msgstr "Personal"
+
+msgid "ADMS"
+msgstr ""
+
+msgid "menu_terminal"
+msgstr "Dispositivo"
+
+msgid "menu_attendance"
+msgstr "Asistencia"
+
+msgid "menu_system"
+msgstr "Sistema"
+
+msgid "menu_group_employee_request"
+msgstr "Solicitud"
+
+msgid "menu_request_employee_leave"
+msgstr "Permiso salida"
+
+msgid "menu_request_employee_overtime"
+msgstr "Horas extra"
+
+msgid "menu_request_employee_manual_log"
+msgstr "Registro manual"
+
+msgid "menu_request_employee_training"
+msgstr "Entrenamiento"
+
+msgid "menu_group_employee_approval"
+msgstr "Aprobación"
+
+msgid "menu_approve_employee_leave"
+msgstr "Permiso salida"
+
+msgid "menu_approve_employee_overtime"
+msgstr "Horas extra"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "Registro manual"
+
+msgid "menu_approve_employee_training"
+msgstr "Entrenamiento"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "Cambiar horario"
+
+msgid "menu_group_employee_report"
+msgstr "Reporte"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "Registro de transacciones"
+
+msgid "menu_staff_detailReport"
+msgstr "Detalle tiempo total"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "Resumen de asistencia"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "Transacciones múltiples"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "Descanso"
+
+msgid "menu_staff_timeCardReport"
+msgstr "Tiempo empleado"
+
+msgid "staff_leave_actionDelete"
+msgstr "Nuevo"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "ID Empleado"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "Nombres"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "Apellidos"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "Fecha"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "Calendario anterior"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "Calendario"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "Aplicar hora"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "Último Aprobador"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "Estado actual"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "Estado de aprobación"
+
+msgid "attendance_analyze"
+msgstr ""
+
+msgid "csv_export"
+msgstr "Exportar .csv"
+
+msgid "pdf_export"
+msgstr "Exportar .pdf"
+
+msgid "xlsx_export"
+msgstr "Exportar .xlsx "
+
+msgid "staff_search_startDate"
+msgstr "Fecha de inicio"
+
+msgid "staff_search_endDate"
+msgstr "Fecha fin"
+
+msgid "staff_approval_approvalState"
+msgstr "Estado de aprobación"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "Pendiente"
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "Aprobado"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "Rechazado"
+
+msgid "staff_search_searchTitle"
+msgstr "Buscar"
+
+msgid "staff_search_clearTitle"
+msgstr "Borrar búsqueda"
+
+msgid "staff_leave_startTime"
+msgstr "Hora de inicio"
+
+msgid "staff_leave_endTime"
+msgstr "Hora fin"
+
+msgid "staff_leave_leaveCategory"
+msgstr "Categoría"
+
+msgid "staff_leave_applyReason"
+msgstr "Motivo"
+
+msgid "staff_leave_empCode"
+msgstr "ID Empleado"
+
+msgid "staff_leave_firstName"
+msgstr "Nombres"
+
+msgid "staff_leave_lastName"
+msgstr "Apellidos"
+
+msgid "staff_leave_applyTime"
+msgstr "Aplicar hora"
+
+msgid "staff_leave_lastApprover"
+msgstr "Último Aprobador"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "Estado actual"
+
+msgid "staff_leave_approvalState"
+msgstr "Estado de aprobación"
+
+msgid "staff_search_category"
+msgstr "Categoría"
+
+msgid "staff_leave_actionAdd"
+msgstr "Nuevo"
+
+msgid "staff_manualLog_empCode"
+msgstr "ID Empleado"
+
+msgid "staff_manualLog_firstName"
+msgstr "Nombres"
+
+msgid "staff_manualLog_lastName"
+msgstr "Apellidos"
+
+msgid "staff_manualLog_applyTime"
+msgstr "Aplicar hora"
+
+msgid "staff_manualLog_punchTime"
+msgstr "Hora de marcación"
+
+msgid "staff_manualLog_punchState"
+msgstr "Estado de marcación"
+
+msgid "staff_manualLog_workCode"
+msgstr "Código de trabajo"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "Último Aprobador"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "Estado actual"
+
+msgid "staff_manualLog_approvalState"
+msgstr "Estado de aprobación"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "Borrar"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "Nuevo"
+
+msgid "staff_manualLog_applyReason"
+msgstr "Aplicar permiso"
+
+msgid "staff_overtime_startTime"
+msgstr "Hora de inicio"
+
+msgid "staff_overtime_endTime"
+msgstr "Hora fin"
+
+msgid "staff_overtime_overtimeType"
+msgstr "Tipo HE"
+
+msgid "staff_overtime_applyReason"
+msgstr "Motivo"
+
+msgid "weekend_overtime"
+msgstr "HE fin de semana"
+
+msgid "holiday_overtime"
+msgstr "HE festivo"
+
+msgid "staff_overtime_actionDelete"
+msgstr "Borrar"
+
+msgid "staff_overtime_empCode"
+msgstr "ID Empleado"
+
+msgid "staff_overtime_firstName"
+msgstr "Nombres"
+
+msgid "staff_overtime_lastName"
+msgstr "Apellidos"
+
+msgid "staff_overtime_applyTime"
+msgstr "Aplicar hora"
+
+msgid "staff_overtime_lastApprover"
+msgstr "Último Aprobador"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "Estado actual"
+
+msgid "staff_overtime_approvalSate"
+msgstr "Estado de aprobación"
+
+msgid "staff_overtime_actionAdd"
+msgstr "Nuevo"
+
+msgid "search_start_date"
+msgstr "Fecha de inicio"
+
+msgid "search_end_date"
+msgstr "Fecha fin"
+
+msgid "timetable"
+msgstr "Calendario"
+
+msgid "userProfile_itemLabel_language"
+msgstr "Lenguaje"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "Antigua contraseña"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "Nueva contraseña"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "Confirmar contraseña"
+
+msgid "staff_training_empCode"
+msgstr "ID Empleado"
+
+msgid "staff_training_firstName"
+msgstr "Nombres"
+
+msgid "staff_training_lastName"
+msgstr "Apellidos"
+
+msgid "staff_training_applyTime"
+msgstr "Aplicar hora"
+
+msgid "staff_training_trainingCategory"
+msgstr "Tipo de entrenamiento"
+
+msgid "staff_training_startTime"
+msgstr "Hora inicio"
+
+msgid "staff_training_endTime"
+msgstr "Hora final"
+
+msgid "staff_training_lastApprover"
+msgstr "Último Aprobador"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "Estado actual"
+
+msgid "staff_training_approvalState"
+msgstr "Estado de aprobación"
+
+msgid "staff_training_actionDelete"
+msgstr "Borrar"
+
+msgid "staff_training_actionAdd"
+msgstr "Nuevo"
+
+msgid "the_old_pwd_is_required"
+msgstr "La contraseña antigua es requerida."
+
+msgid "the_new_pwd_is_required"
+msgstr "La nueva contraseña es requerida."
+
+msgid "the_two_password_are_different"
+msgstr "La contraseña es diferente"
+
+msgid "the_old_pwd_is_wrong"
+msgstr "Error de contraseña"
+
+msgid "setting_employee_pwd_failed"
+msgstr "Falló el cambio de contraseña"
+
+msgid "system_exception_illegal_login"
+msgstr "La solicitud no es permitida"
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "Modificar la contraseña."
+
+msgid "model_action_add"
+msgstr "Nuevo"
+
+msgid "model_action_modify"
+msgstr "Editar"
+
+msgid "system_welcome"
+msgstr "Bienvenido"
+
+msgid "system_userMenu_op_language"
+msgstr "Lenguaje"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "Contraseña"
+
+msgid "system_userMenu_op_about"
+msgstr "Acerca de"
+
+msgid "system_userMenu_op_logout"
+msgstr "Cerrar sesión"
+
+msgid "filter_title_search"
+msgstr "Buscar por filtros"
+
+msgid "filter_title_clear"
+msgstr "Borrar los filtros"
+
+msgid "user_username"
+msgstr "Nombre de usuario"
+
+msgid "user_password"
+msgstr "Contraseña"
+
+msgid "software_version"
+msgstr "Versión del software"
+
+msgid "authorized_information"
+msgstr "Información autorizada"
+
+msgid "label_customer_code"
+msgstr "Código del cliente"
+
+msgid "label_used_devices"
+msgstr "Dispositivo usado"
+
+msgid "label_used_employees"
+msgstr "Empleado usado"
+
+msgid "label_used_apps"
+msgstr "APP usada"
+
+msgid "label_authorized_date"
+msgstr "Fecha autorizada"
+
+msgid "label_expired_date"
+msgstr "Fecha de expiración"
+
+msgid "label_authorized_company"
+msgstr "Compañia autorizada"
+
+msgid "license_activation"
+msgstr "Activación de licencia"
+
+msgid "online_activation"
+msgstr "Activación en línea"
+
+msgid "download_upk"
+msgstr "Descargar UPK"
+
+msgid "offline_activation"
+msgstr "Activación fuera de línea"
+
+msgid "online_upgrade_license"
+msgstr "Actualización en línea"
+
+msgid "export_license"
+msgstr "Exportar licencia"
+
+msgid "server_information"
+msgstr "Información del servidor"
+
+msgid "label_machine"
+msgstr "Máquina"
+
+msgid "label_processor"
+msgstr "Procesador"
+
+msgid "label_platform"
+msgstr "Plataforma"
+
+msgid "label_ram_total"
+msgstr "RAM"
+
+msgid "label_ram_free"
+msgstr "Libere RAM"
+
+msgid "user_authenticate"
+msgstr "Authenticate"
+
+msgid "user_login"
+msgstr "Usuario admin"
+
+msgid "employee_self"
+msgstr "Auto-gestión"
+
+msgid "login_username"
+msgstr "Nombre de usuario"
+
+msgid "login_pwd"
+msgstr "Contraseña"
+
+msgid "btn_user_login"
+msgstr "Inicio de sesión"
+
+msgid "btn_fp_login"
+msgstr "Fingerprint"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "Please Install Fingerprint Driver."
+
+msgid "login_emp_number"
+msgstr "ID Empleado"
+
+msgid "login_emp_pwd"
+msgstr "Contraseña"
+
+msgid "btn_emp_login"
+msgstr "Inicio de sesión"
+
+msgid "login_about_btn_title"
+msgstr "Click para ver el detalle de la licencia."
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr ""
+
+msgid "system_about"
+msgstr "About"
+
+msgid "last_approver"
+msgstr "Aprobador"
+
+msgid "tool_filters"
+msgstr "Filtros"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "ID del empleado no encontrado, por favor registrar el ID del empleado en el sistema."
+
+msgid "employee_photo_not_found"
+msgstr "La foto del empleado no fue encontrada"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "Guardar foto falló, Por favor verifique la foto de nuevo."
+
+msgid "workflowRole_field_employee"
+msgstr "Empleado"
+
+msgid "workflowRole_field_role"
+msgstr "Rol Aprobadores"
+
+msgid "workflow_action_setWorkflowRole"
+msgstr "Configuración rol aprobadores"
+
+msgid "workflow_action_setWorkflowRoleHelpTxt"
+msgstr "Configuración rol aprobadores"
+
+msgid "workflowEngine_field_code"
+msgstr "Código"
+
+msgid "workflowEngine_field_name"
+msgstr "Nombre"
+
+msgid "workflowEngine_field_startDate"
+msgstr "Fecha de inicio"
+
+msgid "workflowEngine_field_endDate"
+msgstr "Fecha final"
+
+msgid "workflowEngine_field_departments"
+msgstr "Departamento"
+
+msgid "workflowEngine_field_contentType"
+msgstr "Tipo de contenido"
+
+msgid "workflow_model_workflowNode"
+msgstr "Aprobaciones"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "Cargo"
+
+msgid "workflow_node_is_required"
+msgstr "Flujo de aprobaciones es requerido"
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "Flujo de aprobaciones y nombre es requerido"
+
+msgid "workflow_node_is_unique"
+msgstr "Workflow node is unique"
+
+msgid "workflowEngine_field_employee"
+msgstr "Empleado"
+
+msgid "node_code"
+msgstr "Número de nodo"
+
+msgid "node_name"
+msgstr "Nombre de nodo"
+
+msgid "workflow_node_approver"
+msgstr "Aprobador"
+
+msgid "workflow_node_notifier"
+msgstr "Notificador"
+
+msgid "employee_count"
+msgstr "Conteo de empleados"
+
+msgid "approval_field_approvalStatus"
+msgstr "Estado de aprobación"
+
+msgid "workflowEngine_field_description"
+msgstr "Descripción"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "Reflejar objeto"
+
+msgid "workflowEngine_field_type"
+msgstr "Tipo de Flujo de Trabajo"
+
+msgid "workflowEngine_field_informType"
+msgstr "Tipo de reporte"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "Ninguno"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "Correo electrónico"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "Notificación"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "Correo electrónico&Notificación"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "Hora de salida inválida, la hora de salida debe ser después de la hora de entrada."
+
+msgid "the_workflow_is_already_used"
+msgstr "El flujo de trabajo ya se uso."
+
+msgid "workflow_model_workflowEngine"
+msgstr "Gestión de Actividades"
+
+msgid "is_last_node"
+msgstr "Es el último nodo"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr ""
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr ""
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr ""
+
+msgid "workflow_node_instance"
+msgstr "Instancia de aprobaciones"
+
+msgid "workflow_code"
+msgstr "Número de flujo de trabajo"
+
+msgid "workflow_name"
+msgstr "Nombre de flujo de trabajo"
+
+msgid "issue_date"
+msgstr "Mostar fecha"
+
+msgid "workflow_description"
+msgstr "Descripción"
+
+msgid "content_type"
+msgstr "Tipo de flujo de trabajo"
+
+msgid "inform_type"
+msgstr ""
+
+msgid "del_flag"
+msgstr "Borrar bandera"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr ""
+
+msgid "workflow_instance"
+msgstr "Instancia de flujo de trabajo"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "Departamento propio"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "Todo"
+
+msgid "workflowNode_field_code"
+msgstr "Código"
+
+msgid "workflowNode_field_name"
+msgstr "Nombre"
+
+msgid "workflowNode_field_orderID"
+msgstr "Order ID"
+
+msgid "workflowNode_field_approverType"
+msgstr "Tipo de Aprobador"
+
+msgid "workflowNode_field_approver"
+msgstr "Aprobador"
+
+msgid "workflowNode_field_notifierType"
+msgstr "Tipo de notificador"
+
+msgid "workflowNode_field_notifier"
+msgstr "Notificador"
+
+msgid "workflowNode_field_approverScope"
+msgstr "Permiso Aprobador"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "Departamento notificado"
+
+msgid "workflow_engine_name"
+msgstr "Nombre de flujo de trabajo"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "Flujo de trabajo de aprobaciones ya fue usada."
+
+msgid "workflowRole_field_code"
+msgstr "Código"
+
+msgid "workflowRole_field_name"
+msgstr "Nombre"
+
+msgid "workflowRole_field_description"
+msgstr "Descripción"
+
+msgid "workflow_model_workflowRole"
+msgstr "Rol Aprobadores"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "%(name)s contiene dispositivo  que no puede ser borrado."
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "Dispositivo está usando el área."
+
+msgid "node_state"
+msgstr "Estado del nodo"
+
+msgid "notifier_type_no_selected"
+msgstr ""
+
+msgid "name"
+msgstr ""
+
+msgid "remark"
+msgstr "Comentario"
+
+msgid "information_workflow"
+msgstr "INS"
+
+msgid "workflow_content_type"
+msgstr "Tipo de contenido"
+
+msgid "instance_issue_date"
+msgstr "Mostar fecha"
+
+msgid "approve"
+msgstr ""
+
+msgid "remark_is_missing"
+msgstr ""
+
+msgid "workflow_instance_id_is_missing"
+msgstr "Instancia de flujo de trabajo no encontrada"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "Instancia de flujo de trabajo no encontrada"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "Instancia de flujo de trabajo no encontrada"
+
+msgid "did_not_have_match_workflow"
+msgstr "Flujo de trabajo no coincide"
+
+msgid "verity_type"
+msgstr "Tipo de autenticación"
+
+msgid "lineNotify_field_messageHead"
+msgstr "Mensaje de cabecera"
+
+msgid "lineNotify_field_messageTail"
+msgstr "Cola de mensajes"
+
+msgid "export_title_departments"
+msgstr "Departamento"
+
+msgid "export_title_positions"
+msgstr "Cargo"
+
+msgid "export_title_areas"
+msgstr "Área"
+
+msgid "export_title_employees"
+msgstr "Empleado"
+
+msgid "export_title_resigns"
+msgstr "Renuncia"
+
+msgid "export_title_certifications"
+msgstr "Documento"
+
+msgid "export_title_employeecertifications"
+msgstr "Documento del empleado"
+
+msgid "export_title_terminals"
+msgstr "Dispositivo"
+
+msgid "export_title_terminalcommands"
+msgstr "comando de dispositivo"
+
+msgid "export_title_publicmessages"
+msgstr "Público"
+
+msgid "export_title_privatemessages"
+msgstr "Privado"
+
+msgid "export_title_terminalworkcodes"
+msgstr "Código de trabajo"
+
+msgid "export_title_biodatas"
+msgstr "Bio-Plantilla"
+
+msgid "export_title_terminallogs"
+msgstr "Registro de dispositivo"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "Cargar registros"
+
+msgid "export_title_break_times"
+msgstr "Descanso"
+
+msgid "export_title_time_intervals"
+msgstr "Calendario"
+
+msgid "export_title_att_shifts"
+msgstr "Turno"
+
+msgid "export_title_att_schedules"
+msgstr "Horario"
+
+msgid "export_title_temp_schedules"
+msgstr "Horario temporal"
+
+msgid "export_title_employeeschedule_report"
+msgstr "Horario del empleado"
+
+msgid "export_title_manual_logs"
+msgstr "Registro manual"
+
+msgid "export_title_leaves"
+msgstr "Permiso"
+
+msgid "export_title_overtimes"
+msgstr "Horas extra"
+
+msgid "export_title_trainings"
+msgstr "Entranamiento"
+
+msgid "export_title_holiday"
+msgstr "Festivo"
+
+msgid "export_title_leave_categorys"
+msgstr "Tipo de permiso"
+
+msgid "export_title_training_categorys"
+msgstr "Tipo de entreanamiento"
+
+msgid "export_title_transactions"
+msgstr "Transaccíon"
+
+msgid "export_field_employee_area"
+msgstr "Área"
+
+msgid "export_field_device_count"
+msgstr "Conteo de dispositivos"
+
+msgid "export_field_employee"
+msgstr "Empleado"
+
+msgid "export_field_employee_name"
+msgstr "Nombres"
+
+msgid "new_schedule"
+msgstr "Ajuste de horario"
+
+msgid "new_schedule_description"
+msgstr "Horario nuevo"
+
+msgid "new_schedule_help_txt"
+msgstr "Horario nuevo"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "La categoria por defecto no puede ser borrada"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "La categoria usada no puede ser borrada"
+
+msgid "base_setting"
+msgstr "Configuración del sistema"
+
+msgid "calculation_rule"
+msgstr "Llegadas tarde"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "Transacciones"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "Longitud del ID Empleado"
+
+msgid "menu_device_remoteupgrade"
+msgstr "Dispositivo"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "Dispositivo"
+
+msgid "remoteUpgrade_field_password"
+msgstr "Contraseña"
+
+msgid "remoteUpgrade_action_add"
+msgstr "Nuevo"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "Nuevo"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "Nuevo"
+
+msgid "upgrade_file_error"
+msgstr "Cargar archivo"
+
+msgid "please_select_device"
+msgstr "Por favor seleccione el empleado"
+
+msgid "password_is_required"
+msgstr "El archivo SN es requerido."
+
+msgid "password_is_error"
+msgstr "Las contraseñas no coinciden."
+
+msgid "set_upgrade_password_first"
+msgstr "Contraseña"
+
+msgid "please_select_upgrade_file"
+msgstr "Por favor seleccione el archivo de actualización"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "Actualizar archivo"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "Hora de Ejecución"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "Hora de transferencia"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "Hora de retorno"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "Valor de retorno"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "Actualización remota"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "Borrar caché cuando no funciona después de un minuto"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "Chino simplificado"
+
+msgid "deviceLanguage_option_English"
+msgstr "Inglés"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "Español"
+
+msgid "deviceLanguage_option_French"
+msgstr "Francés"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "Arábica"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "Portugués"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "Ruso"
+
+msgid "deviceLanguage_option_German"
+msgstr "Alemán"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "Persa"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "Tailandés"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "Indonesio"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "Japonés"
+
+msgid "deviceLanguage_option_Korean"
+msgstr "Coreano"
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "Vietnamita"
+
+msgid "deviceLanguage_option_Turkish"
+msgstr "Turco"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "Hebreo"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "Checo"
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "Holandés"
+
+msgid "deviceLanguage_option_Italian"
+msgstr "Italiano"
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "Eslovaco"
+
+msgid "deviceLanguage_option_Greek"
+msgstr "Griego"
+
+msgid "deviceLanguage_option_Polish"
+msgstr "Polaco"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr "Chino tradicional"
+
+msgid "adminLog_action_login"
+msgstr ""
+
+msgid "adminLog_action_logout"
+msgstr ""
+
+msgid "adminLog_action_add"
+msgstr ""
+
+msgid "adminLog_action_change"
+msgstr ""
+
+msgid "adminLog_action_delete"
+msgstr ""
+
+msgid "app_download"
+msgstr ""
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr ""
+
+msgid "minimum_above_overtime_invalid"
+msgstr ""
+
+msgid "delete_default_user_alert"
+msgstr ""
+
+msgid "delete_user_self_alert"
+msgstr ""
+
+msgid "biophoto_upload"
+msgstr ""
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr ""
+
+msgid "biophoto_upload_error_photo"
+msgstr ""
+
+msgid "biophoto_upload_other_errors"
+msgstr ""
+
+msgid "biophoto_upload_ignore_error"
+msgstr ""
+
+msgid "biophoto_upload_select_files"
+msgstr ""
+
+msgid "biophoto_upload_start"
+msgstr ""
+
+msgid "staff_training_applyReason"
+msgstr ""
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr ""
+
+msgid "holiday_duration_invalid"
+msgstr ""
+
+msgid "migrate_sqlite_file_is_required"
+msgstr ""
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr ""
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr ""
+
+msgid "autoExport_task_time"
+msgstr ""
+
+msgid "autoExport_task_date"
+msgstr ""
+
+msgid "no_record"
+msgstr ""
+
+msgid "autoExport_task_punchState"
+msgstr ""
+
+msgid "adjust_timeinterval"
+msgstr ""
+
+msgid "app_account_disabled"
+msgstr "Account disabled."
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "Account disabled,please contact admin to enable."
+
+msgid "app_client_already_block_by_administrator"
+msgstr "App client already blocked by administrator."
+
+msgid "app_client_blocked"
+msgstr "App client blocked."
+
+msgid "system_exception"
+msgstr "System Exception."
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "Request params can not find username."
+
+msgid "appLogin_params_exception"
+msgstr "Params Exception."
+
+msgid "biotime_app_password_reset"
+msgstr "Biotime app password reset."
+
+msgid "app_password_reset_failed"
+msgstr "Password reset failed."
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "Password reset must on the mobile is active."
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "Illegal operation, Please contact  with administrator."
+
+msgid "app_password_reset_user_not_exists"
+msgstr "User not exists."
+
+msgid "app_password_reset_user_not_found"
+msgstr "User not found."
+
+msgid "app_manuallog_wrong_data"
+msgstr "Wrong Data."
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "Workcode not found."
+
+msgid "app_manuallog_data_exception"
+msgstr "Data Exception."
+
+msgid "app_manuallog_request_already_processing"
+msgstr "Request already processing."
+
+msgid "request_already_processing"
+msgstr "Request already processing."
+
+msgid "object_not_found"
+msgstr "Object Not Found."
+
+msgid "object_id_not_found"
+msgstr "Object Id Not Found."
+
+msgid "app_application_remove_success"
+msgstr "Removed Successful."
+
+msgid "app_application_remove_rejected"
+msgstr "Approved application can not delete."
+
+msgid "app_attendance_date_today"
+msgstr "Today"
+
+msgid "app_attendance_date_yesterday"
+msgstr "Yesterday"
+
+msgid "app_attendance_date_this_week"
+msgstr "This Week"
+
+msgid "app_attendance_date_last_week"
+msgstr "Last Week"
+
+msgid "app_attendance_date_this_month"
+msgstr "This Month"
+
+msgid "app_attendance_date_last_month"
+msgstr "Last Month"
+
+msgid "app_attendance_date_user-defined"
+msgstr "User Defined"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "Invalid punch time please try again"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "Invalid GPS Information"
+
+msgid "app_clockIn_gps_required"
+msgstr "GPS information is required"
+
+msgid "app_clockIn_upload_failed"
+msgstr "Upload Failed"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "Work code not found"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "Logo Review"
+
+msgid "companySettingPage_size_200x75"
+msgstr "Dimensions 200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "Company Setting"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "Company Logo"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "Click to upload logo"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "Logo Display"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "Not Display"
+
+msgid "companySettingPage_posOption_left"
+msgstr "Left"
+
+msgid "companySettingPage_posOption_center"
+msgstr "Center"
+
+msgid "companySettingPage_posOption_right"
+msgstr "Right"
+
+msgid "companySettingPage_label_companyName"
+msgstr "Company name"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "Company Name Display"
+
+msgid "companySettingPage_btn_submit"
+msgstr "Submit"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "Task %(task_code)s export success"
+
+msgid "msg_all_saved_filters"
+msgstr "Todos los filtros guardados"
+
+msgid "msg_customize_filters"
+msgstr "Personaliza tus filtros"
+
+msgid "company_does_not_exists"
+msgstr "La compañía no existe"
+
+msgid "successful"
+msgstr "Con éxito"
+
+msgid "email_setting_does_not_exists"
+msgstr "No existe configuración de email"
+
+msgid "email_or_employee_id_not_exists"
+msgstr "No existe email o Empleado"
+
+msgid "your_email_not_exist_please_connect_to_admin"
+msgstr "Su email no existe, por favor conecte al Administrador"
+
+msgid "this_is_the_incorrect_date_string_format"
+msgstr "Este es el formato de cadena de fecha incorrecto. Debe ser DD-MM-AAAA"

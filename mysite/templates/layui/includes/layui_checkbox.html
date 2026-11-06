@@ -1,0 +1,3 @@
+<div class="layui-inline{% if field.is_hidden %} layui-hidden {% endif %}{% if field.name %} field-{{ field.name }}{% endif %}" title="{{ field.field.help_text|safe }}">
+    <input type="checkbox" name="{{ field.name }}" lay-skin="primary" title="{{ field.label }}">
+</div>

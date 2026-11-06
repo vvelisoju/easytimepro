@@ -1,0 +1,458 @@
+{% extends 'data_grid.html' %}
+{% load i18n common %}
+{% block filter_bar %}
+{% include "staff/manuallog/request_search_form.html" %}
+  <div id="{{ model_name }}_csrf_token">
+    {% csrf_token %}
+  </div>
+<script type="text/html" id="{{ model_name }}-delBar">
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"
+     title="{% trans 'staff_manualLog_actionDelete' %}">
+    <i class="fa fa-fw fa-trash-o"></i>
+  </a>
+  <a class="layui-btn layui-btn-xs" lay-event="editPopUp"
+             title="Edit">
+            <i class="fa fa-fw fa-pencil-square-o"></i>
+        </a>
+  <a class="layui-btn layui-btn-xs" lay-event="staffViewWorkflow"><i class="fa fa-eye"></i></a>
+{#  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="revoke"#}
+{#     title="{% trans 'att_action_revoke' %}">#}
+{#    <i class="fa fa-reply"></i>#}
+{#  </a>#}
+</script>
+{% endblock %}
+{% block staff_button %}
+<ul class="layui-nav">
+  <li class="layui-nav-item">
+    <a class="layui-btn layui-btn-sm" id="id-{{ model_name }}" lay-event="staffManualLogNew"
+       data-type="staffManualLogNew">{% trans 'staff_manualLog_actionAdd' %}</a>
+  </li>
+</ul>
+{% endblock %}
+
+{% block init_script %}
+<script>
+  var csrf_token= $("#{{ model_name }}_csrf_token").find("input").first().attr("value")
+  $(function () {
+    layui.use(['table', 'form', 'element', 'laydate', 'tablePlug'], function () {
+      var table = layui.table, form = layui.form, laydate = layui.laydate, element = layui.element,
+        tablePlug = layui.tablePlug;
+      form.render();
+      var fluid_container = "#{{ model_name }}_fluid";
+      var tableId = "id_grid_{{ model_name }}";
+      var tableElem = "#id_grid_{{ model_name }}";
+      var toolbarID = "#{{ model_name|safe }}_toolbar";
+      var opts = {
+        id: tableId,
+        elem: tableElem,
+        toolbar: toolbarID,
+        defaultToolbar: [],
+        cellMinWidth: 80,
+        smartReloadModel: true,
+        height: 'full-200',
+        loading: true,
+        page: {
+          layout: ['prev', 'page', 'next', 'limit', 'count', 'refresh', 'skip'],
+          curr: 1
+        },
+        text: {
+          none: gettext('none_data')
+        },
+        limit: 50,
+        limits: [5, 10, 20, 30, 50, 60, 90],
+        request: {
+          pageName: 'page',
+          limitName: 'page_size'
+        },
+        done: function (res, curr, count) {
+          //this.where = {};
+          $.fn.trigger_action_auto("{{ model_name }}");
+        },
+        cols: [[
+          {'field': 'id', 'fixed': 'left', 'type': 'checkbox', 'width': 30},
+          {
+            'field': 'emp_code', 'width': 120, 'event': "editPopUp",
+            'style': "cursor: pointer", 'title': "{% trans 'staff_manualLog_empCode' %}", sort:true
+          },
+          {'field': 'first_name', 'width': 120, 'title': "{% trans 'staff_manualLog_firstName' %}"},
+          {'field': 'last_name', 'width': 120, 'title': "{% trans 'staff_manualLog_lastName' %}"},
+          {'field': 'punch_time', 'width': 120, 'title': "{% trans 'staff_manualLog_punchTime' %}", sort:true},
+          {'field': 'punch_state_name', 'width': 120, 'title': "{% trans 'staff_manualLog_punchState' %}"},
+          {'field': 'work_code', 'width': 120, 'title': "{% trans 'staff_manualLog_workCode' %}"},
+          {'field': 'apply_reason', 'width': 120, 'title': "{% trans 'staff_manualLog_applyReason' %}"},
+          {'field': 'audit_reason', 'width': 120, 'title': "{% trans 'leave_field_approvalRemark' %}"},
+          {
+            'field': 'audit_status_string',
+            'width': 120,
+            'title': "{% trans 'staff_manualLog_approvalState' %}"
+          },
+          {width: 90, align: 'center', toolbar: '#{{ model_name }}-delBar'}
+        ]],
+        url: '/staff/api/manual_logs/request_list/'
+      };
+      var date = new Date();
+      var _start = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01';
+      var _end = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-' + leftInsertZero(date.getDate());
+       $("input[name='{{ model_name }}-start']").val(_start);
+       $("input[name='{{ model_name }}-end']").val(_end);
+      var startDate = laydate.render({
+        elem: '#{{ model_name }}-start',
+        type: 'date',
+        //value: _start,
+        done: function (value, date) {
+            if (Object.keys(date).length !== 0) {
+                endDate.config.min = {
+                    year: date.year,
+                    month: date.month - 1,
+                    date: date.date
+                };
+            }
+            else {
+                endDate.config.min = {
+                    year: 1900,
+                    month: 01,
+                    date: 01
+                };
+                endDate.config.max = {
+                    year: 2099,
+                    month: 12,
+                    date: 31
+                };
+              }
+            $.fn.trigger_action_auto("{{ model_name }}");
+        }
+      });
+      var endDate = laydate.render({
+        elem: '#{{ model_name }}-end',
+        type: 'date',
+        //value: _end,
+        done: function (value, date) {
+            if (Object.keys(date).length !== 0) {
+                startDate.config.max = {
+                    year: date.year,
+                    month: date.month - 1,
+                    date: date.date
+                };
+            }
+            else {
+                startDate.config.min = {
+                    year: 1900,
+                    month: 01,
+                    date: 01
+                };
+                startDate.config.max = {
+                    year: 2099,
+                    month: 12,
+                    date: 31
+                };
+              }
+            $.fn.trigger_action_auto("{{ model_name }}");
+        }
+      });
+      var tb = table.render(opts);
+      tablePlug.smartReload.enable(true);
+
+      function show_error(response)
+      {
+        var res_msg = JSON.parse(response.responseText);
+        var display_msg = '';
+        for (var prop in res_msg) {
+            var name = prop
+            $('form input[name="' + prop + '"]').addClass('layui-form-danger');
+            $('form select[name="' + prop + '"]').addClass('layui-form-danger');
+            var input_lable = $('form input[name="' + prop + '"]').parent().parent().children().first().text();
+            var select_lable = $('form input[name="' + prop + '"]').parent().parent().children().first().text();
+            if(input_lable) {
+              name = input_lable
+            } else if(select_lable) {
+              name = select_lable
+            } else {
+              name = gettext(name)
+            }
+            display_msg += '<p>' + name + ": " + res_msg[prop] + '</p>'
+        }
+        layer.alert(display_msg, {'icon': 0, btn: [gettext("btn_confirm")], title: gettext("layer_title")});
+      }
+
+      function bindAllActions() {
+        $(fluid_container + " div.grid-toolbar").actions({
+          container: fluid_container,
+          actionContainer: fluid_container + " div.grid-toolbar",
+          model: "{{model_name}}",
+          table: table,
+          tableId: tableId,
+          form: form,
+          element: element,
+          curTable: tb,
+          grid_opts: opts,
+          column_order_url:'/column_order/',
+          actions: "",
+          export_url: "/staff/api/manual_logs/export/?export_list=request",
+          disabled_fields_url: "/disabled_fields/",
+          init_disabled_fields: [],
+          dimension: {height: "auto", width: "auto"},
+          disabled_action_panel_east: ["history"],
+          callback: {}
+        });
+        // new
+        $('#id-{{ model_name }}').on('click', function () {
+          $.ajax({
+            url: "{% url 'biotime:staff_manuallog_add' %}"
+            , dataType: 'html'
+            , type: 'GET'
+            , success: function (page) {
+              layer.open({
+                title: "{% trans 'common_action_new' %}"
+                , type: 1
+                , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+                , content: page
+                , success: function (layero, index) {
+                  //console.log(layero, index);
+                }
+                , yes: function (index, layero) {
+                  var newForm = layero.find("form.layui-form");
+                  $(newForm).ajaxSubmit({
+                    url: "/staff/api/manual_logs/",
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response, status, xhr) {
+                      layer.close(index);
+                      layer.msg(gettext('save_successful'), {icon: 6, time: 600});
+                      table.reload(tb.config.id);
+                    },
+                    error: function (response) {
+                        show_error(response);
+                    }
+                  });
+                }
+              });
+            }
+          });
+        });
+
+      }
+
+      bindAllActions();
+      table.on('tool({{ model_name }})', function (obj) {
+        var data = obj.data;
+        var audit_status =data['audit_status'];
+        if (obj.event === 'editPopUp') {
+          if (audit_status === (2 || 3 || 6) ) {
+          layer.alert("{% trans 'confirm_not_modify_audited' %}", {title: gettext("layer_title"), icon: 0, btn: gettext("btn_confirm")});
+          return false;
+          }
+          $.ajax({
+            url: "{% url 'biotime:staff_manuallog_add' %}"
+            , dataType: 'html'
+            , type: 'GET'
+            , success: function (page) {
+              layer.open({
+                title: gettext("model_action_editTitle"),
+                type: 1,
+                content: page,
+                success: function (layero, index) {
+                  let containerDiv = document.getElementById("id_work_code").parentElement;
+                  containerDiv.innerHTML = '<input id="id_work_code" type="text" name="work_code" lay-verify="work_code" autocomplete="off" placeholder="" class="layui-input" disabled/>'
+
+                  Object.keys(data).forEach(function (key) {
+                    if (data[key] != undefined) {
+                      layero.find("#id_" + key).val(data[key]);
+                    }
+                  });
+                  layero.find("input.layui-input")[1].value = data['punch_state_name']; //select-input
+                },
+                btn: [gettext("btn_confirm"), gettext("btn_cancel")],
+                yes: function (index, layero) {
+                  var newForm = layero.find("form.layui-form");
+                  $(newForm).ajaxSubmit({
+                    url: "/staff/api/manual_logs/" + data['id'] + "/",
+                    type: "PUT",
+                    success: function (response) {
+                      layer.close(index);
+                      layer.msg(gettext('save_successful'), {icon: 6, time: 600});
+                      table.reload(tableId, true);
+                      //bindAllActions();
+                    },
+                    error: function (response) {
+                        show_error(response);
+                    }
+                  });
+                },
+                end: function () {
+                  layer.closeAll('tips');
+                }
+              });
+            }
+          });
+        } else if (obj.event === 'del') {
+          if (audit_status === 2) {
+          layer.alert("{% trans 'confirm_not_modify_audited' %}", {title: gettext("layer_title"), icon: 0, btn: gettext("btn_confirm")});
+          return false;
+          }
+          layer.confirm("{% trans 'confirm_be_sure' %}", {
+            title: gettext("btn_confirm")
+            , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+          }, function (index) {
+            obj.del();
+            layer.close(index);
+            $.ajax({
+              type: 'delete',
+              url: '/staff/api/manual_logs/' + data['id'] + '/',
+              data: {csrfmiddlewaretoken: csrf_token},
+              success: function (data) {
+                layer.msg(gettext('delete_successful'), {icon: 6, time: 600});
+                table.reload(tb.config.id, true);
+                //bindAllActions();
+              }
+            });
+          });
+        } else if (obj.event === 'revoke'){
+          if (audit_status != 2) {
+          layer.alert("{% trans 'only_approved_records_can_be_revoked' %}", {title: gettext("layer_title"), icon: 0, btn: gettext("btn_confirm")});
+          return false;
+          }
+          var postParams = {workflow_instance_id: obj.data.id,csrfmiddlewaretoken: csrf_token, model_name:'manuallog'};
+          var url = '/workflowinstance/revoke/';
+          layer.prompt({
+            formType: 2
+            , value: ''
+            , title: gettext('approval_formTitleRemark')
+            , area: ['auto', 'auto']
+            , btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+            , yes: function(index, layero){
+              var value =  layero.find(".layui-layer-input").val();
+              if (!value){
+                layer.alert("{% trans 'revoke_remark_is_required' %}", {title: gettext("layer_title"), icon: 0, btn: gettext("btn_confirm")});
+              }else{
+              layer.close(index);
+              $.extend(postParams, {remark: value});
+              $.ajax({
+                type: 'POST',
+                url: url,
+                data: postParams,
+                dataType: 'json',
+                success: function (response) {
+                  var ret = '', msg = gettext('revoke_success');
+                  if (response instanceof String){
+                    ret = JSON.parse(response);
+                  }else {
+                    ret = response
+                  }
+                  if (ret['error_code'] != 0){
+                    msg = ret['result'];
+                    layer.msg(gettext(msg), {
+                        icon: 5
+                        , time: '2000'
+                        , shade: 0.1
+                    });
+                  } else {
+                    layer.msg(gettext(msg), {
+                        icon: 1
+                        , time: '2000'
+                        , shade: 0.1
+                    });
+                  }
+                table.reload(tb.config.id, true);
+                },
+                error: function (request) {
+                  var ret = JSON.parse(request.responseText);
+                  layer.msg(ret['result'], {
+                    icon: 5,
+                    time: '2000',
+                    shade: 0.1
+                  });
+                }
+                });
+              }
+            }
+          });
+        }
+        else if(obj.event === "staffViewWorkflow"){
+            var postParams = {workflow_instance_id: obj.data.id};
+            postParams['model_name'] = "manuallog";
+            postParams['csrfmiddlewaretoken'] = "{{ csrf_token }}";
+            postParams['request_grid'] = "1";
+            $.ajax({
+                url: "/workflow/view/"
+                , dataType: 'html'
+                , data: postParams
+                , type: 'GET'
+                , success: function (response) {
+                    try {
+                        var ret = JSON.parse(response);
+                        if (ret['error_code'] != 0) {
+                            layer.msg(ret['result'], {
+                                icon: 0,
+                                time: '2000',
+                                shade: 0.1
+                            });
+                        }
+                    } catch (err) {
+                        layer.open({
+                            title: gettext('approval_workflow_view')
+                            , area: ['auto', '']
+                            , content: response
+                            , btn: gettext("btn_confirm")
+                            , success: function (layero, index) {
+                            }
+                        });
+                    }
+                }
+            });
+        }
+      });
+      $('#{{ model_name }}-search_btn').on('click', function () {
+        var start = $("input[name='{{ model_name }}-start']").val();
+        var end = $("input[name='{{ model_name }}-end']").val();
+        var state = $('#state_{{ model_name }}');
+        if(start && end){if(new Date(start) > new Date(end)){
+            layer.alert(gettext('end_date_can_not_greater_than_start_date'), {
+              title: 'Prompt'
+              , icon: 5
+              , btn: gettext('btn_confirm')
+          });
+              return false;
+          }
+          }
+          if (!start) {
+            layer.alert(gettext("start_date_is_empty"),{
+                  title: gettext('system_exception')
+                  , icon: 5
+                  , btn: gettext('btn_confirm')
+                  })
+            return false;
+          }
+          if (!end) {
+            layer.alert(gettext("end_date_is_empty"),{
+                title: gettext('system_exception')
+                , icon: 5
+                , btn: gettext('btn_confirm')
+                })
+            return false;
+          }
+
+        table.reload(tb.config.id, {
+          where: {
+            punch_time_gte: start,
+            punch_time_lte: end,
+            punch_state: state.val() || null,
+            audit_status: $('#{{ model_name }}-aStatus').val() || null
+          }
+        });
+        //bindAllActions();
+      });  //search
+      $('#{{ model_name }}-refresh_btn').on('click', function () {
+         $("input[name='{{ model_name }}-start']").val(_start);
+         $("input[name='{{ model_name }}-end']").val(_end);
+         $('#tab_{{ model_name }} .layui-form-select .layui-select-title input[readonly]').each(function () {
+            $(this).val('');
+            $(this).closest('.layui-unselect').find('.layui-select-tips').addClass('layui-this').siblings().removeClass('layui-this');
+          });
+        table.render(opts);
+        bindAllActions();
+      });  //refresh
+
+    });
+  });
+</script>
+{% endblock %}

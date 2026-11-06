@@ -1,0 +1,167 @@
+{% load i18n %}
+<div class="ad-setting-form">
+  <form action="" id="id_adSettingForm" class="layui-form" lay-filter="adSettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" style=" height: 350px">
+          <div class="layui-card-header"><i class="fa fa-database"></i><span style="padding-left: 5px">{% trans 'menu_sys_adServerSetting' %}</span></div>
+          <div class="layui-card-body" style="margin-top: 10px">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_ad_server" class="layui-form-label">{% trans 'adServer_field_ip_address' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_ad_server" name="ad_server" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">ldap://x.x.x.x</div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_ad_server_port" class="layui-form-label">{% trans 'adServer_field_port' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="number" id="id_ad_server_port" name="ad_server_port"  autocomplete="off"
+                         placeholder="" lay-verify="required" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_user_name" class="layui-form-label">{% trans 'adServer_field_user' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_user_name" name="user_name" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="" class="layui-form-label">{% trans 'adServer_field_password' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="password" id="id_user_password" name="user_password" autocomplete="off" placeholder=""
+                         class="layui-input" lay-verify="required">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_domain_node" class="layui-form-label">{% trans 'adServer_field_domain_node' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_domain_node" name="domain_node" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">ou=x,dc=x,dc=x</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block layui-inline">
+        <button class="layui-btn" lay-submit="" lay-filter="adServerSubmit" id="adServerSubmit">{% trans 'adSettingPage_btn_submit' %}</button>
+      </div>
+      <div class="layui-inline" style="margin-top: 10px;" id="adServerClearDiv">
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  layui.use(['form'], function () {
+    var form = layui.form, layer = layui.layer;
+    form.render();
+    $.ajax({
+      url: "/base/api/systemSetting/?name=ad_server_setting"
+      , type: "GET"
+      , dataType: "json"
+      , success: function (response, xhr) {
+        var val = response.data[0];
+        if (val) {
+          form.val('adSettingForm', JSON.parse(val.value));
+          document.getElementById('adServerClearDiv').innerHTML= "<button class='layui-btn' lay-submit='' lay-filter='adServerClear' id='adServerClear'>{% trans 'clear_system_settings' %}</button>"
+        }
+      }
+      , error: function (xhr, error, e) {
+
+      }
+    });
+    form.on('submit(adServerSubmit)', function (data) {
+      var csrf = data.field['csrfmiddlewaretoken'],
+        port = data.field['ad_server_port'];
+      if (!/\d+/.test(port)) {
+        show_prompt('Field `smtp_server_port` is illegal!');
+        return;
+      }
+      var value = {
+          ad_server: data.field['ad_server']
+        , ad_server_port: parseInt(port)
+        , user_name: data.field['user_name']
+        , user_password: data.field['user_password']
+        , domain_node: data.field['domain_node']
+      };
+      var loadIndex = layer.load();
+      $.ajax({
+        url: "/base/api/systemSetting/"
+        , type: "POST"
+        , data: {'name': 'ad_server_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.close(loadIndex);
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+          document.getElementById('adServerClearDiv').innerHTML= "<button class='layui-btn' lay-submit='' lay-filter='adServerClear' id='adServerClear'>{% trans 'clear_system_settings' %}</button>"
+        }
+        , error: function (xhr, error, e) {
+          layer.close(loadIndex);
+          if (xhr.responseJSON.value && xhr.responseJSON.value[0] != '' ) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('action_notification_failed'), {icon: 5});
+          }
+        }
+      });
+      return false;
+    });
+
+    form.on('submit(adServerClear)', function (data) {
+        var csrf = data.field['csrfmiddlewaretoken'];
+
+         layer.confirm(gettext("confirm_be_sure"),
+        {
+            title: gettext("btn_confirm")
+            , icon: 3
+            , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+        },
+        function (index) {
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/clear_system_settings/"
+                , type: "POST"
+                , data: {'name': 'ad_server_setting', csrfmiddlewaretoken: csrf}
+                , dataType: "json"
+                , success: function (response, xhr) {
+                    document.getElementById("id_adSettingForm").reset();
+                    layer.close(loadIndex);
+                    layer.msg(gettext('action_notification_successful'), {icon: 6});
+                    document.getElementById('adServerClearDiv').innerHTML= ""
+                }
+                , error: function (xhr, error, e) {
+                    layer.close(loadIndex);
+                    if (xhr.responseJSON.value) {
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    } else {
+                        layer.msg(gettext('action_notification_failed'), {icon: 5});
+                    }
+                }
+            });
+            layer.close(index);
+        });
+        return false
+    });
+  });
+</script>

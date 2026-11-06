@@ -1,0 +1,17 @@
+{% load i18n common %}
+<div style="margin: 10px;min-height: 400px;min-width: 850px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}"
+        enctype="multipart/form-data">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div>{{ f.emp }}</div>
+      {% layui_form_item f.workflowrole %}
+    {% endwith %}
+  </form>
+</div>
+<script>
+  $('#{{model_name}}_{{action_repr}}').find('input[id^={{model_name}}][id$=_show]').click(function () {
+    $('#{{model_name}}_{{action_repr}}').find('.tree-content')[0].height = '150px';
+    $('#{{model_name}}_{{action_repr}}').find('.tree-content').css("max-height", '180px');
+  });
+</script>

@@ -1,0 +1,529 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "كشف رواتب"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "ملف تعريف الموظف"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "ملف تعريف الموظف"
+
+msgid "menu_group_payroll_formula"
+msgstr "معادلة"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "معادلة خصم"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "معادلة الاستثناء"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "معادلة الزياده"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "معادلة الانصراف"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "معادلة الوقت الاضافى"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "أموال اضافية"
+
+msgid "menu_payroll_extraincrease"
+msgstr "زيادة اضافية"
+
+msgid "menu_payroll_extradeduction"
+msgstr "خصم اضافى"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "هيكل الرواتب"
+
+msgid "menu_payroll_salarystructure"
+msgstr "هيكل الرواتب"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "سلفه"
+
+msgid "menu_payroll_empLoan"
+msgstr "سلفه"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "سلفه على الراتب"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "سلفه على الراتب"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "السداد"
+
+msgid "menu_payroll_reimbursement"
+msgstr "السداد"
+
+msgid "menu_group_payroll_calculation"
+msgstr "الحساب"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "حساب المرتب"
+
+msgid "menu_group_payroll_report"
+msgstr "تقرير"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "هيكل المرتب"
+
+msgid "menu_payroll_increase_report"
+msgstr "عناصر الزياده"
+
+msgid "menu_payroll_deduction_report"
+msgstr "عناصر الخصم"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "مفردات المرتب"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "معلمة الحضور"
+
+msgid "paroll_mode_monthly"
+msgstr "شهرى"
+
+msgid "paroll_type_cash"
+msgstr "نقدا"
+
+msgid "paroll_type_check"
+msgstr "شيك بنكى"
+
+msgid "paroll_type_bank_transfer"
+msgstr "تحويل بنكى"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "ملف تعريف الموظف"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "سيريال"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "طريقة الدفع"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "نوع الدفع"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "اسم البنك"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "حساب البنك"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "رقم الموظف"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "الاسم الاول"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "اسم العائلة"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "رقم العميل"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "حساب العميل"
+
+msgid "payroll_model_deductionFormula"
+msgstr "معادلة خصم"
+
+msgid "deductionFormula_field_name"
+msgstr "اسم"
+
+msgid "deductionFormula_field_formula"
+msgstr "معادلة"
+
+msgid "deductionFormula_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "معادلة الاستثناء"
+
+msgid "exceptionFormula_field_name"
+msgstr "اسم"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "نوع الاستثناء"
+
+msgid "exceptionFormula_field_formula"
+msgstr "معادلة"
+
+msgid "exceptionFormula_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_increasementFormula"
+msgstr "معادلة الزياده"
+
+msgid "increasementFormula_field_name"
+msgstr "اسم"
+
+msgid "increasementFormula_field_formula"
+msgstr "معادلة"
+
+msgid "increasementFormula_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_leaveFormula"
+msgstr "معادلة الانصراف"
+
+msgid "leaveFormula_field_name"
+msgstr "اسم"
+
+msgid "leaveFormula_field_category"
+msgstr "نوع الانصراف"
+
+msgid "leaveFormula_field_formula"
+msgstr "معادلة"
+
+msgid "leaveFormula_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "معادلة الوقت الاضافى"
+
+msgid "overtimeFormula_field_name"
+msgstr "اسم"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "مستوى العمل الإضافي"
+
+msgid "overtimeFormula_field_formula"
+msgstr "معادلة"
+
+msgid "overtimeFormula_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_extraIncrease"
+msgstr "زيادة اضافية"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "اضافة"
+
+msgid "extraIncrease_field_employee"
+msgstr "موظف"
+
+msgid "extraIncrease_field_amount"
+msgstr "كمية"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "وقت الإصدار"
+
+msgid "extraIncrease_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_extraDeduction"
+msgstr "خصم اضافى"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "اضافة"
+
+msgid "extraDeduction_field_employee"
+msgstr "موظف"
+
+msgid "extraDeduction_field_amount"
+msgstr "كمية"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "وقت الإصدار"
+
+msgid "extraDeduction_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_salarystructure"
+msgstr "هيكل الرواتب"
+
+msgid "salaryStructure_field_amount"
+msgstr "المرتب الاساسى"
+
+msgid "salaryStructure_field_formula"
+msgstr "معادلة المرتب"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "تاريخ النفاذ"
+
+msgid "salaryStructure_field_remark"
+msgstr "ملاحظات"
+
+msgid "salaryStructure_field_formulas"
+msgstr "معادلة"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "سلفه على الراتب"
+
+msgid "salaryAdvance_field_amount"
+msgstr "كمية"
+
+msgid "salaryAdvance_field_time"
+msgstr "وقت الإصدار"
+
+msgid "salaryAdvance_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_Reimbursement"
+msgstr "السداد"
+
+msgid "Reimbursement_field_amount"
+msgstr "كمية"
+
+msgid "Reimbursement_field_time"
+msgstr "وقت السداد"
+
+msgid "Reimbursement_field_file"
+msgstr "إيصال السداد"
+
+msgid "Reimbursement_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_model_empLoan"
+msgstr "سلفه"
+
+msgid "empLoan_field_employee"
+msgstr "رقم الموظف"
+
+msgid "empLoan_field_loanAmount"
+msgstr "مبلغ السلفة"
+
+msgid "empLoan_field_loanTime"
+msgstr "وقت السلفة"
+
+msgid "empLoan_field_refundCycle"
+msgstr "دورة الاسترداد"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "قيمه المرتجع فى الفتره"
+
+msgid "empLoan_field_clean_time"
+msgstr "وقت المسح"
+
+msgid "empLoan_field_remark"
+msgstr "ملاحظات"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "اضافة"
+
+msgid "payroll_action_addRmb"
+msgstr "اضافة"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "اضافة"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "اضافة"
+
+msgid "reimbursement_file"
+msgstr "إيصال السداد"
+
+msgid "report_column_overtimeFormula1"
+msgstr "اضافى 1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "اضافى 2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "اضافى 3"
+
+msgid "report_column_increaseFormula"
+msgstr "معادلة الزياده"
+
+msgid "report_column_deductionFormula"
+msgstr "معادلة الخصم"
+
+msgid "report_column_lateFormula"
+msgstr "معادلة التأخير"
+
+msgid "report_column_absentFormula"
+msgstr "معادلة الغياب"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "معادلة الانصراف مبكرا"
+
+msgid "payroll_model_monthlysalary"
+msgstr "تقرير المرتب الشهرى"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "المرتب الاساسى"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "تاريخ النفاذ"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "تاريخ الحساب"
+
+msgid "monthlySalary_field_ot1"
+msgstr "اضافى 1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "اضافى 2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "اضافى 3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "تأخر الوصول"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "الانصراف مبكرا"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "الغياب"
+
+msgid "monthlySalary_field_increase"
+msgstr "زياده"
+
+msgid "monthlySalary_field_deduction"
+msgstr "خصم"
+
+msgid "monthlySalary_field_leave"
+msgstr "الانصراف"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "زياده اضافيه"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "خصم اضافى"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "اجمالى قيمة القرض"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "قيمة القرض المسترد"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "قيمة القرض الغير مسترد"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "خصم القرض"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "زيادة القرض"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "زيادة مقدما"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "خصم مقدما"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "السداد"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "اجمالى الزيادة"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "اجمالى الخصم"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "اجمالى المرتب"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "المرتب الاساسى لايجب ان يقل عن صفر"
+
+msgid "menu_payroll_setting"
+msgstr "إعدادات الرواتب"
+
+msgid "payroll_attParamUnit"
+msgstr "وحدة الحضور"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "الموظف له تركيب راتب فعال"
+
+msgid "receipt_file_format_constraints"
+msgstr "jpg/jpeg/png/bmp تدعم فقط الأنماط التالية"
+
+msgid "1_period"
+msgstr "فترة 1"
+
+msgid "2_periods"
+msgstr "فترة 2"
+
+msgid "3_periods"
+msgstr "فترة 3"
+
+msgid "4_periods"
+msgstr "فترة 4"
+
+msgid "5_periods"
+msgstr "فترة 5"
+
+msgid "6_periods"
+msgstr "فترة 6"
+
+msgid "7_periods"
+msgstr "فترة 7"
+
+msgid "8_periods"
+msgstr "فترة 8"
+
+msgid "9_periods"
+msgstr "فترة 9"
+
+msgid "10_periods"
+msgstr "فترة 10"
+
+msgid "11_periods"
+msgstr "فترة 11"
+
+msgid "12_periods"
+msgstr "فترة 12"
+
+msgid "deductionformula_addform_note"
+msgstr "الخصم فعال لكل شهر"
+
+msgid "increasementformula_addform_note"
+msgstr "الزيادة فعالة لكل شهر"
+
+msgid "caleulator_title"
+msgstr "الحاسبة"
+
+msgid "caleulator_basicSalary"
+msgstr "الراتب الأساسي"
+
+msgid "caleulator_scheduleDays"
+msgstr "أيام الجدول"
+
+msgid "caleulator_schedulePeriod"
+msgstr "فترة الجدول"
+
+msgid "caleulator_check"
+msgstr "التحقق"
+
+msgid "report_column_total_increase_formula"
+msgstr "القيمة الكلية لمعادلة الزيادة"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "إسم القيمة الكلية لمعادلة الزيادة"
+
+msgid "report_column_total_increase_expression"
+msgstr "تعبير قيمة الزيادة الكلية"
+
+msgid "report_column_total_deduction_formula"
+msgstr "معادلة الخصم الكلية"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "إسم معادلة الخصم الكلية"
+
+msgid "report_column_total_deduction_expression"
+msgstr "تعبير قيمة الخصم الكلية"

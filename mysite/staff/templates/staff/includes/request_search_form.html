@@ -1,0 +1,53 @@
+{% load i18n %}
+<div class="layui-form staff-search-form">
+    <div class="layui-form-item">
+        {% block searchFormExtra_fore %}
+        {% endblock %}
+        <div class="layui-inline">
+            <label for="" class="layui-form-label">{% trans 'staff_search_startDate' %}</label>
+            <div class="layui-input-inline">
+                <input id="{{ model_name }}-start" type="text" name="{{ model_name }}-start" lay-verify="required"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label for="" class="layui-form-label">{% trans 'staff_search_endDate' %}</label>
+            <div class="layui-input-inline">
+                <input id="{{ model_name }}-end" type="text" name="{{ model_name }}-end" lay-verify="required"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        {% block searchFormExtra %}
+        {% endblock %}
+        <div class="layui-inline">
+            <label for="" class="layui-form-label">{% trans 'staff_approval_approvalState' %}</label>
+            <div class="layui-input-inline">
+                <select name="audit_status" id="{{ model_name }}-aStatus">
+                    <option value="" disabled selected>---------</option>
+                    <option value="1">{% trans 'staff_approval_approvalStatePending' %}</option>
+                    <option value="2">{% trans 'staff_approval_approvalStateApproved' %}</option>
+                    <option value="3">{% trans 'staff_approval_approvalStateRejected' %}</option>
+                    <option value="6">{% trans 'staff_approval_approvalStateRevoke' %}</option>
+                    {% if  'staffLeaveRequest' == model_name %}
+                        <option value="7">{% trans 'Withdraw' %}</option>
+                    {% endif %}
+                    {% if  'staffLeaveApprove' == model_name %}
+                        <option value="7">{% trans 'Withdraw' %}</option>
+                    {% endif %}
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <a data-type="reload" id="{{ model_name }}-search_btn" title="{% trans 'staff_search_searchTitle' %}"
+               href="javascript:void(0);">
+                <i class="fa fa-fw fa-search"></i>
+            </a>
+        </div>
+        <div class="layui-inline">
+            <a data-type="reload" id="{{ model_name }}-refresh_btn" title="{% trans 'staff_search_clearTitle' %}"
+               href="javascript:void(0);">
+                <i class="layui-icon layui-icon-refresh-3 layuiadmin-button-btn"></i>
+            </a>
+        </div>
+    </div>
+</div>

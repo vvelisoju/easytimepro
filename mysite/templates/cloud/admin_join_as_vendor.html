@@ -1,0 +1,136 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .vendor_lable {
+            width: 200px;
+        }
+
+        .vender_div {
+            margin-top: 10px;
+        }
+
+        #id_vendor_btn {
+            margin-top: 50px;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+<form id="vendor_company" action="">
+    {% csrf_token %}
+    <div class="layui-form-item vender_div">
+        <div class="layui-inline">
+            <label class="layui-form-label vendor_lable"
+                   for="company_name">{% trans 'company_name' %}</label>
+            <span class="required">*</span>
+            <div class="layui-input-inline">
+                <input type="text" name="company_name" style="margin-top: 2px; font-size: 1rem;"
+                       class="layui-input" placeholder=""
+                       id="company_name" autocomplete="off">
+                <b>* Name of the target company you want to join as a vendor</b>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item vender_div">
+        <div class="layui-inline">
+            <label class="layui-form-label vendor_lable"
+                   for="vendor_name">{% trans 'cloud_vendor_company_name' %}</label>
+            <span class="required">*</span>
+            <div class="layui-input-inline">
+                <select name="cloud_vendor_company_name" id="vendor_name" style="width: 100%; height: 25px;">
+                </select>
+                <b>* Select a company you belong to to be a vendor</b>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item vender_div">
+        <div class="layui-inline">
+            <label class="layui-form-label vendor_lable"
+                   for="vendor_cnr">{% trans 'cloud_vendor_company_registration_id' %}</label>
+            <span class="required">*</span>
+            <div class="layui-input-inline">
+                <input type="text" name="vendor_cnr" style="margin-top: 2px;"
+                       class="layui-input"
+                       id="vendor_cnr" autocomplete="off" placeholder="">
+                <b>* Unique registration id of vendor</b>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item vender_div">
+        <div class="layui-inline">
+            <label class="layui-form-label vendor_lable"
+                   for="vendor_phone">{% trans 'cloud_vendor_company_phone' %}</label>
+            <span class="required">*</span>
+            <div class="layui-input-inline">
+                <input type="text" name="vendor_phone" style="margin-top: 2px;"
+                       class="layui-input"
+                       id="vendor_phone" autocomplete="off" placeholder="">
+                <b>* Your contact phone number as a vendor</b>
+            </div>
+        </div>
+    </div>
+</form>
+<button id="id_vendor_btn" class="layui-btn">
+    {% trans 'Confirm' %}
+</button>
+<script>
+    $(function() {
+       $.ajax({
+            url: "{% url 'biotime:get_all_company' %}",
+            type: "GET",
+            dataType: "json",
+            success: function (result) {
+              $('#vendor_name').append('<option selected value="' + result.current_company.toLowerCase() + '">' + result.current_company + '</option>');
+              var other_company = result.other_company;
+              for(var company_name in other_company){
+                  $('#vendor_name').append('<option value="' + other_company[company_name].toLowerCase() + '">' + other_company[company_name] + '</option>');
+              }
+            }
+          });
+    });
+
+    var self_index = layer.index;
+    var company_name_input = $('#company_name');
+    $('#id_vendor_btn').on('click', function () {
+        var check = 1;
+        var vendor_data = {
+            'company_name': company_name_input.val(),
+            'vendor_name': $('#vendor_name').val(),
+            'vendor_cnr': $('#vendor_cnr').val(),
+            'vendor_phone': $('#vendor_phone').val(),
+            csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+        };
+        for (var detail in vendor_data) {
+            if (!vendor_data[detail]) {
+                layer.msg(gettext('Vendor_company_detail_is_required'));
+                check = 0;
+                break
+            }
+        }
+        if (check) {
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "{% url 'biotime:admin_join_as_vendor' %}",
+                data: vendor_data,
+                dataType: "json",
+                type: "POST",
+                success: function (result) {
+                    layer.close(loadIndex);
+                    if (result.ret === 0) {
+                        layer.msg(gettext('email_request_has_been_sent_to ') + company_name_input.val() + '\'s Admin.');
+                        layer.close(self_index);
+                    } else {
+                        layer.msg(result.msg);
+                    }
+                },
+                error: function (xhr, error, e) {
+                    layer.close(loadIndex);
+                }
+            });
+        }
+    })
+</script>
+</body>
+</html>

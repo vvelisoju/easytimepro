@@ -1,0 +1,15 @@
+<div class="layui-inline{% if field.is_hidden %} layui-hidden {% endif %}{% if field.name %} field-{{ field.name }}{% endif %}" title="{{ field.field.help_text|safe }}">
+    {% if field.is_checkbox %}
+        {{ field }}{{ field.label_tag }}
+    {% else %}
+        <label class="layui-form-label" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="required">*</span>{% endif %}</label>
+        <div class="layui-input-inline {% if field.is_hidden %} layui-hidden {% endif %}">
+            {% if field.is_readonly %}
+                <div class="readonly">{{ field.contents }}</div>
+            {% else %}
+                {{ field }}
+            {% endif %}
+            <div class="layui-form-mid layui-word-aux" style="white-space: nowrap;">{{ field.field.help_text|safe }}</div>
+        </div>
+    {% endif %}
+</div>

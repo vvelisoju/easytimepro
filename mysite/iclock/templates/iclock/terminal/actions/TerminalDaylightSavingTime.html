@@ -1,0 +1,56 @@
+{% load i18n common %}
+<div style="padding: 10px; min-height: 280px; width: 740px;">
+    <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        {% with form.form as f %}
+            <div class="layui-form-item">
+                {% layui_switch f.func_on %}
+                {% layui_inline f.dlst_mode %}
+            </div>
+            <div class="layui-form-item date-time {% if f.dlst_mode.initial %}layui-hide{% endif %}">
+                {% layui_inline f.start_date %}
+                {% layui_inline f.start_time %}
+            </div>
+            <div class="layui-form-item date-time {% if f.dlst_mode.initial %}layui-hide{% endif %}">
+                {% layui_inline f.end_date %}
+                {% layui_inline f.end_time %}
+            </div>
+            <div class="layui-form-item week-day {% if not f.dlst_mode.initial %}layui-hide{% endif %}">
+                {% layui_inline f.start_month %}
+                {% layui_inline f.start_week %}
+            </div>
+            <div class="layui-form-item week-day {% if not f.dlst_mode.initial %}layui-hide{% endif %}">
+                {% layui_inline f.start_weekday %}
+                {% layui_inline f.start %}
+            </div>
+            <div class="layui-form-item week-day {% if not f.dlst_mode.initial %}layui-hide{% endif %}">
+                {% layui_inline f.end_month %}
+                {% layui_inline f.end_week %}
+            </div>
+            <div class="layui-form-item week-day {% if not f.dlst_mode.initial %}layui-hide{% endif %}">
+                {% layui_inline f.end_weekday %}
+                {% layui_inline f.end %}
+            </div>
+        {% endwith %}
+    </form>
+    <script>
+        layui.use(['form', 'laydate'], function () {
+            var laydate = layui.laydate, form = layui.form;
+            $('form.layui-form input.layui-date').each(function () {
+                laydate.render({elem: this, type: 'date', trigger: 'click'});
+            });
+            $('form.layui-form input.layui-time').each(function () {
+                laydate.render({elem: this, type: 'time', trigger: 'click'});
+            });
+            form.on('select(dlst_mode)', function (data) {
+                if (parseInt(data.value) === 1) {
+                    $('div.date-time').addClass('layui-hide');
+                    $('div.week-day').removeClass('layui-hide');
+                } else {
+                    $('div.date-time').removeClass('layui-hide');
+                    $('div.week-day').addClass('layui-hide');
+                }
+            })
+        })
+    </script>
+</div>

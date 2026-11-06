@@ -1,0 +1,15 @@
+{% extends 'staff/includes/approval_search_form.html' %}
+{% load i18n %}
+{% block searchFormExtra %}
+    <div class="layui-inline">
+        <label for="" class="layui-form-label">{% trans 'staff_overtime_overtimeType' %}</label>
+        <div class="layui-input-inline">
+            <select name="ot_type" id="{{ model_name }}RequestOTType">
+                <option value="">{% trans '----------' %}</option>
+                <option value="1">{% trans 'normal_overtime' %}</option>
+                <option value="2">{% trans 'weekend_overtime' %}</option>
+                <option value="3">{% trans 'holiday_overtime' %}</option>
+            </select>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,418 @@
+{% load i18n static %}
+{% load common %}
+{#{% autoescape off %}#}
+{% block extend_js %}
+  <link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar.min.css" %}"/>
+{% endblock %}
+<style>
+    .fc-widget-content.fc-today {
+            background: #ffffff !important;
+            box-shadow: rgb(150, 157, 159) 1px 1px 15px inset;
+        }
+</style>
+<div style="padding: 10px;min-height: 350px;max-height: 550px;width: 1000px">
+   <form action="" method="post" id="leave_apply_save_form" class="layui-form" lay-filter="staff_leave_add">
+    <input type="hidden" name="employee" class="layui-hide" value="{{ user.pk }}">
+      <input type="hidden" name="leave_schedule" class="layui-hide" value="{{ leave_schedule_data }}">
+    {% csrf_token %}
+    <div class="layui-row">
+      <div class="layui-col-md7" style="width:69%">
+        <div class="layui-card">
+          <div class="layui-card-body" style="padding: 0 5px;">
+            <div id="fullcalendar" style="height: 520px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md2" style="width:31%">
+          <div class="layui-form-item">
+             <div class="layui-inline">
+                <input type="radio"  name="day-type" value="1"  checked="checked" title="{% trans 'att_aleave_full_day' %}">
+             </div>
+             <div class="layui-inline">
+                 <p class="fulldata" style="font-size: 15px;"></p>
+             </div>
+          </div>
+          <div class="layui-form-item">
+              <div class="layui-inline">
+                <input type="radio"   name="day-type" value="2"  title="{% trans 'att_aleave_first_half' %}"><span class="layui-inline "></span>
+             </div>
+              <div class="layui-inline">
+                 <p class="firstdata" style="font-size: 15px;"></p>
+             </div>
+          </div>
+          <div class="layui-form-item">
+              <div class="layui-inline">
+                <input type="radio"   name="day-type" value="3"  title="{% trans 'att_aleave_second_half' %}"><span class="layui-inline "></span>
+             </div>
+              <div class="layui-inline">
+                 <p class="seconddata" style="font-size: 15px;"></p>
+             </div>
+          </div>
+        <div class="layui-card-body" >
+            <table id="staff_leave_timetable" class="layui-hide" lay-filter="staffLeaveTimetable"></table>
+        </div>
+        <div class="layui-form-item" style="padding-top: 25px;">
+        <label class="layui-form-label">{% trans 'staff_leave_leaveType' %}<span class="required">*</span></label>
+        <div class="layui-input-block">
+            <select id="id_leavetype" name="leave_payment_type" lay-search="" lay-verify="leave_type" autocomplete="off"
+                placeholder="" class="layui-input">
+                <option value=0>{% trans 'staff_module_pl' %}</option>
+                <option value=1>{% trans 'staff_module_upl' %}</option>
+            </select>
+        </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">{% trans 'staff_leave_leaveCategory' %}<span class="required">*</span></label>
+      <div class="layui-input-block">
+        <select id="id_category" name="category" lay-search="" lay-verify="leave_category" autocomplete="off"
+                placeholder="" class="layui-input"></select>
+      </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">{% trans 'staff_leave_dailyquantity' %}<span class="required">*</span></label>
+      <div class="layui-input-block">
+        <input id="id_daily_quantity" type="text" name="days" autocomplete="off" placeholder="" class="layui-input" readonly>
+      </div>
+    </div>
+          <div class="layui-form-item">
+      <label class="layui-form-label">{% trans 'staff_leave_applyReason' %}</label>
+      <div class="layui-input-block">
+        <input type="textarea" id="id_apply_reason" name="apply_reason" lay-verify="apply_reason" autocomplete="off"
+               placeholder="" class="layui-textarea" maxlength="200">
+
+      </div>
+    </div>
+      </div>
+    </div>
+      <input id="leave_applied_data" type="hidden" name="leave_applied_data" value="">
+    </div>
+  </form>
+</div>
+<script>
+  $(function () {
+    layui.use(['form', 'laydate', 'table', 'tablePlug'], function () {
+      form = layui.form;
+      var table = layui.table, tablePlug = layui.tablePlug, form = layui.form, laydate = layui.laydate;
+      $.ajax({
+      url: "/att/api/leavecategorys/?page_size=1000"
+      , type: "GET"
+      , async: false
+      , dataType: "json"
+      , success: function (response) {
+        var data = response.data;
+        var html = "";
+        for (var i = 0; i < data.length; i++) {
+          html += '<option value="' + data[i]['id'] + '">' + data[i]['category_name'] + '</option>';
+        }
+        $("#id_category").append(html);
+        form.render();
+      }
+      , error: function (XMLHttpRequest, textStatus, errorThrown) {
+        console.trace(arguments);
+        form.render();
+      }
+    });
+
+      function getEvents(start) {
+        let select_date = start.toISOString().substring(0, 10);
+        let nonWorking = event_dates.includes(select_date);
+        if (nonWorking) return [];
+        var daytype = $("input[name=day-type]:checked").val() ? $("input[name=day-type]:checked").val() : 0;
+        var events = [];
+        var checkStatus = table.checkStatus('staff_leave_timetable');
+        if (checkStatus.data.length <= 0){
+          layer.msg(gettext("Please select Time Table"), {icon: 5});
+          return;
+        }
+        var table_id = checkStatus.data[0].id
+        var leave_applied_data = $('#leave_applied_data').val();
+        var count = eval($('#id_daily_quantity').val());
+          if (eval(daytype) == 1) {
+              if(leave_applied_data){
+                  var existing_leave_data = JSON.parse(leave_applied_data);
+                  var key = start.toISOString().substring(0, 10);
+                  if(key in existing_leave_data){
+                      var events = [];
+                  }else{
+                      $('#id_daily_quantity').val(count+1);
+                      existing_leave_data[key] = [1, table_id];
+                      $('#leave_applied_data').val(JSON.stringify(existing_leave_data));
+                      var event = checkStatus.data.map(function (item, index) {
+                          return {
+                              item: 1,
+                              title: 'Full Day',
+                              time_table: `${item.alias}(${item.in_time}-${item.out_time})`
+                          };
+                      });
+                      events.push(...event);
+                  }
+              }else{
+                  var new_leave_applied_data = {};
+                  var ldate = start.toISOString().substring(0, 10);
+                  new_leave_applied_data[ldate] = [1, table_id];
+                  $('#leave_applied_data').val(JSON.stringify(new_leave_applied_data));
+                  var event = checkStatus.data.map(function (item, index) {
+                      return {
+                          item: 1,
+                          title: 'Full Day',
+                          time_table: `${item.alias}(${item.in_time}-${item.out_time})`
+                      };
+                  });
+                  events.push(...event);
+              }
+
+          } else if (eval(daytype) == 2) {
+               if(leave_applied_data){
+                  var existing_leave_data = JSON.parse(leave_applied_data);
+                  var key = start.toISOString().substring(0, 10);
+                  if(key in existing_leave_data){
+                      var events = [];
+                  }else{
+                      $('#id_daily_quantity').val(count+0.5);
+                      existing_leave_data[key] = [2, table_id];
+                      $('#leave_applied_data').val(JSON.stringify(existing_leave_data));
+                      var event = checkStatus.data.map(function (item, index) {
+                          return {
+                              item: 1,
+                              title: 'First Half',
+                              time_table: `${item.alias}(${item.in_time}-${item.out_time})`
+                          };
+                      });
+                      events.push(...event);
+                  }
+              }else{
+                  var new_leave_applied_data = {};
+                  var ldate = start.toISOString().substring(0, 10);
+                  new_leave_applied_data[ldate] = [2, table_id];
+                  $('#leave_applied_data').val(JSON.stringify(new_leave_applied_data));
+                  var event = checkStatus.data.map(function (item, index) {
+                      return {
+                          item: 1,
+                          title: 'First Half',
+                          time_table: `${item.alias}(${item.in_time}-${item.out_time})`
+                      };
+                  });
+                  events.push(...event);
+              }
+          } else if (eval(daytype) == 3) {
+               if(leave_applied_data){
+                  var existing_leave_data = JSON.parse(leave_applied_data);
+                  var key = start.toISOString().substring(0, 10);
+                  if(key in existing_leave_data){
+                      var events = [];
+                  }else{
+                      $('#id_daily_quantity').val(count+0.5);
+                      existing_leave_data[key] = [3, table_id];
+                      $('#leave_applied_data').val(JSON.stringify(existing_leave_data));
+                      var event = checkStatus.data.map(function (item, index) {
+                          return {
+                              item: 1,
+                              title: 'Second Half',
+                              time_table: `${item.alias}(${item.in_time}-${item.out_time})`
+                          };
+                      });
+                      events.push(...event);
+                  }
+              }else{
+                  var new_leave_applied_data = {};
+                  var ldate = start.toISOString().substring(0, 10);
+                  new_leave_applied_data[ldate] = [3, table_id];
+                  $('#leave_applied_data').val(JSON.stringify(new_leave_applied_data));
+                  var event = checkStatus.data.map(function (item, index) {
+                      return {
+                          item: 1,
+                          title: 'Second Half',
+                          time_table: `${item.alias}(${item.in_time}-${item.out_time})`
+                      };
+                  });
+                  events.push(...event);
+              }
+          }
+          if(!leave_applied_data){
+            if(eval(daytype) == 1){
+                $('#id_daily_quantity').val(1);
+              }else if(eval(daytype) == 2){
+                $('#id_daily_quantity').val(0.5);
+              }else if(eval(daytype) == 3){
+                $('#id_daily_quantity').val(0.5);
+              }
+          }
+          return events;
+      }
+
+      let holiday_weekend_events = [];
+      let event_dates = [];
+      let event_years = [];
+
+      function convert(date) {
+        month = ("0" + (date.getMonth() + 1)).slice(-2),
+        day = ("0" + date.getDate()).slice(-2);
+        return [date.getFullYear(), month, day].join("-");
+      }
+
+      function holiday_weekend_validation(startDate, endDate){
+        $.ajax({
+            url: "att/api/empScheduleReport/?employees={{ user.pk }}&start_date="+startDate+ "&end_date="+endDate
+            , type: "GET"
+            , dataType: "json"
+            , success: function (response) {
+                let weekend = response.data[0].weekends
+                let holiday = response.data[0].holidays
+                if (weekend.length > 0) {
+                    weekend.forEach(function (item, index) {
+                        holiday_weekend_events.push({'title': 'Week off', 'start': item, color: 'green'})
+                        event_dates.push(item)
+                    })
+                }
+                if (Object.keys(holiday).length > 0) {
+                  Object.keys(holiday).forEach(function(key) {
+                    if (!weekend.includes(key)) {
+                        holiday_weekend_events.push({'title': holiday[key], 'start': key, color: '#a93ac4'})
+                        event_dates.push(key)
+                    }
+                  });
+                }
+                $('#fullcalendar').fullCalendar('addEventSource', holiday_weekend_events, true);
+            }
+        });
+      }
+      let currentDate = new Date();
+      event_years.push(currentDate.getFullYear().toString());
+      let startDate = convert(new Date(currentDate.getFullYear(), 0, 1));
+      let endDate = convert(new Date(currentDate.getFullYear(), 11, 31));
+      holiday_weekend_validation(startDate, endDate);
+      var timetableOpts = {
+        id: 'staff_leave_timetable'
+        , elem: "#staff_leave_timetable"
+        , height: 127
+        , text: {none: gettext('none_data')}
+        , request: {
+          pageName: 'page',
+          limitName: 'page_size'
+        }
+        , cols: [[
+          {field: 'id', type: 'radio'},
+          {field: 'alias', title: "{% trans 'timeInterval_field_alias' %}", width: 120},
+          {field: 'in_time', title: "{% trans 'timeInterval_field_checkIn' %}", width: 80},
+          {field: 'out_time', title: "{% trans 'timeInterval_field_checkOut' %}", width: 90, templet: function (data) {
+            if(data.cross_day > 0){
+                return data.out_time + '<sup>+'+data.cross_day + '</sup>';
+            }else{
+                return data.out_time;
+            }
+          }},
+        ]]
+        , url: '/att/api/timeintervals/'
+        };
+      var timeTable = table.render(timetableOpts);
+      $('#fullcalendar').fullCalendar({
+        height: 520
+        , header: {
+          center: '',
+          right: 'today prev,next'
+        }
+        , isRTL:false
+        , monthNames : [
+          gettext('fullcal_January'), gettext('fullcal_February'), gettext('fullcal_March'), gettext('fullcal_April')
+          , gettext('fullcal_May'), gettext('fullcal_June'), gettext('fullcal_July'), gettext('fullcal_August')
+          , gettext('fullcal_September'), gettext('fullcal_October'), gettext('fullcal_November'), gettext('fullcal_December')
+        ]
+        , monthNamesShort : [
+          gettext('fullcal_Jan'), gettext('fullcal_Feb'), gettext('fullcal_Mar'), gettext('fullcal_Apr')
+          , gettext('fullcal_May'), gettext('fullcal_Jun'), gettext('fullcal_Jul'), gettext('fullcal_Aug')
+          , gettext('fullcal_Sep'), gettext('fullcal_Oct'), gettext('fullcal_Nov'), gettext('fullcal_Dec')
+        ]
+        , dayNames : [
+          gettext('fullcal_Sunday'), gettext('fullcal_Monday'), gettext('fullcal_Tuesday'), gettext('fullcal_Wednesday')
+          , gettext('fullcal_Thursday'), gettext('fullcal_Friday'), gettext('fullcal_Saturday')
+        ]
+        , dayNamesShort : [
+          gettext('fullcal_Sun'), gettext('fullcal_Mon'), gettext('fullcal_Tue'), gettext('fullcal_Wed')
+          , gettext('fullcal_Thur'), gettext('fullcal_Fri'), gettext('fullcal_Sat')
+        ]
+        , editable: false
+        , selectable: true
+        , fixedWeekCount: false
+        , select: function (start, end) {
+          var events = getEvents(start);
+          if (events.length > 0) {
+            events.forEach(function (item, index) {
+              var event = $.extend({start: start, end: end}, item);
+              $('#fullcalendar').fullCalendar('renderEvent', event, true); // stick? = true
+            });
+          } else {
+            $('#fullcalendar').fullCalendar('unselect');
+          }
+
+        }
+        , eventMouseover: function (event) {
+          $(this).popover({
+            title: event.time_table,
+            trigger: 'hover',
+            placement: "right",
+            atMouse: true,
+            container: '#fullcalendar'
+          }).popover('show');
+        }
+        , eventMouseout: function (event, jsEvent, view) {
+          $(this).popover({}).popover('hide')
+        },
+        eventClick: function (event) {
+          var ldate = event.start;
+          var key = ldate.toISOString().substring(0, 10);
+          let non_working = event_dates.includes(key);
+          if (!non_working){
+              $('#fullcalendar').fullCalendar('removeEvents', event._id);
+              var leave_applied_data = $('#leave_applied_data').val();
+              var existing_leave_data = JSON.parse(leave_applied_data);
+              delete existing_leave_data[key];
+              $('#leave_applied_data').val(JSON.stringify(existing_leave_data));
+              var count = 0;
+              for(var x in existing_leave_data){
+                if(x) {
+                    if (existing_leave_data[x][0] == 1) {
+                        count += 1;
+                    } else {
+                        count += 0.5;
+                    }
+                }
+              }
+              $('#id_daily_quantity').val(count);
+          }
+        }
+      });
+
+      $(".fc-next-button").click(
+          function() {
+            let date = $("#fullcalendar").fullCalendar('getDate')._d;
+            let nextYear = date.getFullYear().toString();
+            eventYear = event_years.includes(nextYear);
+            if (!eventYear) {
+                event_years.push(nextYear);
+                let startDate = convert(new Date(date.getFullYear(), 0, 1));
+                let endDate = convert(new Date(date.getFullYear(), 11, 31));
+                $('#fullcalendar').fullCalendar('removeEvents');
+                holiday_weekend_validation(startDate, endDate)
+            }
+          }
+      );
+
+      $(".fc-prev-button").click(
+          function() {
+            let date = $("#fullcalendar").fullCalendar('getDate')._d;
+            let prevYear = date.getFullYear().toString();
+            eventYear = event_years.includes(prevYear);
+            if (!eventYear) {
+                event_years.push(prevYear);
+                let startDate = convert(new Date(date.getFullYear(), 0, 1));
+                let endDate = convert(new Date(date.getFullYear(), 11, 31));
+                $('#fullcalendar').fullCalendar('removeEvents');
+                holiday_weekend_validation(startDate, endDate)
+            }
+          }
+      );
+
+    });
+  });
+</script>
+{#{% endautoescape %}#}
+

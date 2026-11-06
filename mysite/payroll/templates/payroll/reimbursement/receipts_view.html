@@ -1,0 +1,114 @@
+{% block content %}
+    <style type="text/css">
+        #zoomtext {
+            transform: scale(1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .reim-screen {
+            overflow: hidden;
+            width: 900px;
+            height: 542px;
+            margin: 0 auto !important
+        }
+        .reburse-img {
+            overflow: hidden;
+            margin-top: 5px;
+        }
+    </style>
+    <div class="reim-screen ">
+        <div id="panzoom" >
+            <input type="hidden" id="id-imgs" value="{{re_images}}">
+           <div id="mydiv" style="text-align:center;width: 100%;height: 0px;"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block extrajs %}
+    <script type="text/javascript">
+        var zoom = 1;
+        var zoomStep = 0.2;
+        document.getElementById("zoomIn").addEventListener("click", function () {
+            zoom += zoomStep;
+            document.getElementById("zoomtext").style.transform = "scale(" + zoom + ")";
+        });
+        document.getElementById("zoomOut").addEventListener("click", function () {
+            if (zoom > zoomStep) {
+                zoom -= zoomStep;
+                document.getElementById("zoomtext").style.transform = "scale(" + zoom + ")";
+            }
+        });
+    </script>
+    <script src="/static/js/panzoom.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var element = document.getElementById('panzoom')
+            var panzoom = Panzoom(element, {
+                canvas:true,
+            });
+            var parent = element.parentElement
+            parent.addEventListener('wheel', panzoom.zoomWithWheel);
+
+            $('#zoomIn').click(function () {
+                panzoom.zoomIn();
+            });
+            $('#zoomOut').click(function () {
+                panzoom.zoomOut();
+            });
+            $('#imgReset').click(function () {
+                panzoom.reset();
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var img_src = $('#id-imgs').val();
+            if (img_src) {
+                $("#mydiv").append("<div class=\"layui-carousel\" id=\"id_carousel\" style=\"text-align:center\" >" + "<div carousel-item id=\"id_info\">" + "</div>" + "</div>");
+                layui.use('carousel', function () {
+                    var carousel = layui.carousel, img_srcs = img_src.split('|');
+                    var array_len = img_srcs.length;
+                    for (var i = 0; i < array_len; i++) {
+                        $("#id_info").append(
+                            "<div>" + "<embed src=" + img_srcs[i] + " width=500px height=500px \>" + "</div>"
+                        );
+                        $('.reim-download').attr('href', img_srcs[i]);
+                    }
+                    carousel.render({
+                        elem: '#id_carousel'
+                        , width: '100%'
+                        , height: '550px'
+                        , autoplay: false
+                        , arrow: 'hover'
+                        , index: 2
+                        , indicator: 'inside'
+                        , trigger: 'click'
+                    })
+                });
+            } else {
+                $("#mydiv").append(
+                    "<div style=\"align-content: center;font-size: small;color: #1d1d1d\">" + "<p >" + gettext('no_receipts') + "</p>" + "</div>"
+                );
+            }
+        });
+        $(document).on("click", "#id_carousel .layui-carousel-arrow", function (event) {
+            if ($('#id_info div.layui-this')) {
+                var currentHref = $('#id_info .layui-carousel-next embed').attr('src');
+                var currentHrefs = $('#id_info .layui-carousel-prev embed').attr('src');
+                if (currentHref) {
+                    $('.reim-download').attr('href', '');
+                    $('.reim-download').attr('href', currentHref);
+                }
+                else {
+                    $('.reim-download').attr('href', '');
+                    $('.reim-download').attr('href', currentHrefs);
+                }
+            }
+        });
+    </script>
+    <div style="position:absolute;z-index: 99999 !important; bottom:60px;right:50px;">
+    <button class="btn btn-sm btn-default" id="zoomIn"><i class="fa fa-plus"></i></button>
+    <button class="btn btn-sm btn-default" id="zoomOut"><i class="fa fa-minus"></i></button>
+    <button class="btn btn-sm btn-default" id="imgReset"><i class="fa fa-refresh"></i></button>
+    <a class="btn btn-sm btn-default reim-download" href="" download ><i class="fa fa-download"></i></a>
+    </div>
+{% endblock %}

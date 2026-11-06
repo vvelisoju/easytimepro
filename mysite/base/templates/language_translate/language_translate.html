@@ -1,0 +1,230 @@
+{% load i18n %}
+<style>
+  #id_language_div dl { max-height:100px; }
+</style>
+<div id="language_translate_form" style="padding: 10px; height: 600px;">
+    <form class="layui-form data-form" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id='id_language_div' class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">{% trans 'reference' %}</label>
+                <div class="layui-input-inline">
+                     <select id="id_reference_lan" name="reference_lan" lay-filter="languages">
+                         {% for lng in languages %}
+                             <option value="{{ lng.0 }}">{{ lng.1 }}</option>
+                         {% endfor %}
+                     </select>
+                </div>
+
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">{% trans 'translated' %}</label>
+                 <div class="layui-input-inline">
+                    <select id="id_translate_lan" name="translate_lan" lay-filter="languages">
+                        <option value=''>---------</option>
+                        {% for lng in languages %}
+                             <option value="{{ lng.0 }}">{{ lng.1 }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">{% trans 'module' %}</label>
+                 <div class="layui-input-inline">
+                    <select id="id_module" name="module" lay-filter="languages">
+                        <option value='att'>{% trans 'menu_attendance' %}</option>
+                        <option value='acc'>{% trans 'menu_access' %}</option>
+                        <option value='payroll'>{% trans 'menu_payroll' %}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-table-view">
+                <div class="layui-table-tool">
+                    <div class="layui-table-tool-temp">
+                        <div class="layui-btn-container">
+                            <ul class="layui-nav">
+                                <li class="layui-nav-item">
+                                    <a id="id_submit"
+                                       class="layui-btn layui-btn-sm"
+                                       lay-filter="translate-submit"
+                                       title="{% trans 'attRule_globalRule_btnSave' %}"
+                                       group="0" index="0" style="background-color: #d8dce1;color: #000000">{% trans 'attRule_globalRule_btnSave' %}
+                                    </a>
+                                </li>
+                                <li class="layui-nav-item">
+                                    <a id="id_restart"
+                                       class="layui-btn layui-btn-sm"
+                                       lay-filter="translate-submit"
+                                       title="{% trans 'system_translate_btnRestart' %}"
+                                       group="0" index="0" style="background-color: #d8dce1;color: #000000">{% trans 'system_translate_btnRestart' %}
+                                    </a>
+                                </li>
+                                <li class="layui-nav-item">
+                                    <a id="id_download"
+                                       class="layui-btn layui-btn-sm"
+                                       lay-filter="translate-submit"
+                                       title="{% trans 'system_translate_btnDownload' %}"
+                                       group="0" index="0" style="background-color: #d8dce1;color: #000000">{% trans 'system_translate_btnDownload' %}
+                                    </a>
+                                </li>
+                                <span class="layui-nav-bar layui-hide" style="left: 65px; top: 30px; width: 0px; opacity: 0;"></span>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="layui-hide" id="id_language_translate" lay-filter="language_translate"></table>
+        </div>
+    </form>
+</div>
+<script>
+  $(function () {
+      String.prototype.format = function(opts) {
+        var data = Array.prototype.slice.call(arguments, 0),
+            toString = Object.prototype.toString;
+        if (data.length) {
+            data = data.length == 1 ?
+                (opts !== null && (/\[object Array\]|\[object Object\]/.test(toString.call(opts))) ? opts : data) : data;
+            return this.replace(/\$\{(.+?)\}/g, function(match, key) {
+                var replacer = data[key];
+                if ('[object Function]' == toString.call(replacer)) {
+                    replacer = replacer(key);
+                }
+                return ('undefined' == typeof replacer ? '' : replacer);
+            });
+        }
+        return this;
+      }
+
+      layui.use(['element', 'form', 'laydate', 'table', 'tablePlug'], function () {
+          var form = layui.form, element=layui.element, table=layui.table, tablePlug = layui.tablePlug;
+          tablePlug.smartReload.enable(true);
+          form.render();
+          element.render();
+
+          form.on('select(languages)', function (data) {
+              var elem = data.elem;
+              $("#id_lan").val(data.value);
+              init_language(data.value);
+              if(elem.id === "id_translate_lan")
+              {
+                  var module =  $("id_module").val();
+                  if(module==='att') {
+                      $('#id_download').attr('href', '/locale/${lan}/LC_MESSAGES/django.po'.format({lan: data.value.replace("-", "_")}),)
+                  }
+                  else{
+                      $('#id_download').attr('href', '${module}/locale/${lan}/LC_MESSAGES/django.po'.format(
+                          {lan: data.value.replace("-", "_"),
+                          module:module}),)
+                  }
+              }
+              if(elem.id === 'id_module')
+              {
+                  var lan =  $("id_translate_lan").val();
+                  if(module==='att') {
+                      $('#id_download').attr('href', '/locale/${lan}/LC_MESSAGES/django.po'.format({lan: lan.replace("-", "_")}),)
+                  }
+                  else{
+                      $('#id_download').attr('href', '${module}/locale/${lan}/LC_MESSAGES/django.po'.format(
+                          {lan: data.value.replace("-", "_"),
+                          module:data.value}),)
+                  }
+              }
+          });
+
+          function init_language() {
+              var ref_lan = $('#id_reference_lan').val();
+              var tra_lan = $('#id_translate_lan').val();
+              var module = $('#id_module').val();
+              if(ref_lan==null){ref_lan = 'en';}
+              var url = '/base/get_reference_file';
+              layer.load();
+              $.ajax({
+                  url: url,
+                  type: 'GET',
+                  data: {'ref_lan': ref_lan, 'tra_lan': tra_lan, 'module': module},
+                  dataType: 'json',
+                  success: function (data) {
+                      table.render({
+                          elem: "#id_language_translate"
+                          , data: data
+                          , height:"500"
+                          , page: {
+                              layout: ['count', 'prev', 'page', 'next', 'limit']
+                              , limit: 5000
+                              , limits: [5000, 10000]
+                              , groups: 1
+                          }
+                          , text: {none: gettext('none_data')}
+                          , cols: [[
+                              {field: 'id', title: 'id', width:"4%"},
+                              {field: 'msgid', title: "{% trans 'language_key' %}", width:"32%"},
+                              {field: 'msgstr', title: "{% trans 'reference' %}", width:"32%"},
+                              {field: 'newstr', title: "{% trans 'translated'%}", width:"32%", edit: 'text'},
+                          ]]
+                      });
+                      layer.closeAll('loading');
+                  },
+                  error: function(response) {
+                         layer.closeAll('loading');
+                      }
+              });
+          }
+          $('#id_submit').on('click', function () {
+              if (table.cache["id_language_translate"].length > 0) {
+                layer.load();
+                  $.ajax({
+                      url: '/base/save_translate_language/',
+                      dataType: 'json',
+                      type: 'POST',
+                      data: {
+                          csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val(),
+                          lan: $("#id_translate_lan").val(),
+                          module: $("#id_module").val(),
+                          translate_language: JSON.stringify(table.cache["id_language_translate"])
+                      },
+                      success: function (data) {
+                          console.log(data);
+                          layer.msg(gettext('save_successful'), {icon: 6});
+                          layer.closeAll('loading');
+                      },
+                      error: function(response) {
+                        layer.open({
+                            content: gettext('save_failed'),
+                            btn: ['ok'],
+                            title: 'Message',
+                            icon: 5
+                        });
+                        layer.closeAll('loading');
+                      }
+                  });
+              }
+          });
+          $('#id_restart').on('click', function () {
+                layer.load();
+                  $.ajax({
+                      url: '/base/restart_service/',
+                      dataType: 'json',
+                      type: 'POST',
+                      data: {
+                          csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val()
+                      },
+                      success: function (data) {
+                          layer.msg(gettext('save_successful'), {icon: 6});
+                          layer.closeAll('loading');
+                      },
+                      error: function(response) {
+                        layer.open({
+                            content: gettext('save_failed'),
+                            btn: ['ok'],
+                            title: 'Message',
+                            icon: 5
+                        });
+                        layer.closeAll('loading');
+                      }
+                  });
+          });
+          init_language();
+    });
+  });
+</script>

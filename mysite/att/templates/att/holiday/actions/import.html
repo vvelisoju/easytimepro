@@ -1,0 +1,98 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 300px;min-width: 450px">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-form-item field-import_file">
+            <label class="layui-form-label" for="id_import_file">{% trans 'data_import_labelFile' %}<span class='required'>*</span></label>
+            <div class="layui-input-inline ">
+                <input type="file" name="import_file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain"  id="id_import_file" required=""  />
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block layui-form-mid layui-word-aux">{% trans 'data_import_fileHelpTxt' %}</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'date_import_labelExistingData' %}</label>
+            <div class="layui-input-inline">
+                <select name="import_type" id="id_import_type">
+                    <option value="0" selected="">{% trans 'date_import_typeOptionIgnore' %}</option>
+                    <option value="1">{% trans 'date_import_typeOptionOverwrite' %}</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"
+                   style="width: 150px;text-align: left">{% trans 'data_import_fileTemplateDemo' %}</label>
+            <div class="layui-input-inline" style="float: right">
+                <a target="_blank" style="color: #01AAED;"
+                   href="att/holiday/import_template/"><i
+                        class="fa fa-download"></i>{% trans 'data_import_fileTemplateDownload' %}</a>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <table class="layui-hide" id="demo"></table>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block"
+                 style="margin-left: 0px;min-height: 24px;">{% trans 'data_import_description' %}</div>
+            <div class="layui-input-block" style="margin-left: 20px;">
+                <p>{% trans 'data_import_holidayImportRequired1' %}</p>
+                <p>{% trans 'data_import_holidayImportRequired2' %}</p>
+                <p>{% trans 'data_import_holidayImportRequired3' %}</p>
+                <br>
+                <p>{% trans 'supported_formats' %}</p>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+layui.use('table', function(){
+    let table = layui.table;
+    table.render({
+        elem: '#demo'
+        ,cols: [[
+            {field:'no',width: '10%',title: ''}
+            ,{field:'alias',width: '29%',title: 'A'}
+            ,{field:'location',width: '18%', title: 'B'}
+            ,{field:'start_date', width: '25%',title: 'C'}
+            ,{field:'duration', width: '20%',title: 'D'}
+        ]]
+        ,data: [
+            {
+                "no": "S.No"
+                ,"alias": "{% trans 'holiday_field_alias' %}"
+                ,"location": "{% trans 'holiday_field_holiday' %}"
+                ,"start_date":"{% trans 'holiday_field_startDate' %}"
+                ,"duration":"{% trans 'holiday_field_duration' %}"
+            }, {
+                "no": "1"
+                ,"alias": "New Year"
+                ,"location": "1"
+                ,"start_date": "2020-01-01"
+                ,"duration": "1"
+            },{
+                "no": "2"
+                ,"alias": "Holiday"
+                ,"location": "2"
+                ,"start_date": "2023-06-06"
+                ,"duration": "3"
+            },{
+               "no": "3"
+                ,"alias": "Christmas"
+                ,"location": "1"
+                ,"start_date": "2020-12-25"
+                ,"duration": "1"
+            }
+        ]
+    });
+
+    $(".layui-layer-btn0").click(function () {
+        if (!$("input[name='import_file']").val()){
+            $("#id_import_file").css({'border':'solid', 'border-color': 'red', 'border-width': '1px', 'border-radius': '2px'})
+        }
+    });
+    $("#id_import_file").click(function () {
+        $("#id_import_file").css({'border-width': '0'})
+    })
+});
+</script>

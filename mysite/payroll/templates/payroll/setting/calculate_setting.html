@@ -1,0 +1,66 @@
+{% load i18n static %}
+{% load common %}
+{% load i18n %}
+<div style="padding: 20px; width: 600px;">
+  <form class="layui-form" lay-filter="setting_form">
+    {% csrf_token %}
+    <div class="layui-form-item" style="width: 300px;">
+      <label class="layui-form-label">{% trans 'payroll_attParamUnit' %}</label>
+      <div class="layui-input-block">
+        <select name="unit">
+          <option value="hour">{% trans 'calculationUnit_option_hour' %}</option>
+          <option value="minute">{% trans 'calculationUnit_option_minute' %}</option>
+        </select>
+      </div>
+    </div>
+    <hr class="top-line">
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit="" lay-filter="save" id="payroll-btn">{% trans 'btn_save' %}</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  layui.use(['form', 'layedit', 'laydate'], function () {
+    var form = layui.form;
+
+    $.ajax({
+      url: "/base/api/systemSetting/?name=payroll_setting",
+      type: "GET",
+      dataType: "json",
+      success: function (response, xhr) {
+        var val = response.data[0];
+        if (val) {
+          var unit_value = JSON.parse(val.value);
+          form.val('setting_form', unit_value);
+        } else {
+          form.val('setting_form', {"unit": "hour"});
+        }
+      }
+    });
+
+    //监听提交
+    form.on('submit(save)', function (data) {
+      console.log(JSON.stringify(data.field));
+      layer.load(1, {});
+
+      var csrf = data.field['csrfmiddlewaretoken'];
+      var value = {
+        unit: data.field['unit']
+      };
+
+      $.ajax({
+        url: '/base/api/systemSetting/',
+        type: "POST",
+        data: {'name': 'payroll_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf},
+        dataType: "json",
+        success: function (response) {
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+        }
+      });
+      layer.closeAll('loading');
+      return false;
+    });
+  });
+</script>

@@ -1,0 +1,15 @@
+{% extends 'layui/edit_3c.html' %}
+{% load i18n %}
+
+{% block edit_form %}
+    {{ block.super }}
+    <div style="margin: 20px 0 0 50px;">
+        <strong style="font-size: 13px;">
+            <span style="color: red;">*Note:  </span>
+            <div style="margin-left: 40px;">
+                <p>1. {% trans "parallel_database_column_constraints" %}</p>
+                <p>2. {% trans "parallel_database_table_column_name_validation" %}</p>
+            </div>
+        </strong>
+    </div>
+{% endblock %}

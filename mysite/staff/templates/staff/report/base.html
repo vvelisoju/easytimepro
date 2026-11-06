@@ -1,0 +1,227 @@
+{% load i18n %}
+{% block extend_js %}
+  <link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar.min.css" %}"/>
+{% endblock %}
+<div id="{{model_name}}_fluid" class="layui-fluid" >
+    <div class="layui-row layui-col-space15" style="margin-bottom: 0px">
+        {% block disablesearch %}
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header" style="background-color: #ffffff;">
+                    <form id="{{model_name}}-search-form" action="" class="layui-form">
+                        {% csrf_token %}
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label for="" class="layui-form-label">{% trans 'search_start_date' %}</label>
+                                <div class="layui-input-inline">
+                                    <input id="{{model_name}}-start-date" type="text" name="start_date" lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label for="" class="layui-form-label">{% trans 'search_end_date' %}</label>
+                                <div class="layui-input-inline">
+                                    <input id="{{model_name}}-end-date" type="text" name="end_date" lay-verify="required" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="button-3d" lay-submit="" lay-filter="{{model_name}}-search">
+                                    <i class="fa fa-fw fa-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% endblock disablesearch %}
+                <div class="layui-card-body">
+                        <p class="text-center" id="holiday" style="background: #f2f2f2; color: #3f9613; font-size: large; font-weight: 600;display: none;">{% trans 'staff_holiday_list_details' %}</p>
+                   <table id="id_grid_{{model_name}}" class="layui-hide" lay-filter="{{model_name}}"></table>
+                  <script type="text/html" id="{{ model_name }}_toolbar">
+                  <div class="layui-btn-container grid-toolbar" style="">
+                    <ul class="layui-nav"></ul>
+                  </div>
+                </script>
+                    {% block calendarhtml %}
+                    {% endblock calendarhtml %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+{% block fullcalendarJs_events %}
+{% endblock fullcalendarJs_events %}
+$(function(){
+    layui.use(['table', 'form', 'element', 'laydate', 'tablePlug'], function(){
+        var table = layui.table, form=layui.form, laydate=layui.laydate, element=layui.element, tablePlug = layui.tablePlug;
+        tablePlug.smartReload.enable(true);
+        form.render();
+        var date = new Date();
+        var startDate = date.getFullYear()+'-'+1+'-'+1;
+        var currDate = date.getFullYear()+'-'+12+'-'+30;
+        var startDate = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01';
+        var currDate = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-' + leftInsertZero(date.getDate());
+        var opts = {
+            id: "id_grid_{{model_name}}"
+            ,elem: "#id_grid_{{model_name}}"
+            ,cellMinWidth: 80
+            ,height: 'full-180'
+            ,page: {
+                layout: ['refresh', 'limit', 'prev', 'page', 'next', 'count', 'skip'],
+                curr: 1,
+                limit: 50
+            }
+            ,method: 'post'
+            ,toolbar: '#{{ model_name }}_toolbar'
+            ,defaultToolbar: []
+            ,smartReloadModel: true
+            , limit: 50
+            ,limits: [5, 10, 20, 30, 50, 60, 90]
+            ,request: {
+                pageName: 'page',
+                limitName: 'page_size'
+            }
+            ,text: {
+                none: gettext("none_data")
+            }, where: {
+                start_date: startDate,
+                end_date: currDate,
+                employees: "{{ user.pk }}"
+            },done: function(res, curr, count){
+                //this.where = {};
+                var height = $("#{{model_name}}_fluid div.layui-table-view").height();
+                $("#{{model_name}}-tree-container").height(height);
+                $("#{{model_name}}-tree").height(height-5);
+            }
+        };
+        {% block calendarView %}
+        {% endblock calendarView %}
+        {% block opts_modify %}
+            $.extend(opts, {});
+        {% endblock %}
+        opts.cols[0].forEach(function(col, index){
+          $(document).on("mouseover", `.layui-table-header [data-field='${col.field}']`, function() {
+            var catalogKey = col.field;
+            if (catalog && catalog[catalogKey]) {
+              var titleText = gettext(catalogKey);
+              $(this).attr("title", titleText);
+            } else {
+              var headerText = $(this).text();
+              $(this).attr("title", headerText);
+            }
+          }).on("mousemove", function(e) {
+            $(".layui-table-tips").css("background-color", "black");
+          });
+        });
+        var startDate_ = laydate.render({
+          elem: '#{{model_name}}-start-date'
+          ,value: startDate
+          ,max: currDate
+          ,done: function (value, date) {
+            if (Object.keys(date).length !== 0) {
+                endDate_.config.min = {
+                    year: date.year,
+                    month: date.month - 1,
+                    date: date.date
+                };
+            }
+            else {
+                endDate_.config.min = {
+                    year: 1900,
+                    month: 01,
+                    date: 01
+                };
+                endDate_.config.max = {
+                    year: 2099,
+                    month: 12,
+                    date: 31
+                };
+            }
+          }
+        });
+        var endDate_ = laydate.render({
+          elem: '#{{model_name}}-end-date'
+          ,value: currDate
+          ,min: startDate
+          ,done: function (value, date) {
+            if (Object.keys(date).length !== 0) {
+                startDate_.config.max = {
+                    year: date.year,
+                    month: date.month - 1,
+                    date: date.date
+                };
+            }
+            else {
+                startDate_.config.min = {
+                    year: 1900,
+                    month: 01,
+                    date: 01
+                };
+                startDate_.config.max = {
+                    year: 2099,
+                    month: 12,
+                    date: 31
+                };
+            }
+          }
+        });
+        var tb = table.render(opts);
+        var model_name = '{{ model_name }}'
+        var name_list = model_name.split("staff_")
+        var new_name = name_list[name_list.length -1]
+        var url = '/att/api/'+ new_name +'/export/'
+         $("#{{model_name}}_fluid" + " div.grid-toolbar").actions({
+            container: "#{{model_name}}_fluid",
+            actionContainer: "#{{model_name}}_fluid" + " div.grid-toolbar",
+            model: "{{model_name}}",
+            table: table,
+            tableId: "id_grid_{{model_name}}",
+            form: form,
+            element: element,
+            curTable: tb,
+            grid_opts: opts,
+            column_order_url:'/column_order/',
+            actions: "",
+            export_url: url,
+            disabled_fields_url: "/disabled_fields/",
+            init_disabled_fields: [],
+            //csrf: opts.csrf_token,
+            disabled_action_panel_east: ["history"],
+            dimension: {height: "auto", width: "auto"},
+            callback: {}
+          });
+
+        function refreshReport(){
+            var startDate = $("#{{model_name}}-search-form input[name='start_date']").val();
+            var endDate = $("#{{model_name}}-search-form input[name='end_date']").val();
+            if(startDate == ""){
+                layer.msg(gettext("start_date_is_empty"));
+                return false
+            }
+            if(endDate == ""){
+                layer.msg(gettext("end_date_is_empty"));
+                return false
+            }
+            if(new Date(startDate) > new Date(endDate)){
+                layer.alert(gettext('end_date_can_not_greater_than_start_date'), {
+                    title: gettext('Prompt')
+                    , icon: 5
+                    , btn: gettext('btn_confirm')
+                })
+                return false;
+            }
+            var c = {start_date: startDate, end_date: endDate};
+            c["employees"] = "{{ user.pk }}";
+            {% block columns_modify %}
+              table.reload(tb.config.id, {where: c});
+            {% endblock %}
+        }
+
+        form.on("submit({{model_name}}-search)", function(){
+            refreshReport();
+        })
+    });
+    {% block calendar_display %}
+    {% endblock calendar_display %}
+});
+</script>
+

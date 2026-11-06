@@ -1,0 +1,24 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+
+{% block disclaimer %}
+    <p style="color:black; font-size: 9px;">{% trans 'att_tmd_report_desclaimer' %}</p>
+{% endblock %}
+
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+            {field:'att_date', width:100, title: "{% trans 'report_column_attendanceDate' %}", width:120, sort: true}
+            ,{field:'dept_name', title: "{% trans 'report_column_departmentName' %}", width:120}
+            ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}", width:80}
+            ,{field:'emp_count', width:80, title: "{% trans 'report_column_empCount' %}"}
+            ,{field:'normal_temp_count', title: "{% trans 'report_column_normalTempCount' %}"}
+            ,{field:'abnormal_temp_count', title: "{% trans 'report_column_abnormalTempCount' %}"}
+            ,{field:'masked_face', title: "{% trans 'report_column_maskedFace' %}"}
+            ,{field:'unmasked_face', title: "{% trans 'report_column_unmaskedFace' %}"}
+            ,{field:'total_absent', title: "{% trans 'report_column_totalAbsent' %}"}
+        ]]
+        ,method: "get"
+        ,url: "/att/api/deptWiseReport/"
+    });
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'staff/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  $.extend(opts, {
+  cols: [[
+  {field:'emp_code', title: "{% trans 'report_column_empCode' %}", width:120, sort:true}
+      ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+      ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+      ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+      ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+      ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}", sort:true}
+      ,{field:'dept_name', title: "{% trans 'report_column_departmentName' %}", sort:true}
+      ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+      ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+      ,{field:'att_date', title: "{% trans 'report_column_punchDate' %}", sort:true}
+      ,{field:'punch_time', title: "{% trans 'report_column_punchTime' %}"}
+      ,{field:'punch_state', title: "{% trans 'report_column_punchState' %}"}
+      ,{field:'work_code', title: "{% trans 'report_column_workCode' %}"}
+      ,{field:'source', title: "{% trans 'report_column_dataSources' %}"}
+  ]]
+  ,method: "get"
+  ,url: "/att/api/transactionReport/"
+  });
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layui/edit.html' %}
+{% load i18n common %}
+{% block edit_form %}
+  <form class="layui-form data-form" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% with adminform.form as f %}
+      <div class="layui-form-item">
+        {% layui_inline f.amount %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.issued_time %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.remark %}
+      </div>
+    {% endwith %}
+  </form>
+{% endblock %}
+<script>
+    layui.use(['form', 'laydate', 'element'], function () {
+        var form = layui.form, laydate = layui.laydate, element = layui.element;
+        $('#id_amount').attr('min', 0);
+        $("form.layui-form input.layui-datetime").each(function () {
+            laydate.render({elem: this, type: 'datetime'});
+        });
+        {% block form_verify %}
+      form.verify({});
+    {% endblock %}
+    form.render();
+    });
+</script>

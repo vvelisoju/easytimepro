@@ -1,0 +1,199 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE|default:'en' }}" xml:lang="{{ LANGUAGE_CODE|default:'en' }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ software_title }}</title>
+    <meta name="Author" content="ZKTeco Inc."/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "layui/css/layui.css" %}?v=2.4.3"/>
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"
+        sizes="16x16 24x24 32x32 64x64">
+    <style>
+        html, body {
+            background-color:#f8f8f8
+        }
+        body form span.red {
+            color: red;
+        }
+        .center {
+            text-align: center;
+            color: white;
+        }
+        .mobile-capture {
+            text-align: center;
+            margin-top: 5px
+        }
+        .mobile-capture-img {
+            width: 100px;
+            height: 100px;
+            border:2px solid #e0e0e0;
+            margin-top:20px;
+            border-radius:50%;
+            max-width: 70%
+        }
+        .mobile-form-item .layui-form-label{
+            width: 100%;
+            text-align: left;
+        }
+        .mobile-form-item .layui-input-block{
+            margin: 0;
+            left: 0;
+        }
+        .mobile-zk-logo {
+            width: 86px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden">
+    <div class="layui-row layui-col-space15" style="">
+        <div class="layui-col-md12 center">
+            <div style="background-color: #7ac143;line-height: 44px;">&nbsp</div>
+        </div>
+        <form id="id_register_form" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="layui-col-md12" style="padding: 3px;">
+            <div class="layui-form-item mobile-capture">
+                <input type="text" id="id_orient" name="orient" style="display: none;">
+                <input type="file" id="id_user_capture" name="user_capture" capture="camera" accept="image/*" style="display: none;" onchange="chooseImage(this);">
+                <img id="id_user_capture_base64" name="user_capture_base64" src="{{ MEDIA_URL }}images/abroad_att/capture.png" class="mobile-capture-img" alt="Paris">
+            </div>
+            <div class="layui-form-item mobile-form-item">
+                <label class="layui-form-label">{% trans 'mobile_onlineRegister_employeeCode' %}<span class="red">*</span></label>
+                <div class="layui-input-block">
+                  <input type="text" name="employee_code" lay-verify="required" autocomplete="off" placeholder="" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item mobile-form-item">
+                <label class="layui-form-label">{% trans 'mobile_onlineRegister_remark' %}</label>
+                <div class="layui-input-block">
+                  <textarea rows="3" name="remark" autocomplete="off" placeholder="" class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+         <div class="layui-col-md12 center">
+            <div id="registerSubmit" style="background-color: #7ac143;line-height: 44px;text-align: center">
+                {% trans 'mobile_photo_enroll' %}
+            </div>
+        </div>
+        </form>
+        <div class="layui-col-md12 center" style="margin-top: 10px;">
+            <img id="logic" src="{{ MEDIA_URL }}images/abroad_att/mobile-zk-logo.png" class="mobile-zk-logo">
+        </div>
+    </div>
+</body>
+<script src="{% static 'js/exif.js' %}?v=1.0"></script>
+<script src="{% static 'cloud/static/js/jquery/jquery-3.5.1.min.js' %}?v=2.2.4"></script>
+<script src="{% static 'js/jquery/jquery.form.js' %}?v=4.2.2"></script>
+<script src="{% static 'locale/i18n.js' %}?v=1.2"></script>
+<script src="{{ STATIC_URL }}locale/i18n_{{ LANGUAGE_CODE|default:'en' }}.js?v=1.2"></script>
+<script src="{% static "layui/layui.js" %}?v=2.4.5" type="text/javascript"></script>
+<script>
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) {
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+    function chooseImage(fileObj) {
+        $(fileObj).attr("disable", "disable");
+        var r = new FileReader();
+        var file = fileObj.files['0'];
+        if (file) {
+            r.readAsDataURL(file);
+            r.onload = function (e) {
+                var image = new Image();
+                image.src = e.target.result;
+                image.onload = function () {
+                    var base64Display = displayImage(this, 480, 640);
+                    $("#id_user_capture_base64").attr("src", base64Display);
+                    var base64Save = compress(this, 480, 640, 1);
+                    $(fileObj).removeAttr("disable");
+                }
+            };
+        }
+    }
+    function getCaptureOrientation(img) {
+        var orient=null;
+        EXIF.getData(img, function () {
+            orient = EXIF.getTag(this, "Orientation");
+        });
+        return orient;
+    }
+    function displayImage(img, width, height) {
+        var canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, width, height);
+        return canvas.toDataURL("image/jpeg", 1);
+    }
+    function compress(img, width, height, ratio) {
+        var canvas, ctx, img64, orient;
+        orient = getCaptureOrientation(img);
+        $("#id_orient").val(orient);
+        canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext("2d");
+        if (orient == 6) {
+            ctx.save();
+            ctx.translate(width / 2, height / 2);
+            ctx.rotate(90 * Math.PI / 180);
+            ctx.drawImage(img, 0 - height / 2, 0 - width / 2, height, width);
+            ctx.restore();
+        } else if (orient == 8) {
+            ctx.save();
+            ctx.translate(0, height / 2);
+            ctx.rotate(270 * Math.PI / 180);
+            ctx.drawImage(img, 0 - height / 2, 0, height, width);
+            ctx.restore();
+        }
+        else {
+            ctx.drawImage(img, 0, 0, width, height);
+        }
+        img64 = canvas.toDataURL("image/jpeg", ratio);
+        return img64;
+    }
+    $("#id_user_capture_base64").click(function () {
+        $("#id_user_capture").trigger("click");
+    });
+    layui.use(['form', 'layer'], function(){
+        var form = layui.form;
+        form.render();
+        $("#registerSubmit").click(function(){
+            var company_id = '{{ company_id }}';
+            var loadIndex = layer.load();
+            $("#id_register_form").ajaxSubmit({
+                url: "/vlRegister/"
+                ,dataType: "json"
+                ,data: {'company_id': company_id}
+                ,success: function(response){
+                    var ret = response.ret;
+                    if(ret == 0){
+                        layer.close(loadIndex);
+                        layer.msg(gettext('action_post_successful'), {icon: 1});
+                        $("#id_user_capture_base64").attr('src', '{{ MEDIA_URL }}images/abroad_att/capture.png');
+                        document.getElementById("id_register_form").reset();
+                    }else{
+                        layer.close(loadIndex);
+                        layer.msg(response.message, {icon: 5});
+                    }
+                }
+                ,error: function(){
+
+                }
+            });
+            return false;
+        });
+    })
+</script>
+</html>

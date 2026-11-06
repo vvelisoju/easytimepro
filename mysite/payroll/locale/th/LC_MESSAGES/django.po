@@ -1,0 +1,529 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "คิดเงินเดือน"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "โปร์ไฟล์พนักงาน"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "โปร์ไฟล์พนักงาน"
+
+msgid "menu_group_payroll_formula"
+msgstr "สูตร"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "สูตรลดหย่อน"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "สูตรข้อยกเว้น"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "เพิ่มสูตร"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "สูตรออกจาก"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "สูตรการทำงานล่วงเวลา"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "กองทุนพิเศษ"
+
+msgid "menu_payroll_extraincrease"
+msgstr "เพิ่มขึ้นเป็นพิเศษ"
+
+msgid "menu_payroll_extradeduction"
+msgstr "การหักเงินพิเศษ"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "โครงสร้างเงินเดือน"
+
+msgid "menu_payroll_salarystructure"
+msgstr "โครงสร้างเงินเดือน"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "เงินกู้"
+
+msgid "menu_payroll_empLoan"
+msgstr "เงินกู้"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "เงินเดือนล่วงหน้า"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "เงินเดือนล่วงหน้า"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "การชำระเงินคืน"
+
+msgid "menu_payroll_reimbursement"
+msgstr "การชำระเงินคืน"
+
+msgid "menu_group_payroll_calculation"
+msgstr "คำนวณ"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "คำนวณเงินเดือน"
+
+msgid "menu_group_payroll_report"
+msgstr "รายงาน"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "โครงสร้างเงินเดือน"
+
+msgid "menu_payroll_increase_report"
+msgstr "เพิ่มรายการ"
+
+msgid "menu_payroll_deduction_report"
+msgstr "รายการหัก"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "รายละเอียดเงินเดือน"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "บันทึกเวลา พารามิเตอร์"
+
+msgid "menu_payroll_setting"
+msgstr "ตั้งค่าบัญชีเงินเดือน"
+
+msgid "paroll_mode_monthly"
+msgstr "รายเดือน"
+
+msgid "paroll_type_cash"
+msgstr "เงินสด"
+
+msgid "paroll_type_check"
+msgstr "เช็ค"
+
+msgid "paroll_type_bank_transfer"
+msgstr "โอนเงินผ่านธนาคาร"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "โปร์ไฟล์พนักงาน"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "โหมดการชำระเงิน"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "ประเภทการชำระเงิน"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "ชื่อธนาคาร"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "เลขที่บัญชี"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "พนักงาน"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "ชื่อ"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "นามสกุล"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "รหัสตัวแทน"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "บัญชี"
+
+msgid "payroll_model_deductionFormula"
+msgstr "สูตรลดหย่อน"
+
+msgid "deductionFormula_field_name"
+msgstr "ชื่อ"
+
+msgid "deductionFormula_field_formula"
+msgstr "สูตร"
+
+msgid "deductionFormula_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "สูตรข้อยกเว้น"
+
+msgid "exceptionFormula_field_name"
+msgstr "ชื่อ"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "ประเภทข้อยกเว้น"
+
+msgid "exceptionFormula_field_formula"
+msgstr "สูตร"
+
+msgid "exceptionFormula_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_increasementFormula"
+msgstr "เพิ่มสูตร"
+
+msgid "increasementFormula_field_name"
+msgstr "ชื่อ"
+
+msgid "increasementFormula_field_formula"
+msgstr "สูตร"
+
+msgid "increasementFormula_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_leaveFormula"
+msgstr "สูตรออกก่อน"
+
+msgid "leaveFormula_field_name"
+msgstr "ชื่อ"
+
+msgid "leaveFormula_field_category"
+msgstr "ประเภทออกก่อน"
+
+msgid "leaveFormula_field_formula"
+msgstr "สูตร"
+
+msgid "leaveFormula_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "สูตรการทำงานล่วงเวลา"
+
+msgid "overtimeFormula_field_name"
+msgstr "ชื่อ"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "ระดับการทำงานล่วงเวลา"
+
+msgid "overtimeFormula_field_formula"
+msgstr "สูตร"
+
+msgid "overtimeFormula_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_extraIncrease"
+msgstr "เพิ่มขึ้นเป็นพิเศษ"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "เพิ่ม"
+
+msgid "extraIncrease_field_employee"
+msgstr "พนักงาน"
+
+msgid "extraIncrease_field_amount"
+msgstr "จำนวน"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "เวลาออก"
+
+msgid "extraIncrease_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_extraDeduction"
+msgstr "หักเงินพิเศษ"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "เพิ่ม"
+
+msgid "extraDeduction_field_employee"
+msgstr "พนักงาน"
+
+msgid "extraDeduction_field_amount"
+msgstr "จำนวน"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "เวลาออก"
+
+msgid "extraDeduction_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_salarystructure"
+msgstr "โครงสร้างเงินเดือน"
+
+msgid "salaryStructure_field_amount"
+msgstr "เงินเดือน"
+
+msgid "salaryStructure_field_formula"
+msgstr "สูตรเงินเดือน"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "วันที่มีผล"
+
+msgid "salaryStructure_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "salaryStructure_field_formulas"
+msgstr "สูตร"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "เงินเดือนล่วงหน้า"
+
+msgid "salaryAdvance_field_amount"
+msgstr "จำนวน"
+
+msgid "salaryAdvance_field_time"
+msgstr "เวลา"
+
+msgid "salaryAdvance_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_Reimbursement"
+msgstr "การชำระเงินคืน"
+
+msgid "Reimbursement_field_amount"
+msgstr "จำนวน"
+
+msgid "Reimbursement_field_time"
+msgstr "เวลาชำระเงินคืน"
+
+msgid "Reimbursement_field_file"
+msgstr "รับชำระเงินคืน"
+
+msgid "Reimbursement_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_model_empLoan"
+msgstr "เงินกู้"
+
+msgid "empLoan_field_employee"
+msgstr "รหัสพนักงาน"
+
+msgid "empLoan_field_loanAmount"
+msgstr "จำนวนเงินกู้"
+
+msgid "empLoan_field_loanTime"
+msgstr "เวลาให้สินเชื่อ"
+
+msgid "empLoan_field_refundCycle"
+msgstr "รอบคืนเงิน"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "จำนวนเงินคืนต่อระยะเวลา"
+
+msgid "empLoan_field_clean_time"
+msgstr "เวลาที่"
+
+msgid "empLoan_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "เพิ่ม"
+
+msgid "payroll_action_addRmb"
+msgstr "เพิ่ม"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "เพิ่ม"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "เพิ่ม"
+
+msgid "reimbursement_file"
+msgstr "รับชำระเงินคืน"
+
+msgid "report_column_overtimeFormula1"
+msgstr "โอที1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "โอที2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "โอที3"
+
+msgid "report_column_increaseFormula"
+msgstr "สูตรเพิ่ม"
+
+msgid "report_column_deductionFormula"
+msgstr "สูตรหัก"
+
+msgid "report_column_lateFormula"
+msgstr "สูตรหักมาสาย"
+
+msgid "report_column_absentFormula"
+msgstr "สูตรหักขาดงาน"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "สูตรหักออกก่อน"
+
+msgid "payroll_model_monthlysalary"
+msgstr "รายงานเงินเดือนประจำเดือน"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "เงินเดือน"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "วันที่มีผล"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "วันที่คำนวณ"
+
+msgid "monthlySalary_field_ot1"
+msgstr "โอที1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "โอที2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "โอที3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "มาสาย"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "ออกก่อน"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "ขาด"
+
+msgid "monthlySalary_field_increase"
+msgstr "เพิ่ม"
+
+msgid "monthlySalary_field_deduction"
+msgstr "หัก"
+
+msgid "monthlySalary_field_leave"
+msgstr "ก่อน"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "เพิ่มขึ้นเป็นพิเศษ"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "หักเงินพิเศษ"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "รวมยอดสินเชื่อ"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "จำนวนเงินคืนเงินกู้ยืม"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "ไม่คืนเงินให้สินเชื่อ"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "หักสินเชื่อ"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "เพิ่มสินเชื่อ"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "เพิ่มล่วงหน้า"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "หักเงินล่วงหน้า"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "ชำระเงินคืน"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "รวมเพิ่มขึ้น"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "รวมหัก"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "เงินเดือนรวม"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "เงินเดือนพื้นฐานไม่น้อยกว่าศูนย์"
+
+msgid "payroll_attParamUnit"
+msgstr "หน่วย Att Param"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}: พนักงาน {1} มีโครงสร้างเงินเดือนที่มีประสิทธิภาพ"
+
+msgid "receipt_file_format_constraints"
+msgstr "รองรับเฉพาะไฟล์รูปภาพ jpg / jpeg / png / bmp"
+
+msgid "1_period"
+msgstr "1 ช่วงเวลา"
+
+msgid "2_periods"
+msgstr "2 ช่วงเวลา"
+
+msgid "3_periods"
+msgstr "3 ช่วงเวลา"
+
+msgid "4_periods"
+msgstr "4 ช่วงเวลา"
+
+msgid "5_periods"
+msgstr "5 ช่วงเวลา"
+
+msgid "6_periods"
+msgstr "6 ช่วงเวลา"
+
+msgid "7_periods"
+msgstr "7 ช่วงเวลา"
+
+msgid "8_periods"
+msgstr "8 ช่วงเวลา"
+
+msgid "9_periods"
+msgstr "9 ช่วงเวลา"
+
+msgid "10_periods"
+msgstr "10 ช่วงเวลา"
+
+msgid "11_periods"
+msgstr "11 ช่วงเวลา"
+
+msgid "12_periods"
+msgstr "1 ช่วงเวลา"
+
+msgid "deductionformula_addform_note"
+msgstr "หมายเหตุ: นี่เป็นเพียงการหักที่ต้องจ่ายรายเดือน"
+
+msgid "increasementformula_addform_note"
+msgstr "หมายเหตุ: นี่เป็นเพียงการเพิ่มที่ต้องชำระรายเดือน"
+
+msgid "caleulator_title"
+msgstr "คำนวณ"
+
+msgid "caleulator_basicSalary"
+msgstr "เงินเดือนขั้นพื้นฐาน"
+
+msgid "caleulator_scheduleDays"
+msgstr "กำหนดวัน"
+
+msgid "caleulator_schedulePeriod"
+msgstr "กำหนดเวลา"
+
+msgid "caleulator_check"
+msgstr "ตรวจสอบ"
+
+msgid "report_column_total_increase_formula"
+msgstr "สูตรเพิ่มทั้งหมด"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "ชื่อสูตรเพิ่มทั้งหมด"
+
+msgid "report_column_total_increase_expression"
+msgstr "แสดงการเพิ่มทั้งหมด"
+
+msgid "report_column_total_deduction_formula"
+msgstr "สูตรการหักทั้งหมด"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "ชื่อสูตรการหักทั้งหมด"
+
+msgid "report_column_total_deduction_expression"
+msgstr "แสดงการหักเงินทั้งหมด"

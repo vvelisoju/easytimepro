@@ -1,0 +1,190 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Payment Status</title>
+    <style>
+        .vh-center {
+            width: 50%;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .payment-status {
+            background: #fafafa;
+            min-width: 600px;
+            min-height: 320px;
+            padding: 50px;
+            font: 14px;
+            border: 1px solid #ccc
+        }
+
+        .payment-status-success {
+            border: 3px solid #7ac143;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            color: #7ac143;
+            background: #fff;
+            font-size: 50px;
+            line-height: 50px;
+            font-weight: 800;
+            text-align: center
+        }
+
+        .payment-status-success::before {
+            content: "✔";
+            position: relative;
+            top: 25px
+        }
+
+        .payment-status-failed {
+            border: 3px solid #d92550;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            color: #d92550;
+            background: #fff;
+            font-size: 50px;
+            line-height: 50px;
+            font-weight: 800;
+            text-align: center
+        }
+
+        .payment-status-failed::before {
+            content: 'x';
+            position: relative;
+            top: 20px
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .align-center {
+            margin: 0 auto
+        }
+
+        .payment-process-heading {
+            color: #222;
+            font-size: 38px;
+            text-align: center
+        }
+
+        .payment-success-message {
+            color: #56bc03;
+            font-size: 26px;
+            text-align: center
+        }
+
+        .payment-failed-message {
+            color: #d92550;
+            font-size: 26px;
+            text-align: center
+        }
+
+        .go-back-btn {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c
+        }
+
+        .go-back-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+            padding: 10px 16px;
+            font-size: 18px;
+            line-height: 1.3333333;
+            text-decoration: none;
+        }
+
+        .go-back-btn.active, .go-back-btn:active {
+            color: #fff;
+            background-color: #449d44;
+            border-color: #398439
+        }
+
+        .go-back-btn:hover {
+            color: #fff;
+            background-color: #449d44;
+            border-color: #398439
+        }
+
+        .go-back-btn.focus, .go-back-btn:focus {
+            color: #fff;
+            background-color: #449d44;
+            border-color: #255625
+        }
+    </style>
+</head>
+<body>
+<section class="vh-center">
+    {% if payment_status == 'true' %}
+        <div class="payment-status">
+            <!--For Payment Successful-->
+            <div class="align-center payment-status-success"></div>
+            <br>
+            <table align="center" cellpadding="5">
+                <tr>
+                    <td class="text-center"><strong class="payment-process-heading">Thank You!</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><b class="payment-success-message">Your Payment is successfully done.</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <p>We've successfully processed your payment.<br> You can access your subscription plan
+                            information
+                            from your Billing Page.</p>
+                    </td>
+                </tr>
+                <br><br><br>
+                <tr>
+                    <td class="text-center"><a href="{% url 'biotime:index' %}" class="go-back-btn">Back to Home</a></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    {% else %}
+        <div class="payment-status">
+            <!--For Payment Failed-->
+            <div class="align-center payment-status-failed"></div>
+            <br>
+            <table align="center" cellpadding="5">
+                <tr>
+                    <td class="text-center"><strong class="payment-process-heading">Sorry!</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><b class="payment-failed-message">Your Payment is failed.</b></td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <p>Please go to Billing page.<br> Check your order details and try to pay again
+                            from your Billing Page.</p>
+                    </td>
+                </tr>
+                <br><br><br>
+                <tr>
+                    <td class="text-center"><a href="{% url 'biotime:index' %}" class="go-back-btn">Back to Home</a></td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    {% endif %}
+</section>
+</body>
+</html>

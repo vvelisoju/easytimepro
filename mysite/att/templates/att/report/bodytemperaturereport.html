@@ -1,0 +1,76 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+
+{% block disclaimer %}
+    <p style="color:black; font-size: 9px;">{% trans 'att_tmd_report_desclaimer' %}</p>
+{% endblock %}
+
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+                {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+                ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+                ,{field:'last_name', title: "{% trans 'report_column_lastName' %}",}
+                ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+                ,{field:'gender', width:80, title: "{% trans 'report_column_gender' %}"}
+                ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+                ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+                ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+                ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+                ,{field:'att_date', title: "{% trans 'report_column_attendanceDate' %}", sort: true}
+                ,{field:'displayed_mask', title: "{% trans 'report_column_displayed_mask' %}", templet: function(obj){
+                  if(obj.displayed_mask){
+                    mask_flag = obj.displayed_mask
+                    if(mask_flag=='Yes'){
+                      return '<span style="color: #00CD66;">Yes</span>'
+                    }else if(mask_flag=='No'){
+                      return '<span style="color: #ff0000;">No</span>'
+                    }else{
+                      return ''
+                    }
+                  }else{
+                    return ''
+                  }
+                }}
+                ,{field:'in_temp', title: "{% trans 'report_column_in_temp' %}", templet: function(obj){
+                  if(obj.in_temp){
+                    result = obj.in_temp
+                    if(obj.in_temp_color){
+                      result = '<' + 'span style="color:' + obj.in_temp_color + ';">' + obj.in_temp + '<' + '/span>'
+                    }
+                    return result
+                  }else{
+                    return ''
+                  }
+                }}
+                ,{field:'out_temp', title: "{% trans 'report_column_out_temp' %}", templet: function(obj){
+                  if(obj.out_temp){
+                    if(obj.out_temp_color){
+                      return '<' + 'span style="color:' + obj.out_temp_color + ';">' + obj.out_temp + '<' + '/span>'
+                    }else{
+                      return obj.out_temp
+                    }
+                  }else{
+                    return ''
+                  }
+                }}
+                ,{field:'status', title: "{% trans 'report_column_status' %}", templet: function(obj){
+                  if(obj.status){
+                    if(obj.status == '0'){
+                      return '<span style="color: #00CD66;">Normal</span>'
+                    }else if(obj.status == '1'){
+                      return '<span style="color: #fb8e00;">Warning</span>'
+                    }else if(obj.status == '2'){
+                      return '<span style="color: #ff0000;">High</span>'
+                    }else{
+                      return ''
+                    }
+                  }else{
+                    return ''
+                  }
+                }}
+            ]]
+        ,method: "get"
+        ,url: "/att/api/bodyTemperatureReport/"
+    });
+{% endblock %}

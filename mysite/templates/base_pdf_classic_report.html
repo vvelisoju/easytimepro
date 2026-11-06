@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Times+New+Roman" />
+    <meta charset="UTF-8">
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 2px 5px;
+            font-weight: normal;
+            font-size: 16px;
+        }
+        table, tr, td, th, tbody, thead, tfoot {
+            page-break-inside: avoid !important;
+            /*word-break: keep-all !important;*/
+            /*white-space: nowrap !important;*/
+        }
+        .att_date{
+          white-space: nowrap !important;
+        }
+        h2, h6 {
+            text-align: center;
+        }
+        h2{
+            /*margin-block-end: 0.13em;*/
+            margin: 0;
+        }
+        h6{
+            margin-top: 0;
+        }
+
+        th{
+            height:25px;
+        }
+        hr{
+            height: 1px;
+            border: none;
+            background-color: black;
+        }
+        #left-div{
+          float: left;
+        }
+        #right-div{
+          float: right;
+        }
+        #hr-top{
+          height: 16px;
+        }
+        body, div, h2, h6, td, tr{
+          font-family: "Times New Roman", Times, Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <h2>{{ title }}</h2>
+    <h6>{{ start }} To {{ end }}</h6>
+    <div id="hr-top">
+      <div id="right-div">Generated On: {{ print_date }}</div>
+      <div id="left-div">Company: {{ company_name }}</div>
+    </div>
+    <div><hr/></div>
+    {% autoescape off %}
+        {% block main_table %}
+        <table>
+            <tr>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in datas %}
+                <tr>
+                    {% for coloum in row %}
+                        <th>{{ coloum }}</th>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        {% endblock %}
+    {% endautoescape %}
+    {% block tdmdreport %}
+    {% endblock %}
+    {% block declaimer %}
+    {% endblock %}
+    {% if  'Continuous Abnormal Report (3 Days Absent)' == title %}
+        <p style="color:red; font-size: 9px;">*Note: Report By Continuous Three Days Absent</p>
+    {% endif %}
+</body>
+</html>

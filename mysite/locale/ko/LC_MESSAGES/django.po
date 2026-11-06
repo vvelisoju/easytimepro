@@ -1,0 +1,8473 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "유효한 이메일 주소를 입력하십시오."
+
+msgid "user_field_username"
+msgstr "사용자 이름"
+
+msgid "user_field_usernameHelpTxt"
+msgstr "필수 사항. 30 자 이하. 문자, 숫자 및 @ /. / + / - / _."
+
+msgid "user_field_usernameValidator"
+msgstr "유효한 사용자 이름을 입력하십시오."
+
+msgid "user_field_password"
+msgstr "비밀번호"
+
+msgid "user_field_firstName"
+msgstr "이름"
+
+msgid "user_field_lastName"
+msgstr "성"
+
+msgid "user_field_email"
+msgstr "이메일"
+
+msgid "user_field_authorizedDepartment"
+msgstr "공인 부서"
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "선택되지 않은 경우 모든 부서를 승인합니다."
+
+msgid "user_field_authorizedArea"
+msgstr "공인 구역"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "선택되지 않은 경우 모든 구역을 승인합니다."
+
+msgid "user_field_loginTimes"
+msgstr "로그인 횟수"
+
+msgid "user_field_staff"
+msgstr "사용자"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_active"
+msgstr "활성화"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_superuser"
+msgstr "최고 관리자"
+
+msgid "user_field_dateJoined"
+msgstr "가입 날짜"
+
+msgid "user_field_lastLogin"
+msgstr "마지막 로그인 시간"
+
+msgid "base_model_user"
+msgstr "사용자"
+
+msgid "userProfile_field_username"
+msgstr "사용자 이름"
+
+msgid "userProfile_field_pinTabs"
+msgstr "핀 탭"
+
+msgid "userProfile_field_hideColumns"
+msgstr "열 숨기기"
+
+msgid "userProfile_field_order"
+msgstr "필드 정렬"
+
+msgid "userProfile_field_preferences"
+msgstr "프로필"
+
+msgid "base_model_userProfile"
+msgstr "사용자 프로필"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "삭제"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "선택한 기록 삭제"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "선택한 기록 삭제"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "선택한 {0} {1}을 (를) 삭제 하시겠습니까?"
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "선택한 노드를 삭제 하시겠습니까?"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "선택한 문서를 삭제 하시겠습니까?"
+
+msgid "common_action_new"
+msgstr "추가"
+
+msgid "common_action_newDescription"
+msgstr "추가"
+
+msgid "common_action_newHelpTxt"
+msgstr "추가"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "작업:"
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "다른 %(verbose_name)s 추가하십시오."
+
+msgid "helpers_deleteText_remove"
+msgstr "삭제"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr "북마크에 유효한 파라미터가 없습니다."
+
+msgid "bookmark_duplication_echo"
+msgstr "같은 이름의 책갈피가 가득 차 있었으므로 이름을 변경하거나 이전 레코드를 덮어 쓸 수 있습니다."
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "유효"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "무효"
+
+msgid "baseModel_field_createTime"
+msgstr "생성 시간"
+
+msgid "baseModel_field_createUser"
+msgstr "사용자 추가"
+
+msgid "baseModel_field_changeTime"
+msgstr "변경 시간"
+
+msgid "baseModel_field_changeUser"
+msgstr "사용자 변경"
+
+msgid "baseModel_field_dataStatus"
+msgstr "데이터 상태"
+
+msgid "userProfile_languageChange_successful"
+msgstr "성공"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "로그인 오류"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "수퍼 유저가 필요합니다."
+
+msgid "action_not_available"
+msgstr "사용할 수없는 작업"
+
+msgid "hiddenField_save_successful"
+msgstr "성공"
+
+msgid "hiddenField_reset_successful"
+msgstr "성공"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "금지 된"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "파라미터 오류"
+
+msgid "columnOrder_save_successful"
+msgstr "성공"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "파라미터 오류"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "{num} 개 탭 이상 허용되지 않습니다."
+
+msgid "pinTab_saveError_duplicate"
+msgstr "중복"
+
+msgid "duplicate"
+msgstr "중복"
+
+msgid "pinTab_remove_successful"
+msgstr "성공한"
+
+msgid "pinTab_action_parameterError"
+msgstr "파라미터 오류"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "금지 된"
+
+msgid "login_authorize_license_expired"
+msgstr "라이선스가 이미 만료되었습니다."
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "라이센스는 %(day)s 이후에 만료됩니다."
+
+msgid "booleanFieldFilter_option_all"
+msgstr "모든"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "예"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "아니오"
+
+msgid "fieldFilter_option_all"
+msgstr "모든"
+
+msgid "textFieldFilter_option_contain"
+msgstr "포함"
+
+msgid "textFieldFilter_option_exact"
+msgstr "정확한"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "시작"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "끝"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "하나의"
+
+msgid "textFieldFilter_option_regex"
+msgstr "정규식"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "모든 날짜"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "날짜 포함"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "날짜 없음"
+
+msgid "dateFieldFilter_option_today"
+msgstr "오늘"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "어제"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "지난 7 일"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "이번 주"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "이번 달"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "올해"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "AnyTime"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "시간 있음"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "시간 없슴"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "에서"
+
+msgid "base_model_bookmarks"
+msgstr "북마크"
+
+msgid "report_column_empCode"
+msgstr "사용자 ID"
+
+msgid "report_column_firstName"
+msgstr "이름"
+
+msgid "report_column_lastName"
+msgstr "성"
+
+msgid "report_column_nickName"
+msgstr "닉네임"
+
+msgid "report_column_gender"
+msgstr "성별"
+
+msgid "report_column_departmentCode"
+msgstr "부서 번호"
+
+msgid "report_column_departmentName"
+msgstr "부서"
+
+msgid "report_column_positionCode"
+msgstr "직위 번호"
+
+msgid "report_column_positionName"
+msgstr "직위 명"
+
+msgid "report_column_workCode"
+msgstr "근무 코드"
+
+msgid "report_column_dataSources"
+msgstr "데이터 소스"
+
+msgid "report_column_punchDate"
+msgstr "인증 날짜"
+
+msgid "report_column_punchTime"
+msgstr "인증 시간"
+
+msgid "report_column_punchState"
+msgstr "인증 상태"
+
+msgid "report_column_correctState"
+msgstr "상태 수정"
+
+msgid "report_column_lateDuration"
+msgstr "지각"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "조퇴"
+
+msgid "report_column_absentDuration"
+msgstr "결근"
+
+msgid "report_column_actualWorkDuration"
+msgstr "실제 근무 시간"
+
+msgid "report_column_shortDuration"
+msgstr "결근 시간"
+
+msgid "report_column_overtimeDuration"
+msgstr "초과 근무 시간"
+
+msgid "report_column_normalWorkTime"
+msgstr "일반 WT"
+
+msgid "report_column_normalOvertime"
+msgstr "일반 OT"
+
+msgid "report_column_weekendOvertime"
+msgstr "주말 OT"
+
+msgid "report_column_holidayOvertime"
+msgstr "휴일 OT"
+
+msgid "report_column_overtimeLevel1"
+msgstr "시간외 레벨 1"
+
+msgid "report_column_overtimeLevel2"
+msgstr "시간외 레벨 2"
+
+msgid "report_column_overtimeLevel3"
+msgstr "시간외 레벨 3"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "병가"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "캐주얼 휴가"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "출산 휴가"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "자비로운 휴가"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "연차 휴가"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "출장"
+
+msgid "report_column_attendanceDate"
+msgstr "날짜"
+
+msgid "report_column_attendanceWeekday"
+msgstr "평일"
+
+msgid "report_column_exception"
+msgstr "예외"
+
+msgid "report_column_timeIntervalName"
+msgstr "시간표"
+
+msgid "report_column_checkInTime"
+msgstr "출근 시간"
+
+msgid "report_column_checkOutTime"
+msgstr "퇴근 시간"
+
+msgid "report_column_deviceTn"
+msgstr "장치 [입실]"
+
+msgid "report_column_deviceOut"
+msgstr "장치 [퇴실]"
+
+msgid "report_column_workCodeIn"
+msgstr "근무 코드 [In]"
+
+msgid "report_column_workCodeOut"
+msgstr "근무 코드 [Out]"
+
+msgid "report_column_clockInTime"
+msgstr "시계가 있음"
+
+msgid "report_column_clockOutTime"
+msgstr "시계 아웃"
+
+msgid "report_column_totalTimeDuration"
+msgstr "총 시간"
+
+msgid "report_column_dutyWorkedTime"
+msgstr "근무 시간"
+
+msgid "report_column_actualWorkedTime"
+msgstr "실제 근무 시간"
+
+msgid "report_column_unscheduled"
+msgstr "예약되지 않은"
+
+msgid "report_column_remaining"
+msgstr "나머지"
+
+msgid "report_column_breakOutTime"
+msgstr "탈주"
+
+msgid "report_column_breakInTime"
+msgstr "침입"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "실제 휴식 시간"
+
+msgid "report_column_breakTime"
+msgstr "휴식 시간"
+
+msgid "report_column_breakLateDuration"
+msgstr "늦은 [BreakTime]"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "조기 퇴직 [BreakTime]"
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "부재 중 [BreakTime]"
+
+msgid "report_column_totalWorkedDuration"
+msgstr "총 근무 수"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "실제 근무자 수"
+
+msgid "report_column_leaveDuration"
+msgstr "휴가"
+
+msgid "report_column_overtime"
+msgstr "초과 근무"
+
+msgid "report_column_missIn"
+msgstr "미스 인"
+
+msgid "report_column_missOut"
+msgstr "미스 아웃"
+
+msgid "report_column_present"
+msgstr "현재"
+
+msgid "report_column_dayOff"
+msgstr "데이 오프"
+
+msgid "report_column_weekend"
+msgstr "주말"
+
+msgid "report_column_holiday"
+msgstr "휴일"
+
+msgid "report_column_trainingDuration"
+msgstr "훈련"
+
+msgid "report_column_timetableDuration"
+msgstr "시간표 기간"
+
+msgid "report_column_scheduledBreakTime"
+msgstr "여러 휴식 시간"
+
+msgid "report_column_attendanceDuration"
+msgstr "근무 기간"
+
+msgid "report_column_breakTimeDuration"
+msgstr "휴식 시간"
+
+msgid "report_column_approvalOvertime"
+msgstr "구약 승인"
+
+msgid "report_column_timetableDays"
+msgstr "근무일"
+
+msgid "report_column_cardNumber"
+msgstr "카드 번호"
+
+msgid "report_column_firstPunch"
+msgstr "첫 번째 인증"
+
+msgid "report_column_lastPunch"
+msgstr "마지막 인증"
+
+msgid "report_column_totalDuration"
+msgstr "총 시간"
+
+msgid "report_column_firstIn"
+msgstr "처음 인증"
+
+msgid "report_column_lastOut"
+msgstr "마지막 인증"
+
+msgid "report_column_exceptionDescription"
+msgstr "설명"
+
+msgid "report_column_employeeCount"
+msgstr "사용자 수"
+
+msgid "report_column_lateTimes"
+msgstr "지각 (회)"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "조퇴 (회)"
+
+msgid "report_column_absentTimes"
+msgstr "결근 (회)"
+
+msgid "report_column_punchTimes"
+msgstr "횟수"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "총 시간"
+
+msgid "report_column_timetable"
+msgstr "근무규칙 스케줄"
+
+msgid "fixed_time"
+msgstr "수정 된 시간"
+
+msgid "report_column_gpsLocation"
+msgstr "GPS 위치추적"
+
+msgid "report_column_longitude"
+msgstr "경도"
+
+msgid "report_column_latitude"
+msgstr "위도"
+
+msgid "report_column_areaAlias"
+msgstr "구역"
+
+msgid "report_column_terminalAlias"
+msgstr "장치"
+
+msgid "report_column_terminalSN"
+msgstr "일련 번호"
+
+msgid "menu_att_transactionReport"
+msgstr "인증 이력"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "예정된 로그"
+
+msgid "menu_att_dailyStatusReport"
+msgstr "매일 상태"
+
+msgid "menu_att_detailReport"
+msgstr "근태 세부 보고서"
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "근태 요약 보고서"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "휴가 요약 보고서"
+
+msgid "menu_att_FILOReport"
+msgstr "처음 인증 출근,마지막 인증 퇴근"
+
+msgid "menu_att_firstLastReport"
+msgstr "First & Last 보고서"
+
+msgid "menu_att_firstInLastOutReport"
+msgstr "처음 인증 출근,마지막 인증 퇴근"
+
+msgid "menu_att_exceptionReport"
+msgstr "예외 기록 보고서 "
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "부서 요약 보고서"
+
+msgid "menu_att_timeCardReport"
+msgstr "인증이력 보고서"
+
+msgid "menu_att_lateReport"
+msgstr "지각 보고서"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "조퇴 보고서"
+
+msgid "menu_att_overtimeReport"
+msgstr "초과 근무 보고서"
+
+msgid "menu_att_absentReport"
+msgstr "결근 보고서"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "다중 이력"
+
+msgid "menu_att_breakTimeReport"
+msgstr "휴식 시간"
+
+msgid "menu_group_att_configuration"
+msgstr "구성"
+
+msgid "menu_staff_transactionReport"
+msgstr "인증이력 보고서"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "스케줄이 겹칩니다"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "휴가 기록은 감사에 의해 수정 될 수 없습니다."
+
+msgid "att_model_leave"
+msgstr "휴가 신청"
+
+msgid "leave_field_employee"
+msgstr "사용자"
+
+msgid "leave_field_startTime"
+msgstr "시작 시간"
+
+msgid "leave_field_endTime"
+msgstr "종료 시간"
+
+msgid "leave_field_leaveCategory"
+msgstr "분류"
+
+msgid "leave_field_reason"
+msgstr "사유"
+
+msgid "leave_field_approvalState"
+msgstr "상태"
+
+msgid "leave_field_approvalReason"
+msgstr "비고"
+
+msgid "leave_action_new"
+msgstr "추가"
+
+msgid "leave_action_newDescription"
+msgstr "휴가 신청 추가"
+
+msgid "leave_action_newHelpTxt"
+msgstr "휴가 신청 추가"
+
+msgid "leave_time_invalid_range"
+msgstr "휴가 시간이 잘못되었습니다. 종료 시간은 시작 시간보다 늦어 야합니다."
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "유효하지 않은 시간, 시작 시간은 직원 [%s]의 고용일보다 늦어 야합니다."
+
+msgid "leave_time_overlap"
+msgstr "%s사용자 휴가 시간이 겹칩니다"
+
+msgid "select_employee"
+msgstr "사용자를 선택하십시오"
+
+msgid "manualLog_field_employee"
+msgstr "사용자"
+
+msgid "manualLog_field_punchTime"
+msgstr "인증 시간 "
+
+msgid "manualLog_field_punchState"
+msgstr "인증 상태"
+
+msgid "manualLog_field_workCode"
+msgstr "근무 코드"
+
+msgid "manualLog_field_applyReason"
+msgstr "신청 사유"
+
+msgid "manualLog_field_approvalState"
+msgstr "상태"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "비고"
+
+msgid "manualLog_Action_new"
+msgstr "추가"
+
+msgid "manualLog_Action_newDescription"
+msgstr "근태 수정 추가"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "근태 수정 추가"
+
+msgid "manual_log_time_greater_now"
+msgstr "인증 시간은 현재 시간을 초과할 수 없습니다."
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "유효하지 않은 시간, 시작 시간은 직원 [%s]의 고용일보다 늦어 야합니다."
+
+msgid "manual_log_repeat"
+msgstr "%s 중복 인증 간격"
+
+msgid "overtime_field_employee"
+msgstr "사용자"
+
+msgid "overtime_field_startTime"
+msgstr "시작 시간"
+
+msgid "overtime_field_endTime"
+msgstr "종료 시간"
+
+msgid "overtime_field_overtimeType"
+msgstr "초과 근무 유형"
+
+msgid "overtime_field_applyReason"
+msgstr "신청 사유"
+
+msgid "overtime_field_approvalState"
+msgstr "상태"
+
+msgid "overtime_field_approvalRemark"
+msgstr "비고"
+
+msgid "overtime_action_new"
+msgstr "더하다"
+
+msgid "overtime_action_newDescription"
+msgstr "초과 근무 추가"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "초과 근무 추가"
+
+msgid "overtime_time_overlap"
+msgstr "%s 인력 초과 근무"
+
+msgid "schedule_action_addSchedule"
+msgstr "일정 추가"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "일정 추가"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "일정 추가"
+
+msgid "scheduledAssign_error_datePeriodError"
+msgstr "무효한 근무규칙"
+
+msgid "scheduledAssign_error_shiftNotFound"
+msgstr "무효한 근무규칙 스케줄"
+
+msgid "scheduledAssign_error_empNotFound"
+msgstr "직원을 찾을 수 없음"
+
+msgid "scheduledAssign_error_deptNotFound"
+msgstr "존재하지 않은 부서"
+
+msgid "scheduledAssign_error_schdOverlap_%(obj)s_%(start_date)s_%(end_date)s"
+msgstr "%(obj)s일정은 %(start_date)s - %(end_date)s에서 겹칩니다."
+
+msgid "please_select_time_intervals"
+msgstr "시간표를 선택하십시오."
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s (%(name)s) 중복 일정 %(start)s %(end)s"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "중복 인증 간격 오류"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "%(t)s 와 %(ss)s 는 날짜 %(d)s 중복됩니다."
+
+msgid "shift_not_found"
+msgstr "시프트를 찾을 수 없음"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "교대 (%(shift)s)는"
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "중복 별칭 (%(alias)s)"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "임시 일정 추가"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "새 임시 일정 추가"
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "새 임시 일정 추가"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "직원을 선택하십시오."
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "부서를 선택하십시오."
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "시간표를 선택하십시오."
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(timetableA)s %(timetableB)s %(date)s 에 겹쳐 있습니다."
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "처리가 실패했습니다."
+
+msgid "training_field_employee"
+msgstr "종업원"
+
+msgid "training_field_startTime"
+msgstr "시작 시간"
+
+msgid "training_field_endTime"
+msgstr "종료 시간"
+
+msgid "training_field_trainingCategory"
+msgstr "교육 유형"
+
+msgid "training_field_applyReason"
+msgstr "신청 사유"
+
+msgid "training_field_approvalState"
+msgstr "상태"
+
+msgid "training_field_approvalRemark"
+msgstr "비고"
+
+msgid "training_action_new"
+msgstr "추가"
+
+msgid "training_action_newDescription"
+msgstr "새 교육 추가"
+
+msgid "training_action_newHelpTxt"
+msgstr "새 교육 추가"
+
+msgid "training_time_overlap"
+msgstr "%s 인력 교육 시간이 겹침"
+
+msgid "shift_field_timeInterval"
+msgstr "시간표"
+
+msgid "deptAttRule_field_alias"
+msgstr "이름"
+
+msgid "departmentRule_action_batchAdd"
+msgstr "추가"
+
+msgid "departmentRule_action_batchAddDescription"
+msgstr "여러 부서에 대한 규칙 추가"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "여러 부서에 대한 규칙 추가"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s 이미 규칙을 설정했습니다."
+
+msgid "holiday_field_alias"
+msgstr "이름"
+
+msgid "holiday_field_startDate"
+msgstr "시작 날짜"
+
+msgid "holiday_field_duration"
+msgstr "기간 (일)"
+
+msgid "holiday_field_workType"
+msgstr "작업 유형"
+
+msgid "holiday_field_overtimeLevel"
+msgstr "OT 등급"
+
+msgid "holiday_field_overtimeLevel1"
+msgstr "OT 1"
+
+msgid "holiday_field_overtimeLevel2"
+msgstr "OT 2"
+
+msgid "holiday_field_overtimeLevel3"
+msgstr "OT 3"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "추가"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "휴일 추가"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "휴일 추가"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr "이미 사용 된 주말 설정은 수정할 수 없습니다."
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr "계산 설정에서 기능 키에 대해 동일한 값을 사용할 수 없습니다."
+
+msgid "calculation_item_actualPresent"
+msgstr "실제 존재"
+
+msgid "calculation_item_durationOrShort"
+msgstr "재생 시간 / 짧음"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "총 시간 / 총 근무 시간"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "휴식 시간 / 실제 휴식 시간"
+
+msgid "calculation_item_timetableDuration"
+msgstr "시간표 기간"
+
+msgid "calculation_item_late"
+msgstr "지각"
+
+msgid "calculation_item_earlyLeave"
+msgstr "조퇴"
+
+msgid "calculation_item_leave"
+msgstr "휴가"
+
+msgid "calculation_item_absent"
+msgstr "결근"
+
+msgid "calculation_item_overtime"
+msgstr "초과 근무"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "출근 인증 안함"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "퇴근 인증 안함"
+
+msgid "calculation_item_present"
+msgstr "출근"
+
+msgid "calculation_item_dayOff"
+msgstr "휴일"
+
+msgid "calculation_item_weekend"
+msgstr "주말"
+
+msgid "calculation_item_holiday"
+msgstr "공휴일"
+
+msgid "replace_existing_shift_even_using"
+msgstr "기존 근무규칙 스케줄 교체 및 사용"
+
+msgid "remove_overlap_schedule"
+msgstr "중복 일정 제거"
+
+msgid "enable_work_on_weekend_as"
+msgstr "주말로 작업"
+
+msgid "work_type"
+msgstr "가중치"
+
+msgid "enable_work_on_day_off_as"
+msgstr "휴무일"
+
+msgid "auto_shift"
+msgstr "스마트 시프트"
+
+msgid "select_date"
+msgstr "날짜를 선택하십시오."
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr "%(t)s 와 %(ss)s 는 날짜 %(d)s 중복됩니다."
+
+msgid "breakTime_validationError_durationGreatThanPeriod"
+msgstr "기간이 기간을 초과합니다."
+
+msgid "breakTime_validationError_earlyGreatThanDuration"
+msgstr "초기 길이는 중단 시간을 초과 할 수 없습니다."
+
+msgid "breakTime_validationError_overGreatThanRangeDuration"
+msgstr "브레이크 초과 시간이 브레이크 범위를 벗어났습니다."
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr "휴식 시간은 시간표에 의해 사용되며 편집 할 수 없습니다."
+
+msgid "breakTime_validationError_invalidNumber"
+msgstr "숫자는 0보다 커야합니다"
+
+msgid "please_select_time_table"
+msgstr "시간표를 선택하십시오."
+
+msgid "menu_group_att_rule"
+msgstr "규칙"
+
+msgid "menu_att_globalRule"
+msgstr "근태 설정"
+
+msgid "menu_att_departmentRule"
+msgstr "부서 규칙"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "근무규칙 스케줄"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "시간표"
+
+msgid "menu_att_breakTime"
+msgstr "휴식 시간"
+
+msgid "menu_att_timeInterval"
+msgstr "근무규칙"
+
+msgid "menu_att_shift"
+msgstr "근무규칙 스케줄"
+
+msgid "menu_att_departmentSchedule"
+msgstr "근무규칙 적용(부서)"
+
+msgid "menu_att_employeeSchedule"
+msgstr "근무규칙 적용(사용자)"
+
+msgid "menu_att_temporarySchedule"
+msgstr "근무규칙 적용(임시 사용자)"
+
+msgid "menu_att_scheduleView"
+msgstr "스케줄보기"
+
+msgid "menu_group_approvalManagement"
+msgstr "승인"
+
+msgid "menu_att_manualLog"
+msgstr "수동 로그"
+
+msgid "menu_att_leave"
+msgstr "휴가"
+
+msgid "menu_att_overtime"
+msgstr "초과 근무"
+
+msgid "menu_att_training"
+msgstr "트레닝"
+
+msgid "menu_att_adjustSchedule"
+msgstr "일정 조정"
+
+msgid "menu_group_att_holiday"
+msgstr "휴일"
+
+msgid "menu_att_holiday"
+msgstr "휴일"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "유형"
+
+msgid "menu_att_leaveType"
+msgstr "휴가 유형"
+
+msgid "menu_att_trainingType"
+msgstr "교육 유형"
+
+msgid "menu_group_att_reportSetting"
+msgstr "보고서 설정"
+
+msgid "menu_att_reportSetting"
+msgstr "보고서 설정"
+
+msgid "menu_group_att_transaction"
+msgstr "트랜잭션"
+
+msgid "menu_att_transaction"
+msgstr "트랜잭션"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "계산"
+
+msgid "menu_att_reportCalculate"
+msgstr "계산"
+
+msgid "menu_group_att_nonSchedulingReport"
+msgstr "거래 보고서"
+
+msgid "menu_group_att_report"
+msgstr "보고서"
+
+msgid "menu_group_att_summaryReport"
+msgstr "요약 보고서"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "감시 장치"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "학과 출석"
+
+msgid "att_model_attendanceDetail"
+msgstr "출석 세부 정보"
+
+msgid "att_model_attendanceException"
+msgstr "예외 기록"
+
+msgid "att_calc_log"
+msgstr "출석 로그 계산"
+
+msgid "attRule_field_paramName"
+msgstr "이름"
+
+msgid "attRule_field_paramValue"
+msgstr "값"
+
+msgid "att_model_attRule"
+msgstr "출석 규칙"
+
+msgid "schedule_field_employee"
+msgstr "직원"
+
+msgid "schedule_field_startDate"
+msgstr "시작 날짜"
+
+msgid "schedule_field_endDate"
+msgstr "종료일"
+
+msgid "schedule_field_shift"
+msgstr "Shift"
+
+msgid "att_model_schedule"
+msgstr "일정 이름"
+
+msgid "deptSchedule_field_department"
+msgstr "부서"
+
+msgid "deptSchedule_field_startDate"
+msgstr "시작 날짜"
+
+msgid "deptSchedule_field_endDate"
+msgstr "종료일"
+
+msgid "deptSchedule_field_shift"
+msgstr "Shift"
+
+msgid "att_model_deptSchedule"
+msgstr "부서 일정"
+
+msgid "deptSchedule_action_add"
+msgstr "추가"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "부서 일정 추가"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "부서 일정 추가"
+
+msgid "attShift_field_code"
+msgstr "Shift NO."
+
+msgid "attShift_field_alias"
+msgstr "시프트 이름"
+
+msgid "attShift_field_cycleUnit"
+msgstr "단위"
+
+msgid "attShift_field_cycle"
+msgstr "주기"
+
+msgid "work_on_weekend_as"
+msgstr "주말 작업 방식"
+
+msgid "work_on_day_off_as"
+msgstr "주 휴일로 일하기"
+
+msgid "attShift_field_autoShift"
+msgstr "자동 시프트"
+
+msgid "shift_name_repeat"
+msgstr "시프트 이름 (%s)이 이미 존재했습니다."
+
+msgid "att_model_shift"
+msgstr "근무규칙 스케줄"
+
+msgid "breakTime_field_alias"
+msgstr "이름"
+
+msgid "breakTime_field_startTime"
+msgstr "시작 시간"
+
+msgid "breakTime_field_endTime"
+msgstr "종료 시간"
+
+msgid "breakTime_field_duration"
+msgstr "휴식 시간 "
+
+msgid "breakTime_field_durationHelpTxt"
+msgstr "휴식 시간의 지속 시간은 분입니다."
+
+msgid "breakTime_field_startMargin"
+msgstr "중단 여백"
+
+msgid "breakTime_field_endMargin"
+msgstr "종료 시간 여백"
+
+msgid "breakTime_field_endMarginHelpTxt"
+msgstr "종료 시간 = 시작 시간 + 지속 시간 + 종료 시간 여백, 마진 단위는 분입니다."
+
+msgid "breakTime_field_allowDuration"
+msgstr "휴식 시간 허용"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "장치 펀치 상태 기반"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "중복 인증 간격"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "중복 인증 간격 (m)"
+
+msgid "breakTime_field_useMultiplePunch"
+msgstr "다중 입 / 출력 사용"
+
+msgid "breakTime_field_calculateType"
+msgstr "계산 유형"
+
+msgid "breakTime_field_minimumBreakTime"
+msgstr "최소 브레이크 타임 (m)"
+
+msgid "breakTime_field_earlyIn"
+msgstr "초기"
+
+msgid "breakTime_field_minEarlyIn"
+msgstr "최소 초기"
+
+msgid "breakTime_field_lateIn"
+msgstr "지각"
+
+msgid "breakTime_field_minLateIn"
+msgstr "최소 늦은"
+
+msgid "breakTime_field_considerBreakInEarly"
+msgstr "조기 퇴직 고려"
+
+msgid "breakTime_field_breakInEarlyAs"
+msgstr "조기 회신"
+
+msgid "breakTime_field_considerBreakInLate"
+msgstr "뒷늦은 시간 고려"
+
+msgid "breakTime_field_breakInLateAs"
+msgstr "뒤로 늦게"
+
+msgid "att_model_breakTime"
+msgstr "휴식 시간"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "기본 설정"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "인증 설정"
+
+msgid "changeSchedule_field_employee"
+msgstr "사용자"
+
+msgid "changeSchedule_field_attDate"
+msgstr "날짜"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "이전 스케줄"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "신규 스케줄"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "신청 시간"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "신청 사유"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "비고"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "상태"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "승인 시간"
+
+msgid "changeSchedule_field_approver"
+msgstr "승인자"
+
+msgid "att_model_changeSchedule"
+msgstr "일정 조정"
+
+msgid "change_schedule"
+msgstr "일정 조정"
+
+msgid "emp_field_employeeCode"
+msgstr "직원 ID"
+
+msgid "emp_field_firstName"
+msgstr "이름"
+
+msgid "emp_field_lastName"
+msgstr "성"
+
+msgid "employee_field_position"
+msgstr "위치"
+
+msgid "employee_field_department"
+msgstr "부서"
+
+msgid "deptAttRule_field_department"
+msgstr "학과"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "규칙"
+
+msgid "att_model_deptAttRule"
+msgstr "부서 규칙"
+
+msgid "departmentRule_tab_calculationRule"
+msgstr "계산 규칙"
+
+msgid "departmentRule_tab_overtimeSetting"
+msgstr "시간외 설정"
+
+msgid "holiday_field_department"
+msgstr "부서"
+
+msgid "att_model_holiday"
+msgstr "휴일"
+
+msgid "leaveCategory"
+msgstr "범주 떠나기"
+
+msgid "leave_field_applyReason"
+msgstr "적용 사유"
+
+msgid "leave_field_applyTime"
+msgstr "시간 적용"
+
+msgid "leave_field_approvalRemark"
+msgstr "승인 비고"
+
+msgid "leave_field_approvalTime"
+msgstr "승인 시간"
+
+msgid "leave_field_approvalLevel"
+msgstr "승인 수준"
+
+msgid "leave_field_approver"
+msgstr "승인자"
+
+msgid "leave_approve_audit"
+msgstr "휴가 기록은 감사에 의해 수정 될 수 없습니다."
+
+msgid "leaveCategory_field_name"
+msgstr "이름"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "최소 단위"
+
+msgid "leaveCategory_field_unit"
+msgstr "단위"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "완전하게하다"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "보고서 기호"
+
+msgid "this_category_name_already_exists."
+msgstr "유형 이름이 이미 있습니다."
+
+msgid "this_report_symbol_already_exists."
+msgstr "이미 사용중인 보고서 기호"
+
+msgid "the_default_category_name_cannot_be_modified"
+msgstr ""
+
+msgid "att_model_leaveCategory"
+msgstr "유형 남기기"
+
+msgid "manualLog_field_applyTime"
+msgstr "시간 적용"
+
+msgid "manualLog_field_approvalTime"
+msgstr "승인 시간"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "승인 수준"
+
+msgid "manualLog_field_approver"
+msgstr "승인자"
+
+msgid "manuallog_approve_audit"
+msgstr "수동 기록은 감사에 의해 수정 될 수 없습니다."
+
+msgid "att_model_manualLog"
+msgstr "수동 로그"
+
+msgid "overtime_field_applyTime"
+msgstr "시간을 적용하십시오"
+
+msgid "overtime_field_approvalReason"
+msgstr "비고"
+
+msgid "overtime_field_approvalTime"
+msgstr "승인 시간"
+
+msgid "overtime_field_approvalLevel"
+msgstr "승인 수준"
+
+msgid "overtime_field_approver"
+msgstr "승인자"
+
+msgid "overtime_approve_audit"
+msgstr "초과 근무 기록은 감사로 수정할 수 없습니다."
+
+msgid "att_model_overtime"
+msgstr "시간 외에"
+
+msgid "reportParam_field_name"
+msgstr "이름"
+
+msgid "reportParam_field_value"
+msgstr "값"
+
+msgid "att_model_reportParameter"
+msgstr "보고서 매개 변수"
+
+msgid "calculation_item_actualAttendance"
+msgstr "실제 근무자 수"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "근무 기간 / 단기"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "총 시간 / 총 근무 시간"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "휴식 시간 / 실제 휴식 시간"
+
+msgid "calculation_item_noCheckIn"
+msgstr "시계 없음"
+
+msgid "calculation_item_noCheckOut"
+msgstr "클럭 아웃 없음"
+
+msgid "calculation_item_training"
+msgstr "훈련"
+
+msgid "report_display_checkIn"
+msgstr "체크인"
+
+msgid "report_display_checkOut"
+msgstr "체크 아웃"
+
+msgid "report_display_breakOut"
+msgstr "탈주"
+
+msgid "report_display_breakIn"
+msgstr "침입"
+
+msgid "report_display_overtimeIn"
+msgstr "초과 근무 시간"
+
+msgid "report_display_overtimeOut"
+msgstr "초과 근무 시간 초과"
+
+msgid "report_display_unknown"
+msgstr "알 수 없는"
+
+msgid "shiftDetail_field_shift"
+msgstr "시프트"
+
+msgid "shiftDetail_field_inTime"
+msgstr "제 시간에 확인하다"
+
+msgid "shiftDetail_field_outTime"
+msgstr "체크 아웃 시간"
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "일별 지수"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "시간표"
+
+msgid "att_model_shiftDetail"
+msgstr "시프트 세부 정보"
+
+msgid "tempSchedule_field_employee"
+msgstr "종업원"
+
+msgid "tempSchedule_field_startTime"
+msgstr "시작 시간"
+
+msgid "tempSchedule_field_endTime"
+msgstr "종료 시간"
+
+msgid "tempSchedule_field_rule"
+msgstr "임시 일정 규칙"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "시간표 ID"
+
+msgid "tempSchedule_field_workType"
+msgstr "작업 유형"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "시간표"
+
+msgid "att_model_tempSchedule"
+msgstr "임시 일정"
+
+msgid "timeInterval_field_alias"
+msgstr "이름"
+
+msgid "timeInterval_field_type"
+msgstr "유형"
+
+msgid "timeInterval_field_checkIn"
+msgstr "체크인"
+
+msgid "timeInterval_field_checkOut"
+msgstr "점검"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "체크인 시작"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "체크인 종료"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "체크 아웃 시작"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "체크 아웃 종료"
+
+msgid "timeInterval_field_crossDay"
+msgstr "크로스 데이"
+
+msgid "timeTable_helpText_tip1"
+msgstr "1. 모든 교차 날짜 설정은 체크인 기준입니다."
+
+msgid "timeTable_helpText_tip2"
+msgstr "2. 사용 가능한 타임 카드는> = 체크인 시작 및 <체크 아웃 끝이어야합니다."
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "(앞) 여백"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "(앞) 마진 위"
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "(앞으로) 앞 여백"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "(여백) 여백"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "참석 기간"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "선택 체크 아웃으로 참석 시간을 설정하려면 클릭하십시오"
+
+msgid "timeInterval_label_checkOut"
+msgstr "체크 아웃"
+
+msgid "timeInterval_txt_days"
+msgstr "일"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "최대 3 일"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "체크인이 체크 아웃보다 적음"
+
+msgid "timeInterval_checkOut_title"
+msgstr "체크 아웃 설정"
+
+msgid "timeInterval_field_inRequired"
+msgstr "필요한 클록 인"
+
+msgid "timeInterval_field_outRequired"
+msgstr "필요한 클럭 아웃"
+
+msgid "timeInterval_field_allowLate"
+msgstr "늦게 허용"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "조기 퇴출 허용"
+
+msgid "timeInterval_field_paidDay"
+msgstr "작업 일"
+
+msgid "timeInterval_field_earlyIn"
+msgstr "초기"
+
+msgid "timeInterval_field_minEarlyIn"
+msgstr "최소 초기"
+
+msgid "timeInterval_field_lateOut"
+msgstr "늦게"
+
+msgid "timeInterval_field_minLateOut"
+msgstr "최소한도 늦음"
+
+msgid "timeInterval_field_overtimeLevel"
+msgstr "시간외 레벨"
+
+msgid "timeInterval_field_overtimeLevel1"
+msgstr "시간외 레벨 1"
+
+msgid "timeInterval_field_overtimeLevel2"
+msgstr "시간외 레벨 2"
+
+msgid "timeInterval_field_overtimeLevel3"
+msgstr "시간외 레벨 3"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "구약 초기"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "최소 구약 (조기)"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "구차 아웃"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "최소 OT (Late Out)"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "변경 시점"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "다중 입출력"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "펀치 간격 유형"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "펀치 기간이 중복되었습니다."
+
+msgid "timeInterval_field_workTimeType"
+msgstr "근무 시간 유형"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "근무 시간"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "분"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "펀치 상태의 기본"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "연장 시간 사용"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "초과 근무 최소 시간"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "분"
+
+msgid "timeInterval_field_workType"
+msgstr "작업 유형"
+
+msgid "timeInterval_field_dayChange"
+msgstr "요일 변경 시간"
+
+msgid "timeInterval_field_breakTime"
+msgstr "휴식 시간"
+
+msgid "timeInterval_error_invalidWorkDay"
+msgstr "계산 작업 일이 잘못되었습니다. 0.1-9.9 사이의 값이 필요합니다."
+
+msgid "time_duration_greater_user_defined"
+msgstr "시간이 사용자가 정의한 시간보다 깁니다."
+
+msgid "att_model_timeInterval"
+msgstr "시간표"
+
+msgid "timeInterval_action_addNormalTimetable"
+msgstr "정상 시간표 추가"
+
+msgid "timeInterval_action_addNormalTimetable_description"
+msgstr "정상 시간표 추가"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "정상 시간표 추가"
+
+msgid "timeInterval_filed_crossDayUnit"
+msgstr "일"
+
+msgid "timeInterval_error_invalidOvertimeValue"
+msgstr "유효하지 않은 초과 근무 가치"
+
+msgid "timeInterval_error_invalidFieldValue"
+msgstr "{field}'s값이 잘못되었습니다"
+
+msgid "timeInterval_error_invalidCheckOvertimeLevel"
+msgstr "초과 근무 수준 값은 L3>= L2>= L1이 필요합니다."
+
+msgid "timeInterval_error_flexibleWorkTime"
+msgstr "작업 시간은 0-1440 범위 여야합니다."
+
+msgid "timeInterval_error_flexibleWorkTime_{duration}"
+msgstr "작업 시간은 0- {duration} 범위에 있어야합니다."
+
+msgid "timeInterval_error_invalidCheckInStart"
+msgstr "잘못된 체크인 시작"
+
+msgid "timeInterval_error_invalidCheckInEnd"
+msgstr "잘못된 체크인 종료"
+
+msgid "timeInterval_error_invalidCheckOutStart"
+msgstr "잘못된 체크 아웃 시작"
+
+msgid "timeInterval_error_invalidCheckOutEnd"
+msgstr "유효하지 않은 체크 아웃 끝"
+
+msgid "timeInterval_error_invalidCheckOut"
+msgstr "잘못된 체크 아웃"
+
+msgid "timeInterval_error_invalidEarlyIn"
+msgstr "잘못된 초기 설치"
+
+msgid "timeInterval_error_invalidLateOut"
+msgstr "잘못된 지연 설정"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "기본 설정"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "휴식 시간 설정"
+
+msgid "timeInterval_tab_unscheduledTimeSetting"
+msgstr "예약되지 않은 시간 설정"
+
+msgid "timeInterval_tab_overtimeLevelSetting"
+msgstr "초과 근무 수준 설정"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "규칙 설정"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "유연한 시간표 추가"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "유연한 시간표 추가"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "유연한 시간표 추가"
+
+msgid "training_field_applyTime"
+msgstr "시간 적용"
+
+msgid "training_field_approvalTime"
+msgstr "승인 시간"
+
+msgid "training_field_approvalLevel"
+msgstr "승인 수준"
+
+msgid "training_field_approver"
+msgstr "승인자"
+
+msgid "training_approve_audit"
+msgstr "교육 기록은 감사에 의해 수정 될 수 없습니다."
+
+msgid "att_model_training"
+msgstr "훈련"
+
+msgid "mulTransaction_field_employee"
+msgstr "직원 ID"
+
+msgid "mulTransaction_field_dataType"
+msgstr "데이터 형식"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "보통 펀치"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "휴식 시간"
+
+msgid "mulTransaction_field_date"
+msgstr "날짜"
+
+msgid "mulTransaction_field_timetable"
+msgstr "시간표"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "데이터 색인"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "시계가 있음"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "ID 시계"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "시계 아웃"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "시계 아웃 ID"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "총 시간"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "근무 시간"
+
+msgid "att_model_multipleTransaction"
+msgstr "다중 거래"
+
+msgid "att_model_scheduledTransaction"
+msgstr "예정된 거래"
+
+msgid "based_on_schedule"
+msgstr "일정 관련"
+
+msgid "first_check_in"
+msgstr "첫 번째 체크인"
+
+msgid "last_check_out"
+msgstr "마지막 체크 아웃"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "연장 시간 사용 중지"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "구약의 계산서"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "구약 승인"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "OT 우선권 승인"
+
+msgid "attRule_missIn_late"
+msgstr "늦은"
+
+msgid "attRule_missIn_absent"
+msgstr "없는"
+
+msgid "attRule_missIn_noComplete"
+msgstr "완전하지 않은"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "조퇴"
+
+msgid "attRule_missOut_absent"
+msgstr "없는"
+
+msgid "attRule_missOut_noComplete"
+msgstr "완전하지 않은"
+
+msgid "must_check_in"
+msgstr "반드시 체크인해야합니다."
+
+msgid "using_leave_end_time"
+msgstr "휴가 종료 시간 사용"
+
+msgid "must_check_out"
+msgstr "체크 아웃해야 함"
+
+msgid "using_leave_start_time"
+msgstr "휴가 시작 시간 사용"
+
+msgid "using_training_end_time"
+msgstr "교육 종료 시간 사용"
+
+msgid "using_training_start_time"
+msgstr "교육 시작 시간 사용"
+
+msgid "overtimeLevel_ignore"
+msgstr "무시"
+
+msgid "overtimeLevel_dependsOnWorkTime"
+msgstr "근무 시간에 따라 다릅니다"
+
+msgid "overtimeLevel_dependsOnOvertime"
+msgstr "시간외 근무"
+
+msgid "unscheduled_ignore"
+msgstr "무시"
+
+msgid "unscheduled_move2normalWork"
+msgstr "정상 작업으로 이동"
+
+msgid "unscheduled_move2overtime"
+msgstr "시간외로 이동"
+
+msgid "unscheduled_move2normalOvertime"
+msgstr "정상 초과 근무 시간으로 이동"
+
+msgid "unscheduled_move2weekendOvertime"
+msgstr "주말 초과 근무로 이동"
+
+msgid "unscheduled_move2holidayOvertime"
+msgstr "시간외 휴가로 이동"
+
+msgid "boolean_option_no"
+msgstr "아니"
+
+msgid "boolean_option_yes"
+msgstr "예"
+
+msgid "boolean_option_enable"
+msgstr "사용"
+
+msgid "boolean_option_disable"
+msgstr "비활성화"
+
+msgid "availablePunch_policy_any"
+msgstr "어떤"
+
+msgid "availablePunch_policy_punchStateBased"
+msgstr "펀치 상태 기반"
+
+msgid "breakTime_calculateMode_autoDeduct"
+msgstr "자동 공제"
+
+msgid "breakTime_calculateMode_requiredPunch"
+msgstr "필수 펀치"
+
+msgid "breakTime_earlyInMode_normalWork"
+msgstr "정상 작업"
+
+msgid "breakTime_earlyInMode_normalOvertime"
+msgstr "정상 초과 근무 시간"
+
+msgid "breakTime_lateInMode_ignore"
+msgstr "무시"
+
+msgid "breakTime_lateInMode_move2Late"
+msgstr "늦게 이동"
+
+msgid "breakTime_lateInMode_move2EarlyOut"
+msgstr "초기화로 이동"
+
+msgid "breakTime_lateInMode_move2Absence"
+msgstr "결석으로 이동"
+
+msgid "breakTime_lateInMode_late"
+msgstr "늦은"
+
+msgid "breakTime_lateInMode_earlyLeave"
+msgstr "조기 떠나기"
+
+msgid "breakTime_lateInMode_absent"
+msgstr "부재중"
+
+msgid "timeInterval_typeOption_normal"
+msgstr "표준"
+
+msgid "timeInterval_typeOption_flexible"
+msgstr "융통성 있는"
+
+msgid "timeInterval_typeOption_basedOnRule"
+msgstr "규칙과 관련있다."
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "사용자 정의"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "정상 작업"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "휴일"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "주말"
+
+msgid "shift_OTOption_normalWork"
+msgstr "정상 작업"
+
+msgid "shift_OTOption_normalOT"
+msgstr "정상적인 구약"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "주말 구내"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "일"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "주"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "달"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "활성 임시 일정"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "추가 일정 추가"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "정상 작업"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "정상적인 구약"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "주말 구내"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "구약의 휴일"
+
+msgid "approvalStatus_option_pending"
+msgstr "대기중인"
+
+msgid "approvalStatus_option_reApply"
+msgstr "재 신청"
+
+msgid "approvalStatus_option_revoke"
+msgstr "취소"
+
+msgid "approvalStatus_option_auditing"
+msgstr "감사"
+
+msgid "approvalStatus_option_approved"
+msgstr "승인 됨"
+
+msgid "approvalStatus_option_reject"
+msgstr "거부 됨"
+
+msgid "punchState_option_checkIn"
+msgstr "체크인"
+
+msgid "punchState_option_checkOut"
+msgstr "체크 아웃"
+
+msgid "punchState_option_breakOut"
+msgstr "탈주"
+
+msgid "punchState_option_breakIn"
+msgstr "침입"
+
+msgid "punchState_option_overtimeIn"
+msgstr "초과 근무 시간"
+
+msgid "punchState_option_overtimeOut"
+msgstr "초과 근무 시간 초과"
+
+msgid "punchState_option_noStatus"
+msgstr "상태 없음"
+
+msgid "overtime_option_normalOvertime"
+msgstr "정상적인 구약"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "주말 구내"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "구약의 휴일"
+
+msgid "calculationUnit_option_hour"
+msgstr "시간"
+
+msgid "calculationUnit_option_minute"
+msgstr "분"
+
+msgid "calculationUnit_option_workday"
+msgstr "평일"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "HH:MM"
+
+msgid "overtime_option_normalWork"
+msgstr "정상 작업"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "휴일 (%(holiday)s)"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "주말"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "휴일"
+
+msgid "report_exceptionDisplay_Holiday"
+msgstr "휴일"
+
+msgid "absent_report"
+msgstr "부재중 보고서"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "체크인 불가"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "체크 아웃 없음"
+
+msgid "weekday_option_monday"
+msgstr "월요일"
+
+msgid "weekday_option_tuesday"
+msgstr "화요일"
+
+msgid "weekday_option_wednesday"
+msgstr "수요일"
+
+msgid "weekday_option_thursday"
+msgstr "목요일"
+
+msgid "weekday_option_friday"
+msgstr "금요일"
+
+msgid "weekday_option_saturday"
+msgstr "토요일"
+
+msgid "weekday_option_sunday"
+msgstr "일요일"
+
+msgid "attRule_globalRule_basicSetting"
+msgstr "기본 설정"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "주말 설정"
+
+msgid "attRule_globalRule_overtimeSetting"
+msgstr "초과 근무 설정"
+
+msgid "attRule_globalRule_calculationSetting"
+msgstr "근태 계산 설정"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "APP 설정"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "규칙 체크인"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "스케줄에 기초"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "처음 인증 출근"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "체크 아웃 규칙"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "마지막 인증 퇴근"
+
+msgid "attRule_globalRule_monday"
+msgstr "월"
+
+msgid "attRule_globalRule_workingOnMonday"
+msgstr "월요일 근무"
+
+msgid "attRule_globalRule_tuesday"
+msgstr "화"
+
+msgid "attRule_globalRule_workingOnTuesday"
+msgstr "화요일 근무"
+
+msgid "attRule_globalRule_wednesday"
+msgstr "수"
+
+msgid "attRule_globalRule_workingOnWednesday"
+msgstr "수요일 근무"
+
+msgid "attRule_globalRule_thursday"
+msgstr "목"
+
+msgid "attRule_globalRule_workingOnThursday"
+msgstr "목요일 근무"
+
+msgid "attRule_globalRule_friday"
+msgstr "금"
+
+msgid "attRule_globalRule_workingOnFriday"
+msgstr "금요일 근무"
+
+msgid "attRule_globalRule_saturday"
+msgstr "토"
+
+msgid "attRule_globalRule_workingOnSaturday"
+msgstr "토요일 근무"
+
+msgid "attRule_globalRule_sunday"
+msgstr "일"
+
+msgid "attRule_globalRule_workingOnSunday"
+msgstr "일요일 근무"
+
+msgid "attRule_globalRule_OTLevel1"
+msgstr "OT 1"
+
+msgid "attRule_globalRule_OTLevel2"
+msgstr "OT 2"
+
+msgid "attRule_globalRule_OTLevel3"
+msgstr "OT 3"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "초과 근무 규칙"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "펀치 기간이 중복되었습니다."
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "월요일"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "화요일"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "수요일"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "목요일"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "금요일"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "토요일"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "일요일"
+
+msgid "attRule_weekendSetting_titleWeekend"
+msgstr "주말"
+
+msgid "attRule_weekendSetting_workingOnDay"
+msgstr "평일"
+
+msgid "attRule_weekendSetting_OTLV1"
+msgstr "OT 1(h)"
+
+msgid "attRule_weekendSetting_OTLV2"
+msgstr "OT 2(h)"
+
+msgid "attRule_weekendSetting_OTLV3"
+msgstr "OT 3(h)"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "근태 계산 규칙"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "늦게 초과하는 경우"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "분, 부재로 간주하다"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "조기 휴가가 초과하면"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "분, 부재로 간주하다"
+
+msgid "attRule_globalRule_missIn"
+msgstr "누락 된 체크인"
+
+msgid "attRule_globalRule_missOut"
+msgstr "누락 된 체크 아웃 :"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "계산 항목"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "출근 인증"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "퇴근 인증 규칙"
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "외출"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "복귀"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "초과 근무 인증(출근)"
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "초과 근무 인증(퇴근)"
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "근태 사진"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "옵션"
+
+msgid "attRule_globalRule_required"
+msgstr "필수"
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "근무 코드"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "기능 키"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "저장"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "사용자"
+
+msgid "schedule_empFrameOption_department"
+msgstr "부서"
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "사용자"
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "부서"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "모든 사용자 선택"
+
+msgid "schedule_action_shiftCover"
+msgstr "덮어 쓰기 이동"
+
+msgid "schedule_action_scheduleCover"
+msgstr "일정 덮어 쓰기"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "시간표"
+
+msgid "form_helpText_title"
+msgstr "알림"
+
+msgid "shift_helpText_tip1"
+msgstr "1. 왼쪽에서 시간표를 선택하여 오른쪽의 시프트를 채우십시오."
+
+msgid "shift_helpText_tip2"
+msgstr "2. 단위가 하루 인 경우주기는 366을 초과 할 수 없습니다."
+
+msgid "shift_helpText_tip3"
+msgstr "3. 단위가 주일 때는 사이클이 52를 초과 할 수 없습니다."
+
+msgid "shift_helpText_tip4"
+msgstr "4. 단위가 월인 경우주기는 12를 초과 할 수 없습니다."
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "세부 묘사"
+
+msgid "shiftList_search_shift"
+msgstr "근무규칙 스케줄"
+
+msgid "department_tree_selectAll"
+msgstr "모두 선택"
+
+msgid "department_tree_multipleSelect"
+msgstr "다중 선택"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "하위 부서 선택"
+
+msgid "calculation_page_empSearch"
+msgstr "직원 검색"
+
+msgid "calculation_page_startDate"
+msgstr "시작 날짜"
+
+msgid "calculation_page_endDate"
+msgstr "종료일"
+
+msgid "calculation_page_attCalculate"
+msgstr "출석 계산"
+
+msgid "emp_field_hireDate"
+msgstr "채용 날짜"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "초과 근무 규칙"
+
+msgid "report_searchField_startDate"
+msgstr "시작 날짜"
+
+msgid "report_searchField_endDate"
+msgstr "종료일"
+
+msgid "report_searchField_employee"
+msgstr "종업원"
+
+msgid "report_column_workDay"
+msgstr "근무일"
+
+msgid "report_column_breakDuration"
+msgstr "휴식 시간"
+
+msgid "report_column_totalDurationHrs"
+msgstr "총 시간 (시간)"
+
+msgid "report_column_breakDurationHrs"
+msgstr "휴식 시간 (시간)"
+
+msgid "report_column_totalDayOff"
+msgstr "휴일 (일)"
+
+msgid "report_column_totalWeekend"
+msgstr "주말 (일)"
+
+msgid "report_column_totalHoliday"
+msgstr "휴일 (일)"
+
+msgid "report_display_setting"
+msgstr "보고서 표시 설정"
+
+msgid "short_date_format"
+msgstr "간단한 날짜 형식"
+
+msgid "short_time_format"
+msgstr "짧은 시간 형식"
+
+msgid "resignEmployee_display"
+msgstr "직원 표시 사임"
+
+msgid "multiple_dept"
+msgstr "부서 트리 표시"
+
+msgid "reportSetting_tab_basicDisplaySetting"
+msgstr "기본 디스플레이"
+
+msgid "reportSetting_tab_functionKeyDisplay"
+msgstr "기능 키 표시"
+
+msgid "reportSetting_tab_reportItemsDisplay"
+msgstr "보고서 항목 표시"
+
+msgid "reportSetting_funcKeyField_ID"
+msgstr "ID"
+
+msgid "reportSetting_funcKeyField_value"
+msgstr "값"
+
+msgid "reportSetting_funcKeyField_name"
+msgstr "이름"
+
+msgid "reportSetting_itemField_ID"
+msgstr "ID"
+
+msgid "reportSetting_itemField_name"
+msgstr "이름"
+
+msgid "reportSetting_itemField_minimumUnit"
+msgstr "최소 단위"
+
+msgid "reportSetting_itemField_roundOff"
+msgstr "라운드 오프"
+
+msgid "reportSetting_itemField_symbol"
+msgstr "기호"
+
+msgid "calculation_item_minimumUnit"
+msgstr "최소 단위"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "시간"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "분"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "평일"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "HH:MM"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "수치 정밀도"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "반올림"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "완전하게하다"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "모으다"
+
+msgid "symbol_in_report"
+msgstr "보고서의 상징"
+
+msgid "replace_schedule_as_following_range"
+msgstr "다음 범위로 일정을 교체하십시오."
+
+msgid "breakTime_number"
+msgstr "휴식 시간대 번호"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "내보내기 형식 :"
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "기본"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "사용자별 통계"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "부서별 통계"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "날짜별 통계"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "페이지별 통계"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "시작 시간과 종료 시간을 선택하십시오"
+
+msgid "attCalculation_alert_dateRangeInvalid"
+msgstr "종료 시간은 시작 시간보다 늦어 야합니다"
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "사용자를 선택하십시오"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "계산이 완료됩니다"
+
+msgid "shift_getDetail_error_notFound"
+msgstr "근무규칙 스케줄을 찾을 수 없습니다."
+
+msgid "menu_sys_authGroup"
+msgstr "그룹"
+
+msgid "menu_sys_authUser"
+msgstr "사용자"
+
+msgid "menu_sys_emailSetting"
+msgstr "이메일 설정"
+
+msgid "menu_sys_alertSetting"
+msgstr "알림 설정"
+
+msgid "menu_sys_pdfReportSetting"
+msgstr "PDF 내보내기"
+
+msgid "menu_sys_ftpSetting"
+msgstr "Ftp 설정"
+
+msgid "menu_sys_filterBookmark"
+msgstr "북마크"
+
+msgid "menu_sys_databaseBackup"
+msgstr "지원"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "마이그레이션"
+
+msgid "menu_sys_autoExport"
+msgstr "자동 수출"
+
+msgid "menu_group_sysMiddlewareTable"
+msgstr "미들웨어 테이블"
+
+msgid "menu_sys_middlewareTableDepartment"
+msgstr "부서"
+
+msgid "menu_sys_middlewareTablePosition"
+msgstr "직위"
+
+msgid "menu_sys_middlewareTableArea"
+msgstr "구역"
+
+msgid "menu_sys_middlewareTableEmployee"
+msgstr "사용자"
+
+msgid "middlewareTable_field_postTime"
+msgstr "제출 시간"
+
+msgid "middlewareTable_field_flag"
+msgstr "깃발"
+
+msgid "middlewareTable_field_updateTime"
+msgstr "목표 시간"
+
+msgid "middlewareTable_field_syncResult"
+msgstr "상태"
+
+msgid "emp_field_multipleArea"
+msgstr "여러 구역"
+
+msgid "emp_field_activeStatus"
+msgstr "활성 상태"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "보조 설정"
+
+msgid "menu_sys_companySetting"
+msgstr "회사 설정"
+
+msgid "menu_line_notify"
+msgstr "회선 앱 알림"
+
+msgid "menu_group_sys_user"
+msgstr "사용자"
+
+msgid "menu_group_sys_configuration"
+msgstr "구성"
+
+msgid "menu_group_sys_database"
+msgstr "데이터 베이스"
+
+msgid "menu_group_sys_integration"
+msgstr "완성"
+
+msgid "menu_group_sys_log"
+msgstr "로그"
+
+msgid "menu_sys_log"
+msgstr "로그"
+
+msgid "menu_group_sys_task"
+msgstr "태스크"
+
+msgid "menu_sys_intervalSchedule"
+msgstr "간격"
+
+msgid "menu_sys_crontabSchedule"
+msgstr "크론 탭"
+
+msgid "menu_sys_periodicTask"
+msgstr "주기적 작업"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "시작 시간"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "종료 시간"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "검색어 입력란"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "수동 내보내기"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "수동으로 실행할 작업 선택"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "수동으로 실행할 작업 선택"
+
+msgid "user_action_changePassword"
+msgstr "비밀번호 변경"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "선택한 사용자의 비밀번호를 변경 하시겠습니까?"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "기본 키가 %(key)r 인 %(name)s 개체가 없습니다."
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "암호가 성공적으로 변경되었습니다."
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "비밀번호 변경"
+
+msgid "adminLog_field_objects"
+msgstr "목적"
+
+msgid "group_field_name"
+msgstr "이름"
+
+msgid "autoExport_task_error_data"
+msgstr "유효하지 않은 데이터"
+
+msgid "autoExport_task_error_email"
+msgstr "잘못된 이메일"
+
+msgid "autoExport_task_error_interval"
+msgstr "구간 값이 잘못되었습니다."
+
+msgid "autoExport_task_error_time_point"
+msgstr "시간대 값이 잘못되었습니다."
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "직원 ID 길이"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "파일 이름"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "잘못된 비밀번호 형식 또는 알 수없는 해시 알고리즘"
+
+msgid "password_mismatch_errorMessage"
+msgstr "두 개의 암호 필드가 일치하지 않습니다."
+
+msgid "user_createForm_password"
+msgstr "암호"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "비밀번호 확인"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "확인을 위해 이전과 동일한 비밀번호를 입력하십시오."
+
+msgid "stmp_server_is_required"
+msgstr "SMTP 서버가 필요합니다."
+
+msgid "email_account_is_required"
+msgstr "이메일 계정이 필요합니다."
+
+msgid "email_password_is_required"
+msgstr "이메일 비밀번호가 필요합니다."
+
+msgid "store_path_is_required"
+msgstr "SN 파일이 필요합니다."
+
+msgid "store_path_is_wrong"
+msgstr "상점 경로가 잘못되었습니다."
+
+msgid "autoExport_task_error_data: "
+msgstr "유효하지 않은 데이터"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "직원 ID 길이"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "시간 범위"
+
+msgid "software_category_is_required"
+msgstr "소프트웨어 카테고리가 필요합니다."
+
+msgid "migrate_fields_is_required"
+msgstr "마이그레이션 필드가 필요합니다."
+
+msgid "migrate_database_type_is_required"
+msgstr "이주 데이터베이스 유형이 필요합니다."
+
+msgid "migrate_database_address_is_required"
+msgstr "마이그레이션 데이터베이스의 IP 주소가 필요합니다."
+
+msgid "migrate_database_port_is_required"
+msgstr "마이그레이션 데이터베이스의 포트 번호가 필요합니다."
+
+msgid "migrate_database_name_is_required"
+msgstr "이주 데이터베이스의 이름이 필요합니다."
+
+msgid "migrate_database_user_is_required"
+msgstr "마이그레이션 데이터베이스의 사용자 이름이 필요합니다."
+
+msgid "migrate_database_password_is_required"
+msgstr "이주 데이터베이스의 암호가 필요합니다."
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "연결 테스트가 실패했습니다."
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "데이터베이스 연결 예외"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured"
+msgstr "백업에 실패했습니다. sqlcmd.exe가 구성되어 있는지 확인하십시오."
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured"
+msgstr "백업에 실패했습니다. mysqldump.exe가 구성되어 있는지 확인하십시오."
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured"
+msgstr "백업에 실패했습니다. pg_dump.exe가 구성되어 있는지 확인하십시오."
+
+msgid "backup_failed_please_make_sure_exp_is_configured"
+msgstr "백업에 실패했습니다. exp.exe가 구성되어 있는지 확인하십시오."
+
+msgid "dbBackup_action_dbRestoreErrorPSQLNotFount"
+msgstr "복원에 실패했습니다. psql.exe가 구성되어 있는지 확인하십시오."
+
+msgid "dbBackup_action_dbRestoreErrorNoSupport"
+msgstr "복원에 실패했습니다. PostgreSQL 데이터베이스 만 지원하십시오."
+
+msgid "dbBackup_action_dbRestoreErrorFileNoFound"
+msgstr "복원에 실패했습니다. 백업 파일을 찾을 수 없습니다."
+
+msgid "dbBackup_action_dbRestoreErrorIllegalDatabaseName"
+msgstr "복원에 실패했습니다. 데이터베이스 이름을 사용하지 않도록하십시오."
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(엔진) 백업을 사용할 수 없습니다."
+
+msgid "adminLog_field_user"
+msgstr "사용자"
+
+msgid "adminLog_field_action"
+msgstr "작업"
+
+msgid "adminLog_field_contentType"
+msgstr "컨텐츠 유형"
+
+msgid "adminLog_field_actionStatus"
+msgstr "상태"
+
+msgid "actionStatus_option_fail"
+msgstr "실패"
+
+msgid "actionStatus_option_success"
+msgstr "성공"
+
+msgid "adminLog_field_description"
+msgstr "설명하다"
+
+msgid "adminLog_field_ipAddress"
+msgstr "IP 주소"
+
+msgid "adminLog_field_routable"
+msgstr "라우팅 가능"
+
+msgid "adminLog_field_operationTime"
+msgstr "활동 시간"
+
+msgid "base_model_adminLog"
+msgstr "로그"
+
+msgid "autoExportTask_field_code"
+msgstr "암호"
+
+msgid "autoExportTask_field_name"
+msgstr "이름"
+
+msgid "autoExportTask_field_params"
+msgstr "매개 변수"
+
+msgid "base_model_autoExportTask"
+msgstr "자동 수출"
+
+msgid "bookmark_field_title"
+msgstr "표제"
+
+msgid "bookmark_field_user"
+msgstr "사용자"
+
+msgid "bookmark_field_contentType"
+msgstr "컨텐츠 타입"
+
+msgid "bookmark_field_filtersString"
+msgstr "필터"
+
+msgid "bookmark_menu_noBookmarks"
+msgstr "북마크 없음"
+
+msgid "bookmark_menu_newBookmark"
+msgstr "북마크 추가"
+
+msgid "bookmark_menu_enterBookmarkTitle"
+msgstr "북마크 명 입력"
+
+msgid "bookmark_menu_saveBookmark"
+msgstr "북마크 저장"
+
+msgid "bookmark_field_isShared"
+msgstr "공유 여부"
+
+msgid "bookmark_field_savedTime"
+msgstr "저장된 시간"
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "중복 제목"
+
+msgid "base_model_bookmark"
+msgstr "북마크"
+
+msgid "base_integrationTable_employee"
+msgstr "종업원"
+
+msgid "base_integrationTable_position"
+msgstr "직위"
+
+msgid "base_integrationTable_department"
+msgstr "부서"
+
+msgid "base_integrationTable_area"
+msgstr "구역"
+
+msgid "enableStatus_option_enable"
+msgstr "활성화"
+
+msgid "enableStatus_option_disable"
+msgstr "비활성화"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "실시간 전송"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "일별 보고서"
+
+msgid "lineNotify_field_department"
+msgstr "부서"
+
+msgid "lineNotify_field_includeSubDepartment"
+msgstr "하위 부서 포함"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "토큰"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "아래쪽 링크를 클릭하십시오"
+
+msgid "lineNotify_field_messageType"
+msgstr "메시지 유형"
+
+msgid "lineNotify_field_pushTime"
+msgstr "전송 시간"
+
+msgid "lineNotify_field_isValid"
+msgstr "요휴한"
+
+msgid "lineNotify_field_remark"
+msgstr "비고"
+
+msgid "base_model_lineNotifySetting"
+msgstr "Line 알림 설정"
+
+msgid "dbMigrate_field_name"
+msgstr "이름 이전"
+
+msgid "dbMigrate_field_value"
+msgstr "콘텐츠 이전"
+
+msgid "base_model_dbBackupLog"
+msgstr "DB 백업 로그"
+
+msgid "dbBackupLog_field_type"
+msgstr "데이터 베이스"
+
+msgid "dbBackupLog_field_name"
+msgstr "데이터베이스 이름"
+
+msgid "dbBackupLog_field_operator"
+msgstr "운영자"
+
+msgid "dbBackupLog_field_filePath"
+msgstr "저장 경로"
+
+msgid "dbBackupLog_field_time"
+msgstr "시간"
+
+msgid "dbBackupLog_field_status"
+msgstr "상태"
+
+msgid "dbBackupLog_field_remark"
+msgstr "비고"
+
+msgid "dbBackupLog_field_frequency"
+msgstr "회수"
+
+msgid "dbBackupLog_field_pointDay"
+msgstr "날짜"
+
+msgid "dbBackupLog_field_pointTime"
+msgstr "시간"
+
+msgid "dbBackupLog_action_dbBackupAuto"
+msgstr "자동 백업"
+
+msgid "dbBackupLog_action_dbBackupManually"
+msgstr "수동 백업"
+
+msgid "dbBackupLog_action_dbBackupManuallyConfirmation"
+msgstr "데이터베이스를 수동으로 백업 하시겠습니까?"
+
+msgid "backup_status_success"
+msgstr "성공"
+
+msgid "backup_status_failed"
+msgstr "실패한"
+
+msgid "dbBackupLog_action_dbRestoreManually"
+msgstr "수동 복원"
+
+msgid "dbBackupLog_field_backupFile"
+msgstr "백업 파일"
+
+msgid "model_send_email"
+msgstr "이메일을 보내"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "암호"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "공개 키"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "호스트 주소"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "포트 번호"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "확실한 방법"
+
+msgid "sftpSetting_field_username"
+msgstr "사용자 이름"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "암호"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "SSH 키"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "암호"
+
+msgid "sftp_setting"
+msgstr "SFTP 설정"
+
+msgid "sysParam_field_name"
+msgstr "이름"
+
+msgid "sysParam_field_type"
+msgstr "유형"
+
+msgid "sysParam_field_value"
+msgstr "값"
+
+msgid "sysParam_default_ruleName"
+msgstr "기본 출석 규칙"
+
+msgid "system_setting"
+msgstr "시스템 설정"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "날짜 %(from)s ~ %(to)s"
+
+msgid "reportExport_author"
+msgstr "저자"
+
+msgid "reportExport_createTime"
+msgstr "시간 만들기"
+
+msgid "pdfExport_pageSize"
+msgstr "페이지 크기"
+
+msgid "pdfExport_orientation"
+msgstr "오리엔테이션"
+
+msgid "pdfExport_footerLeft"
+msgstr "푸터 왼쪽"
+
+msgid "pdfExport_footerRight"
+msgstr "바닥 글 오른쪽"
+
+msgid "pdfExport_auto"
+msgstr "자동"
+
+msgid "pdfExport_orientation_portrait"
+msgstr "세로"
+
+msgid "pdfExport_orientation_landscape"
+msgstr "풍경"
+
+msgid "pdfExport_blank"
+msgstr "빈"
+
+msgid "pdfExport_pageToPage"
+msgstr "페이지 / 총 페이지"
+
+msgid "pdfExport_author"
+msgstr "저자"
+
+msgid "pdfExport_time"
+msgstr "시간"
+
+msgid "user_createFrom_legendInformation"
+msgstr "정보"
+
+msgid "user_createFrom_legendPermission"
+msgstr "허가"
+
+msgid "user_createFrom_isStaffNoCheckMsg"
+msgstr "이 필드를 체크하지 않으면이 사용자는 로그인 할 수 없습니다"
+
+msgid "permission_verboseName_add"
+msgstr "더하다"
+
+msgid "permission_verboseName_view"
+msgstr "전망"
+
+msgid "permission_verboseName_change"
+msgstr "편집"
+
+msgid "permission_verboseName_delete"
+msgstr "삭제"
+
+msgid "permission_verboseName_changePassword"
+msgstr "비밀번호 변경"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "사용자"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "부서"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "직위"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "구역"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "퇴직"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "문서"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "직원 문서"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "바이오-사진"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "워크 플로우 노드"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "워크 플로우 엔진"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "워크 플로우 역할"
+
+msgid "permission_verboseName_attDeptAttrule"
+msgstr "부서 규칙"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "보고서 설정"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "시간표"
+
+msgid "permission_verboseName_attShift"
+msgstr "시프트"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "수동 로그"
+
+msgid "permission_verboseName_attLeave"
+msgstr "휴가"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "시간 외에"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "유형 남기기"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "휴일"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "보고서 계산"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "일일 출석 보고서"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "출석 요약"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "요약을 남겨주세요."
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "총 시간 카드"
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "처음으로 마지막으로"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "예외 보고서"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "부서 요약"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "타임 카드 보고서"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "늦게보고"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "조기 퇴거 보고서"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "부재 보고서"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "트랜잭션"
+
+msgid "permission_verboseName_attTraining"
+msgstr "훈련"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "휴식 시간"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "시간표"
+
+msgid "permission_verboseName_attSetting"
+msgstr "출석 설정"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "임시 일정"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "교육 유형"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "스케줄 변경"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "보고서 사용 권한"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "장치"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "장치 로그"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "명령"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "로그 업로드"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "바이오 템플릿"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "공개 메시지"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "사신"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "직장 코드"
+
+msgid "permission_verboseName_iclockTransaction"
+msgstr "거래"
+
+msgid "permission_verboseName_iclockEmployeeGps"
+msgstr "직원의 지오 펜스"
+
+msgid "permission_verboseName_iclockDepartmentGps"
+msgstr "부서의 울타리"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "앱 목록"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "발표"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "공고"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "작업 로그"
+
+msgid "permission_verboseName_iclockDeviceConfig"
+msgstr "구성"
+
+msgid "permission_verboseName_sysUser"
+msgstr "사용자"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "그룹"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "FTP 설정"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "자동 수출"
+
+msgid "permission_verboseName_SyncEmployee"
+msgstr "직원 미들웨어 테이블"
+
+msgid "permission_verboseName_SyncJob"
+msgstr "위치 미들웨어 테이블"
+
+msgid "permission_verboseName_SyncDepartment"
+msgstr "부서 미들웨어 테이블"
+
+msgid "permission_verboseName_SyncArea"
+msgstr "영역 미들웨어 테이블"
+
+msgid "permission_verboseName_payrollReportPermission"
+msgstr "보고서 권한"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "로그"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "북마크"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "구성"
+
+msgid "permission_verboseName_psnl"
+msgstr "사용자"
+
+msgid "permission_verboseName_iclock"
+msgstr "장치"
+
+msgid "permission_verboseName_att"
+msgstr "근태"
+
+msgid "permission_verboseName_payroll"
+msgstr "급여"
+
+msgid "permission_verboseName_sys"
+msgstr "시스템"
+
+msgid "autoExport_task_manualStart"
+msgstr "시작 날짜"
+
+msgid "autoExport_task_manualEnd"
+msgstr "종료 날짜"
+
+msgid "autoExport_task_queryField"
+msgstr "검색 기준"
+
+msgid "autoExport_task_filePrefix"
+msgstr "파일 이름"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "포맷 설정"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "데이터 필터 설정"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "내보내기 시간 설정"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "내보내기 경로 설정"
+
+msgid "autoExport_task_departments"
+msgstr "학과"
+
+msgid "autoExport_task_areas"
+msgstr "구역"
+
+msgid "autoExport_task_code"
+msgstr "코드"
+
+msgid "autoExport_task_name"
+msgstr "이름"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "데이터 템플릿"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "오른쪽에서 내보낼 필드를 아래의 입력란으로 드래그하십시오."
+
+msgid "autoExport_task_shortDate"
+msgstr "짧은 날짜"
+
+msgid "autoExport_task_shortTime"
+msgstr "짧은 시간"
+
+msgid "autoExport_task_frequency"
+msgstr "회수"
+
+msgid "frequency_option_none"
+msgstr "아니오"
+
+msgid "frequency_option_daily"
+msgstr "매일"
+
+msgid "frequency_option_weekly"
+msgstr "주간"
+
+msgid "frequency_option_monthly"
+msgstr "월간 간행물"
+
+msgid "autoExport_task_exportDay"
+msgstr "일"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "업로드 시간"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "펀치 타임"
+
+msgid "autoExport_task_interval"
+msgstr "간격"
+
+msgid "autoExport_task_exportFormat"
+msgstr "체재"
+
+msgid "autoExport_task_exportTime"
+msgstr "시간 지점"
+
+msgid "autoExport_task_deadline"
+msgstr "마감 시간"
+
+msgid "autoExport_deadline_previous"
+msgstr "너무 이른"
+
+msgid "autoExport_deadline_current"
+msgstr "흐름"
+
+msgid "autoExport_task_exportPath"
+msgstr "내보내기 경로"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "(목록:\\files\\temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "FTP 서버"
+
+msgid "autoExport_task_ftpPath"
+msgstr "FTP 경로"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "（형식：/Folder/）"
+
+msgid "autoExport_task_exportEmail"
+msgstr "이메일"
+
+msgid "autoExport_task_empCodeLength"
+msgstr "사용자 ID 길이"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "사용자 ID 길이"
+
+msgid "autoExport_task_departmentCode"
+msgstr "부서 번호"
+
+msgid "autoExport_task_departmentName"
+msgstr "부서 명"
+
+msgid "autoExport_task_punchTime"
+msgstr "인증 시간"
+
+msgid "autoExport_task_verifyType"
+msgstr "인증 유형"
+
+msgid "autoExport_task_workCode"
+msgstr "근무 코드"
+
+msgid "autoExport_task_cardNumber"
+msgstr "카드 번호"
+
+msgid "autoExport_task_areaAlias"
+msgstr "구역"
+
+msgid "autoExport_task_terminalAlias"
+msgstr "장치 명"
+
+msgid "autoExport_task_terminalSN"
+msgstr "SN"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "에서 이전"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "데이터베이스"
+
+msgid "db_sqlserver"
+msgstr "MSSQL server"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "데이터베이스 주소"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "데이터베이스 포트"
+
+msgid "dataMigrate_front_databaseName"
+msgstr "데이터베이스 명"
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "사용자 명"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "비밀번호"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "마이그레이션 할 필드"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "근태이력 마이그레이션 기간"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "마이그레이션 상태 "
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "연결 테스트"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "마이그레션"
+
+msgid "dataMigrate_front_btn_clearConnectInfo"
+msgstr "연결 해제"
+
+msgid "dataMigrate_front_area_or_zone"
+msgstr "구역"
+
+msgid "dataMigrate_front_startTime"
+msgstr "시작 시간"
+
+msgid "dataMigrate_front_endTime"
+msgstr "종료 시간"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "Sqlite 파일"
+
+msgid "dataMigrate_cache_clean"
+msgstr "캐시 지우기"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "마이그레이션을 실행하지 않았다면이를 해결하십시오."
+
+msgid "exportForm_itemLabel_scope"
+msgstr "수출 범위 :"
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "현재 페이지"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "모든 데이터"
+
+msgid "line_taken_btn"
+msgstr "줄의 웹 페이지에 들어가서 줄 알림 토큰을 받으려면 여기를 클릭하십시오."
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "출석 경고 설정"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "늦은 수가 초과하면"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "조기 퇴거 회수가 초과했을 때"
+
+msgid "alertSettingPage_label_absentExceed"
+msgstr "결석 횟수가 초과했을 때"
+
+msgid "alertSettingPage_exceedUnit_times"
+msgstr "타임스"
+
+msgid "alertSettingPage_label_emailSendingFrequency"
+msgstr "발신 빈도"
+
+msgid "alertSettingPage_label_emailSendingDay"
+msgstr "일"
+
+msgid "alertSettingPage_label_emailSendingTime"
+msgstr "시각"
+
+msgid "alertSettingPage_label_sendingDay"
+msgstr "발송일"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "현재 날짜"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "다음날"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "오늘 포함"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "승인 경고 설정"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "이메일 알림"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "팝 알리미"
+
+msgid "alertSettingPage_btn_submit"
+msgstr "제출"
+
+msgid "backup_database"
+msgstr "데이터 베이스"
+
+msgid "backup_database_name"
+msgstr "데이터베이스 이름"
+
+msgid "backup_store_path"
+msgstr "상점 경로"
+
+msgid "backup_frequency"
+msgstr "회수"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "오직 한번"
+
+msgid "backup_day"
+msgstr "일"
+
+msgid "backup_time"
+msgstr "시각"
+
+msgid "backup_last_backup"
+msgstr "마지막 백업"
+
+msgid "backup_file"
+msgstr "백업 파일"
+
+msgid "btn_save"
+msgstr "구하다"
+
+msgid "btn_view"
+msgstr "보기"
+
+msgid "btn_hide"
+msgstr "숨기기"
+
+msgid "btn_apply"
+msgstr "적용"
+
+msgid "btn_backup"
+msgstr "지원"
+
+msgid "emailSettingPage_label_smtpServer"
+msgstr "SMTP 서버"
+
+msgid "emailSettingPage_label_smtpServerPort"
+msgstr "포트"
+
+msgid "emailSettingPage_label_enableSSL"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "이메일 계정"
+
+msgid "emailSettingPage_help_emailAccount"
+msgstr "도메인 이름/도메인 사용자"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "비밀번호"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "이메일 주소"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "제출"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "장치 통신 설정"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "등록 장치 사용"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "이 옵션을 활성화하면 등록 장치가 표시된 장치 만 사용자 데이터를 업로드 할 수 있습니다."
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "이름 업로드 사용"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "이름 업로드 사용"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "카드 업로드 활성화"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "카드 업로드 활성화"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "기타 설정"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "사진 백업"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "직원 사진 백업 경로"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "제출"
+
+msgid "translation_option_english"
+msgstr "영어"
+
+msgid "translation_option_korean"
+msgstr "코란"
+
+msgid "translation_option_japanese"
+msgstr "일본어"
+
+msgid "translation_option_spanish"
+msgstr "스페인 사람"
+
+msgid "translation_option_thai"
+msgstr "태국 사람"
+
+msgid "translation_option_arabic"
+msgstr "아라비아 말"
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr "Google 번역"
+
+msgid "translation_btn_onlineTranslate"
+msgstr "온라인 번역"
+
+msgid "database_backup_is_under_processing"
+msgstr "데이터베이스 백업이 처리 중입니다. 잠시 후 다시 시도하십시오."
+
+msgid "dbMigrate_status_processing"
+msgstr "가공"
+
+msgid "dbMigrate_status_finish"
+msgstr "끝마친"
+
+msgid "dbMigrate_status_exception"
+msgstr "예외"
+
+msgid "dbMigrate_status_pending"
+msgstr "대기중인"
+
+msgid "login_authorize_license_missing"
+msgstr "라이센스를 찾을 수 없습니다."
+
+msgid "login_authorize_incorrectUPK"
+msgstr "잘못된 UPK"
+
+msgid "login_authorize_md5_error"
+msgstr "시스템 파일은 허가없이 수정되었습니다."
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "기기 수가 인증 번호를 이미 초과했습니다."
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "직원 수는 이미 승인 된 수를 초과했습니다."
+
+msgid "login_authorize_license_app_exceed"
+msgstr "앱 수가 이미 승인 된 수를 초과했습니다."
+
+msgid "login_authorize_database_error"
+msgstr "데이터베이스 테이블에 크래시로 표시된 것으로 확인하고 복구하십시오."
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "데이터베이스 연결에 실패했습니다. %(db_ver)s."
+
+msgid "login_authorize_illegal_username"
+msgstr "잘못된 사용자 이름"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "로그인 실패, %(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "로그인에 실패했습니다. 사용자 이름 또는 비밀번호가 잘못되었습니다."
+
+msgid "login_authorize_invalid_username"
+msgstr "잘못된 사용자 이름"
+
+msgid "login_authorize_illegal_login"
+msgstr "로그인 오류"
+
+msgid "login_authorize_license_inactive"
+msgstr "라이센스가 비활성입니다"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "장치"
+
+msgid "menu_device_terminal"
+msgstr "장치"
+
+msgid "menu_device_terminalCommand"
+msgstr "장치 명령"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "메시지"
+
+msgid "menu_device_publicMessage"
+msgstr "공공의"
+
+msgid "menu_device_privateMessage"
+msgstr "은밀한"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "데이터"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "직장 코드"
+
+msgid "menu_device_terminalBioData"
+msgstr "바이오 템플릿"
+
+msgid "menu_device_transaction"
+msgstr "거래"
+
+msgid "menu_group_device_terminalLog"
+msgstr "로그"
+
+msgid "menu_device_terminalLog"
+msgstr "장치 로그"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "로그 업로드"
+
+msgid "menu_group_mobile_application"
+msgstr "모바일 앱"
+
+msgid "menu_mobile_appList"
+msgstr "계정"
+
+msgid "menu_mobile_announcement"
+msgstr "발표"
+
+msgid "menu_mobile_notification"
+msgstr "주의"
+
+msgid "menu_mobile_appActionLog"
+msgstr "작업 로그"
+
+msgid "menu_group_deviceConfiguration"
+msgstr "설정"
+
+msgid "menu_iclock_deviceConfig"
+msgstr "구성"
+
+msgid "privateMessage_field_employee"
+msgstr "종업원"
+
+msgid "privateMessage_field_startTime"
+msgstr "시작 시간"
+
+msgid "privateMessage_field_duration"
+msgstr "지속"
+
+msgid "privateMessage_field_content"
+msgstr "함유량"
+
+msgid "privateMsg_action_add"
+msgstr "더하다"
+
+msgid "privateMsg_action_addDescription"
+msgstr "더하다"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "더하다"
+
+msgid "send_message"
+msgstr "문자 보내"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "메시지를 보내시겠습니까?"
+
+msgid "publicMessage_field_terminal"
+msgstr "장치"
+
+msgid "publicMessage_field_startTime"
+msgstr "시작 시간"
+
+msgid "publicMessage_field_duration"
+msgstr "지속"
+
+msgid "publicMessage_field_content"
+msgstr "함유량"
+
+msgid "publicMsg_action_add"
+msgstr "더하다"
+
+msgid "publicMsg_action_addDescription"
+msgstr "더하다"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "더하다"
+
+msgid "terminal_op_reboot"
+msgstr "재부팅"
+
+msgid "terminal_op_rebootDescription"
+msgstr "장치를 재부팅하십시오."
+
+msgid "terminal_op_rebootHelp"
+msgstr "장치를 재부팅하십시오."
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "선택한 장치를 재부팅 하시겠습니까?"
+
+msgid "terminal_action_reUploadData"
+msgstr "사용자 데이터 업로드"
+
+msgid "terminal_action_reUploadDataDescription"
+msgstr "장치에서 사용자 데이터 다시 업로드"
+
+msgid "terminal_action_reUploadDataHelpTxt"
+msgstr "장치에서 사용자 데이터 다시 업로드"
+
+msgid "reUploadData_field_employee"
+msgstr "기기에서 사용자 데이터 다시 업로드"
+
+msgid "reUploadData_field_employeeCode"
+msgstr "직원 ID"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "선택한 터미널에 대한 데이터를 다시 업로드 하시겠습니까?"
+
+msgid "reUploadData_field_transaction"
+msgstr "거래"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "시작 시간"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "종료 시간"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "거래 업로드"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "거래 업로드"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "거래 업로드"
+
+msgid "reloadData_field_employee"
+msgstr "종업원"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "직원 사진"
+
+msgid "reloadData_field_fingerprint"
+msgstr "지문"
+
+msgid "reloadData_field_face"
+msgstr "얼굴"
+
+msgid "reloadData_field_palm"
+msgstr "손바닥 안에 감추다"
+
+msgid "reloadData_field_fingerVein"
+msgstr "손가락 정맥"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "바이오-사진"
+
+msgid "terminal_op_reloadData"
+msgstr "데이터를 장치에 동기화"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "시스템에서 장치로 사용자 데이터 동기화"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "시스템에서 장치로 사용자 데이터 동기화"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "시작 시간"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "종료 시간"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "모두 지우기"
+
+msgid "terminal_op_clearData"
+msgstr "모든 데이터 지우기"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "기기의 모든 데이터 지우기 (사용자 데이터, 거래, 사진 등)"
+
+msgid "terminal_op_clearDataHelp"
+msgstr "기기의 모든 데이터 지우기 (사용자 데이터, 거래, 사진 등)"
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "선택한 {0} 장치의 모든 데이터를 삭제 하시겠습니까?"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "출석 데이터 지우기"
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "출석 데이터 지우기"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "출석 데이터 지우기"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr "선택한 {0} 장치의 모든 거래를 삭제 하시겠습니까?"
+
+msgid "terminal_op_readInformation"
+msgstr "정보 읽기"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "정보 읽기"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "정보 읽기"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "선택한 장치에서 정보를 읽으 실 수 있습니까?"
+
+msgid "terminal_op_deleteCapture"
+msgstr "캡처 캡처"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "장치에있는 모든 캡처 사진 지우기"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "장치에있는 모든 캡처 사진 지우기"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "선택한 {0} 장치의 캡처를 지우시겠습니까?"
+
+msgid "terminal_op_clearAll"
+msgstr "모든 데이터 지우기"
+
+msgid "terminal_op_clearAllHelpTxt"
+msgstr "이 작업은 장치의 모든 데이터를 지우고 데이터에는 트랜잭션, 사용자 데이터, 캡처 등이 포함됩니다."
+
+msgid "terminal_op_clearAllDescription"
+msgstr "이 작업은 장치의 모든 데이터를 지우고 데이터에는 트랜잭션, 사용자 데이터, 캡처 등이 포함됩니다."
+
+msgid "terminal_op_clearAllConfirmation"
+msgstr "장치의 모든 데이터를 지우시겠습니까?"
+
+msgid "duplicate_punch_period"
+msgstr "중복 펀치주기 (m)"
+
+msgid "minutes/seconds"
+msgstr "분"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "중복 인증 간격"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "중복 인증 간격"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "중복 인증 간격"
+
+msgid "terminal_capture"
+msgstr "캡쳐 모드"
+
+msgid "capture_no_photo"
+msgstr "사진 촬영 금지"
+
+msgid "capture_take_photo_no_save"
+msgstr "사진 찍기는하지만 저장 안 함"
+
+msgid "capture_verify_photo_and_save"
+msgstr "사진 확인 및 저장"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "성공적으로 확인하고 저장하십시오."
+
+msgid "capture_verify_failed_and_save"
+msgstr "확인 실패 및 저장"
+
+msgid "terminal_op_captureSetting"
+msgstr "캡처 설정"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "설정을 수정하여 캡처 사진 저장을 활성화하거나 비활성화합니다."
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "설정을 수정하여 캡처 사진 저장을 활성화하거나 비활성화합니다."
+
+msgid "terminal_captureUpload"
+msgstr "캡처 업로드"
+
+msgid "captureUpload_disabled"
+msgstr "비활성화"
+
+msgid "captureUpload_enabled"
+msgstr "활성화"
+
+msgid "terminal_op_captureUpload"
+msgstr "캡처 업로드"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "캡처 업로드"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "캡처 업로드"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "업그레이드 파일"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "펌웨어 업그레이드"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "펌웨어 업그레이드"
+
+msgid "action_transactionCorrection_start"
+msgstr "시작 시간"
+
+msgid "action_transactionCorrection_end"
+msgstr "종료 시간"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "거래 수정"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "기간 동안 장치 트랜잭션 수 확인"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "마침표에서 장치 트랜잭션 수 확인"
+
+msgid "terminal_op_pullFile"
+msgstr "Pull File"
+
+msgid "terminal_op_pullFileDescription"
+msgstr "Pull file from device, normally using for device maintenance, please using this function during device free, "
+
+msgid "terminal_op_pullFileHelpTxt"
+msgstr "Pull file from device, normally using for device maintenance, please using this function during device free, "
+
+msgid "terminal_op_clearCommand"
+msgstr "보류중인 명령 지우기"
+
+msgid "terminal_op_clearCommandDescription"
+msgstr "대기중인 모든 명령을 지우십시오"
+
+msgid "terminal_op_clearCommandHelpTxt"
+msgstr "대기중인 모든 명령을 지우십시오"
+
+msgid "terminal_op_clearCommandConfirmation"
+msgstr "대기중인 모든 명령을 지우시겠습니까?"
+
+msgid "action_pullFile_filePath"
+msgstr "파일 경로"
+
+msgid "terminal_op_enrollRemotely"
+msgstr "원격으로 등록"
+
+msgid "terminal_op_enrollRemotelyDescription"
+msgstr "장치에서 생체 인식 등록"
+
+msgid "terminal_op_enrollRemotelyHelpTxt"
+msgstr "장치에서 생체 인식 등록"
+
+msgid "enrollRemotely_field_bioType"
+msgstr "바이오 타입"
+
+msgid "enrollRemotely_bioType_card"
+msgstr "MF 카드"
+
+msgid "enrollRemotely_bioType_fingerprint"
+msgstr "지문"
+
+msgid "enrollRemotely_bioType_face"
+msgstr "얼굴"
+
+msgid "enrollRemotely_bioType_palm"
+msgstr "팜"
+
+msgid "enrollRemotely_field_empCode"
+msgstr "직원 ID"
+
+msgid "enrollRemotely_field_finger"
+msgstr "손가락"
+
+msgid "enrollRemotely_finger_leftHandLittle"
+msgstr "(왼손) 작은 손가락"
+
+msgid "enrollRemotely_finger_leftHandRing"
+msgstr "(왼손) 반지"
+
+msgid "enrollRemotely_finger_leftHandMiddle"
+msgstr "(왼손) 중간 손가락"
+
+msgid "enrollRemotely_finger_leftHandFore"
+msgstr "(왼손) 앞 손가락"
+
+msgid "enrollRemotely_finger_leftHandThumb"
+msgstr "(왼손) 손"
+
+msgid "enrollRemotely_finger_rightHandThumb"
+msgstr "(오른손) 손"
+
+msgid "enrollRemotely_finger_rightHandFore"
+msgstr "(오른손) 앞 손가락"
+
+msgid "enrollRemotely_finger_rightHandMiddle"
+msgstr "(오른손) 중간 손가락"
+
+msgid "enrollRemotely_finger_rightHandRing"
+msgstr "(오른손) 반지"
+
+msgid "enrollRemotely_finger_rightHandLittle"
+msgstr "(오른손) 작은 손가락"
+
+msgid "terminal_op_newArea"
+msgstr "구역 추가"
+
+msgid "terminal_op_newAreaDescription"
+msgstr "구역 추가"
+
+msgid "terminal_op_newAreaHelpTxt"
+msgstr "구역 추가"
+
+msgid "terminal_field_numberReduce"
+msgstr "감소 횟수"
+
+msgid "terminal_field_numberReduceHelpText"
+msgstr "0 - 999"
+
+msgid "loopDelTransaction_helpText_tip1"
+msgstr "1. 장치 트랜잭션이 가득 차면 입력 값에서 트랜잭션 기준 수를 제거합니다 (0은 제거되지 않음을 의미 함)."
+
+msgid "terminal_op_loopDelTransaction"
+msgstr "루프 삭제 트랜잭션"
+
+msgid "terminal_op_loopDelTransactionDescription"
+msgstr "루프 삭제 트랜잭션"
+
+msgid "terminal_op_loopDelTransactionHelpTxt"
+msgstr "루프 삭제 트랜잭션"
+
+msgid "terminalNewArea_error_duplicateAreaCode"
+msgstr "중복 지역 코드"
+
+msgid "terminal_field_alias"
+msgstr "장치 명"
+
+msgid "terminal_field_sn"
+msgstr "SN"
+
+msgid "terminal_state"
+msgstr "상태"
+
+msgid "op_menu_group_dataClean"
+msgstr "데이터 정리"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "데이터 전송"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "장치 메뉴"
+
+msgid "upload_file"
+msgstr "파일 가져오기"
+
+msgid "usb_data_upload"
+msgstr "USB 로 이력 가져오기"
+
+msgid "file_format_incorrect"
+msgstr "파일 형식이 잘못되었습니다."
+
+msgid "device_not_found"
+msgstr "장치를 찾을 수 없습니다."
+
+msgid "system_error"
+msgstr "시스템 오류"
+
+msgid "read_file_failed"
+msgstr "파일을 읽지 못했습니다."
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "행 %(row_num)s가 잘못되었습니다."
+
+msgid "transaction_column_employeeName"
+msgstr "이름"
+
+msgid "transaction_column_employeeLastName"
+msgstr "성"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "부서"
+
+msgid "transaction_column_employeePosition"
+msgstr "직위"
+
+msgid "transaction_punch_date"
+msgstr "날짜"
+
+msgid "transaction_punch_time"
+msgstr "시간"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "장치"
+
+msgid "send_work_code"
+msgstr "기기로 보내기"
+
+msgid "send_work_code_to_terminal"
+msgstr "기기에 작업 코드를 보냅니다."
+
+msgid "remove_work_code"
+msgstr "장치에서 제거"
+
+msgid "remove_work_code_from_terminal"
+msgstr "기기에서 작업 코드를 삭제하는 중입니다."
+
+msgid "bio_fingerprint"
+msgstr "지문"
+
+msgid "bio_face"
+msgstr "얼굴"
+
+msgid "bio_finger_vein"
+msgstr "손가락 정맥"
+
+msgid "bio_palm"
+msgstr "손바닥 안에 감추다"
+
+msgid "terminal_verifyOption_password"
+msgstr "암호"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "지문"
+
+msgid "terminal_verifyOption_badge"
+msgstr "직원 ID"
+
+msgid "terminal_verifyOption_card"
+msgstr "카드"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "지문 / 암호"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "지문 / 카드"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "암호 / 카드"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "직원 ID 지문"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "지문 및 암호"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "지문 및 카드"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "암호 카드"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "지문 패스워드 카드"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "직원 ID 지문 암호"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "지문 및 카드 및 직원 ID"
+
+msgid "terminal_verifyOption_face"
+msgstr "얼굴"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "얼굴 및 지문"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "얼굴 및 비밀번호"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "얼굴 및 카드"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "얼굴 지문 인식 카드"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "얼굴 지문 암호"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "손가락 정맥"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "손가락 정맥 & 비밀 번호"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "손가락 정맥 및 카드"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "핑거 베인 패스워드 카드"
+
+msgid "terminal_verifyOption_palm"
+msgstr "손바닥 안에 감추다"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "Palm & Card"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "Palm & Face"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "종려 지문"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "종려 지문 카드"
+
+msgid "terminal_verifyOption_gps"
+msgstr "GPS"
+
+msgid "terminal_verifyOption_aiCamera"
+msgstr "AI 카메라"
+
+msgid "terminal_verifyOption_other"
+msgstr "다른"
+
+msgid "transaction_punchState_checkIn"
+msgstr "체크인"
+
+msgid "transaction_punchState_checkOut"
+msgstr "체크 아웃"
+
+msgid "transaction_punchState_breakOut"
+msgstr "중단"
+
+msgid "transaction_punchState_breakIn"
+msgstr "중단"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "시간외 근무"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "시간외 근무"
+
+msgid "transaction_punchState_noStatus"
+msgstr "상태 없음"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "성공한"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "잘못된 매개 변수"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "사용자 사진 전송 오류"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "장치 읽기 또는 쓰기 오류"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "바이오 템플릿 전송 오류"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "사용자가 존재하지 않음"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "불법 FP 템플릿 형식"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "불법 FP 템플릿"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "장치 용량 제한"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "장치가 지원되지 않음"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "시간 초과"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "데이터 예외"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "기기 사용 중"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "너무 긴 데이터"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "장치 메모리 오류"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "서버 데이터 가져 오기 실패"
+
+msgid "deviceLog_action_powerOn"
+msgstr "전원 켜짐"
+
+msgid "deviceLog_action_powerOff"
+msgstr "전원 끄기"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "확인 실패"
+
+msgid "deviceLog_action_alarm"
+msgstr "경보"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "메뉴 들어가기"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "업데이트 설정"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "지문 등록"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "비밀번호 등록"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "카드 등록"
+
+msgid "deviceLog_action_deleteUser"
+msgstr "사용자 삭제"
+
+msgid "deviceLog_action_deleteFP"
+msgstr "지문 삭제"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "비밀번호 삭제"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "RF 카드 삭제"
+
+msgid "deviceLog_action_cleanData"
+msgstr "데이터 지우기"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "MF 카드 생성"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "MF 카드 등록"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "MF 카드 등록 삭제"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "MF 카드 지우기"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "등록 데이터를 카드로 이동하십시오."
+
+msgid "deviceLog_action_migrateDataCard2Device"
+msgstr "카드에있는 날짜를 기기로 복사"
+
+msgid "deviceLog_action_setupTime"
+msgstr "설정 시간"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "초기 설정 복원"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "액세스 항목 삭제"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "관리자 권한 삭제"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "액세스 제어 설정 업데이트"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "사용자 액세스 제어 설정 업데이트"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "시간대 업데이트"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "잠금 해제 조합 설정 업데이트"
+
+msgid "deviceLog_action_unlock"
+msgstr "터놓다"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "새 사용자 등록"
+
+msgid "deviceLog_action_updateFP"
+msgstr "지문 업데이트"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "강박 경보"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "안티 패스 백"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "att 사진 삭제"
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "다른 사용자 업데이트"
+
+msgid "deviceLog_action_holiday"
+msgstr "휴일"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "사용자 사진 등록"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "사용자 사진 업데이트"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "사용자 이름 등록"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "사용자 권한 등록"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "손바닥 업데이트"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "손바닥 삭제"
+
+msgid "iclock_model_deviceConfig"
+msgstr "장치 구성"
+
+msgid "deviceConfig_deviceCommunicationSetting"
+msgstr "장치 통신 설정"
+
+msgid "deviceConfig_field_enableRegistration"
+msgstr "등록 장치"
+
+msgid "deviceConfig_field_enableResignedFilterHelpText"
+msgstr "사임 자 필터 사임, 장치에서 사직 자 데이터 업로드시 시스템은 장치에서 제거하기 위해 delete 명령을 다시 보냅니다."
+
+msgid "deviceConfig_field_enableResignedFilter"
+msgstr "사임 된 필터"
+
+msgid "deviceConfig_field_autoAdd"
+msgstr "Auto Add"
+
+msgid "deviceConfig_field_enableNameUpload"
+msgstr "Name Upload"
+
+msgid "deviceConfig_field_enableNameUploadHelpTxt"
+msgstr "장치에서 사용자 이름을 업로드 할 수 있습니다"
+
+msgid "deviceConfig_field_enableCardUpload"
+msgstr "Card Upload"
+
+msgid "deviceConfig_field_enableCardUploadHelpTxt"
+msgstr "장치에서 사용자의 카드 번호를 업로드 할 수 있습니다"
+
+msgid "deviceConfig_deviceDataRetentionSetting"
+msgstr "Data Retention Setting"
+
+msgid "deviceConfig_field_transactionRetention"
+msgstr "거래"
+
+msgid "deviceConfig_field_transactionRetentionHelpTxt"
+msgstr "To define the days of data retention, if value is 0 the data will not be removed"
+
+msgid "deviceConfig_field_commandRetention"
+msgstr "명령"
+
+msgid "deviceConfig_field_commandRetentionHelpTxt"
+msgstr "To define the days of data retention, if value is 0 the data will not be removed"
+
+msgid "deviceConfig_field_devLogRetention"
+msgstr "장치 로그"
+
+msgid "deviceConfig_field_devLogRetentionHelpTxt"
+msgstr "To define the days of data retention, if value is 0 the data will not be removed"
+
+msgid "deviceConfig_field_uploadLogRetention"
+msgstr "업로드 로그"
+
+msgid "deviceConfig_field_uploadLogRetentionHelpTxt"
+msgstr "To define the days of data retention, if value is 0 the data will not be removed"
+
+msgid "deviceConfig_field_retentionUnit"
+msgstr "일"
+
+msgid "deviceConfig_bioPhotoApprovalPolicy"
+msgstr "바이오 사진 승인 정책"
+
+msgid "deviceConfig_field_editBioPhotoPolicy"
+msgstr "직원 편집"
+
+msgid "deviceConfig_field_importBioPhotoPolicy"
+msgstr "일괄 가져 오기"
+
+msgid "deviceConfig_field_mobileBioPhotoPolicy"
+msgstr "모바일 등록"
+
+msgid "deviceConfig_field_deviceBioPhotoPolicy"
+msgstr "장치 업로드"
+
+msgid "employee_disabled"
+msgstr "직원 비활성화"
+
+msgid "employee_not_found"
+msgstr "직원을 찾을 수 없습니다"
+
+msgid "terminal_not_found"
+msgstr "장치를 찾을 수 없습니다"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "국가"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "시티"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "회사"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "산업"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "담당자"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "공급자"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "전화"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "이메일"
+
+msgid "license_active_customerInfoForm_address"
+msgstr "주소"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "SN 파일"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "파일 이름은 -SN.xml로 끝나야합니다."
+
+msgid "license_active_generatingUPKFailed"
+msgstr "UPK 생성에 실패했습니다."
+
+msgid "license_active_systemFileWasModified"
+msgstr "시스템 파일이 수정되었으므로 승인 된 시스템 파일을 수정하지 마십시오."
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "라이센스 파일을 사용할 수 없습니다."
+
+msgid "license_active_activeSuccessful"
+msgstr "적극적으로 성공"
+
+msgid "license_active_onlineActiveFailedServerNoResponse"
+msgstr "온라인 활성 실패, 라이센스 서버 응답 없음."
+
+msgid "license_active_snFileIsRequired"
+msgstr "SN 파일이 필요합니다."
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "온라인 활성 실패, 라이센스 서버가 구성되지 않았습니다."
+
+msgid "online_active_onlineActiveFailed"
+msgstr "온라인 활성이 실패했습니다."
+
+msgid "onlineActive_error_inactiveLicense"
+msgstr "라이센스가 비활성입니다."
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "적극적으로 성공"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "온라인 활성 실패, 시스템 예외입니다."
+
+msgid "license_active_snFileIsWrong"
+msgstr "SN 파일이 잘못되었습니다."
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "SN 파일의 UPK를 찾을 수 없습니다."
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "UPK 파일 생성 실패, 시스템 예외"
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "라이센스 파일"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "파일 이름은 -License.xml로 끝나야합니다."
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "라이센스를 찾을 수 없으며 업그레이드 할 수 없습니다."
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "라이센스 업그레이드가 실패했습니다."
+
+msgid "online_active_licenseNotFound"
+msgstr "라이센스를 찾을 수 없음"
+
+msgid "license_expiredDate_permanent"
+msgstr "퍼머넌트"
+
+msgid "license_capacity_unlimited"
+msgstr "제한 없는"
+
+msgid "terminal_field_ipAddress"
+msgstr "장치 IP"
+
+msgid "terminal_field_realIPAddress"
+msgstr "구역"
+
+msgid "terminal_field_timezone"
+msgstr "시간대"
+
+msgid "terminal_field_area"
+msgstr "출석 장치"
+
+msgid "terminal_field_heartbeat"
+msgstr "하트 비트 요청"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "초"
+
+msgid "terminal_field_transferMode"
+msgstr "전송 모드"
+
+msgid "deviceModel_option_attendance"
+msgstr "출석"
+
+msgid "deviceModel_option_accessController"
+msgstr "ACU"
+
+msgid "deviceModel_option_informationScreen"
+msgstr "정보 말"
+
+msgid "deviceModel_option_AICamera"
+msgstr "AI 카메라"
+
+msgid "transferMode_option_realTime"
+msgstr "실시간"
+
+msgid "transferMode_option_timing"
+msgstr "타이밍"
+
+msgid "dataSources_option_terminal"
+msgstr "장치"
+
+msgid "dataSources_option_manualLog"
+msgstr "수동 로그"
+
+msgid "dataSources_option_mobile"
+msgstr "모바일"
+
+msgid "terminal_field_transferInterval"
+msgstr "전송 간격"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "의사록"
+
+msgid "bioData_field_employee"
+msgstr "종업원"
+
+msgid "bioData_field_bioTemplate"
+msgstr "주형"
+
+msgid "bioData_field_bioIndex"
+msgstr "바이오 지수"
+
+msgid "bioData_field_templateIndex"
+msgstr "템플릿 색인"
+
+msgid "bioData_field_bioType"
+msgstr "바이오 타입"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "주요 버전"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "부 버전"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "체재"
+
+msgid "bioData_field_isValid"
+msgstr "유효 함"
+
+msgid "bioData_field_isDuress"
+msgstr "정서적이다"
+
+msgid "bioData_field_createTime"
+msgstr "시간 만들기"
+
+msgid "bioData_field_updateTime"
+msgstr "업데이트 시간"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "일련 번호"
+
+msgid "iclock_model_bioData"
+msgstr "바이오 데이터"
+
+msgid "privateMessage_field_lastSend"
+msgstr "마지막으로 보내기"
+
+msgid "iclock_model_privateMessage"
+msgstr "사신"
+
+msgid "publicMessage_field_lastSend"
+msgstr "마지막으로 보내기"
+
+msgid "iclock_model_publicMessage"
+msgstr "공개 메시지"
+
+msgid "terminal_field_state"
+msgstr "상태"
+
+msgid "terminal_field_transferTime"
+msgstr "전송 시간"
+
+msgid "terminal_field_productType"
+msgstr "상품 유형"
+
+msgid "terminal_field_isAttendance"
+msgstr "출석 장치"
+
+msgid "terminal_field_enableAccessControl"
+msgstr "액세스 제어 사용"
+
+msgid "terminal_field_isRegistration"
+msgstr "등록 장치"
+
+msgid "terminal_field_purpose"
+msgstr "목적"
+
+msgid "terminal_field_accessControllerType"
+msgstr "ACU"
+
+msgid "terminal_field_authentication"
+msgstr "확인 모드"
+
+msgid "terminal_field_style"
+msgstr "유형"
+
+msgid "terminal_field_uploadFlag"
+msgstr "업로드 플래그"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "펌웨어 버전"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "Push 프로토콜"
+
+msgid "terminal_field_pushVersion"
+msgstr "Push 버전"
+
+msgid "terminal_field_language"
+msgstr "언어"
+
+msgid "terminal_field_isTft"
+msgstr "컬러 스크린 여부"
+
+msgid "terminal_field_terminalName"
+msgstr "장치 모델"
+
+msgid "terminal_field_platform"
+msgstr "플랫폼"
+
+msgid "terminal_field_oemVendor"
+msgstr "공급 업체"
+
+msgid "terminal_field_logStamp"
+msgstr "로그"
+
+msgid "terminal_field_operationLogStamp"
+msgstr "조작 로그"
+
+msgid "terminal_field_captureStamp"
+msgstr "캡쳐"
+
+msgid "terminal_field_userCount"
+msgstr "사용자 수"
+
+msgid "terminal_field_userCapacity"
+msgstr "사용자 용량"
+
+msgid "terminal_field_photoFuncOn"
+msgstr ""
+
+msgid "terminal_field_transactionCount"
+msgstr "트랜잭션"
+
+msgid "terminal_field_transactionCapacity"
+msgstr "트랜잭션 용량"
+
+msgid "terminal_field_fpFuncOn"
+msgstr "FPFuncOn"
+
+msgid "terminal_field_fingerprintCount"
+msgstr "지문 수"
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr "FP 용량"
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr "FP 알고리즘 버전"
+
+msgid "terminal_field_faceFuncOn"
+msgstr "FaceFuncOn"
+
+msgid "terminal_field_faceCount"
+msgstr "얼굴"
+
+msgid "terminal_field_faceCapacity"
+msgstr "얼굴 용량"
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr "얼굴 알고리즘 버전"
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr "FVFuncOn"
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "FV"
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr "FV 용량"
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr "FV 알고리즘 버전"
+
+msgid "terminal_field_palmFuncOn"
+msgstr "PalmFuncOn"
+
+msgid "terminal_field_palmCount"
+msgstr "손바닥 안에 감추다"
+
+msgid "terminal_field_palmCapacity"
+msgstr "팜 용량"
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr "팜 알고리즘 버전"
+
+msgid "terminal_field_lockFunc"
+msgstr "출입 통제 지원"
+
+msgid "terminal_field_lastActivity"
+msgstr "마지막 활동"
+
+msgid "terminal_field_uploadTime"
+msgstr "업로드 시간"
+
+msgid "terminal_field_syncTime"
+msgstr "마지막 동기화"
+
+msgid "terminal_field_cmdCount"
+msgstr "Cmd"
+
+msgid "iclock_model_terminal"
+msgstr "장치"
+
+msgid "command_field_terminal"
+msgstr "장치"
+
+msgid "command_field_content"
+msgstr "콘텐츠"
+
+msgid "command_field_commit_time"
+msgstr "커밋 시간"
+
+msgid "command_field_transferTime"
+msgstr "전송 시간"
+
+msgid "command_field_returnTime"
+msgstr "반환 시간"
+
+msgid "command_field_returnValue"
+msgstr "반환 값"
+
+msgid "iclock_model_terminalCommand"
+msgstr "명령"
+
+msgid "menu_device_errorCommandLog"
+msgstr "오류 로그"
+
+msgid "terminal_model_errorCommandLog"
+msgstr "오류 로그"
+
+msgid "errorCommandLog_field_terminal"
+msgstr ""
+
+msgid "errorCommandLog_field_errorCode"
+msgstr "오류 코드"
+
+msgid "errorCommandLog_field_errorMsg"
+msgstr "오류 메시지"
+
+msgid "errorCommandLog_field_dataOrigin"
+msgstr "오류 명령"
+
+msgid "errorCommandLog_field_cmd"
+msgstr "명령 ID"
+
+msgid "errorCommandLog_field_additional"
+msgstr "추가 메시지"
+
+msgid "errorCommandLog_field_uploadTime"
+msgstr "업로드 시간"
+
+msgid "terminalEmployee_field_sn"
+msgstr "일련 번호"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "직원 ID"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "특권"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "종업원"
+
+msgid "terminalLog_field_terminal"
+msgstr "장치"
+
+msgid "terminalLog_field_timezone"
+msgstr "시간대"
+
+msgid "terminalLog_field_administrator"
+msgstr "관리자"
+
+msgid "terminalLog_field_actionName"
+msgstr "동작"
+
+msgid "terminalLog_field_actionTime"
+msgstr "활동 시간"
+
+msgid "terminalLog_field_object"
+msgstr "목적"
+
+msgid "terminalLog_field_param1"
+msgstr "Params"
+
+msgid "terminalLog_field_param2"
+msgstr "Params"
+
+msgid "terminalLog_field_param3"
+msgstr "Params"
+
+msgid "terminalLog_field_uploadTime"
+msgstr "업로드 시간"
+
+msgid "iclock_model_terminalLog"
+msgstr "장치 로그"
+
+msgid "terminalParameter_field_terminal"
+msgstr "장치"
+
+msgid "terminalParameter_field_type"
+msgstr "유형"
+
+msgid "terminalParameter_field_name"
+msgstr "이름"
+
+msgid "terminalParameter_field_value"
+msgstr "값"
+
+msgid "iclock_model_terminalParameter"
+msgstr "장치 매개 변수"
+
+msgid "transaction_field_employeeCode"
+msgstr "직원 ID"
+
+msgid "transaction_field_employee"
+msgstr "종업원"
+
+msgid "transaction_field_punchTime"
+msgstr "펀치 타임"
+
+msgid "transaction_field_punchState"
+msgstr "펀치 상태"
+
+msgid "transaction_field_verifyType"
+msgstr "유형 확인"
+
+msgid "transaction_field_workCode"
+msgstr "직장 코드"
+
+msgid "transaction_field_terminalSN"
+msgstr "일련 번호"
+
+msgid "transaction_terminal_alias"
+msgstr "장치 이름"
+
+msgid "transaction_field_terminal"
+msgstr "장치"
+
+msgid "transaction_field_areaAlias"
+msgstr "지역"
+
+msgid "transaction_field_longitude"
+msgstr "경도"
+
+msgid "transaction_field_latitude"
+msgstr "위도"
+
+msgid "transaction_field_gpsLocation"
+msgstr "GPS"
+
+msgid "transaction_field_mobile"
+msgstr "변하기 쉬운"
+
+msgid "transaction_field_source"
+msgstr "출처"
+
+msgid "transaction_field_purpose"
+msgstr "목적"
+
+msgid "transaction_field_crcCode"
+msgstr "CRC 코드"
+
+msgid "transaction_field_isAttendance"
+msgstr "출석"
+
+msgid "transaction_field_reserved"
+msgstr "예약석"
+
+msgid "transaction_field_uploadTime"
+msgstr "업로드 시간"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "동기화 상태"
+
+msgid "transaction_field_synchronized_time"
+msgstr "동기화 시간"
+
+msgid "iclock_model_transaction"
+msgstr "트랜잭션"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "장치"
+
+msgid "terminalUploadLog_field_event"
+msgstr "행사"
+
+msgid "terminalUploadLog_field_content"
+msgstr "함유량"
+
+msgid "terminalUploadLog_field_count"
+msgstr "카운트"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "오류 개수"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "업로드 시간"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "기기 업로드 로그"
+
+msgid "terminalWorkCode_field_code"
+msgstr "암호"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "이름"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "마지막 활동"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "직장 코드"
+
+msgid "employee_photo"
+msgstr "사진"
+
+msgid "biometric_template"
+msgstr "바이오 템플릿"
+
+msgid "fingerprint"
+msgstr "지문"
+
+msgid "attendance_capture"
+msgstr "포착"
+
+msgid "transaction_field_firstName"
+msgstr "이름"
+
+msgid "transaction_field_lastName"
+msgstr "성"
+
+msgid "transaction_field_department"
+msgstr "부서"
+
+msgid "transaction_field_position"
+msgstr "직위"
+
+msgid "transaction_field_punchDate"
+msgstr "인증 날짜"
+
+msgid "transaction_field_area"
+msgstr "구역"
+
+msgid "chart_present"
+msgstr "출근"
+
+msgid "chart_today"
+msgstr "오늘"
+
+msgid "chart_absent"
+msgstr "결근"
+
+msgid "dashboard_exception"
+msgstr "예외 기록"
+
+msgid "dashboard_history"
+msgstr "지각/조퇴/결근"
+
+msgid "chart_late"
+msgstr "지각"
+
+msgid "chart_early_leave"
+msgstr "조퇴"
+
+msgid "dashboard_real_time_monitor"
+msgstr "실시간 모니터링"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "제목"
+
+msgid "announcement_filed_content"
+msgstr "컨텐츠"
+
+msgid "announcement_filed_emp"
+msgstr "사용자 ID"
+
+msgid "mobile_action_publicNotice"
+msgstr "대중 교통 정보 공개"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "대중 교통 정보 공개"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "대중 교통 정보 공개"
+
+msgid "mobile_action_privateNotice"
+msgstr "푸시 알림"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "푸시 알림"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "푸시 알림"
+
+msgid "title_required"
+msgstr "제목이 필요합니다."
+
+msgid "content_required"
+msgstr "내용은 필수 항목입니다."
+
+msgid "appNotice_field_content"
+msgstr "함유량"
+
+msgid "mobile_action_pushNotification"
+msgstr "푸시 알림"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "푸시 알림"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "푸시 알림"
+
+msgid "applist_action_forceOffline"
+msgstr "강제 오프라인"
+
+msgid "force_offline_confirm {0} {1}"
+msgstr "장치를{0} {1}오프라인으로 강제 종료 하시겠습니까?"
+
+msgid "app_account_disable_confirm {0} {1}"
+msgstr "장치{0} {1}을 (를) 비활성화 하시겠습니까?"
+
+msgid "app_account_enable_confirm {0} {1}"
+msgstr "장치{0} {1}을 (를) 활성화 하시겠습니까?"
+
+msgid "applist_action_disable"
+msgstr "사용 안함"
+
+msgid "applist_action_enable"
+msgstr "사용"
+
+msgid "announce_all_emp"
+msgstr "모든"
+
+msgid "announcement_filed_sender"
+msgstr "송신기"
+
+msgid "announcement_category_public"
+msgstr "공공의"
+
+msgid "announcement_category_private"
+msgstr "은밀한"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "기계적 인조 인간"
+
+msgid "activeStatus_option_active"
+msgstr "유효한"
+
+msgid "activeStatus_option_inactive"
+msgstr "비활성"
+
+msgid "notification_category_leave"
+msgstr "휴가"
+
+msgid "notification_category_overtime"
+msgstr "시간 외에"
+
+msgid "notification_category_manualLog"
+msgstr "수동 로그"
+
+msgid "notification_category_training"
+msgstr "훈련"
+
+msgid "notification_category_schedule"
+msgstr "시간표"
+
+msgid "notification_category_announcement"
+msgstr "발표"
+
+msgid "notification_category_exception"
+msgstr "예외"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "공고"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "사적인 공고"
+
+msgid "notification_subCategory_late"
+msgstr "늦은"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "조퇴"
+
+msgid "notification_subCategory_absent"
+msgstr "없는"
+
+msgid "notification_readStatus_unread"
+msgstr "읽히지 않는"
+
+msgid "notification_readStatus_read"
+msgstr "독서"
+
+msgid "appActionLog_status_exception"
+msgstr "예외"
+
+msgid "appActionLog_status_successful"
+msgstr "성공한"
+
+msgid "announcement_field_category"
+msgstr "범주"
+
+msgid "announcement_field_sender"
+msgstr "송신기"
+
+msgid "announcement_field_systemSender"
+msgstr "시스템 발신자"
+
+msgid "announcement_field_noticeTime"
+msgstr "알림 시간"
+
+msgid "app_model_announcement"
+msgstr "발표"
+
+msgid "actionLog_field_user"
+msgstr "사용자"
+
+msgid "actionLog_field_client"
+msgstr "고객"
+
+msgid "actionLog_field_action"
+msgstr "동작"
+
+msgid "actionLog_field_params"
+msgstr "파람"
+
+msgid "actionLog_field_describe"
+msgstr "설명하다"
+
+msgid "actionLog_field_status"
+msgstr "지위"
+
+msgid "actionLog_field_actionTime"
+msgstr "활동 시간"
+
+msgid "actionLog_field_remoteIp"
+msgstr "원격 IP"
+
+msgid "app_model_actionLog"
+msgstr "작업 로그"
+
+msgid "appList_field_userName"
+msgstr "사용자 이름"
+
+msgid "appList_field_loginTime"
+msgstr "로그인 시간"
+
+msgid "appList_field_lastActive"
+msgstr "활성 상태 인 Lats"
+
+msgid "appList_field_token"
+msgstr "토큰"
+
+msgid "appList_field_deviceToken"
+msgstr "장치 토큰"
+
+msgid "appList_field_clientId"
+msgstr "고객 ID"
+
+msgid "appList_field_clientCategory"
+msgstr "고객 카테고리"
+
+msgid "appList_field_runStatus"
+msgstr "실행 상태"
+
+msgid "appList_field_accessStatus"
+msgstr "앱 상태"
+
+msgid "app_model_appList"
+msgstr "앱 목록"
+
+msgid "appNotice_field_receiver"
+msgstr "리시버"
+
+msgid "appNotice_field_sender"
+msgstr "송신기"
+
+msgid "appNotice_field_systemSender"
+msgstr "시스템 발신자"
+
+msgid "appNotice_field_category"
+msgstr "범주"
+
+msgid "appNotice_field_subCategory"
+msgstr "하위 카테고리"
+
+msgid "appNotice_field_source"
+msgstr "출처"
+
+msgid "appNotice_field_sendTime"
+msgstr "보내기 시간"
+
+msgid "appNotice_field_readStatus"
+msgstr "상태 읽기"
+
+msgid "appNotice_field_readTime"
+msgstr "읽기 시간"
+
+msgid "app_model_notification"
+msgstr "주의"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "GPS For Employee"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "GPS For Employee"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "추가"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "추가"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "추가"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "직원"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "경도"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "위도"
+
+msgid "gpsForEmployee_field_location"
+msgstr "위치"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "거리 (미터)"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "미터"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "시작 날짜"
+
+msgid "gpsForEmployee_field_endDate"
+msgstr "종료일"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "날짜 범위 겹침"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "GPS For Department"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "GPS For Department"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "추가"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "추가"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "추가"
+
+msgid "gpsForDepartment_field_department"
+msgstr "부서"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "경도"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "위도"
+
+msgid "gpsForDepartment_field_location"
+msgstr "위치"
+
+msgid "gpsForDepartment_field_distance"
+msgstr "거리 (미터)"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "미터"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "시작 날짜"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "종료일"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "날짜 범위 겹침"
+
+msgid "gps_distance_invalid"
+msgstr "잘못된 거리."
+
+msgid "gps_date_invalid_range"
+msgstr "잘못된 날짜 범위"
+
+msgid "gps_latitude_invalid_range"
+msgstr "위도 값은 [-90,90] 범위 내에 있어야합니다."
+
+msgid "departmentGps_select_dept"
+msgstr "부서를 선택하십시오."
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "네트워크가 불안정합니다. 다시 시도하십시오."
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "위치 외"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "직원 %(emp)s 신청 일정이 겹침"
+
+msgid "menu_group_psnl_organization"
+msgstr "조직"
+
+msgid "menu_psnl_department"
+msgstr "부서"
+
+msgid "menu_psnl_position"
+msgstr "직위"
+
+msgid "menu_psnl_area"
+msgstr "구역"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "사용자"
+
+msgid "menu_psnl_employee"
+msgstr "사용자"
+
+msgid "menu_psnl_resign"
+msgstr "사임"
+
+msgid "menu_psnl_certification"
+msgstr "문서"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "사용자 문서"
+
+msgid "menu_iclock_bioPhoto"
+msgstr "바이오-사진"
+
+msgid "menu_group_workflow"
+msgstr "워크 플로"
+
+msgid "menu_workflow_workflowRole"
+msgstr "역할"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "엔진"
+
+msgid "menu_workflow_workflowNode"
+msgstr "마디"
+
+msgid "menu_group_configuration"
+msgstr "파라미터 설정"
+
+msgid "area_action_adjustEmployee"
+msgstr "사용자 이전"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "선택한 구역로 사용자 이전"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "사용자 이전"
+
+msgid "select_none_employee"
+msgstr "사용자를 선택하십시오"
+
+msgid "bioPhoto_field_userPhoto"
+msgstr "사용자 사진"
+
+msgid "bioPhoto_field_bioPhoto"
+msgstr "바이오-사진"
+
+msgid "bioPhoto_field_approvalState"
+msgstr "승인 상태"
+
+msgid "bioPhoto_approvalState_approvalPassed"
+msgstr "승인 통과"
+
+msgid "bioPhoto_approvalState_reject"
+msgstr "거부 "
+
+msgid "bioPhoto_field_remark"
+msgstr "비고"
+
+msgid "biophoto_approve"
+msgstr "승인"
+
+msgid "approval_can_not_approve_again"
+msgstr "승인이 다시 승인 할 수 없음"
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "직원 사진 (%(emp_code)s) 승인 됨"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "직원 사진 (%(emp_code)s)이 이미 있음)"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "직원 사진 (%(emp_code)s)을 찾을 수 없습니다."
+
+msgid "bioPhoto_action_qrCode"
+msgstr "QR 코드"
+
+msgid "dataImport_action_importBioPhoto"
+msgstr "Bio-Photo 가져오기"
+
+msgid "dataImport_action_importBioPhotoHelpTxt"
+msgstr "사용자에 Bio-Photo 가져오기"
+
+msgid "dataImport_action_importBioPhotoDescription"
+msgstr "사용자에 Bio-Photo 가져오기"
+
+msgid "bioPhotoImport_error_noPhotoSelected"
+msgstr "업로드 할 사진을 선택하십시오"
+
+msgid "bioPhotoImport_error_userNoFound_{pin}"
+msgstr "사용자 ({pin}) 없음"
+
+msgid "bioPhotoImport_button_upload"
+msgstr "업로드"
+
+msgid "bioPhotoImport_button_clear"
+msgstr "삭제"
+
+msgid "bioPhotoImport_helpText_tip1"
+msgstr "1. 사진 명은 반드시 사용자 번호 여야합니다."
+
+msgid "department_action_adjustEmployee"
+msgstr "사용자 이전"
+
+msgid "dataImport_action_import"
+msgstr "가져오기"
+
+msgid "resign_action_disableAttendance"
+msgstr "근태 비활성화"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "선택한 부서로 사용자 이전"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "사용자 이전"
+
+msgid "dataImport_field_file"
+msgstr "파일 가져 오기"
+
+msgid "data_import_fileHelpTxt"
+msgstr ".xls 파일 만 지원합니다"
+
+msgid "dataImport_action_importEmployee"
+msgstr "사용자 가져오기"
+
+msgid "dataImport_action_importEmployeeHelpTxt"
+msgstr "Excel 파일로 사용자 가져오기"
+
+msgid "dataImport_action_importEmployeeDescription"
+msgstr "Excel 파일로 사용자 가져오기"
+
+msgid "dataImport_action_importDocument"
+msgstr "문서 가져오기"
+
+msgid "dataImport_action_importDocumentHelpTxt"
+msgstr "엑셀 파일을 통한 문서 가져 오기 만료 경고 설정"
+
+msgid "dataImport_action_importDocumentDescription"
+msgstr "엑셀 파일을 통한 문서 가져 오기 만료 경고 설정"
+
+msgid "dataImport_action_importPhoto"
+msgstr "사진 가져오기"
+
+msgid "dataImport_action_importPhotoHelpTxt"
+msgstr "직원의 직원 사진 가져 오기."
+
+msgid "dataImport_action_importPhotoDescription"
+msgstr "직원의 직원 사진 가져 오기."
+
+msgid "empPhotoImport_error_noPhoto"
+msgstr "업로드 할 사진을 선택하십시오."
+
+msgid "empPhotoImport_error_{pin}NotFound"
+msgstr "직원 ({pin})을 찾을 수 없습니다"
+
+msgid "empPhotoImport_error_{pin}SizeExceed25KB"
+msgstr "직원 ({pin}) 사진 크기가 25KB를 초과합니다."
+
+msgid "empPhotoImport_button_upload"
+msgstr "업로드"
+
+msgid "empPhotoImport_button_clear"
+msgstr "클리어"
+
+msgid "empPhotoImport_helpText_title"
+msgstr "알림"
+
+msgid "empPhotoImport_helpText_tip1"
+msgstr "1. 사진 이름은 직원 ID 여야합니다."
+
+msgid "empPhotoImport_helpText_tip2"
+msgstr "2. 사진의 최대 크기는 25kb입니다."
+
+msgid "dataImport_field_overwrite"
+msgstr "덮어 쓰기"
+
+msgid "dataImport_field_ignoreError"
+msgstr "오류 무시"
+
+msgid "employee_action_resynchronize2Device"
+msgstr "장치에 동기화"
+
+msgid "employee_action_resynchronize2DeviceConfirmation"
+msgstr "사용자 데이터를 장치와 재 동기화 하시겠습니까?"
+
+msgid "dataRange_option_all"
+msgstr "모두"
+
+msgid "dataRange_option_specified"
+msgstr "지정된"
+
+msgid "reUploadFromDevice_field_device"
+msgstr "장치"
+
+msgid "reUploadFromDevice_field_deviceSN"
+msgstr "일련 번호"
+
+msgid "eUploadFromDevice_field_deviceSNHelpTxt"
+msgstr " ','을 사용하여 여러 장치 일련 번호에 참여할 수 있습니다. 값이 비어 있으면 직원의 영역을 기준으로 장치를 가져옵니다."
+
+msgid "employee_action_reUploadFromDevice"
+msgstr "장치에서 다시 업로드"
+
+msgid "employee_action_reUploadFromDeviceConfirmation"
+msgstr "장치에서 직원 데이터를 다시 업로드 하시겠습니까?"
+
+msgid "employeeResign_field_date"
+msgstr "사임 날짜"
+
+msgid "employeeResign_field_leaveType"
+msgstr "유형 남기기"
+
+msgid "employeeResign_field_reason"
+msgstr "이유"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "출석 기능 사용 중지"
+
+msgid "employee_action_resignation"
+msgstr "사임"
+
+msgid "employee_action_transferDepartment"
+msgstr "부서 이전"
+
+msgid "transferDepartment_field_remarks"
+msgstr "비고"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "구역이 필요합니다."
+
+msgid "employee_action_transferArea"
+msgstr "Transfer Area"
+
+msgid "transferArea_field_remarks"
+msgstr "비고"
+
+msgid "employee_action_transferPosition"
+msgstr "Transfer Position"
+
+msgid "transferPosition_field_remarks"
+msgstr "비고"
+
+msgid "employee_action_passProbation"
+msgstr "비밀 유예"
+
+msgid "employee_action_passProbationConfirmation"
+msgstr "Are you sure to make employee probation?"
+
+msgid "bio_templateType_fingerprint"
+msgstr "지문"
+
+msgid "bio_templateType_face"
+msgstr "얼굴"
+
+msgid "bio_templateType_fingerVein"
+msgstr "손가락 정맥"
+
+msgid "bio_templateType_palm"
+msgstr "손바닥 안에 감추다"
+
+msgid "delete_biometric_templates"
+msgstr "생체 인식 템플릿 삭제"
+
+msgid "enable_mobile_application"
+msgstr "사용"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "모바일 애플리케이션 {0} {1}을 (를) 활성화 하시겠습니까?"
+
+msgid "disable_mobile_application"
+msgstr "비활성화"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr "모바일 애플리케이션 {0} {1}을 (를) 사용 중지 하시겠습니까?"
+
+msgid "position_action_adjustEmployee"
+msgstr "직원 조정"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "선택한 직위로 사용자 이전"
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "사용자 이전"
+
+msgid "resign_field_employee"
+msgstr "사용자"
+
+msgid "resign_field_resignDate"
+msgstr "사임 날짜"
+
+msgid "resign_field_resignType"
+msgstr "사임 유형"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "근태 비활성화"
+
+msgid "resign_field_resignReason"
+msgstr "사임 사유"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "추가"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "추가"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "추가"
+
+msgid "resign_action_reinstatement"
+msgstr "복원"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "복원"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "복원"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "복직 {0} {1} 하시겠습니까?"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "출석 기능 {0} {1}을 (를) 해제 하시겠습니까?"
+
+msgid "area_field_code"
+msgstr "구역 번호"
+
+msgid "area_field_name"
+msgstr "구역 명"
+
+msgid "area_field_parentArea"
+msgstr "부모의"
+
+msgid "area_field_resignEmployeeCount"
+msgstr "사임 수"
+
+msgid "area_field_employeeCount"
+msgstr "직원 수"
+
+msgid "area_field_deviceCount"
+msgstr "장치 수"
+
+msgid "area_name_defaultValue"
+msgstr "승인되지 않음"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "%(index)s 행에 오류가 발생했습니다. 지역 번호가 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "%(index)s 행에 오류가 발생했습니다. 지역 번호의 최대 길이는 %(length)s ."
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "%(index)s 행에 오류가 발생했습니다. 영역 이름이 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "행 %(index)s 에 오류가 있습니다. 영역 이름의 최대 길이는 %(length)s ."
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr "%(index)s 데이터 행은 %(index_name)s 섹터 또는 자체의 하위 섹터보다 높은 권한을 설정할 수 없습니다."
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "데이터베이스 오류 : SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "삭제에 실패했습니다. 직원이 사용하고 있습니다."
+
+msgid "certification_field_code"
+msgstr "인증 코드"
+
+msgid "certification_field_name"
+msgstr "인증서 이름"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "%(index)s 행의 오류 데이터, 인증서 코드가 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "%(index)s 행의 오류 데이터, 인증서 코드의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "행 %(index)s의 오류 데이터, 형식은 %(male)s/%(female)s 여야합니다."
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr "%(index)s 행의 오류 데이터입니다. 인증서 이름이 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr "%(index)s 행의 오류 데이터, 인증서 이름의 최대 길이는 %(length)s ."
+
+msgid "department_field_code"
+msgstr "부서 번호"
+
+msgid "department_filed_name"
+msgstr "부서 명"
+
+msgid "department_field_parentDepartment"
+msgstr "상위 부서"
+
+msgid "default_department"
+msgstr "부서"
+
+msgid "department_filed_employeeCount"
+msgstr "사용자 수"
+
+msgid "department_filed_resignedCount"
+msgstr "사임 수"
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "%(index)s 행에 오류가 발생했습니다. 부서 코드가 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "%(index)s 행의 오류 데이터, 부서 코드의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "%(index)s 행의 오류 데이터, 부서 이름이 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "%(index)s 행의 오류 데이터, 부서 이름의 최대 길이는 %(length)s."
+
+msgid "op_menu_group_import"
+msgstr "가져오기"
+
+msgid "op_menu_group_adjustment"
+msgstr "조정"
+
+msgid "op_menu_group_app"
+msgstr "APP"
+
+msgid "op_menu_group_more"
+msgstr "더"
+
+msgid "emp_field_fingerprint"
+msgstr "지문"
+
+msgid "emp_field_face"
+msgstr "얼굴"
+
+msgid "emp_field_palm"
+msgstr "손바닥 정맥"
+
+msgid "emp_field_vlFace"
+msgstr "VL 어굴"
+
+msgid "emp_field_area"
+msgstr "구역"
+
+msgid "emp_field_cardNumber"
+msgstr "카드 번호"
+
+msgid "area_code"
+msgstr "구역 번호"
+
+msgid "emp_field_birthday"
+msgstr "생일"
+
+msgid "emp_field_gender"
+msgstr "성별"
+
+msgid "emp_field_mobile"
+msgstr "휴대 전화"
+
+msgid "emp_field_email"
+msgstr "이메일"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "행 %(index)s 오류가 있습니다. 직원 코드가 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr "%(index)s 행에 오류가 발생했습니다. 직원 코드의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "직원의 이름이 행에서 비어 있습니다 (%(index)s)."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "행 %(index)s에 오류가 있습니다. 이름의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "행 %(index)s에 오류가 있습니다. 성의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "행 %(index)s에 오류가 발생했습니다. 위치 코드의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "행 %(index)s에 오류가 발생했습니다. 위치 이름의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "%(index)s 행에 오류가 발생했습니다. 카드 번호의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "행 %(index)s 오류가 있습니다. 모바일의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr "행 %(index)s 오류가 있습니다. 이메일의 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "행 %(index)s 이메일 유형이 잘못되었습니다."
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "행 %(index)s 생일 날짜는 yyyy-mm-dd 여야합니다."
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "행 %(index)s 고용 된 날짜는 yyyy-mm-dd 여야합니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr "%(index)s 행의 오류 데이터, 최대 영역 이름 길이는 %(length)s."
+
+msgid "employeeCert_field_employee"
+msgstr "사용자"
+
+msgid "employeeCert_field_expireOn"
+msgstr "만료 날짜"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "이메일 알림"
+
+msgid "employeeCert_field_before"
+msgstr "이전 경고"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "추가"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "추가"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "추가"
+
+msgid "certification"
+msgstr "인증서"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr "행 %(index)s 오류 데이터 ■ 직원 ID가 존재하지 않습니다."
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr "행 %(index)s 오류 데이터가 Cert가 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr "행 %(index)s 오류 데이터 ■ 인증서 코드가 존재하지 않습니다."
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr "행 %(index)s 오류 데이터가 만료 날짜가 잘못되었습니다."
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr "행 %(index)s 오류 데이터 s 전자 우편 경고가 잘못 되었으면 형식은 %(no)s / %(yes)s 여야합니다."
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "행 %(index)s 대한 오류 데이터"
+
+msgid "position_field_code"
+msgstr "위치 코드"
+
+msgid "position_field_name"
+msgstr "위치 이름"
+
+msgid "position_field_parentPosition"
+msgstr "부모의"
+
+msgid "position_field_employeeCount"
+msgstr "직원 수"
+
+msgid "position_field_resignedCount"
+msgstr "사임 수"
+
+msgid "position_default_value"
+msgstr "직위"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "%(index)s 행의 오류 데이터, 위치 코드가 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "%(index)s 행의 오류 데이터입니다. 위치 이름이 비어 있습니다."
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "행 %s의 오류 데이터입니다. 형식은 yyyy-mm-dd 여야합니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr "%(index)s 행의 오류 데이터, 사임 이유 최대 길이는 %(length)s."
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "%(index)s 행 s의 오류 데이터, 직원 번호가 존재하지 않습니다."
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "%(index)s 행의 오류 데이터, 사임 날짜가 비어 있습니다."
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr "%(index)s 행의 오류 데이터, 사임 유형의 형식은 %(expect)s 여야합니다."
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "행에서 사임 유형이 비어 있습니다 (%(index)s)."
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr " %(index)s 행의 오류 데이터입니다. 위치 이름이 비어 있습니다 %(expect)s."
+
+msgid "department_field_name"
+msgstr "부서 이름"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "무시"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "덮어 쓰기"
+
+msgid "devicePrivilege_option_employee"
+msgstr "사용자"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "등록자"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "시스템 관리자"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "최고 관리자"
+
+msgid "employee_genderOption_male"
+msgstr "남성"
+
+msgid "employee_genderOption_female"
+msgstr "여성"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "퍼머넌트"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "일시적인"
+
+msgid "employee_appStatusOption_enable"
+msgstr "활성화"
+
+msgid "employee_appStatusOption_disable"
+msgstr "비활성화"
+
+msgid "employee_appRoleOption_employee"
+msgstr "사용자"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "관리자"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "그룹 모드 적용"
+
+msgid "employee_verificationOption_any"
+msgstr "자동"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "지문/비밀번호/카드"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "지문"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "사용자 ID"
+
+msgid "employee_verificationOption_password"
+msgstr "비밀번호"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "카드 "
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "지문 / 비밀번호"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "지문 / 카드"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "비밀번호 / 카드"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "지문 + 비밀번호"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "지문 + 카드"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "비밀번호 + 카드"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "사용자 ID + 지문"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "지문 + 비밀번호 + 카드"
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "사용자 ID + 지문 + 비밀번호"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "지문 + 카드 / 사용자 ID"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "얼굴 "
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "얼굴 + 지문"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "얼굴  + 비밀번호"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "얼굴 + 카드"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "얼굴 + 지문 + 카드"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "얼굴 + 지문 + 비밀번호"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "손가락 정맥 "
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "손가락 정맥 + 비밀번호"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "손가락 정맥 + 카드"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "손가락 정맥 + 비밀번호 + 카드"
+
+msgid "employee_verificationOption_palm"
+msgstr "손바닥 정맥"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "손바닥 정맥 + 카드"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "손바닥 정맥 + 얼굴"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "손바닥 정맥 + 지문"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "손바닥 정맥 + 지문 + 얼굴"
+
+msgid "resign_typeOption_pending"
+msgstr "대기중인"
+
+msgid "resign_typeOption_processing"
+msgstr "가공"
+
+msgid "resign_typeOption_done"
+msgstr "끝난"
+
+msgid "resign_typeOption_quit"
+msgstr "떠나다"
+
+msgid "resign_typeOption_dismissed"
+msgstr "해산"
+
+msgid "resign_typeOption_resign"
+msgstr "사직"
+
+msgid "resign_typeOption_transfer"
+msgstr "이전"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "월급없는 직업 유지"
+
+msgid "approve_pending"
+msgstr "대기중인"
+
+msgid "approve_approval_passed"
+msgstr "합격 통과"
+
+msgid "approve_rejected"
+msgstr "거부 됨"
+
+msgid "approve_auto_approved"
+msgstr "자동 승인 됨"
+
+msgid "module_parameter_error"
+msgstr "매개 변수 오류"
+
+msgid "invalid_file_format"
+msgstr "잘못된 파일 형식"
+
+msgid "please_select_file"
+msgstr "직원을 선택하십시오."
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "%(index)s 필드가 필요합니다."
+
+msgid "invalid_file_format:%(index)s"
+msgstr "잘못된 파일 형식 : %(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "파일은 한 장만 사용해야합니다."
+
+msgid "file_data_must_be_more_than_two"
+msgstr "파일에 적어도 하나의 데이터 행이 필요합니다."
+
+msgid "no_matched_fields"
+msgstr "파일에서 일치하는 입력란이 없습니다."
+
+msgid "file_data_cannot_be_empty"
+msgstr "가져 오기 파일을 찾을 수 없음"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "데이터베이스 오류"
+
+msgid "area_field_isDefault"
+msgstr "태만"
+
+msgid "parent_can_not_itself"
+msgstr "부모는 그 자체가 될 수 없다."
+
+msgid "psnl_model_area"
+msgstr "구역"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "하위 영역을 포함하는 %(name)s 은 (는) 제거 할 수 없습니다."
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s 직원이 포함되어 있어도 제거 할 수 없습니다."
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "장치를 제거 할 수없는 %(name)s (가) 있습니다."
+
+msgid "default_area_can_not_be_removed"
+msgstr "기본 영역은 삭제할 수 없습니다."
+
+msgid "assigned_time"
+msgstr "지정된 시간"
+
+msgid "model_assign_area_to_employee"
+msgstr "사용자"
+
+msgid "bioPhoto_field_employee"
+msgstr "사용자"
+
+msgid "bioPhoto_field_firstName"
+msgstr "이름"
+
+msgid "bioPhoto_field_lastName"
+msgstr "성"
+
+msgid "bioPhoto_field_email"
+msgstr "이메일"
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "SN"
+
+msgid "bioPhoto_field_registerPhoto"
+msgstr "사진 등록"
+
+msgid "bioPhoto_field_registerTime"
+msgstr "등록 시간"
+
+msgid "bioPhoto_field_approvalPhoto"
+msgstr "승인 사진"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "사진"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "커밋 시간"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "승인 시간"
+
+msgid "iclock_model_bioPhoto"
+msgstr "바이오-사진"
+
+msgid "psnl_model_certification"
+msgstr "문서"
+
+msgid "document_is_using_can_not_delete."
+msgstr "문서가 사용 중이며 삭제할 수 없습니다."
+
+msgid "department_field_isDefault"
+msgstr "태만"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr "상사를 자신의 것으로 설정할 수 없습니다."
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "하위 부서가 포함 된 %(name)s (는) 제거 할 수 없습니다."
+
+msgid "default_department_can_not_be_removed."
+msgstr "기본 부서는 삭제할 수 없습니다."
+
+msgid "psnl_model_department"
+msgstr "부서"
+
+msgid "emp_field_localizedName"
+msgstr "지역 이름"
+
+msgid "emp_field_passport_number"
+msgstr "여권 번호"
+
+msgid "emp_field_driver_license_automobile"
+msgstr "자동차 면허증"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "오토바이 면허증"
+
+msgid "emp_field_photo"
+msgstr "사진"
+
+msgid "emp_field_selfPassword"
+msgstr "자기 암호"
+
+msgid "emp_field_devicePassword"
+msgstr "핀"
+
+msgid "emp_field_devicePrivilege"
+msgstr "장치 권한"
+
+msgid "emp_field_accessGroup"
+msgstr "액세스 그룹"
+
+msgid "emp_field_accessTimezone"
+msgstr "액세스 타임 존"
+
+msgid "emp_field_address"
+msgstr "주소"
+
+msgid "emp_field_postcode"
+msgstr "우편 번호"
+
+msgid "emp_field_officeTel"
+msgstr "사무실 전화"
+
+msgid "emp_field_contactTel"
+msgstr "전화 문의"
+
+msgid "emp_field_national"
+msgstr "내셔널"
+
+msgid "emp_field_religion"
+msgstr "종교"
+
+msgid "emp_field_title"
+msgstr "표제"
+
+msgid "emp_field_enrollSN"
+msgstr "기기 등록"
+
+msgid "emp_field_SSN"
+msgstr "SSN"
+
+msgid "emp_field_updateTime"
+msgstr "업데이트 시간"
+
+msgid "emp_field_verifyMode"
+msgstr "확인 모드"
+
+msgid "emp_field_city"
+msgstr "시티"
+
+msgid "emp_field_isAdmin"
+msgstr "관리자"
+
+msgid "emp_field_type"
+msgstr "고용 유형"
+
+msgid "emp_field_enableAtt"
+msgstr "출석 허용"
+
+msgid "emp_field_enableOvertime"
+msgstr "연장 시간 사용"
+
+msgid "emp_field_enableHoliday"
+msgstr "휴일 사용"
+
+msgid "emp_field_workflowRole"
+msgstr "워크 플로우 역할"
+
+msgid "employee_certification"
+msgstr "직원 인증서"
+
+msgid "emp_field_appStatus"
+msgstr "APP 상태"
+
+msgid "emp_field_appRole"
+msgstr "APP 역할"
+
+msgid "emp_field_lastLogin"
+msgstr "마지막 로그인"
+
+msgid "emp_field_isActive"
+msgstr "유효한"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr "카드를 재발급하려면 카드 번호가 이미 존재합니다. 먼저 카드의 원래 홀더 %(index)s 제거하십시오."
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "직원 (%(code)s)을 찾을 수 없습니다."
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "워크 플로 역할 지우기 실패 : %(message)s"
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "예외 %(message)s"
+
+msgid "model_employee"
+msgstr "사용자"
+
+msgid "invalid_picture_format"
+msgstr "사진의 형식이 잘못되었습니다."
+
+msgid "personnel_photo_size_must_not_exceed_16kb"
+msgstr "사진의 최대 크기는 16KB입니다."
+
+msgid "employeeCert_field_cert"
+msgstr "문서"
+
+msgid "pnsl_model_empProfile"
+msgstr "직원 프로필"
+
+msgid "position_field_isDefault"
+msgstr "태만"
+
+msgid "psnl_model_position"
+msgstr "위치"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "부모는 그 자체가 될 수 없다."
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "%(name)s 위치에 하위 위치를 포함 할 수 없습니다."
+
+msgid "default_position_can_not_be_removed."
+msgstr "기본 위치는 제거 할 수 없습니다."
+
+msgid "psnl_model_resign"
+msgstr "사임"
+
+msgid "data_import_labelFile"
+msgstr "파일 가져오기 :"
+
+msgid "date_import_labelExistingData"
+msgstr "기존 데이터 :"
+
+msgid "data_import_fileTemplateDemo"
+msgstr "템플릿 데모 :"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "템플릿 다운로드"
+
+msgid "data_import_description"
+msgstr "설명"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1. 파일 템플릿의 헤드가 필요합니다."
+
+msgid "data_import_areaImportRequired2"
+msgstr "2. 코드, 이름은 필수 항목입니다."
+
+msgid "data_import_areaImportRequired3"
+msgstr "3. 부모 지역은 지역 코드 여야합니다."
+
+msgid "data_import_areaImportRequired4"
+msgstr "4. 모든 열 값은 텍스트 형식이어야합니다."
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "새로고침"
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "다운로드"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1. 파일 템플릿의 헤드가 필요합니다."
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2. 인증 코드와 이름이 필요합니다."
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3. 모든 열 값은 텍스트 형식이어야합니다."
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1. 파일 템플릿의 헤드가 필요합니다."
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2. 코드, 이름은 필수 항목입니다."
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3. 학부모 부서는학과 코드이어야합니다."
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4. 모든 열 값은 텍스트 형식이어야합니다."
+
+msgid "departmentList_search_department"
+msgstr "부서"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1. 파일 템플릿의 헤드가 필요합니다."
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2. 직원 ID, 이름, 부서 번호는 필수 입력란입니다."
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3. 모든 열 값은 텍스트 형식이어야합니다."
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4. 카드 번호는 고유해야합니다."
+
+msgid "personnel_profile"
+msgstr "소개"
+
+msgid "register_fingerprint"
+msgstr "지문 등록"
+
+msgid "fingerprint_registration"
+msgstr "등록"
+
+msgid "download_driver"
+msgstr "드라이버 다운로드"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr ""
+
+msgid "employee_title_clickToUploadPhoto"
+msgstr "클릭하여 사진을 업로드하십시오."
+
+msgid "employee_title_UploadPhoto"
+msgstr "사진"
+
+msgid "employee_label_fingerprintRegistered"
+msgstr "FP 등록 (v10)"
+
+msgid "employee_btn_fingerprintEnroll"
+msgstr "등록"
+
+msgid "employee_title_clickToUploadBioPhoto"
+msgstr "바이오 사진을 업로드하려면 클릭하십시오"
+
+msgid "employee_basicInformation_setting"
+msgstr "사용자 정보"
+
+msgid "employee_moreDetail_setting"
+msgstr "개인 정보"
+
+msgid "employee_attendance_settings"
+msgstr "근태 설정"
+
+msgid "employee_document_settings"
+msgstr "문서"
+
+msgid "employee_accessController_settings"
+msgstr "ACU"
+
+msgid "employee_app_setting"
+msgstr "App 설정"
+
+msgid "payroll_setting"
+msgstr "급여 설정"
+
+msgid "employee_deviceRelate_setting"
+msgstr "장치 설정"
+
+msgid "employee_editPage_addCert"
+msgstr "추가"
+
+msgid "registered_fingerprint:"
+msgstr "지문 등록 :"
+
+msgid "employee_field_employeeCode"
+msgstr "사용자 ID"
+
+msgid "employee_field_employeeFirstName"
+msgstr "이름"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "사용자"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "선택된"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1. 파일 템플릿의 헤드가 필요합니다."
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2. 인증, 직원, 전자 메일 경고는 필수 입력란입니다."
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3. 모든 열 값은 텍스트 형식이어야합니다."
+
+msgid "data_import_positionImportRequired1"
+msgstr "1. 파일 템플릿의 헤드가 필요합니다."
+
+msgid "data_import_positionImportRequired2"
+msgstr "2. 코드, 이름은 필수 항목입니다."
+
+msgid "data_import_positionImportRequired3"
+msgstr "3. 부모 직책은 직책의 코드 여야합니다."
+
+msgid "data_import_positionImportRequired4"
+msgstr "4. 모든 열 값은 텍스트 형식이어야합니다."
+
+msgid "data_import_resignImportRequired1"
+msgstr "1. 파일 템플릿의 헤드가 필요합니다."
+
+msgid "data_import_resignImportRequired2"
+msgstr "2. 종업원 신분, 사직, 사임 유형이 필수 항목입니다."
+
+msgid "data_import_resignImportRequired3"
+msgstr "3. 모든 열 값은 텍스트 형식이어야합니다."
+
+msgid "BioTime 8.0"
+msgstr ""
+
+msgid "mobile_photo_register"
+msgstr "사진 등록"
+
+msgid "mobile_onlineRegister_employeeCode"
+msgstr "사용자 ID"
+
+msgid "mobile_employee_first_name"
+msgstr "이름"
+
+msgid "mobile_employee_last_name"
+msgstr "성"
+
+msgid "mobile_employee_email"
+msgstr "이메일"
+
+msgid "mobile_onlineRegister_remark"
+msgstr "비고"
+
+msgid "mobile_photo_enroll"
+msgstr "등록"
+
+msgid "lng_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "lng_option_traditionalChinese"
+msgstr "中文繁體"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "русский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Orang indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "lng_option_cambodian"
+msgstr "ជនជាតិខ្មែរ។"
+
+msgid "lng_option_ukrainian"
+msgstr "Українська"
+
+msgid "menu_personnel"
+msgstr "사용자"
+
+msgid "ADMS"
+msgstr "ADMS"
+
+msgid "menu_terminal"
+msgstr "장치"
+
+msgid "menu_attendance"
+msgstr "근태"
+
+msgid "menu_system"
+msgstr "시스템"
+
+msgid "menu_group_employee_request"
+msgstr "요청"
+
+msgid "menu_request_employee_leave"
+msgstr "휴가"
+
+msgid "menu_request_employee_overtime"
+msgstr "초과 근무"
+
+msgid "menu_request_employee_manual_log"
+msgstr "수동 로그"
+
+msgid "menu_request_employee_training"
+msgstr "트레닝"
+
+msgid "menu_group_employee_approval"
+msgstr "승인"
+
+msgid "menu_approve_employee_leave"
+msgstr "휴가"
+
+msgid "menu_approve_employee_overtime"
+msgstr "시간 외에"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "수동 로그"
+
+msgid "menu_approve_employee_training"
+msgstr "트레닝"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "스케줄 변경"
+
+msgid "menu_group_employee_report"
+msgstr "보고서"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "예정된 로그"
+
+msgid "menu_staff_detailReport"
+msgstr "총 시간 카드"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "출석 요약"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "다중 거래"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "휴식 시간"
+
+msgid "menu_staff_timeCardReport"
+msgstr "시간 카드"
+
+msgid "staff_leave_actionDelete"
+msgstr "추가"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "사용자 ID"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "이름"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "성"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "날짜"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "이전 시간표"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "시간표"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "시간 적용"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "마지막 승인자"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "현재 주"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "승인 상태"
+
+msgid "attendance_analyze"
+msgstr "근태 분석"
+
+msgid "csv_export"
+msgstr "CSV로 내보내기"
+
+msgid "pdf_export"
+msgstr "PDF로 내보내기"
+
+msgid "xlsx_export"
+msgstr "XLSX로 내보내기"
+
+msgid "staff_search_startDate"
+msgstr "시작 날짜"
+
+msgid "staff_search_endDate"
+msgstr "종료 날짜"
+
+msgid "staff_approval_approvalState"
+msgstr "승인 상태"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "대기중인"
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "승인 됨"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "거부 됨"
+
+msgid "staff_search_searchTitle"
+msgstr "검색"
+
+msgid "staff_search_clearTitle"
+msgstr "검색 취소"
+
+msgid "staff_leave_startTime"
+msgstr "시작 시간"
+
+msgid "staff_leave_endTime"
+msgstr "종료 시간"
+
+msgid "staff_leave_leaveCategory"
+msgstr "범주"
+
+msgid "staff_leave_applyReason"
+msgstr "이유"
+
+msgid "staff_leave_empCode"
+msgstr "직원 ID"
+
+msgid "staff_leave_firstName"
+msgstr "이름"
+
+msgid "staff_leave_lastName"
+msgstr "성"
+
+msgid "staff_leave_applyTime"
+msgstr "시간 적용"
+
+msgid "staff_leave_lastApprover"
+msgstr "마지막 승인자"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "현재 주"
+
+msgid "staff_leave_approvalState"
+msgstr "승인 상태"
+
+msgid "staff_search_category"
+msgstr "범주"
+
+msgid "staff_leave_actionAdd"
+msgstr "더하다"
+
+msgid "staff_manualLog_empCode"
+msgstr "직원 ID"
+
+msgid "staff_manualLog_firstName"
+msgstr "이름"
+
+msgid "staff_manualLog_lastName"
+msgstr "성"
+
+msgid "staff_manualLog_applyTime"
+msgstr "시간 적용"
+
+msgid "staff_manualLog_punchTime"
+msgstr "펀치 타임"
+
+msgid "staff_manualLog_punchState"
+msgstr "펀치 상태"
+
+msgid "staff_manualLog_workCode"
+msgstr "직장 코드"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "마지막 승인자"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "현재 주"
+
+msgid "staff_manualLog_approvalState"
+msgstr "승인 상태"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "지우다"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "더하다"
+
+msgid "staff_manualLog_applyReason"
+msgstr "이유"
+
+msgid "staff_overtime_startTime"
+msgstr "시작 시간"
+
+msgid "staff_overtime_endTime"
+msgstr "종료 시간"
+
+msgid "staff_overtime_overtimeType"
+msgstr "시간외 유형"
+
+msgid "staff_overtime_applyReason"
+msgstr "이유"
+
+msgid "normal_overtime"
+msgstr "일반 OT"
+
+msgid "weekend_overtime"
+msgstr "주말 구내"
+
+msgid "holiday_overtime"
+msgstr "구약의 휴일"
+
+msgid "staff_overtime_actionDelete"
+msgstr "지우다"
+
+msgid "staff_overtime_empCode"
+msgstr "직원 ID"
+
+msgid "staff_overtime_firstName"
+msgstr "이름"
+
+msgid "staff_overtime_lastName"
+msgstr "성"
+
+msgid "staff_overtime_applyTime"
+msgstr "시간 적용"
+
+msgid "staff_overtime_lastApprover"
+msgstr "마지막 승인자"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "현재 주"
+
+msgid "staff_overtime_approvalSate"
+msgstr "승인 상태"
+
+msgid "staff_overtime_actionAdd"
+msgstr "더하다"
+
+msgid "search_start_date"
+msgstr "시작 날짜"
+
+msgid "search_end_date"
+msgstr "종료일"
+
+msgid "timetable"
+msgstr "시간표"
+
+msgid "userProfile_itemLabel_language"
+msgstr "언어"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "기존 비밀번호"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "새 비밀번호"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "비밀번호 확인"
+
+msgid "staff_training_empCode"
+msgstr "직원 ID"
+
+msgid "staff_training_firstName"
+msgstr "이름"
+
+msgid "staff_training_lastName"
+msgstr "성"
+
+msgid "staff_training_applyTime"
+msgstr "시간 적용"
+
+msgid "staff_training_trainingCategory"
+msgstr "교육 유형"
+
+msgid "staff_training_startTime"
+msgstr "시작 시간"
+
+msgid "staff_training_endTime"
+msgstr "종료 시간"
+
+msgid "staff_training_lastApprover"
+msgstr "최종 승인자"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "현재 상태"
+
+msgid "staff_training_approvalState"
+msgstr "승인 상태"
+
+msgid "staff_training_actionDelete"
+msgstr "지우다"
+
+msgid "staff_training_actionAdd"
+msgstr "더하다"
+
+msgid "the_old_pwd_is_required"
+msgstr "이전 암호가 필요합니다."
+
+msgid "the_new_pwd_is_required"
+msgstr "새 암호가 필요합니다."
+
+msgid "the_two_password_are_different"
+msgstr "확인 암호가 일치하지 않습니다."
+
+msgid "the_old_pwd_is_wrong"
+msgstr "암호가 잘못되었습니다."
+
+msgid "setting_employee_pwd_failed"
+msgstr "비밀번호 변경 실패"
+
+msgid "system_exception_illegal_login"
+msgstr "요청이 허용되지 않습니다."
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "암호를 수정하십시오."
+
+msgid "model_action_add"
+msgstr "추가"
+
+msgid "model_action_modify"
+msgstr "편집"
+
+msgid "system_welcome"
+msgstr "환영"
+
+msgid "system_userMenu_op_language"
+msgstr "언어"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "암호"
+
+msgid "system_userMenu_op_about"
+msgstr "약"
+
+msgid "system_userMenu_op_logout"
+msgstr "로그 아웃"
+
+msgid "filter_title_search"
+msgstr "필터로 검색"
+
+msgid "filter_title_clear"
+msgstr "필터 지우기"
+
+msgid "user_username"
+msgstr "사용자 이름"
+
+msgid "user_password"
+msgstr "암호"
+
+msgid "software_version"
+msgstr "소프트웨어 버전"
+
+msgid "authorized_information"
+msgstr "허가 된 정보"
+
+msgid "label_customer_code"
+msgstr "고객 코드"
+
+msgid "label_used_devices"
+msgstr "사용 된 장치"
+
+msgid "label_used_employees"
+msgstr "중고 직원"
+
+msgid "label_used_apps"
+msgstr "사용 된 APP"
+
+msgid "label_authorized_date"
+msgstr "승인 된 날짜"
+
+msgid "label_expired_date"
+msgstr "유통 기한"
+
+msgid "label_authorized_company"
+msgstr "허가 된 회사"
+
+msgid "license_activation"
+msgstr "라이센스 활성화"
+
+msgid "online_activation"
+msgstr "온라인 정품 인증"
+
+msgid "download_upk"
+msgstr "UPK 다운로드"
+
+msgid "offline_activation"
+msgstr "오프라인 활성화"
+
+msgid "online_upgrade_license"
+msgstr "온라인 업그레이드"
+
+msgid "export_license"
+msgstr "수출 허가"
+
+msgid "import_license"
+msgstr "라이센스 가져 오기"
+
+msgid "aboutPage_title_licenseMigration"
+msgstr "라이센스 마이그레이션"
+
+msgid "server_information"
+msgstr "서버 정보"
+
+msgid "label_machine"
+msgstr "기계"
+
+msgid "label_processor"
+msgstr "프로세서"
+
+msgid "label_platform"
+msgstr "플랫폼"
+
+msgid "label_ram_total"
+msgstr "램"
+
+msgid "label_ram_free"
+msgstr "무료 RAM"
+
+msgid "user_authenticate"
+msgstr "인증"
+
+msgid "user_login"
+msgstr "관리자 로그인"
+
+msgid "employee_self"
+msgstr "셀프 서비스"
+
+msgid "login_username"
+msgstr "사용자 이름"
+
+msgid "login_pwd"
+msgstr "암호"
+
+msgid "btn_user_login"
+msgstr "로그인"
+
+msgid "btn_fp_login"
+msgstr "지문"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "지문 인식 드라이버를 설치하십시오."
+
+msgid "login_emp_number"
+msgstr "직원 ID"
+
+msgid "login_emp_pwd"
+msgstr "암호"
+
+msgid "btn_emp_login"
+msgstr "로그인"
+
+msgid "login_about_btn_title"
+msgstr "라이센스 세부 사항을 확인하려면 클릭하십시오."
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr ""
+
+msgid "system_about"
+msgstr "약"
+
+msgid "last_approver"
+msgstr "최종 승인자"
+
+msgid "tool_filters"
+msgstr "필터"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "직원 ID를 찾을 수 없으므로 먼저 시스템에서 등록하십시오."
+
+msgid "employee_photo_not_found"
+msgstr "직원 사진을 찾을 수 없음"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "사진 저장 실패, 사진을 다시 확인하십시오."
+
+msgid "workflowRole_field_employee"
+msgstr "종업원"
+
+msgid "workflowRole_field_role"
+msgstr "워크 플로우 역할"
+
+msgid "workflow_action_assignEmployee"
+msgstr "직원 지정"
+
+msgid "workflow_action_assignEmployeeHelpTxt"
+msgstr "직원을 워크 플로우 역할에 지정"
+
+msgid "workFlowRoleAssignEmployee_error_noneEmployee"
+msgstr "직원을 선택하십시오."
+
+msgid "workFlowRoleAssignEmployee_error_noneWorkflowRole"
+msgstr "워크 플로우 역할을 선택하십시오."
+
+msgid "workflowEngine_field_code"
+msgstr "암호"
+
+msgid "workflowEngine_field_name"
+msgstr "이름"
+
+msgid "workflowEngine_field_startDate"
+msgstr "시작 날짜"
+
+msgid "workflowEngine_field_endDate"
+msgstr "종료일"
+
+msgid "workflowEngine_field_departments"
+msgstr "학과"
+
+msgid "workflowEngine_field_contentType"
+msgstr "컨텐츠 타입"
+
+msgid "workflow_model_workflowNode"
+msgstr "워크 플로우 노드"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "위치"
+
+msgid "workflow_node_is_required"
+msgstr "워크 플로 노드가 필요합니다."
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "워크 플로우 번호와 이름이 필요합니다."
+
+msgid "workflow_node_is_unique"
+msgstr "워크 플로 노드는 고유합니다."
+
+msgid "workflowEngine_field_employee"
+msgstr "종업원"
+
+msgid "node_code"
+msgstr "노드 번호"
+
+msgid "node_name"
+msgstr "노드 이름"
+
+msgid "workflow_node_approver"
+msgstr "승인자"
+
+msgid "workflow_node_notifier"
+msgstr "알리미"
+
+msgid "employee_count"
+msgstr "직원 수"
+
+msgid "approval_field_approvalStatus"
+msgstr "승인 상태"
+
+msgid "workflowEngine_field_description"
+msgstr "기술"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "반사 객체"
+
+msgid "workflowEngine_field_type"
+msgstr "워크 플로 유형"
+
+msgid "workflowEngine_field_informType"
+msgstr "알림 유형"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "없음"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "이메일"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "경보"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "이메일 알림"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "무효 이탈 시간, 종료 시간은 시작 시간보다 늦어야합니다."
+
+msgid "the_workflow_is_already_used"
+msgstr "이미 사용 된 워크 플로입니다."
+
+msgid "workflow_model_workflowEngine"
+msgstr "워크 플로우 엔진"
+
+msgid "is_last_node"
+msgstr "마지막 노드인가?"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr "사용자는이 태스크 노드를 승인 할 수 없습니다."
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr "사용자에게이 워크 플로 노드를 통해 작업 할 수있는 권한이 없습니다."
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr "사용자는이 태스크 노드를 거부 할 수 없습니다."
+
+msgid "workflow_node_instance"
+msgstr "워크 플로 노드 인스턴스"
+
+msgid "workflow_code"
+msgstr "워크 플로 번호"
+
+msgid "workflow_name"
+msgstr "워크 플로 이름"
+
+msgid "issue_date"
+msgstr "발행일"
+
+msgid "workflow_description"
+msgstr "기술"
+
+msgid "content_type"
+msgstr "워크 플로 유형"
+
+msgid "inform_type"
+msgstr "알림 유형"
+
+msgid "del_flag"
+msgstr "깃발 삭제"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr "신청서가 이미 승인 됨"
+
+msgid "workflow_instance"
+msgstr "워크 플로 인스턴스"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "본부"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "모든"
+
+msgid "workflowNode_field_code"
+msgstr "암호"
+
+msgid "workflowNode_field_name"
+msgstr "이름"
+
+msgid "workflowNode_field_orderID"
+msgstr "주문 아이디"
+
+msgid "workflowNode_field_approverType"
+msgstr "승인자 유형"
+
+msgid "workflowNode_field_approver"
+msgstr "승인자"
+
+msgid "workflowNode_field_notifierType"
+msgstr "알리미 유형"
+
+msgid "workflowNode_field_notifier"
+msgstr "알리미"
+
+msgid "workflowNode_field_approverScope"
+msgstr "승인자 범위"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "알리미 범위"
+
+msgid "workflow_engine_name"
+msgstr "워크 플로 이름"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "이미 사용 된 워크 플로우 노드."
+
+msgid "workflowRole_field_code"
+msgstr "암호"
+
+msgid "workflowRole_field_name"
+msgstr "역할 이름"
+
+msgid "workflowRole_field_description"
+msgstr "기술"
+
+msgid "workflow_model_workflowRole"
+msgstr "워크 플로우 역할"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "%(name)s에 포함 된 장치를 제거 할 수 없습니다."
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "%(name)s 위치에 하위 위치가 포함될 수 없습니다."
+
+msgid "node_state"
+msgstr "노드 상태"
+
+msgid "notifier_type_no_selected"
+msgstr "알림 유형을 선택하십시오."
+
+msgid "name"
+msgstr "이름"
+
+msgid "remark"
+msgstr "말"
+
+msgid "information_workflow"
+msgstr "정보"
+
+msgid "workflow_content_type"
+msgstr "컨텐츠 타입"
+
+msgid "instance_issue_date"
+msgstr "발행일"
+
+msgid "approve"
+msgstr "승인"
+
+msgid "remark_is_missing"
+msgstr "비고가 없습니다."
+
+msgid "workflow_instance_id_is_missing"
+msgstr "워크 플로 노드 인스턴스를 찾을 수 없음"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "워크 플로 노드 인스턴스를 찾을 수 없음"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "워크 플로 노드 인스턴스를 찾을 수 없음"
+
+msgid "did_not_have_match_workflow"
+msgstr "일치하는 워크 플로우가 없습니다."
+
+msgid "verity_type"
+msgstr "인증 유형"
+
+msgid "lineNotify_field_messageHead"
+msgstr "메시지 헤드"
+
+msgid "lineNotify_field_messageTail"
+msgstr "메시지의 꼬리"
+
+msgid "export_title_departments"
+msgstr "부서"
+
+msgid "export_title_positions"
+msgstr "위치"
+
+msgid "export_title_areas"
+msgstr "영역"
+
+msgid "export_title_employees"
+msgstr "직원"
+
+msgid "export_title_resigns"
+msgstr "사임"
+
+msgid "export_title_certifications"
+msgstr "문서"
+
+msgid "export_title_employeecertifications"
+msgstr "직원 문서"
+
+msgid "export_title_terminals"
+msgstr "장치"
+
+msgid "export_title_terminalcommands"
+msgstr "장치 명령"
+
+msgid "export_title_publicmessages"
+msgstr "공개"
+
+msgid "export_title_privatemessages"
+msgstr "비공개"
+
+msgid "export_title_terminalworkcodes"
+msgstr "작업 코드"
+
+msgid "export_title_biodatas"
+msgstr "바이오 템플릿"
+
+msgid "export_title_terminallogs"
+msgstr "장치 로그"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "업로드 로그"
+
+msgid "export_title_break_times"
+msgstr "휴식 시간"
+
+msgid "export_title_time_intervals"
+msgstr "시간표"
+
+msgid "export_title_att_shifts"
+msgstr "Shift"
+
+msgid "export_title_att_schedules"
+msgstr "스케줄"
+
+msgid "export_title_temp_schedules"
+msgstr "임시 일정"
+
+msgid "export_title_employeeschedule_report"
+msgstr "직원 일정"
+
+msgid "export_title_manual_logs"
+msgstr "수동 로그"
+
+msgid "export_title_leaves"
+msgstr "탈퇴"
+
+msgid "export_title_overtimes"
+msgstr "시간외"
+
+msgid "export_title_trainings"
+msgstr "교육"
+
+msgid "export_title_holiday"
+msgstr "휴일"
+
+msgid "export_title_leave_categorys"
+msgstr "잎 유형"
+
+msgid "export_title_training_categorys"
+msgstr "훈련 유형"
+
+msgid "export_title_transactions"
+msgstr "거래"
+
+msgid "export_field_employee_area"
+msgstr "영역"
+
+msgid "export_field_device_count"
+msgstr "Device Count"
+
+msgid "export_field_employee"
+msgstr "직원"
+
+msgid "export_field_employee_name"
+msgstr "이름"
+
+msgid "new_schedule"
+msgstr "스케줄 조정"
+
+msgid "new_schedule_description"
+msgstr "스케줄 추가"
+
+msgid "new_schedule_help_txt"
+msgstr "스케줄 추가"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "기본 카테고리는 삭제할 수 없습니다"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "사용 된 카테고리를 삭제할 수 없습니다"
+
+msgid "base_setting"
+msgstr "시스템 설정"
+
+msgid "calculation_rule"
+msgstr "늦은"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "거래"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "직원 ID 길이"
+
+msgid "menu_device_remoteupgrade"
+msgstr "장치"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "장치"
+
+msgid "remoteUpgrade_field_password"
+msgstr "비밀번호"
+
+msgid "remoteUpgrade_action_add"
+msgstr "추가"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "추가"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "추가"
+
+msgid "upgrade_file_error"
+msgstr "파일 업로드"
+
+msgid "please_select_device"
+msgstr "직원을 선택하십시오"
+
+msgid "password_is_required"
+msgstr "SN 파일이 필요합니다."
+
+msgid "password_is_error"
+msgstr "두 비밀번호 필드가 일치하지 않습니다."
+
+msgid "set_upgrade_password_first"
+msgstr "비밀번호"
+
+msgid "please_select_upgrade_file"
+msgstr "업그레이드 파일을 선택하십시오"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "파일 업그레이드"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "커밋 시간"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "전송 시간"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "반환 시간"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "반환 값"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "원격 업그레이드"
+
+msgid "Hello"
+msgstr "안녕하세요"
+
+msgid "lineNotify_field_sendPhoto"
+msgstr "출석 사진 보내기"
+
+msgid "Enter Number"
+msgstr "숫자 입력"
+
+msgid "Enter Keyword"
+msgstr "키워드 입력"
+
+msgid "device"
+msgstr "장치"
+
+msgid "area_or_zone"
+msgstr "영역"
+
+msgid "position"
+msgstr "위치"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "clear cache when it does not work after a minute"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "Simpled Chinese"
+
+msgid "deviceLanguage_option_English"
+msgstr "English"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "Spanish"
+
+msgid "deviceLanguage_option_French"
+msgstr "French"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "Arabic"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "Portuguese"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "Russian"
+
+msgid "deviceLanguage_option_German"
+msgstr "German"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "Persian"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "Thai"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "Indonesian"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "Japanese"
+
+msgid "deviceLanguage_option_Korean"
+msgstr "Korean"
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "Vietnamese"
+
+msgid "deviceLanguage_option_Turkish"
+msgstr "Turkish"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "Hebrew"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "Czech"
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "Dutch"
+
+msgid "deviceLanguage_option_Italian"
+msgstr "Italian"
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "Slovak"
+
+msgid "deviceLanguage_option_Greek"
+msgstr "Greek"
+
+msgid "deviceLanguage_option_Polish"
+msgstr "Polish"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr "Traditional Chinese"
+
+msgid "adminLog_action_login"
+msgstr "로그인"
+
+msgid "adminLog_action_logout"
+msgstr "로그 아웃"
+
+msgid "adminLog_action_add"
+msgstr "추가"
+
+msgid "adminLog_action_change"
+msgstr "변경"
+
+msgid "adminLog_action_delete"
+msgstr "삭제"
+
+msgid "app_download"
+msgstr "앱 다운로드"
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr "초기 오버 타임이 잘못되었습니다"
+
+msgid "minimum_above_overtime_invalid"
+msgstr "최소한 초과 근무 시간을 초과하지 못했습니다"
+
+msgid "delete_default_user_alert"
+msgstr "관리자 사용자를 제거 할 수 없습니다"
+
+msgid "delete_user_self_alert"
+msgstr "현재 사용자를 제거 할 수 없습니다"
+
+msgid "biophoto_upload"
+msgstr "사진 업로드"
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr "직원이 존재하지 않음 :"
+
+msgid "biophoto_upload_error_photo"
+msgstr "오류 사진 :"
+
+msgid "biophoto_upload_other_errors"
+msgstr "기타 오류 :"
+
+msgid "biophoto_upload_ignore_error"
+msgstr "오류 무시"
+
+msgid "biophoto_upload_select_files"
+msgstr "파일 선택"
+
+msgid "biophoto_upload_start"
+msgstr "시작"
+
+msgid "staff_training_applyReason"
+msgstr "이유"
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr "이 시간 간격 동안 중복 워크 플로우"
+
+msgid "holiday_duration_invalid"
+msgstr "휴일이 겹칩니다."
+
+msgid "migrate_sqlite_file_is_required"
+msgstr "Sqlite 데이터베이스 파일이 필요합니다."
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr "직원 %(emp)s에 이미 문서 %(certification)s가 있습니다"
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr "Too many images selected, please limit it to 500 or less."
+
+msgid "autoExport_task_time"
+msgstr "시간"
+
+msgid "autoExport_task_date"
+msgstr "날짜"
+
+msgid "no_record"
+msgstr "데이터 없음"
+
+msgid "autoExport_task_punchState"
+msgstr "펀치 상태"
+
+msgid "adjust_timeinterval"
+msgstr "시간표"
+
+msgid "app_login_failed"
+msgstr "로그인 실패."
+
+msgid "appLogin_param_client_missing"
+msgstr "Client param missing."
+
+msgid "appLogin_incorrect_username_or_password"
+msgstr "잘못된 사용자 이름 또는 비밀번호"
+
+msgid "appLogin_illegal_request"
+msgstr "잘못된 요청입니다."
+
+msgid "app_account_disabled"
+msgstr "계정 비활성화."
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "계정이 비활성화되었습니다. 활성화하려면 관리자에게 문의하십시오."
+
+msgid "appLogin_request_blocked"
+msgstr "요청이 차단되었습니다."
+
+msgid "app_client_already_block_by_administrator"
+msgstr "앱 클라이언트가 이미 관리자에 의해 차단되었습니다."
+
+msgid "app_client_blocked"
+msgstr "앱 클라이언트가 차단되었습니다."
+
+msgid "system_exception"
+msgstr "시스템 예외."
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "Request params can not find username."
+
+msgid "appLogin_params_exception"
+msgstr "Params Exception."
+
+msgid "app_sign_out_successful"
+msgstr "Sign out successful."
+
+msgid "appLogout_illegal_request"
+msgstr "잘못된 요청입니다."
+
+msgid "biotime_app_password_reset"
+msgstr "Biotime 앱 비밀번호 재설정."
+
+msgid "app_password_reset_failed"
+msgstr "비밀번호 재설정에 실패했습니다."
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "Password reset must on the mobile is active."
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "Illegal operation, Please contact  with administrator."
+
+msgid "app_password_reset_user_not_exists"
+msgstr "User not exists."
+
+msgid "app_password_reset_user_not_found"
+msgstr "사용자를 찾을 수 없습니다."
+
+msgid "app_manuallog_wrong_data"
+msgstr "잘못된 데이터."
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "작업 코드를 찾을 수 없습니다."
+
+msgid "app_manuallog_data_exception"
+msgstr "데이터 예외."
+
+msgid "app_manuallog_request_already_processing"
+msgstr "Request already processing."
+
+msgid "request_already_processing"
+msgstr "Request already processing."
+
+msgid "object_not_found"
+msgstr "개체를 찾을 수 없습니다."
+
+msgid "object_id_not_found"
+msgstr "Object Id Not Found."
+
+msgid "app_application_remove_success"
+msgstr "Removed Successful."
+
+msgid "app_application_remove_rejected"
+msgstr "승인 된 응용 프로그램을 삭제할 수 없습니다."
+
+msgid "app_attendance_date_today"
+msgstr "오늘"
+
+msgid "app_attendance_date_yesterday"
+msgstr "어제"
+
+msgid "app_attendance_date_this_week"
+msgstr "이번 주"
+
+msgid "app_attendance_date_last_week"
+msgstr "마지막 주"
+
+msgid "app_attendance_date_this_month"
+msgstr "이번 달"
+
+msgid "app_attendance_date_last_month"
+msgstr "지난 달"
+
+msgid "app_attendance_date_user-defined"
+msgstr "사용자 정의"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "잘못된 펀치 시간을 다시 시도하십시오"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "잘못된 GPS 정보"
+
+msgid "app_clockIn_gps_required"
+msgstr "GPS 정보가 필요합니다"
+
+msgid "app_clockIn_upload_failed"
+msgstr "업로드 실패"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "작업 코드를 찾을 수 없습니다"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "로고 검토"
+
+msgid "companySettingPage_size_200x75"
+msgstr "치수 200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "회사 설정"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "회사 로고"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "로고를 업로드하려면 클릭하십시오"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "로고 디스플레이"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "표시되지 않음"
+
+msgid "companySettingPage_posOption_left"
+msgstr "왼쪽"
+
+msgid "companySettingPage_posOption_center"
+msgstr "중심"
+
+msgid "companySettingPage_posOption_right"
+msgstr "오른쪽"
+
+msgid "companySettingPage_label_companyName"
+msgstr "Company name"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "회사 이름 표시"
+
+msgid "companySettingPage_btn_submit"
+msgstr "제출"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "Task %(task_code)s export success"
+
+msgid "company_logo_setting"
+msgstr "회사 로고 설정"
+
+msgid "company_name_setting"
+msgstr "회사 이름 설정"
+
+msgid "area_tree_selectAll"
+msgstr "모두 선택"
+
+msgid "area_tree_multipleSelect"
+msgstr "다중 선택"
+
+msgid "area_tree_selectSubArea"
+msgstr "하위 영역 선택"
+
+msgid "please_input_a_valid_number"
+msgstr "유효한 숫자를 입력하십시오"
+
+msgid "report_exportColumnTitle_statics"
+msgstr "통계"
+
+msgid "menu_sys_languageTranslate"
+msgstr "언어 번역"
+
+msgid "language_translate_field_lan"
+msgstr "언어"
+
+msgid "language_translate_field_name"
+msgstr "언어 이름"
+
+msgid "language_translate_field_build"
+msgstr "내장"
+
+msgid "auto_deduct"
+msgstr "자동 공제"
+
+msgid "required_punch"
+msgstr "필수 펀치"
+
+msgid "training_name"
+msgstr "교육 이름"
+
+msgid "minimum_unit"
+msgstr "최소 단위"
+
+msgid "unit"
+msgstr "단위"
+
+msgid "round_off"
+msgstr "라운드 오프"
+
+msgid "report_symbol"
+msgstr "보고서 기호"
+
+msgid "reference"
+msgstr "참조"
+
+msgid "translated"
+msgstr "번역됨"
+
+msgid "language_key"
+msgstr "언어 키"
+
+msgid "original_password"
+msgstr "원래 비밀번호"
+
+msgid "front_end_minutes"
+msgstr "분"
+
+msgid "att_action_approve"
+msgstr "승인"
+
+msgid "report_item_min_unit_empty"
+msgstr "이 비어 있습니다"
+
+msgid "report_item_min_unit_invalid"
+msgstr "이 유효하지 않습니다"
+
+msgid "menu_sys_indTableLog"
+msgstr "중급 테이블"
+
+msgid "IndTableLog_field_contentType"
+msgstr "콘텐츠 유형"
+
+msgid "IndTableLog_field_postTime"
+msgstr "포스트 타임"
+
+msgid "IndTableLog_field_postCount"
+msgstr "포스트 수"
+
+msgid "IndTableLog_field_updateTime"
+msgstr "업데이트 시간"
+
+msgid "IndTableLog_field_updateStatus"
+msgstr "업데이트 상태"
+
+msgid "IndTableLog_field_updateDescription"
+msgstr "설명"
+
+msgid "base_inmedit_field_invalid"
+msgstr "잘못된"
+
+msgid "base_inmedit_field_error"
+msgstr "오류"
+
+msgid "base_inmedit_field_succ"
+msgstr "성공"
+
+msgid "indtable_code_or_name_required {0}{1}"
+msgstr "코드 또는 이름이 필요합니다 {0} {1}"
+
+msgid "indtabel_data_insert_error {0}{1}"
+msgstr "데이터 삽입 오류 {0} {1}"
+
+msgid "system_translate_btnRestart"
+msgstr "재부팅"
+
+msgid "system_translate_btnDownload"
+msgstr "다운로드"
+
+msgid "select_download_language"
+msgstr "다운로드하려는 언어를 선택하십시오"
+
+msgid "fingerprint_download"
+msgstr "지문 드라이버"
+
+msgid "drive_download"
+msgstr "드라이버 다운로드"
+
+msgid "confirm_be_sure"
+msgstr "정말입니까?"
+
+msgid "confirm_not_modify_audited"
+msgstr "감사 된 레코드는 수정할 수 없습니다."
+
+msgid "employeeSave_error_duplicateCard_{emp}"
+msgstr "{emp}와 중복 된 카드"
+
+msgid "Choice Date"
+msgstr "선택 날짜"
+
+msgid "Now"
+msgstr "현재"
+
+msgid "Date Range"
+msgstr "날짜 범위"
+
+msgid "module"
+msgstr "모듈"
+
+msgid "year"
+msgstr "연도"
+
+msgid "month"
+msgstr "달"
+
+msgid "day"
+msgstr "일"
+
+msgid "From"
+msgstr "보낸 사람"
+
+msgid "To"
+msgstr "받는 사람"
+
+msgid "att_action_revoke"
+msgstr "취소"
+
+msgid "revoke_reason"
+msgstr "이유 취소"
+
+msgid "only_approved_records_can_be_revoked"
+msgstr "승인 된 레코드 만 취소 할 수 있습니다"
+
+msgid "revoke_remark_is_required"
+msgstr "철회 사유가 필요합니다"
+
+msgid "application_has_approved_node"
+msgstr "이 응용 프로그램은 감사 중이며 수정할 수 없습니다."
+
+msgid "terminal_state_online"
+msgstr "온라인"
+
+msgid "terminal_state_offline"
+msgstr "오프라인"
+
+msgid "terminal_state_unauthorized"
+msgstr "무단"
+
+msgid "terminal_state_communication"
+msgstr "통신"
+
+msgid "emp_field_fingervein"
+msgstr "손가락 정맥"
+
+msgid "used_holiday_can_not_be_removed"
+msgstr "이 휴일은 접근 통제 휴일에 사용되었습니다. 먼저 접근 통제에서 삭제하십시오."
+
+msgid "msg_all_saved_filters"
+msgstr "저장된 모든 필터"
+
+msgid "msg_customize_filters"
+msgstr "필터 사용자 정의"
+
+msgid "dbBackupLog_field_isBackupPhoto"
+msgstr "백업 사진이 필요"
+
+msgid "dbBackupLog_field_isRestorePhoto"
+msgstr "사진을 복원 할 필요"
+
+msgid "Null"
+msgstr "없는"
+
+msgid "time_unit_day"
+msgstr "일"
+
+msgid "time_unit_hour"
+msgstr "시"
+
+msgid "time_unit_minute"
+msgstr "분"
+
+msgid "timeInterval_error_invalidCheckIn/Out"
+msgstr "체크인 시간은 체크 아웃 시간보다 늦을 수 없습니다"
+
+msgid "autoExport_departments_helpTxt"
+msgstr "기본적으로 모두 내보내기"
+
+msgid "autoExport_areas_helpTxt"
+msgstr "기본적으로 모두 내보내기"
+
+msgid "autoExport_exportFormat_helpTxt"
+msgstr ".xls .csv .txt 만 지원하십시오."
+
+msgid "gps_start_and_end_required"
+msgstr "시작 날짜와 종료 날짜가 필요합니다."
+
+msgid "user_group_field_name"
+msgstr "그룹 이름"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_department_code_maximum_is_%(length)s"
+msgstr "행 %(index)s의 오류 데이터입니다. 상위 코드의 최대 길이는 %(length)s입니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_position_code_maximum_is_%(length)s"
+msgstr "행 %(index)s의 오류 데이터입니다. 상위 코드의 최대 길이는 %(length)s입니다."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_area_code_maximum_is_%(length)s"
+msgstr "행 %(index)s의 오류 데이터입니다. 상위 코드의 최대 길이는 %(length)s입니다."
+
+msgid "%s error_of_sql statement_adding_failed."
+msgstr "SQL 문 추가 오류 %s 이 (가) 실패했습니다."
+
+msgid "%(obj)s_is_already_used_in_%(objs)s_and_can_not_delete"
+msgstr "%(obj)s 가 %(objs)s 에서 사용되고 있으며 삭제할 수 없습니다."
+
+msgid "this_field_can_not_include_space_tab_or_enter"
+msgstr "이 필드는 공백 탭을 포함하거나 입력 할 수 없습니다."
+
+msgid "the_breaktime_%(n1)s_and_%(n2)s_has_intersection"
+msgstr "휴식 시간 %(n1)s 및 %(n2)s 에 교차점이 있습니다."

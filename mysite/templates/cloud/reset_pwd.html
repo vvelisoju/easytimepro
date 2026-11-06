@@ -1,0 +1,119 @@
+{% extends "cloud/base_login.html" %}
+{% load i18n %}
+{% block main %}
+    <div class="zk-login-col">
+        <div class="col-md-9 col-md-offset-3">
+            {% block logo_box %}
+                {{ block.super }}
+            {% endblock %}
+            <div class="mb-3 card zk-login-card  text-white">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">{% trans "generate_new_pswrd" %}</div>
+                </div>
+                <div class="card-body p-0">
+                    <form action="" class="zk-login-form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <input name="code" id="code" value="{{ aes_data }}" hidden>
+                        <div class="input-group">
+                                    <span class="input-group-text">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                   class="form-control text-center input-lg" id="pwd0" name="password0"
+                                   placeholder="New Password" required/>
+                            <span class="input-group-text pwd-right-radius" onclick="viewPassword('pwd0')">
+                                    <i id="pwd0_icon" class="fa fa-eye-slash"></i>
+                        </span>
+                        </div>
+                        <div class="input-group">
+                                    <span class="input-group-text">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                   class="form-control text-center input-lg" id="pwd1"
+                                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                   name="password1" placeholder="Confirm Password" required/>
+                            <span class="input-group-text pwd-right-radius" onclick="viewPassword('pwd1')">
+                                    <i id="pwd1_icon" class="fa fa-eye-slash"></i>
+                                 </span>
+                        </div>
+                        <p class="text-center text-capitalize text-danger" id="error_msg">{{ msg }}</p>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" onclick="reset_pwd()"
+                                        class="btn btn-lg btn-block btn-primary zk-btn">{% trans "Continue" %}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-md-4 col-md-offset-8 mt-m20 ms-auto">
+                        <p class="text-center text-dark"><a href="{% url 'biotime:login' %}"
+                                                            class="text-warning text-underline">{% trans "back_to_login" %}</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block page_script %}
+    <script>
+
+        function user_login() {
+            window.location.href = "{% url 'biotime:login' %}";
+        }
+
+        function reset_pwd() {
+
+            var data = {
+                'code': $('#code').val(),
+                'pwd': $('#pwd0').val(),
+                'pwd1': $('[name = "password1"]').val(),
+                csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+            };
+            if ($('#pwd0').val() !== '' && $('[name = "password1"]').val() !== '') {
+                $.ajax({
+                    url: "{% url 'biotime:reset_pwd' %}",
+                    type: "POST",
+                    data: data,
+                    dataType: "json",
+                    success: function (callback) {
+                        console.log(callback);
+                        console.log("RET", callback.ret);
+                        var ret = callback.ret;
+                        if (ret === 0) {
+                            window.location.href = "{% url 'biotime:index' %}";
+                        }
+                        else {
+                            var errName = $("#error_msg");
+                            errName.text(callback.content);
+                        }
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    }
+                })
+            }
+        }
+
+        function viewPassword(id) {
+            var input = document.getElementById(id);
+            var icon_id = id + "_icon";
+            var icon = document.getElementById(icon_id);
+            var input_type = input.getAttribute("type");
+
+
+            if (input_type == 'password') {
+                input.setAttribute("type", "text");
+                icon.setAttribute("class", "fa fa-eye zk-pwd");
+            } else {
+                input.setAttribute("type", "password");
+                icon.setAttribute("class", "fa fa-eye-slash zk-pwd");
+            }
+        }
+    </script>
+{% endblock page_script %}

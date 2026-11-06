@@ -1,0 +1,419 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: <arvin.chen@zkteco.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "menu_access"
+msgstr "Access"
+
+msgid "menu_group_access_control"
+msgstr "Access Control"
+
+msgid "menu_group_access_control_device"
+msgstr "Device"
+
+msgid "menu_access_timezone"
+msgstr "Time Period"
+
+msgid "menu_access_holiday"
+msgstr "Holiday"
+
+msgid "menu_access_groups"
+msgstr "Groups"
+
+msgid "menu_access_combination"
+msgstr "Combination"
+
+msgid "menu_access_privilege"
+msgstr "Privilege"
+
+msgid "acc_timezone"
+msgstr "Time Period"
+
+msgid "acc_holiday"
+msgstr "Holiday"
+
+msgid "acc_groups"
+msgstr "Group"
+
+msgid "acc_combination"
+msgstr "Combination"
+
+msgid "acc_privilege"
+msgstr "Privilege"
+
+msgid "accPrivilege_field_area"
+msgstr "Area"
+
+msgid "accPrivilege_field_employee"
+msgstr "Employee"
+
+msgid "accPrivilege_field_group"
+msgstr "Group"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "Time Period Mode"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "Time Period 1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "Time Period 2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "Time Period 3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "Verify Mode"
+
+msgid "clone_to_area"
+msgstr "Clone To Areas"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "Time period no. range(1-50)"
+
+msgid "accTimezone_field_no"
+msgstr "Time Period No."
+
+msgid "accTimezone_field_name"
+msgstr "Time Period Name"
+
+msgid "accTimezone_field_remark"
+msgstr "Remark"
+
+msgid "accTimezone_field_start"
+msgstr "Start Time"
+
+msgid "accTimezone_field_end"
+msgstr "End Time"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "Default time period can not be deleted."
+
+
+
+msgid "accTimezone_no_repeat"
+msgstr "This time period no. already exists."
+
+msgid "accHoliday_holiday_repeat"
+msgstr "Holiday with this Area and Holiday Name already exists."
+
+msgid "accHoliday_field_timezone"
+msgstr "Time Period"
+
+msgid "accHoliday_field_holiday"
+msgstr "Holiday Name"
+
+msgid "accGroup_field_no"
+msgstr "Group No."
+
+msgid "accGroup_field_name"
+msgstr "Group Name"
+
+msgid "accGroup_field_include_holiday"
+msgstr "Include Holiday"
+
+msgid "default_group_can_not_be_removed"
+msgstr "Default group can not be deleted."
+
+msgid "accGroup_field_no_maxValue"
+msgstr "Group no. range(1-99)"
+
+msgid "group_no_repeat"
+msgstr "This group no. already exists."
+
+msgid "move_to_group_1"
+msgstr "Move To Group 1"
+
+msgid "current_group_1"
+msgstr "Currently Group 1"
+
+msgid "accCombination_field_no"
+msgstr "Combination No."
+
+msgid "accCombination_field_name"
+msgstr "Combination Name"
+
+msgid "accCombination_field_group1"
+msgstr "Employee from Group"
+
+msgid "accCombination_field_group2"
+msgstr "Employee from Group"
+
+msgid "accCombination_field_group3"
+msgstr "Employee from Group"
+
+msgid "accCombination_field_group4"
+msgstr "Employee from Group"
+
+msgid "accCombination_field_group5"
+msgstr "Employee from Group"
+
+msgid "accCombination_field_remark"
+msgstr "Remark"
+
+msgid "combination_1_need_at_least_group"
+msgstr "Combination 1 need at least group"
+
+msgid "accPrivilege_action_adjust"
+msgstr "Adjust"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "Adjust access control privilege"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "Adjust access control privilege"
+
+msgid "select_none_timezone"
+msgstr "One time period need selected"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "Personnel"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "Group"
+
+msgid "op_menu_group_groupMenu"
+msgstr "Group Menu"
+
+msgid "door_action_open"
+msgstr "Open Door"
+
+msgid "door_action_openHelpText"
+msgstr "Open Door"
+
+msgid "door_action_openDescription"
+msgstr "Open Door"
+
+msgid "door_action_cancelAlarm"
+msgstr "Cancel Alarm"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "Cancel Alarm"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "Cancel Alarm"
+
+msgid "accTerminal_field_doorName"
+msgstr "Door Name"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr "Access Control Options"
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "Duress Options"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "Anti-PassBack Setup"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "Door Lock Delay"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "0 - 10 Second(s)"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "Door Sensor Delay"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "1 - 255 Second(s)"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "Door Sensor Type"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "Door Alarm Delay"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "0 - 999 Second(s)"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "Retry Times To Alarm"
+
+msgid "terminal_name"
+msgstr "Terminal Name"
+
+msgid "menu_access_terminal"
+msgstr "Device"
+
+msgid "menu_access_terminalCommand"
+msgstr "Device Command"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "Valid Holidays"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "NC Time Period"
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "Timezone Number(0 - 50)"
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "NO Time Period"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "Timezone Number(0 - 50)"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "Speaker Alarm"
+
+msgid "duress_options"
+msgstr "Duress Options"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "Duress Function"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "Alarm on 1:1 Match"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "Alarm on 1:N Match"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "Alarm on Password"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "Alarm Delay"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "0 - 999 (Seconds)"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "Anti-PassBack Mode"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "Door Direction"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "Normal Open(NO)"
+
+msgid "door_sensor_type_normalClose"
+msgstr "Normal Close(NC)"
+
+msgid "door_sensor_type_none"
+msgstr "None"
+
+msgid "retry_times_to_alarm_none"
+msgstr "None"
+
+msgid "anti_passback_mode_no"
+msgstr "No Anti-passback"
+
+msgid "anti_passback_mode_in"
+msgstr "In Anti-passback"
+
+msgid "anti_passback_mode_out"
+msgstr "Out Anti-passback"
+
+msgid "anti_passback_mode_inOut"
+msgstr "In/Out Anti-passback"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "No Anti-passback save door status"
+
+msgid "door_direction_none"
+msgstr "None"
+
+msgid "door_direction_out"
+msgstr "Out"
+
+msgid "door_direction_in"
+msgstr "In"
+
+msgid "anti_passback_setup"
+msgstr "Anti-passback Setup"
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "Are you sure to unlock of selected device(s)?"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "Are you sure to unalarm of selected device(s)?"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "Verify mode by RS485"
+
+msgid "accTerminal_field_pushTime"
+msgstr "Push Time"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "Fingerprint"
+
+msgid "485_verificationOption_Password"
+msgstr "Password"
+
+msgid "485_verificationOption_Card"
+msgstr "Card"
+
+msgid "door_action_setParameter"
+msgstr "Set Parameter"
+
+msgid "door_action_setParameterHelpText"
+msgstr "Set access control parameter"
+
+msgid "door_action_setParameterDescription"
+msgstr "Set access control parameter"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "Timezone has been used, can not be removed."
+
+msgid "used_group_can_not_be_removed"
+msgstr "Group has been used, can not be removed."
+
+msgid "permission_verboseName_acc"
+msgstr "Access"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "Time Period"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "Holiday"
+
+msgid "permission_verboseName_accGroups"
+msgstr "Groups"
+
+msgid "permission_verboseName_accCombination"
+msgstr "Combination"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "Privilege"
+
+msgid "accTimezone_field_no_max_value"
+msgstr "Time Period no. should be range of [1-15]"
+
+msgid "acc_incorrect_lookup_parameters"
+msgstr "Incorrect Lookup Parameters"
+
+msgid "acc_terminal"
+msgstr "Device"
+
+msgid "employee_visit_summary"
+msgstr "Visit Summary"
+
+msgid "accReloadData_field_Timezone"
+msgstr "Timezone"
+
+msgid "accReloadData_field_Holiday"
+msgstr "Holiday"
+
+msgid "accReloadData_field_Group"
+msgstr "Group"
+
+msgid "accReloadData_field_Combination"
+msgstr "Combination"
+
+msgid "accReloadData_field_Privilege"
+msgstr "Privilege"

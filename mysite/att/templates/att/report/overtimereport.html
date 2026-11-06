@@ -1,0 +1,38 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+            {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+            ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+            ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+            ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+            ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+            ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+            ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+            ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+            ,{field:'att_date', width:80, title: "{% trans 'report_column_attendanceDate' %}", sort: true}
+            ,{field:'weekday', width:80, title: "{% trans 'report_column_attendanceWeekday' %}"}
+            ,{field:'timetable', title: "{% trans 'report_column_timeIntervalName' %}"}
+            ,{field:'check_in', title: "{% trans 'report_column_checkInTime' %}"}
+            ,{field:'check_out', title: "{% trans 'report_column_checkOutTime' %}"}
+            ,{field:'clock_in', title: "{% trans 'report_column_clockInTime' %}"}
+            ,{field:'clock_out', title: "{% trans 'report_column_clockOutTime' %}"}
+            ,{field:'total_time', title: "{% trans 'report_column_totalTimeDuration' %}"}
+            ,{field:'total_worked', title: "{% trans 'report_column_totalWorkedDuration' %}"}
+            ,{field:'normal_wt', title: "{% trans 'report_column_normalWorkTime' %}"}
+            ,{field:'normal_ot', title: "{% trans 'report_column_normalOvertime' %}"}
+            ,{field:'weekend_ot', title: "{% trans 'report_column_weekendOvertime' %}"}
+            ,{field:'holiday_ot', title: "{% trans 'report_column_holidayOvertime' %}"}
+            ,{field:'ot_lv1', title: "{% trans 'report_column_overtimeLevel1' %}"}
+            ,{field:'ot_lv2', title: "{% trans 'report_column_overtimeLevel2' %}"}
+            ,{field:'ot_lv3', title: "{% trans 'report_column_overtimeLevel3' %}"}
+            ,{field:'total_ot', title: "{% trans 'report_column_total_ot' %}"}
+            ,{field:'Remarks', title: "{% trans 'report_column_remarks' %}"}
+        ]]
+        ,method: "get"
+        ,url: "/att/api/overtimeReport/"
+        //,url: "/att/api/report/overtime_report/"
+    });
+{% endblock %}

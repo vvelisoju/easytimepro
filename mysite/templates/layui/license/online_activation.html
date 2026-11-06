@@ -1,0 +1,30 @@
+{% load i18n static common %}
+<div style="height: 242px";overflow:hidden;>
+    <form action="" class="layui-form online-activation" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="license-code" style="padding: 110px 0 0 50px;">
+            {# {% layui_inline form.license_code %} #}
+            <div class="field-license_code" title="" id="license-code">
+                <label for="id_license_code" style="width: 120px;">
+                    License Code
+                 <span class="required">*</span></label>
+                <div class="layui-input-inline ">
+                    <input type="text" name="license_code" lay-verify="license_code" id="id_license_code" required="" class="layui-input" maxlength="50" style='max-width:340px !important;width:320px;'>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form'], function () {
+        var form=layui.form;
+        $(".layui-layer-btn0").click(function () {
+                if (document.getElementById("id_license_code").value == ''){
+                    $("#id_license_code").css({'border':'solid', 'border-color': 'red', 'border-width': '1px', 'border-radius': '2px'});
+                    layer.msg(gettext('please_enter_the_license_code_and_click_on_activate_button'), {icon: 5});
+                    return;
+                }
+              });
+        form.render();
+    })
+</script>

@@ -1,0 +1,336 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1, .cls-10 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-11, .cls-12, .cls-13, .cls-5, .cls-8, .cls-9 {
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-Background);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-14, .cls-4 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+        stroke-width: 2px;
+        stroke-dasharray: 6 13;
+        opacity: 0.48;
+      }
+
+      .cls-11, .cls-12, .cls-13, .cls-14, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-11, .cls-12, .cls-13, .cls-5, .cls-8, .cls-9 {
+        stroke-width: 0.5px;
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-6, .cls-7 {
+        stroke: #000;
+        stroke-width: 0.25px;
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-9 {
+        fill: url(#linear-gradient-7);
+      }
+
+      .cls-11 {
+        fill: url(#linear-gradient-8);
+      }
+
+      .cls-12 {
+        fill: url(#linear-gradient-9);
+      }
+
+      .cls-13 {
+        fill: url(#linear-gradient-11);
+      }
+
+      .cls-14 {
+        stroke: #29abe2;
+        stroke-width: 4px;
+      }
+
+      .cls-15 {
+        fill: #7ac143;
+      }
+
+      .cls-16 {
+        filter: url(#Rectangle_10);
+      }
+
+      .cls-17 {
+        filter: url(#Rectangle_14);
+      }
+
+      .cls-18 {
+        filter: url(#Rectangle_17);
+      }
+
+      .cls-19 {
+        filter: url(#Rectangle_20);
+      }
+
+      .cls-20 {
+        filter: url(#Rectangle_24);
+      }
+
+      .cls-21 {
+        filter: url(#Rectangle_25);
+      }
+
+      .cls-22 {
+        filter: url(#Rectangle_23);
+      }
+
+      .cls-23 {
+        filter: url(#Rectangle_16);
+      }
+
+      .cls-24 {
+        filter: url(#Rectangle_27);
+      }
+
+      .cls-25 {
+        filter: url(#Rectangle_29);
+      }
+
+      .cls-26 {
+        filter: url(#Rectangle_26);
+      }
+
+      .cls-27 {
+        filter: url(#Rectangle_22);
+      }
+
+      .cls-28 {
+        filter: url(#Rectangle_21);
+      }
+
+      .cls-29 {
+        filter: url(#Rectangle_28);
+      }
+
+      .cls-30 {
+        filter: url(#Rectangle_19);
+      }
+
+      .cls-31 {
+        filter: url(#Rectangle_18);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_31" data-name="Rectangle 31" class="cls-1" width="1920" height="1082"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-0.141" y1="0.5" x2="1.141" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00a1d4" stop-opacity="0.969"/>
+      <stop offset="1" stop-color="#272a3d"/>
+    </linearGradient>
+    <filter id="Rectangle_18" x="242.646" y="643.146" width="130.207" height="127.707" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_19" x="15.646" y="540.146" width="130.207" height="127.707" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-2"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-3" x1="15.179" y1="-8.881" x2="-41.66" y2="27.442" xlink:href="#linear-gradient"/>
+    <filter id="Rectangle_28" x="1810.228" y="729.728" width="79.045" height="76.545" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-3"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-4" x1="25.704" y1="-15.606" x2="-31.136" y2="20.716" xlink:href="#linear-gradient"/>
+    <filter id="Rectangle_21" x="797.228" y="49.728" width="79.045" height="76.545" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-4"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_22" x="380.146" y="780.646" width="130.207" height="127.707" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-5"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-6" x1="10.419" y1="-5.839" x2="-43.667" y2="28.725" xlink:href="#linear-gradient"/>
+    <filter id="Rectangle_26" x="1681.146" y="162.646" width="82.207" height="79.707" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-6"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-7" x1="16.968" y1="-10.023" x2="-75.458" y2="49.04" xlink:href="#linear-gradient"/>
+    <filter id="Rectangle_29" x="1848.176" y="391.676" width="58.148" height="55.648" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-7"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_27" x="1762.53" y="909.029" width="57.441" height="54.941" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-8"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_16" x="71.529" y="121.029" width="57.441" height="54.941" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-9"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-8" x1="0.001" y1="0.5" x2="0.999" y2="0.5" xlink:href="#linear-gradient"/>
+    <filter id="Rectangle_23" x="163.176" y="724.676" width="58.148" height="55.648" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-10"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-9" x1="-0.132" y1="0.5" x2="1.132" y2="0.5" xlink:href="#linear-gradient"/>
+    <filter id="Rectangle_25" x="-101.854" y="976.646" width="226.207" height="223.707" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-11"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_24" x="133.146" y="838.646" width="130.207" height="127.707" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-12"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-12"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-11" x1="62.285" y1="-38.983" x2="-48.491" y2="31.807" xlink:href="#linear-gradient"/>
+    <filter id="Rectangle_20" x="491.987" y="123.487" width="52.526" height="50.026" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-13"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-13"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_17" x="21.987" y="274.487" width="52.526" height="50.026" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-14"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-14"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_14" x="491.987" y="115.487" width="52.526" height="50.026" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-15"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-15"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_10" x="71.529" y="113.029" width="57.441" height="54.941" filterUnits="userSpaceOnUse">
+      <feOffset dx="13" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur-16"/>
+      <feFlood flood-opacity="0.412"/>
+      <feComposite operator="in" in2="blur-16"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Background">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Background" class="cls-2">
+    <rect class="cls-10" width="1920" height="1080"/>
+    <g id="Mask_Group_2" data-name="Mask Group 2" class="cls-3">
+      <path id="Dot_1" data-name="Dot 1" class="cls-4" d="M267,0s36.684,140,226.092,213c0,0,181.922,14,249.3,165s-45.668,318,177.43,352S1137.68,709,1265.7,858s78.609,180,249.3,221" transform="translate(0 1)"/>
+      <g class="cls-31" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_18-2" data-name="Rectangle 18" class="cls-5" width="74.953" height="74.953" rx="12" transform="translate(296 647) rotate(45)"/>
+      </g>
+      <g class="cls-30" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_19-2" data-name="Rectangle 19" class="cls-5" width="74.953" height="74.953" rx="12" transform="translate(69 544) rotate(45)"/>
+      </g>
+      <g class="cls-29" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_28-2" data-name="Rectangle 28" class="cls-6" width="39.026" height="39.026" rx="12" transform="translate(1838 733.4) rotate(45)"/>
+      </g>
+      <g class="cls-28" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_21-2" data-name="Rectangle 21" class="cls-7" width="39.026" height="39.026" rx="12" transform="translate(825 53.4) rotate(45)"/>
+      </g>
+      <g class="cls-27" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_22-2" data-name="Rectangle 22" class="cls-5" width="74.953" height="74.953" rx="12" transform="translate(433.5 784.5) rotate(45)"/>
+      </g>
+      <g class="cls-26" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_26-2" data-name="Rectangle 26" class="cls-8" width="41.012" height="41.012" rx="12" transform="translate(1710.5 166.5) rotate(45)"/>
+      </g>
+      <g class="cls-25" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_29-2" data-name="Rectangle 29" class="cls-9" width="24" height="24" rx="12" transform="translate(1865.5 395.53) rotate(45)"/>
+      </g>
+      <g class="cls-24" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_27-2" data-name="Rectangle 27" class="cls-10" width="24" height="24" rx="12" transform="translate(1779.5 912.53) rotate(45)"/>
+      </g>
+      <g class="cls-23" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_16-2" data-name="Rectangle 16" class="cls-10" width="24" height="24" rx="12" transform="translate(88.5 124.53) rotate(45)"/>
+      </g>
+      <g class="cls-22" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_23-2" data-name="Rectangle 23" class="cls-11" width="24" height="24" rx="12" transform="translate(180.5 728.53) rotate(45)"/>
+      </g>
+      <g class="cls-21" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_25-2" data-name="Rectangle 25" class="cls-12" width="142.836" height="142.836" rx="25.824" transform="translate(-0.5 980.5) rotate(45)"/>
+      </g>
+      <g class="cls-20" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_24-2" data-name="Rectangle 24" class="cls-11" width="74.953" height="74.953" rx="37.477" transform="translate(186.5 842.5) rotate(45)"/>
+      </g>
+      <g class="cls-19" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_20-2" data-name="Rectangle 20" class="cls-13" width="20.024" height="20.024" rx="10.012" transform="translate(506.5 127.34) rotate(45)"/>
+      </g>
+      <g class="cls-18" transform="matrix(1, 0, 0, 1, 0, 0)">
+        <rect id="Rectangle_17-2" data-name="Rectangle 17" class="cls-11" width="20.024" height="20.024" rx="10.012" transform="translate(36.5 278.34) rotate(45)"/>
+      </g>
+      <path id="Path_4" data-name="Path 4" class="cls-14" d="M2.914,810.444C36.121,733.916,112.363,678.55,194.388,671.4c45-3.924,91.645,6.206,129.255,31.6,21.939,14.816,40.351,34.33,60.77,51.241,62.64,51.876,143.555,78.809,201.278,136.271,32.957,32.808,56.571,73.879,85.372,110.5S736.653,1071.333,782,1080" transform="translate(0 9)"/>
+      <path id="Path_5" data-name="Path 5" class="cls-15" d="M-.5.5s.113,2.1.5,5.99c.179,1.8.416,3.989.729,6.528,15.323,124.59,85.654,243.206,195.159,306.811,80.778,46.919,167.008,49.655,258.043,54.795,55.669,3.142,113.11,9.536,164.166,33.48,49.19,23.069,76.255,69.6,99.9,116.9,0,0,46,82,134,145,0,0,205,119,346,0,1.159-.978-13.456-36.755-14.3-39.374-8.914-27.733-18.462-57.94-20.88-86.778-5.554-66.244-2.793-130.681-34.109-191.815-26.239-51.226-72.845-91.9-127.531-109.848-27.165-8.914-55.79-12.32-83.611-18.912-40.3-9.548-78.888-25.815-114.616-46.762C737.671,138.238,680.778,79.128,672,1Z" transform="translate(0.5 -0.5)"/>
+    </g>
+    <path id="Dot_1-2" data-name="Dot 1" class="cls-4" d="M267,0s36.684,140,226.092,213c0,0,181.922,14,249.3,165s-45.668,318,177.43,352S1137.68,709,1265.7,858s78.609,180,249.3,221" transform="translate(0 1)"/>
+    <g class="cls-17" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_14-2" data-name="Rectangle 14" class="cls-13" width="20.024" height="20.024" rx="10.012" transform="translate(506.5 119.34) rotate(45)"/>
+    </g>
+    <g class="cls-16" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <rect id="Rectangle_10-2" data-name="Rectangle 10" class="cls-10" width="24" height="24" rx="12" transform="translate(88.5 116.53) rotate(45)"/>
+    </g>
+  </g>
+</svg>

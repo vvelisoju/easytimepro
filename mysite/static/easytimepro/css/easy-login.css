@@ -1,0 +1,479 @@
+.easy-login-main {
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+}
+
+.easy-login-bg {
+	background-image: url('/static/easytimepro/images/main-login-bg.svg');
+	background-position: left -50px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.easy-zk-logo {
+	margin-top: 50px;
+	margin-left: 50px;
+	padding: 10px;
+}
+
+.easy-login-carousel {
+	margin-top: 50px;
+}
+
+.easy-login-carousel .carousel-inner .carousel-caption {
+	position: relative;
+	left: 0;
+	right: 0;
+	text-shadow: none !important;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+
+.easy-login-carousel .carousel-inner .carousel-caption .carousel-title {
+	font-size: 30px;
+}
+
+.easy-login-carousel .carousel-inner .carousel-caption .carousel-desc {
+	text-align: center;
+	max-width: 380px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+.easy-login-carousel .carousel-control.right,
+.easy-login-carousel .carousel-control.left {
+	background: none !important;
+	text-shadow: none !important;
+}
+
+.easy-login-card {
+	background: #FEFEFE 0% 0% no-repeat padding-box;
+	box-shadow: 0px 5px 10px #00000029;
+	border-radius: 41px;
+	padding-bottom: 0px;
+	margin-bottom: 30px;
+	border: none;
+}
+
+.easy-logo-box {
+	margin-bottom: 0px;
+}
+
+.easy-logo-box .easy-time-pro-logo {
+	width: 310px;
+}
+
+
+/* Tabs */
+
+.easy-nav-tabs {
+	margin: 0 auto;
+	border: 0px;
+}
+
+.nav-tabs .nav-link {
+  padding: 17px 40px;
+  background: #0000000A;
+  color: #7B7B7B;
+  border: 0 !important;
+  border-radius: 34px;
+  margin-left: -30px;
+  font-size: 16px;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:active,
+.nav-tabs .nav-link:focus{
+  background: #0000000A;
+  color: #7B7B7B;
+  border: 0 !important;
+}
+
+.nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-link.active:focus,
+.nav-tabs .nav-link.active{
+  background-color: #365F95;
+  color: white;
+  border: 0 !important;
+  border-radius: 34px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tab end */
+
+.inner-addon {
+	position: relative;
+}
+
+
+/* style glyph */
+
+.inner-addon .fa {
+	position: absolute;
+	padding: 10px;
+}
+
+.inner-addon .easy-icon {
+	font-size: 20px;
+	color: #CCCCCC;
+	padding: 18px;
+}
+
+.form-control:active .easy-icon,
+.form-control:focus .easy-icon {
+	color: #3D4977;
+}
+
+.easy-icon:hover,
+.inner-addon .easy-icon-active {
+	color: #3D4977;
+}
+
+.left-addon .fa {
+	left: 0px;
+}
+
+.right-addon .fa {
+	right: 0px;
+}
+
+.left-addon input {
+	padding-left: 60px;
+}
+
+.right-addon input {
+	padding-right: 60px;
+}
+
+
+/*  */
+
+.easy-remember-me {
+	font-size: 16px;
+	text-align: left;
+}
+
+.easy-forgot-pass {
+	color: #007BE6;
+	text-decoration: underline;
+	font-size: 16px;
+	text-align: right;
+}
+
+.easy-forgot-pass:hover {
+	color: #365F95
+}
+
+.easy-login-form {
+	padding: 20px 50px;
+	margin-top: 10px;
+}
+
+.easy-login-form .login-heading {
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0px;
+	color: #5A5A5A;
+}
+
+.easy-login-form .form-control {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	/* border: 1px solid #404040; */
+	height: 55px;
+}
+
+.form-control::placeholder {
+     color: #999;
+     opacity: 1;
+}
+
+.easy-login-form .form-control:hover,
+.easy-login-form .form-control:focus,
+.easy-login-form .form-control:active {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 5px 10px #00000029;
+	border: 1px solid #3D4977;
+	border-radius: 7px;
+}
+
+
+/* .easy-login-form .form-group:hover .easy-icon,
+  .easy-login-form .form-group:focus .easy-icon,
+  .easy-login-form .form-group:active .easy-icon {
+    color:#3D4977;
+
+  } */
+
+.easy-login-btn {
+	background: #A2A2A2;
+	text-transform: uppercase;
+	height: 45px;
+	border-radius: 7px;
+	border: 0;
+	color: #FFF;
+	outline: 0;
+	text-align: center;
+	font: normal normal medium 19px/25px Roboto;
+	letter-spacing: 0.95px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.easy-login-btn:hover,
+.easy-login-btn:active,
+.easy-login-btn:focus,
+.easy-login-btn-active {
+	background: #365F95;
+	box-shadow: 0px 10px 10px #00000033;
+	color: #FFF;
+}
+
+.easy-login-form .btn.active.focus,
+.easy-login-form .btn.active:focus,
+.easy-login-form .btn.focus,
+.easy-login-form .btn:active.focus,
+.easy-login-form .btn:active:focus,
+.easy-login-form .btn:focus {
+	outline: 0;
+}
+
+.easy-copyright {
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 0px;
+	color: #5A5A5A;
+}
+
+.easy-about-company {
+	color: #007BE6;
+}
+
+.easy-login-heading {
+	color: #333;
+	font-size: 20px;
+	margin-bottom: 50px;
+}
+.easywdms-login-heading {
+  color: #000000;
+	font-size: 23px;
+  margin-bottom: 50px;
+  font-weight:700;
+
+}
+
+.easy-login-note {
+	color: #6D6D6D;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.easy-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+.email-confrm-img {
+	padding-left: 30px;
+}
+
+.easy-confirm-note {
+	font-size: 18px;
+	color: #000000;
+	text-align: center;
+	margin: 30px 0;
+}
+
+.easy-confirm-note-2 {
+	color: #9A9A9A;
+	font-size: 13px;
+	text-align: center;
+}
+
+.easy-send-cnfrm-again {
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+	margin: 30px 0px;
+}
+
+.easy-send-again {
+	color: #007BE6;
+	text-decoration: underline;
+}
+
+.easy-send-again:hover {
+	color: #365F95
+}
+
+.easy-margin-top,
+.easy-pwd-reset-mt {
+	margin-top: 5%;
+}
+
+.carousel-fade .carousel-inner .item {
+	opacity: 0;
+	transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+	opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+	opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+	z-index: 2;
+}
+
+@media(min-width:1440px) {
+	.easy-margin-top {
+		margin-top: 20% !important;
+	}
+	.easy-login-form {
+		min-height: 400px;
+	}
+	.easy-pwd-reset-mt {
+		margin-top: 30%;
+	}
+	.easy-login-carousel {
+		margin-top: 100px;
+	}
+	.easy-login-carousel .carousel-inner .item img {
+		height: 415px;
+		margin: 0 auto;
+	}
+	.easy-login-carousel .carousel-inner .carousel-caption .carousel-desc {
+		max-width: 500px;
+	}
+}
+
+@media(min-width:1350px) {
+	body {
+		overflow: hidden;
+	}
+	.easy-login-bg {
+		min-height: 768px;
+	}
+	.easy-pwd-reset-mt {
+		margin-top: 20%;
+	}
+}
+
+@media(max-width:1440px) {
+	.easy-login-bg {
+		background-position: -30px -10px;
+		min-height: 785px;
+	}
+}
+
+@media (min-width:992px) and (max-width:1280px) {
+	.easy-login-bg {
+		min-height: 720px;
+		max-height: 750px;
+	}
+}
+
+@media(min-width:992px) {
+	.easy-margin-top {
+		margin-top: 10%;
+	}
+}
+
+@media(max-width:480px) {
+	.easy-login-form {
+		padding: 20px 10px;
+		margin-top: 50px;
+	}
+	.easy-nav-tabs>li>a {
+		padding: 15px 25px;
+		margin-left: -20px;
+		font-size: 14px;
+	}
+	.easy-nav-tabs>li:first-child>a {
+		padding: 15px 25px;
+		margin-left: -30px;
+		font-size: 14px;
+	}
+	input,
+	input::-webkit-input-placeholder {
+		font-size: 16px !important;
+	}
+	.easy-logo-box .easy-time-pro-logo {
+		width: 250px;
+	}
+	.easy-logo-box {
+		margin-bottom: 10px;
+	}
+	.easy-footer {
+		position: relative;
+		bottom: 0;
+	}
+}
+
+@media (min-width: 1600px) {
+    #easyLoginForm {
+        width: 68%;
+        margin-left: 15%;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.6s ease, background-color 0.6s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #fff !important;
+    opacity: 1 !important;
+}
+
+.easy-login-carousel .carousel-inner .carousel-item img {
+    height: 415px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+@media (max-width: 1440px) {
+    .easy-login-carousel .carousel-inner .carousel-item img {
+        height: 280px !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+  transform: translateX(-100%);
+}
+

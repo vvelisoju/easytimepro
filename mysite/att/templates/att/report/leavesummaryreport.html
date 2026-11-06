@@ -1,0 +1,25 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    var cols = [[
+        {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+        ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+        ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+        ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+        ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+        ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+        ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+        ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+    ]];
+    {% for c in category %}
+      cols[0].push({field: 'leave_'+"{{ c.id }}", title: "{{ c.category_name }}"})
+    {% endfor %}
+    $.extend(opts, {
+        cols: cols
+        ,method: "get"
+        ,url: "/att/api/leaveSummaryReport/"
+        //,url: "/att/api/report/leave_summary_report/"
+    });
+{% endblock %}
+

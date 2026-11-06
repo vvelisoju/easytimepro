@@ -1,0 +1,67 @@
+{% load i18n static common %}
+<div id="{{ model_name }}_edit_form" style="padding: 10px;">
+    <form class="layui-form data-form" action="" method="post" >
+        {% csrf_token %}
+        {% with form.form as f %}
+          <div class="layui-form-item">
+            {% layui_inline f.alias %}
+            {% layui_inline f.location %}
+          </div>
+          <div class="layui-form-item">
+            {% layui_inline f.start_date %}
+            {% layui_inline f.duration_day %}
+          </div>
+          <div class="layui-form-item">
+              {% if software_type != 11 %}
+                 {% layui_inline f.work_type %}
+                 {% layui_inline f.overtime_lv1 %}
+              {% endif %}
+          </div>
+          <div class="layui-form-item">
+               {% if software_type != 11 %}
+                  {% layui_inline f.overtime_lv2 %}
+                  {% layui_inline f.overtime_lv3 %}
+               {% endif %}
+          </div>
+        {% endwith %}
+    </form>
+</div>
+<script>
+    layui.use(['element', 'form', 'laydate', 'table', 'tablePlug'], function () {
+        var form = layui.form, element = layui.element, laydate = layui.laydate, table = layui.table,
+            tablePlug = layui.tablePlug;
+        tablePlug.smartReload.enable(true);
+        laydate.render({elem: "#id_start_date", type: 'date'});
+
+        form.on('select', function (data) {
+            var elem = data.elem;
+            var selectValue = data.value;
+            switch (elem.id) {
+                case 'id_work_type':
+                    if (selectValue === '0') {
+                        $("#id_overtime_lv1").attr("disabled", "disabled");
+                        $("#id_overtime_lv2").attr("disabled", "disabled");
+                        $("#id_overtime_lv3").attr("disabled", "disabled");
+                    }
+                    else{
+                        $("#id_overtime_lv1").removeAttr("disabled");
+                        $("#id_overtime_lv2").removeAttr("disabled");
+                        $("#id_overtime_lv3").removeAttr("disabled");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        function init_input(){
+            if ($("#id_work_type").val() === '0') {
+                $("#id_overtime_lv1").attr("disabled", "disabled");
+                $("#id_overtime_lv2").attr("disabled", "disabled");
+                $("#id_overtime_lv3").attr("disabled", "disabled");
+            }
+        }
+
+        init_input();
+    });
+  </script>

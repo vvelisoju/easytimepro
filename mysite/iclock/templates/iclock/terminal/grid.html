@@ -1,0 +1,49 @@
+{% extends 'data_grid.html' %}
+{% load i18n static common %}
+{% block grid_opt_update %}
+  var cols = res['grid_opts']['cols'][0];
+  var payload = {};
+  cols.forEach(function(col, index){
+    payload[col.field] = col;
+  });
+  $.extend(payload.cmd_count, {event: 'pop_cmd', templet: function(d){
+    return '<a href="javascript:void(0);">'+d.cmd_count+'</a>';
+  }});
+  $.extend(payload.area, {event: 'pop_employee', templet: function(d){
+    return '<a href="javascript:void(0);">'+d.area+'</a>';
+  }});
+  data_grid_opts.events = $.extend(data_grid_opts.events || {}, {
+    pop_cmd: function(data){
+      var url = "/iclock/pending_cmd/?_id="+data.id;
+      $.ajax({
+        url: url
+        ,type: "get"
+        ,dataType: "html"
+        ,success: function(response){
+          layer.open({
+            type: 1
+            ,title: data.alias
+            ,area: ['780px', '430px']
+            ,content: response
+          })
+        }
+      })
+    },
+    pop_employee: function(data){
+      var url = "/iclock/area_employees/?_id="+data.id;
+      $.ajax({
+        url: url
+        ,type: "get"
+        ,dataType: "html"
+        ,success: function(response){
+          layer.open({
+            type: 1
+            ,title: data.area
+            ,area: ['890px', '430px']
+            ,content: response
+          })
+        }
+      })
+    }
+  });
+{% endblock grid_opt_update %}

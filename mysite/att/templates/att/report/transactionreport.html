@@ -1,0 +1,53 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  $.extend(opts, {
+    cols: [[
+      {field:'emp_code', title: "{% trans 'report_column_empCode' %}", width:120, sort:true}
+      ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+      ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+      ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+      ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+      ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}", sort:true}
+      ,{field:'dept_name', title: "{% trans 'report_column_departmentName' %}", sort:true}
+      ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+      ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+      ,{field:'att_date', title: "{% trans 'report_column_punchDate' %}", sort:true}
+      ,{field:'punch_time', title: "{% trans 'report_column_punchTime' %}"}
+      ,{field:'punch_state', title: "{% trans 'report_column_punchState' %}"}
+      ,{field:'work_code', title: "{% trans 'report_column_workCode' %}"}
+      ,{field:'source', title: "{% trans 'report_column_dataSources' %}"}
+      {% if mask_enable %}
+      ,{field:'displayed_mask', title: "{% trans 'report_column_displayed_mask' %}", templet: function(obj){
+        if(obj.displayed_mask){
+          mask_flag = obj.displayed_mask
+          if(mask_flag=='Yes'){
+            return '<span style="color: #00CD66;">Yes</span>'
+          }else if(mask_flag=='No'){
+            return '<span style="color: #ff0000;">No</span>'
+          }else{
+            return ''
+          }
+        }else{
+          return ''
+        }
+      }}
+      {% endif %}
+      ,{field:'displayed_temp', title: "{% trans 'report_column_displayed_temp' %}", templet: function(obj){
+        if(obj.displayed_temp){
+          result = obj.displayed_temp
+        }else{
+          result = ''
+        }
+        if(obj.check_display_high_temp && result){
+          result = '<' + 'span style="color:' + obj.high_temp_color + ';">' + obj.displayed_temp + '<' + '/span>'
+        }else if(obj.check_display_warn_temp && result){
+          result = '<' + 'span style="color:' + obj.warn_temp_color + ';">' + obj.displayed_temp + '<' + '/span>'
+        }
+        return result
+      }}
+      ]]
+      ,method: "get"
+      ,url: "/att/api/transactionReport/"
+  });
+{% endblock %}

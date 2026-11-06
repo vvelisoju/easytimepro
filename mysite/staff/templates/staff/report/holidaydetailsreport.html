@@ -1,0 +1,52 @@
+{% extends 'staff/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $("#date_fields").css("display","none");
+    $("#holiday").css("display", "block");
+  $.extend(opts, {
+    cols: [[
+      {field:'alias', title: "{% trans 'holiday_field_alias' %}", templet: function(obj){
+        if(obj.start_date < obj.date){
+            return '<span style="color: #DC143C;">'+ obj.alias +'</span>'
+        }else{
+            return '<span style="color: green;">'+ obj.alias +'</span>'
+        }
+      }}
+      ,{field:'location_name', title: "{% trans 'holiday_field_holiday' %}", templet: function(obj){
+        if(obj.location_name == null){
+        return ''
+        }
+        if(obj.start_date < obj.date){
+            return '<span style="color: #DC143C;">'+ obj.location_name +'</span>'
+        }else{
+            return '<span style="color: green;">'+ obj.location_name +'</span>'
+        }
+      }}
+      ,{field:'start_date', title: "{% trans 'holiday_field_startDate' %}", templet: function(obj){
+        if(obj.start_date < obj.date){
+            return '<span style="color: #DC143C;">'+ obj.start_date +'</span>'
+        }else{
+            return '<span style="color: green;">'+ obj.start_date +'</span>'
+        }
+      }}
+      ,{field:'duration_day', title: "{% trans 'holiday_field_duration' %}", templet: function(obj){
+        if(obj.start_date < obj.date){
+            return '<span style="color: #DC143C;">'+ obj.duration_day +'</span>'
+        }else{
+            return '<span style="color: green;">'+ obj.duration_day +'</span>'
+        }
+      }}
+      ,{field:'work_type', title: "{% trans 'holiday_field_workType' %}", templet: function(obj){
+        if(obj.start_date < obj.date){
+            return '<span style="color: #DC143C;">'+ obj.work_type +'</span>'
+        }else{
+            return '<span style="color: green;">'+ obj.work_type +'</span>'
+        }
+      }}
+
+    ]]
+    ,method: "get"
+    ,url: "/att/api/holidaydetailsReport/"
+
+  });
+{% endblock %}

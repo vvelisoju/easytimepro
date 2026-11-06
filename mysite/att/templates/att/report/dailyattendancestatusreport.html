@@ -1,0 +1,918 @@
+{% load i18n static %}
+{% load common %}
+<!-- Monthly Attendance Report -->
+<style type="text/css">
+    .table-bordered>thead>tr>th {
+        border-bottom-width: 25px !important;
+        border-color: #7ac145 !important;
+    }
+    .table-bordered>thead>tr>td {
+        border-color: #7ac145 !important;
+    }
+    .table>thead:first-child>tr:first-child>th {
+        border-top: 1px solid;
+    }
+    /*.verticleText {
+        transform: rotate(90deg);
+    }*/
+</style>
+<style>
+#myattendance th {
+    font-weight: bold;
+}
+.scrollbar
+{
+	margin-left: 0px;
+	width: 100%;
+	background: #F5F5F5;
+	/*overflow-y: scroll;*/
+ 	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 350px;
+  overflow-y: scroll;
+
+}
+    #style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+</style>
+<!-- //End -->
+<!-- Filter Start-->
+{% if not request.user.is_employee %}
+<div class="layui-col-md2" style='padding-left:0;padding-right:0;'>
+    <div class="layui-tab" style="padding-top: 13px;">
+        <ul class="layui-tab-title">
+            <li class="layui-this">{% trans 'employee_department_filter' %}</li>
+            <li>{% trans 'employee_area_filter' %}</li>
+            <li>{% trans 'employee_position_filter' %}</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div id="{{ model_name }}-tree-container" class="layui-card">
+                    <div  id="{{ model_name }}-dept-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+                        <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                            class="fa fa-fw fa-check-square-o"></i></a></span>
+                        <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                            class="fa fa-fw fa-list"></i></a></span>
+                        <span name="sub"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                            class="fa fa-fw fa-sitemap"></i></a></span>
+                    </div>
+                    <div class="layui-card-body">
+                        <ul id="{{ model_name }}-tree" class="ztree ztree-pure" style="height: 400px; overflow-y: auto"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <div id="{{ model_name }}-tree-container" class="layui-card">
+                    <div  id="{{ model_name }}-area-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+                        <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                            class="fa fa-fw fa-check-square-o"></i></a></span>
+                        <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                            class="fa fa-fw fa-list"></i></a></span>
+                        <span name="sub"><a href="javascript:void(0);" title="{% trans 'area_tree_selectSubDepartment' %}"><i
+                            class="fa fa-fw fa-sitemap"></i></a></span>
+                    </div>
+                    <div class="layui-card-body">
+                        <ul id="{{ model_name }}-tree-area" class="ztree ztree-pure" style="height: 400px; overflow-y: auto"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-tab-item">
+                <div id="{{ model_name }}-tree-container" class="layui-card">
+                    <div  id="{{ model_name }}-position-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+                        <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                            class="fa fa-fw fa-check-square-o"></i></a></span>
+                        <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                            class="fa fa-fw fa-list"></i></a></span>
+                        <span name="sub"><a href="javascript:void(0);" title="{% trans 'position_tree_selectSubPosition' %}"><i
+                            class="fa fa-fw fa-sitemap"></i></a></span>
+                    </div>
+                    <div class="layui-card-body">
+                        <ul id="{{ model_name }}-tree-position" class="ztree ztree-pure" style="height: 400px; overflow-y: auto"></ul>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<!-- Filter End -->
+{% if request.user.is_employee %}
+<div class="layui-col-md12">
+{% else %}
+<div class="layui-col-md10">
+{% endif %}
+<div id="{{ model_name }}_fluid" class="layui-fluid">
+  <div class="layui-row layui-col-space15" style="margin-bottom: 0px">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header" style="background-color: #ffffff;">
+          <form id="{{ model_name }}-search-form" action="" class="layui-form fixed-search-form att-report-search-form">
+            {% csrf_token %}
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="{{ model_name }}-start-date" class="layui-form-label">{% trans 'report_searchField_startDate' %}</label>
+                <div class="layui-input-inline">
+                  <input id="{{ model_name }}-start-date" type="text" name="start_date"
+                         lay-verify="required"
+                         autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label for="{{ model_name }}-end-date" class="layui-form-label">{% trans 'report_searchField_endDate' %}</label>
+                <div class="layui-input-inline">
+                  <input id="{{ model_name }}-end-date" type="text" name="end_date"
+                         lay-verify="required"
+                         autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              {% if not request.user.is_employee %}
+              <div class="layui-inline" id="{{ model_name }}_search_employee">
+                <label for="" class="layui-form-label">{% trans 'report_searchField_employee' %}</label>
+                <div class="layui-input-inline">
+                  <div class="layui-form-select">
+                    <div class="layui-select-title">
+                      <input id="{{ model_name }}-employee" type="text" autocomplete="off" class="layui-input" readonly>
+                      <i id="{{ model_name }}-employee-select" class="layui-edge"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+              <div class="layui-inline">
+                <div class="button-3d {{ model_name }}-search" >
+                  <i class="fa fa-fw fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <div class="layui-hide"><input id="{{ model_name }}-selected-emp-container" type="hidden"></div>
+            <div class="layui-hide"><input id="{{ model_name }}SelectedEmployeeDetail" type="hidden"></div>
+          </form>
+        </div>
+        <script type="text/html" id="{{ model_name }}_toolbar">
+          <div class="layui-btn-container grid-toolbar" style="">
+            <ul class="layui-nav"></ul>
+          </div>
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-md-10">
+
+            </div>
+            <div class="col-md-2 dropdown">
+                    <span style="font-size: 16px">Export</span>
+                    <i class="fa fa-share dropdown-toggle" type="button" data-bs-toggle="dropdown" style="font-size: larger; padding: 5px; border: 1px solid #ddd;cursor: pointer;"></i>
+                <ul class="dropdown-menu" style="left: 15px;border-radius: 0;min-width: 125px;">
+                    <li><a href="#" class="statusReportExportCsv">CSV Export</a></li>
+                    <li><a href="#" onclick="stableToPdf('statusReportTest')">PDF Export</a></li>
+                    <li><a href="#" onclick="stableToExcel('statusReportTest', 'Monthly Attendance Status Report')">Excel Export</a></li>
+                </ul>
+            </div>
+        </div>
+    <div id="tab" class="scrollbar divTableDataHolder" id="style-1" style="margin-right: 30px;width: -webkit-fill-available;">
+        <div class="force-overflow" id="statusReportTest">
+            <table id="statusReport" class="table table-condensed table-hover table-bordered table-striped">
+                <thead id="myattendance">
+                    <tr>
+                        <th class="text-center" colspan="8">Employee Information</th>
+                        <th class="text-center" id="attendanceHeader" colspan="">Attendance</th>
+                        <th class="text-center" colspan="12"></th>
+                    </tr>
+                    <tr class="rowTest2">
+
+                    </tr>
+                    <tr class="rowTest3">
+
+                    </tr>
+                </thead>
+                <tbody class="rowTest">
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="layui-table-page" style="background-color: #ffffff;">
+        <div id="layui-table-page1">
+            <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-3">
+                <a href="javascript:;" data-page="1" class="layui-laypage-refresh"><i class="layui-icon layui-icon-refresh" id="layui-icon-statusrefresh"></i></a>
+                <span class="layui-laypage-limits"><select id="statusReportPageLimit" lay-ignore="">
+                    <option value="20">20</option>
+                    <option value="50" selected="">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                   <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                </select></span>
+                <a href="javascript:;" id="statusPrevious" class="layui-laypage-status layui-disabled" ><i class="layui-icon"></i></a>
+                <a href="javascript:;" id="statusNext" class="layui-laypage-status layui-disabled" ><i class="layui-icon"></i></a>
+                <span class="layui-laypage-statuscount"></span>
+                <span class="layui-laypage-skip">
+                    <input id="statusfindpage" type="number" min="1" value="1" class="layui-input">Page<button type="button" class="layui-laypage-btn statusReportPageFind">Confirm</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+var company_name = '';
+var company_logo = '';
+var company_logo_pos = '';
+var user = "{{ request.user.is_employee }}"
+
+function escape2Html(str) {
+  var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+  return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){
+    return arrEntities[t];
+  });
+}
+  $(function () {
+    var loadIndex = layer.load();
+    var h = $('#main_body').height()-200;
+    $('#statusReportTest').height(h);
+      layui.use(['form', 'element', 'laydate', 'tablePlug'], function () {
+          form = layui.form, laydate = layui.laydate,
+            element = layui.element;
+          form.render();
+          {% block search_form_init %}
+          var date = new Date();
+          var _start = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01';
+          var _end = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-' + leftInsertZero(date.getDate());
+          $('#{{ model_name }}-start-date').val(_start);
+          $('#{{ model_name }}-end-date').val(_end);
+          var startDate = laydate.render({
+            elem: '#{{ model_name }}-start-date',
+            type: 'date',
+            value: _start,
+            max: _end,
+            done: function (value, date) {
+              if (Object.keys(date).length !== 0) {
+                  endDate.config.min = {
+                    year: date.year,
+                    month: date.month - 1,
+                    date: date.date
+                  };
+              }
+              else {
+                endDate.config.min = {
+                    year: 1900,
+                    month: 01,
+                    date: 01
+                };
+                endDate.config.max = {
+                    year: 2099,
+                    month: 12,
+                    date: 31
+                };
+              }
+            }
+          });
+          var endDate = laydate.render({
+            elem: '#{{ model_name }}-end-date',
+            type: 'date',
+            value: _end,
+            min: _start,
+            done: function (value, date) {
+              if (Object.keys(date).length !== 0) {
+                  startDate.config.max = {
+                    year: date.year,
+                    month: date.month - 1,
+                    date: date.date
+                  };
+              }
+              else {
+                  startDate.config.min = {
+                      year: 1900,
+                      month: 01,
+                      date: 01
+                  };
+                  startDate.config.max = {
+                      year: 2099,
+                      month: 12,
+                      date: 31
+                  };
+              }
+            }
+          });
+          $("#{{ model_name }}_search_employee").click(function () {
+            $.ajax({
+              url: "/personnel/filter_resign_employee/"
+              , type: "GET"
+              , dataType: "html"
+              , success: function (response) {
+                layer.open({
+                  title: gettext("employee_frame_title")
+                  , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+                  , area: ['auto', 'auto']
+                  , content: response
+                  , yes: function (index, layero) {
+                    var selectedEmp = $(layero).find("#employee-frame-selected-container").val();
+                    var selectedEmpDetail = $(layero).find("#employeeFrameSelectedDetailContainer").val();
+                    $("#{{ model_name }}-selected-emp-container").val(selectedEmp);
+                    $("#{{ model_name }}-employee").val(selectedEmpDetail);
+                    layer.close(index);
+                  }
+                });
+              }
+            });
+          });
+          $(".{{ model_name }}-search").click();
+          var getDates = function(startDate, endDate) {
+        var dates = [],
+        currentDate = startDate,
+        addDays = function(days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        };
+        while (currentDate <= endDate) {
+            dates.push(currentDate);
+            currentDate = addDays.call(currentDate, 1);
+        }
+        return dates;
+    };
+    var weekday = new Array(7);
+    weekday[0] = "Su";
+    weekday[1] = "Mo";
+    weekday[2] = "Tu";
+    weekday[3] = "We";
+    weekday[4] = "Th";
+    weekday[5] = "Fr";
+    weekday[6] = "Sa";
+
+    $(".{{ model_name }}-search").click(function () {
+        var deptID = -1;
+        var areaIDs = -1;
+        var positionIDs = -1;
+        report_filter(deptID, areaIDs, positionIDs);
+    });
+
+    function report_filter(deptID, areaIDs, positionIDs) {
+        var loadIndex = layer.load();
+        var start = $('#{{ model_name }}-start-date').val();
+        var end = $('#{{ model_name }}-end-date').val();
+        if (user === "True") {
+            var emp = `{{ request.user.pk }}`;
+        }else{
+            var emp = $("#{{ model_name }}-selected-emp-container").val();
+        }
+        if (start == '' && end == '') {
+            $('#{{ model_name }}-start-date').addClass("layui-form-danger");
+            $('#{{ model_name }}-end-date').addClass("layui-form-danger");
+            $('#{{ model_name }}-start-date').attr('title', 'This Field is Required');
+            $('#{{ model_name }}-end-date').attr('title', 'This Field is Required');
+            layer.alert("{% trans 'field_required' %}", {title: gettext("layer_title_error"), icon: 5, time: 1500, btn: []});
+            return;
+        } else if(start == ''){
+            $('#{{ model_name }}-end-date').removeClass("layui-form-danger");
+            $('#{{ model_name }}-end-date').removeAttr('title');
+            $('#{{ model_name }}-start-date').addClass("layui-form-danger");
+            $('#{{ model_name }}-start-date').attr('title', 'This Field is Required');
+            layer.alert("{% trans 'field_required' %}", {title: gettext("layer_title_error"), icon: 5, time: 1500, btn: []});
+            return;
+        } else if (end == '') {
+            $('#{{ model_name }}-start-date').removeClass("layui-form-danger");
+            $('#{{ model_name }}-start-date').removeAttr('title');
+            $('#{{ model_name }}-end-date').addClass("layui-form-danger");
+            $('#{{ model_name }}-end-date').attr('title', 'This Field is Required');
+            layer.alert("{% trans 'field_required' %}", {title: gettext("layer_title_error"), icon: 5, time: 1500, btn: []});
+            return;
+        } else {
+            $('#{{ model_name }}-start-date').removeClass("layui-form-danger");
+            $('#{{ model_name }}-end-date').removeClass("layui-form-danger");
+            $('#{{ model_name }}-start-date').removeAttr('title');
+            $('#{{ model_name }}-end-date').removeAttr('title');
+        }
+        var dates = getDates(new Date(start), new Date(end));
+        var pageLimit = $('#statusReportPageLimit').find(":selected").text();
+        var page = $('#statusfindpage').val();
+        var tr2 = '';
+        var tr3 = '';
+        tr3 += '<th class="text-center" rowspan="">Sl No</th>\n' +
+            '                    <th class="text-center" rowspan="">Code</th>\n' +
+            '                    <th class="text-center" rowspan="">First Name</th>\n' +
+            '                    <th class="text-center" rowspan="">Last Name</th>\n' +
+            '                    <th class="text-center" rowspan="">Position</th>\n' +
+            '                    <th class="text-center" rowspan="">Gender</th>\n' +
+            '                    <th class="text-center" rowspan="">Department</th>\n' +
+            '                    <th class="text-center" rowspan="">Emp Status</th>';
+        tr2 += '<th ></th><th ></th><th ></th><th ></th><th ></th><th ></th><th ></th><th ></th>';
+        dates.forEach(function(date) {
+            var day = date.getDate();
+            var days = weekday[date.getDay()];
+            tr2 += '<th class="text-center">'+days+'</th>';
+            tr3 += '<th class="text-center">'+day+'</th>';
+        });
+        tr2 += '<th class="text-center">NWD</th><th class="text-center">WO</th><th class="text-center">H</th><th class="text-center">TW</th><th class="text-center">P</th><th class="text-center">A</th><th class="text-center">HD</th><th class="text-center">L</th><th class="text-center">EL</th><th class="text-center">LD</th><th class="text-center">LB</th><th class="text-center">PD</th>';
+        tr3 += '<th class="text-center">Net Working Day</th><th class="text-center">Week off</th><th class="text-center">Holiday</th><th class="text-center">Total Working</th><th class="text-center">Present</th><th class="text-center">Absent</th><th class="text-center">Half day</th><th class="text-center">Late</th><th class="text-center">Early Leave</th><th class="text-center">Leave Days</th><th class="text-center">Leave Balance</th><th class="text-center">Paid Days</th>';
+
+    var color_report = '';
+    var symbols = '';
+    $.ajax({
+          url: "/att/color_report/",
+          type: "get",
+          dataType: "json",
+          success: function(datas) {
+              var test = datas['colors'];
+              color_report = test;
+              symbols = datas['symbols'];
+              company_name = test['company_name'];
+              company_logo = test['company_logo'];
+              company_logo_pos = test['company_logo_pos'];
+          }
+    });
+        if (user === "True") {
+          var monthlyAttendanceUrl = "att/api/monthlyattendanceReport/?start_date="+start+"&end_date="+end+"&employees="+emp+"&page_size="+pageLimit+"&page="+page;
+        }else{
+          var monthlyAttendanceUrl = "att/api/monthlyattendanceReport/?start_date="+start+"&end_date="+end+"&employees="+emp+"&page_size="+pageLimit+"&page="+page+"&departments="+deptID+"&areas="+areaIDs+"&positions="+positionIDs;
+        }
+        $.ajax({
+           url: monthlyAttendanceUrl
+          , type: "get"
+          , dataType: "json"
+          , success: function (response) {
+              var total_records = response["count"];
+              var data = response["data"];
+              var statusNext = response['next'];
+              var statusPrevious = response['previous'];
+              if(statusNext){
+                  $('#statusNext').attr('class', "layui-laypage-status layui-enabled");
+              }else{
+                  $('#statusNext').attr('class', "layui-laypage-status layui-disabled");
+              }
+              if(statusPrevious){
+                  $('#statusPrevious').attr('class', "layui-laypage-status layui-enabled");
+              }else{
+                  $('#statusPrevious').attr('class', "layui-laypage-status layui-disabled");
+              }
+              $('.layui-laypage-statuscount').text('Total '+total_records+' Records');
+              var data_count = data.length;
+              var tr_test = '';
+              $('.rowTest').html('');
+              $('.rowTest2').html('');
+              $('.rowTest3').html('');
+              $('.rowTest').html('');
+              $('.rowTest2').append(tr2);
+              $('.rowTest3').append(tr3);
+              for(var i=0;i<data_count;i++){
+                  var status = (data[i].status === 0) ? 'Active' : 'No Active';
+                  var position_name = data[i].position_name ? data[i].position_name : ' ';
+                  var last_name = data[i].last_name ? data[i].last_name : "";
+                  var gender = data[i].gender ? data[i].gender : "";
+                  tr_test += '<tr><td>'+(i+1)+'</td><td>'+data[i].emp_code+'</td><td>'+data[i].first_name+'</td><td>'+last_name+'</td><td>'+ position_name+'</td><td>'+gender+'</td><td>'+data[i].dept_name+'</td><td>'+status+'</td>';
+                  var netWorkingDays = 0;
+                  dates.forEach(function(date) {
+                        var day = date.getDate();
+                        var days = weekday[date.getDay()];
+                        var month = date.getMonth()+1;
+                        var mon = month.toString();
+                        var key1 = '';
+                        if(mon.length < 2){
+                            var mon = '0'+month.toString();
+                        }else{
+                            var mon = month.toString();
+                        }
+                        var key = day.toString();
+                        if(key.length < 2){
+                            var key1 = mon+'/0'+day.toString();
+                        }else{
+                            var key1 = mon+'/'+day.toString();
+                        }
+                        const emp_data = data[i];
+                        const emp_status_str = emp_data[key1];
+                        let status_str = '';
+                        if(emp_status_str){
+                            status_str = emp_status_str.split(',').map(emp_status => {
+                                if (emp_status.includes('+')){
+                                    const [first_status, second_status] = emp_status.split('+');
+                                    return `<span style="color:${color_report[symbols[first_status]]};">${symbols[first_status]}</span>+<span style="color:${color_report[symbols[second_status]]};">${symbols[second_status]}</span>`;
+                                }
+                                else if (symbols[emp_status]){
+                                    return `${escape2Html(`<span style="color:${color_report[symbols[emp_status]]};">${symbols[emp_status]}</span>`)}`;
+                                }
+                                else{
+                                    return `${escape2Html(`<span style="color:#000000;">${emp_status}</span>`)}`;
+                                }
+                            }).join(',');
+                            tr_test += `<td>${status_str}</td>`;
+                        }else{
+                            tr_test += '<td></td>';
+                        }
+                        netWorkingDays += 1;
+                  });
+                  datesLength = dates.length;
+                  var attendanceHeader = document.getElementById("attendanceHeader");
+                  attendanceHeader.setAttribute("colspan", datesLength);
+                  tr_test += '<td>'+data[i].total_workday+'</td>';
+                  tr_test += '<td>'+data[i].total_weekend+'</td>';
+                  tr_test += '<td>'+data[i].total_holiday+'</td>';
+                  tr_test += '<td>'+eval(data[i].total_holiday+data[i].total_weekend+data[i].total_workday)+'</td>';
+                  tr_test += '<td>'+eval(0.5*data[i].total_halfday_count+data[i].total_present_count)+'</td>';
+                  tr_test += '<td>'+eval(data[i].total_absent_count)+'</td>';
+                  tr_test += '<td>'+data[i].total_halfday_count+'</td>';
+                  tr_test += '<td>'+data[i].total_late_count+'</td>';
+                  tr_test += '<td>'+data[i].total_earlyleave_count+'</td>';
+                  tr_test += '<td>'+(data[i].paid_leave)+'</td>';
+                  tr_test += '<td>'+data[i].leave_balance_mr+'</td>';
+                  tr_test += '<td>'+eval(0.5*data[i].total_halfday_count+data[i].paid_leave+data[i].total_present_count+data[i].total_holiday+data[i].total_weekend)+'</td>';
+                  tr_test += '</tr>';
+              }
+              $('.rowTest').append(tr_test);
+              layer.close(loadIndex);
+          }
+          , error: function (xhr, error, e) {
+            layer.close(loadIndex);
+          }
+        });
+    }
+    if (user === "False") {
+    function refreshReport(searchType) {
+        // selected departments
+        var nodes = zTree.getCheckedNodes(true);
+        var deptID = [];
+        nodes.forEach(function (item) {
+            deptID.push(item.id);
+        });
+        if (deptID.length === 0) {
+            deptID.push(-1);
+        }
+        // selected areas
+        var areaNodes = zTree_area.getCheckedNodes(true);
+        var areaIDs = [];
+        areaNodes.forEach(function (item) {
+            areaIDs.push(item.id);
+        });
+        if (areaIDs.length === 0) {
+            areaIDs.push(-1);
+        }
+        // selected positions
+        var positionNodes = zTree_position.getCheckedNodes(true);
+        var positionIDs = [];
+        positionNodes.forEach(function (item) {
+            positionIDs.push(item.id);
+        });
+        if (positionIDs.length === 0) {
+            positionIDs.push(-1);
+        }
+        report_filter(deptID, areaIDs, positionIDs)
+    }
+    function onClick(event, treeId, treeNode) {
+        if(treeId == "{{ model_name }}-tree") {
+            zTree.checkNode(treeNode, !treeNode.checked, false, false);
+        } else if(treeId == "{{ model_name }}-tree-area"){
+            zTree_area.checkNode(treeNode, !treeNode.checked, false, false);
+        } else{
+            zTree_position.checkNode(treeNode, !treeNode.checked, false, false);
+        }
+        refreshReport('d');
+    }
+
+    function onCheck(event, treeId, treeNode) {
+        refreshReport('d');
+    }
+
+    function department_tree() {
+        var setting = {
+            view: {
+                dblClickExpand: false,
+                showIcon: false,
+                showLine: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            check: {
+                enable: true,
+                chkboxType: {"Y": "", "N": ""},
+                chkStyle: 'checkbox',
+                radioType: "all"
+            },
+            callback: {
+                onClick: onClick
+                , onCheck: onCheck
+            }
+        };
+        $.ajax({
+            url: "{% url 'biotime:personnel_department_tree_nodes' %}",
+            type: "GET",
+            dataType: "json",
+            success: function (nodes) {
+                zTree = $.fn.zTree.init($("#{{ model_name }}-tree"), setting, nodes);
+            }
+        });
+        $.ajax({
+            url: "{% url 'biotime:personnel_area_tree_nodes' %}",
+            type: "GET",
+            dataType: "json",
+            success: function (nodes) {
+                zTree_area = $.fn.zTree.init($("#{{ model_name }}-tree-area"), setting, nodes);
+            }
+        });
+        $.ajax({
+            url: "{% url 'biotime:personnel_position_tree_nodes' %}",
+            type: "GET",
+            dataType: "json",
+            success: function (nodes) {
+                zTree_position = $.fn.zTree.init($("#{{ model_name }}-tree-position"), setting, nodes);
+            }
+        });
+    }
+    department_tree();
+
+    <!--scroll start-->
+    var element = document.querySelector('#{{ model_name }}-tree');
+    element.scrollTop = element.scrollHeight;
+    <!--scroll end-->
+
+    $("#{{ model_name }}-dept-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            if (name === 'all') {
+                if (zTree.setting.check.chkStyle === 'checkbox') {
+                    zTree.checkAllNodes(false);
+                    refreshReport('d');
+                }
+            } else if (name === 'mul') {
+                var nodes = zTree.getCheckedNodes(true);
+                zTree.checkAllNodes(false);
+                if (nodes.length > 0) {
+                    zTree.checkNode(nodes[0], true, false, true);
+                }
+                zTree.setting.check.chkStyle = 'radio';
+            } else if (name === "sub") {
+                zTree.setting.check.chkboxType = {"Y": "", "N": ""};
+            }
+        }
+        else {
+            $(this).addClass('selected');
+            if (name === 'all') {
+                if (zTree.setting.check.chkStyle === 'checkbox') {
+                    zTree.checkAllNodes(true);
+                    refreshReport('d');
+                }
+            } else if (name === 'mul') {
+                zTree.setting.check.chkStyle = 'checkbox';
+            } else if (name === "sub") {
+                zTree.setting.check.chkboxType = {"Y": "s", "N": "s"};
+            }
+        }
+        zTree.refresh();
+    });
+    $("#{{ model_name }}-area-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            if (name === 'all') {
+                if (zTree_area.setting.check.chkStyle === 'checkbox') {
+                    zTree_area.checkAllNodes(false);
+                    refreshReport('d');
+                }
+            } else if (name === 'mul') {
+                var nodes = zTree_area.getCheckedNodes(true);
+                zTree_area.checkAllNodes(false);
+                if (nodes.length > 0) {
+                    zTree_area.checkNode(nodes[0], true, false, true);
+                }
+                zTree_area.setting.check.chkStyle = 'radio';
+            } else if (name === "sub") {
+                zTree_area.setting.check.chkboxType = {"Y": "", "N": ""};
+            }
+        } else {
+            $(this).addClass('selected');
+                if (name === 'all') {
+                    if (zTree_area.setting.check.chkStyle === 'checkbox') {
+                    zTree_area.checkAllNodes(true);
+                    refreshReport('d');
+                }
+                } else if (name === 'mul') {
+                    zTree_area.setting.check.chkStyle = 'checkbox';
+                } else if (name === "sub") {
+                    zTree_area.setting.check.chkboxType = {"Y": "s", "N": "s"};
+                }
+            }
+            zTree_area.refresh();
+        });
+    $("#{{ model_name }}-position-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+                if (name === 'all') {
+                    if (zTree_position.setting.check.chkStyle === 'checkbox') {
+                        zTree_position.checkAllNodes(false);
+                    refreshReport('d');
+                    }
+                } else if (name === 'mul') {
+                    var nodes = zTree_position.getCheckedNodes(true);
+                    zTree_position.checkAllNodes(false);
+                    if (nodes.length > 0) {
+                        zTree_position.checkNode(nodes[0], true, false, true);
+                    }
+                    zTree_position.setting.check.chkStyle = 'radio';
+                } else if (name === "sub") {
+                    zTree_position.setting.check.chkboxType = {"Y": "", "N": ""};
+                }
+        } else {
+            $(this).addClass('selected');
+            if (name === 'all') {
+                if (zTree_position.setting.check.chkStyle === 'checkbox') {
+                    zTree_position.checkAllNodes(true);
+                    refreshReport('d');
+                }
+            } else if (name === 'mul') {
+                 zTree_position.setting.check.chkStyle = 'checkbox';
+            } else if (name === "sub") {
+                 zTree_position.setting.check.chkboxType = {"Y": "s", "N": "s"};
+            }
+        }
+        zTree_position.refresh();
+    });
+    }
+       $(".{{ model_name }}-search").click();
+       {% endblock %}
+    });
+
+  });
+</script>
+<script>
+$('.statusReportExportCsv').click(function(){
+    var start = $('#{{ model_name }}-start-date').val();
+    var end = $('#{{ model_name }}-end-date').val();
+    var header_data = 'From '+start+' To '+end;
+    var csv = [header_data];
+    var rows = document.querySelectorAll("#statusReport tr");
+
+    for (var i = 0; i < rows.length; i++) {
+		var row = [], cols = rows[i].querySelectorAll("td, th");
+
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+
+		csv.push(row.join(","));
+	}
+    var filename =  'MonthlyAttendanceStatusReport.csv';
+    // Download CSV
+    download_csv(csv.join("\n"), filename);
+
+    document.querySelector("button").addEventListener("click", function () {
+        var html = document.querySelector("table").outerHTML;
+	    export_table_to_csv(html, "table.csv");
+    });
+    function download_csv(csv, filename) {
+        var csvFile;
+        var downloadLink;
+
+        // CSV FILE
+        csvFile = new Blob([csv], {type: "text/csv"});
+
+        // Download link
+        downloadLink = document.createElement("a");
+
+        // File name
+        downloadLink.download = filename;
+
+        // We have to create a link to the file
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+
+        // Make sure that the link is not displayed
+        downloadLink.style.display = "none";
+
+        // Add the link to your DOM
+        document.body.appendChild(downloadLink);
+
+        // Lanzamos
+        downloadLink.click();
+    }
+    });
+
+var stableToExcel = (function() {
+  let uri = 'data:application/vnd.ms-excel;base64,',
+        template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><title></title><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>{table}</table></body></html>',
+        base64 = function(s) { return window.btoa(decodeURIComponent(encodeURIComponent(s))) },
+        format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; })}
+        return function(table, name) {
+       var start = $('#{{ model_name }}-start-date').val();
+     var end = $('#{{ model_name }}-end-date').val();
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                            "July", "August", "September", "October", "November", "December"
+    ];
+    var start_dater = new Date(start);
+    var end_dater = new Date(end);
+    var gen_on = new Date().toString().substring(0, 25);
+    var newColspan = datesLength + 20;
+    var compColspan = newColspan - 1;
+    var sTable = '<tr><td  colspan="' + newColspan + '" style="font-size: 2em;border-top: 0; text-align: center;">Monthly Attendance Status</td></tr>';
+        sTable += '<tr><td colspan="' + newColspan + '" style="text-align: center;"><small>'+monthNames[start_dater.getMonth()]+'-'+start_dater.getDate()+'-'+start_dater.getFullYear()+' To '+monthNames[end_dater.getMonth()]+'-'+end_dater.getDate()+'-'+end_dater.getFullYear()+'</small></td></tr>';
+        sTable += '<tr><td style="text-align:left;">Company: '+company_name+'</td><td colspan="' + compColspan + '" style="text-align:right">Generated on: '+gen_on+'</td></tr>';
+
+    if (!table.nodeType) table = document.getElementById(table);
+    var ctx = {worksheet: name || 'Worksheet', table: sTable+table.innerHTML};
+    //window.location.href = uri + base64(format(template, ctx))
+    var link= document.createElement("a");
+    link.download= "MonthlyAttendanceStatusReport.xls";
+    link.href= uri + base64(format(template, ctx));
+    link.click();
+  }
+})();
+
+ function stableToPdf(tabId){
+        var start = $('#{{ model_name }}-start-date').val();
+        var end = $('#{{ model_name }}-end-date').val();
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+                            "July", "August", "September", "October", "November", "December"
+        ];
+        var start_dater = new Date(start);
+        var end_dater = new Date(end);
+        var gen_on = new Date().toString().substring(0, 25);
+        var newColspan = datesLength + 20;
+        if(company_logo !== ''){
+            if(company_logo_pos == '1'){
+                var logo_style = 'left';
+            }else if(company_logo_pos == '2'){
+                var logo_style = 'center';
+            }else{
+                var logo_style = 'right';
+            }
+            var sTable = '<table><thead><tr><td><span style="float:'+logo_style+';"><img src='+company_logo+'  width="200px" height="75px"></img><span></td></tr><tr><th width="100%" class="text-center" style="font-size: 2em;border-top: 0;"colspan="' + newColspan + '"">Monthly Attendance Status</th></tr>';
+        }else{
+            var sTable = '<table><thead><tr><th width="100%" class="text-center" style="font-size: 2em;border-top: 0;"colspan="' + newColspan + '">Monthly Attendance Status</th></tr>';
+        }
+        sTable += '<tr><th width="100%" class="text-center"><small>'+monthNames[start_dater.getMonth()]+'-'+start_dater.getDate()+'-'+start_dater.getFullYear()+' To '+monthNames[end_dater.getMonth()]+'-'+end_dater.getDate()+'-'+end_dater.getFullYear()+'</small></th></tr>';
+        sTable += '</thead><tbody><tr><td><span style="float:left;">Company: '+company_name+'</span><span style="float:right;">Generated on: '+gen_on+'</span></td></tr></tbody></table>';
+
+        sTable += $('#'+tabId).html();
+        var style = "<style> @page { size: 84.1cm 59.4cm;margin: 1cm 1cm 1cm 1cm; }";
+        style = style + "table {width: 100%;font: 17px Calibri;}";
+        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+        style = style + "padding: 2px 3px;text-align: center;}";
+        style = style + "</style>";
+
+        // CREATE A WINDOW OBJECT.
+        var win = window.open('', '', 'height=700,width=700');
+
+        win.document.write('<html><head>');
+        win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+        win.document.write('</body></html>');
+
+        win.document.close(); 	// CLOSE THE CURRENT WINDOW.
+
+        win.print();    // PRINT THE CONTENTS.
+    }
+</script>
+<script>
+    //this is for pagination
+    $("#layui-icon-statusrefresh").click(function(){
+        $(".{{ model_name }}-search").click();
+    });
+    $(".statusReportPageFind").click(function(){
+        $(".{{ model_name }}-search").click();
+    });
+    $('#statusReportPageLimit').change(function(){
+        $(".{{ model_name }}-search").click();
+    });
+    $('#statusPrevious').click(function(){
+        var current_page_value_status =  eval($('#statusfindpage').val());
+        if(current_page_value_status > 1) {
+            $('#statusfindpage').val(current_page_value_status - 1);
+        }
+        $(".{{ model_name }}-search").click();
+    });
+    $('#statusNext').click(function(){
+        var current_page_value_status = eval($('#statusfindpage').val());
+        $('#statusfindpage').val(current_page_value_status+1);
+        $(".{{ model_name }}-search").click();
+    });
+</script>

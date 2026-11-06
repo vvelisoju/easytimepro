@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_access"
+msgstr "アクセスコントロール"
+
+msgid "menu_group_access_control"
+msgstr "アクセスコントロール"
+
+msgid "menu_group_access_control_device"
+msgstr "デバイス"
+
+msgid "menu_access_timezone"
+msgstr "期間"
+
+msgid "menu_access_holiday"
+msgstr "休日"
+
+msgid "menu_access_groups"
+msgstr "グループ"
+
+msgid "menu_access_combination"
+msgstr "組合せ"
+
+msgid "menu_access_privilege"
+msgstr "特権"
+
+msgid "acc_timezone"
+msgstr "タイムゾーン"
+
+msgid "acc_holiday"
+msgstr "休日"
+
+msgid "acc_groups"
+msgstr "グループ"
+
+msgid "acc_combination"
+msgstr "組合せ"
+
+msgid "acc_privilege"
+msgstr "特権"
+
+msgid "accPrivilege_field_area"
+msgstr "エリア"
+
+msgid "accPrivilege_field_employee"
+msgstr "従業員"
+
+msgid "accPrivilege_field_group"
+msgstr "グループ"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "期間モード"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "期間1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "期間2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "期間3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "認証モード"
+
+msgid "clone_to_area"
+msgstr "エリアにクローンする"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "タイムゾーンno.範囲(1-50)"
+
+msgid "accTimezone_field_no"
+msgstr "タイムゾーンNo."
+
+msgid "accTimezone_field_name"
+msgstr "タイムゾーン名"
+
+msgid "accTimezone_field_remark"
+msgstr "備考"
+
+msgid "accTimezone_field_start"
+msgstr "開始時間"
+
+msgid "accTimezone_field_end"
+msgstr "終了時間"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "デフォルトタイムゾーンは削除できません."
+
+msgid "accTimezone_no_repeat"
+msgstr "この期間no.はすでに存在します."
+
+msgid "accHoliday_field_timezone"
+msgstr "期間"
+
+msgid "accHoliday_field_holiday"
+msgstr "休日名"
+
+msgid "accGroup_field_no"
+msgstr "グループNo."
+
+msgid "accGroup_field_name"
+msgstr "グループ名"
+
+msgid "accGroup_field_include_holiday"
+msgstr "休日を含め"
+
+msgid "default_group_can_not_be_removed"
+msgstr "デフォルトグループは削除できません."
+
+msgid "accGroup_field_no_maxValue"
+msgstr "グループno.範囲(1-99)"
+
+msgid "group_no_repeat"
+msgstr "このグループno.はすでに存在します."
+
+msgid "move_to_group_1"
+msgstr "グループ1に移動"
+
+msgid "current_group_1"
+msgstr "現在のグループ 1"
+
+msgid "accCombination_field_no"
+msgstr "組合せNo."
+
+msgid "accCombination_field_name"
+msgstr "組合せ名"
+
+msgid "accCombination_field_group1"
+msgstr "グループ1の従業員"
+
+msgid "accCombination_field_group2"
+msgstr "グループ2の従業員"
+
+msgid "accCombination_field_group3"
+msgstr "グループ3の従業員"
+
+msgid "accCombination_field_group4"
+msgstr "グループ4の従業員"
+
+msgid "accCombination_field_group5"
+msgstr "グループ5の従業員"
+
+msgid "accCombination_field_remark"
+msgstr "備考"
+
+msgid "combination_1_need_at_least_group"
+msgstr "組み合わせ1には少なくともグループが必要です"
+
+msgid "accPrivilege_action_adjust"
+msgstr "調整"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "アクセスコントロール特権調整"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "アクセスコントロール特権調整"
+
+msgid "select_none_timezone"
+msgstr "1つの期間を選択する必要があります"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "ユーザー"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "グループ"
+
+msgid "op_menu_group_groupMenu"
+msgstr "グループメニュー"
+
+msgid "door_action_open"
+msgstr "ドアを開ける"
+
+msgid "door_action_openHelpText"
+msgstr "ドアを開ける"
+
+msgid "door_action_openDescription"
+msgstr "ドアを開ける"
+
+msgid "door_action_cancelAlarm"
+msgstr "アラームキャンセル"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "アラームキャンセル"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "アラームキャンセル"
+
+msgid "accTerminal_field_doorName"
+msgstr "ドア名"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr "アクセスコントロールのオプション"
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "強迫オプション"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "アンチパスバック設定"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "ドアロック遅延"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "0 - 10 秒(s)"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "ドアセンサー遅延"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "1 - 255 秒(s)"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "ドアセンサータイプ"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "ドアアラーム遅延"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "0 - 999 秒(s)"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "アラームの再試行時間"
+
+msgid "terminal_name"
+msgstr "ターミナル名"
+
+msgid "menu_access_terminal"
+msgstr "デバイス"
+
+msgid "menu_access_terminalCommand"
+msgstr "デバイスコマンド"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "有効な休日"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "NC期間"
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "タイムゾーン番号(0 - 50)"
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "NO期間"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "タイムゾーン番号(0 - 50)"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "スピーカーアラーム"
+
+msgid "duress_options"
+msgstr "強迫オプション"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "強迫機能"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "アラームアン1:1マッチ"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "アラームアン1:Nマッチ"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "アラームアンパスワード"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "アラーム遅延"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "0 - 999 (秒)"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "アンチパスバックモード"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "ドアの方向"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "ノーマルオープン(NO)"
+
+msgid "door_sensor_type_normalClose"
+msgstr "ノーマルクローズ(NC)"
+
+msgid "door_sensor_type_none"
+msgstr "なし"
+
+msgid "retry_times_to_alarm_none"
+msgstr "なし"
+
+msgid "anti_passback_mode_no"
+msgstr "非アンチパスバック"
+
+msgid "anti_passback_mode_in"
+msgstr "インアンチパスバック"
+
+msgid "anti_passback_mode_out"
+msgstr "アウトアンチパスバック"
+
+msgid "anti_passback_mode_inOut"
+msgstr "イン/アウト アンチパスバック"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "アンチパスバックはドアステータスを保存したことがない"
+
+msgid "door_direction_none"
+msgstr "なし"
+
+msgid "door_direction_out"
+msgstr "アウト"
+
+msgid "door_direction_in"
+msgstr "イン"
+
+msgid "anti_passback_setup"
+msgstr "アンチパスバック設定"
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "選択したデバイスのロックを解除しますか？"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "選択したデバイスのアラームを解除しますか？"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "RS485による検証モード"
+
+msgid "accTerminal_field_pushTime"
+msgstr "プッシュ時間"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "指紋"
+
+msgid "485_verificationOption_Password"
+msgstr "パスワード"
+
+msgid "485_verificationOption_Card"
+msgstr "カード"
+
+msgid "door_action_setParameter"
+msgstr "パラメータ設定"
+
+msgid "door_action_setParameterHelpText"
+msgstr "アクセスコントロールパラメータ設定"
+
+msgid "door_action_setParameterDescription"
+msgstr "アクセスコントロールパラメータ設定"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "タイムゾーンが使用されているため、削除できません."
+
+msgid "used_group_can_not_be_removed"
+msgstr "グループが使用されているため、削除できません."
+
+msgid "permission_verboseName_acc"
+msgstr "アクセスコントロール"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "期間"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "休日"
+
+msgid "permission_verboseName_accGroups"
+msgstr "グループ"
+
+msgid "permission_verboseName_accCombination"
+msgstr "組合せ"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "特権"

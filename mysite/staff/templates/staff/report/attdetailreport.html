@@ -1,0 +1,98 @@
+{% extends 'staff/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  $.extend(opts, {
+  cols: [[
+  {field:'emp_code', title: "{% trans 'report_column_empCode' %}"}
+  ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+  ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+  ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+  ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+  ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}", sort:true}
+  ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}", sort:true}
+  ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+  ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+  ,{field:'attdate', title: "{% trans 'report_column_attendanceDate' %}", width:100, sort:true}
+  ,{field:'weekday', width:80, title: "{% trans 'report_column_attendanceWeekday' %}", width:100}
+  ,{field:'exception_detail', title: "{% trans 'report_column_exception' %}"}
+  ,{field:'timeinterval_name', title: "{% trans 'report_column_timeIntervalName' %}"}
+  ,{field:'check_in_time', title: "{% trans 'report_column_checkInTime' %}"}
+  ,{field:'check_out_time', title: "{% trans 'report_column_checkOutTime' %}"}
+  ,{field:'device_in', title: "{% trans 'report_column_deviceTn' %}"}
+  ,{field:'device_out', title: "{% trans 'report_column_deviceOut' %}"}
+  ,{field:'work_in', title: "{% trans 'report_column_workCodeIn' %}"}
+  ,{field:'work_out', title: "{% trans 'report_column_workCodeOut' %}"}
+  ,{field:'clock_in_time', title: "{% trans 'report_column_clockInTime' %}", templet: function(obj){
+    if(obj.late_time && obj.late_time != obj.break_late){
+      return '<span style="color: #DC143C;">'+ obj.clock_in_time +'</span>'
+    }else{
+      return obj.clock_in_time
+    }
+  }}
+  ,{field:'clock_out_time', title: "{% trans 'report_column_clockOutTime' %}", templet: function(obj){
+    if(obj.early_leave && obj.early_leave != obj.break_early){
+      return '<span style="color: #00CD66;">'+ obj.clock_out_time +'</span>'
+    }else{
+      return obj.clock_out_time
+    }
+  }}
+  ,{field:'total_time', title: "{% trans 'report_column_totalTimeDuration' %}", width:100}
+  ,{field:'break_out', title: "{% trans 'report_column_breakOutTime' %}"}
+  ,{field:'break_in', title: "{% trans 'report_column_breakInTime' %}", templet: function(obj){
+    if(obj.break_late || obj.break_early){
+      return '<span style="color: #FF5722;">'+ obj.break_in +'</span>'
+    }else{
+      return obj.break_in
+    }
+  }}
+ ,{field:'actual_break_duration', title: "{% trans 'report_column_actualBreakTimeDuration' %}"}
+  ,{field:'break_taken_duration', title: "{% trans 'report_column_breakTime' %}"}
+  ,{field:'late_time', title: "{% trans 'report_column_lateDuration' %}"}
+  ,{field:'break_late', title: "{% trans 'report_column_breakLateDuration' %}"}
+  ,{field:'early_leave', title: "{% trans 'report_column_earlyLeaveDuration' %}", width:100}
+  ,{field:'break_early', title: "{% trans 'report_column_breakEarlyLeaveDuration' %}"}
+  ,{field:'absent_time', title: "{% trans 'report_column_absentDuration' %}"}
+  ,{field:'break_absent', title: "{% trans 'report_column_breakTimeAbsentDuration' %}"}
+  ,{field:'total_work_time', title: "{% trans 'report_column_totalWorkedDuration' %}", width:100}
+  ,{field:'actual_work_time', title: "{% trans 'report_column_actualWorkedDuration' %}", width:100}
+  ,{field:'leave_time', title: "{% trans 'report_column_leaveDuration' %}"}
+  ,{field:'training_time', title: "{% trans 'report_column_trainingDuration' %}"}
+  ,{field:'short_time', title: "{% trans 'report_column_shortDuration' %}"}
+  ,{field:'overtime', title: "{% trans 'report_column_overtimeDuration' %}", templet: function(obj){
+    if(obj.approval_ot){
+      return '<span style="color: #50CEFF;">'+ obj.overtime +'</span>'
+    }else{
+      return obj.overtime
+    }
+  }}
+  ,{field:'timetable_long', title: "{% trans 'report_column_timetableDuration' %}"}
+  ,{field:'duty_duration', title: "{% trans 'report_column_attendanceDuration' %}"}
+  ,{field:'break_duty_duration', title: "{% trans 'report_column_breakTimeDuration' %}"}
+  ,{field:'normal_ot', title: "{% trans 'report_column_normalOvertime' %}", templet: function(obj){
+    if(obj.approval_ot){
+      return '<span style="color: #50CEFF;">'+ obj.normal_ot +'</span>'
+    }else{
+      return obj.normal_ot
+    }
+  }}
+  ,{field:'weekend_ot', title: "{% trans 'report_column_weekendOvertime' %}", templet: function(obj){
+    if(obj.approval_ot){
+      return '<span style="color: #50CEFF;">'+ obj.weekend_ot +'</span>'
+    }else{
+      return obj.weekend_ot
+    }
+  }}
+  ,{field:'holiday_ot', title: "{% trans 'report_column_holidayOvertime' %}", templet: function(obj){
+    if(obj.approval_ot){
+      return '<span style="color: #50CEFF;">'+ obj.holiday_ot +'</span>'
+    }else{
+      return obj.holiday_ot
+    }
+  }}
+  ,{field:'approval_ot', title: "{% trans 'report_column_approvalOvertime' %}"}
+  ,{field:'timetable_days', title: "{% trans 'report_column_timetableDays' %}"}
+  ]]
+  ,method: "get"
+  ,url: "/att/api/totalTimeCardReport/"
+  });
+{% endblock %}

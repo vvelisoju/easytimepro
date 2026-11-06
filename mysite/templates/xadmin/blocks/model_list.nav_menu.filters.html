@@ -1,0 +1,27 @@
+{% load i18n %}
+<style>
+    .filter-tab {
+        padding: 15px;
+    }
+    .filter-tab:hover {
+        text-decoration: none;
+        background-color: #eee;
+    }
+</style>
+<li class="dropdown" style="display:inline-flex;white-space:nowrap;">
+  <a id="{{ model_name }}_drop_filter" class="dropdown-toggle filter-tab"  role="button" data-bs-toggle="dropdown"
+     title="{% trans 'msg_customize_filters' %}" href="#" style="color:#333;">
+    <i class="fa fa-fw fa-filter"></i> {% trans "tool_filters" %}
+    {% if used_filter_num > 0 %}
+      <span class="badge badge-success">{{ used_filter_num }}</span>
+    {% endif %}
+  </a>
+  <ul id="{{ model_name }}_filter_menu" class="dropdown-menu filter-menu" role="menu"
+      aria-labelledby="{{ model_name }}_drop_filter">
+    {% if has_query_param %}
+      <li><a href="{{ clean_query_url }}"><i class="fa fa-trash-o"></i> {% trans "Clean Filters" %}</a></li>
+      <li class="divider"></li>
+    {% endif %}
+    {% for spec in filter_specs %}{{ spec|safe }}{% endfor %}
+  </ul>
+</li>

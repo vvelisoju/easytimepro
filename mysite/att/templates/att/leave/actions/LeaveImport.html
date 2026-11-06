@@ -1,0 +1,34 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 300px;min-width: 450px">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-form-item field-import_file">
+            <label class="layui-form-label" for="id_import_file">{% trans 'data_import_labelFile' %}</label>
+            <div class="layui-input-inline ">
+                <input type="file" name="import_file" lay-data="{accept: 'file'}" required="" id="id_import_file">
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block layui-form-mid layui-word-aux">{% trans 'data_import_fileHelpTxt' %}</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'date_import_labelExistingData' %}</label>
+            <div class="layui-input-inline">
+                <select name="import_type" id="id_import_type">
+                    <option value="0" selected="">{% trans 'date_import_typeOptionIgnore' %}</option>
+                    <option value="1">{% trans 'date_import_typeOptionOverwrite' %}</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"
+                   style="width: 150px;text-align: left">{% trans 'data_import_fileTemplateDemo' %}</label>
+            <div class="layui-input-inline" style="float: right">
+                <a target="_blank" style="color: #01AAED;"
+                   href="att/leave/import_template/"><i
+                        class="fa fa-download"></i>{% trans 'data_import_fileTemplateDownload' %}</a>
+            </div>
+        </div>
+    </form>
+</div>
+

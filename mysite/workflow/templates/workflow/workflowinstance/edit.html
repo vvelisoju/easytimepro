@@ -1,0 +1,60 @@
+{% load i18n static %}
+<div id="{{ model_name }}_edit_form" style="padding-top: : 200px; width: auto; ">
+    <form class="layui-form data-form" style="width:800px ;  " action="" method="post" >
+        {% csrf_token %}
+         
+           <div style="height:80px; width:auto; overflow-x:scroll ; padding-top: 10px;   ">     
+            <div  style="border: 1px solid #aaa;float: left; display: inline; border-radius: 4px;  color: #000;  
+            border-radius: 3px;
+            margin: 4px;
+            vertical-align: top;
+            width: 150px;
+            background-color: #3ADF00;">
+                    <label> Nodo1</label>
+                </br>
+                    <label>Status: Approved</label>
+                     
+            </div>
+            <img src="/media/img/se.png" style="float: left; padding-top: 10px">
+             
+            <div  style="border: 1px solid #aaa;float: left; display: inline; border-radius: 4px;  color: #000;  
+            border-radius: 3px;
+            margin: 4px;
+            vertical-align: top;
+            width: 150px;
+            background-color: #FE2E2E;">
+                    <label> Nodo2</label>
+                     </br>
+                    <label>Status: Reject</label>
+                   
+            </div>
+             <img src="/media/img/se.png" style="float: left ; padding-top: 10px">
+             
+            <div  style="border: 1px solid #aaa;float: left; display: inline; border-radius: 4px;  color: #000;  
+            border-radius: 3px;
+            margin: 4px;
+            vertical-align: top;
+            width: 150px;
+            background-color: #BDBDBD;">
+                    <label> Nodo3</label>
+                     </br>
+                    <label>Status: Pending</label>
+                   
+            </div>
+         </div>
+
+        <div>
+            {% for fieldset in adminform %}
+
+              {% include "includes/fieldset.html" %}
+            {% endfor %}
+
+        </div>
+    </form>
+</div>
+<script>
+    layui.use('form', function() {
+        var form = layui.form;
+        form.render();
+    });
+</script>

@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_access"
+msgstr "ควบคุมประตู"
+
+msgid "menu_group_access_control"
+msgstr "ควบคุมประตู"
+
+msgid "menu_group_access_control_device"
+msgstr "อุปกรณ์"
+
+msgid "menu_access_timezone"
+msgstr "ระยะเวลา"
+
+msgid "menu_access_holiday"
+msgstr "วันหยุด"
+
+msgid "menu_access_groups"
+msgstr "กลุ่ม"
+
+msgid "menu_access_combination"
+msgstr "รวมกัน"
+
+msgid "menu_access_privilege"
+msgstr "สิทธิ"
+
+msgid "acc_timezone"
+msgstr "ช่วงเวลา"
+
+msgid "acc_holiday"
+msgstr "วันหยุด"
+
+msgid "acc_groups"
+msgstr "กลุ่ม"
+
+msgid "acc_combination"
+msgstr "รวมกัน"
+
+msgid "acc_privilege"
+msgstr "กำหนดสิทธิ"
+
+msgid "accPrivilege_field_area"
+msgstr "โซน"
+
+msgid "accPrivilege_field_employee"
+msgstr "พนักงาน"
+
+msgid "accPrivilege_field_group"
+msgstr "กลุ่ม"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "โหมดช่วงเวลา"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "ช่วงเวลาที่ 1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "ช่วงเวลาที่ 2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "ช่วงเวลาที่ 3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "โหมดยืนยัน"
+
+msgid "clone_to_area"
+msgstr "โคลนไปยังพื้นที่"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "ลำดับช่วงเวลา(1-50)"
+
+msgid "accTimezone_field_no"
+msgstr "ลำดับช่วงเวลา"
+
+msgid "accTimezone_field_name"
+msgstr "ชื่อช่วงเวลา"
+
+msgid "accTimezone_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "accTimezone_field_start"
+msgstr "เวลาเริ่ม"
+
+msgid "accTimezone_field_end"
+msgstr "เวลาสิ้นสุด"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "ช่วงเวลาเริ่มต้นไม่สามารถลบได้"
+
+msgid "accTimezone_no_repeat"
+msgstr "ช่วงเวลานี้มีอยู่แล้ว."
+
+msgid "accHoliday_field_timezone"
+msgstr "ช่วงเวลา"
+
+msgid "accHoliday_field_holiday"
+msgstr "ชื่อวันหยุด"
+
+msgid "accGroup_field_no"
+msgstr "ลำดับกลุ่ม."
+
+msgid "accGroup_field_name"
+msgstr "ชื่อกลุ่ม"
+
+msgid "accGroup_field_include_holiday"
+msgstr "รวมถึงวันหยุด"
+
+msgid "default_group_can_not_be_removed"
+msgstr "กลุ่มเริ่มต้นไม่สามารถลบได้"
+
+msgid "accGroup_field_no_maxValue"
+msgstr "ลำดับกลุ่ม (1-99)"
+
+msgid "group_no_repeat"
+msgstr "ลำดับกลุ่มนี้มีอยู่แล้ว."
+
+msgid "move_to_group_1"
+msgstr "ย้ายไปที่กลุ่ม 1"
+
+msgid "current_group_1"
+msgstr "กลุ่มที่ 1 ในปัจจุบัน"
+
+msgid "accCombination_field_no"
+msgstr "ลำดับรวมกัน"
+
+msgid "accCombination_field_name"
+msgstr "ชื่อรวมกัน"
+
+msgid "accCombination_field_group1"
+msgstr "พนักงานจากกลุ่ม"
+
+msgid "accCombination_field_group2"
+msgstr "พนักงานจากกลุ่ม"
+
+msgid "accCombination_field_group3"
+msgstr "พนักงานจากกลุ่ม"
+
+msgid "accCombination_field_group4"
+msgstr "พนักงานจากกลุ่ม"
+
+msgid "accCombination_field_group5"
+msgstr "พนักงานจากกลุ่ม"
+
+msgid "accCombination_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "combination_1_need_at_least_group"
+msgstr "Combination ต้องการกลุ่มอย่างน้อย 1 "
+
+msgid "accPrivilege_action_adjust"
+msgstr "แก้ไข"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "แก้ไขสิทธิ์ควบคุมประตู"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "แก้ไขสิทธิ์ควบคุมประตู"
+
+msgid "select_none_timezone"
+msgstr "ต้องเลือกช่วงเวลา"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "พนักงาน"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "กลุ่ม"
+
+msgid "op_menu_group_groupMenu"
+msgstr "เมนูกลุ่ม"
+
+msgid "door_action_open"
+msgstr "เปิดประตู"
+
+msgid "door_action_openHelpText"
+msgstr "เปิดประตู"
+
+msgid "door_action_openDescription"
+msgstr "เปิดประตู"
+
+msgid "door_action_cancelAlarm"
+msgstr "ยกเลิกอลาม"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "ยกเลิกอลาม"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "ยกเลิกอลาม"
+
+msgid "accTerminal_field_doorName"
+msgstr "ชื้อประตู"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr "ตัวเลือกการควบคุมประตู"
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "ตัวเลือกป้องกัน"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "ตั้งป้องกันติดตาม"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "รีเลย์ของล็อคประตู"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "กรุณาใส่ 0-10"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "รีเลย์เซ็นเซอร์ประตู"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "กรุณาใส่ 1-255"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "ชนิดรีเลย์ประตู"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "รีเลย์ของอลาม"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "กรุณาใส่ 0-999"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "ช่วงเวลาอลาม"
+
+msgid "terminal_name"
+msgstr "ชื่ออุปกรณ์"
+
+msgid "menu_access_terminal"
+msgstr "อุปกรณ์"
+
+msgid "menu_access_terminalCommand"
+msgstr "คำสั่งอุปกรณ์"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "วันหยุดที่ถูกต้อง"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "ช่วงเวลา NC"
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "กรุณาใส่ 0-50"
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "ช่วงเวลา NO"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "หมายเลขช่วงเวลา (0 - 50)"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "อลามลำโพง"
+
+msgid "duress_options"
+msgstr "ตัวเลือกการป้องกัน"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "ฟังก์ชั่นการป้องกัน"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "อลามเมื่อ 1: 1 Match"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "อลามเมื่อ 1: N Match"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "อลามรหัสผ่าน"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "รีเลย์อลาม"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "0 - 999 (วินาที)"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "โหมดป้องกันติดตาม"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "ทิศทางประตู"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "NO"
+
+msgid "door_sensor_type_normalClose"
+msgstr "NC"
+
+msgid "door_sensor_type_none"
+msgstr "ไม่มี"
+
+msgid "retry_times_to_alarm_none"
+msgstr "ไม่มี"
+
+msgid "anti_passback_mode_no"
+msgstr "ไม่มีการป้องกันติดตาม"
+
+msgid "anti_passback_mode_in"
+msgstr "ป้องกันติดตามเข้า"
+
+msgid "anti_passback_mode_out"
+msgstr "ป้องกันติดตามออก"
+
+msgid "anti_passback_mode_inOut"
+msgstr "ป้องกันติดตามเข้า/ออก"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "ไม่มีสถานะประตูบันทึกการป้องกันติดตาม"
+
+msgid "door_direction_none"
+msgstr "ไม่มี"
+
+msgid "door_direction_out"
+msgstr "ออก"
+
+msgid "door_direction_in"
+msgstr "เข้า"
+
+msgid "anti_passback_setup"
+msgstr "ตั้งค่าการป้องกันติดตาม"
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "คุณแน่ใจหรือไม่ว่าจะปลดล็อคอุปกรณ์ที่เลือก"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "คุณแน่ใจที่จะปลดล็อคอุปกรณ์ที่เลือกไว้หรือไม่?"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "ตรวจสอบโหมดโดย RS485"
+
+msgid "accTerminal_field_pushTime"
+msgstr "ลงเวลา"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "ลายนิวมือ"
+
+msgid "485_verificationOption_Password"
+msgstr "รหัสผ่าน"
+
+msgid "485_verificationOption_Card"
+msgstr "การ์ด"
+
+msgid "door_action_setParameter"
+msgstr "ตั้งค่าพารามิเตอร์"
+
+msgid "door_action_setParameterHelpText"
+msgstr "ตั้งค่าพารามิเตอร์ควบคุมประตู"
+
+msgid "door_action_setParameterDescription"
+msgstr "ตั้งค่าพารามิเตอร์ควบคุมประตู"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "มีการใช้เขตเวลาไม่สามารถลบได้"
+
+msgid "used_group_can_not_be_removed"
+msgstr "กลุ่มถูกนำมาใช้ไม่สามารถลบได้"
+
+msgid "permission_verboseName_acc"
+msgstr "ควบคุมประตู"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "ช่วงเวลา"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "วันหยุด"
+
+msgid "permission_verboseName_accGroups"
+msgstr "กลุ่ม"
+
+msgid "permission_verboseName_accCombination"
+msgstr "การรวมกัน"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "สิทธิพิเศษ"

@@ -1,0 +1,77 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 300px;min-width: 450px">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-form-item field-import_file">
+            <label class="layui-form-label" for="id_import_file">{% trans 'data_import_labelFile' %}</label>
+            <div class="layui-input-inline ">
+                <input type="file" name="import_file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain"  id="id_import_file"  required=""  />
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block layui-form-mid layui-word-aux">{% trans 'data_import_fileHelpTxt' %}</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'date_import_labelExistingData' %}</label>
+            <div class="layui-input-inline">
+                <select name="import_type" id="id_import_type">
+                    <option value="0" selected="">{% trans 'date_import_typeOptionIgnore' %}</option>
+                    <option value="1">{% trans 'date_import_typeOptionOverwrite' %}</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"
+                   style="width: 150px;text-align: left">{% trans 'data_import_fileTemplateDemo' %}</label>
+            <div class="layui-input-inline" style="float: right">
+                <a target="_blank" style="color: #01AAED;"
+                   href="personnel/employeecertification/import_template/"><i
+                        class="fa fa-download"></i>{% trans 'data_import_fileTemplateDownload' %}</a>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <table class="layui-hide" id="demo"></table>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block"
+                 style="margin-left: 0px;min-height: 24px;">{% trans 'data_import_description' %}</div>
+            <div class="layui-input-block" style="margin-left: 20px;">
+                <p>{% trans 'data_import_employeecertificationImportRequired1' %}</p>
+                <p>{% trans 'data_import_employeecertificationImportRequired2' %}</p>
+            </div>
+        </div>
+    </form>
+
+</div>
+<script>
+    layui.use('table', function () {
+        var table = layui.table;
+        table.render({
+            elem: '#demo'
+            , cellMinWidth: 80
+            , cols: [[
+                {field: 'no', width: '5%', title: ''}
+                , {field: 'certification', width: '20%', title: 'A'}
+                , {field: 'employee', width: '20%', title: 'B'}
+                , {field: 'expire_on', width: '20%', title: 'C'}
+                , {field: 'email_alert', width: '15%', title: 'D'}
+                , {field: 'before', width: '20%', title: 'E'}
+            ]]
+            , data: [{
+                "no": "1"
+                , "certification": "{% trans 'certification' %}"
+                , "employee": "{% trans 'employee' %}"
+                , "expire_on": "{% trans 'employeeCert_field_expireOn' %}"
+                , "email_alert": "{% trans 'employeeCert_field_emailAlert' %}"
+                , "before": "{% trans 'employeeCert_field_before' %}"
+            }, {
+                "no": "2"
+                , "certification": "1"
+                , "employee": "1001"
+                , "expire_on": "2008-08-12"
+                , "email_alert": "{% trans 'boolean_option_yes' %}"
+                , "before": "5"
+            }]
+        });
+    });
+</script>

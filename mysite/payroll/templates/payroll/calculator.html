@@ -1,0 +1,221 @@
+{% load i18n %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+    #calc_div .layui-btn {
+        background-color: #009688;
+    }
+    .resize_btn_0 {
+        height: 35px;
+        width:60px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .resize_btn_1 {
+        width: 60px;
+        padding: 0;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .resize_btn_2 {
+        width: 130px;
+        padding: 0;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .resize_btn_2:nth-last-child(3){
+
+        width:130px;
+    }
+    .schedule_resize_btn_2   {
+      
+        width:130px;
+    }
+    
+    .input_area {
+        width: 410px;
+        margin-bottom: 20px;
+    }
+    #calc_input {
+        max-width: 436px;
+        height: 32px;
+    }
+</style>
+</head>
+
+<body>
+<div id="calc_div" style="margin: 23px 5px 28px 28px;">
+    <div class="input_area">
+        <form class="layui-form data-form" action="" method="post"  enctype="multipart/form-data">
+            <input id="calc_input" type="text" name="calc_input" class="layui-input" placeholder="Input" onkeydown="if(event.keyCode==13)return false;">
+        </form>
+    </div>
+    <div>
+        <div class="layui-btn-container"  style="width: 436px;  overflow:auto">
+            <button class="layui-btn resize_btn_1" onclick="button_click('clear')">C</button>
+            <button class="layui-btn resize_btn_1" onclick="button_click('back')"><i class="layui-icon">&#xe65c;</i></button>
+            <button class="layui-btn resize_btn_1" onclick="button_click('(')">(</button>
+            <button class="layui-btn resize_btn_1" onclick="button_click(')')">)</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'caleulator_basicSalary' %}" onclick="button_click('{Basic Salary}')">{% trans 'caleulator_basicSalary' %}</button>
+        </div>
+        <div class="layui-btn-container" style="width: 436px;  overflow:auto">
+            <button class="layui-btn resize_btn_0" onclick="button_click('7')">7</button>
+            <button class="layui-btn resize_btn_0" onclick="button_click('8')">8</button>
+            <button class="layui-btn resize_btn_0" onclick="button_click('9')">9</button>
+            <button class="layui-btn resize_btn_1" onclick="button_click('+')">+</button>
+            <button class="layui-btn resize_btn_2 schedule_resize_btn_2" title="{% trans 'caleulator_scheduleDays' %}" onclick="button_click('{Schedule Days}')">{% trans 'caleulator_scheduleDays' %}</button>
+        </div>
+        <div class="layui-btn-container" style="width: 436px;  overflow:auto">
+            <button class="layui-btn resize_btn_0" onclick="button_click('4')">4</button>
+            <button class="layui-btn resize_btn_0" onclick="button_click('5')">5</button>
+            <button class="layui-btn resize_btn_0" onclick="button_click('6')">6</button>
+            <button class="layui-btn resize_btn_1" onclick="button_click('-')">-</button>
+            <button class="layui-btn resize_btn_2 schedule_resize_btn_2" title="{% trans 'caleulator_schedulePeriod' %}" onclick="button_click('{Schedule Period}')">{% trans 'caleulator_schedulePeriod' %}</button>
+        </div>
+        <div class="layui-btn-container" style="width: 436px;  overflow:auto">
+            <button class="layui-btn resize_btn_0" onclick="button_click('1')">1</button>
+            <button class="layui-btn resize_btn_0" onclick="button_click('2')">2</button>
+            <button class="layui-btn resize_btn_0" onclick="button_click('3')">3</button>
+            <button class="layui-btn resize_btn_1" onclick="button_click('*')">*</button>
+            <button class="layui-btn resize_btn_2 check_resize_btn_2" onclick="button_click('check')">{% trans 'caleulator_check' %}</button>
+        </div>
+        <div class="layui-btn-container" style="width: 436px;  overflow:auto">
+            <button class="layui-btn resize_btn_1" onclick="button_click('**2')">X<sup style="line-height: 24px;">2</sup></button>
+            <button class="layui-btn resize_btn_0" onclick="button_click('0')">0</button>
+            <button class="layui-btn resize_btn_1" onclick="button_click('.')">.</button>
+            <button class="layui-btn resize_btn_1" onclick="button_click('/')">/</button>
+            <button class="layui-btn resize_btn_2 save_resize_btn_2" onclick="button_click('save')">{% trans 'btn_save' %}</button>
+        </div>
+    </div>
+
+    <div style="height: 239px; width: 436px; margin-top:10px; overflow:auto">
+        <div class="layui-btn-container">
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_overtimeLevel1' %}" onclick="button_click('{OT1}')">{% trans 'report_column_overtimeLevel1' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_overtimeLevel2' %}" onclick="button_click('{OT2}')">{% trans 'report_column_overtimeLevel2' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_dutyWorkedTime' %}" onclick="button_click('{Required Work}')">{% trans 'report_column_dutyWorkedTime' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_overtimeLevel3' %}" onclick="button_click('{OT3}')">{% trans 'report_column_overtimeLevel3' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_normalOvertime' %}" onclick="button_click('{Normal OT}')">{% trans 'report_column_normalOvertime' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_actualWorkDuration' %}" onclick="button_click('{Actual Work}')">{% trans 'report_column_actualWorkDuration' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_weekendOvertime' %}" onclick="button_click('{Weekend OT}')">{% trans 'report_column_weekendOvertime' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_holidayOvertime' %}" onclick="button_click('{Holiday OT}')">{% trans 'report_column_holidayOvertime' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_absentDuration' %}" onclick="button_click('{Absence}')">{% trans 'report_column_absentDuration' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_lateDuration' %}" onclick="button_click('{Late In}')">{% trans 'report_column_lateDuration' %}</button>
+            <button class="layui-btn resize_btn_2" title="{% trans 'report_column_earlyLeaveDuration' %}" onclick="button_click('{Early Leave}')">{% trans 'report_column_earlyLeaveDuration' %}</button>
+            {% for each_leave in leave_categorys %}
+            <button class="layui-btn resize_btn_2" title='{{ each_leave }}' onclick="button_click('{' + '{{ each_leave }}' + '}')">{{ each_leave }}</button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    var self_index = layer.index
+    $("#calc_input").val($("input[name='formula']").val());
+
+    function add_input(add_str) {
+        last_input = $("#calc_input");
+        last_val = last_input.val()
+        var input_obj = document.getElementById('calc_input');
+        focus_index = input_obj.selectionStart
+        last_input.val(last_val.substring(0, focus_index) + add_str + last_val.substring(focus_index, focus_index+last_val.length))
+        input_obj.selectionStart = focus_index + add_str.length
+        input_obj.selectionEnd = focus_index + add_str.length
+        console.log(input_obj.selectionStart)
+        input_obj.focus();
+    }
+    function clear_input() {
+        $("#calc_input").val('')
+        var input_obj = document.getElementById('calc_input');
+        input_obj.focus();
+    }
+    function back_input() {
+        last_input = $("#calc_input");
+        last_val = last_input.val()
+        var input_obj = document.getElementById('calc_input');
+        var focus_index = input_obj.selectionStart
+        var temp_focus_index = focus_index
+        if (last_val[focus_index - 1] == '}') {
+            while (focus_index > 0) {
+                if (last_val[focus_index - 1] == '{') {
+                    break;
+                }
+                focus_index = focus_index -1;
+            }
+        }
+        last_input.val(last_val.substring(0, focus_index-1) + last_val.substring(temp_focus_index, temp_focus_index+last_val.length))
+        input_obj.selectionStart = focus_index - 1
+        input_obj.selectionEnd = focus_index - 1
+        input_obj.focus();
+    }
+    function check_input() {
+        last_val = $("#calc_input").val()
+        if(last_val == ''){
+            layer.msg(gettext('please_fill_input_field_before_checking'), {icon: 5, time: 1000});
+            autoWordBreak()
+        }
+        $.ajax({
+            url: "/payroll/calculator/",
+            type: "POST",
+            dataType: "html",
+            data: {'check': last_val},
+            success: function(response) {
+                var res = JSON.parse(response)
+                if(res.code == 0) {
+                    layer.msg(gettext('check_success'), {icon: 6, time: 600});
+                } else {
+                    layer.msg(res.msg, {
+                        icon: 2,
+                        time: 0,
+                        closeBtn: 2,
+                        title: gettext('system_exception')
+                    });
+                }
+            },
+            error: function(response) {
+                layer.open({
+                    content: 'Check Error',
+                    btn: ['ok'],
+                    title: 'Message',
+                    icon: 5
+                });
+            }
+        })
+    }
+    function save_input() {
+        var calc_input = $('#calc_input').val();
+        if(calc_input == ''){
+            layer.msg(gettext('please_fill_input_field_before_saving'), {icon: 5, time: 1000});
+        }
+        else{
+            $("input[name='formula']").val($("#calc_input").val());
+            layer.close(self_index);
+        }
+    }
+    function button_click(ele_event) {
+        switch (ele_event) {
+            case 'clear':
+                clear_input()
+                break;
+            case 'back':
+                back_input()
+                break;
+            case 'check':
+                check_input()
+                break;
+            case 'save':
+                save_input()
+                break;
+            default:
+                add_input(ele_event)
+                break;
+        }
+    }
+</script>
+
+
+</body>
+</html>

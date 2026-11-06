@@ -1,0 +1,261 @@
+{% load i18n %}
+
+<div class="parallel_db_form">
+  <form id="id_paralleldb_Form" action="" class="layui-form" lay-filter="paralleldbForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"><i class="fa fa-database"></i><span style="padding-left: 5px">{% trans 'menu_sys_parallelDb' %}</span></div>
+          <table>
+            <tbody>
+            <tr>
+              <td>
+                <div class="layui-card-body" style="margin-top: 15px">
+                  <div class="layui-form-item">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_parallel_database"
+                             class="layui-form-label" style="width:240px">{% trans 'paralleldb_databaseType' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <select name="database" id="id_parallel_database"
+                                class="layui-input"
+                                lay-filter="parallelDatabase">
+                          {% if os_name == "nt" %}
+                            <option name='parallel_database' value="sqlserver_ado">{% trans 'db_sqlserver' %}</option>
+                          {% endif %}
+                          <option name='parallel_database' value="mysql">{% trans 'db_mysql' %}</option>
+                          <option name='parallel_database' value="oracle" id="id_database_oracle">{% trans 'db_oracle' %}</option>
+                          <option name='parallel_database' value="postgresql" id="id_database_psql">{% trans 'db_postgresql' %}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_database_addr"
+                             class="layui-form-label" style="width:240px">{% trans 'paralleldb_databaseAddress' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_addr" name="ip_address"
+                               value=""
+                               autocomplete="off"
+                               placeholder="" lay-verify="" class="layui-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_database_port"
+                             class="layui-form-label" style="width:240px">{% trans 'paralleldb_databasePort' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_port" name="port"
+                               value=""
+                               autocomplete="off" lay-verify="" class="layui-input">
+                      </div>
+                        <div class="layui-form-mid layui-word-aux">{% trans "enter_valid_port_number" %}</div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_database_name"
+                             class="layui-form-label" style="width:240px">{% trans 'parallel_databaseName' %}<span
+                        class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_name" name="database_name"
+                               value=""
+                               autocomplete="off" placeholder="" lay-verify=""
+                               class="layui-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_database_user"
+                             class="layui-form-label" style="width:240px">{% trans 'paralleldb_databaseUser' %}<span
+                        class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_user" name="user"
+                               value=""
+                               autocomplete="off" placeholder="" lay-verify=""
+                               class="layui-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_database_password"
+                             class="layui-form-label" style="width:240px">{% trans 'paralleldb_databasePassword' %}<span
+                        class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="password" id="id_database_password"
+                               name="password"
+                               value="" autocomplete="off" placeholder="" lay-verify=""
+                               class="layui-input">
+                      </div>
+                        <span id="isvisible" onclick="adjustvisible()">
+                            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                  </div>
+                  <div class="layui-form-item">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_service_type"
+                             class="layui-form-label" style="width:240px">{% trans 'parallelDb_field_serviceType' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <select name="service_type" id="id_service_type"
+                                class="layui-input"
+                                lay-filter="service_type">
+                          <option value="service_name" id="id_service_name">{% trans 'parallelDb_field_serviceName' %}</option>
+                          <option value="sid" id="id_sid">{% trans 'parallelDb_field_sid' %}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline" style="margin-bottom: 0px">
+                      <label for="id_duplicate_punch"
+                             class="layui-form-label" style="width:240px">{% trans 'parallelDb_field_duplicatePunch' %}<span
+                        class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="number" id="id_duplicate_punch"
+                               name="duplicate_punch"
+                               value=0 min=0 autocomplete="off" placeholder="" lay-verify=""
+                               class="layui-input">
+                      </div>
+                    </div>
+                  </div>
+                    </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <hr>
+        </div>
+        <div class="layui-form-item" id="parallel_form">
+          <div class="layui-input-block layui-inline" style="margin-left:45px">
+            <button id="id_dbconn_btn" class="layui-btn" lay-submit="" lay-filter="testDatabase">
+              {% trans 'adSettingPage_btn_submit' %}
+            </button>
+          </div>
+          <div class="layui-inline" id="id_paralleldb_clear">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form;
+        form.render();
+
+        form.on('submit(testDatabase)', function(data){
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                database: data.field['database'],
+                ip_address: data.field['ip_address'],
+                port: data.field['port'],
+                database_name: data.field['database_name'],
+                user: data.field['user'],
+                password: data.field['password'],
+                service_type: data.field['service_type'],
+                duplicate_punch: data.field['duplicate_punch']
+            }
+            const hasEmptyValue = Object.values(value).some(value => value.trim() === "");
+                if (hasEmptyValue) {
+                    layer.msg(gettext('{% trans 'please_fill_required_fields' %}'), {icon: 5});
+                    return false;
+                }
+            if (value['service_type'] == 'sid' && value['database'] != 'oracle'){
+                layer.msg(gettext('{% trans 'sid_only_support_oracle' %}'), {icon: 5});
+                return false;
+            }
+            if (Number(value['duplicate_punch']) < 0){
+                layer.msg(gettext('{% trans 'duplicate_punch_period_validationError' %}'), {icon: 5});
+                return false;
+            }
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/api/parallelDB/",
+                type: "POST",
+                data: {'name': 'paralleldb', value: JSON.stringify(value), csrfmiddlewaretoken: csrf},
+                dataType: 'json',
+                success: function (response, xhr) {
+                    layer.msg(gettext('connection_success'), {icon: 6});
+                    document.getElementById('id_paralleldb_clear').innerHTML= "<button class='layui-btn' id='id_delconn_btn' lay-submit='' lay-filter='delDatabase'>{% trans 'clear_parallel_db' %}</button>"
+                    layer.close(loadIndex);
+                }, error: function (xhr, error, e) {
+                    layer.msg(gettext(xhr.responseJSON.detail), {icon: 5});
+                    layer.close(loadIndex);
+                }
+            })
+            return false;
+        });
+        form.on('submit(delDatabase)', function (data) {
+            var loadIndex = layer.load();
+            layer.confirm("{% trans 'are_you_sure_to_delete_the_selected_item' %}", {
+                title:gettext('layer_title'),
+                btn: [gettext('btn_confirm'), gettext('btn_cancel')],
+            }, function (index){
+                $.ajax({
+                    url: "/base/api/parallelDB/delDatabase/",
+                    type: 'GET',
+                    success: function (response, xhr) {
+                        layer.msg(gettext('action_notification_successful'), {icon: 6});
+                        $("form").find('input[type="text"], input[type="password"], input[type="number"]').each(function(){
+                            $(this).val("");
+                        });
+                        document.getElementById('id_paralleldb_clear').innerHTML= ""
+                        layer.close(loadIndex);
+                    }, error: function (xhr, error, e) {
+                        layer.msg(gettext('action_notification_failed'), {icon: 5});
+                        layer.close(loadIndex);
+                    }
+                })
+            });
+            layer.close(loadIndex);
+            return false;
+        });
+
+        $(function () {
+            var apiUrl = '/base/api/parallelDB/?name=paralleldb';
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    var datas = response.data;
+                    datas[0].service_type = (datas[0].service_type == 1) ? "sid" : "service_name";
+                    if (datas.length > 0) {
+                        form.val('paralleldbForm', datas[0]);
+                        document.getElementById('id_paralleldb_clear').innerHTML= "<button class='layui-btn' id='id_delconn_btn' lay-submit='' lay-filter='delDatabase'>{% trans 'clear_parallel_db' %}</button>"
+                    }
+                }, error: function (xhr, error, e) {
+
+                }
+            });
+        });
+    });
+
+    var visible = true;
+    function adjustvisible() {
+        var classVis = "fa fa-eye";
+        var classUvis = "fa fa-eye-slash";
+        var input = $("#id_database_password");
+        if (visible) {
+            $("#isvisible").children("i").removeClass();
+            $("#isvisible").children("i").addClass(classVis);
+            visible = false;
+            input.attr("type", "text");
+        } else {
+            $("#isvisible").children("i").removeClass();
+            $("#isvisible").children("i").addClass(classUvis);
+            visible = true;
+            input.attr("type", "password");
+        }
+    }
+</script>

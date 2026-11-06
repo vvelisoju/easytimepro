@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_access"
+msgstr "Контроль доступу"
+
+msgid "menu_group_access_control"
+msgstr "Контроль доступу"
+
+msgid "menu_group_access_control_device"
+msgstr "Пристрій"
+
+msgid "menu_access_timezone"
+msgstr "Період часу"
+
+msgid "menu_access_holiday"
+msgstr "Відпустка"
+
+msgid "menu_access_groups"
+msgstr "Групи"
+
+msgid "menu_access_combination"
+msgstr "Поєднання"
+
+msgid "menu_access_privilege"
+msgstr "Привілей"
+
+msgid "acc_timezone"
+msgstr "Часовий пояс"
+
+msgid "acc_holiday"
+msgstr "Відпустка"
+
+msgid "acc_groups"
+msgstr "Група"
+
+msgid "acc_combination"
+msgstr "Поєднання"
+
+msgid "acc_privilege"
+msgstr "Привілей"
+
+msgid "accPrivilege_field_area"
+msgstr "Площа"
+
+msgid "accPrivilege_field_employee"
+msgstr "Співробітник"
+
+msgid "accPrivilege_field_group"
+msgstr "Група"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "Режим часового періоду"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "Час 1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "Час часу 2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "Час 3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "Режим перевірки"
+
+msgid "clone_to_area"
+msgstr "Клонувати в райони"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "Часовий період № діапазон (1-50)"
+
+msgid "accTimezone_field_no"
+msgstr "Час періоду №."
+
+msgid "accTimezone_field_name"
+msgstr "Ім'я періоду часу"
+
+msgid "accTimezone_field_remark"
+msgstr "Зауваження"
+
+msgid "accTimezone_field_start"
+msgstr "Час початку"
+
+msgid "accTimezone_field_end"
+msgstr "Час закінчення"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "Проміжок часу за замовчуванням неможливо видалити."
+
+msgid "accTimezone_no_repeat"
+msgstr "Цей період часу №. вже існує."
+
+msgid "accHoliday_field_timezone"
+msgstr "Період часу"
+
+msgid "accHoliday_field_holiday"
+msgstr "Ім'я відпустки"
+
+msgid "accGroup_field_no"
+msgstr "Група №."
+
+msgid "accGroup_field_name"
+msgstr "Назва групи"
+
+msgid "accGroup_field_include_holiday"
+msgstr "Включити свято"
+
+msgid "default_group_can_not_be_removed"
+msgstr "Групу за замовчуванням неможливо видалити."
+
+msgid "accGroup_field_no_maxValue"
+msgstr "Діапазон № групи (1-99)"
+
+msgid "group_no_repeat"
+msgstr "Ця група №. вже існує."
+
+msgid "move_to_group_1"
+msgstr "Перейти до групи 1"
+
+msgid "current_group_1"
+msgstr "Зараз група 1"
+
+msgid "accCombination_field_no"
+msgstr "Комбінація №."
+
+msgid "accCombination_field_name"
+msgstr "Ім'я комбінації"
+
+msgid "accCombination_field_group1"
+msgstr "Співробітник з групи"
+
+msgid "accCombination_field_group2"
+msgstr "Співробітник з групи"
+
+msgid "accCombination_field_group3"
+msgstr "Співробітник з групи"
+
+msgid "accCombination_field_group4"
+msgstr "Співробітник з групи"
+
+msgid "accCombination_field_group5"
+msgstr "Співробітник з групи"
+
+msgid "accCombination_field_remark"
+msgstr "Зауваження"
+
+msgid "combination_1_need_at_least_group"
+msgstr "Для комбінації 1 потрібна принаймні група"
+
+msgid "accPrivilege_action_adjust"
+msgstr "Налаштування"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "Налаштування права доступу до доступу"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "Налаштування права доступу до доступу"
+
+msgid "select_none_timezone"
+msgstr "Вибір одного періоду часу"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "Персонал"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "Група"
+
+msgid "op_menu_group_groupMenu"
+msgstr "Меню групи"
+
+msgid "door_action_open"
+msgstr "Відкрити двері"
+
+msgid "door_action_openHelpText"
+msgstr "Відкрити двері"
+
+msgid "door_action_openDescription"
+msgstr "Відкрити двері"
+
+msgid "door_action_cancelAlarm"
+msgstr "Скасувати тривогу"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "Скасувати тривогу"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "Скасувати тривогу"
+
+msgid "accTerminal_field_doorName"
+msgstr "Ім'я двері"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr "Параметри контролю доступу"
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "Параметри примусу"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "Налаштування анти-PassBack"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "Затримка блокування дверей"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "0 - 10 секунд"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "Затримка датчика дверей"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "1 - 255 секунд"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "Тип датчика дверей"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "Затримка тривоги дверей"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "0 - 999 секунд"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "Час повтору тривоги"
+
+msgid "terminal_name"
+msgstr "Назва терміналу"
+
+msgid "menu_access_terminal"
+msgstr "Пристрій"
+
+msgid "menu_access_terminalCommand"
+msgstr "Команда пристрою"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "Дійсні канікули"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "Період часу NC"
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "Номер часового поясу (0 - 50)"
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "НІ часовий період"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "Номер часового поясу (0 - 50)"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "Сигналізація гучномовця"
+
+msgid "duress_options"
+msgstr "Параметри примусу"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "Функція примусу"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "Сигнал тривоги 1: 1"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "Сигнал тривоги 1: N збіг"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "Сигналізація пароля"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "Затримка тривоги"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "0 - 999 (секунд)"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "Режим антивиходу"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "Напрямок дверей"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "Нормально відкрито (НІ)"
+
+msgid "door_sensor_type_normalClose"
+msgstr "Нормальне закриття (NC)"
+
+msgid "door_sensor_type_none"
+msgstr "Немає"
+
+msgid "retry_times_to_alarm_none"
+msgstr "Немає"
+
+msgid "anti_passback_mode_no"
+msgstr "Немає анти-передачі"
+
+msgid "anti_passback_mode_in"
+msgstr "У режимі антивиходу"
+
+msgid "anti_passback_mode_out"
+msgstr "Антизахист"
+
+msgid "anti_passback_mode_inOut"
+msgstr "Антизахист вводу / виходу"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "Не збережено стан дверей проти заходу"
+
+msgid "door_direction_none"
+msgstr "Немає"
+
+msgid "door_direction_out"
+msgstr "Вихід"
+
+msgid "door_direction_in"
+msgstr "В"
+
+msgid "anti_passback_setup"
+msgstr "Налаштування антивіддачі"
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "Ви впевнені, що розблокуєте вибрані пристрої?"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "Ви впевнені, що не вибрано вибраних пристроїв?"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "Перевірити режим RS485"
+
+msgid "accTerminal_field_pushTime"
+msgstr "Час Push"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "Відбиток пальця"
+
+msgid "485_verificationOption_Password"
+msgstr "Пароль"
+
+msgid "485_verificationOption_Card"
+msgstr "Картка"
+
+msgid "door_action_setParameter"
+msgstr "Встановити параметр"
+
+msgid "door_action_setParameterHelpText"
+msgstr "Встановити параметр контролю доступу"
+
+msgid "door_action_setParameterDescription"
+msgstr "Встановити параметр контролю доступу"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "Часовий пояс використаний, його неможливо видалити."
+
+msgid "used_group_can_not_be_removed"
+msgstr "Група використана, її неможливо видалити."
+
+msgid "permission_verboseName_acc"
+msgstr "Контроль доступу"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "Період часу"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "Відпустка"
+
+msgid "permission_verboseName_accGroups"
+msgstr "Групи"
+
+msgid "permission_verboseName_accCombination"
+msgstr "Поєднання"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "Привілей"
+
+msgid "accPrivilege washing_adjust"
+msgstr "Налаштування"

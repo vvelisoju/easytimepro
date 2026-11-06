@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_hans\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_access"
+msgstr "门禁"
+
+msgid "menu_group_access_control"
+msgstr "门禁"
+
+msgid "menu_group_access_control_device"
+msgstr "设备"
+
+msgid "menu_access_timezone"
+msgstr "时间段"
+
+msgid "menu_access_holiday"
+msgstr "节假日"
+
+msgid "menu_access_groups"
+msgstr "门禁组"
+
+msgid "menu_access_combination"
+msgstr "开锁组合"
+
+msgid "menu_access_privilege"
+msgstr "门禁权限"
+
+msgid "acc_timezone"
+msgstr "时间段"
+
+msgid "acc_holiday"
+msgstr "节假日"
+
+msgid "acc_groups"
+msgstr "门禁组"
+
+msgid "acc_combination"
+msgstr "开锁组合"
+
+msgid "acc_privilege"
+msgstr "门禁权限"
+
+msgid "accPrivilege_field_area"
+msgstr "区域"
+
+msgid "accPrivilege_field_employee"
+msgstr "人员"
+
+msgid "accPrivilege_field_group"
+msgstr "门禁组"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "时间段模式"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "时间段1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "时间段2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "时间段3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "验证模式"
+
+msgid "clone_to_area"
+msgstr "克隆"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "时间段编号范围：1-50"
+
+msgid "accTimezone_field_no"
+msgstr "时间段编号"
+
+msgid "accTimezone_field_name"
+msgstr "时间段名称"
+
+msgid "accTimezone_field_remark"
+msgstr "备注"
+
+msgid "accTimezone_field_start"
+msgstr "开始时间"
+
+msgid "accTimezone_field_end"
+msgstr "结束时间"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "默认时间段不能删除。"
+
+msgid "accTimezone_no_repeat"
+msgstr "该时间段编号已存在。"
+
+msgid "accHoliday_field_timezone"
+msgstr "时间段"
+
+msgid "accHoliday_field_holiday"
+msgstr "节假日名称"
+
+msgid "accGroup_field_no"
+msgstr "门禁组编号"
+
+msgid "accGroup_field_name"
+msgstr "门禁组名称"
+
+msgid "accGroup_field_include_holiday"
+msgstr "节假日时间段"
+
+msgid "default_group_can_not_be_removed"
+msgstr "默认门禁组不能删除。"
+
+msgid "accGroup_field_no_maxValue"
+msgstr "门禁组编号范围：1-99"
+
+msgid "group_no_repeat"
+msgstr "该门禁组编号已存在。"
+
+msgid "move_to_group_1"
+msgstr "移到门禁组1"
+
+msgid "current_group_1"
+msgstr "当前门禁组1"
+
+msgid "accCombination_field_no"
+msgstr "开锁组合编号"
+
+msgid "accCombination_field_name"
+msgstr "开锁组合名称"
+
+msgid "accCombination_field_group1"
+msgstr "员工来自组"
+
+msgid "accCombination_field_group2"
+msgstr "员工来自组"
+
+msgid "accCombination_field_group3"
+msgstr "员工来自组"
+
+msgid "accCombination_field_group4"
+msgstr "员工来自组"
+
+msgid "accCombination_field_group5"
+msgstr "员工来自组"
+
+msgid "accCombination_field_remark"
+msgstr "备注"
+
+msgid "combination_1_need_at_least_group"
+msgstr "开锁组合1需要分配组"
+
+msgid "accPrivilege_action_adjust"
+msgstr "调整"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "调整门禁权限"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "调整门禁权限"
+
+msgid "select_none_timezone"
+msgstr "需要选择一个时间段"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "人员"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "门禁组"
+
+msgid "op_menu_group_groupMenu"
+msgstr "门禁组菜单"
+
+msgid "door_action_open"
+msgstr "远程开门"
+
+msgid "door_action_openHelpText"
+msgstr "远程开门"
+
+msgid "door_action_openDescription"
+msgstr "远程开门"
+
+msgid "door_action_cancelAlarm"
+msgstr "取消报警"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "取消报警"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "取消报警"
+
+msgid "accTerminal_field_doorName"
+msgstr "门名称"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr "门禁参数"
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "胁迫参数"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "反潜参数"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "锁驱动时长"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "请输入数字0-10"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "门磁延时"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "请输入数字 1-255"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "门磁类型"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "报警延时"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "请输入数字：0-999"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "错按报警次数"
+
+msgid "terminal_name"
+msgstr "设备名称"
+
+msgid "menu_access_terminal"
+msgstr "设备"
+
+msgid "menu_access_terminalCommand"
+msgstr "设备命令"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "有效节假日"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "常关时间段"
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "请输入数字0-50"
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "常开时间段"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "时间段编号（0-50）"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "本机报警"
+
+msgid "duress_options"
+msgstr "胁迫参数"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "胁迫功能"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "1:1验证报警"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "1:N验证报警"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "密码验证报警"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "报警延时(s)"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "0-999（秒）"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "反潜模式"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "反潜方向"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "常开(NO)"
+
+msgid "door_sensor_type_normalClose"
+msgstr "常关(NC)"
+
+msgid "door_sensor_type_none"
+msgstr "无"
+
+msgid "retry_times_to_alarm_none"
+msgstr "无"
+
+msgid "anti_passback_mode_no"
+msgstr "无反潜"
+
+msgid "anti_passback_mode_in"
+msgstr "入反潜"
+
+msgid "anti_passback_mode_out"
+msgstr "出反潜"
+
+msgid "anti_passback_mode_inOut"
+msgstr "出入反潜"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "无且保存"
+
+msgid "door_direction_none"
+msgstr "无"
+
+msgid "door_direction_out"
+msgstr "出"
+
+msgid "door_direction_in"
+msgstr "入"
+
+msgid "anti_passback_setup"
+msgstr "反潜设置"
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "确定对已选设备进行远程开门？"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "确定对已选设备取消报警？"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "RS485验证方式"
+
+msgid "accTerminal_field_pushTime"
+msgstr "最近同步时间"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "指纹"
+
+msgid "485_verificationOption_Password"
+msgstr "密码"
+
+msgid "485_verificationOption_Card"
+msgstr "卡"
+
+msgid "door_action_setParameter"
+msgstr "参数设置"
+
+msgid "door_action_setParameterHelpText"
+msgstr "设置门禁参数"
+
+msgid "door_action_setParameterDescription"
+msgstr "设置门禁参数"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "时间段已被使用，不能删除。"
+
+msgid "used_group_can_not_be_removed"
+msgstr "门禁组已被使用，不能删除。"
+
+msgid "permission_verboseName_acc"
+msgstr "门禁"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "时间段"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "节假日"
+
+msgid "permission_verboseName_accGroups"
+msgstr "门禁组"
+
+msgid "permission_verboseName_accCombination"
+msgstr "开锁组合"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "门禁权限"

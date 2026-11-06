@@ -1,0 +1,55 @@
+{% load i18n static common %}
+<div id="{{ model_name }}_edit_form" style="{% block form_style %}padding: 10px;{% endblock %}">
+    {% block edit_form %}
+    <form class="layui-form data-form" action="" method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+        {% with adminform.form as f %}
+            {% layui_form_item f.name %}
+            {% layui_form_item f.category %}
+
+            <div class="layui-form-item field-formula">
+                <label class="layui-form-label" for="id_formula" style="width: 100px; min-width: 0px; max-width: 100px;">{% trans 'leaveFormula_field_formula' %}<span class="required">*</span></label>
+                <div class="layui-input-inline ">
+                    {{ f.formula }}
+                </div>
+                <div class="button-3d" type="text" id='calculator_id'>
+                  <i class="fa fa-calculator fa-2x"></i>
+                </div>
+            </div>
+
+
+            {% layui_form_item f.remark %}
+        {% endwith %}
+
+        {% block add_fields %}
+        {% endblock %}
+    </form>
+    {% endblock %}
+</div>
+<script>
+    layui.use(['form', 'laydate','layer'], function() {
+        var form = layui.form, laydate = layui.laydate;
+            layer = layui.layer,
+        form.render();
+    });
+
+    $('#calculator_id').on('click', function () {
+        $.ajax({
+            url: "/payroll/calculator/",
+            type: "GET",
+            dataType: "html",
+            success: function(pannel) {
+                layer.open({
+                    type: 1,
+                    title: "{% trans 'caleulator_title' %}",
+                    zIndex: 1006,
+                    area: ['490px', '600px'],
+                    content: pannel,
+                });
+            },
+            error: function(response) {
+                console.log(response.responseText);
+            }
+        })
+    });
+</script>

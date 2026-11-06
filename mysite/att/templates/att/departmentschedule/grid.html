@@ -1,0 +1,241 @@
+{% extends "data_grid.html" %}
+{% load i18n iclock_tags %}
+{% block main_body %}
+<input type="hidden" id="id_{{ model_name }}SelectedShift" value=""/>
+<div class="layui-row layui-col-space15" style="margin-top: 0px; margin-bottom: 0px">
+  <div class="layui-col-md9">
+      <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+      <script type="text/html" id="{{ model_name|safe }}_toolbar">
+        <div class="layui-btn-container grid-toolbar" style="">
+          <ul class="layui-nav" ></ul>
+        </div>
+      </script>
+  </div>
+  <div class="layui-col-md3">
+    <div id="id_shift_detail_{{ model_name }}" class="layui-card">
+      <div class="layui-card-header" style="background-color: #e6e6e6">
+        {% trans 'shiftDetail_grid_detailLabel' %}
+      </div>
+      <div class="layui-card-body">
+        <form class="layui-form" id="{{ model_name }}SearchForm">
+          <div class="layui-form-item">
+              <div class="layui-input-inline" style="width: 100px !important;">
+                <input class="layui-input"  autocomplete="off" style="width: 100px !important;" data-date-format="yyyy-mm-dd" id="{{ model_name }}_start_date">
+              </div>
+            <div class="layui-form-mid">-</div>
+              <div class="layui-input-inline" style="width: 100px !important;">
+                <input class="layui-input"  autocomplete="off" style="width: 100px !important;" data-date-format="yyyy-mm-dd" id="{{ model_name }}_end_date">
+            </div>
+            <div class="layui-inline">
+              <div id="id_{{ model_name }}_search" class="button-3d">
+                <i class="fa fa-fw fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div id="id_{{ model_name }}ShiftDetail" style="overflow-y: scroll"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block valid_form %}
+  var week=[
+    "{% trans 'weekday_option_sunday' %}",
+    "{% trans 'weekday_option_monday' %}",
+    "{% trans 'weekday_option_tuesday' %}",
+    "{% trans 'weekday_option_wednesday' %}",
+    "{% trans 'weekday_option_thursday' %}",
+    "{% trans 'weekday_option_friday' %}",
+    "{% trans 'weekday_option_saturday' %}"
+  ];
+  var nowDate = new Date();
+  var cur = moment(new Date());
+  var fullStartOfMonth = cur.startOf('month').format('YYYY-MM-DD');
+  var fullEndOfMonth = cur.endOf('month').format('YYYY-MM-DD');
+  function getTimeStr(t){
+    return t<10? '0'+t: t;
+  }
+
+  function datesRange(startDate, endDate) {
+    let dateList = [];
+    let currentDate = new Date(startDate);
+    endDate = new Date(endDate);
+
+    while (currentDate <= endDate) {
+      dateList.push(currentDate.toISOString().split('T')[0]);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    return dateList;
+  }
+  function weekoff_color(date) {
+    let day_name = new Date(date).toLocaleDateString('default', { weekday: 'short' });
+    let [month, day] = date.split('-').slice(1);
+    var sup = `${month}.${day}`+'<sup style="color:#D8E632;">'+day_name+'</sup>';
+    return sup;
+  }
+  function weekday_color(date) {
+    let day_name = new Date(date).toLocaleDateString('default', { weekday: 'short' });
+    let [month, day] = date.split('-').slice(1);
+    var sup = `${month}.${day}`+'<sup style="color:white;">'+day_name+'</sup>';
+    return sup;
+  }
+  var createTZTable = function(response, start_date, end_date){
+    var dates = datesRange(start_date, end_date)
+    var html='<div style="display:block"><div id="id_timezone_header"></div><table class="timezone-table">';
+
+    for ( i = 0; i < dates.length; i++) {
+        var date = dates[i].replace(/-/g, '')
+        if (date in response){
+            if (response[date] == 'Weekoff'){
+                html+=`<tr><td class="timezones-week">`+weekoff_color(dates[i])+`</td><td class="timezones-container" >
+                <div  style="text-align: center; width: 100%;" class="tzbar"><span style="color:#7ac142;font-size:10px;vertical-align:top;">WeekOff</span></div></td></tr>`;
+            }
+            else{
+                html+='<tr><td class="timezones-week">'+weekday_color(dates[i])+'</td><td class="timezones-container" >';
+                var display = response[date].split(' ')
+                var cross_day = '';
+                if (display[1]){
+                    var cross_day = `<sup style='color:#03115D;'>${display[1]}</sup>`
+                }
+                var display  = `${display[0]}${cross_day}`
+                html+=`<div  style="text-align: center; width: 100%; display:contents;" class="tzbar"><span style="color:red;font-size:10px;vertical-align:top;">${display}</span></div></td></tr>`;
+            }
+        }
+        else{
+            html+='<tr><td class="timezones-week">'+weekday_color(dates[i])+'</td><td class="timezones-container" ></td></tr>';
+        }
+    }
+    return html;
+  };
+  var scheduleDetail = function(payload){
+    var start_date = $("#{{ model_name }}_start_date").val();
+    var end_date = $("#{{ model_name }}_end_date").val();
+    $.ajax({
+      url: "/att/showShiftDetail/"
+      ,type: "GET"
+      ,data: {shift: payload.shift_code, st: start_date, ed: end_date, dept: payload.department_code, schedule:payload.id}
+      ,dataType: "json"
+      ,success: function(response){
+        var panel = createTZTable(response.item, start_date, end_date);
+        $("#id_{{ model_name }}ShiftDetail").html(panel)
+        var height = $("#{{ model_name }}_fluid .layui-table-view").height() - 85;
+        $("#id_{{ model_name }}ShiftDetail").css('height', height+"px");
+      }
+      ,error: function(XMLHttpRequest, textStatus, errorThrown){
+
+      }
+    });
+  };
+  $("#id_{{ model_name }}_search").click(function(){
+    var schedule = $("#id_{{ model_name }}SelectedShift").val();
+    if(schedule){
+      var payload = JSON.parse(schedule);
+      scheduleDetail(payload);
+    }
+  })
+  layui.use('laydate', function(){
+    var laydate=layui.laydate;
+    var startDate = laydate.render({
+      elem: '#{{ model_name }}_start_date',
+      type: 'date',
+      value: fullStartOfMonth,
+      max: fullEndOfMonth,
+      done: function (value, date) {
+          if (Object.keys(date).length !== 0) {
+            endDate.config.min = {
+              year: date.year,
+              month: date.month - 1,
+              date: date.date
+            };
+          }
+          else {
+            endDate.config.min = {
+                year: 1900,
+                month: 1,
+                date: 1
+            };
+            endDate.config.max = {
+                year: 2099,
+                month: 12,
+                date: 31
+            };
+          }
+        }
+    });
+    var endDate = laydate.render({
+      elem: '#{{ model_name }}_end_date',
+      type: 'date',
+      value: fullEndOfMonth,
+      min: fullStartOfMonth,
+      done: function (value, date) {
+          if (Object.keys(date).length !== 0) {
+            startDate.config.max = {
+              year: date.year,
+              month: date.month - 1,
+              date: date.date
+            };
+          }
+          else {
+            startDate.config.min = {
+                year: 1900,
+                month: 1,
+                date: 1
+            };
+            startDate.config.max = {
+                year: 2099,
+                month: 12,
+                date: 31
+            };
+          }
+      }
+    });
+  });
+{% endblock %}
+
+{% block dimension_info %}
+  {{ block.super }}
+  dimension.width = '1000px'
+  dimension.height = '600px'
+{% endblock dimension_info  %}
+
+{% block grid_opt_update %}
+  $.extend(true, dimension, {
+    actions: {
+      AddAttSchedule: [undefined, Math.ceil(window.innerHeight * 0.8)]
+    }
+  });
+
+function update_side_ztree() {
+      $('#{{ model_name }}_show_all').trigger('click');
+    }
+    $.extend(true, dimension, {
+        actions: {
+          Import: [900, 500],
+        }
+    });
+
+    $.extend(true, callback, {
+      load: {
+        done: $.fn.resize_side_ztree_if_any
+      },
+      actions: {
+        GeneralActionNew: {
+          done: update_side_ztree
+        },
+        GeneralActionDelete: {
+          done: update_side_ztree
+        },
+        Import: {
+          done: update_side_ztree
+        }
+      }
+    });
+
+  data_grid_opts["rowClick"] = function(obj){
+    $("#id_{{ model_name }}SelectedShift").val(JSON.stringify(obj.data));
+    $("#id_shift_detail_{{ model_name }} .layui-card-header").text(obj.data.shift_alias);
+    scheduleDetail(obj.data);
+  }
+{% endblock %}

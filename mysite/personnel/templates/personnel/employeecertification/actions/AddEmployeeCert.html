@@ -1,0 +1,32 @@
+{% load i18n common %}
+<div style="padding: 10px;min-height: 300px;min-width: 850px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}"
+        enctype="multipart/form-data">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div style="padding-bottom: 20px">{{ f.employee }}</div>
+      <div class="layui_form_item">
+        {% layui_inline f.email_alert %}
+        {% layui_inline f.certification %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.expire_on %}
+        {% layui_inline f.before %}
+      </div>
+    {% endwith %}
+  </form>
+</div>
+<script>
+    layui.use('form', function() {
+        var form = layui.form;
+        form.render();
+        $("form.layui-form input.layui-date").each(function () {
+                var laydate = layui.laydate;
+                laydate.render({
+                    elem: this,
+                    type: 'date'
+                });
+            });
+    });
+</script>
+

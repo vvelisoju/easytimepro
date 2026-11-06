@@ -1,0 +1,532 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "Daftar Gaji"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "Profil Karyawan"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "Profil Karyawan"
+
+msgid "menu_group_payroll_formula"
+msgstr "Formula"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "Formula Pengurangan"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "Formula Pengecualian"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "Tambah Formula"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "Tinggalkan Formula"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "Formula Lembur"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "Dana Tambahan"
+
+msgid "menu_payroll_extraincrease"
+msgstr "Peningkatan Ekstra"
+
+msgid "menu_payroll_extradeduction"
+msgstr "Pengurangan Ekstra"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "Struktur Penggajian"
+
+msgid "menu_payroll_salarystructure"
+msgstr "Struktur Penggajian"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "Pinjaman"
+
+msgid "menu_payroll_empLoan"
+msgstr "Pinjaman"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "Uang Muka"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "Uang Muka"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "Penggantian"
+
+msgid "menu_payroll_reimbursement"
+msgstr "Penggantian"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Perhitungan"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "Perhitungan Gaji"
+
+msgid "menu_group_payroll_report"
+msgstr "Laporkan"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "Struktur Gaji"
+
+msgid "menu_payroll_increase_report"
+msgstr "Tambah Item"
+
+msgid "menu_payroll_deduction_report"
+msgstr "Item Pengurang"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "Detail Gaji"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "Att Param"
+
+msgid "paroll_mode_monthly"
+msgstr "Bulanan"
+
+msgid "paroll_type_cash"
+msgstr "Uang tunai"
+
+msgid "paroll_type_check"
+msgstr "Periksa"
+
+msgid "paroll_type_bank_transfer"
+msgstr "Transfer Bank"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "Profil Karyawan"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "Mode Pembayaran"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "Jenis Pembayaran"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "Nama Bank"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "Rekening Bank"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "ID Personil"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "Nama Depan"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "Nama Belakang"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "ID Agen"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "Akun Agen"
+
+msgid "payroll_model_deductionFormula"
+msgstr "Formula Pengurangan"
+
+msgid "deductionFormula_field_name"
+msgstr "Nama"
+
+msgid "deductionFormula_field_formula"
+msgstr "Formula"
+
+msgid "deductionFormula_field_remark"
+msgstr "Keterangan"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "Formula Pengecualian"
+
+msgid "exceptionFormula_field_name"
+msgstr "Nama"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "Jenis Pengecualian"
+
+msgid "exceptionFormula_field_formula"
+msgstr "Formula"
+
+msgid "exceptionFormula_field_remark"
+msgstr "Keterangan"
+
+msgid "payroll_model_increasementFormula"
+msgstr "Tambah Formula"
+
+msgid "increasementFormula_field_name"
+msgstr "Nama"
+
+msgid "increasementFormula_field_formula"
+msgstr "Formula"
+
+msgid "increasementFormula_field_remark"
+msgstr "Keterangan"
+
+msgid "payroll_model_leaveFormula"
+msgstr "Tinggalkan Formula"
+
+msgid "leaveFormula_field_name"
+msgstr "Nama"
+
+msgid "leaveFormula_field_category"
+msgstr "Jenis Cuti"
+
+msgid "leaveFormula_field_formula"
+msgstr "Formula"
+
+msgid "leaveFormula_field_remark"
+msgstr "Keterangan"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "Formula Lembur"
+
+msgid "overtimeFormula_field_name"
+msgstr "Nama"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "Level Lembur"
+
+msgid "overtimeFormula_field_formula"
+msgstr "Formula"
+
+msgid "overtimeFormula_field_remark"
+msgstr "Keterangan"
+
+msgid "payroll_model_extraIncrease"
+msgstr "Peningkatan Ekstra"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "Tambah"
+
+msgid "extraIncrease_field_employee"
+msgstr "Karyawan"
+
+msgid "extraIncrease_field_amount"
+msgstr "Jumlah"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "Waktu Penerbitan"
+
+msgid "extraIncrease_field_remark"
+msgstr "Keterangan"
+
+msgid "payroll_model_extraDeduction"
+msgstr "Pengurangan Ekstra"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "Tambah"
+
+msgid "extraDeduction_field_employee"
+msgstr "Karyawan"
+
+msgid "extraDeduction_field_amount"
+msgstr "Jumlah"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "Waktu Penerbitan"
+
+msgid "extraDeduction_field_remark"
+msgstr "Keterangan"
+
+msgid "payroll_model_salarystructure"
+msgstr "Struktur Penggajian"
+
+msgid "salaryStructure_field_amount"
+msgstr "Gaji Dasar"
+
+msgid "salaryStructure_field_formula"
+msgstr "Formula Gaji"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "Tanggal Efektif"
+
+msgid "salaryStructure_field_remark"
+msgstr "Komentar"
+
+msgid "salaryStructure_field_formulas"
+msgstr "Formula"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "Uang Muka"
+
+msgid "salaryAdvance_field_amount"
+msgstr "Jumlah"
+
+msgid "salaryAdvance_field_time"
+msgstr "Waktu Penerbitan"
+
+msgid "salaryAdvance_field_remark"
+msgstr "Komentar"
+
+msgid "payroll_model_Reimbursement"
+msgstr "Penggantian"
+
+msgid "Reimbursement_field_amount"
+msgstr "Jumlah"
+
+msgid "Reimbursement_field_time"
+msgstr "Waktu Pengembalian"
+
+msgid "Reimbursement_field_file"
+msgstr "Tanda Terima Penggantian"
+
+msgid "Reimbursement_field_remark"
+msgstr "Komentar"
+
+msgid "payroll_model_empLoan"
+msgstr "Pinjaman"
+
+msgid "empLoan_field_employee"
+msgstr "ID Karyawan"
+
+msgid "empLoan_field_loanAmount"
+msgstr "Jumlah Pinjaman"
+
+msgid "empLoan_field_loanTime"
+msgstr "Waktu Pinjaman"
+
+msgid "empLoan_field_refundCycle"
+msgstr "Siklus Pengembalian Dana"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "Jumlah Pengembalian Dana Per Periode"
+
+msgid "empLoan_field_clean_time"
+msgstr "Waktu Bersih"
+
+msgid "empLoan_field_remark"
+msgstr "Komentar"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "Tambah"
+
+msgid "payroll_action_addRmb"
+msgstr "Tambah"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "Tambah"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "Tambah"
+
+msgid "reimbursement_file"
+msgstr "Tanda Terima Penggantian"
+
+msgid "report_column_overtimeFormula1"
+msgstr "OT1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "OT2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "OT3"
+
+msgid "report_column_increaseFormula"
+msgstr "Tambah Formula"
+
+msgid "report_column_deductionFormula"
+msgstr "Formula Pengurangan"
+
+msgid "report_column_lateFormula"
+msgstr "Formula Akhir"
+
+msgid "report_column_absentFormula"
+msgstr "Formula Absen"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "Formula Cuti Dini"
+
+msgid "payroll_model_monthlysalary"
+msgstr "Roport Gaji Bulanan"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "Gaji Dasar"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "Tanggal Efektif"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "Tanggal Kalkulasi"
+
+msgid "monthlySalary_field_ot1"
+msgstr "OT1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "OT2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "OT3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "Terlambat"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "Cuti Awal"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "Tidak ada"
+
+msgid "monthlySalary_field_increase"
+msgstr "Tambah"
+
+msgid "monthlySalary_field_deduction"
+msgstr "Pengurangan"
+
+msgid "monthlySalary_field_leave"
+msgstr "Tinggalkan"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "Peningkatan Ekstra"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "Pengurangan Ekstra"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "Total Jumlah Pinjaman"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "Pengembalian Jumlah Pinjaman"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "Jumlah Pinjaman yang Tidak Dikembalikan"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "Pengurangan Pinjaman"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "Peningkatan Pinjaman"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "Kenaikan Muka"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "Pengurangan di Muka"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "Penggantian"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "Peningkatan Total"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "Pengurangan Total"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "Total Gaji"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "Gaji pokok tidak boleh kurang dari nol!"
+
+msgid "menu_payroll_setting"
+msgstr "Pengaturan Penggajian"
+
+msgid "payroll_attParamUnit"
+msgstr "Unit Att Param"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}: Karyawan {1} memiliki struktur gaji yang efektif."
+
+msgid "receipt_file_format_constraints"
+msgstr "Hanya mendukung file gambar jpg / jpeg / png / bmp."
+
+msgid "1_period"
+msgstr "1 Periode"
+
+msgid "2_periods"
+msgstr "2 Periode"
+
+msgid "3_periods"
+msgstr "3 Periode"
+
+msgid "4_periods"
+msgstr "4 Periode"
+
+msgid "5_periods"
+msgstr "5 Periode"
+
+msgid "6_periods"
+msgstr "6 Periode"
+
+msgid "7_periods"
+msgstr "7 Periode"
+
+msgid "8_periods"
+msgstr "8 Periode"
+
+msgid "9_periods"
+msgstr "9 Periode"
+
+msgid "10_periods"
+msgstr "10 Periode"
+
+msgid "11_periods"
+msgstr "11 Periode"
+
+msgid "12_periods"
+msgstr "12 Periode"
+
+msgid "deductionformula_addform_note"
+msgstr "Catatan: Pengurangan ini berlaku setiap bulan."
+
+msgid "increasementformula_addform_note"
+msgstr "Catatan: Peningkatan ini berlaku setiap bulan."
+
+msgid "caleulator_title"
+msgstr "Kalkulator"
+
+msgid "caleulator_basicSalary"
+msgstr "Gaji Dasar"
+
+msgid "caleulator_scheduleDays"
+msgstr "Jadwal Hari"
+
+msgid "caleulator_schedulePeriod"
+msgstr "Periode Jadwal"
+
+msgid "caleulator_check"
+msgstr "Periksa"
+
+msgid "report_column_total_increase_formula"
+msgstr "Formula Peningkatan Total"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "Total Peningkatan Nama Formula"
+
+msgid "report_column_total_increase_expression"
+msgstr "Ekspresi Peningkatan Total"
+
+msgid "report_column_total_deduction_formula"
+msgstr "Formula Pengurangan Total"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "Total Nama Formula Pengurangan"
+
+msgid "report_column_total_deduction_expression"
+msgstr "Ekspresi Pengurangan Total"
+
+msgid "tinggalkanFormula_field_formula"
+msgstr "Formula"

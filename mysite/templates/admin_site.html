@@ -1,0 +1,1375 @@
+{% extends "base.html" %}
+{% load i18n static compress iclock_tags common %}
+
+{% block extrahead %}
+    <!--suppress JSUnresolvedVariable -->
+    {% compress css file admin_site_css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}?v=2.04"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/update-popup.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/rtl.css' %}?v=1.3"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/it-theme-style.css' %}">
+        <link href="{% static 'cloud/static/css/main.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'layui/css/layui.css' %}?v=2.4.6"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/layui.widgets.min.css' %}?v=2.4.5"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/model.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/xadmin.main.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'multi-switch/multi-switch.min.css' %}?v=1.1.1"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'noty/noty.css' %}?v=3.1.4"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'spectrum/spectrum.min.css' %}?v=1.8.0"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/extension.css' %}?v=12.020"/>
+        <!-- {#<link rel="stylesheet" type="text/css" href="{% static 'css/zTreeStyle/zTreeStyle.css' %}" />#} -->
+        <!-- Use Awesome Style for zTree -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/awesomeStyle/awesome.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/awesomeStyle/awesome.extended.min.css' %}"/>
+        <!-- Font-Awesome -->
+        <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/layui.admin.css' %}?v=1.8"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-datepicker/css/datepicker.min.css' %}"/>
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'bootstrap-clockpicker/bootstrap-clockpicker.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/filters.css' %}?v=1.1.2"/>
+        {#    <link href="assets/css/bootstrap.min3.3.7.css" rel="stylesheet">#}
+        <link href="{% static 'css/user-guide.css' %}" rel="stylesheet">
+
+
+
+        {#      <style>#}
+        {#      .sidebar_logo {#}
+        {#              overflow: hidden;#}
+        {#              position: fixed;#}
+        {#              bottom: 0;#}
+        {#              z-index: 1005;#}
+        {#              width: 245px;#}
+        {#              text-align: center;#}
+        {#          }#}
+        {#      </style>#}
+        <style>
+            .myicon:before {
+                content: "\e182";
+                font-size: 20px;
+            }
+
+            .myenv:before {
+                content: "\2709";
+                font-size: 20px;
+            }
+
+            .al {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            #id_side_scroll::-webkit-scrollbar {
+                width: 0;
+            }
+
+            .easy-user-guide a {
+                text-decoration: none;
+            }
+            span.text-format {
+                font-size: 7.4px;
+            }
+            .it-side-scroll {
+                height: 325px;
+                overflow-y: scroll;
+            }
+
+            .it-side-scroll::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            .it-side-scroll::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .5) !important;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, .5) !important;
+            }
+
+            .it-side-scroll::-webkit-scrollbar-thumb {
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .5) !important;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, .5) !important;
+                visibility: hidden !important;
+            }
+
+            .it-side-scroll-outer:hover .it-side-scroll::-webkit-scrollbar-thumb {
+                visibility: visible !important;
+                transition: all 1s ease !important;
+            }
+
+            .it-side-scroll > ul {
+                position: relative !important;
+            }
+            #dashboard{
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            .youtube{
+                width: 35px;
+                height: 35px;
+            }
+            .btn user-guide-exit-btn{
+                  font-size: 0.85rem;
+            }
+            #check_box_id{
+                   vertical-align: middle;
+                   margin-right: 8px;
+            }
+        </style>
+    {% endcompress %}
+
+{% endblock %}
+{% block title %}{{ title|escape }} {% endblock %}
+
+{% block extrastyle %}
+
+{% endblock %}
+
+{% block content %}
+{% autoescape off %}
+{% block north %}
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header header">
+            <ul class="layui-nav layui-layout-left layui-nav-menu" lay-filter="nav-menu" id="top_module_menu_nav">
+                {% if software_type == 9 and not user.is_employee %}
+                    <li id="menuToggle" style="cursor:pointer;">
+                        <a href="javascript:;" id="menuBar" style="margin-left:20px;height:50px;">
+                            <!--layui-icon-spread-left-->
+                            <i class="layui-icon layui-icon-spread-left" id="menuBar" style="cursor: pointer;"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if software_type == 9 and not user.is_employee %}
+                    <li class="layui-nav-item layui-menu-logo">
+                        {% else %}
+                    <li class="layui-nav-item layui-menu-logo" style='left:0 !important;'>
+                {% endif %}
+                <div class="layui-nav-logo top_logo{% if 'worktable' == current_app %}_focus{% endif %}"
+                     id="header_logo">
+                    <a id="id_worktable" {% if software_type == 11 %}style="line-height: 60px;"
+                       {% else %}style="line-height: 67px;"{% endif %}></a>
+                </div>
+                </li>
+            </ul>
+
+            <ul class="layui-nav layui-layout-right" lay-filter="system-menu">
+                {% if ''|thailand %}
+                    <li class="layui-nav-item">
+                        <a href="javascript:" ref="{% url 'biotime:emergency_button' %}" event="emergency_button"
+                           title="{% trans 'convenient export' %}">
+                            <i class="fa fa-warning (alias) fa-2x" style="vertical-align:middle;color: red"></i>
+                            <!-- <img src="{{ MEDIA_URL }}images/emergency.gif" alt="" height="40" width="40"> -->
+                        </a>
+                    </li>
+                {% endif %}
+                {% if software_type != 11 and user.is_superuser %}
+                    <li class="layui-nav-item msg-center" title="Click here">
+                        <a href="javascript:void(0);" ref='' event="guide">
+                            <img src="{{ MEDIA_URL }}images/guide/icons/userguide.png" alt="user-guide"/>
+                            <div style="line-height: 22px;">Guide</div>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if software_type == 9 and not user.is_employee %}
+                    {#            <li class="layui-nav-item">#}
+                    {#              <button type="button" class="btn btn-xl btn-primary" id="cart_btn">#}
+                    {#                <span class="glyphicon glyphicon-shopping-cart"></span>#}
+                    {#                <span class="buy-text" style="padding-left:3px"> Buy</span>#}
+                    {#              </button>#}
+                    {#            </li>#}
+                    {% if request.user|get_company_name == 'bechemindia' %}
+
+                    {% else %}
+                        <li class="layui-nav-item">
+{#                            <button type="button" class="btn btn-xl btn-primary" id="subscription_btn">#}
+                                {#                <button type="button" class="btn btn-xl btn-primary" onclick="location.href='{% url "biotime:subscription_content" %}'">#}
+{#                                <span class="glyphicon glyphicon-shopping-cart"></span>#}
+{#                                <span class="buy-text" style="padding-left:3px">Subscription</span>#}
+{#                            </button>#}
+                        </li>
+                    {% endif %}
+                {% endif %}
+                {% if software_type != 9 %}
+                    <li class="layui-nav-item" style='top:-20px;right:-90px;'><span style='color: #7ac143' title=''>
+                        {{ request.user|separate_username_length }}</span>/{{ request.user|get_company_name }}
+                    </li>
+                {% else %}
+                    <li class="layui-nav-item">{% trans 'system_welcome' %} {{ request.user|separate_username_length }}</li>
+                {% endif %}
+                <li class="layui-nav-item" {% if software_type != 9 %}style='top:10px;'{% endif %}>
+                    <a href="javascript:void(0);">
+                        <img border="0" align="top" alt="me" src="{{ MEDIA_URL }}img/att/me.png"
+                             onmouseout="$(this).attr('src','{{ MEDIA_URL }}img/att/me.png')"
+                             onmouseover="$(this).attr('src','{{ MEDIA_URL }}img/att/me1.png')"/>
+                    </a>
+                    <dl class="layui-nav-child system-user-menu" style="line-height: 18px;">
+                        <dt class="user-popup-layer level-2">
+                            <i class="desc-inner-arrow"></i>
+                            <i class="desc-outer-arrow"></i>
+                            <i class="desc-layer"></i> <span class="desc-header">
+                  </span>
+                        </dt>
+                        {% if user.is_employee %}
+                            <dd><a href="javascript:void(0);" ref='/staff/setLanguage/' event="changeLanguage"><i
+                                    class="fa fa-fw fa-globe"></i> {% trans 'system_userMenu_op_language' %}</a></dd>
+                            <dd><a href="javascript:void(0);" ref='/staff/changePassword/' event="changePassword"><i
+                                    class="fa fa-fw fa-pencil-square-o"></i> {% trans 'system_userMenu_op_changePassword' %}
+                            </a>
+                            </dd>
+                        {% else %}
+                            <dd><a href="javascript:void(0);" ref="{% url 'biotime:license' %}" event="license">
+                                <i class="fa fa-fw fa-info-circle"></i>
+                                {% trans 'system_userMenu_op_about' %}</a>
+                            </dd>
+                            <dd><a href="{% url 'biotime:help_document_file' %}" target="_blank"><i
+                                    class="fa fa-fw fa-question"></i> {% trans 'system_userMenu_op_help' %}</a></dd>
+                            <hr>
+                            {% if software_type != 9 %}
+                                {% if "Multi_company"|get_params:request == '1' %}
+                                    <dd><a href="javascript:void(0);" ref="{% url 'biotime:company_change' %}"
+                                           event="changeCompany"><i
+                                            class="fa fa-fw fa-cog"></i> {% trans 'system_userMenu_op_company' %}</a>
+                                    </dd>
+                                {% endif %}
+                            {% endif %}
+                            <dd><a href="javascript:void(0);" ref="{% url 'biotime:language_change' %}"
+                                   event="changeLanguage"><i
+                                    class="fa fa-fw fa-globe"></i> {% trans 'system_userMenu_op_language' %}</a></dd>
+                            <dd><a href="javascript:void(0);" ref="{% url 'biotime:password_change' %}"
+                                   event="changePassword"><i
+                                    class="fa fa-fw fa-pencil-square-o"></i> {% trans 'system_userMenu_op_changePassword' %}
+                            </a>
+                            </dd>
+                             {% if user.is_superuser and allow_auto_upgrade %}
+                                <dd><a href="javascript:void(0);"  event="update_info" class="notification-link">
+                                       <i class="fa fa-fw fa-bell"></i> {% trans 'Notification' %}<span class="notification-dot"></span></a>
+                                </dd>
+                            {% endif %}
+                        {% endif %}
+                        <hr>
+                        <dd><a href="javascript:void(0);" ref="{% url 'biotime:logout' %}" event="logout"><i
+                                class="fa fa-fw fa-sign-out"></i> {% trans 'system_userMenu_op_logout' %}</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-hidden">
+                    <a href="javascript:void(0);" event="skin">
+                        <img border="0" align="top" alt="me" style="height: 25px; width: 25px;" class="layui-hide"
+                             onmouseout="$(this).attr('src','{{ MEDIA_URL }}img/att/skin_0.png')"
+                             onmouseover="$(this).attr('src','{{ MEDIA_URL }}img/att/skin_1.png')"/>
+                    </a>
+                </li>
+            </ul>
+            <div class="header-popup-layer level-2 layui-hide">
+                <i class="desc-inner-arrow"></i>
+                <i class="desc-outer-arrow"></i>
+            </div>
+        </div>
+        <div class="layui-side  leftMenuDiv layui-hide" id="leftMenuDiv" style="background: rgb(67, 67, 67);">
+            <div class="layui-side-scroll it-side-scroll-outer" id="side-scroll">
+                <div class="it-side-scroll">
+                    <ul class="layui-nav layui-nav-tree nav-tree-main" lay-shrink="all" id="company_menu">
+                    </ul>
+                </div>
+                <ul class="layui-nav layui-nav-tree nav-tree-main" lay-shrink="all"
+                    style="position:absolute; bottom:0;margin-bottom:100px">
+                    {% if software_type == 9 and not user.is_employee %}
+                        <li class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:void(0);" class="layui-hide-xs" id="join_company"
+                               style="text-align: left;padding-left:12px;">
+                                <img alt="Company" src="{{ MEDIA_URL }}img/icon-company.svg" border="0"
+                                     style="padding-right:7px;margin-top:-5px;"/><span
+                                    class="cite">Join a Company</span>
+                            </a>
+                        </li>
+                        <li class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:void(0);" class="layui-hide-xs" id="join_as_vendor"
+                               style="text-align: left;padding-left:12px;">
+                                <img alt="Vendor Join" src="{{ MEDIA_URL }}img/icon-vendor-join.svg" border="0"
+                                     style="padding-right:7px;margin-top:-2px;"/><span
+                                    class="cite">Join as vendor</span>
+                            </a>
+                        </li>
+                        <li class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:void(0);" class="layui-hide-xs" id="admin_create_company"
+                               style="text-align: left;padding-left:12px;">
+                                <img alt="Create Company" src="{{ MEDIA_URL }}img/icon-create-company.svg" border="0"
+                                     style="padding-right:7px;margin-top:-5px;"/><span
+                                    class="cite">Create new Company</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        {% block west %}
+            <div class="layui-side layui-bg-black layui-hide" id="side_menu">
+                <a href="javascript:void(0);" class="layui-hide-xs">
+                    <div class="zk-switch-menu align-right">
+                        <input type="text" style="display: none;" placeholder="...">
+                    </div>
+                </a>
+                <div class="layui-side-scroll" style="height: calc(100% - 50px)">
+                    <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="admin-nav" id="side_menu_nav"></ul>
+                </div>
+            </div>
+        {% endblock west %}
+        <div id="main_body" class="layui-body layui-hide">
+            <div class="layui-progress" lay-filter="pace">
+                <div class="layui-progress-bar layui-bg-orange" style="width: 0%;"></div>
+            </div>
+            <div class="layui-tab layui-tab-card" lay-allowclose="true" lay-filter="zkTab" id="zk-layui-tab">
+                <ul class="layui-tab-title" id="zk-layui-tab-ul"></ul>
+                <div class="layui-tab-content"></div>
+            </div>
+        </div>
+        <div id="guide" class="layui-hide">
+            <div class="easy-user-guide">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-10 col-log-11 col-md-12">
+                            <div class="user-guide-heading">
+                                <h4 style="display: flex; justify-content: space-between; width:105%;">
+                                    <span>{% trans 'Guide' %}</span>
+                                     <a href="https://www.youtube.com/zktecobiometricsindia"
+                                        target="_blank" class="social-btn-sm m-1">
+                                        <img src="{% static 'cloud/static/images/youtube.png' %}"
+                                             class="mx-auto img-responsive youtube" alt="youtube">
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="user-guide-wrapper">
+                                <div class="user-guide-steps user-guide-step-1">
+                                    <div class="user-guide-arrow"><img
+                                            src="{{ MEDIA_URL }}images/guide/icons/circular-arrow-green.svg"
+                                            alt="arrow"/></div>
+                                    <p class="user-guide-step-title">Step 1</p>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="personnel"
+                                       data-group="0"
+                                       data-item="{% if 'Multi_company'|get_params:request == '1' %}3{% else %}2{% endif %}">
+                                        {#                               data-group="0" data-item="3">#}
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-1">
+                                                <p>{% trans 'Add Area' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="personnel"
+                                       data-group="0"
+                                       data-item="{% if 'Multi_company'|get_params:request == '1' %}1{% else %}0{% endif %}">
+                                        {#                               data-group="0" data-item="1">#}
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-2">
+                                                <p>{% trans 'Add Department' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                 <div class="user-guide-flow">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="personnel" data-group="0"
+                                       data-item="1">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-11">
+                                                <p>Add Position</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="personnel" data-group="1"
+                                       data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-3">
+                                                <p>{% trans 'Add Employee' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="iclock" data-group="0"
+                                       data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-4">
+                                                <p>{% trans 'Add Device' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="user-guide-steps user-guide-step-2">
+                                    <div class="user-guide-arrow"><img
+                                            src="{{ MEDIA_URL }}images/guide/icons/circular-arrow-green.svg"
+                                            alt="arrow"/></div>
+                                    <p class="user-guide-step-title">Step 2</p>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="att" data-group="1"
+                                       data-item="1">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-5">
+                                                <p>{% trans 'Time Table' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="att" data-group="1"
+                                       data-item="2">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-6">
+                                                <p>{% trans 'Assign Shift' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="att" data-group="2"
+                                       data-item="1">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-7">
+                                                <p>{% trans 'Schedule Shift' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="att" data-group="3"
+                                       data-item="1">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-8">
+                                                 <p>{% trans 'Add Leave' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                     <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>Calculate Attendance</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="user-guide-steps user-guide-step-3">
+                                    <div class="user-guide-arrow"><img
+                                            src="{{ MEDIA_URL }}images/guide/icons/circular-arrow-green.svg"
+                                            alt="arrow"/></div>
+                                    <p class="user-guide-step-title">Step 3</p>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="att" data-group="7"
+                                       data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>{% trans 'Calculate Attendance' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {# Hidden Blocks#}
+                                    <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>{% trans 'Calculate Attendance' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>{% trans 'Calculate Attendance' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>{% trans 'Calculate Attendance' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                     <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>Calculate Attendance</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {# Hidden Blocks#}
+
+                                </div>
+                                <div class="user-guide-steps user-guide-step-4">
+                                    <div class="user-guide-arrow"><img
+                                            src="{{ MEDIA_URL }}images/guide/icons/circular-arrow-green.svg"
+                                            alt="arrow"/></div>
+                                    <p class="user-guide-step-title">Step 4</p>
+                                    <a href="javascript:void(0);" datatype="guide" data-app="att" data-group="7"
+                                       data-item="1">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-10">
+                                                <p>{% trans 'Reports' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {# Hidden Blocks#}
+                                    <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>{% trans 'Calculate Attendance' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>{% trans 'Calculate Attendance' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>{% trans 'Calculate Attendance' %}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                     <div class="user-guide-flow visibility-hidden ">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                    <a href="javascript:void(0);" class="visibility-hidden " datatype="guide"
+                                       data-app="att" data-group="7" data-item="0">
+                                        <div class="user-guide-circle">
+                                            <div class="user-guide-circle-9">
+                                                <p>Calculate Attendance</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {# Hidden Blocks#}
+
+                                </div>
+                            </div>
+                            <div class="user-guide-action">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox"  onclick="guide_check_box(0);" id="check_box_id" value="">Don't show this
+                                            again</label>
+                                    </div>
+                                    <div>
+                                        <button type="submit" id="show_dashboard" onclick="guide_check_box(1);" class="btn user-guide-exit-btn ">
+                                             Back to Dashboard
+                                        </button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dashboard" {% if is_show_guide == 0 %} {% if software_type == 10 and user.is_superuser %} class="layui-hide" %}{% endif %}{% endif %} >{% block center %}{% endblock %}</div>
+        <div id="subscription" class="layui-hide">{% block subscription %}{% endblock %}</div>
+    </div>
+    <div id="updatePopup" class="popup layui-layer-shade">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <p>An update is available. Please update the software.</p><p>&nbsp;</p>
+        <pre id="combined_content" class="combine_contents"></pre><p>&nbsp;</p>
+        <div class="checkbox_">
+          <div class="form-check">
+            <input class="form-check-input" onclick="dont_show_updates(0)" type="checkbox" value="" id="update_check_id">
+            <label class="form-check-label" for="update_check_id">Don't show this again</label>
+          </div>
+          <div class="buttons">
+            <button id="update_button" class="btn btn-primary">Update</button>
+            <button id="close_button" class="btn btn-secondary" style="border: 1px solid #dedede;">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="backdrop" class="layui-layer-shade" style="display:none;"></div>
+    <div id="notificationPopup" class="notificationWindow"></div>
+
+{% endblock %}
+{% block init_menu %}
+    <script>
+       $(function () {
+        history.pushState(null, null, location.href);
+    //    history.back();    //make Chrome and Edge not working
+       // history.forward();
+        window.onpopstate = function () {
+            history.go(1);
+        };
+            $('#search').click(function () {
+                $('#zk_logo_sidebar_bottom').css('display', 'none');
+            });
+             window['set_session_storage']({
+                'cached_actions_url': "{% url 'biotime:cached_actions' %}",
+                'request_user': "{{ request.user }}",
+                'request_user_id': '{{ request.user.pk }}'
+            });
+            $('body').adminSite({
+                base_path: '{% static 'extends' %}/',
+                menu: {{ menus|py_dict_to_js }},
+                logout_url: "{% url 'biotime:logout' %}",
+                pin_tab_url: "{% url 'biotime:pinned_tabs' %}",
+                appearance_themes_url: "{% url 'biotime:appearance_themes' %}",
+                column_order_url: "{% url 'biotime:column_order' %}"
+            });
+        });
+    </script>
+{% endblock init_menu %}
+{% block extend_script %}
+{% endblock %}
+{% endautoescape %}
+{% endblock content %}
+{% block extrajs %}
+    {{ block.super }}
+    <script src="{% static 'layui/layui.js' %}?v=2.4.5" type="text/javascript"></script>
+    <script src="{% static 'js/moment.min.js' %}?v=2.30.1"></script>
+    {% compress js file admin_site_js %}
+        <script src="{% static 'js/core.min.js' %}?v=0.5"></script>
+        <script src="{% static 'js/base.js' %}?v=0.5"></script>
+        <script src="{% static 'js/jquery/jquery.ztree.all-3.5.min.js' %}"></script>
+        <script src="{% static 'js/jquery/jquery.ztree.exhide.min.js' %}"></script>
+        <script src="{% static 'js/ztree.common.min.js' %}"></script>
+        <script src="{% static 'noty/noty.min.js' %}?v3.1.4" type='text/javascript'></script>
+        <script src="{% static 'spectrum/spectrum.min.js' %}?v1.8.0" type='text/javascript'></script>
+        <script src="{% static 'multi-switch/multi-switch.min.js' %}" type='text/javascript'></script>
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}" type='text/javascript'></script>
+        <script src="{% static 'bootstrap-clockpicker/bootstrap-clockpicker.min.js' %}" type='text/javascript'></script>
+        <script src="{% static 'bootstrap-menu/BootstrapMenu.min.js' %}?v=1.1" type='text/javascript'></script>
+        <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"
+                type='text/javascript'></script>
+        <script src="{% static 'js/xadmin.plugin.filters_standalone.js' %}?v=2.0"></script>
+        <script src="{% static 'js/actions.js' %}?v=1.7.5"></script>
+        <script src="{% static 'js/data_grid.js' %}?v=1.7.6"></script>
+        <script src="{% static 'js/admin_site.js' %}?v=1.6"></script>
+        <script src="{% static 'js/ztree_select.js' %}?v=1.3.2"></script>
+        <script src="{% static 'js/ztree_filter.js' %}?v=1.1"></script>
+        <script src="{% static 'js/business_logic.js' %}?v=1.1"></script>
+        <script src="{% static '/js/jquery/jquery.tools.min.js' %}"></script>
+        <script src="{% static '/js/jquery/jquery.plus.min.js' %}"></script>
+        <script src="{% static '/js/jquery/jquery.zcommon.min.js' %}"></script>
+        <!--
+        <script src="{% static '/js/baseISSObject.min.js' %}"></script>
+        <script src="{% static '/js/baseFPRegister.js' %}"></script>
+         <script src="{% static '/js/empFPRegister.js' %}"></script> 
+        -->
+    {% endcompress %}
+    {% block extension_js %}
+    <script>
+            //# sourceURL=dash_board_script.js
+            var skin_css_background = window['get_local_storage']($.fn.adminSite.const.SKIN_CSS_BACKGROUND);
+            if (skin_css_background) {
+                $('.layui-layout-admin .layui-header').css({
+                    background: [skin_css_background]
+                });
+            } else {
+                $('.layui-layout-admin .layui-header').css({
+                    //background: ["#7ac142"]
+                    background: ['#474b4f']
+                });
+                //{% if banner_url %}
+
+                    //{% endif %}
+            }
+            {% if software_type == 9 %}
+                $.fn.intelligenttimeFillHead();
+            {% elif software_type == 10 %}
+                $.fn.easytimeproFillHead();
+            {% endif %}
+
+            function redirect(module_name) {
+                $(interpolate('a[app=%s]', [module_name]), '#top_module_menu_nav').data('is_auto_triggered', true).trigger('click');
+            }
+            var is_show_guide={{ is_show_guide }};
+
+
+                //var last_page_obj = JSON.parse(window['get_local_storage']($.fn.adminSite.const.LAST_SESSION) || '{}');
+                var last_page_obj = {};
+
+
+                setTimeout(function () {
+                    if (type(last_page_obj) === 'object' && Object.keys(last_page_obj).length === 2) {
+                        var notify_text = gettext('Hi! System had found the last open tabs from last session, would you like to open it?'),
+                            is_user_triggered = false,
+                            notify_obj = new Noty({
+                                text: ['<div>',
+                                    '<div class="body pull-right layui-col-md1"><i class="fa fa-fw fa-2x fa-question-circle noty-question-color" aria-hidden="true"></i></div>',
+                                    '<div class="title layui-col-md11">',
+                                    notify_text,
+                                    '</div>',
+                                    '</div>'].join(''),
+                                type: 'alert',
+                                closeWith: ['click'],
+                                timeout: 3000,
+                                callbacks: {
+                                    onClick: function () {
+                                        var dom = this.barDom,
+                                            dom_rect = dom.getBoundingClientRect();
+                                        is_user_triggered = true;
+                                        layer.confirm(gettext('alert_tip_nextStep'), {
+                                            icon: 3,
+                                            offset: [(dom_rect.bottom + 20) + 'px', (dom_rect.left) + 'px'],
+                                            area: dom_rect.width + 'px',
+                                            title: false,
+                                            btn: [gettext('btn_confirm'), gettext('btn_ignore')],
+                                            btnAlign: 'c',
+                                            skin: 'zydeco-layer-rim',
+                                            closeBtn: 2
+                                        }, function (index/*, layero*/) {
+                                            redirect(last_page_obj.module);
+                                            layer.close(index);
+                                        }, function (index) {
+                                            layer.close(index);
+                                            window['del_local_storage']($.fn.adminSite.const.LAST_SESSION);
+                                        });
+                                    },
+                                    afterClose: function () {
+                                        window['del_session_storage']($.fn.adminSite.const.TABS_RESTORE_NOTIFY_ID);
+                                        if (!is_user_triggered) {
+                                            window['del_session_storage']($.fn.adminSite.const.ARCHIVED_SESSION);
+                                        }
+                                    }
+                                }
+                            }).show();
+                        window['set_session_storage']($.fn.adminSite.const.TABS_RESTORE_NOTIFY_ID, notify_obj.id);
+                    } else {
+                        //redirect('{{ redirect_module }}');
+                    }
+                }, 1000);
+                // turn_colored_outline()();
+
+
+            // top side-bar menu
+            function change_company(company_name) {
+                $.ajax({
+                    url: "{% url 'biotime:change_current_company' %}" + "?company_name=" + company_name,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.ret === 0) {
+                            window.location.href = "{% url 'biotime:login' %}";
+                        } else {
+                            console.log(result.msg)
+                        }
+                    }
+                })
+            }
+            function user_guide(iflag) {
+                  if (is_show_guide==1 || iflag==1){
+                     $('#dashboard').removeClass('layui-hide')
+                     $('#guide').addClass('layui-hide')
+
+                     if (is_show_guide==1)
+                        $("#check_box_id").prop('checked',true)
+                        
+                    if(document.createEvent) {
+                      var event = document.createEvent("HTMLEvents");
+                        event.initEvent("resize", true, true);
+                        window.dispatchEvent(event);
+                    } else if(document.createEventObject) {
+                        window.fireEvent("onresize");
+                    }
+                if(iflag == 1){
+                    clearTimeout($.fn.dashboard_timer['dashboardRefreshID'])
+                    clearTimeout($.fn.dashboard_timer['refreshBaseCrardID'])
+                    clearTimeout($.fn.dashboard_timer['refreshPieID'])
+                    window.setTimeout($.fn.dashboard_timer['refreshBaseCrard'], 1000);
+                     window.setTimeout($.fn.dashboard_timer['refreshPie'], 2000);
+                  //  window.setTimeout($.fn.dashboard_timer['refreshMonitor'], 3000);
+                    window.setTimeout($.fn.dashboard_timer['dashboardRefresh'], 4000);
+                 //   window.setTimeout($.fn.dashboard_timer['refreshException'], 10000);
+                }
+                 }
+                 else{
+                     $('#dashboard').addClass('layui-hide')
+                     $('#guide').removeClass('layui-hide')
+                     $("#check_box_id").prop('checked',false)
+                     var max_height = Math.floor($('body').height() - 65 - 30 - 6 - (Math.random() * 11));
+                    $('.easy-user-guide').css({
+                      'height': max_height
+                    });
+
+                 }
+                }
+     
+
+                
+                {% if software_type == 9 %}
+                    //add company to company_menu
+                    $.ajax({
+                        url: "{% url 'biotime:get_all_company' %}",
+                        type: "GET",
+                        dataType: "json",
+                        success: function (result) {
+                            var company_menu = $("#company_menu");
+                            company_menu.append("<li class='layui-nav-item layui-nav-itemed' >" +
+                                "<a href='javascript:;'" +
+                                " class='layui-hide-xs' style='background:#428bca;pointer-events: none;text-align: left;padding-left:12px;'><img alt='Company' src='{{ MEDIA_URL }}img/icon-company.svg' border='0'  style='padding-right:7px;margin-top:-5px;'/><span class='cite'>" +
+                                result.current_company + " (" + result.current_company_role + ")</span></a> </li>");
+                            var other_company = result.other_company;
+                            var other_company_role = result.other_company_role;
+                            for (var company_name in result.other_company) {
+                                company_menu.append("<li class='layui-nav-item layui-nav-itemed'>" +
+                                    "<a onclick='" + "change_company(" + '"' + other_company[company_name] + '"' + ")' style='text-align: left;padding-left:12px;' href='javascript:;'" +
+                                    " class='layui-hide-xs'><img alt='Company' src='{{ MEDIA_URL }}img/icon-company.svg' border='0'  style='padding-right:7px;margin-top:-5px;'/><span class='cite'>" +
+                                    other_company[company_name] + " (" + other_company_role[company_name] + ")</span></a> </li>");
+                            }
+                        }
+                    });
+                {% else %}
+                   {% if user.is_superuser %}
+                         user_guide(0)
+                    {% endif %}
+                {% endif %}
+                //  top-sidebar menu
+                layui.use(['layer', 'form', 'element', 'jquery'], function () {
+                    var layer = layui.layer
+                        , form = layui.form
+                        , $ = layui.jquery;
+                         $('#join_as_vendor').on('click', function () {
+                            $.ajax({
+                                url: "{% url 'biotime:admin_join_as_vendor' %}",
+                                type: "GET",
+                                dataType: "html",
+                                success: function (pannel) {
+                                    layer.open({
+                                        type: 1,
+                                        title: "{% trans 'Input vendor company detail' %}",
+                                        zIndex: 1100,
+                                        area: ['500px', '460px'],
+                                        content: pannel,
+                                    });
+                                },
+                            })
+                        });
+                        $('#join_company').on('click', function () {
+                            layer.prompt({
+                                title: "Enter the Company Name that you want to join",
+                                btn: [gettext('btn_confirm')],
+                                yes: function (index, layero) {
+                                    var value = layero.find(".layui-layer-input").val();
+                                    if (value) {
+                                        var loadIndex = layer.load();
+                                        $.ajax({
+                                            url: "{% url 'biotime:admin_join_company' %}",
+                                            data: {'company_name': value},
+                                            dataType: "json",
+                                            success: function (result) {
+                                                layer.close(loadIndex);
+                                                if (result.ret === 0) {
+                                                    layer.msg('Send email to company ' + value + '\'s admin already.');
+                                                    layer.close(index);
+                                                } else {
+                                                    layer.msg(result.msg);
+                                                }
+                                            },
+                                            error: function (xhr, error, e) {
+                                                layer.close(loadIndex);
+                                            }
+                                        });
+                                    } else {
+                                        layer.msg('Pleas input a company name.');
+                                    }
+                                }
+                            })
+                        });
+
+                        $('#admin_create_company').on('click', function () {
+                            layer.prompt({
+                                title: "Enter the Company Name that you want to create",
+                                btn: [gettext('btn_confirm')],
+                                yes: function (index, layero) {
+                                    var value = layero.find(".layui-layer-input").val();
+                                    if (value) {
+                                        var loadIndex = layer.load();
+                                        $.ajax({
+                                            url: "{% url 'biotime:admin_create_company' %}",
+                                            data: {'company_name': value},
+                                            dataType: "json",
+                                            success: function (result) {
+                                                layer.close(loadIndex);
+                                                if (result.ret === 0) {
+                                                    layer.msg(value + ' ' + 'Created Successfully');
+                                                    layer.close(index);
+                                                } else {
+                                                    layer.msg(result.msg);
+                                                }
+                                            },
+                                            error: function (xhr, error, e) {
+                                                layer.close(loadIndex);
+                                            }
+                                        });
+                                    } else {
+                                        layer.msg('Pleas input a company name.');
+                                    }
+                                }
+                            })
+                        });
+                        $(document).on('click', '#menuToggle', function () {
+                            if ($("#main_body").hasClass("mini-sidebar")) {
+                                $("#main_body").addClass("mini-sidebar");
+                                $("#leftMenuDiv").css({width: 245, transition: '0.1s', zIndex: 1001});
+                                $(".first-container").css({
+                                    position: 'relative',
+                                    margin: 70,
+                                    marginLeft: 315,
+                                    padding: 0,
+                                    paddingLeft: 15,
+                                    paddingRight: 15,
+                                    transition: 'all 0.1s ease 0s'
+                                });
+                                $(".zk-pricing-body").addClass("flexible-container");
+                                $(".leftMenuDiv").addClass("layui-show").removeClass("layui-hide");
+                                $(".layui-header").css({position: 'fixed', top: 0, width: '100%', zIndex: 1001});
+                                $("i#menuBar").addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
+                            } else {
+                                $("#main_body").removeClass("mini-sidebar");
+                                $("#leftMenuDiv").css({width: 0, transition: '0.1s'});
+                                $(".first-container").css({
+                                    position: 'relative',
+                                    marginTop: 0,
+                                    marginLeft: 70,
+                                    padding: 0,
+                                    paddingLeft: 15,
+                                    paddingRight: 15
+                                });
+                                $(".zk-pricing-body").removeClass("flexible-container");
+                                $(".layui-header").css({position: 'relative'});
+                                $(".leftMenuDiv").addClass("layui-hide").removeClass("layui-show");
+                                $("i#menuBar").removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
+                            }
+                        });
+                        $("#menuToggle").on('click', function () {
+                            if ($("#main_body").hasClass("mini-sidebar")) {
+                                $("#main_body").removeClass("mini-sidebar");
+                                $("#leftMenuDiv").css({width: 245, transition: '0.1s', zIndex: 1001});
+                                $(".first-container").css({
+                                    position: 'relative',
+                                    margin: 70,
+                                    marginLeft: 315,
+                                    padding: 0,
+                                    paddingLeft: 15,
+                                    paddingRight: 15,
+                                    transition: 'all 0.1s ease 0s'
+                                });
+                                $(".leftMenuDiv").addClass("layui-show").removeClass("layui-hide");
+                                $(".layui-header").css({position: 'fixed', top: 0, width: '100%', zIndex: 1001});
+                                $("i#menuBar").addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
+                            } else {
+                                $("#main_body").addClass("mini-sidebar");
+                                $("#leftMenuDiv").css({width: 0, transition: '0.1s'});
+                                $(".first-container").css({
+                                    position: 'relative',
+                                    marginLeft: 70,
+                                    padding: 0,
+                                    paddingLeft: 15,
+                                    paddingRight: 15
+                                });
+                                $(".leftMenuDiv").addClass("layui-hide").removeClass("layui-show");
+                                $("i#menuBar").removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
+                            }
+                        })
+                        $("#menuToggle").on('click', function () {
+                            if ($("#side_menu").hasClass('layui-side-collapsed')) {
+                                $("#side_menu").addClass('layui-side-collapsed');
+                                $("#side-scroll").css({
+                                    width: 245,
+                                    position: 'fixed',
+                                    left: 0,
+                                    top: 65,
+                                    transition: '0.1s',
+                                    background: 'rgb(71, 75, 79)',
+                                    zIndex: 1001
+                                });
+                                $(".leftMenuDiv").addClass("layui-show").removeClass("layui-hide");
+                                $("i#menuBar").addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
+                            }
+                        });
+                        $(".layui-body").mouseup(function () {
+                            if ($("#leftMenuDiv").hasClass("layui-show")) {
+                                $("#leftMenuDiv").css({width: 0, transition: '0.1s'});
+                                $(".leftMenuDiv").removeClass("layui-show").addClass("layui-hide");
+                                $("i#menuBar").removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
+                            }
+
+                        });
+                        $(".layui-header").mouseup(function () {
+                            if ($("#leftMenuDiv").hasClass("layui-show")) {
+                                $("#leftMenuDiv").css({width: 0, transition: '0.1s'});
+                                $(".leftMenuDiv").removeClass("layui-show").addClass("layui-hide");
+                                $("i#menuBar").removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
+                            }
+                        });
+
+                    });
+                    $('#cart_btn').on('click', function () {
+                        $.ajax({
+                            url: "",
+                            type: "GET",
+                            dataType: "html",
+                            Maxmin: false,
+                            success: function () {
+                                layer.open({
+                                    type: 1,
+                                    skin: 'layui-layer-moon',
+                                    title: "Contact Us",
+                                    zIndex: 1003,
+                                    closeBtn: 1,
+                                    Shade: [0],
+                                    Maxmin: false,
+                                    area: ['660px', '300px'],
+                                    content: $('#buy_product').html(),
+                                });
+                            },
+                            error: function (response) {
+                                console.log(response.responseText);
+                            }
+                        })
+                    });
+
+                    $('#subscription_btn').on('click', function () {
+                        $.ajax({
+                            url: "{% url "biotime:subscription_content" %}",
+                            type: "GET",
+                            success: function (res) {
+                                $("#side_menu").addClass('layui-hide');
+                                $("#main_body").addClass('layui-hide');
+                                $("#subscription_btn").addClass('active-subscription');
+                                $("#dashboard").addClass('layui-hide');
+                                $("#subscription").html(res);
+                                $("#subscription").removeClass('layui-hide');
+                                $('.menu_module', '#top_module_menu_nav').removeClass('layui-this');
+                                $('.header-popup-layer.level-2').addClass('layui-hide');
+                            }, error: function (msg) {
+                                console.error(msg);
+                            }
+                        })
+                    });
+
+                
+            
+            $('#id_worktable').click(function () {
+                $('#dashboard').removeClass('layui-hide');
+                $("#guide").addClass("layui-hide");
+                if(document.createEvent) {
+                      var event = document.createEvent("HTMLEvents");
+                        event.initEvent("resize", true, true);
+                        window.dispatchEvent(event);
+                    } else if(document.createEventObject) {
+                        window.fireEvent("onresize");
+                    }
+              //  location.reload();
+                window.setTimeout($.fn.dashboard_timer['refreshBaseCrard'], 1000);
+                window.setTimeout($.fn.dashboard_timer['refreshPie'], 2000);
+                window.setTimeout($.fn.dashboard_timer['refreshMonitor'], 3000);
+                window.setTimeout($.fn.dashboard_timer['dashboardRefresh'], 4000);
+                window.setTimeout($.fn.dashboard_timer['refreshException'], 10000);
+
+            });
+            $(document).on("click", "#guide .easy-user-guide a[datatype='guide']", function (event) {
+                let $target = event.currentTarget;
+                let app = $target.getAttribute('data-app');
+                let group = $target.getAttribute('data-group');
+                let item = $target.getAttribute('data-item');
+                let module_sub_menu = $('#side_menu_nav > li[app=' + app + ']')[group];
+                let a = $($(module_sub_menu).children('dl').children('dd')[item]).children('a');
+                let $group_list_str = '#side_menu_nav>li';
+                $($group_list_str + '.layui-nav-itemed').removeClass('layui-nav-itemed');
+                $($group_list_str).hide();
+                $($group_list_str + '[app="' + app + '"]').show();
+                a.closest('li.layui-nav-item').addClass("layui-nav-itemed");
+                a.click();
+                $("#main_body").removeClass('layui-hide');
+                $("#side_menu").removeClass("layui-hide");
+                $("#guide").addClass("layui-hide");
+            })
+            function guide_check_box(iflag) {
+                var d = $('#check_box_id').prop('checked');
+                var my_data;
+                if (d == true) {
+                    my_data = 1;
+                } else {
+                    my_data = 0;
+                }
+                is_show_guide=my_data;
+                if (iflag==0)
+                {
+                $.ajax({
+                    type: "GET",
+                    url: "/accounts/check_user_guide/",
+                    dataType: "json",
+                    data: {'check_box_val': my_data},
+                    success: function (response) {
+                   }
+                });
+            }
+            else if (iflag==1)
+            {
+                user_guide(iflag);
+             }
+            }
+        </script>
+        <script>
+            // For Showing notification for the Upgradings
+            var is_show_update={{ is_show_update }};
+            const data = [];
+            var upgrade = () => {
+                $.ajax({
+                    url: "/base/upgrade/"
+                    ,type: "GET"
+                    ,dataType: "json"
+                    ,success: function(response, xhr){}
+                    ,error: function(xhr, error, e){}
+                });
+            }
+
+            var check_for_updates = () => {
+              $.ajax({
+                url: "/base/check_for_updates/",
+                type: "GET",
+                dataType: "json",
+                success: function(response, xhr){
+                  if (response.update_available === true) {
+                    const newItem = { id: 1, title: "Update", content: "An update is available. Please update the software." };
+                    data.push(newItem);
+                    showUpdatePopup(response.version_changes);
+                    $('.notification-dot').css('display', 'inline-block');
+                  }else {
+                    $('#id_notification').addClass('layui-hide')
+                  }
+                }
+              });
+            };
+
+            {% if user.is_superuser and allow_auto_upgrade %}
+                check_for_updates()
+                user_update(0, is_show_update)
+            {% endif %}
+
+            function user_update(iflag, show_update) {
+                 if (show_update==1 || iflag==1){
+                     $('#updatePopup').addClass('layui-hide')
+                 } else if (show_update==2){
+                     $('#updatePopup').removeClass('layui-hide');
+                     $('#updatePopup').addClass('show');
+                     if (is_show_update==1){
+                        $("#update_check_id").prop('checked',true)
+                    } else {
+                        $("#update_check_id").prop('checked',false)
+                    }
+                 }else{
+                     $('#updatePopup').removeClass('layui-hide')
+                     $("#update_check_id").prop('checked',false)
+                 }
+            }
+
+            function showUpdatePopup(update_url) {
+                var popup = document.getElementById("updatePopup");
+                popup.style.display = "block";
+                setTimeout(function() {
+                    popup.classList.add("show");
+                }, 10);
+
+                var closeBtn = popup.querySelector(".close");
+                closeBtn.addEventListener("click", function() {
+                    popup.classList.remove("show");
+                    setTimeout(function() {
+                        popup.style.display = "none";
+                    }, 300);
+                });
+
+                var closeButton = popup.querySelector("#close_button");
+                if (closeButton) {
+                    closeButton.addEventListener("click", function() {
+                        popup.classList.remove("show");
+                        setTimeout(function() {
+                            popup.style.display = "none";
+                        }, 300);
+                    });
+                }
+
+                var updateButton = document.querySelector("#update_button");
+                updateButton.addEventListener("click", function() {
+                    popup.style.display = "none";
+                    layer.open({
+                        title: 'Upgrade'
+                        , area: ['auto', 'auto']
+                        , content: "Are you sure you want to Upgrade?"
+                        , closeBtn: 1
+                        , btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+                        , success: function (layero, index) {}
+                        , yes: function (index, layero) {
+                            layer.close(index);
+                            upgrade();
+                            popup.classList.remove("show");
+                        }
+                    });
+                });
+
+                var combined_content = update_url.join('\n');
+                document.getElementById('combined_content').innerText = combined_content;
+            }
+
+            function dont_show_updates(iflag) {
+                var d = $('#update_check_id').prop('checked');
+                var my_data;
+                if (d == true) {
+                    my_data = 1;
+                } else {
+                    my_data = 0;
+                }
+                is_show_update=my_data;
+                if (iflag==0)
+                {
+                $.ajax({
+                    type: "GET",
+                    url: "/accounts/check_show_update/",
+                    dataType: "json",
+                    data: {'check_box_update_val': my_data},
+                    success: function (response) {}
+                });
+            }else if (iflag==1){
+                user_update(iflag);
+             }
+            }
+
+            $(document).ready(function(){
+                $('[event="update_info"]').on('click', function() {
+                    $('.layui-layer-shade').css('display', 'block');
+                    $('.layui-layer-shade').css('z-index', '9999');
+                    $('.notificationWindow').css('right', '0');
+
+                    const notificationWindow = document.getElementsByClassName("notificationWindow")[0];
+                    if (notificationWindow) {
+                        notificationWindow.innerHTML = "";
+
+                        const closeButton = document.createElement("button");
+                        closeButton.innerHTML = "&times;";
+                        closeButton.classList.add("close");
+                        closeButton.addEventListener("click", function() {
+                            notificationWindow.style.right = "-400px";
+                            $('.layui-layer-shade').css('display', 'none');
+                        });
+                        notificationWindow.appendChild(closeButton);
+
+                        data.forEach(item => {
+                            const notification = document.createElement("div");
+                            notification.classList.add("notification");
+                            notification.addEventListener("click", function() {
+                                if (item.id === 1) {
+                                    user_update(0, 2);
+                                }
+                                notificationWindow.style.right = "-400px";
+                                $('.layui-layer-shade').css('display', 'none');
+                            });
+                            notification.innerHTML = `
+                                <h3>${item.title}</h3>
+                                <p>${item.content}</p>
+                            `;
+                            notificationWindow.appendChild(notification);
+                        });
+                    }
+                });
+            });
+        </script>
+    {% endblock extension_js %}
+{% endblock extrajs %}

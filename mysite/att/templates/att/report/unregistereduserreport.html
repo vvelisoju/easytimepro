@@ -1,0 +1,59 @@
+{% extends 'att/report/base_unregistered_user.html' %}
+{% load i18n %}
+{% block extra_function %}
+  function getAttPhoto(id){
+    var loadIndex = layer.load();
+    $.ajax({
+      url: '/att/get_unregistered_user_photo/',
+      type:'GET',
+      data: {
+        obj_id: id
+      },
+      dataType: 'html',
+      success: function (res) {
+        layer.close(loadIndex);
+        layer.open({
+          title: gettext("Verification  Photo"),
+          type: 1,
+          zIndex: 998,
+          area: ['600px', '500px'],
+          content: res,
+          btn:[gettext("btn_confirm")],
+          end: function () {
+            layer.closeAll('tips');
+          }
+        })
+      }
+       , error: function () {
+          layer.close(loadIndex);
+      }
+    })
+  }
+{% endblock extra_function %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+                {field:'punch_time', title: "{% trans 'report_column_punch_time' %}", sort: true}
+                ,{field:'mask_flag', title: "{% trans 'report_column_mask_status' %}", templet: function(obj){
+                    mask_flag = obj.mask_flag
+                    if(mask_flag=='1'){
+                      return '<span style="color: #00CD66;">Yes</span>'
+                    }else if(mask_flag=='0'){
+                      return '<span style="color: #ff0000;">No</span>'
+                    }else{
+                      return ''
+                    }
+                }}
+                ,{field:'temperature', title: "{% trans 'report_column_temperature' %}", sort: true}
+                ,{field:'unregistereduser_photo', title: "{% trans 'report_column_unregistereduser_photo' %}", event:'getRecptFile', templet: function(obj){
+                    if (obj.unregistereduser_photo){
+                      return '<a href="javascript:void(0);" style="color: #57c5f7", onclick="getAttPhoto(' + '\'' + obj.id+ '\')">'+ 'Show' +'</a>';
+                    } else{
+                      return '';
+                    }
+                }}
+            ]]
+        ,method: "get"
+        ,url: "/att/api/unregisteredUserReport/"
+    });
+{% endblock %}

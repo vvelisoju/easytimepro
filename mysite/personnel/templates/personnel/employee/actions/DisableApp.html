@@ -1,0 +1,29 @@
+{% load i18n common %}
+<div style="padding: 10px;min-height: 100px;width: 360px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_inline f.mobileapp_status %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.mobileapp_punch_status %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.mobileapp_outdoor_status %}
+      </div>
+{#      <div class="layui_form_item">#}
+{#        {% layui_inline f.whatsapp_status %}#}
+{#      </div>#}
+{#      <div class="layui_form_item">#}
+{#        {% layui_inline f.smspush_status %}#}
+{#      </div>#}
+    {% endwith %}
+  </form>
+</div>
+<style>
+    .layui-form-label
+    {
+        width: 160px;
+    }
+</style>

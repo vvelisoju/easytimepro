@@ -1,0 +1,25 @@
+{% load i18n common %}
+<div style="padding: 10px;min-height: 100px;width: 360px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_inline f.start_time %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.end_time %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.clear_all %}
+      </div>
+    {% endwith %}
+  </form>
+  <script>
+    layui.use('laydate', function(){
+      var laydate = layui.laydate;
+      $("form.layui-form input.layui-datetime").each(function () {
+        laydate.render({elem: this, type: "datetime"});
+      });
+    })
+  </script>
+</div>

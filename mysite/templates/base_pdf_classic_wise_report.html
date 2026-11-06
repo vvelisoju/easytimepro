@@ -1,0 +1,148 @@
+{% load i18n static %}
+{% load common %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Times+New+Roman" />
+  <meta charset="UTF-8">
+  <style type="text/css">
+  table{
+      width: 100%;
+      border-collapse: collapse;
+  }
+  table, th, td {
+      border: 1px solid black;
+      padding: 2px 5px;
+      font-weight: normal;
+      font-size: 16px;
+  }
+  table, tr, td, th, tbody, thead, tfoot {
+      page-break-inside: avoid !important;
+      /*word-break: keep-all !important;*/
+      /*white-space: nowrap !important;*/
+  }
+  h2, h6 {
+      text-align: center;
+  }
+  h2{
+      /*margin-block-end: 0.13em;*/
+      margin: 0;
+  }
+  h6{
+      margin-top: 0;
+  }
+  th{
+      height:25px;
+  }
+
+  div {
+    margin: auto;
+    {% if page_wise %}
+    page-break-before:left;
+    {% endif %}
+  }
+  .att_date{
+    white-space: nowrap !important;
+  }
+
+  p {
+    page-break-before: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  hr{
+      height: 1px;
+      border: none;
+      background-color: black;
+  }
+  #left-div{
+    float: left;
+  }
+  #right-div{
+    float: right;
+  }
+  #hr-top{
+    height: 16px;
+  }
+  #hr-div, #hr-top{
+    page-break-before: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  body, div, h2, h6, td, tr{
+    font-family: Alike, "Times New Roman", Times, Arial, Helvetica, sans-serif
+  }
+  </style>
+</head>
+
+<body>
+  {% autoescape off %}
+
+    {% if not datas %}
+        <h2>{{ title }}</h2>
+          <h6>{{ start }} To {{ end }}</h6>
+          <div id="hr-top">
+            <div id="right-div">Generated On: {{ print_date }}</div>
+            <div id="left-div">Company: {{ company_name }}</div>
+          </div>
+          <div id="hr-div"><hr/></div>
+        <table>
+        <tr>
+          {% for header in headers %}
+          <th>{{ header }}</th>
+          {% endfor %}
+        </tr>
+        </table>
+    {% endif %}
+
+    {% for group_datas in datas %}
+    <div>
+      {% if forloop.first %}
+        <h2>{{ title }}</h2>
+        <h6>{{ start }} To {{ end }}</h6>
+        <div id="hr-top">
+          <div id="right-div">Generated On: {{ print_date }}</div>
+          <div id="left-div">Company: {{ company_name }}</div>
+        </div>
+        <div id="hr-div"><hr/></div>
+        <p>{{ group_titles|get_list_value:forloop.counter0}}</p>
+      {% elif page_wise %}
+        <h2>{{ title }}</h2>
+        <h6>{{ start }} To {{ end }}</h6>
+        <div id="hr-top">
+          <div id="right-div">Generated On: {{ print_date }}</div>
+          <div id="left-div">Company: {{ company_name }}</div>
+        </div>
+        <div id="hr-div"><hr/></div>
+      <p>{{ group_titles|get_list_value:forloop.counter0}}</p>
+      {% else %}
+      <p>{{ group_titles|get_list_value:forloop.counter0}}</p>
+      {% endif %}
+      <table>
+        <tr>
+          {% for header in headers %}
+          <th>{{ header }}</th>
+          {% endfor %}
+        </tr>
+        {% for row in group_datas %}
+        <tr>
+          {% for coloum in row %}
+          <th>{{ coloum }}</th>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+      {% if not page_wise %}
+      {% if not forloop.last %}
+      <br />
+      <br />
+      {% endif%}
+      {% endif%}
+    </div>
+    {% endfor %}
+  {% endautoescape %}
+  {% block wisereport %}
+  {% endblock %}
+</body>
+</html>

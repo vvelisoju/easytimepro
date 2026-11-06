@@ -1,0 +1,277 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+
+{% block tabledata %}
+    <div class="layui-col-md6" >
+        <input type="hidden" id="id_{{ model_name }}SelectedShift" value=""/>
+        <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+        <script type="text/html" id="{{ model_name }}_toolbar">
+            <div class="layui-btn-container grid-toolbar" style="">
+                <ul class="layui-nav"></ul>
+            </div>
+        </script>
+    </div>
+{% endblock tabledata %}
+
+
+{% block calendarhtml %}
+    <style>
+        h2 {
+            line-height: 1.5;
+        }
+        .fc .fc-toolbar > * > :first-child {
+            margin-left: 10px;
+        }
+        .fc .fc-toolbar>*>* {
+            margin-top:10.5px;
+        }
+        .fc .fc-button-group>* {
+            margin-right:10px;
+        }
+        .fc-title {
+            color: #FFFFFF;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        .fc-widget-content.fc-today {
+            background: #ffffff !important;
+            box-shadow: rgb(150, 157, 159) 1px 1px 15px inset;
+        }
+    </style>
+    <div class="layui-col-md6" style="padding:5px;">
+        <div id="id_shift_detail_empschedule" class="layui-card">
+            <div class="layui-card-header" style="background-color: #e6e6e6; font-size: 25px;">
+                {% trans 'menu_group_att_scheduleManagement' %}
+            </div>
+            <div class="layui-card-body">
+                <div id="fullcalendar_schedule" style="height: 450px; display: grid; align-items: center">
+                    <p id="userNote" style="font-size:25px;">{% trans "select_an_employee_to_view_schedule" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock calendarhtml %}
+
+
+{% block search_form_init %}
+    var date = new Date();
+    var cur = moment(new Date());
+    var _start = cur.startOf('year').format('YYYY');
+    var fullStartOfYear = cur.startOf('year').format('YYYY-MM-DD');
+    var fullEndOfYear = cur.endOf('year').format('YYYY-MM-DD');
+    $.extend(opts, {where: {start_date: fullStartOfYear, end_date: fullEndOfYear}});
+{% endblock %}
+
+
+{% block opts_modify %}
+    var userCols = [
+        {field:'emp_code',  title: "{% trans 'report_column_empCode' %}", sort:true}
+        ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+        ,{field:'dept_name',  title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'area_names', title: "{% trans 'report_column_areaAlias' %}"}
+         ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+        ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+    ];
+    var _cols = [];
+    $.extend(opts, {
+        cols: [userCols.concat(_cols)]
+        ,method: "get"
+        ,url: "/att/api/empDetailsReport/"
+    });
+{% endblock %}
+
+<!--Calendar js Code-->
+{% block calendar_display %}
+
+function initializeCalendar() {
+    document.getElementById('userNote')?.remove();
+
+    $('#fullcalendar_schedule').fullCalendar({
+        height: 450
+        , header: {
+          center: '',
+          right: 'today prev,next'
+        }
+        , buttonText: {
+            today: 'Today'
+        }
+        , isRTL:false
+        , showNonCurrentDates:false
+        , monthNames : [
+            gettext('fullcal_January'), gettext('fullcal_February'), gettext('fullcal_March'), gettext('fullcal_April')
+          , gettext('fullcal_May'), gettext('fullcal_June'), gettext('fullcal_July'), gettext('fullcal_August')
+          , gettext('fullcal_September'), gettext('fullcal_October'), gettext('fullcal_November'), gettext('fullcal_December')
+        ]
+        , monthNamesShort : [
+            gettext('fullcal_Jan'), gettext('fullcal_Feb'), gettext('fullcal_Mar'), gettext('fullcal_Apr')
+          , gettext('fullcal_May'), gettext('fullcal_Jun'), gettext('fullcal_Jul'), gettext('fullcal_Aug')
+          , gettext('fullcal_Sep'), gettext('fullcal_Oct'), gettext('fullcal_Nov'), gettext('fullcal_Dec')
+        ]
+        , dayNames : [
+            gettext('fullcal_Sunday'), gettext('fullcal_Monday'), gettext('fullcal_Tuesday'), gettext('fullcal_Wednesday')
+          , gettext('fullcal_Thursday'), gettext('fullcal_Friday'), gettext('fullcal_Saturday')
+        ]
+        , dayNamesShort : [
+            gettext('fullcal_Sun'), gettext('fullcal_Mon'), gettext('fullcal_Tue'), gettext('fullcal_Wed')
+          , gettext('fullcal_Thur'), gettext('fullcal_Fri'), gettext('fullcal_Sat')
+        ]
+        , fixedWeekCount: false
+        , editable: false
+        , selectable: true
+        , eventRender: function(event, element) {
+            element.find('.fc-title').html(event.title);
+        }
+        , eventMouseover: function (event) {
+            $(this).popover({
+                title: event.timeIntervalAlias,
+                trigger: 'hover',
+                placement: "top",
+                atMouse: true,
+                container: '#fullcalendar_schedule'
+            }).popover('show');
+        }
+        , eventMouseout: function (event, jsEvent, view) {
+            $(this).popover({}).popover('hide')
+        }
+    });
+}
+
+function show_calendar(obj, events) {
+    employee_code = obj.data.emp_code
+    emp_id = obj.data.id
+    obj = obj.data
+    start_date_ = obj.start_date
+    end_date_ = obj.end_date
+    start_date_D = new Date(start_date_);
+    end_date_D = new Date(end_date_);
+
+    $('#fullcalendar_schedule').fullCalendar('removeEvents');
+    // $('#fullcalendar_schedule').fullCalendar( 'destroy' );
+    $('#fullcalendar_schedule').fullCalendar('gotoDate', start_date_);
+    $("#fullcalendar_schedule").fullCalendar('addEventSource', events);
+
+    let years = []
+    var currentDate = $('#fullcalendar_schedule').fullCalendar('getDate');
+    var currentYear = currentDate.year();
+    years.push(currentYear)
+
+    function get_newYear_events(year){
+        startDate = year+'-01-01'
+        endDate = year+'-12-31'
+        $.ajax({
+            type: "GET",
+            url: "/att/api/empCalendarReport/?page=1&page_size=100&start_date="+ startDate + "&end_date="+endDate + "&employees=" + emp_id,
+            success: function(data){
+                timeIntervalAliases = data.data[0].time_interval_aliases
+                events = get_events(data.data[0], timeIntervalAliases)
+                $('#fullcalendar_schedule').fullCalendar('addEventSource', events, true);
+            }
+        });
+    }
+
+    $(".fc-next-button").click(
+        function() {
+            var newDate = $('#fullcalendar_schedule').fullCalendar('getDate');
+            var newYear = newDate.year();
+            if (!years.includes(newYear)) {
+                years.push(newYear)
+                get_newYear_events(newYear);
+            }
+        }
+    );
+
+    $(".fc-prev-button").click(
+        function() {
+            var newDate = $('#fullcalendar_schedule').fullCalendar('getDate');
+            var newYear = newDate.year();
+            if (!years.includes(newYear)) {
+                get_newYear_events(newYear);
+                years.push(newYear)
+            }
+        }
+    );
+}
+{% endblock calendar_display %}
+
+
+<!-- Date -->
+{% block search_report_date %}
+  var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+  startDate = moment(startDate).startOf('year').format('YYYY-MM-DD');
+  var endDate = moment(startDate).endOf('year').format('YYYY-MM-DD');
+{% endblock %}
+
+<!-- Disabled the enddate -->
+{% block search_form_enddate %}
+{% endblock %}
+
+<!-- Disabled the startdate -->
+{% block search_form_startdate %}
+{% endblock search_form_startdate %}
+
+{% block fullcalendarJs_events %}
+
+function get_events(data, timeIntervalAliases) {
+    var events = [];
+    regex= /^[0-9]{8}$/;
+    var holiday = data['holidays']
+    var holidays = Object.keys(holiday).map(key => key.split('-').join(""));
+    let weekend =  data['weekends'].map(date => date.split('-').join(""));
+    for (var i in data) {
+        if (!regex.test(i)) { continue }
+        let event = {
+            title: data[i],
+            start: i,
+            allDay: true,
+            dayMaxEvents: true,
+        }
+        if (data[i] == 'Weekoff') {
+            event.timeIntervalAlias = event.title
+            event.color = 'green';
+            events.push(event);
+            continue;
+        }
+        if (holidays.includes(i) && (!weekend.includes(i))) {
+            event.timeIntervalAlias = event.title
+            event.color = '#a93ac4';
+            events.push(event);
+            continue;
+        }
+        let times = data[i].split(",");
+        times.forEach((date, index) => {
+            let title = date
+            if(date.includes('+')) {
+                title = date.split("+")[0] + '<sup style="color:yellow;"> +' + date.split("+")[1] + '</sup>'
+            }
+            let event = {
+                title:title ,
+                start: i,
+                allDay: true,
+                dayMaxEvents: true,
+                timeIntervalAlias: timeIntervalAliases[i][index],
+                backgroundColor: '#3788d8'
+            };
+            events.push(event);
+        });
+    }
+    return events
+}
+{% endblock fullcalendarJs_events %}
+
+
+{% block checkbox %}
+    table.on('row({{model_name}})', function(obj) {
+        $("#id_shift_detail_empschedule .layui-card-header").text("Employee: " +obj.data.first_name);
+        emp_id = obj.data.id
+        $.ajax({
+            type: "GET",
+            url: "/att/api/empCalendarReport/?page=1&page_size=50&start_date="+ fullStartOfYear + "&end_date="+fullEndOfYear + "&employees=" + emp_id ,
+            success: function(data){
+                initializeCalendar();
+                timeIntervalAliases = data.data[0].time_interval_aliases
+                events = get_events(data.data[0], timeIntervalAliases)
+                show_calendar(obj, events);
+            }
+        });
+    });
+{% endblock checkbox %}

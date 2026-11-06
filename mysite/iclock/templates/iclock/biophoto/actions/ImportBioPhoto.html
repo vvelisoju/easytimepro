@@ -1,0 +1,119 @@
+{% load i18n static common %}
+<div style="margin: 10px;height: 485px;width: 740px;">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-upload">
+            <button type="button" class="layui-btn js-addfileupload" id="idUpload">
+                <i class="fa fa-fw fa-plus"></i>{% trans 'bioPhotoImport_button_upload' %}
+            </button>
+            <button type="button" class="layui-btn" id="idClear">
+                <i class="fa fa-fw fa-trash-o"></i>{% trans 'bioPhotoImport_button_clear' %}
+            </button>
+            <div class="layui-hide layui-progress" lay-showpercent="true">
+                <div class="layui-progress-bar" lay-percent="20%"></div>
+            </div>
+            <blockquote class="layui-elem-quote layui-quote-nm" style="height:305px;width:720px;margin-top: 10px;border-width: 1px;overflow-y: scroll">
+                <div class="layui-upload-list" id="idReview"></div>
+            </blockquote>
+        </div>
+        <div class="layui-form-item">
+            {% layui_inline form.form.overwrite %}
+            {% layui_inline form.form.ignore_error %}
+        </div>
+        <div class="js-fileuploads" style="display:none;"></div>
+        <div class="layui-card">
+            <div class="layui-card-body">
+                <div><span style="color: red">*</span><span>{% trans 'form_helpText_title' %}</span></div>
+                <div style="padding: 0 20px;">
+                    <p>{% trans 'bioPhotoImport_helpText_tip1' %}</p>
+                    <p>{% trans 'bioPhotoImport_helpText_tip2' %}</p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(function() {
+        $(".js-addfileupload").click( function (e) {
+        e.preventDefault(e);
+        var elid = new Date().getTime();
+        $(".js-fileuploads").append("<input type=\"file\" id=\"js-file-" + elid + "\" name=\"bio_photo\" class=\"form-control\" accept=\"image/*\" multiple>");
+
+        $("#js-file-"+elid+"").click();
+
+        $("#js-file-"+elid+"").on('change', function(event){
+            var files = $("#js-file-"+elid+"")[0].files;
+            var allowed_extensions = ['jpg', 'jpeg', 'png', 'bmp'];
+                for (const file of files) {
+                    var file_extension = file.name.split('.').pop();
+                    if (!allowed_extensions.includes(file_extension)) {
+                        layer.alert(
+                            gettext('invalid_file'),
+                            {
+                                title: gettext('system_exception')
+                                , icon: 5
+                                , btn: gettext('btn_confirm')
+                                , end: () => document.getElementById('idUpload').click()
+                            }
+                        );
+                    } else {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            var id = file.name.split('.')[0];
+                            // it will replace only special character to _[underscore]
+                            var customId = id.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/\s]/gi,'_');
+                            var img = $('<div style="float:left;width: 84px; position: relative;margin-right: 0.5em;" title="'+ file.name +'" id="'+ customId +'">' +
+                              '<div style="width:84px;height:120px;margin-right: 0.5em;">' +
+                              '<img src="'+ e.target.result +'" alt="'+ file.name +'" class="layui-upload-img" style="width:80px;height:80px;"/>' +
+                              '<i style="position: absolute; top: -6px; right: -3px;color:#fff;background:#000; border-radius: 20px;font-size: 14px;cursor: pointer;height: 18px;" class=\'layui-icon layui-icon-close remove\' at="'+ file.name +'"></i>' +
+                              '<div style="width: 84px;padding: 0 0 3px 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">' +
+                              '<a style="color:#E84C3D;" href="javascript:void(0);" ></a>' +
+                              '<span style="width: 65px;">'+ file.name +'</span>' +
+                              '</div>' +
+                              '</div>');
+                          $('#idReview').append(img);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                };
+            });
+        });
+    });
+
+    document.addEventListener('click',function(event){
+        if(event.target.nodeName == "I"){
+            event.preventDefault();
+            var element_id = event.target.closest('div').parentElement.id;
+            var remove_id = event.target.closest('div').innerText;
+            var bio_photo = document.querySelectorAll("input[name='bio_photo']")
+            bio_photo.forEach((photo) => {
+                const data = new DataTransfer()
+                for(var i = 0; i < photo.files.length; i++){
+                    if (photo.files[i]['name'] !== remove_id){
+                        data.items.add(photo.files[i])
+                    }
+                }
+              photo.files = data.files;
+            });
+            $(`#${element_id}`).remove();
+        }
+    });
+
+    $("#idClear").click(function () {
+        $("#idReview").empty();
+        $("input[name='bio_photo']").val("");
+    });
+
+    $(".layui-layer-btn0").click(function (e) {
+        e.preventDefault();
+        var bio_photo_count = $("#idReview [title]").length;
+        if (bio_photo_count > 100){
+            layer.alert(gettext('The maximum number of bio photos allowed is 100.'), {
+                title: gettext('system_exception')
+                , icon: 5
+                , btn: gettext('btn_confirm')
+            });
+            return false;
+        }
+    });
+</script>

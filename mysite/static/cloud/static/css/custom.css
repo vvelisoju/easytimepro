@@ -1,0 +1,114 @@
+.logo-head {
+    font-size: 36px !important;
+}
+.span1,
+.span3 {
+    color: #7ac045;
+}
+
+.span2 {
+    color: #000;
+}
+.logo-para {
+    text-align: right;
+    margin: -12px 8px 0 0;
+    font-size: 10px; color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.easy-icon-sidenav {
+    /* background-color: #343a40 !important;
+    color: #fff !important;
+    border-left: 3px solid #7ac045;
+    border-radius: 0 !important; */
+
+    /*background-color: #f2fde9 !important;*/
+    color: #343a40!important;
+    border-left: 3px solid #7ac045;
+    line-height: 3rem !important;
+    height: 3rem !important;
+}
+.easy-icon-sidenav i {
+    color: #fff;
+    opacity: 1.0 !important;
+}
+.easy-icon-body {
+    border-radius: 50% !important;
+}
+.easy-icon-body i {
+    color: #7ac045;
+}
+.user-dropdown,
+.employee-dropdown {
+    height: auto !important;
+}
+.input-field {
+    padding: 2px; 
+    font-size: 12px;
+}
+.submit-btn {
+    background-color: #7ac045; 
+    color: #fff; 
+    padding: 2px; 
+    font-size: 12px; 
+    font-weight: bold;
+}
+.my-header-menu li.active {
+    background-color: rgba(57, 61, 73, 0.66667);
+}
+.my-header-menu li:hover {
+    background-color: #8b8e90;
+}
+.my-header-menu li.active:hover {
+    background-color: #545861;
+}
+.custom-nav-link {
+    font-size: 1.3em;
+    padding: 1.01rem 1rem;
+    min-width: 110px;
+    color: #fff !important;
+    /*background: #898989;*/
+    font-weight: bold !important;
+}
+.custom-nav-link:hover {
+    color: #fff !important;
+}
+/*-- Cards Popup Style --*/
+.modalStyleInputs span,
+.modalStyleInputs input {
+    font-size: 12px;
+    border-radius: 0;
+}
+.modalStyleInputs input:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #7ac143;
+}
+.modalStyleTable thead th,
+.modalStyleTable tbody td {
+    font-size: 12px;
+}
+.modalSubmitBtn {
+    margin: 0 !important;
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+    background: #e0f3ff;
+    box-shadow: 0px 4px 8px 0px #b9b9b9;
+}
+.modalSubmitBtn:hover {
+    box-shadow: 0px 4px 8px 0px #b9b9b9;
+}
+.modalTotalCom a {
+    font-size: 12px;
+    color: #474b4f;
+}
+.modalTotalCom span {
+    font-size: 12px;
+    color: #474b4f;
+    background: #eff9ff;
+    border-radius: 20px;
+}
+/*-- //End --*/

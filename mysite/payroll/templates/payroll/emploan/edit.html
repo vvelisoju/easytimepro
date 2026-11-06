@@ -1,0 +1,68 @@
+{% load i18n static common %}
+{% autoescape off %}
+  <div id="{{ model_name }}_edit_form" style="padding: 10px; height: 500px;width: 1000px;">
+    <form class="layui-form data-form" action="" method="post">
+      {% csrf_token %}
+      {% with adminform.form as f %}
+
+        <div class="layui-colla-content layui-show">
+        <div class="layui-form-item">
+                {%layui_inline f.employee %}
+          </div>
+          <div class="layui-row">
+            <div class="layui-col-md9">
+              <div class="layui-form-item" >
+                {% layui_inline f.loan_amount %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.loan_date %}
+              </div>
+              <div class="layui-form-item" style="all: inherit;">
+                {% layui_inline f.refund_cycle %}
+              </div>
+                <div class="layui-form-item" style="all: inherit;">
+                {% layui_inline f.per_cycle_refund %}
+              </div>
+                <div class="layui-form-item" style="all: inherit;">
+                {% layui_inline f.remark %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endwith %}
+    </form>
+    {% block from_button %}
+    {% endblock %}
+  </div>
+  <script>
+    layui.use('form', function () {
+      var form = layui.form;
+      form.render();
+      form.on('submit(form-submit)', function (/*data*/) {
+        var action_url = $("current_url").val();
+        var formdata = form.field;
+        $.ajax({
+          type: "POST",
+          url: action_url,
+          data: formdata,
+          dataType: "html",
+          success: function (data) {
+            var msg, status;
+            if (typeof data == "string" && data.toLowerCase() === "ok") {
+              msg = gettext("save_successful");
+              status = 1;
+            } else {
+              msg = gettext("save_failed.");
+              status = 2;
+            }
+            layer.msg(msg, {
+              icon: status,
+              time: 2000,
+              title: gettext("info")
+            });
+          }
+        });
+      });
+    });
+  </script>
+{% endautoescape %}

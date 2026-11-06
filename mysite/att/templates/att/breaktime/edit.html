@@ -1,0 +1,175 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div id="{{ model_name }}_edit_form" style="margin: 10px;height: 300px;width: 820px;">
+    <form class="layui-form data-form" action="" method="post">
+      <input type="hidden" id="id_model_pk" data-name="pk" value="{{ object_id }}"/>
+      {% csrf_token %}
+      {% with adminform.form as f %}
+        <div class="base-setting base-setting-large1">
+          <div class="layui-form-item">
+            {% layui_inline f.alias %}
+            {% layui_inline f.calc_type %}
+          </div>
+          <div class="layui-tab" lay-filter="breakTimeTab">
+            <ul class="layui-tab-title">
+              <li class="layui-this" lay-id="idBasicContent">{% trans 'breakTime_tab_basicSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_ruleSetting' %}</li>
+              <li id="idRequirePunch" class="layui-hide">{% trans 'breakTime_tab_RequirePunchSetting' %}</li>
+            </ul>
+            <div class="layui-tab-content break-form">
+              <div class="layui-tab-item layui-show">
+                <div class="layui-form-item" style="padding-top: 20px" >
+{#                  <span onfocusin="diff()">{% layui_inline f.period_start %}</span>#}
+                  {% layui_inline f.period_start %}
+                  {% layui_inline f.period_end %}
+                </div>
+                <div class="layui-hidden">{% layui_inline f.required_duration %}</div>
+                <div class="layui-hidden">{% layui_inline f.end_margin %}</div>
+                <div class="layui-form-item">
+{#                  <span onmousemove="diff()">{% layui_mid f.duration %}</span>#}
+                    {% layui_mid f.duration %}
+                </div>
+              </div>
+              <div class="layui-tab-item">
+                <div class="layui-form-item" style="padding-top: 20px">
+                  {% layui_mid f.available_interval_type %}
+                  {% layui_mid f.available_interval %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_mid f.func_key %}
+                </div>
+                <div class="layui-form-item layui-hide">
+                  {% layui_mid f.multiple_punch %}
+                </div>
+              </div>
+              <div id="idRequirePunchContent" class="layui-tab-item">
+                <div class="layui-form-item" style="padding-top: 20px">
+                  {% layui_mid f.multiple_punch %}
+                  {% layui_mid f.minimum_duration %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_mid f.early_in %}
+                  {% layui_mid f.min_early_in %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_mid f.late_in %}
+                  {% layui_mid f.min_late_in %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endwith %}
+    </form>
+    {% block from_button %}
+    {% endblock %}
+  </div>
+
+{#<script>#}
+{##}
+{##}
+{#    function diff() {#}
+{#        var start = document.getElementById("id_period_start").value;#}
+{#        var end = document.getElementById("id_period_end").value;#}
+{#        console.log(start)#}
+{#        console.log(end)#}
+{#        start = start.split(":");#}
+{#        end = end.split(":");#}
+{#        var startDate = new Date(0, 0, 0, start[0], start[1], 0);#}
+{#        var endDate = new Date(0, 0, 0, end[0], end[1], 0);#}
+{#        var diff = endDate.getTime() - startDate.getTime();#}
+{#        var hours = Math.floor(diff / 1000 / 60 / 60);#}
+{#        diff -= hours * (1000 * 60 * 60);#}
+{#        var minutes = Math.floor(diff / 1000 / 60);#}
+{#        diff -= minutes * (1000 * 60);#}
+{#        var seconds = Math.floor(diff / 1000);#}
+{##}
+{#        if (hours < 0)#}
+{#           hours = hours + 24;#}
+{#        document.getElementById("id_duration").value = ((hours*60)+minutes+(seconds/60));#}
+{#    }#}
+    {#document.getElementById("id_duration").value = diff(start, end);#}
+{##}
+{#</script>#}
+  <script>
+    layui.use(['form', 'laydate', 'element'], function () {
+      var form=layui.form, laydate=layui.laydate, element = layui.element;
+      $("form.layui-form input.layui-time").each(function () {
+        laydate.render({elem: this, type: 'time'});
+      });
+      function switchTab(type){
+          switch(type){
+              case '0':
+                  element.tabChange('breakTimeTab', "idBasicContent");
+                  $("#idRequirePunch").addClass('layui-hide');
+                  break;
+              case '1':
+                  $("#idRequirePunch").removeClass('layui-hide');
+                  break;
+              default:
+                  break;
+          }
+      }
+      $("#id_duration").attr("min", "0").attr("max", "1440");
+      $("#id_end_margin").attr("min", "0").attr("max", "1440");
+      $("#id_available_interval").attr("min", "0").attr("max", "1440");
+      $("#id_min_early_in").attr("min", "0").attr("max", "1440");
+      $("#id_min_late_in").attr("min", "0").attr("max", "1440");
+      $("#id_minimum_duration").attr("min", 0).attr("max", "1440");
+      function init_page() {
+          var calcType = $("#id_calc_type").val();
+          switchTab(calcType);
+          form.render('select');
+          if ($("#id_available_interval_type").val() === '0') {
+              $("#id_available_interval").attr("disabled", "disabled");
+          }
+          if ($("#id_early_in").val() === '0') {
+              $("#id_min_early_in").attr("disabled", "disabled");
+          }
+          if ($("#id_late_in").val() === '0') {
+              $("#id_min_late_in").attr("disabled", "disabled");
+          }
+      }
+      init_page();
+      form.on('select', function (data) {
+        var elem = data.elem;
+        var selectValue = data.value;
+        switch (elem.id) {
+          case 'id_calc_type':
+            switchTab(selectValue);
+            form.render('select');
+            break;
+          case 'id_available_interval_type':
+            if (selectValue === '0') {
+              $("#id_available_interval").attr("disabled", "disabled");
+            }
+            if (selectValue === '1') {
+              $("#id_available_interval").removeAttr("disabled");
+            }
+            break;
+          case 'id_early_in':
+            if (selectValue === '0') {
+              $("#id_min_early_in").attr("disabled", "disabled");
+            }
+            else {
+              $("#id_min_early_in").removeAttr("disabled");
+            }
+            form.render('select');
+            break;
+          case 'id_late_in':
+            if (selectValue === '0') {
+              $("#id_min_late_in").attr("disabled", "disabled");
+            }
+            else{
+              $("#id_min_late_in").removeAttr("disabled");
+            }
+            form.render('select');
+            break;
+          default:
+            break;
+        }
+      });
+    });
+  </script>
+{% endautoescape %}

@@ -1,0 +1,275 @@
+{% load i18n static common %}
+{% autoescape off %}
+  <style>
+    .pac-container {
+      z-index: 1100 !important;
+    }
+  </style>
+  <div id="{{ model_name }}_edit_form" style="padding: 10px;">
+    <form class="layui-form data-form" action="" method="post">
+      {% csrf_token %}
+      {% with adminform.form as f %}
+        <table>
+          <tbody>
+          <tr>
+            <td style="vertical-align:top;width: 350px">
+              <div class="layui-form-item">
+                {% layui_inline f.emp %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.distance %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.location %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.latitude %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.longitude %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.start_date %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.end_date %}
+              </div>
+            </td>
+            <td style="vertical-align:top">
+              <div class=layui-form-item">
+                <div class="layui-inline">
+                  <label class="layui-form-label" for="id_search_map" style="margin-left: 28px;">{% trans 'companySettingPage_label_Search_Map' %}</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="search_map" class="layui-input" id="id_search_map" autocomplete="on"
+                           style="width: 500px; max-width: 500px">
+                  </div>
+                  <div class="layui-inline">
+                  <i onclick="formatAddress()" class="fa fa-fw fa-search"></i>
+                  </div>
+                </div>
+              </div>
+              <div id="map-canvas" style="height: 270px;width: 640px; margin-left: 60px;"></div>
+              <div style="margin-left: 60px">
+                <div id="gps_add" style="width: 592px;"></div><br>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      {% endwith %}
+    </form>
+  </div>
+  <script>
+    var circle, map, marker, zoomUpdate, mapDistance, google;
+    var tmp_google, tmp_circle, tmp_map, tmp_marker, tmp_zoomUpdate, tmp_mapDistance;
+    var initLat = '12.9891657',
+        initLon = '77.6885258',
+        check_submit = 0,
+        noPos = false;
+
+    function checkSubmit() {
+      if (check_submit) {
+        check_submit = 0;
+        circle = tmp_circle;
+        google = tmp_google;
+        map = tmp_map;
+        marker = tmp_marker;
+        zoomUpdate = tmp_zoomUpdate;
+        mapDistance = tmp_zoomUpdate
+      }
+    }
+
+    function initData() {
+      var autocomplete = new google.maps.places.Autocomplete(document.getElementById('id_search_map'));
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var place = autocomplete.getPlace();
+        zoomUpdate = 18;
+        if (place !== undefined) {
+          if (place.formatted_address === undefined) {
+            formatAddress();
+          } else {
+            showInMap(place.geometry.location);
+          }
+        } else {
+          showInMap(new google.maps.LatLng(initLat, initLon), true);
+        }
+      });
+      initMap();
+    }
+
+    function formatAddress() {
+      var geocoder = new google.maps.Geocoder();
+      var address = document.getElementById('id_search_map').value;
+      geocoder.geocode({'address': address}, function (results, status) {
+        if (status === 'OK') {
+          geometryLocation = results[0].geometry.location;
+          geometryAddress = results[0].formatted_address;
+          if (typeof (map) == "undefined") {
+            map = new google.maps.Map(document.getElementById("map-canvas"), {center: geometryLocation, zoom: 6});
+            marker = new google.maps.Marker({
+              position: geometryLocation,
+              map: map,
+              draggable: true
+            });
+
+            google.maps.event.addListener(marker, 'dragend', function () {
+              checkSubmit();
+            });
+          } else {
+            map.setOptions({center: geometryLocation, zoom: map.getZoom()});
+            marker.setPosition(geometryLocation);
+          }
+          geocodePosition(marker.getPosition());
+        }
+        else{
+          layer.alert(gettext('invalid_location'), {title: gettext("layer_title"), icon: 5, btn: gettext("btn_confirm")});
+        }
+      });
+    }
+
+    function showInMap(pos, noPos) {
+      checkSubmit();
+      if (typeof (map) == "undefined") {
+        var mapOption = {
+          center: pos,
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        if (noPos) {
+          mapOption['zoom'] = 5;
+          zoomUpdate = 5
+        } else {
+          zoomUpdate = 18
+        }
+
+        map = new google.maps.Map(document.getElementById("map-canvas"), mapOption);
+        marker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          draggable: true
+        });
+        marker.addListener('click', function () {
+          map.setZoom(zoomUpdate);
+          map.setCenter(marker.getPosition());
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function () {
+          checkSubmit();
+          geocodePosition(marker.getPosition());
+        });
+        google.maps.event.addListener(map, 'click', function (event) {
+        marker.setPosition(event.latLng);
+      });
+      map.addListener('click', function(e) {
+       geocodePosition(e.latLng, map);
+      });
+      } else {
+        map.setOptions({center: pos, zoom: 12});
+        marker.setPosition(pos);
+      }
+      geocodePosition(marker.getPosition(), noPos);
+    }
+
+    function geocodePosition(pos, noPos) { // noPos means first time to add
+      geocoder = new google.maps.Geocoder();
+      geocoder.geocode
+      ({latLng: pos}, function (responses) {
+        if (responses && responses.length > 0) {
+          geometryLocation = pos;
+          geometryAddress = responses[0].formatted_address;
+          var geometryLat = responses[0].geometry.location.lat();
+          var geometryLng = responses[0].geometry.location.lng();
+          document.getElementById('id_latitude').value = geometryLat;
+          document.getElementById('id_longitude').value = geometryLng;
+          document.getElementById('gps_add').innerText = geometryAddress;
+          $('#id_location').val(geometryAddress);
+          if (!noPos) {
+            document.getElementById('id_latitude').value = pos.lat();
+            document.getElementById('id_longitude').value = pos.lng()
+          }
+        }
+        if (!(circle === undefined)) {
+          circle.setOptions({center: pos, radius: parseFloat(mapDistance)});
+        } else {
+          circle = new google.maps.Circle({
+            strokeColor: "#7ac143",
+            strokeOpacity: 0.8,
+            strokeWeight: 1.5,
+            fillColor: "#7ac143",
+            fillOpacity: 0.35,
+            map: map,
+            center: pos,
+            radius: parseFloat(mapDistance)
+          })
+        }
+      });
+    }
+
+    function updateDistannce() {
+      circle.setOptions({center: marker.getPosition(), radius: parseFloat(mapDistance)});
+    }
+
+    function initMap() {
+      mapDistance = document.getElementById('id_distance').value;
+      if (!mapDistance || isNaN(mapDistance)) {
+        mapDistance = 0
+      }
+      var tempLat = document.getElementById('id_latitude').value;
+      var tempLon = document.getElementById('id_longitude').value;
+      if (tempLat === '' || tempLon === '') {
+        showInMap(new google.maps.LatLng(initLat, initLon), true);
+      } else {
+        showInMap(new google.maps.LatLng(tempLat, tempLon));
+      }
+    }
+
+    layui.use('form', function () {
+      var form = layui.form;
+      form.render();
+      $("form.layui-form input.layui-date").each(function () {
+        var laydate = layui.laydate;
+        laydate.render({
+          elem: this,
+          type: 'date'
+        });
+      });
+    });
+
+    $(function () {
+      $.getScript("https://maps.googleapis.com/maps/api/js?key={% MAPS_API_KEY %}&v=3.31&libraries=places", function () {
+        initData()
+      });
+      $('#id_distance').on("input", function () {
+        //change distance need change circle also.
+        if (!isNaN(this.value)) {
+          mapDistance = this.value
+        } else {
+          mapDistance = 0
+        }
+        updateDistannce()
+      });
+      $('#id_distance').change(function () {
+        var distance = $('#id_distance').val();
+        if (distance < 0) {
+          layer.alert(gettext('gps_distance_invalid'), {
+            title: gettext('system_exception')
+            , icon: 5
+            , btn: gettext('btn_confirm')
+          })
+        }
+      });
+      $(".layui-layer-btn0, .layui-layer-close1, .layui-layer-btn1").click(function () {
+        if (google !== undefined) {
+          check_submit = 1;
+          tmp_google = google;
+          tmp_circle = circle;
+          tmp_map = map;
+          tmp_marker = marker;
+          tmp_zoomUpdate = zoomUpdate;
+          tmp_mapDistance = mapDistance;
+          google = circle = map = marker = zoomUpdate = mapDistance = undefined;
+        }
+      });
+    })
+  </script>
+{% endautoescape %}

@@ -1,0 +1,98 @@
+{% load i18n %}
+
+<div class="auxiliary-setting-form">
+  <form action="" class="layui-form" lay-filter="auxiliarySettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" style="height: 200px">
+          <div class="layui-card-header"><i class="fa fa-cog"></i><span style="padding-left: 5px">{% trans 'auxiliarySetting_otherSetting' %}</span></div>
+          <div class="layui-card-body" style="margin: 10px" title="{% trans 'otherSetting_field_employeePhotoBackupTitle' %}">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="" class="layui-form-label">{% trans 'otherSetting_field_employeePhotoBackup' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="photo_path" class="layui-input" placeholder="C:/xxx">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row layui-col-space15">
+      <div class="layui-form-item" style="margin-top: 20px">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit="" lay-filter="auxiliarySettingSubmit" id="auxillary-btn">{% trans 'auxiliarySetting_btn_submit' %}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+
+  $(function(){
+    layui.use('form', function(){
+      var form = layui.form;
+      form.render();
+      form.verify({});
+      form.val('auxiliarySettingForm', {
+          'enable_registration': 0
+          ,'enable_name_upload': 1
+          ,'enable_card_upload': 1
+      });
+      form.on('submit(auxiliarySettingSubmit)', function(data){
+        var loadIndex = layer.load();
+        var csrf = data.field['csrfmiddlewaretoken'];
+        var value = {
+          photo_path: data.field['photo_path']
+        };
+        $.ajax({
+          url: "/base/api/systemSetting/?name=auxiliary_setting",
+          type: "POST",
+          data: {"name": "auxiliary_setting", "value": JSON.stringify(value), csrfmiddlewaretoken: csrf},
+          dataType: "json",
+          success: function(response, xhr){
+            $.ajax({
+              url: "base/api/systemSetting/?name=auxiliary_setting",
+              type: "GET",
+              dataType: "json",
+              success: function (response, xhr) {
+                var data = response.data[0];
+                if (data){
+                  var data = JSON.parse(data.value);
+                  form.val('auxiliarySettingForm', data);
+                }
+              }
+            });
+            layer.close(loadIndex);
+            layer.msg(gettext('save_successful'), {icon: 6});
+          },
+          error: function(xhr, error, e){
+            layer.close(loadIndex);
+            if(xhr.responseJSON.value){
+                layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+            }else{
+                layer.msg(gettext('save_filed'), {icon: 5});
+            }
+          }
+        });
+        return false;
+      });
+
+      $.ajax({
+        url: "base/api/systemSetting/?name=auxiliary_setting",
+        type: "GET",
+        dataType: "json",
+        success: function (response, xhr) {
+          var data = response.data[0];
+          if (data){
+            var data = JSON.parse(data.value);
+            form.val('auxiliarySettingForm', data);
+          }
+        }
+      });
+
+    });
+  })
+</script>

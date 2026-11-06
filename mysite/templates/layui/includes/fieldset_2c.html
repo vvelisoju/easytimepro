@@ -1,0 +1,60 @@
+<div>
+    {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
+    {% if fieldset.description %}
+        <div class="description">{{ fieldset.description|safe }}</div>
+    {% endif %}
+    {% for line in fieldset %}
+        {% if forloop.counter0|divisibleby:"2" == 1 %}
+        <div class="layui-form-item{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} layui-hidden {% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
+            {% endif %}
+
+            {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+            {% for field in line %}
+                    <div class="layui-inline">
+                {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+                {% if field.is_checkbox %}
+                    {{ field.field }}{{ field.label_tag }}
+                {% else %}
+                    {% if not field.is_readonly %}
+                        {{ field.label_tag }}
+                        <div class="layui-input-inline {% if field.field.is_hidden %} layui-hidden {% endif %}">
+                    {% else %}
+                        <div class="layui-input-inline {% if field.field.is_hidden %} layui-hidden {% endif %}"
+                            style="display: contents; width: auto">
+                    {% endif %}
+                {% if field.is_readonly %}
+                    <label class="layui-form-label"
+                        for="id_{{ field.field.field }}">
+                        {{ field.field.label }}
+                        {% if field.field.required %}
+                            <span class="required">*</span>{% endif %}
+                    </label>
+                    <div class="layui-input-inline {% if field.is_hidden %} layui-hidden {% endif %}">
+                        <input type="text" readonly
+                            name="{{ field.field.field }}"
+                            lay-verify="{{ field.field.field }}"
+                            id="id_{{ field.field.field }}"
+                            class="layui-input" maxlength="20"
+                            value="{{ field.contents }}">
+                    </div>
+                {% else %}
+                    {{ field.field }}
+                {% endif %}
+                </div>
+                {% endif %}
+            {% if field.field.help_text %}
+                <div class="layui-form-mid layui-word-aux">{{ field.field.help_text|safe }}</div>
+            {% endif %}
+        </div>
+            {% endfor %}
+        {% if forloop.counter0|divisibleby:"2" == 0 %}
+            </div>
+        {% endif %}
+        {% if forloop.last %}
+            {% if forloop.counter0|divisibleby:"2" == 1 %}
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>
+ 

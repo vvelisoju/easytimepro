@@ -1,0 +1,34 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+
+    $.extend(opts, {
+        cols: [{{ cols|safe }}]
+        ,method: "get"
+        ,url: "/att/api/monthlyStatusSummaryReport/"
+    });
+{% endblock %}
+
+{% block search_report_date %}
+    var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+    startDate = moment(startDate).startOf('month').format('YYYY-MM-DD');
+    var endDate = moment(startDate).endOf('month').format('YYYY-MM-DD');
+{% endblock %}
+
+  {% block search_form_init %}
+    var cur = moment(new Date());
+    var _start = cur.startOf('month').format('YYYY-MM');
+    var fullStartOfMonth = cur.startOf('month').format('YYYY-MM-DD');
+    var fullEndOfMonth = cur.endOf('month').format('YYYY-MM-DD');
+
+  var startDate = laydate.render({
+    elem: '#{{ model_name }}-start-date',
+    type: 'month',
+    value: _start,
+  });
+  $.extend(opts, {where: {start_date: fullStartOfMonth, end_date: fullEndOfMonth}});
+  {% endblock %}
+
+{% block search_form_enddate %}
+{% endblock %}
+

@@ -1,0 +1,39 @@
+{% load i18n %}
+
+{% block content %}
+  <div class="layui_body page-form" style="width: 360px;height: 220px;">
+    <blockquote class="layui-elem-quote layui-text">
+      {% trans 'Please enter the date of the emergency!' %}
+    </blockquote>
+    <form class="layui-form">
+      <div class="layui-form-item" style="padding-top:5px;">
+        <div class="layui-inline field-emergency_date">
+          <label class="layui-form-label" for="id_emergency_date">{% trans 'Date of occurrence' %}</label>
+          <div class="layui-input-inline">
+            <input type="text" name="emergency_date" value="{{ date }}" id="id_emergency_date">
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-inline field-export_type">
+          <label class="layui-form-label" for="id_export_type">{% trans 'export type' %}</label>
+          <div class="layui-input-inline">
+            <select name="export_type" id="id_export_type">
+              <option value="csv" selected="">{% trans 'csv_export' %}</option>
+              <option value="pdf">{% trans 'pdf_export' %}</option>
+              <option value="xls">{% trans 'xlsx_export' %}</option>
+              <option value="txt">{% trans 'txt_export' %}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    layui.use(['laydate', 'form'], function(){
+      var form = layui.form, laydate = layui.laydate;
+      form.render();
+      laydate.render({elem: '#id_emergency_date', type: 'date'});
+    });
+  </script>
+{% endblock %}

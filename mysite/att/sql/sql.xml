@@ -1,0 +1,4059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlgroup>
+    <sql id="report_paging_sql">
+        <content engine="default">
+            <![CDATA[
+                select top %(pagesize)s o.* from ( select row_number() over(order by %(orderby)s) as rownumber, * from (
+                    %(sql)s
+                ) oo) o where o.rownumber>%(firstindex)s
+            ]]>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select 0 as rownumber,o.* from ( %(sql)s   order by %(orderby)s ) o limit %(firstindex)s,%(pagesize)s
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select * from ( select ROWNUM rownumber, o.* from (
+                    %(sql)s   order by %(orderby)s
+                ) o) where rownumber<=(%(firstindex)s + %(pagesize)s) and rownumber>%(firstindex)s
+            ]]>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select 0 as rownumber,o.* from ( %(sql)s  order by %(orderby)s ) o limit %(pagesize)s offset %(firstindex)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="get_schedulelog_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+                SELECT
+                    count(att_schetransaction.id) as data_count
+                FROM att_schetransaction
+                left join personnel_employee on employee_id = personnel_employee.id
+                where att_date>='%(st)s' and att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                SELECT
+                    count(att_schetransaction.id) as data_count
+                FROM att_schetransaction
+                left join personnel_employee on att_schetransaction.employee_id = personnel_employee.id
+                where att_schetransaction.att_date>='%(st)s' and att_schetransaction.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                SELECT
+                    count(att_schetransaction.id) as data_count
+                FROM att_schetransaction
+                left join personnel_employee on att_schetransaction.employee_id = personnel_employee.id
+                where att_schetransaction.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and att_schetransaction.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                SELECT
+                count(att_schetransaction.id) as data_count
+                FROM att_schetransaction
+                left join personnel_employee on att_schetransaction.employee_id = personnel_employee.id
+                where att_schetransaction."att_date">='%(st)s' and att_schetransaction."att_date"<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="get_schedulelog_report_sql">
+        <content engine="default">
+            <![CDATA[
+                SELECT
+                    top 100 percent
+                    ast.id,
+                    personnel_employee.emp_code,
+                    personnel_employee.first_name,
+                    personnel_employee.last_name,
+                    personnel_employee.nickname as nick_name,personnel_employee.gender,
+                    pos.position_code,pos.position_name,
+                    personnel_department.dept_code,personnel_department.dept_name,
+                    ast.punch_time as punch_date,
+                    ast.punch_time,
+                    ast.punch_state,
+                    iclock_transaction.work_code,
+                    ast.correct_state
+                FROM att_schetransaction ast
+                left join personnel_employee on ast.employee_id = personnel_employee.id
+                left join personnel_department on personnel_department.id = personnel_employee.department_id
+                left join personnel_position pos on pos.id = personnel_employee.position_id
+                left join iclock_transaction on iclock_transaction.id = ast.transaction_id
+                where ast.att_date>='%(st)s' and ast.att_date<='%(et)s' %(and)s
+                order by personnel_employee.emp_code,ast.att_date
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                SELECT
+                    ast.id,
+                    personnel_employee.emp_code,
+                    personnel_employee.first_name,
+                    personnel_employee.last_name,
+                    personnel_employee.nickname as nick_name,personnel_employee.gender,
+                    personnel_position.position_code,personnel_position.position_name,
+                    personnel_department.dept_code,personnel_department.dept_name,
+                    ast.punch_time as punch_date,
+                    ast.punch_time,
+                    ast.punch_state,
+                    iclock_transaction.work_code,
+                    ast.correct_state
+                FROM att_schetransaction ast
+                left join personnel_employee on ast.employee_id = personnel_employee.id
+                left join personnel_department on personnel_department.id = personnel_employee.department_id
+                left join personnel_position on personnel_position.id = personnel_employee.position_id
+                left join iclock_transaction on iclock_transaction.id = ast.transaction_id
+                where ast.att_date>='%(st)s' and ast.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                SELECT
+                    ast.id,
+                    personnel_employee.emp_code,
+                    personnel_employee.first_name,
+                    personnel_employee.last_name,
+                    personnel_employee.nickname as nick_name,personnel_employee.gender,
+                    personnel_position.position_code,personnel_position.position_name,
+                    personnel_department.dept_code,personnel_department.dept_name,
+                    ast.punch_time as punch_date,
+                    ast.punch_time,
+                    ast.punch_state,
+                    iclock_transaction.work_code,
+                    ast.correct_state
+                FROM att_schetransaction ast
+                left join personnel_employee on ast.employee_id = personnel_employee.id
+                left join personnel_department on personnel_department.id = personnel_employee.department_id
+                left join personnel_position on personnel_position.id = personnel_employee.position_id
+                left join iclock_transaction on iclock_transaction.id = ast.transaction_id
+                where ast.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and ast.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                SELECT
+                ast.id,
+                personnel_employee.emp_code,
+                personnel_employee.first_name,
+                personnel_employee.last_name,
+                personnel_employee.nickname as nick_name,personnel_employee.gender,
+                personnel_position.position_code,personnel_position.position_name,
+                personnel_department.dept_code,personnel_department.dept_name,
+                ast.punch_time as punch_date,
+                ast.punch_time,
+                ast."punch_state",
+                iclock_transaction.work_code,
+                ast."correct_state"
+                FROM att_schetransaction ast
+                left join personnel_employee on ast.employee_id = personnel_employee.id
+                left join personnel_department on personnel_department.id = personnel_employee.department_id
+                left join personnel_position on personnel_position.id = personnel_employee.position_id
+                left join iclock_transaction on iclock_transaction.id = ast."transaction_id"
+                where ast."att_date">='%(st)s' and ast."att_date"<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="attdetail_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    count(a.employee_id) as data_count
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                where a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    count(a.employee_id) as data_count
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                where a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    count(a.employee_id) as data_count
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                where a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    count(a.employee_id) as data_count
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                where a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="attdetail_report_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    top 100 percent
+                    a.id,
+                    personnel_employee.emp_code,
+                    personnel_employee.first_name, personnel_employee.last_name,
+                    personnel_employee.nickname as nick_name,personnel_employee.gender,
+                    pos.position_code,pos.position_name,
+                    personnel_department.dept_code,personnel_department.dept_name,
+                    a.att_date as attdate,
+                    a.att_date as weekday,
+                    a.exception_detail, att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    '' as device, di.alias as device_in, do.alias as device_out,
+                    '' as work_code, ci.work_code as work_in, co.work_code as work_out,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.valid_break_out as break_out,
+                    a.valid_break_in as break_in,
+                    a.actual_break_duration,
+                    a.break_taken_duration,
+                    a.late_time, a.break_late,
+                    a.early_leave, a.break_early,
+                    a.absent_time, a.break_absent,
+                    a.total_work_time,
+                    a.actual_work_time,
+                    a.leave_time,
+                    a.training_time,
+                    a.short_time,
+                    a.overtime, a.duty_duration,
+                    a.break_duty_duration,
+                    a.normal_ot, a.weekend_ot, a.holiday_ot,'' as Remark,
+                    a.timetable_days, a.data_type, a.timetable_long,
+                    a.employee_id,
+                    personnel_employee.department_id,
+                    a.approval_ot
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                    inner join personnel_department  on personnel_employee.department_id=personnel_department.id
+                    left join personnel_position pos on pos.id = personnel_employee.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                    left join iclock_transaction ci on ci.id = a.in_transaction
+                    left join iclock_terminal di on di.sn = ci.terminal_sn
+                    left join iclock_transaction co on co.id = a.out_transaction
+                    left join iclock_terminal do on do.sn = co.terminal_sn
+                where a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+                order by personnel_employee.emp_code,a.att_date
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    a.id,
+                    personnel_employee.emp_code,
+                    personnel_employee.first_name,
+                    personnel_employee.last_name,
+                    personnel_employee.nickname as nick_name,
+                    personnel_employee.gender,
+                    pos.position_code,
+                    pos.position_name,
+                    personnel_department.dept_code,
+                    personnel_department.dept_name,
+                    a.att_date as attdate,
+                    a.att_date as weekday,
+                    a.exception_detail,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    '' as device,
+                    di.alias as device_in,
+                    do.alias as device_out,
+                    '' as work_code,
+                    ci.work_code as work_in,
+                    co.work_code as work_out,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.valid_break_out as break_out,
+                    a.valid_break_in as break_in,
+                    a.actual_break_duration,
+                    a.break_taken_duration,
+                    a.late_time, a.break_late,
+                    a.early_leave, a.break_early,
+                    a.absent_time, a.break_absent,
+                    a.total_work_time,
+                    a.actual_work_time,
+                    a.leave_time,
+                    a.training_time,
+                    a.short_time,
+                    a.overtime, a.duty_duration,
+                    a.break_duty_duration,
+                    a.normal_ot, a.weekend_ot, a.holiday_ot,'' as Remark,
+                    timetable_days, a.data_type, a.timetable_long,
+                    a.employee_id,
+                    personnel_employee.department_id,
+                    a.approval_ot
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                    inner join personnel_department  on personnel_employee.department_id=personnel_department.id
+                    left join personnel_position pos on pos.id = personnel_employee.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                    left join iclock_transaction ci on ci.id = a.in_transaction
+                    left join iclock_terminal di on di.sn = ci.terminal_sn
+                    left join iclock_transaction co on co.id = a.out_transaction
+                    left join iclock_terminal do on do.sn = co.terminal_sn
+                where a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    a.id,
+                    personnel_employee.emp_code,
+                    personnel_employee.first_name, personnel_employee.last_name,
+                    personnel_employee.nickname as nick_name,personnel_employee.gender,
+                    pos.position_code,pos.position_name,
+                    personnel_department.dept_code,personnel_department.dept_name,
+                    a.att_date as attdate,a.att_date as weekday,
+                    a.exception_detail, att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    '' as device, di.alias as device_in, do.alias as device_out,
+                    '' as work_code, ci.work_code as work_in, co.work_code as work_out,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.valid_break_out as break_out,
+                    a.valid_break_in as break_in,
+                    a.actual_break_duration,
+                    a.break_taken_duration,
+                    a.late_time, a.break_late,
+                    a.early_leave, a.break_early,
+                    a.absent_time, a.break_absent,
+                    a.total_work_time,
+                    a.actual_work_time,
+                    a.leave_time,
+                    a.training_time,
+                    a.short_time,
+                    a.overtime, a.duty_duration,
+                    a.break_duty_duration,
+                    a.normal_ot, a.weekend_ot, a.holiday_ot,'' as Remark,
+                    timetable_days, a.data_type, a.timetable_long,
+                    a.employee_id,
+                    personnel_employee.department_id,
+                    a.approval_ot
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                    inner join personnel_department  on personnel_employee.department_id=personnel_department.id
+                    left join personnel_position pos on pos.id = personnel_employee.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                    left join iclock_transaction ci on ci.id = a.in_transaction
+                    left join iclock_terminal di on di.sn = ci.terminal_sn
+                    left join iclock_transaction co on co.id = a.out_transaction
+                    left join iclock_terminal do on do.sn = co.terminal_sn
+                where a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    a.id,
+                    personnel_employee.emp_code,
+                    personnel_employee.first_name, personnel_employee.last_name,
+                    personnel_employee.nickname as nick_name,personnel_employee.gender,
+                    pos.position_code,pos.position_name,
+                    personnel_department.dept_code,personnel_department.dept_name,
+                    a.att_date::timestamp(0) without time zone as attdate,
+                    a.att_date::timestamp(0) without time zone as weekday,
+                    a."exception_detail", att_timeinterval.alias as timeinterval_name,
+                    a."check_in_time"::timestamp(0) without time zone as "check_in_time",
+                    a."check_out_time"::timestamp(0) without time zone as "check_out_time",
+                    '' as device, devi.alias as device_in, devo.alias as device_out,
+                    '' as work_code, ci."work_code" as work_in, co."work_code" as work_out,
+                    a.valid_check_in::timestamp(0) without time zone as "clock_in_time",
+                    a.valid_check_out::timestamp(0) without time zone as "clock_out_time",
+                    a.total_time,
+                    a.valid_break_out::timestamp(0) without time zone as break_out,
+                    a.valid_break_in::timestamp(0) without time zone  as break_in,
+                    a.actual_break_duration,
+                    a.break_taken_duration,
+                    a."late_time", a.break_late,
+                    a."early_leave", a.break_early,
+                    a."absent_time", a.break_absent,
+                    a.total_work_time,
+                    a."actual_work_time",
+                    a.leave_time,
+                    a.training_time,
+                    a."short_time",
+                    a."overtime",a."duty_duration",
+                    a.break_duty_duration,
+                    a."normal_ot",a."weekend_ot", a."holiday_ot",'' as "Remark",
+                    timetable_days, a.data_type, a.timetable_long,
+                    a.employee_id,
+                    personnel_employee.department_id,
+                    a.approval_ot
+                from att_attdetail a
+                    inner join personnel_employee  on personnel_employee.id=a.employee_id
+                    inner join personnel_department  on personnel_employee.department_id=personnel_department.id
+                    left join personnel_position pos on pos.id = personnel_employee.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                    left join iclock_transaction ci on ci.id = a.in_transaction
+                    left join iclock_terminal devi on devi.sn = ci.terminal_sn
+                    left join iclock_transaction co on co.id = a.out_transaction
+                    left join iclock_terminal devo on devo.sn = co.terminal_sn
+                 where a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and personnel_employee.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="firstlast_count">
+        <content engine="default">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,
+                    u.gender,
+                    pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    convert(nvarchar(10),c.punch_time,120) as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, convert(nvarchar(10), punch_time,120) as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, convert(nvarchar(10), punch_time,120)
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = convert(nvarchar(10),c.punch_time,120)
+                    left join (
+                        select emp_code, convert(nvarchar(10), punch_time,120) as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, convert(nvarchar(10), punch_time,120)
+                    ) co on co.emp_code = c.emp_code and co.att_date = convert(nvarchar(10),c.punch_time,120)
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name,u.last_name,u.nickname,u.gender,d.dept_name, d.dept_code, pos.position_code,pos.position_name, u.card_no,
+                       convert(nvarchar(10),c.punch_time,120)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    left(c.punch_time,10) as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, left(punch_time,10)  as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, left(punch_time,10)
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = left(c.punch_time,10)
+                    left join (
+                        select emp_code, left(punch_time,10)  as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, left(punch_time,10)
+                    ) co on co.emp_code = c.emp_code and co.att_date = left(c.punch_time,10)
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name,u.last_name,u.nickname,u.gender,d.dept_name, d.dept_code, pos.position_code,pos.position_name, u.card_no,
+                       left(c.punch_time,10)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    to_char(c.punch_time,'yyyy-mm-dd') as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) co on co.emp_code = c.emp_code and co.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss')
+                and c.punch_time<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+                 %(and)s
+                group by u.id,u.emp_code,u.first_name, u.last_name, u.nickname,u.gender,d.dept_name, d.dept_code,pos.position_code,pos.position_name,u.card_no,
+                       to_char(c.punch_time,'yyyy-mm-dd')
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    to_char(c.punch_time,'yyyy-mm-dd') as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) co on co.emp_code = c.emp_code and co.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name,u.last_name,u.nickname,u.gender,d.dept_name, d.dept_code,pos.position_code,pos.position_name, u.card_no,
+                       to_char(c.punch_time,'yyyy-mm-dd')
+                order by u.emp_code, card_date
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="firstlast">
+        <content engine="default">
+            <![CDATA[
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,
+                    u.gender,
+                    pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    convert(nvarchar(10),c.punch_time,120) as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, convert(nvarchar(10), punch_time,120) as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, convert(nvarchar(10), punch_time,120)
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = convert(nvarchar(10),c.punch_time,120)
+                    left join (
+                        select emp_code, convert(nvarchar(10), punch_time,120) as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, convert(nvarchar(10), punch_time,120)
+                    ) co on co.emp_code = c.emp_code and co.att_date = convert(nvarchar(10),c.punch_time,120)
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name,u.last_name,u.nickname,u.gender,d.dept_name, d.dept_code, pos.position_code,pos.position_name, u.card_no,
+                       convert(nvarchar(10),c.punch_time,120)
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    left(c.punch_time,10) as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, left(punch_time,10)  as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, left(punch_time,10)
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = left(c.punch_time,10)
+                    left join (
+                        select emp_code, left(punch_time,10)  as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, left(punch_time,10)
+                    ) co on co.emp_code = c.emp_code and co.att_date = left(c.punch_time,10)
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name,u.last_name,u.nickname,u.gender,d.dept_name, d.dept_code, pos.position_code,pos.position_name, u.card_no,
+                       left(c.punch_time,10)
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    to_char(c.punch_time,'yyyy-mm-dd') as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) co on co.emp_code = c.emp_code and co.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss')
+                and c.punch_time<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+                 %(and)s
+                group by u.id,u.emp_code,u.first_name, u.last_name, u.nickname,u.gender,d.dept_name, d.dept_code,pos.position_code,pos.position_name,u.card_no,
+                       to_char(c.punch_time,'yyyy-mm-dd')
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    u.id,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    u.card_no,
+                    to_char(c.punch_time,'yyyy-mm-dd') as card_date,
+                    min(c.punch_time) as first,
+                    max(c.punch_time) as last,
+                    '' as total_punch_time,
+                    min(ci.punch_time) as first_in,
+                    max(co.punch_time) as last_out,
+                    '' as total_time
+                from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, min(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(in_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) ci on ci.emp_code = c.emp_code and ci.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join (
+                        select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, max(punch_time) as punch_time
+                        from iclock_transaction
+                        where punch_state in (%(out_status)s)
+                        group by emp_code, to_char(punch_time,'yyyy-mm-dd')
+                    ) co on co.emp_code = c.emp_code and co.att_date = to_char(c.punch_time,'yyyy-mm-dd')
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name,u.last_name,u.nickname,u.gender,d.dept_name, d.dept_code,pos.position_code,pos.position_name, u.card_no,
+                       to_char(c.punch_time,'yyyy-mm-dd')
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="get_exception_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+            select count(*) as data_count from (
+                select id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                SchName, att_date,
+                (case
+                    when StartTime = 1 and EndTime = 1 then 0
+                    when StartTime = 1 and EndTime = 0 then 1
+                    when StartTime = 0 and EndTime = 1 then 2
+                else 3 end) as exception_status,
+                absent_time
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code,d.dept_name, a.att_date,
+                    max(case when a.clock_in_time > '1990-01-01 00:00:00' or a.exception_detail != '' or a.data_type > 0 then  1 else 0 end) as StartTime,
+                    max(case when a.clock_out_time > '1990-01-01 00:00:00' and a.clock_out_time > a.clock_in_time or a.exception_detail != '' or a.data_type > 0  then  1 else 0 end) as EndTime,
+                    a.absent_time, s.alias as SchName,
+                    u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a.time_interval_id = s.id
+                    where  a.att_date >= '%(d1)s' and a.att_date <= '%(d2)s' %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name, u.nickname, u.gender, d.dept_code, d.dept_name, pos.position_code, pos.position_name, a.att_date, a.absent_time, s.alias
+                ) exception_tmp
+                where not (StartTime = 1 and EndTime = 1)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+            select count(*) as data_count from (
+                select id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                SchName, att_date,
+                (case
+                    when StartTime = 1 and EndTime = 1 then 0
+                    when StartTime = 1 and EndTime = 0 then 1
+                    when StartTime = 0 and EndTime = 1 then 2
+                else 3 end) as exception_status,
+                absent_time
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code, d.dept_name, a.att_date,
+                    max(case when a.clock_in_time > '1990-01-01 00:00:00' or a.exception_detail != '' or a.data_type > 0 then  1 else 0 end) as StartTime,
+                    max(case when a.clock_out_time > '1990-01-01 00:00:00' and a.clock_out_time > a.clock_in_time or a.exception_detail != '' or a.data_type > 0  then  1 else 0 end) as EndTime,
+                    a.absent_time, s.alias as SchName,
+                    u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a.time_interval_id = s.id
+                    where  a.att_date >= '%(d1)s' and a.att_date <= '%(d2)s' %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name, u.nickname, u.gender, d.dept_code, d.dept_name, pos.position_code, pos.position_name, a.att_date, a.absent_time, s.alias
+                ) exception_tmp
+                where not (StartTime = 1 and EndTime = 1)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+            select count(*) as data_count from (
+                select id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                SchName, att_date,
+                (case
+                    when StartTime = 1 and EndTime = 1 then 0
+                    when StartTime = 1 and EndTime = 0 then 1
+                    when StartTime = 0 and EndTime = 1 then 2
+                else 3 end) as exception_status,
+                absent_time
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code, d.dept_name, a.att_date,
+                    max(case when a.clock_in_time > to_date('1990-01-01 00:00:00','YYYY-MM-DD HH24:MI:SS') or a.exception_detail != '' or a.data_type > 0 then  1 else 0 end) as StartTime,
+                    max(case when a.clock_out_time > to_date('1990-01-01 00:00:00','YYYY-MM-DD HH24:MI:SS') and a.clock_out_time > a.clock_in_time or a.exception_detail != '' or a.data_type > 0  then  1 else 0 end) as EndTime,
+                    a.absent_time, s.alias as SchName,
+                    u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a.time_interval_id = s.id
+                    where  a.att_date >= to_date('%(d1)s','YYYY-MM-DD HH24:MI:SS')
+                    and a.att_date <= to_date('%(d2)s','YYYY-MM-DD HH24:MI:SS')
+                    %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name, u.nickname, u.gender, d.dept_code,d.dept_name, pos.position_code, pos.position_name, a.att_date, a.absent_time, s.alias
+                ) exception_tmp
+                where not (StartTime = 1 and EndTime = 1)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                "SchName", "att_date",
+                (case
+                    when "StartTime" = 1 and "EndTime" = 1 then 0
+                    when "StartTime" = 1 and "EndTime" = 0 then 1
+                    when "StartTime" = 0 and "EndTime" = 1 then 2
+                else 3 end) as exception_status,
+                "absent_time"
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code,d.dept_name, a.att_date as "att_date",
+                    max(case when a."clock_in_time" > '1990-01-01 00:00:00' or a."exception_detail" != '' or a.data_type > 0 then  1 else 0 end) as "StartTime",
+                    max(case when a."clock_out_time" > '1990-01-01 00:00:00' and a."clock_out_time" > a."clock_in_time" or a."exception_detail" != '' or a.data_type > 0  then  1 else 0 end) as "EndTime",
+                    a."absent_time", s.alias as "SchName",u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a."time_interval_id" = s."id"
+                    where  a.att_date >= '%(d1)s' and a.att_date <= '%(d2)s' %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name,u.nickname, u.gender, d.dept_code, d.dept_name,pos.position_code, pos.position_name, a.att_date, a."absent_time", s.alias
+                ) exception_tmp
+                where not ("StartTime" = 1 and "EndTime" = 1)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="get_exception_report_sql">
+        <content engine="default">
+            <![CDATA[
+                select id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                SchName, att_date,
+                (case
+                    when StartTime = 1 and EndTime = 1 then 0
+                    when StartTime = 1 and EndTime = 0 then 1
+                    when StartTime = 0 and EndTime = 1 then 2
+                else 3 end) as exception_status,
+                absent_time
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code,d.dept_name, a.att_date,
+                    max(case when a.clock_in_time > '1990-01-01 00:00:00' or a.exception_detail != '' or a.data_type > 0 then  1 else 0 end) as StartTime,
+                    max(case when a.clock_out_time > '1990-01-01 00:00:00' and a.clock_out_time > a.clock_in_time or a.exception_detail != '' or a.data_type > 0  then  1 else 0 end) as EndTime,
+                    a.absent_time, s.alias as SchName,
+                    u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a.time_interval_id = s.id
+                    where  a.att_date >= '%(d1)s' and a.att_date <= '%(d2)s' %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name, u.nickname, u.gender, d.dept_code, d.dept_name, pos.position_code, pos.position_name, a.att_date, a.absent_time, s.alias
+                ) exception_tmp
+                where not (StartTime = 1 and EndTime = 1)
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                SchName, att_date,
+                (case
+                    when StartTime = 1 and EndTime = 1 then 0
+                    when StartTime = 1 and EndTime = 0 then 1
+                    when StartTime = 0 and EndTime = 1 then 2
+                else 3 end) as exception_status,
+                absent_time
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code, d.dept_name, a.att_date,
+                    max(case when a.clock_in_time > '1990-01-01 00:00:00' or a.exception_detail != '' or a.data_type > 0 then  1 else 0 end) as StartTime,
+                    max(case when a.clock_out_time > '1990-01-01 00:00:00' and a.clock_out_time > a.clock_in_time or a.exception_detail != '' or a.data_type > 0  then  1 else 0 end) as EndTime,
+                    a.absent_time, s.alias as SchName,
+                    u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a.time_interval_id = s.id
+                    where  a.att_date >= '%(d1)s' and a.att_date <= '%(d2)s' %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name, u.nickname, u.gender, d.dept_code, d.dept_name, pos.position_code, pos.position_name, a.att_date, a.absent_time, s.alias
+                ) exception_tmp
+                where not (StartTime = 1 and EndTime = 1)
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                SchName, att_date,
+                (case
+                    when StartTime = 1 and EndTime = 1 then 0
+                    when StartTime = 1 and EndTime = 0 then 1
+                    when StartTime = 0 and EndTime = 1 then 2
+                else 3 end) as exception_status,
+                absent_time
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code, d.dept_name, a.att_date,
+                    max(case when a.clock_in_time > to_date('1990-01-01 00:00:00','YYYY-MM-DD HH24:MI:SS') or a.exception_detail != '' or a.data_type > 0 then  1 else 0 end) as StartTime,
+                    max(case when a.clock_out_time > to_date('1990-01-01 00:00:00','YYYY-MM-DD HH24:MI:SS') and a.clock_out_time > a.clock_in_time or a.exception_detail != '' or a.data_type > 0  then  1 else 0 end) as EndTime,
+                    a.absent_time, s.alias as SchName,
+                    u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a.time_interval_id = s.id
+                    where  a.att_date >= to_date('%(d1)s','YYYY-MM-DD HH24:MI:SS')
+                    and a.att_date <= to_date('%(d2)s','YYYY-MM-DD HH24:MI:SS')
+                    %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name, u.nickname, u.gender, d.dept_code,d.dept_name, pos.position_code, pos.position_name, a.att_date, a.absent_time, s.alias
+                ) exception_tmp
+                where not (StartTime = 1 and EndTime = 1)
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                id, emp_code, first_name, last_name,
+                nickname as nick_name, gender, position_code, position_name,
+                dept_code,dept_name,
+                "SchName", "att_date",
+                (case
+                    when "StartTime" = 1 and "EndTime" = 1 then 0
+                    when "StartTime" = 1 and "EndTime" = 0 then 1
+                    when "StartTime" = 0 and "EndTime" = 1 then 2
+                else 3 end) as exception_status,
+                "absent_time"
+                from(
+                    select u.id, u.emp_code, u.first_name, u.last_name, d.dept_code,d.dept_name, a.att_date as "att_date",
+                    max(case when a."clock_in_time" > '1990-01-01 00:00:00' or a."exception_detail" != '' or a.data_type > 0 then  1 else 0 end) as "StartTime",
+                    max(case when a."clock_out_time" > '1990-01-01 00:00:00' and a."clock_out_time" > a."clock_in_time" or a."exception_detail" != '' or a.data_type > 0  then  1 else 0 end) as "EndTime",
+                    a."absent_time", s.alias as "SchName",u.nickname,u.gender,pos.position_code,pos.position_name
+                    from personnel_employee u
+                    left join personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_attdetail a on a.employee_id = u.id
+                    left join att_timeinterval s on a."time_interval_id" = s."id"
+                    where  a.att_date >= '%(d1)s' and a.att_date <= '%(d2)s' %(and)s
+                    group by u.id, u.emp_code, u.first_name, u.last_name,u.nickname, u.gender, d.dept_code, d.dept_name,pos.position_code, pos.position_name, a.att_date, a."absent_time", s.alias
+                ) exception_tmp
+                where not ("StartTime" = 1 and "EndTime" = 1)
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="cardtimes_count">
+        <content engine="default">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                u.id,u.emp_code,u.first_name, u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                convert(nvarchar(10),c.punch_time,120) as card_date,
+                count(1) as  times ,
+                (
+                    SELECT
+                        right(time_list.time,8) + ','
+                        from
+                            (SELECT  convert(nvarchar(20),ck.punch_time,120) as time
+                                 FROM iclock_transaction ck
+                                 where convert(nvarchar(10),ck.punch_time,120)=convert(nvarchar(10),c.punch_time,120)
+                                 and ck.emp_code=c.emp_code
+                            ) as time_list
+                        for xml path('')
+                ) as card_times
+                from personnel_employee u
+                inner join iclock_transaction c on c.emp_code = u.emp_code
+                left join personnel_department d on u.department_id = d.id
+                left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name, u.last_name,u.nickname,u.gender, d.dept_code,d.dept_name,pos.position_code,pos.position_name,c.emp_code,
+                        convert(nvarchar(10),c.punch_time,120)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                u.id,u.emp_code,u.first_name, u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                left(c.punch_time,10) as card_date,
+                count(1) as  times ,
+                (
+                    SELECT  group_concat(right(ck.punch_time,8),'') as time
+                                 FROM iclock_transaction ck
+                                 where left(ck.punch_time,10)=left(c.punch_time,10) and ck.emp_code=c.emp_code
+                                                                    ) as card_times
+                from personnel_employee u
+                inner join iclock_transaction c on c.emp_code = u.emp_code
+                left join personnel_department d on u.department_id = d.id
+                left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name, u.last_name,u.nickname,u.gender, d.dept_code,d.dept_name,pos.position_code,pos.position_name,c.emp_code,
+                        left(c.punch_time,10)
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+
+        <!--oracle 10g 现成的函数 wm_concat 可以直接将group by 之后的列join 起来，次出为了兼容 9I，写得比较繁琐-->
+        <content engine="oracle">
+            <![CDATA[
+            select count(*) as data_count from (
+                SELECT t.id,
+                       t.emp_code,
+                       t.first_name,
+                       t.last_name,
+                       t.nickname as nick_name,t.gender,t.position_code,t.position_name,
+                       t.dept_code,t.dept_name,
+                       to_char(t.punch_time, 'yyyy-mm-dd') card_date,
+                       count(1) times,
+                       LTRIM(MAX(SYS_CONNECT_BY_PATH(to_char(t.punch_time, 'hh24:mi:ss'),',')),',') card_times
+                  FROM (
+                    select u.id, d.dept_code, d.dept_name,
+                           u.emp_code,
+                           u.first_name, u.last_name, u.nickname, u.gender, pos.position_code, pos.position_name,
+                           c.punch_time,
+                           ROW_NUMBER() OVER(PARTITION BY c.emp_code, to_char(c.punch_time, 'yyyy-mm-dd') ORDER BY c.emp_code, to_char(c.punch_time, 'yyyy-mm-dd hh24:mi:ss')) AS RN
+                           from personnel_employee u
+                           inner join iclock_transaction c on c.emp_code = u.emp_code
+                           left join personnel_department d  on u.department_id = d.id
+                           left join personnel_position pos on pos.id = u.position_id
+                           where c.punch_time >= to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss')
+                           and c.punch_time <= to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+                           %(and)s
+                  ) t
+                START WITH t.RN = 1
+                CONNECT BY PRIOR RN = RN - 1
+                       AND PRIOR t.emp_code = t.emp_code
+                       AND PRIOR to_char(t.punch_time, 'yyyy-mm-dd') =to_char(t.punch_time, 'yyyy-mm-dd')
+                GROUP BY t.id,
+                          t.emp_code,
+                          to_char(t.punch_time, 'yyyy-mm-dd'),
+                          t.dept_code,
+                          t.dept_name,
+                          t.first_name,
+                          t.last_name,
+                          t.nickname,t.gender,
+                          t.position_code,t.position_name
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+            select count(*) as data_count from (
+                select
+                uatt.id,
+                uatt.emp_code,
+                uatt.first_name,
+                uatt.last_name,
+                uatt.nickname as nick_name,
+                uatt.gender as gender,
+                pos.position_code,
+                pos.position_name,
+                d.dept_code,
+                d.dept_name,
+                uatt.card_date,
+                uatt.times,
+                (
+                    select
+                    array_to_string(
+                        array(
+                            select to_char(ck.punch_time,'hh24:mi:ss')
+                            from iclock_transaction ck
+                            where to_char(ck.punch_time,'yyyy-mm-dd') = uatt.card_date and ck.emp_code = uatt.emp_code
+                        ), ','
+                     )
+                ) as card_times
+                from
+                (
+                    select
+                    u.id, u.emp_code,u.first_name, u.last_name, u.nickname,u.gender,u.position_id,
+                    u.department_id,
+                    to_char(c.punch_time,'yyyy-mm-dd') as card_date,
+                    count(1) as  times
+                    from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    where c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                    group by u.id,u.emp_code,u.first_name, u.last_name, to_char(c.punch_time,'yyyy-mm-dd')
+                 ) uatt
+                 left join personnel_department d on uatt.department_id = d.id
+                 left join personnel_position pos on pos.id = uatt.position_id
+            ) o
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="cardtimes">
+        <content engine="default">
+            <![CDATA[
+                select
+                u.id,u.emp_code,u.first_name, u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                convert(nvarchar(10),c.punch_time,120) as card_date,
+                count(1) as  times ,
+                (
+                    SELECT
+                        right(time_list.time,8) + ','
+                        from
+                            (SELECT  convert(nvarchar(20),ck.punch_time,120) as time
+                                 FROM iclock_transaction ck
+                                 where convert(nvarchar(10),ck.punch_time,120)=convert(nvarchar(10),c.punch_time,120)
+                                 and ck.emp_code=c.emp_code
+                            ) as time_list
+                        for xml path('')
+                ) as card_times
+                from personnel_employee u
+                inner join iclock_transaction c on c.emp_code = u.emp_code
+                left join personnel_department d on u.department_id = d.id
+                left join personnel_position pos on pos.id = u.position_id
+                where  c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                group by u.id,u.emp_code,u.first_name, u.last_name,u.nickname,u.gender, d.dept_code,d.dept_name,pos.position_code,pos.position_name,c.emp_code,
+                        convert(nvarchar(10),c.punch_time,120)
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                u.id,u.emp_code,u.first_name, u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                c.card_date,
+                count(1) as  times ,
+                (
+                    SELECT  group_concat(SUBSTRING(punch_time, 12, 8),'') as time
+                                 FROM iclock_transaction ck
+                                 where left(ck.punch_time,10)=c.card_date and ck.emp_code=c.emp_code
+                                                                    ) as card_times
+                from personnel_employee u
+                inner join (select t.emp_code, left(t.punch_time,10) as card_date from iclock_transaction t where  t.punch_time>='%(st)s' and t.punch_time<='%(et)s') c on c.emp_code = u.emp_code
+                left join personnel_department d on u.department_id = d.id
+                left join personnel_position pos on pos.id = u.position_id
+                where  1=1 %(and)s
+                group by u.id,u.emp_code,u.first_name, u.last_name,u.nickname,u.gender, d.dept_code,d.dept_name,pos.position_code,pos.position_name,c.emp_code,
+                        c.card_date
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+
+        <!--oracle 10g 现成的函数 wm_concat 可以直接将group by 之后的列join 起来，次出为了兼容 9I，写得比较繁琐-->
+        <content engine="oracle">
+            <![CDATA[
+                SELECT t.id,
+                       t.emp_code,
+                       t.first_name,
+                       t.last_name,
+                       t.nickname as nick_name,t.gender,t.position_code,t.position_name,
+                       t.dept_code,t.dept_name,
+                       to_char(t.punch_time, 'yyyy-mm-dd') card_date,
+                       count(1) times,
+                       LTRIM(MAX(SYS_CONNECT_BY_PATH(to_char(t.punch_time, 'hh24:mi:ss'),',')),',') card_times
+                  FROM (
+                    select u.id, d.dept_code, d.dept_name,
+                           u.emp_code,
+                           u.first_name, u.last_name, u.nickname, u.gender, pos.position_code, pos.position_name,
+                           c.punch_time,
+                           ROW_NUMBER() OVER(PARTITION BY c.emp_code, to_char(c.punch_time, 'yyyy-mm-dd') ORDER BY c.emp_code, to_char(c.punch_time, 'yyyy-mm-dd hh24:mi:ss')) AS RN
+                           from personnel_employee u
+                           inner join iclock_transaction c on c.emp_code = u.emp_code
+                           left join personnel_department d  on u.department_id = d.id
+                           left join personnel_position pos on pos.id = u.position_id
+                           where c.punch_time >= to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss')
+                           and c.punch_time <= to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+                           %(and)s
+                  ) t
+                 START WITH t.RN = 1
+                 CONNECT BY PRIOR RN = RN - 1
+                       AND PRIOR t.emp_code = t.emp_code
+                       AND PRIOR to_char(t.punch_time, 'yyyy-mm-dd') =to_char(t.punch_time, 'yyyy-mm-dd')
+                 GROUP BY t.id,
+                          t.emp_code,
+                          to_char(t.punch_time, 'yyyy-mm-dd'),
+                          t.dept_code,
+                          t.dept_name,
+                          t.first_name,
+                          t.last_name,
+                          t.nickname,t.gender,
+                          t.position_code,t.position_name
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                uatt.id,
+                uatt.emp_code,
+                uatt.first_name,
+                uatt.last_name,
+                uatt.nickname as nick_name,
+                uatt.gender as gender,
+                pos.position_code,
+                pos.position_name,
+                d.dept_code,
+                d.dept_name,
+                uatt.card_date,
+                uatt.times,
+                (
+                    select
+                    array_to_string(
+                        array(
+                            select to_char(ck.punch_time,'hh24:mi:ss')
+                            from iclock_transaction ck
+                            where to_char(ck.punch_time,'yyyy-mm-dd') = uatt.card_date and ck.emp_code = uatt.emp_code
+                        ), ','
+                     )
+                ) as card_times
+                from
+                (
+                    select
+                    u.id, u.emp_code,u.first_name, u.last_name, u.nickname,u.gender,u.position_id,
+                    u.department_id,
+                    to_char(c.punch_time,'yyyy-mm-dd') as card_date,
+                    count(1) as  times
+                    from personnel_employee u
+                    inner join iclock_transaction c on c.emp_code = u.emp_code
+                    where c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+                    %(and)s
+                    group by u.id,u.emp_code,u.first_name, u.last_name, to_char(c.punch_time,'yyyy-mm-dd')
+                    order by u.emp_code, to_char(c.punch_time,'yyyy-mm-dd')
+                 ) uatt
+                 left join personnel_department d on uatt.department_id = d.id
+                 left join personnel_position pos on pos.id = uatt.position_id
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="late_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.late_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.late_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.late_time > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a."late_time" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="late_report_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.late_time,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a.late_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.late_time,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a.late_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.late_time,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a.late_time > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as "weekday",
+                    att_timeinterval.alias as timeinterval_name,
+                    a."check_in_time" as "check_in_time",
+                    a."check_out_time" as "check_out_time",
+                    a.valid_check_in as "clock_in_time",
+                    a.valid_check_out as "clock_out_time",
+                    a.total_time,
+                    a."late_time",
+                    '' as "Remark",
+                    a.employee_id
+                from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a."late_time" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="early_leave_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.early_leave > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.early_leave > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.early_leave > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a."early_leave" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="early_leave_report_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as Weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.early_leave,
+                    '' as Remark,
+                    a.employee_id
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                 where a.early_leave > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as Weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.early_leave,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a.early_leave > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as Weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.early_leave,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a.early_leave > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as "Weekday",
+                    att_timeinterval.alias as timeinterval_name,
+                    a."check_in_time" as "check_in_time",
+                    a."check_out_time" as "check_out_time",
+                    a.valid_check_in as "clock_in_time",
+                    a.valid_check_out as "clock_out_time",
+                    a.total_time,
+                    a."early_leave",
+                    '' as "Remark",
+                    a.employee_id
+                from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a."early_leave" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="overtime_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.overtime > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.overtime > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.overtime > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a."overtime" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="overtime_report_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as Weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.overtime,
+                    a.normal_ot, a.weekend_ot, a.holiday_ot,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                 where a.overtime > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as Weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.overtime,
+                    a.normal_ot, a.weekend_ot, a.holiday_ot,
+                    '' as Remark,
+                    a.employee_id
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a.overtime > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as Weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.overtime,
+                    a.normal_ot, a.weekend_ot, a.holiday_ot,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a.overtime > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as "Weekday",
+                    att_timeinterval.alias as timeinterval_name,
+                    a."check_in_time" as "check_in_time",
+                    a."check_out_time" as "check_out_time",
+                    a.valid_check_in as "clock_in_time",
+                    a.valid_check_out as "clock_out_time",
+                    a.total_time,
+                    a."overtime",
+                    a."normal_ot", a."weekend_ot", a."holiday_ot",
+                    '' as "Remark",
+                    a.employee_id
+                from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                where a."overtime" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="absent_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.absent_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.absent_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.absent_time > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a."absent_time" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="absent_report_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.late_time,
+                    a.early_leave,
+                    a.absent_time,
+                    '' as Remark,
+                    a.employee_id
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                 where a.absent_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.late_time,
+                    a.early_leave,
+                    a.absent_time,
+                    '' as Remark,
+                    a.employee_id
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                 where a.absent_time > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as weekday,
+                    att_timeinterval.alias as timeinterval_name,
+                    a.check_in_time as check_in_time,
+                    a.check_out_time as check_out_time,
+                    a.valid_check_in as clock_in_time,
+                    a.valid_check_out as clock_out_time,
+                    a.total_time,
+                    a.late_time,
+                    a.early_leave,
+                    a.absent_time,
+                    '' as Remark,
+                    a.employee_id
+                from att_attdetail  a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                 where a.absent_time > 0 and a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    a.id,
+                    u.emp_code,
+                    u.first_name, u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.att_date as att_date,
+                    a.att_date as "weekday",
+                    att_timeinterval.alias as timeinterval_name,
+                    a."check_in_time" as "check_in_time",
+                    a."check_out_time" as "check_out_time",
+                    a.valid_check_in as "clock_in_time",
+                    a.valid_check_out as "clock_out_time",
+                    a.total_time,
+                    a."late_time",
+                    a."early_leave",
+                    a."absent_time",
+                    '' as "Remark",
+                    a.employee_id
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                    left join personnel_department d  on u.department_id=d.id
+                    left join personnel_position pos on pos.id = u.position_id
+                    left join att_timeinterval on att_timeinterval.id = a.time_interval_id
+                 where a."absent_time" > 0 and  a.att_date>='%(st)s' and a.att_date<='%(et)s'
+                 %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="multiple_transaction_columns">
+        <content engine="default">
+            <![CDATA[
+                select max(data_index)
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                where '%(st)s' <= att_date  and '%(et)s' >= att_date and data_type = %(data_type)s %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select max(data_index)
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                where to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') <= att_date
+                and to_date('%(et)s','YYYY-MM-DD HH24:MI:SS') >= att_date and data_type = %(data_type)s %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select max(data_index)
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                where  '%(st)s' <= att_date  and '%(et)s' >= att_date and data_type = %(data_type)s %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="multiple_transaction_count">
+        <content engine="default">
+            <![CDATA[
+                select count(num)
+                from (
+                    select count(am.id) as num
+                    from att_multipletransaction am
+                    inner join personnel_employee u on u.id = am.employee_id
+                    inner join personnel_department d on d.id = u.department_id
+                    where '%(st)s' <= att_date  and '%(et)s' >= att_date and data_type = %(data_type)s %(and)s
+                    group by employee_id, att_date, timetable
+                ) t
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select count(num)
+                from (
+                    select count(am.id) as num
+                    from att_multipletransaction am
+                    inner join personnel_employee u on u.id = am.employee_id
+                    inner join personnel_department d on d.id = u.department_id
+                    where to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') <= att_date
+                    and to_date('%(et)s','YYYY-MM-DD HH24:MI:SS') >= att_date and data_type = %(data_type)s %(and)s
+                    group by employee_id, att_date, timetable
+                ) t
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select count(num)
+                from (
+                    select count(am.id) as num
+                    from att_multipletransaction am
+                    inner join personnel_employee u on u.id = am.employee_id
+                    inner join personnel_department d on d.id = u.department_id
+                    where '%(st)s' <= att_date  and '%(et)s' >= att_date and data_type = %(data_type)s %(and)s
+                    group by employee_id, att_date, timetable
+                ) t
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="multiple_transaction">
+        <content engine="default">
+            <![CDATA[
+                select u.id, u.emp_code, u.first_name, u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                am.att_date, in_time, out_time, total_time, am.timetable
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                inner join ( %(child_query)s ) cq on cq.employee_id = am.employee_id and cq.att_date = am.att_date
+                and cq.timetable = am.timetable and cq.data_type = am.data_type
+                order by id, att_date, data_index
+            ]]>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select u.id, u.emp_code, u.first_name, u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                am.att_date, in_time, out_time, total_time, am.timetable
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                inner join ( %(child_query)s ) cq on cq.employee_id = am.employee_id and cq.att_date = am.att_date
+                and cq.timetable = am.timetable and cq.data_type = am.data_type
+                order by id, att_date, data_index
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select u.id, u.emp_code, u.first_name, u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                am.att_date, in_time, out_time, total_time, am.timetable
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                inner join ( %(child_query)s ) cq on cq.employee_id = am.employee_id and cq.att_date = am.att_date
+                and cq.timetable = am.timetable and cq.data_type = am.data_type
+                order by id, att_date, data_index
+            ]]>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select u.id, u.emp_code, u.first_name, u.last_name,
+                u.nickname as nick_name, u.gender, pos.position_code, pos.position_name,
+                d.dept_code,d.dept_name,
+                am.att_date, in_time, out_time, total_time, am.timetable
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                inner join ( %(child_query)s ) cq on cq.employee_id = am.employee_id and cq.att_date = am.att_date and cq.timetable = am.timetable and cq.data_type = am.data_type
+                order by id, att_date, data_index
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="employee_daily">
+        <content engine="default">
+            <![CDATA[
+                select employee_id, att_date, timetable, data_type
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                where '%(st)s' <= att_date  and '%(et)s' >= att_date and data_type = %(data_type)s %(and)s
+                group by employee_id, att_date, timetable, data_type
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select employee_id, att_date, timetable, data_type
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                where to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') <= att_date
+                and to_date('%(et)s','YYYY-MM-DD HH24:MI:SS') >= att_date and data_type = %(data_type)s %(and)s
+                group by employee_id, att_date, timetable, data_type
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select employee_id, att_date, timetable, data_type
+                from att_multipletransaction am
+                inner join personnel_employee u on u.id = am.employee_id
+                inner join personnel_department d on d.id = u.department_id
+                where '%(st)s' <= att_date  and '%(et)s' >= att_date and data_type = %(data_type)s %(and)s
+                group by employee_id, att_date, timetable, data_type
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="exception_emp_ids">
+        <content engine="default">
+            <![CDATA[
+                    select u.id,u.emp_code,u.first_name,u.last_name,
+                    u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                    d.dept_code,d.dept_name,
+                    a.exceptionid, a.inscopetime,a.attdate as attdate
+                    from att_attexception a
+                    left join personnel_employee u on a.employee_id = u.id
+                    left join personnel_department d on d.id = u.department_id
+                    left join personnel_position pos on pos.id = u.position_id
+                    where   attdate>='%(st)s' and attdate<='%(et)s'
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select u.id,u.emp_code,u.first_name,u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                a.exceptionid, a.inscopetime,a.attdate as attdate
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where a.attdate>='%(st)s' and a.attdate<='%(et)s' %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select u.id,u.emp_code,u.first_name,u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                a.exceptionid, a.inscopetime,a.attdate as attdate
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where   attdate>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss') and attdate<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select u.id,u.emp_code,u.first_name,u.last_name,
+                u.nickname as nick_name,u.gender,pos.position_code,pos.position_name,
+                d.dept_code,d.dept_name,
+                a."exceptionid", a."inscopetime",a."attdate" as attdate
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where   "attdate">='%(st)s' and "attdate"<='%(et)s'
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="exception_emp">
+        <content engine="default">
+            <![CDATA[
+                select
+                distinct a.employee_id
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                where   attdate>='%(st)s' and attdate<='%(et)s'
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                distinct a.employee_id
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                where   attdate>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss') and attdate<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                distinct a.employee_id
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                where   "attdate">='%(st)s' and "attdate"<='%(et)s'
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="exception_emp_count">
+        <content engine="default">
+            <![CDATA[
+                select
+                count(distinct a.employee_id) as data_count
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                where   attdate>='%(st)s' and attdate<='%(et)s'
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                count(distinct a.employee_id) as data_count
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                where   attdate>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss') and attdate<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                count(distinct a.employee_id) as data_count
+                from att_attexception a
+                left join personnel_employee u on a.employee_id = u.id
+                where   "attdate">='%(st)s' and "attdate"<='%(et)s'
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="employee_leave_sql">
+        <content engine="default">
+            <![CDATA[
+            select al.abstractexception_ptr_id, al.category_id, al.employee_id
+            from att_leave al
+            left join personnel_employee u on u.id = al.employee_id
+            where al.abstractexception_ptr_id not in (
+                select abstractexception_ptr_id from att_leave  where '%(et)s' < start_time or al.end_time < '%(st)s'
+            )
+            and %(and)s
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select al.abstractexception_ptr_id, al.category_id, al.employee_id
+                from att_leave al
+                left join personnel_employee u on u.id = al.employee_id
+                where al.abstractexception_ptr_id not in (
+                    select abstractexception_ptr_id from att_leave
+                    where to_date('%(et)s','YYYY-MM-DD HH24:MI:SS') < start_time
+                    or al.end_time < to_date('%(st)s','YYYY-MM-DD HH24:MI:SS')
+                )
+                and %(and)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="dict_attdetail_sql">
+        <content engine="default">
+            <![CDATA[
+            select a.employee_id,timetable_long,att_date
+            from att_attdetail a
+            left join personnel_employee u on u.id = a.employee_id
+            where a.att_date >= '%(st)s' and a.att_date <= '%(et)s'
+            and %(and)s
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select a.employee_id,timetable_long,att_date from att_attdetail a
+                left join personnel_employee u on u.id = a.employee_id
+                where a.att_date >= to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date <= to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                and %(and)s
+            ]]>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+            select a.employee_id,timetable_long,att_date from att_attdetail a
+            left join personnel_employee u on u.id = a.employee_id
+            where a.att_date >= '%(st)s' and a.att_date <= '%(et)s'
+            and %(and)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="get_employee_count_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    count(u.id)
+                from personnel_employee u
+                where u.id not in (select employee_id from personnel_resign pl where pl.resign_date <= '%(st)s') %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    count(u.id)
+                from personnel_employee u
+                where u.id not in (
+                    select employee_id from personnel_resign pl
+                    where  pl.resign_date <= to_date('%(st)s','YYYY-MM-DD HH24:MI:SS'))
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    count(u.id)
+                from personnel_employee u
+                where u.id not in (select employee_id from personnel_resign pl where pl.resign_date <= '%(st)s') %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="get_employee_sql">
+        <content engine="default">
+            <![CDATA[
+                    select
+                        u.id,u.emp_code,u.first_name,u.last_name,u.gender,pos.position_code,pos.position_name,u.department_id,
+                        d.dept_code,d.dept_name
+                    from personnel_employee u
+                    left join personnel_department d on d.id = u.department_id
+                    left join personnel_position pos on pos.id = u.position_id
+                    where u.id not in (
+                        select employee_id from personnel_resign pl
+                        where pl.resign_date <= '%(st)s')
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.gender,pos.position_code,pos.position_name,u.department_id,
+                    d.dept_code,d.dept_name
+                from personnel_employee u
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where u.id not in (select employee_id from personnel_resign pl where pl.resign_date <= '%(st)s') %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                    select
+                        u.id,u.emp_code,u.first_name,u.last_name,u.gender,pos.position_code,pos.position_name,u.department_id,
+                        d.dept_code,d.dept_name
+                    from personnel_employee u
+                    left join personnel_department d on d.id = u.department_id
+                    left join personnel_position pos on pos.id = u.position_id
+                    where u.id not in (
+                        select employee_id from personnel_resign pl
+                        where pl.resign_date <= to_date('%(st)s','YYYY-MM-DD HH24:MI:SS'))
+                    %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.gender,pos.position_code,pos.position_name,u.department_id,
+                    d.dept_code,d.dept_name
+                from personnel_employee u
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where u.id not in (select employee_id from personnel_resign pl where pl.resign_date <= '%(st)s') %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="get_department_count_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    count(d.id)
+                from personnel_department d
+                where 1=1 and %(and)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="get_department_sql">
+        <content engine="default">
+            <![CDATA[
+                    select
+                        id , dept_code, dept_name
+                    from personnel_department d
+                    where 1=1 and %(and)s
+            ]]>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select
+                    id , dept_code, dept_name
+                from personnel_department d
+                where 1=1 and %(and)s
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                    select
+                        id , dept_code, dept_name
+                    from personnel_department d
+                    where 1=1 and %(and)s
+            ]]>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    id , dept_code, dept_name
+                from personnel_department d
+                where 1=1 and %(and)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="get_department_employee_sql">
+        <content engine="default">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.gender,pos.position_code,pos.position_name,u.department_id,
+                    d.dept_code,d.dept_name
+                from personnel_employee u
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where u.id not in (
+                    select employee_id from personnel_resign pl
+                    where pl.resign_date <= '%(st)s')
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.gender,pos.position_code,pos.position_name,u.department_id,
+                    d.dept_code,d.dept_name
+                from personnel_employee u
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where u.id not in (
+                    select employee_id from personnel_resign pl
+                    where pl.resign_date <= to_date('%(st)s','YYYY-MM-DD HH24:MI:SS'))
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=1
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.gender,pos.position_code,pos.position_name,u.department_id,
+                    d.dept_code,d.dept_name
+                from personnel_employee u
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where u.id not in (
+                    select employee_id from personnel_resign pl
+                    where pl.resign_date <= '%(st)s')
+                %(and)s
+            ]]>
+            <part id = "enable_att">
+                <![CDATA[
+                    and u.enable_att=true
+                ]]>
+            </part>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id = "dict_exception_sql">
+        <content engine = "default">
+            <![CDATA[
+                select u.id,ex.exceptionid,attdate,inscopetime
+                from att_attexception ex
+                left join personnel_employee u on u.id = ex.employee_id
+                where ex.attDate >= '%(st)s' and ex.attDate <= '%(et)s'
+                and %(and)s
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select u.id,ex.exceptionid,attdate,inscopetime
+                from att_attexception ex
+                left join personnel_employee u on u.id = ex.employee_id
+                where ex.attDate >= to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and ex.attDate <= to_date('%(et)s','YYYY-MM-DD HH24:MI:SS')
+                and %(and)s
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                select u.id, ex."exceptionid","attdate","inscopetime"
+                from att_attexception ex
+                left join personnel_employee u on u.id = ex.employee_id
+                where ex."attdate" >= '%(st)s' and ex."attdate" <= '%(et)s'
+                and %(and)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id = "dict_resign_employee_sql">
+                <content engine = "default">
+                    <![CDATA[
+                        select employee_id from personnel_resign pl
+                        left join personnel_employee u on u.id = pl.employee_id
+                        where pl.resign_date <= '%(st)s'
+                        and %(and)s
+                    ]]>
+                </content>
+                <content engine = "oracle">
+                    <![CDATA[
+                        select employee_id from personnel_resign pl
+                        left join personnel_employee u on u.id = pl.employee_id
+                        where pl.resign_date <= to_date('%(st)s','YYYY-MM-DD HH24:MI:SS')
+                        and %(and)s
+                    ]]>
+                </content>
+            </sql>
+
+    <sql id = "get_calc_report_sql">
+        <content engine = "default">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.ssn,s.time_interval_id, s.exception_detail as exception_detail,
+                    att_timeinterval.alias as schname,s.att_date as attdate, d.dept_code,d.dept_name,
+                    s.check_in_time as check_in_time,s.check_out_time as check_out_time,
+                    s.clock_in_time as starttime,s.clock_out_time as endtime,s.schedule_work_day as workday,s.actual_work_day as actual_work_day,
+                    s.actual_work_time as actual_work_time, s.short_time as short_time,s.no_check_in as noin,s.no_check_out as noout,
+                    s.early_leave as early_leave, s.late_time as late_time, s.absent_time as absent_time, 
+                    s.absent_time as absent_time, s.overtime as overtime,
+                    s.required_in as required_in, s.required_out as required_out,
+                    s.duty_duration as duty_duration, s.report_symbol as report_symbol,
+                    s.normal_ot as normal_ot, s.weekend_ot as weekend_ot, s.holiday_ot as holiday_ot,
+                    s.late_count as late_count, s.early_count as early_count, s.absent_count as absent_count,
+                    u.nickname as nick_name,u.gender,
+                    pos.position_code,pos.position_name
+                from att_attdetail s
+                left join att_timeinterval on att_timeinterval.id = s.time_interval_id
+                left join personnel_employee u on u.id = s.employee_id
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where s.att_date>='%(st)s' and s.att_date<='%(et)s' and %(userids)s
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.ssn,s.time_interval_id, s.exception_detail as exception_detail,
+                    att_timeinterval.alias as schname,s.att_date as attdate, d.dept_code,d.dept_name,
+                    s.check_in_time as check_in_time,s.check_out_time as check_out_time,
+                    s.clock_in_time as starttime,s.clock_out_time as endtime,s.schedule_work_day as workday,s.actual_work_day as actual_work_day,
+                    s.actual_work_time as actual_work_time, s.short_time as short_time,s.no_check_in as noin,s.no_check_out as noout,
+                    s.early_leave as early_leave, s.late_time as late_time, s.absent_time as absent_time, 
+                    s.absent_time as absent_time, s.overtime as overtime,
+                    s.required_in as required_in, s.required_out as required_out,
+                    s.duty_duration as duty_duration, s.report_symbol as report_symbol,
+                    s.normal_ot as normal_ot, s.weekend_ot as weekend_ot, s.holiday_ot as holiday_ot,
+                    s.late_count as late_count,s.early_count as early_count, s.absent_count as absent_count,
+                    u.nickname as nick_name,u.gender,
+                    pos.position_code,pos.position_name
+                from att_attdetail s
+                left join att_timeinterval on att_timeinterval.id = s.time_interval_id
+                left join personnel_employee u on u.id=s.employee_id
+                left join personnel_department d on d.id=u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where s.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and s.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS') and
+                    %(userids)s
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                select
+                    u.id,u.emp_code,u.first_name,u.last_name,u.ssn,s.time_interval_id, s."exception_detail" as exception_detail,
+                    att_timeinterval.alias as schname,s.att_date as attdate, d.dept_code,d.dept_name,
+                    s."check_in_time" as check_in_time,s."check_out_time" as check_out_time,
+                    s."clock_in_time" as starttime,s."clock_out_time" as endtime,s."schedule_work_day" as workday,s."actual_work_day" as actual_work_day,
+                    s."actual_work_time" as "actual_work_time", s."short_time" as "short_time",s."no_check_in" as noin,s."no_check_out" as noout,
+                    s."early_leave" as early_leave, s."late_time" as late_time, s."absent_time" as absent_time, s."absent_time" as absent_time,
+                    s."overtime" as overtime, s."required_in" as required_in, s."required_out" as required_out,
+                    s."duty_duration" as duty_duration, s."report_symbol" as report_symbol,
+                    s."normal_ot" as "normal_ot", s."weekend_ot" as "weekend_ot",
+                    s."holiday_ot" as "holiday_ot", s."late_count" as "late_count",
+                    s."early_count" as "early_count", s."absent_count" as "absent_count",
+                    u.nickname as nick_name,u.gender,
+                    pos.position_code,pos.position_name
+                from att_attdetail s
+                left join att_timeinterval on att_timeinterval.id = s.time_interval_id
+                left join personnel_employee u on u.id = s.employee_id
+                left join personnel_department d on d.id = u.department_id
+                left join personnel_position pos on pos.id = u.position_id
+                where s.att_date>='%(st)s' and s.att_date<='%(et)s' and %(userids)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id = "checkinout">
+        <content engine = "default">
+            <![CDATA[
+                    SELECT c.id,
+                    c.emp_code,u.first_name,u.last_name,u.nickname as nick_name,u.gender,
+                    pos.position_code,pos.position_name,d.dept_code,d.dept_name,
+                    punch_time as punch_date, punch_time, punch_time as fixed_time,
+                    punch_state, work_code, c.gps_location, c.longitude, c.latitude,
+                    p.area_name, i.alias as terminal_alias, terminal_sn, source
+                    FROM iclock_transaction c
+                    left join  personnel_employee u on c.emp_code = u.emp_code
+                    left join  personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on u.position_id = pos.id
+                    left join  iclock_terminal i on c.terminal_sn = i.sn
+                    left join  personnel_area p on i.area_id  = p.id
+                    where c.punch_time>='%(st)s' and c.punch_time<='%(et)s' and %(and)s
+            ]]>
+        </content>
+        <content engine = "mysql">
+            <![CDATA[
+                    SELECT c.id,
+                    c.emp_code,u.first_name,u.last_name,u.nickname as nick_name,u.gender,
+                    pos.position_code,pos.position_name,d.dept_code,d.dept_name,
+                    punch_time as punch_date, punch_time, punch_time as fixed_time,
+                    punch_state, work_code, c.gps_location, c.longitude, c.latitude,
+                    p.area_name, i.alias as terminal_alias, terminal_sn, source
+                    FROM iclock_transaction c
+                    left join  personnel_employee u on c.emp_code = u.emp_code
+                    left join  personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on u.position_id = pos.id
+                    left join  iclock_terminal i on c.terminal_sn = i.sn
+                    left join  personnel_area p on i.area_id  = p.id
+                    where c.punch_time>='%(st)s' and c.punch_time<='%(et)s' and %(and)s
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                    SELECT c.id,
+                    c.emp_code,u.first_name,u.last_name,u.nickname as nick_name,u.gender,
+                    pos.position_code,pos.position_name,d.dept_code,d.dept_name,
+                    punch_time as punch_date, punch_time, punch_time as fixed_time,
+                    punch_state, work_code, c.gps_location, c.longitude, c.latitude,
+                    p.area_name, i.alias as terminal_alias, terminal_sn, source
+                    FROM iclock_transaction c
+                    left join  personnel_employee u on c.emp_code = u.emp_code
+                    left join  personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on u.position_id = pos.id
+                    left join  iclock_terminal i on c.terminal_sn = i.sn
+                    left join  personnel_area p on i.area_id  = p.id
+                    where   c.punch_time>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss') and c.punch_time<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss') and %(and)s
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                    SELECT c.id,
+                    c.emp_code,u.first_name,u.last_name,u.nickname as nick_name,u.gender,
+                    pos.position_code,pos.position_name,d.dept_code,d.dept_name,
+                    punch_time as punch_date, punch_time, punch_time as fixed_time,
+                    punch_state, work_code, c.gps_location, c.longitude, c.latitude,
+                    p.area_name, i.alias as terminal_alias, terminal_sn, source
+                    FROM iclock_transaction c
+                    left join  personnel_employee u on c.emp_code = u.emp_code
+                    left join  personnel_department d on u.department_id = d.id
+                    left join personnel_position pos on u.position_id = pos.id
+                    left join  iclock_terminal i on c.terminal_sn = i.sn
+                    left join  personnel_area p on i.area_id  = p.id
+                    where c.punch_time>='%(st)s' and c.punch_time<='%(et)s' and %(and)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id = "checkinout_count">
+        <content engine = "default">
+            <![CDATA[
+                    SELECT
+                           count(1)
+                    FROM iclock_transaction c
+                    left join  personnel_employee u on c.emp_code = u.emp_code
+                    left join  personnel_department d on u.department_id = d.id
+                    left join  iclock_terminal i on c.terminal_sn = i.sn
+                    left join  personnel_area p on i.area_id  = p.id
+                    where c.punch_time>='%(st)s' and c.punch_time<='%(et)s' and %(and)s
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                    SELECT
+                           count(1)
+                    FROM iclock_transaction c
+                    left join  personnel_employee u on c.emp_code = u.emp_code
+                    left join  personnel_department d on u.department_id = d.id
+                    left join  iclock_terminal i on c.terminal_sn = i.sn
+                    left join  personnel_area p on i.area_id  = p.id
+                    where   c.punch_time>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss') and c.punch_time<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss') and %(and)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id = "checkexact">
+        <content engine = "default">
+            <![CDATA[
+                    select id, emp_code, first_name, last_name, nickname, gender,
+                    position_code, position_name, dept_code, dept_name,
+                    punch_time, punch_state, apply_reason, apply_time, audit_reason, audit_time, audit_status, approver,
+                    approval_level, approved
+                    from (
+                        SELECT c.abstractexception_ptr_id as id, u.emp_code, u.first_name, u.last_name, u.nickname, u.gender,
+                        d.dept_code, d.dept_name, p.position_code, p.position_name,
+                        c.punch_time, c.punch_state,c.apply_reason,
+                        c.apply_time, wa.audit_status, c.audit_reason, audit_time, c.audit_user_id as approver,
+                        c.approval_level, c.approver as approved
+                        FROM  att_manuallog c
+                        inner join personnel_employee u on c.employee_id = u.id
+                        inner join personnel_department d on u.department_id = d.id
+                        left join personnel_position p on u.position_id = p.id
+                        left join workflow_abstractexception wa on c.abstractexception_ptr_id = wa.id
+                        where c.punch_time>='%(st)s' and c.punch_time<='%(et)s' and %(and)s
+                    ) b
+                    group by id, emp_code, first_name, last_name, nickname, gender, position_code, position_name, dept_code, dept_name,
+                    punch_time, punch_state, apply_reason, apply_time, audit_reason, audit_time, audit_status, approver, approval_level, approved
+            ]]>
+        </content>
+     </sql>
+
+    <sql id = "checkexact_count">
+		<content engine = "default">
+			<![CDATA[
+					SELECT
+						   count(1)
+					FROM  att_manuallog c
+                        inner join personnel_employee u on c.employee_id = u.id
+                        inner join personnel_department d on u.department_id = d.id
+      				where c.punch_time>='%(st)s' and c.punch_time<='%(et)s' and %(and)s
+			]]>
+		</content>
+        <content engine = "oracle">
+			<![CDATA[
+					SELECT
+						   count(1)
+					FROM  att_manuallog c
+                        inner join personnel_employee u on c.employee_id = u.id
+                        inner join personnel_department d on u.department_id = d.id
+      				where   c.punch_time>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss') and c.punch_time<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss') and %(and)s
+			]]>
+		</content>
+	</sql>
+
+    <sql id = "delete_user_temp_sch_range">
+        <content engine = "default">
+            <![CDATA[
+                delete from att_tempschedule
+                where employee_id in (%(employee_id)s)
+                and start_time >= '%(start_time)s'
+                and start_time < '%(end_time)s'
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                delete from att_tempschedule
+                where employee_id in (%(employee_id)s)
+                and start_time >=  to_date('%(start_time)s','yyyy-mm-dd hh24:mi:ss')
+                and start_time < to_date('%(end_time)s','yyyy-mm-dd hh24:mi:ss')
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                delete from att_tempschedule
+                where employee_id in (%(employee_id)s)
+                and "start_time" >= '%(start_time)s'
+                and "start_time" < '%(end_time)s'
+            ]]>
+        </content>
+    </sql>
+
+    <sql id = "insert_user_temp_sch">
+        <content engine = "default">
+            <![CDATA[
+                insert into att_tempschedule(
+                    employee_id, start_time, end_time, work_type, rule_flag, time_interval_id
+                ) 
+                values (%(employee_id)s,'%(start_time)s','%(end_time)s',%(work_type)s, %(rule_flag)s, %(time_interval_id)s
+                )
+            ]]>
+        </content>  
+        <content engine = "oracle">
+            <![CDATA[
+                insert into att_tempschedule(
+                    employee_id, start_time, end_time, work_type, rule_flag, time_interval_id
+                ) 
+                values (%(employee_id)s, to_date('%(start_time)s','yyyy-mm-dd hh24:mi:ss'), to_date('%(end_time)s','yyyy-mm-dd hh24:mi:ss'), 
+                    %(work_type)s, %(rule_flag)s, %(time_interval_id)s
+                )
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                insert into att_tempschedule(
+                    employee_id, "start_time","end_time","work_type","rule_flag", "time_interval_id"
+                ) 
+                values (%(employee_id)s,'%(start_time)s','%(end_time)s', %(work_type)s, %(rule_flag)s, %(time_interval_id)s
+                )
+            ]]>
+        </content>
+    </sql>
+
+    <sql id = "transaction_export_data">
+        <content engine = "default">
+            <![CDATA[
+                    SELECT t.id,t.emp_code,t.punch_time,t.upload_time,
+                        t.punch_state,t.verify_type,t.work_code,t.area_alias,
+                        t.terminal_sn,e.first_name,e.last_name, d.dept_name,
+                        t.gps_location,t.terminal_alias
+                    FROM iclock_transaction t,
+                        personnel_employee e,
+                        personnel_department d
+                    WHERE t.emp_code=e.emp_code and e.department_id=d.id
+            ]]>
+        </content>
+    </sql>
+
+    <sql id = "app_report">
+        <content engine="default">
+             <![CDATA[
+                   select TOP 100 PERCENT
+                    u.emp_code as pin,
+                    u.first_name as name,
+                    a.att_date as att_date,
+                    a.valid_check_in as check_in,
+                    a.valid_check_out as check_out,
+                    a.valid_break_out as break_out,
+                    a.valid_break_in as break_in,
+                    a.total_time,
+                    a.actual_break_duration as break_time,
+                    a.leave_time,
+                    a.overtime as overtime
+                 from att_attdetail a
+                    inner join personnel_employee u  on u.id=a.employee_id
+                    inner join personnel_department d  on u.department_id=d.id
+                 where a.att_date>='%(st)s' and a.att_date < '%(et)s' and
+                 %(and)s
+			]]>
+            <part id = "">
+				<![CDATA[
+				]]>
+        </part>
+        </content>
+        <content engine = "mysql">
+			<![CDATA[
+                select
+                    u.emp_code as pin,
+                    u.first_name as name,
+                    a.att_date as att_date,
+                    a.valid_check_in as check_in,
+                    a.valid_check_out as check_out,
+                    a.valid_break_out as break_out,
+                    a.valid_break_in as break_in,
+                    a.total_time,
+                    a.actual_break_duration as break_time,
+                    a.leave_time,
+                    a.overtime as overtime
+                 from att_attdetail a
+                    inner join personnel_employee u  on u.id=a.employee_id
+                    inner join personnel_department d  on u.department_id=d.id
+                 where a.att_date>='%(st)s' and a.att_date < '%(et)s' and
+                 %(and)s
+			]]>
+        <part id = "">
+				<![CDATA[
+
+				]]>
+        </part>
+        </content>
+        <content engine = "oracle">
+			<![CDATA[
+                select
+				    u.emp_code as pin,
+                    u.first_name as name,
+                    a.att_date as att_date,
+                    a.valid_check_in as check_in,
+                    a.valid_check_out as check_out,
+                    a.valid_break_out as break_out,
+                    a.valid_break_in as break_in,
+                    a.total_time,
+                    a.actual_break_duration as break_time,
+                    a.leave_time,
+                    a.overtime as overtime
+                  from att_attdetail a
+                    inner join personnel_employee u  on u.id=a.employee_id
+                    inner join personnel_department d  on u.department_id=d.id
+                 where a.att_date>=to_date('%(st)s','YYYY-MM-DD HH24:MI:SS') and a.att_date<=to_date('%(et)s','YYYY-MM-DD HH24:MI:SS') and
+                 %(and)s
+			]]>
+			<part id="">
+				<![CDATA[
+
+				]]>
+			</part>
+		</content>
+        <content engine = "postgresql">
+			<![CDATA[
+                select
+				    u.emp_code as pin,
+                    u.first_name as name,
+                    a.att_date as att_date,
+                    a.valid_check_in as check_in,
+                    a.valid_check_out as check_out,
+                    a.valid_break_out as break_out,
+                    a.valid_break_in as break_in,
+                    a.total_time,
+                    a.actual_break_duration as break_time,
+                    a.leave_time,
+                    a.overtime as overtime
+                  from att_attdetail a
+                    inner join personnel_employee u  on u.id=a.employee_id
+                    inner join personnel_department d  on u.department_id=d.id
+                 where a.att_date>='%(st)s' and a.att_date < '%(et)s' and
+                 %(and)s
+			]]>
+			<part id = "">
+				<![CDATA[
+
+				]]>
+			</part>
+		</content>
+
+    </sql>
+    <sql id = "app_report_count_sql">
+        <content engine="default">
+            <![CDATA[
+            select
+                 count(a.id) as data_count
+                 from att_attdetail a
+                    left join personnel_employee u  on u.id=a.employee_id
+                 where a.att_date>='%(st)s' and a.att_date < '%(et)s' and
+                 %(and)s
+            ]]>
+        </content>
+        <content engine="default">
+            <![CDATA[
+
+            ]]>
+        </content>
+    </sql>
+    <sql id = "exception_cal">
+		<content engine = "default">
+			<![CDATA[
+			    select att_attdetail.att_date,
+                (case when sum(late_count) > 0 then  personnel_employee.emp_code else '' end) as late,
+                (case when sum(early_count) > 0 then personnel_employee.emp_code else '' end) as early_leave,
+                (case when sum(absent_count) > 0 then  personnel_employee.emp_code else '' end) as absent,
+                personnel_employee.department_id
+                from att_attdetail
+                left join personnel_employee on personnel_employee.id = att_attdetail.employee_id
+                where 1=1 %(and)s
+                group by att_attdetail.att_date, personnel_employee.emp_code,personnel_employee.department_id
+			]]>
+			<part id = "emp">
+				<![CDATA[
+					and personnel_employee.id in (%(emp)s)
+				]]>
+			</part>
+            <part id = "start_date">
+				<![CDATA[
+					and att_attdetail.att_date >= '%(start_date)s'
+				]]>
+			</part>
+            <part id = "end_date">
+				<![CDATA[
+					and att_attdetail.att_date < '%(end_date)s'
+				]]>
+			</part>
+		</content>
+		<content engine = "oracle">
+			<![CDATA[
+			    select att_attdetail.att_date,
+                (case when sum(late_count) > 0 then  personnel_employee.emp_code else N'' end) as late,
+                (case when sum(early_count) > 0 then personnel_employee.emp_code else N'' end) as early_leave,
+                (case when sum(absent_count) > 0 then  personnel_employee.emp_code else N'' end) as absent
+                ,personnel_employee.department_id
+                from att_attdetail
+                left join personnel_employee on personnel_employee.id = att_attdetail.employee_id
+                where 1=1 %(and)s
+                group by att_attdetail.att_date, personnel_employee.emp_code,personnel_employee.department_id
+			]]>
+			<part id = "emp">
+				<![CDATA[
+					and personnel_employee.id in (%(emp)s)
+				]]>
+			</part>
+            <part id = "start_date">
+				<![CDATA[
+					and att_attdetail.att_date >= to_date('%(start_date)s','yyyy-mm-dd')
+				]]>
+			</part>
+            <part id = "end_date">
+				<![CDATA[
+					and att_attdetail.att_date < to_date('%(end_date)s','yyyy-mm-dd')
+				]]>
+			</part>
+		</content>
+	</sql>
+    <sql id = "emergency_export_working_employee">
+        <content engine = "default">
+            <![CDATA[
+                SELECT
+                    c.punch_time,
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as local_name,
+                    d.dept_name as department_name,
+                    u.gender,
+                    u.mobile,
+                    u.email,
+                    u.office_tel,
+                    u.birthday,
+                    u.address,
+                    u.passport
+                from iclock_transaction c
+                    left join personnel_employee u on u.emp_code = c.emp_code
+                    left join personnel_department d on u.department_id = d.id
+                where c.punch_time>='%(st)s' and c.punch_time<='%(et)s'
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                SELECT
+                    u.emp_code,
+                    u.first_name,
+                    u.last_name,
+                    u.nickname as local_name,
+                    d.dept_name as department_name,
+                    u.gender,
+                    u.mobile,
+                    u.email,
+                    u.office_tel,
+                    u.birthday,
+                    u.address,
+                    u.passport,
+                    c.punch_time
+                FROM iclock_transaction c
+                    left join personnel_employee u on u.emp_code = c.emp_code
+                    left join personnel_department d on u.department_id = d.id
+                where c.punch_time>=to_date('%(st)s', 'yyyy-mm-dd hh24:mi:ss') and c.punch_time<=to_date('%(et)s', 'yyyy-mm-dd hh24:mi:ss')
+            ]]>
+        </content>
+    </sql>
+    <sql id="insert_report_param">
+        <content engine = "default">
+            <![CDATA[
+                insert into att_reportparam values (%(param_name)s,'%(param_value)s','%(company_id)s'
+                )
+            ]]>
+        </content>
+    </sql>
+</sqlgroup>

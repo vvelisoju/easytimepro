@@ -1,0 +1,27 @@
+{% load i18n static common%}
+<body>
+<div style="padding: 10px;">
+{% for x in mapplotdetails %}
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-4">
+        <table style="border: 1px solid #ccc; padding: 0.5em; width:100%">
+        <tr>
+        <td style="width:12%;text-align: justify;">Check-In &ensp;&hairsp;&hairsp;:</td>
+        <td style="width:23%;text-align:justify;">{{ x.in.strip }}</td>
+        <td style="width:33%;text-align:justify;">Company : {{ x.company.strip }}</td>
+
+        </tr>
+        <tr>
+        <td style="width:12%;text-align: justify;">Check-Out :</td>
+        <td style="width:23%;text-align:justify;">{{ x.out.strip }}</td>
+            <td style="width:33%;text-align:justify;"></td>
+        </tr>
+        </table>
+   </div>
+  </div>
+ </div>
+ <br><br>
+{% endfor %}
+</div>
+</body>

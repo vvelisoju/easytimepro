@@ -1,0 +1,5 @@
+{% extends "data_grid.html" %}
+{% block grid_opt_update %}
+  data_grid_opts.grid_opts.init_where = {_p1_terminal__lock_func__gt:0};
+  data_grid_opts.grid_opts.where = {_p1_terminal__lock_func__gt:0};
+{% endblock %}

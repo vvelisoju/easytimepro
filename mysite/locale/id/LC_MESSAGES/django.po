@@ -1,0 +1,8473 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "Masukan email valid"
+
+msgid "user_field_username"
+msgstr "Nama pengguna"
+
+msgid "user_field_usernameHelpTxt"
+msgstr "Minimal 30 karakter dan dapat berisi huruf, digit dan @/./+/-/_"
+
+msgid "user_field_usernameValidator"
+msgstr "Username "
+
+msgid "user_field_password"
+msgstr "Kata sandi"
+
+msgid "user_field_firstName"
+msgstr "Nama depan"
+
+msgid "user_field_lastName"
+msgstr "Nama belakang"
+
+msgid "user_field_email"
+msgstr "Email"
+
+msgid "user_field_authorizedDepartment"
+msgstr "Departement"
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "Pilih semua area"
+
+msgid "user_field_authorizedArea"
+msgstr "Area"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "Pilih semua departemen"
+
+msgid "user_field_loginTimes"
+msgstr "Waktu login"
+
+msgid "user_field_staff"
+msgstr "Karyawan"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_active"
+msgstr "Aktif"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_superuser"
+msgstr "Superuser"
+
+msgid "user_field_dateJoined"
+msgstr "Tanggal bergabung"
+
+msgid "user_field_lastLogin"
+msgstr "Terakhir masuk"
+
+msgid "base_model_user"
+msgstr "Pengguna"
+
+msgid "userProfile_field_username"
+msgstr "Nama pegguna"
+
+msgid "userProfile_field_pinTabs"
+msgstr "Pin tab"
+
+msgid "userProfile_field_hideColumns"
+msgstr "Sembunyikan kolom"
+
+msgid "userProfile_field_order"
+msgstr "Kolom Order"
+
+msgid "userProfile_field_preferences"
+msgstr "Profil"
+
+msgid "base_model_userProfile"
+msgstr "Profil pengguna"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "Hapus"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "Hapus catatan terpilih"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "Hapus catatan terpilih"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "comfirmasi menghapus {0} {1}?"
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "Confirmasi menghapus alur yang dipilih?"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "Confirmasi menghapus dokumen yang dipilih?"
+
+msgid "common_action_new"
+msgstr "Tambah"
+
+msgid "common_action_newDescription"
+msgstr "Tambah"
+
+msgid "common_action_newHelpTxt"
+msgstr "Tambah"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "Tindakan:"
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "Tambah lainnya %(verbose_name)s"
+
+msgid "helpers_deleteText_remove"
+msgstr "Hapus"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr "Bookmark gagal"
+
+msgid "bookmark_duplication_echo"
+msgstr "Bookmark dengan nama yang sama telah dibuat, anda dapat memilih nama lain"
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "Aktif"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "Tidak aktif"
+
+msgid "baseModel_field_createTime"
+msgstr "Tambah waktu/kegiatan"
+
+msgid "baseModel_field_createUser"
+msgstr "Tambah pengguna"
+
+msgid "baseModel_field_changeTime"
+msgstr "Ubah waktu"
+
+msgid "baseModel_field_changeUser"
+msgstr "Ubah pengguna"
+
+msgid "baseModel_field_dataStatus"
+msgstr "Status Data"
+
+msgid "userProfile_languageChange_successful"
+msgstr "Berhasil"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "Login gagal"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "Superuser harus di isi"
+
+msgid "action_not_available"
+msgstr "Tindakan tidak tersedia"
+
+msgid "hiddenField_save_successful"
+msgstr "Berhasil"
+
+msgid "hiddenField_reset_successful"
+msgstr "Berhasil"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "Dilarang"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "Parameter gagal"
+
+msgid "columnOrder_save_successful"
+msgstr "Berhasil"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "Parameter gagal"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "Tidak diijinkan melebihi tabs dari {num}"
+
+msgid "pinTab_saveError_duplicate"
+msgstr "Duplikat"
+
+msgid "duplicate"
+msgstr "Duplikat"
+
+msgid "pinTab_remove_successful"
+msgstr "Berhasil"
+
+msgid "pinTab_action_parameterError"
+msgstr "Parameter gagal"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "Dilarang"
+
+msgid "login_authorize_license_expired"
+msgstr "Lisensi sudah kadaluwarssa"
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "Lisensi akan kadaluwarsa setelah %(day)s hari(s)"
+
+msgid "booleanFieldFilter_option_all"
+msgstr "Semua"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "Iya"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "Tidak"
+
+msgid "fieldFilter_option_all"
+msgstr "Semua"
+
+msgid "textFieldFilter_option_contain"
+msgstr "Terdapat"
+
+msgid "textFieldFilter_option_exact"
+msgstr "Tepat"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "Mulai dari"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "Akhir dari"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "Satu dari"
+
+msgid "textFieldFilter_option_regex"
+msgstr "Regular Expresi"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "Tanggal kapanpun"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "Dengan tanggal"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "Tanpa tanggal"
+
+msgid "dateFieldFilter_option_today"
+msgstr "Hari ini"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "Kemarin"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "7 hari terakhir"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "Minggu ini"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "Bulan ini"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "Tahun ini"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "Kapan saja"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "Dari waktu"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "Tanpa waktu"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "Dalam"
+
+msgid "base_model_bookmarks"
+msgstr "Penanda buku"
+
+msgid "report_column_empCode"
+msgstr "ID Karyawan"
+
+msgid "report_column_firstName"
+msgstr "Nama pertama"
+
+msgid "report_column_lastName"
+msgstr "Nama terakhir"
+
+msgid "report_column_nickName"
+msgstr "Nama panggilan"
+
+msgid "report_column_gender"
+msgstr "Jenis kelamin"
+
+msgid "report_column_departmentCode"
+msgstr "Kode department"
+
+msgid "report_column_departmentName"
+msgstr "Departemen"
+
+msgid "report_column_positionCode"
+msgstr "Kode posisi"
+
+msgid "report_column_positionName"
+msgstr "Posisi"
+
+msgid "report_column_workCode"
+msgstr "Kode Kerja"
+
+msgid "report_column_dataSources"
+msgstr "Sumber data"
+
+msgid "report_column_punchDate"
+msgstr "Tanggal"
+
+msgid "report_column_punchTime"
+msgstr "Waktu"
+
+msgid "report_column_punchState"
+msgstr "Status fingerprint"
+
+msgid "report_column_correctState"
+msgstr "Berhasil"
+
+msgid "report_column_lateDuration"
+msgstr "Terlambat"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "Pulang lebih awal"
+
+msgid "report_column_absentDuration"
+msgstr "Tidak masuk"
+
+msgid "report_column_actualWorkDuration"
+msgstr "Durasi jam kerja "
+
+msgid "report_column_shortDuration"
+msgstr "Pendek"
+
+msgid "report_column_overtimeDuration"
+msgstr "Lembur"
+
+msgid "report_column_normalWorkTime"
+msgstr "Jam kerja"
+
+msgid "report_column_normalOvertime"
+msgstr "Lembur biasa"
+
+msgid "report_column_weekendOvertime"
+msgstr "Lembur akhir pekan"
+
+msgid "report_column_holidayOvertime"
+msgstr "Lembur liburan"
+
+msgid "report_column_overtimeLevel1"
+msgstr "Lembur level 1"
+
+msgid "report_column_overtimeLevel2"
+msgstr "Lembur level 2"
+
+msgid "report_column_overtimeLevel3"
+msgstr "Lembur level 3"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "Cuti sakit"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "Cuti santai"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "Cuti Hamil"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "Cuti meninggal/keperluan tertentu"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "Cuti tahunan"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "Perjalanan bisnis"
+
+msgid "report_column_attendanceDate"
+msgstr "Tanggal"
+
+msgid "report_column_attendanceWeekday"
+msgstr "Hari kerja"
+
+msgid "report_column_exception"
+msgstr "Pengecualian"
+
+msgid "report_column_timeIntervalName"
+msgstr "Jadwal"
+
+msgid "report_column_checkInTime"
+msgstr "Masuk"
+
+msgid "report_column_checkOutTime"
+msgstr "Keluar"
+
+msgid "report_column_deviceTn"
+msgstr "Perangkat[Masuk]"
+
+msgid "report_column_deviceOut"
+msgstr "Perangkat[Keluar]"
+
+msgid "report_column_workCodeIn"
+msgstr "Kode Kerja[Masuk]"
+
+msgid "report_column_workCodeOut"
+msgstr "Kode Kerja[Keluar]"
+
+msgid "report_column_clockInTime"
+msgstr "Jam masuk"
+
+msgid "report_column_clockOutTime"
+msgstr "Jam keluar"
+
+msgid "report_column_totalTimeDuration"
+msgstr "Total waktu"
+
+msgid "report_column_dutyWorkedTime"
+msgstr "Jam kerja "
+
+msgid "report_column_actualWorkedTime"
+msgstr "Jam kerja sebenarnya"
+
+msgid "report_column_unscheduled"
+msgstr "Tidak terjadwalkan"
+
+msgid "report_column_remaining"
+msgstr "Tersisa"
+
+msgid "report_column_breakOutTime"
+msgstr "Keluar"
+
+msgid "report_column_breakInTime"
+msgstr "Masuk"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "waktu istirahat yang sebenarnya"
+
+msgid "report_column_breakTime"
+msgstr "Istirahat"
+
+msgid "report_column_breakLateDuration"
+msgstr "Durasi terlambat makan siang"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "Durasi pulang lebih awal"
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "Durasi masuk dengan istirahat"
+
+msgid "report_column_totalWorkedDuration"
+msgstr "Total jam kerja"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "Jam kerja sebenarnya"
+
+msgid "report_column_leaveDuration"
+msgstr "Cuti"
+
+msgid "report_column_overtime"
+msgstr "Lembur"
+
+msgid "report_column_missIn"
+msgstr "Hilang di"
+
+msgid "report_column_missOut"
+msgstr "Ketinggalan"
+
+msgid "report_column_present"
+msgstr "Hadir"
+
+msgid "report_column_dayOff"
+msgstr "Libur"
+
+msgid "report_column_weekend"
+msgstr "Akhir minggu"
+
+msgid "report_column_holiday"
+msgstr "Liburan"
+
+msgid "report_column_trainingDuration"
+msgstr "Latihan"
+
+msgid "report_column_timetableDuration"
+msgstr "Durasi jadwal"
+
+msgid "report_column_scheduledBreakTime"
+msgstr "Jadwal isirahat"
+
+msgid "report_column_attendanceDuration"
+msgstr "Durasi kehadiran"
+
+msgid "report_column_breakTimeDuration"
+msgstr "Durasi istirahat"
+
+msgid "report_column_approvalOvertime"
+msgstr "Persetujuan lembur"
+
+msgid "report_column_timetableDays"
+msgstr "Hari kerja"
+
+msgid "report_column_cardNumber"
+msgstr "Nomor kartu."
+
+msgid "report_column_firstPunch"
+msgstr "Sentuhan pertama"
+
+msgid "report_column_lastPunch"
+msgstr "Sentuhan terakhir"
+
+msgid "report_column_totalDuration"
+msgstr "Total Waktu"
+
+msgid "report_column_firstIn"
+msgstr "Jam masuk pertama"
+
+msgid "report_column_lastOut"
+msgstr "Jam keluar terakhir"
+
+msgid "report_column_exceptionDescription"
+msgstr "Deskripsi"
+
+msgid "report_column_employeeCount"
+msgstr "Total Karyawan"
+
+msgid "report_column_lateTimes"
+msgstr "Total Keterlambatan"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "Total pulang lebih awal"
+
+msgid "report_column_absentTimes"
+msgstr "Total tidak hadir"
+
+msgid "report_column_punchTimes"
+msgstr "Total hadir"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "Total durasi waktu"
+
+msgid "report_column_timetable"
+msgstr "Jadwal"
+
+msgid "fixed_time"
+msgstr "Waktu tetap"
+
+msgid "report_column_gpsLocation"
+msgstr "Lokasi GPS"
+
+msgid "report_column_longitude"
+msgstr "Garis bujur"
+
+msgid "report_column_latitude"
+msgstr "Lintang"
+
+msgid "report_column_areaAlias"
+msgstr "Area"
+
+msgid "report_column_terminalAlias"
+msgstr "Perangkat"
+
+msgid "report_column_terminalSN"
+msgstr "Nomor serial"
+
+msgid "menu_att_transactionReport"
+msgstr "Transaksi"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "Status harian"
+
+msgid "menu_att_dailyStatusReport"
+msgstr "Rekap Kehadiran harian"
+
+msgid "menu_att_detailReport"
+msgstr "Rekap detail kartu "
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "Rekap Rangkuman Karyawan"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "Rekap Cuti"
+
+msgid "menu_att_FILOReport"
+msgstr "Pertama kali masuk terakhir keluar"
+
+msgid "menu_att_firstLastReport"
+msgstr "Pertama dan Terakhir"
+
+msgid "menu_att_firstInLastOutReport"
+msgstr "Pertama masuk terakhir keluar"
+
+msgid "menu_att_exceptionReport"
+msgstr "Pengecualian"
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "Rekap rangkuman departemen"
+
+msgid "menu_att_timeCardReport"
+msgstr "Rekap "
+
+msgid "menu_att_lateReport"
+msgstr "Terlambat"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "Cuti awal"
+
+msgid "menu_att_overtimeReport"
+msgstr "Lembur"
+
+msgid "menu_att_absentReport"
+msgstr "Tidak hadir"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "Transaksi ganda"
+
+msgid "menu_att_breakTimeReport"
+msgstr "Istirahat"
+
+msgid "menu_group_att_configuration"
+msgstr "Setting"
+
+msgid "menu_staff_transactionReport"
+msgstr "Laporan Transaksi"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "Shift berbenturan"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "Rekap jadwal tidak dapat diubah"
+
+msgid "att_model_leave"
+msgstr "Cuti"
+
+msgid "leave_field_employee"
+msgstr "Karyawan"
+
+msgid "leave_field_startTime"
+msgstr "Waktu mulai"
+
+msgid "leave_field_endTime"
+msgstr "Waktu selesai"
+
+msgid "leave_field_leaveCategory"
+msgstr "Kategori"
+
+msgid "leave_field_reason"
+msgstr "Alasan"
+
+msgid "leave_field_approvalState"
+msgstr "Status pengajuan"
+
+msgid "leave_field_approvalReason"
+msgstr "Catatan"
+
+msgid "leave_action_new"
+msgstr "Tambah"
+
+msgid "leave_action_newDescription"
+msgstr "Tambah cuti baru"
+
+msgid "leave_action_newHelpTxt"
+msgstr "Tambah cuti baru"
+
+msgid "leave_time_invalid_range"
+msgstr "Cuti gagal, waktu selesai harus melebihi waktu mulai"
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "Waktu bekerja harus diatas waktu bergabung [%s]"
+
+msgid "leave_time_overlap"
+msgstr "%s Cuti pribadi  berbenturan"
+
+msgid "select_employee"
+msgstr "Silahkan pilih karyawan"
+
+msgid "manualLog_field_employee"
+msgstr "Karyawan"
+
+msgid "manualLog_field_punchTime"
+msgstr "Waktu sentuhan"
+
+msgid "manualLog_field_punchState"
+msgstr "Status sentuhan"
+
+msgid "manualLog_field_workCode"
+msgstr "Kode kerja"
+
+msgid "manualLog_field_applyReason"
+msgstr "Alasan"
+
+msgid "manualLog_field_approvalState"
+msgstr "Status"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "Catatan"
+
+msgid "manualLog_Action_new"
+msgstr "Tambah"
+
+msgid "manualLog_Action_newDescription"
+msgstr "Tambah catatan manual"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "Tambah catatan manual"
+
+msgid "manual_log_time_greater_now"
+msgstr "Waktu sentuhan tidak boleh melebihi waktu saat ini"
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "Gagal, Tanggal mulai harus lebih besar dari tanggal bergabung [%s]"
+
+msgid "manual_log_repeat"
+msgstr "%s ulangi waktu punch"
+
+msgid "overtime_field_employee"
+msgstr "Karyawan"
+
+msgid "overtime_field_startTime"
+msgstr "Waktu mulai"
+
+msgid "overtime_field_endTime"
+msgstr "Waktu akhir"
+
+msgid "overtime_field_overtimeType"
+msgstr "Jenis lembur"
+
+msgid "overtime_field_applyReason"
+msgstr "Terapkan alasan"
+
+msgid "overtime_field_approvalState"
+msgstr "Pusat"
+
+msgid "overtime_field_approvalRemark"
+msgstr "Komentar"
+
+msgid "overtime_action_new"
+msgstr "Tambah"
+
+msgid "overtime_action_newDescription"
+msgstr "Ajukan lembur"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "Ajukan lembur"
+
+msgid "overtime_time_overlap"
+msgstr "%s Lembur pribadi berbenturan"
+
+msgid "schedule_action_addSchedule"
+msgstr "Tambah jadwal"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "Tambah jadwal"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "Tambah jadwal"
+
+msgid "scheduledAssign_error_datePeriodError"
+msgstr "Periode tanggal gagal"
+
+msgid "scheduledAssign_error_shiftNotFound"
+msgstr "Shift tidak ditemukan"
+
+msgid "scheduledAssign_error_empNotFound"
+msgstr "Karyawan tidak ditemukan"
+
+msgid "scheduledAssign_error_deptNotFound"
+msgstr "Departemen tidak ditemukan"
+
+msgid "scheduledAssign_error_schdOverlap_%(obj)s_%(start_date)s_%(end_date)s"
+msgstr "Jadwal dari %(obj)s berbenturan pada %(start_date)s - %(end_date)s"
+
+msgid "please_select_time_intervals"
+msgstr "Silahkan pilih jadwal"
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s(%(name)s) Duplikat jadwal dari %(start)s ke %(end)s"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "Duplikat period punch gagal"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "%(t)s dan %(ss)s berbenturan pada hari %(d)s"
+
+msgid "shift_not_found"
+msgstr "Shift tidak ditemukan"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "shift(%(shift)s) sedang digunakan"
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "Duplikat shift (%(alias)s)"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "Tambah jadwal sementara"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "Tambahkan jadwal baru sementara "
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "Tambah jadwal baru sementara"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "Silahkan pilih karyawan"
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "Silahkan pilih departemen"
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "Silahkan pilih jadwal"
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(timetableA)s dan %(timetableB)s berbenturan dengan %(date)s"
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "Gagal memproses"
+
+msgid "training_field_employee"
+msgstr "Karyawan"
+
+msgid "training_field_startTime"
+msgstr "Waktu mulai"
+
+msgid "training_field_endTime"
+msgstr "Waktu selesai"
+
+msgid "training_field_trainingCategory"
+msgstr "Jenis latihan"
+
+msgid "training_field_applyReason"
+msgstr "Alasan"
+
+msgid "training_field_approvalState"
+msgstr "Status"
+
+msgid "training_field_approvalRemark"
+msgstr "Catatan"
+
+msgid "training_action_new"
+msgstr "Tambah"
+
+msgid "training_action_newDescription"
+msgstr "Tambah latihan baru"
+
+msgid "training_action_newHelpTxt"
+msgstr "Tambah latihan baru"
+
+msgid "training_time_overlap"
+msgstr "%s waktu patihan pribadi berbenturan"
+
+msgid "shift_field_timeInterval"
+msgstr "Jadwal"
+
+msgid "deptAttRule_field_alias"
+msgstr "Nama"
+
+msgid "departmentRule_action_batchAdd"
+msgstr "Tambah"
+
+msgid "departmentRule_action_batchAddDescription"
+msgstr "Tambah aturan untuk departemen gamda"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "Tambah aturan baru untuk  departemen ganda"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s sudah membuat aturan"
+
+msgid "holiday_field_alias"
+msgstr "Nama"
+
+msgid "holiday_field_startDate"
+msgstr "Tanggal mulai"
+
+msgid "holiday_field_duration"
+msgstr "Durasi(Day)"
+
+msgid "holiday_field_workType"
+msgstr "Jenis kerja"
+
+msgid "holiday_field_overtimeLevel"
+msgstr "Level lembur"
+
+msgid "holiday_field_overtimeLevel1"
+msgstr "Lembur level 1"
+
+msgid "holiday_field_overtimeLevel2"
+msgstr "Lembur level 2"
+
+msgid "holiday_field_overtimeLevel3"
+msgstr "Lembur level 3"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "Tambah"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "Tambah liburan"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "Tambah liburan"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr "Pengaturan akhir pekan sedang digunakan, tidak dapat diubah"
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr "Tidak dapat menggunakan nilai yang sama pada pengaturan fungsi penghitungan"
+
+msgid "calculation_item_actualPresent"
+msgstr "Kehadiran sebenarnya"
+
+msgid "calculation_item_durationOrShort"
+msgstr "Durasi/jarak"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "Total jam kerja"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "Istirahat"
+
+msgid "calculation_item_timetableDuration"
+msgstr "Durasi jadwal"
+
+msgid "calculation_item_late"
+msgstr "Terlambat"
+
+msgid "calculation_item_earlyLeave"
+msgstr "Pulang lebih awal"
+
+msgid "calculation_item_leave"
+msgstr "Cuti"
+
+msgid "calculation_item_absent"
+msgstr "Tidak hadir"
+
+msgid "calculation_item_overtime"
+msgstr "Lembur"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "Tidak ada jam masuk"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "Tidak ada jam keluar"
+
+msgid "calculation_item_present"
+msgstr "hadir"
+
+msgid "calculation_item_dayOff"
+msgstr "Libur"
+
+msgid "calculation_item_weekend"
+msgstr "Akhir pekan"
+
+msgid "calculation_item_holiday"
+msgstr "Liburan"
+
+msgid "replace_existing_shift_even_using"
+msgstr "Ganti shift yang sedang digunakan"
+
+msgid "remove_overlap_schedule"
+msgstr "Hapus jadwal yang berbenturan"
+
+msgid "enable_work_on_weekend_as"
+msgstr "Dapat bekerja pada akhir pekan"
+
+msgid "work_type"
+msgstr "Bekerja sebagai"
+
+msgid "enable_work_on_day_off_as"
+msgstr "Dapat bekerja pada hari libur"
+
+msgid "auto_shift"
+msgstr "Shift otomatis"
+
+msgid "select_date"
+msgstr "Silahkan pilih tanggal."
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr "%(t)s and %(ss)s berbenturan pada hari %(d)s"
+
+msgid "breakTime_validationError_durationGreatThanPeriod"
+msgstr "Durasi melebih periode"
+
+msgid "breakTime_validationError_earlyGreatThanDuration"
+msgstr "Waktu mulai melebihi  waktu istirahat"
+
+msgid "breakTime_validationError_overGreatThanRangeDuration"
+msgstr "Durasi istirahat melebihi jarak yang ditentukan"
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr "Tidak dapat mengubah, waktu istirahat sedang digunakan"
+
+msgid "breakTime_validationError_invalidNumber"
+msgstr "Nomor harus lebih besar dari 0"
+
+msgid "please_select_time_table"
+msgstr "Silahkan pilih jadwal."
+
+msgid "%s error_of_sql statement_adding_failed."
+msgstr "%s Error terjadi pada sql"
+
+msgid "menu_group_att_rule"
+msgstr "Aturan"
+
+msgid "menu_att_globalRule"
+msgstr "Aturan global"
+
+msgid "menu_att_departmentRule"
+msgstr "Aturan departemen"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "Shift"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "Jadwal"
+
+msgid "menu_att_breakTime"
+msgstr "Istirahat"
+
+msgid "menu_att_timeInterval"
+msgstr "Jadwal"
+
+msgid "menu_att_shift"
+msgstr "Shift"
+
+msgid "menu_att_departmentSchedule"
+msgstr "Jadwal departemen"
+
+msgid "menu_att_employeeSchedule"
+msgstr "Jadwal karyawan"
+
+msgid "menu_att_temporarySchedule"
+msgstr "Jadwal sementara"
+
+msgid "menu_att_scheduleView"
+msgstr "Lihat Jadwal"
+
+msgid "menu_group_approvalManagement"
+msgstr "Disetujui"
+
+msgid "menu_att_manualLog"
+msgstr "Catatan manual"
+
+msgid "menu_att_leave"
+msgstr "Cuti"
+
+msgid "menu_att_overtime"
+msgstr "Lembur"
+
+msgid "menu_att_training"
+msgstr "Latihan"
+
+msgid "menu_att_adjustSchedule"
+msgstr "Atur jadwal"
+
+msgid "menu_group_att_holiday"
+msgstr "Liburan"
+
+msgid "menu_att_holiday"
+msgstr "Liburan"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "Jenis"
+
+msgid "menu_att_leaveType"
+msgstr "Jenis cuti"
+
+msgid "menu_att_trainingType"
+msgstr "Jenis latihan"
+
+msgid "menu_group_att_reportSetting"
+msgstr "Pengaturan laporan"
+
+msgid "menu_att_reportSetting"
+msgstr "Pengaturan laporan"
+
+msgid "menu_group_att_transaction"
+msgstr "Transaksi"
+
+msgid "menu_att_transaction"
+msgstr "Transaksi"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "Laporan perhitungan"
+
+msgid "menu_att_reportCalculate"
+msgstr "Laporan perhitngan"
+
+msgid "menu_group_att_nonSchedulingReport"
+msgstr "Rekap transaksi"
+
+msgid "menu_group_att_report"
+msgstr "Rekap jadwal"
+
+msgid "menu_group_att_summaryReport"
+msgstr "Rekap hasil"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "Monitor"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "Kehadiran departemen"
+
+msgid "att_model_attendanceDetail"
+msgstr "Rincian kehadiran"
+
+msgid "att_model_attendanceException"
+msgstr "Pengecualian kehadiran"
+
+msgid "att_calc_log"
+msgstr "Catatan hitung kehadiran"
+
+msgid "attRule_field_paramName"
+msgstr "Nama"
+
+msgid "attRule_field_paramValue"
+msgstr "Nilai"
+
+msgid "att_model_attRule"
+msgstr "Aturan kehadiran"
+
+msgid "schedule_field_employee"
+msgstr "Karyawan"
+
+msgid "schedule_field_startDate"
+msgstr "Tanggal mulai"
+
+msgid "schedule_field_endDate"
+msgstr "Tanggal berakhir"
+
+msgid "schedule_field_shift"
+msgstr "Shift"
+
+msgid "att_model_schedule"
+msgstr "Jadwal"
+
+msgid "deptSchedule_field_department"
+msgstr "Departemen"
+
+msgid "deptSchedule_field_startDate"
+msgstr "Awal mulai"
+
+msgid "deptSchedule_field_endDate"
+msgstr "Selesai"
+
+msgid "deptSchedule_field_shift"
+msgstr "Shift"
+
+msgid "att_model_deptSchedule"
+msgstr "Jadwal departemen"
+
+msgid "deptSchedule_action_add"
+msgstr "Tambahkan"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "Tambahkan jadwal departement"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "Tambahkan jadwal departement"
+
+msgid "attShift_field_code"
+msgstr "Nomor shift"
+
+msgid "attShift_field_alias"
+msgstr "Nama Shift"
+
+msgid "attShift_field_cycleUnit"
+msgstr "Satuan"
+
+msgid "attShift_field_cycle"
+msgstr "Putaran"
+
+msgid "work_on_weekend_as"
+msgstr "Kegiatan akhir pekan"
+
+msgid "work_on_day_off_as"
+msgstr "Kegiatan saat libur"
+
+msgid "attShift_field_autoShift"
+msgstr "Shift otomatis"
+
+msgid "shift_name_repeat"
+msgstr "Nama shift (%s) Sudah terdaftar"
+
+msgid "att_model_shift"
+msgstr "Shift"
+
+msgid "breakTime_field_alias"
+msgstr "Nama"
+
+msgid "breakTime_field_startTime"
+msgstr "Waktu mulai"
+
+msgid "breakTime_field_endTime"
+msgstr "Waktu akhir"
+
+msgid "breakTime_field_duration"
+msgstr "Durasi(m)"
+
+msgid "breakTime_field_durationHelpTxt"
+msgstr "Durasi istirahat"
+
+msgid "breakTime_field_startMargin"
+msgstr "Batas keluar"
+
+msgid "breakTime_field_endMargin"
+msgstr "Batas berakhir"
+
+msgid "breakTime_field_endMarginHelpTxt"
+msgstr "Waktu selesai = awal mulai + durasi + batas berakhir, hitungan menit"
+
+msgid "breakTime_field_allowDuration"
+msgstr "Ijinkan istirahat"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "Berdasarkan status sentuhan"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "Periode sentuhan duplikat"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "Periode sentuhan duplikat(m)"
+
+msgid "breakTime_field_useMultiplePunch"
+msgstr "Duplikasi masuk dankeluar "
+
+msgid "breakTime_field_calculateType"
+msgstr "Type penghitungan"
+
+msgid "breakTime_field_minimumBreakTime"
+msgstr "Minimum waktu istirahat(m)"
+
+msgid "breakTime_field_earlyIn"
+msgstr "Awal jam masuk"
+
+msgid "breakTime_field_minEarlyIn"
+msgstr "Minimal Masuk pada"
+
+msgid "breakTime_field_lateIn"
+msgstr "Terlambat pada"
+
+msgid "breakTime_field_minLateIn"
+msgstr "Minumal terlambat pada"
+
+msgid "breakTime_field_considerBreakInEarly"
+msgstr "Mempertimbankan kembali lebih awal"
+
+msgid "breakTime_field_breakInEarlyAs"
+msgstr "Kembali sebagai"
+
+msgid "breakTime_field_considerBreakInLate"
+msgstr "Mempertimbangkan kembali keterlambatan"
+
+msgid "breakTime_field_breakInLateAs"
+msgstr "Terlambat sebagai"
+
+msgid "att_model_breakTime"
+msgstr "Istirahat"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "Pengaturan awal"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "Membutuhkan pengaturan sentuhan"
+
+msgid "changeSchedule_field_employee"
+msgstr "Karyawan"
+
+msgid "changeSchedule_field_attDate"
+msgstr "Tanggal"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "Jadwal sebelumnya"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "Jadwal baru"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "Terapkan alasan"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "Catatan"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "Status"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "Waktu persetujuan"
+
+msgid "changeSchedule_field_approver"
+msgstr "Penyetuju"
+
+msgid "att_model_changeSchedule"
+msgstr "Penyesuaian Jadwal"
+
+msgid "change_schedule"
+msgstr "Penyesuaian jadwal"
+
+msgid "emp_field_employeeCode"
+msgstr "ID Karyawan"
+
+msgid "emp_field_firstName"
+msgstr "Nama pertama"
+
+msgid "emp_field_lastName"
+msgstr "Nama terakhir"
+
+msgid "employee_field_position"
+msgstr "Posisi"
+
+msgid "employee_field_department"
+msgstr "Departemen"
+
+msgid "deptAttRule_field_department"
+msgstr "Departemen"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "Aturan"
+
+msgid "att_model_deptAttRule"
+msgstr "Aturan Department"
+
+msgid "departmentRule_tab_calculationRule"
+msgstr "Aturan penghitungan"
+
+msgid "departmentRule_tab_overtimeSetting"
+msgstr "Pengaturan lembur"
+
+msgid "holiday_field_department"
+msgstr "Departemen"
+
+msgid "att_model_holiday"
+msgstr "Liburan"
+
+msgid "leaveCategory"
+msgstr "Kategori cuti"
+
+msgid "leave_field_applyReason"
+msgstr "Terapkan alasan"
+
+msgid "leave_field_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "leave_field_approvalRemark"
+msgstr "Catatan disetujui"
+
+msgid "leave_field_approvalTime"
+msgstr "Waktu disetujui"
+
+msgid "leave_field_approvalLevel"
+msgstr "Level persetujuan"
+
+msgid "leave_field_approver"
+msgstr "Penyetuju"
+
+msgid "leave_approve_audit"
+msgstr "Cuti tidak bisa dimotifikasi"
+
+msgid "leaveCategory_field_name"
+msgstr "Nama"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "Minimal Unit"
+
+msgid "leaveCategory_field_unit"
+msgstr "Satuan"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "Pembulatan"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "Simbol laporan"
+
+msgid "this_category_name_already_exists."
+msgstr "Category nama sudah digunakan"
+
+msgid "this_report_symbol_already_exists."
+msgstr "Simbol laporan sudah digunakan"
+
+msgid "the_default_category_name_cannot_be_modified"
+msgstr "Nama kategory tidak dapat diubah"
+
+msgid "att_model_leaveCategory"
+msgstr "Jenis cuti"
+
+msgid "manualLog_field_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "manualLog_field_approvalTime"
+msgstr "Waktu disetujui"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "Level disetujui"
+
+msgid "manualLog_field_approver"
+msgstr "Penyetuju"
+
+msgid "manuallog_approve_audit"
+msgstr "Catatan manual tidak bisa di modifikasi oleh audit."
+
+msgid "att_model_manualLog"
+msgstr "Catatan manual"
+
+msgid "overtime_field_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "overtime_field_approvalReason"
+msgstr "Catatan"
+
+msgid "overtime_field_approvalTime"
+msgstr "Waktu disetujui"
+
+msgid "overtime_field_approvalLevel"
+msgstr "Level disetujui"
+
+msgid "overtime_field_approver"
+msgstr "Penyetuju"
+
+msgid "overtime_approve_audit"
+msgstr "Catatan lembur tidak bisa di modifikasi oleh audit."
+
+msgid "att_model_overtime"
+msgstr "Lembur"
+
+msgid "reportParam_field_name"
+msgstr "Nama"
+
+msgid "reportParam_field_value"
+msgstr "Nilai"
+
+msgid "att_model_reportParameter"
+msgstr "Laporan Parameter"
+
+msgid "calculation_item_actualAttendance"
+msgstr "Bekerja sebenarnya"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "DUrasi tugas/Pendek"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "Total waktu/Total waktu kerja"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "Istirahat/Istirahat sebenarnya"
+
+msgid "calculation_item_noCheckIn"
+msgstr "Tidak ada jam masuk"
+
+msgid "calculation_item_noCheckOut"
+msgstr "Tidak ada jam keluar"
+
+msgid "calculation_item_training"
+msgstr "Latihan"
+
+msgid "report_display_checkIn"
+msgstr "Masuk"
+
+msgid "report_display_checkOut"
+msgstr "Keluar"
+
+msgid "report_display_breakOut"
+msgstr "Keluar"
+
+msgid "report_display_breakIn"
+msgstr "Dalam"
+
+msgid "report_display_overtimeIn"
+msgstr "Awal lembur"
+
+msgid "report_display_overtimeOut"
+msgstr "Selesai lembur"
+
+msgid "report_display_unknown"
+msgstr "Tidak diketahui"
+
+msgid "shiftDetail_field_shift"
+msgstr "Shift"
+
+msgid "shiftDetail_field_inTime"
+msgstr "Waktu Check-In"
+
+msgid "shiftDetail_field_outTime"
+msgstr "Waktu Check-Out"
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "Hari"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "Jadwal"
+
+msgid "att_model_shiftDetail"
+msgstr "Rincian Shift"
+
+msgid "tempSchedule_field_employee"
+msgstr "Karyawan"
+
+msgid "tempSchedule_field_startTime"
+msgstr "Waktu mulai"
+
+msgid "tempSchedule_field_endTime"
+msgstr "Waktu Selesai"
+
+msgid "tempSchedule_field_rule"
+msgstr "Aturan jadwal sementara"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "ID Jadwal"
+
+msgid "tempSchedule_field_workType"
+msgstr "Jenis kerja"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "Jadwal"
+
+msgid "att_model_tempSchedule"
+msgstr "Jadwal sementara"
+
+msgid "timeInterval_field_alias"
+msgstr "Nama"
+
+msgid "timeInterval_field_type"
+msgstr "Jenis"
+
+msgid "timeInterval_field_checkIn"
+msgstr "Masuk"
+
+msgid "timeInterval_field_checkOut"
+msgstr "Keluar"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "Mulai Check-In"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "Akhir Check-In"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "Mulai keluar"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "Selesai keluar"
+
+msgid "timeInterval_field_crossDay"
+msgstr "Hari selanjutnya"
+
+msgid "timeTable_helpText_tip1"
+msgstr "Pergantian hari berdasarkan waktu masuk"
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "Batas masuk(maximal)"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "Batas masuk(minimal)"
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "Batas keluar(maximal)"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "Batas keluar(maximal)"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "Durasi kehadiran"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "Klik untuk mengatur durasi kehadiran berdasarkan keluar"
+
+msgid "timeInterval_label_checkOut"
+msgstr "Keluar"
+
+msgid "timeInterval_txt_days"
+msgstr "Hari"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "Paling banyak 3 hari"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "Waktu keluar kurang dari waktu masuk"
+
+msgid "timeInterval_checkOut_title"
+msgstr "Pengaturan keluar"
+
+msgid "timeInterval_field_inRequired"
+msgstr "Jam masuk"
+
+msgid "timeInterval_field_outRequired"
+msgstr "Jam keluar"
+
+msgid "timeInterval_field_allowLate"
+msgstr "Ijinkan terlambat"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "Ijinkan pulang lebih awal"
+
+msgid "timeInterval_field_paidDay"
+msgstr "Hari kerja"
+
+msgid "timeInterval_field_earlyIn"
+msgstr "Datang lebih awal"
+
+msgid "timeInterval_field_minEarlyIn"
+msgstr "Minimal absen datang"
+
+msgid "timeInterval_field_lateOut"
+msgstr "Maximal absen pulang"
+
+msgid "timeInterval_field_minLateOut"
+msgstr "Minimal absen pulang"
+
+msgid "timeInterval_field_overtimeLevel"
+msgstr "Level lembur"
+
+msgid "timeInterval_field_overtimeLevel1"
+msgstr "Lembur level 1"
+
+msgid "timeInterval_field_overtimeLevel2"
+msgstr "Lembur level 2"
+
+msgid "timeInterval_field_overtimeLevel3"
+msgstr "Lembur level 3"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "Awal masuk lembur"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "Minimal Lembur(masuk)"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "Maximal Lembur(keluar)"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "Minimal lembur(keluar)"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "Diubah pada"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "Masuk/keluar duplikat"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "Tipe interval/jarak sentuhan"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "Duplikasi periode sentuhan"
+
+msgid "timeInterval_field_workTimeType"
+msgstr "Jenis waktu kerja"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "Waktu kerja"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "Menit"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "Berdasarkan status sentuhan"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "Aktifkan lembur"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "Minimal lembur"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "Menit"
+
+msgid "timeInterval_field_workType"
+msgstr "Jenis kerja"
+
+msgid "timeInterval_field_breakTime"
+msgstr "Istirahat"
+
+msgid "timeInterval_error_invalidWorkDay"
+msgstr "Perhitungan hari kerja gagal, nilai yang digunakan dari 0.1-9.9"
+
+msgid "time_duration_greater_user_defined"
+msgstr "Durasi waktu lebih besar dari yang ditentukan"
+
+msgid "att_model_timeInterval"
+msgstr "Jadwal"
+
+msgid "timeInterval_action_addNormalTimetable"
+msgstr "Tambahkan jadwal normal"
+
+msgid "timeInterval_action_addNormalTimetable_description"
+msgstr "Tambahkan jadwal normal"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "Tambahkan jadwal normal"
+
+msgid "timeInterval_filed_crossDayUnit"
+msgstr "Hari"
+
+msgid "timeInterval_error_invalidOvertimeValue"
+msgstr "Input lembur gagal"
+
+msgid "timeInterval_error_invalidFieldValue"
+msgstr "{field}'s nilai tidak valid"
+
+msgid "timeInterval_error_invalidCheckOvertimeLevel"
+msgstr "Level lembur dari L3>=L2>=L1"
+
+msgid "timeInterval_error_flexibleWorkTime"
+msgstr "Jarak jam kerja dari 0 - 1440"
+
+msgid "timeInterval_error_invalidCheckInStart"
+msgstr "Waktu masuk(minimal) gagal"
+
+msgid "timeInterval_error_invalidCheckInEnd"
+msgstr "Waktu masuk(maximal) gagal"
+
+msgid "timeInterval_error_invalidCheckOutStart"
+msgstr "Waktu keluar(minimal) gagal"
+
+msgid "timeInterval_error_invalidCheckOutEnd"
+msgstr "Waktu keluar(maximal) gagal"
+
+msgid "timeInterval_error_invalidCheckOut"
+msgstr "Gagal keluar"
+
+msgid "timeInterval_error_invalidEarlyIn"
+msgstr "Gagal mengatur waktu awal jam masuk"
+
+msgid "timeInterval_error_invalidLateOut"
+msgstr "Gagal mengatur waktu akhir jam keluar"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "Pengaturan awal"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "Pengaturan jam istirahat"
+
+msgid "timeInterval_tab_unscheduledTimeSetting"
+msgstr "Pengaturan jadwal tidak terdaftar"
+
+msgid "timeInterval_tab_overtimeLevelSetting"
+msgstr "Pengaturan level lembur"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "Pengaturan aturan"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "Tambahkan jadwal fleksible"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "Tambahkan jadwal fleksible"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "Tambahkan jadwal fleksible"
+
+msgid "training_field_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "training_field_approvalTime"
+msgstr "Waktu disetujui"
+
+msgid "training_field_approvalLevel"
+msgstr "Level disetujui"
+
+msgid "training_field_approver"
+msgstr "Penyetuju"
+
+msgid "training_approve_audit"
+msgstr "Rekap latihan tidak bisa dimodifikasi"
+
+msgid "att_model_training"
+msgstr "Pelatihan"
+
+msgid "mulTransaction_field_employee"
+msgstr "ID Karyawan"
+
+msgid "mulTransaction_field_dataType"
+msgstr "Jenis data"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "Sentuhan normal"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "Istirahat"
+
+msgid "mulTransaction_field_date"
+msgstr "Tanggal"
+
+msgid "mulTransaction_field_timetable"
+msgstr "Jadwal"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "Index data"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "Jam masuk"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "ID Jam Masuk"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "Jam keluar"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "ID Jam Keluar"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "Total waktu"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "Waktu kerja"
+
+msgid "att_model_multipleTransaction"
+msgstr "Transaksi ganda"
+
+msgid "att_model_scheduledTransaction"
+msgstr "Jadwal transaksi"
+
+msgid "based_on_schedule"
+msgstr "Berhubungan dengan jadwal"
+
+msgid "first_check_in"
+msgstr "Pertama kali Masuk/Check-in"
+
+msgid "last_check_out"
+msgstr "Terakhir kali keluar/Check-Out"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "Nonaktif lembur"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "Penghitungan lembur"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "Penyetujuan lembur"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "Penyetujuan lembur prioritas"
+
+msgid "attRule_missIn_late"
+msgstr "Terlambat"
+
+msgid "attRule_missIn_absent"
+msgstr "Tidak hadir"
+
+msgid "attRule_missIn_noComplete"
+msgstr "Tidak lengkap"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "Pulang lebih awal"
+
+msgid "attRule_missOut_absent"
+msgstr "Tidak hadir"
+
+msgid "attRule_missOut_noComplete"
+msgstr "Tidak lengkap"
+
+msgid "must_check_in"
+msgstr "Harus Check-In"
+
+msgid "using_leave_end_time"
+msgstr "Akhir cuti"
+
+msgid "must_check_out"
+msgstr "Diwajibkan untuk keluar(absen)"
+
+msgid "using_leave_start_time"
+msgstr "Waktu Awal cuti"
+
+msgid "using_training_end_time"
+msgstr "Waktu selesai pelatihan"
+
+msgid "using_training_start_time"
+msgstr "Waktu awal pelatihan"
+
+msgid "overtimeLevel_ignore"
+msgstr "Tolak"
+
+msgid "overtimeLevel_dependsOnWorkTime"
+msgstr "Berdasarkan jam kerja"
+
+msgid "overtimeLevel_dependsOnOvertime"
+msgstr "Berdasarkan lembur"
+
+msgid "unscheduled_ignore"
+msgstr "Tolak"
+
+msgid "unscheduled_move2normalWork"
+msgstr "Pekerjaan"
+
+msgid "unscheduled_move2overtime"
+msgstr "Lembur"
+
+msgid "unscheduled_move2normalOvertime"
+msgstr "Lembur"
+
+msgid "unscheduled_move2weekendOvertime"
+msgstr "Lembur akhir pekan"
+
+msgid "unscheduled_move2holidayOvertime"
+msgstr "Lembur Liburan"
+
+msgid "boolean_option_no"
+msgstr "Tidak"
+
+msgid "boolean_option_yes"
+msgstr "Iya"
+
+msgid "boolean_option_enable"
+msgstr "Aktifkan"
+
+msgid "boolean_option_disable"
+msgstr "Nonaktifkan"
+
+msgid "breakTime_calculateMode_autoDeduct"
+msgstr "Kurangi otomatis"
+
+msgid "breakTime_calculateMode_requiredPunch"
+msgstr "Membutuhkan sentuhan"
+
+msgid "breakTime_earlyInMode_normalWork"
+msgstr "Normal"
+
+msgid "breakTime_earlyInMode_normalOvertime"
+msgstr "Lembur"
+
+msgid "breakTime_lateInMode_ignore"
+msgstr "Tolak"
+
+msgid "breakTime_lateInMode_move2Late"
+msgstr "Terlambat"
+
+msgid "breakTime_lateInMode_move2EarlyOut"
+msgstr "Pulang lebih awal"
+
+msgid "breakTime_lateInMode_move2Absence"
+msgstr "Tidak hadir"
+
+msgid "breakTime_lateInMode_late"
+msgstr "Terlambat"
+
+msgid "breakTime_lateInMode_earlyLeave"
+msgstr "Pulang lebih awal"
+
+msgid "breakTime_lateInMode_absent"
+msgstr "Tidak hadir"
+
+msgid "timeInterval_typeOption_normal"
+msgstr "Normal"
+
+msgid "timeInterval_typeOption_flexible"
+msgstr "Fleksible"
+
+msgid "timeInterval_typeOption_basedOnRule"
+msgstr "Berdasarkan aturan"
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "Pengguna yang ditetapkan"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "Normal"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "Libur"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "Akhir pekan"
+
+msgid "shift_OTOption_normalWork"
+msgstr "Normal"
+
+msgid "shift_OTOption_normalOT"
+msgstr "Lembur"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "Lembur akhir pekan"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "Hari"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "Pekan"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "Bulan"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "Jadwal sementara aktif"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "Tambah jadwal tambahan"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "Normal"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "Lembur"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "Lembur akhir pekan"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "Lembur liburan"
+
+msgid "approvalStatus_option_pending"
+msgstr "Menunggu"
+
+msgid "approvalStatus_option_reApply"
+msgstr "Terapkan ulang"
+
+msgid "approvalStatus_option_revoke"
+msgstr "Pembatalan"
+
+msgid "approvalStatus_option_auditing"
+msgstr "Peninjauan"
+
+msgid "approvalStatus_option_approved"
+msgstr "Disetujui"
+
+msgid "approvalStatus_option_reject"
+msgstr "Ditolak"
+
+msgid "punchState_option_checkIn"
+msgstr "Masuk"
+
+msgid "punchState_option_checkOut"
+msgstr "Keluar"
+
+msgid "punchState_option_breakOut"
+msgstr "Luar"
+
+msgid "punchState_option_breakIn"
+msgstr "Dalam"
+
+msgid "punchState_option_overtimeIn"
+msgstr "Lembur pada"
+
+msgid "punchState_option_overtimeOut"
+msgstr "Lembur selesai"
+
+msgid "punchState_option_noStatus"
+msgstr "Tidak ada status"
+
+msgid "overtime_option_normalOvertime"
+msgstr "Lembur"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "Lembur Akhir pekan"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "Lembur liburan"
+
+msgid "calculationUnit_option_hour"
+msgstr "Jam"
+
+msgid "calculationUnit_option_minute"
+msgstr "Menit"
+
+msgid "calculationUnit_option_workday"
+msgstr "Hari kerja"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "HH:MM"
+
+msgid "overtime_option_normalWork"
+msgstr "Normal"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "Liburan(%(holiday)s)"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "Akhir pekan"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "Hari libur"
+
+msgid "report_exceptionDisplay_Holiday"
+msgstr "Liburan"
+
+msgid "absent_report"
+msgstr "Laporan tidak hadir"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "Tanpa masuk"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "Tanpa keluar"
+
+msgid "weekday_option_monday"
+msgstr "Senin"
+
+msgid "weekday_option_tuesday"
+msgstr "Selasa"
+
+msgid "weekday_option_wednesday"
+msgstr "Rabu"
+
+msgid "weekday_option_thursday"
+msgstr "Kamis"
+
+msgid "weekday_option_friday"
+msgstr "Jumat"
+
+msgid "weekday_option_saturday"
+msgstr "Sabtu"
+
+msgid "weekday_option_sunday"
+msgstr "Minggu"
+
+msgid "attRule_globalRule_basicSetting"
+msgstr "Pengaturan awal"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "Pengaturan akhir pekan"
+
+msgid "attRule_globalRule_overtimeSetting"
+msgstr "Pengaturan lembur"
+
+msgid "attRule_globalRule_calculationSetting"
+msgstr "Pengaturan penghitungan"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "Pengaturan aplikasi"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "Aturan Masuk"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "Berdasarkan jadwal"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "Pertama masuk"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "Aturan keluar"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "Terakhir keluar"
+
+msgid "attRule_globalRule_monday"
+msgstr "Senin"
+
+msgid "attRule_globalRule_workingOnMonday"
+msgstr "Bekerja dihari senin"
+
+msgid "attRule_globalRule_tuesday"
+msgstr "Selasa"
+
+msgid "attRule_globalRule_workingOnTuesday"
+msgstr "Bekerja dihari selasa"
+
+msgid "attRule_globalRule_wednesday"
+msgstr "Rabu"
+
+msgid "attRule_globalRule_workingOnWednesday"
+msgstr "Bekerja dihari rabu"
+
+msgid "attRule_globalRule_thursday"
+msgstr "Kamis"
+
+msgid "attRule_globalRule_workingOnThursday"
+msgstr "Bekerja dihari kamis"
+
+msgid "attRule_globalRule_friday"
+msgstr "Jumat"
+
+msgid "attRule_globalRule_workingOnFriday"
+msgstr "Bekerja dihari jumat"
+
+msgid "attRule_globalRule_saturday"
+msgstr "Sabtu"
+
+msgid "attRule_globalRule_workingOnSaturday"
+msgstr "Bekerja dihari sabtu"
+
+msgid "attRule_globalRule_sunday"
+msgstr "Minggu"
+
+msgid "attRule_globalRule_workingOnSunday"
+msgstr "Bekerja dihari minggu"
+
+msgid "attRule_globalRule_OTLevel1"
+msgstr "Lembur level 1"
+
+msgid "attRule_globalRule_OTLevel2"
+msgstr "Lembur level 2"
+
+msgid "attRule_globalRule_OTLevel3"
+msgstr "Lembur level 3"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "Aturan lembur"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "Duplikat periode sentuhan"
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "Senin"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "Selasa"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "Rabu"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "Kamis"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "Jumat"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "Sabtu"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "Minggu"
+
+msgid "attRule_weekendSetting_titleWeekend"
+msgstr "Akhir pekan"
+
+msgid "attRule_weekendSetting_workingOnDay"
+msgstr "Bekerja pada hari"
+
+msgid "attRule_weekendSetting_OTLV1"
+msgstr "Lembur level 1 (Jam)"
+
+msgid "attRule_weekendSetting_OTLV2"
+msgstr "Lembur level 2 (Jam)"
+
+msgid "attRule_weekendSetting_OTLV3"
+msgstr "Lembur level 3 (Jam)"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "Aturan perhitungan"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "Ketika terlambat melebihi"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "Terhitung sebagai absen, menit"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "Ketika pulang lebih awal melebihi"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "Terhitung sebagai absen, menit"
+
+msgid "attRule_globalRule_missIn"
+msgstr "Jam masuk yang hilang menjadi"
+
+msgid "attRule_globalRule_missOut"
+msgstr "Jam keluar yang hilang menjadi"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "Perhitungan item"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "Masuk"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "Aturan Keluar"
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "Keluar"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "Dalam"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "Lembur pada "
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "Lembur selesai  "
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "Foto"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "Tidak wajib"
+
+msgid "attRule_globalRule_required"
+msgstr "Wajib diisi"
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "Kode kerja"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "Fungsi kunci"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "Simpan"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "Karyawan"
+
+msgid "schedule_empFrameOption_department"
+msgstr "Departemen"
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "Karyawan"
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "Departemen"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "Pilih semua karyawan"
+
+msgid "schedule_action_shiftCover"
+msgstr "Timpa Shift"
+
+msgid "schedule_action_scheduleCover"
+msgstr "Timpa Jadwal"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "Jadwal"
+
+msgid "form_helpText_title"
+msgstr "Pemberitahuan"
+
+msgid "shift_helpText_tip1"
+msgstr "1. Atur shift dengan cara memindahkan waktu pada table sebelah kiri ke kanan"
+
+msgid "shift_helpText_tip2"
+msgstr "2. Hari tidak boleh melebihi 366"
+
+msgid "shift_helpText_tip3"
+msgstr "3. Minggu tidak boleh melebihi 52"
+
+msgid "shift_helpText_tip4"
+msgstr "4. Bulan tidak boleh melebihi 12"
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "Rincian"
+
+msgid "shiftList_search_shift"
+msgstr "Shift"
+
+msgid "department_tree_selectAll"
+msgstr "Pilih semua"
+
+msgid "department_tree_multipleSelect"
+msgstr "Pilih beberapa"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "Pilih Sub-Department"
+
+msgid "calculation_page_empSearch"
+msgstr "Cari karyawan"
+
+msgid "calculation_page_startDate"
+msgstr "Tanggal mulai"
+
+msgid "calculation_page_endDate"
+msgstr "Tanggal selesai"
+
+msgid "calculation_page_attCalculate"
+msgstr "Perhitungan kehadiran"
+
+msgid "emp_field_hireDate"
+msgstr "Tanggal bergabung"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "Aturan lembur"
+
+msgid "report_searchField_startDate"
+msgstr "Tanggal mulai"
+
+msgid "report_searchField_endDate"
+msgstr "Tanggal selesai"
+
+msgid "report_searchField_employee"
+msgstr "Karyawan"
+
+msgid "report_column_workDay"
+msgstr "Hari kerja"
+
+msgid "report_column_breakDuration"
+msgstr "Istirahat"
+
+msgid "report_column_totalDurationHrs"
+msgstr "Total durasi(Jam)"
+
+msgid "report_column_breakDurationHrs"
+msgstr "Durasi Istirahat(Jam)"
+
+msgid "report_column_totalDayOff"
+msgstr "Libur(Hari)"
+
+msgid "report_column_totalWeekend"
+msgstr "Akhir pekan(Hari)"
+
+msgid "report_column_totalHoliday"
+msgstr "Liburan(Hari)"
+
+msgid "report_display_setting"
+msgstr "Pengaturan tampilan pada laporan"
+
+msgid "short_date_format"
+msgstr "Format tanggal "
+
+msgid "short_time_format"
+msgstr "Format waktu"
+
+msgid "resignEmployee_display"
+msgstr "Karyawan tidak aktif"
+
+msgid "multiple_dept"
+msgstr "Tampilan Struktur Departemen"
+
+msgid "reportSetting_tab_basicDisplaySetting"
+msgstr "Tampilan umum"
+
+msgid "reportSetting_tab_functionKeyDisplay"
+msgstr "Function Key"
+
+msgid "reportSetting_tab_reportItemsDisplay"
+msgstr "Laporan tampilan item"
+
+msgid "reportSetting_funcKeyField_ID"
+msgstr "ID"
+
+msgid "reportSetting_funcKeyField_value"
+msgstr "Nilai"
+
+msgid "reportSetting_funcKeyField_name"
+msgstr "Nama"
+
+msgid "reportSetting_itemField_ID"
+msgstr "ID"
+
+msgid "reportSetting_itemField_name"
+msgstr "Nama"
+
+msgid "reportSetting_itemField_minimumUnit"
+msgstr "Minimal unit"
+
+msgid "reportSetting_itemField_roundOff"
+msgstr "Pembulatan"
+
+msgid "reportSetting_itemField_symbol"
+msgstr "Simbol"
+
+msgid "calculation_item_minimumUnit"
+msgstr "Satuan minimum"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "Jam"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "Menit"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "Hari kerja"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "HH:MM"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "Nomor yang sama"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "Pembulatan kebawah"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "Pembulatan"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "Pembulatan keatas"
+
+msgid "symbol_in_report"
+msgstr "Simbol dalam laporan"
+
+msgid "replace_schedule_as_following_range"
+msgstr "Timpa jadwal dengan jarak sebagai berikut"
+
+msgid "breakTime_number"
+msgstr "Kode istirahat"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "Style ekspor:"
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "Standart"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "Kebijakan karyawan"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "Kebijakan departemen"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "Kebijakan tanggal"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "Kebijakan pembukuan"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "Silahkan pilih tanggal mulai dan tanggal selesai"
+
+msgid "attCalculation_alert_dateRangeInvalid"
+msgstr "Waktu salah, waktu selesai harus lebih tinggi dari waktu mulai"
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "Silahkan pilih karyawan"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "Perhitungan selesai"
+
+msgid "shift_getDetail_error_notFound"
+msgstr "Shift tidak ditemukan"
+
+msgid "menu_sys_authGroup"
+msgstr "Grup"
+
+msgid "menu_sys_authUser"
+msgstr "Pengguna"
+
+msgid "menu_sys_emailSetting"
+msgstr "Pengaturan email"
+
+msgid "menu_sys_alertSetting"
+msgstr "Pengaturan peringatan"
+
+msgid "menu_sys_pdfReportSetting"
+msgstr "Export PDF"
+
+msgid "menu_sys_ftpSetting"
+msgstr "Pengaturan Ftp"
+
+msgid "menu_sys_filterBookmark"
+msgstr "Penanda buku"
+
+msgid "menu_sys_databaseBackup"
+msgstr "Cadangan"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "Migrasi"
+
+msgid "menu_sys_autoExport"
+msgstr "Ekspor otomatis"
+
+msgid "menu_group_sysMiddlewareTable"
+msgstr "Table tengah"
+
+msgid "menu_sys_middlewareTableDepartment"
+msgstr "Departemen"
+
+msgid "menu_sys_middlewareTablePosition"
+msgstr "Posisi"
+
+msgid "menu_sys_middlewareTableArea"
+msgstr "Area"
+
+msgid "menu_sys_middlewareTableEmployee"
+msgstr "Karyawan"
+
+msgid "middlewareTable_field_postTime"
+msgstr "Konfirmasi waktu"
+
+msgid "middlewareTable_field_flag"
+msgstr "Bendera"
+
+msgid "middlewareTable_field_updateTime"
+msgstr "Target waktu"
+
+msgid "middlewareTable_field_syncResult"
+msgstr "Status"
+
+msgid "emp_field_multipleArea"
+msgstr "Beberapa area"
+
+msgid "emp_field_activeStatus"
+msgstr "Status aktif"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "Pengaturan bantuan"
+
+msgid "menu_sys_companySetting"
+msgstr "Pengaturan perusahaan"
+
+msgid "menu_line_notify"
+msgstr "Pemberitahuan Line App"
+
+msgid "menu_group_sys_user"
+msgstr "Pengguna"
+
+msgid "menu_group_sys_configuration"
+msgstr "Konfigurasi"
+
+msgid "menu_group_sys_database"
+msgstr "Basis data"
+
+msgid "menu_group_sys_integration"
+msgstr "Integrasi"
+
+msgid "menu_group_sys_log"
+msgstr "Catatan"
+
+msgid "menu_sys_log"
+msgstr "Catatan"
+
+msgid "menu_group_sys_task"
+msgstr "Tugas"
+
+msgid "menu_sys_intervalSchedule"
+msgstr "Jarak waktu"
+
+msgid "menu_sys_crontabSchedule"
+msgstr "Crontab"
+
+msgid "menu_sys_periodicTask"
+msgstr "Periode tugas"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "Tanggal mulai"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "Tanggal selesai"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "Berdasarkan"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "Export manual"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "Pilih tugas"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "Pilith tugas"
+
+msgid "user_action_changePassword"
+msgstr "Ubah kata sandi"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "Confirmasi pergantian password untuk user(s)?"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "Objek %(name)s yang kunci utamanya adalah %(key)r tidak ada."
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "Ubah kata sandi berhasil."
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "Ubah kata sandi"
+
+msgid "adminLog_field_objects"
+msgstr "Objek"
+
+msgid "group_field_name"
+msgstr "Nama"
+
+msgid "autoExport_task_error_data"
+msgstr "Data error"
+
+msgid "autoExport_task_error_email"
+msgstr "Email error"
+
+msgid "autoExport_task_error_interval"
+msgstr "Interval error"
+
+msgid "autoExport_task_error_time_point"
+msgstr "Time point error"
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "Panjang ID Karyawan"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "Nama file"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "Format password salah"
+
+msgid "password_mismatch_errorMessage"
+msgstr "Password tidak sama"
+
+msgid "user_createForm_password"
+msgstr "Kata sandi"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "Konfirmasi Password"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "Verifikasi, masukan password yang sama"
+
+msgid "stmp_server_is_required"
+msgstr "SMTP server harus diisi"
+
+msgid "email_account_is_required"
+msgstr "Akun email harus diisi"
+
+msgid "email_password_is_required"
+msgstr "Password email harus diisi"
+
+msgid "store_path_is_required"
+msgstr "File SN harus diisi"
+
+msgid "store_path_is_wrong"
+msgstr "Lokasi penyimpanan salah"
+
+msgid "autoExport_task_error_data: "
+msgstr "Data error"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "Panjang ID Karyawan"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "Jarak waktu"
+
+msgid "software_category_is_required"
+msgstr "Ketegory software harus diisi"
+
+msgid "migrate_fields_is_required"
+msgstr "Migrasi harus diisi"
+
+msgid "migrate_database_type_is_required"
+msgstr "Tipe database harus diisi"
+
+msgid "migrate_database_address_is_required"
+msgstr "IP Address harus diisi"
+
+msgid "migrate_database_port_is_required"
+msgstr "Port harus diisi"
+
+msgid "migrate_database_name_is_required"
+msgstr "Nama migrasi database harus diisi"
+
+msgid "migrate_database_user_is_required"
+msgstr "Username dari migrasi database harus diisi"
+
+msgid "migrate_database_password_is_required"
+msgstr "Password dari migrasi database harus diisi"
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "Koneksi gagal"
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "Pengecualian koneksi database"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured"
+msgstr "Backup gagal, pastikan sqlcmd.exe telah terconfigurasi"
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured"
+msgstr "Backup gagal, pastikan mysqldump.exe telah terconfigurasi"
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured"
+msgstr "Backup gagal, pastikan pg_dump.exe telah terconfigurasi"
+
+msgid "backup_failed_please_make_sure_exp_is_configured"
+msgstr "Backup gagal, pastikan exp.exe telah terconfigurasi"
+
+msgid "dbBackup_action_dbRestoreErrorPSQLNotFount"
+msgstr "Pemulihan gagal, pastikan psql.exe telah terconfigurasi"
+
+msgid "dbBackup_action_dbRestoreErrorNoSupport"
+msgstr "Pemulihan gagal, Hanya mendukung database PostgreSQL"
+
+msgid "dbBackup_action_dbRestoreErrorFileNoFound"
+msgstr "Pemulihan gagal, Berkas backup tidak ditemukan"
+
+msgid "dbBackup_action_dbRestoreErrorIllegalDatabaseName"
+msgstr "Pemulihan gagal, pastikan nama database tidak digunakan"
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(engine) backup tidak tersedia"
+
+msgid "adminLog_field_user"
+msgstr "Pengguna"
+
+msgid "adminLog_field_action"
+msgstr "Tindakan"
+
+msgid "adminLog_field_contentType"
+msgstr "Jenis konten"
+
+msgid "adminLog_field_actionStatus"
+msgstr "Status"
+
+msgid "actionStatus_option_fail"
+msgstr "Gagal"
+
+msgid "actionStatus_option_success"
+msgstr "Berhasil"
+
+msgid "adminLog_field_description"
+msgstr "Deskripsi"
+
+msgid "adminLog_field_ipAddress"
+msgstr "Alamat IP"
+
+msgid "adminLog_field_routable"
+msgstr "Jalur"
+
+msgid "adminLog_field_operationTime"
+msgstr "Waktu operasi"
+
+msgid "base_model_adminLog"
+msgstr "Catatan"
+
+msgid "autoExportTask_field_code"
+msgstr "Kode"
+
+msgid "autoExportTask_field_name"
+msgstr "Nama"
+
+msgid "autoExportTask_field_params"
+msgstr "Parameters"
+
+msgid "base_model_autoExportTask"
+msgstr "Export otomatis"
+
+msgid "bookmark_field_title"
+msgstr "Judul"
+
+msgid "bookmark_field_user"
+msgstr "Pengguna"
+
+msgid "bookmark_field_contentType"
+msgstr "Jenis konten"
+
+msgid "bookmark_field_filtersString"
+msgstr "Dipisahkan"
+
+msgid "bookmark_menu_noBookmarks"
+msgstr "Tidak ada penanda buku"
+
+msgid "bookmark_menu_newBookmark"
+msgstr "New Bookmarks"
+
+msgid "bookmark_menu_enterBookmarkTitle"
+msgstr "Masukan nama Bookmarks"
+
+msgid "bookmark_menu_saveBookmark"
+msgstr "Simpan Bookmarks"
+
+msgid "bookmark_field_isShared"
+msgstr "Dibagikan"
+
+msgid "bookmark_field_savedTime"
+msgstr "Simpan "
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "Duplikasi judul"
+
+msgid "base_model_bookmark"
+msgstr "Bookmark"
+
+msgid "base_integrationTable_employee"
+msgstr "Karyawan"
+
+msgid "base_integrationTable_position"
+msgstr "Posisi"
+
+msgid "base_integrationTable_department"
+msgstr "Departemen"
+
+msgid "base_integrationTable_area"
+msgstr "Area"
+
+msgid "enableStatus_option_enable"
+msgstr "Aktifkan"
+
+msgid "enableStatus_option_disable"
+msgstr "Nonaktifkan"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "Langsung/Terkini"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "Rekap kehadiran hari ini"
+
+msgid "lineNotify_field_department"
+msgstr "Departemen"
+
+msgid "lineNotify_field_includeSubDepartment"
+msgstr "Termasuk Sub-Department"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "Token"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "Klik tombol koneksi"
+
+msgid "lineNotify_field_messageType"
+msgstr "Tipe pesan"
+
+msgid "lineNotify_field_pushTime"
+msgstr "Waktu"
+
+msgid "lineNotify_field_isValid"
+msgstr "Efektif"
+
+msgid "lineNotify_field_remark"
+msgstr "Catatan"
+
+msgid "base_model_lineNotifySetting"
+msgstr "Pengaturan pemberitahuan Line"
+
+msgid "dbMigrate_field_name"
+msgstr "Nama migrasi"
+
+msgid "dbMigrate_field_value"
+msgstr "Kontent migrasi"
+
+msgid "base_model_dbBackupLog"
+msgstr "Catatan backup database"
+
+msgid "dbBackupLog_field_type"
+msgstr "Basis data"
+
+msgid "dbBackupLog_field_name"
+msgstr "Nama Database"
+
+msgid "dbBackupLog_field_operator"
+msgstr "Operator"
+
+msgid "dbBackupLog_field_filePath"
+msgstr "Lokasi penyimpanan"
+
+msgid "dbBackupLog_field_time"
+msgstr "Waktu"
+
+msgid "dbBackupLog_field_status"
+msgstr "Status"
+
+msgid "dbBackupLog_field_remark"
+msgstr "Penanda"
+
+msgid "dbBackupLog_field_frequency"
+msgstr "Frekwensi"
+
+msgid "dbBackupLog_field_pointDay"
+msgstr "Hari"
+
+msgid "dbBackupLog_field_pointTime"
+msgstr "Waktu"
+
+msgid "dbBackupLog_action_dbBackupAuto"
+msgstr "Backup otomatis"
+
+msgid "dbBackupLog_action_dbBackupManually"
+msgstr "Backup manual"
+
+msgid "dbBackupLog_action_dbBackupManuallyConfirmation"
+msgstr "Apa anda yakin untuk backup manual?"
+
+msgid "backup_status_success"
+msgstr "Berhasil"
+
+msgid "backup_status_failed"
+msgstr "Gagal"
+
+msgid "dbBackupLog_action_dbRestoreManually"
+msgstr "Pemulihan secara manual"
+
+msgid "dbBackupLog_field_backupFile"
+msgstr "Backup berkas"
+
+msgid "model_send_email"
+msgstr "Kirim Email"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "Kata sandi"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "Kunci umum"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "Alamat Host"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "Port"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "Metode otentikasi"
+
+msgid "sftpSetting_field_username"
+msgstr "Nama pengguna"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "Kata sandi"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "Kunci SSH"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "Kata sandi"
+
+msgid "sftp_setting"
+msgstr "Pengaturan SFTP"
+
+msgid "sysParam_field_name"
+msgstr "Nama"
+
+msgid "sysParam_field_type"
+msgstr "Tipe"
+
+msgid "sysParam_field_value"
+msgstr "Nilai"
+
+msgid "sysParam_default_ruleName"
+msgstr "Aturan standar kehadiran"
+
+msgid "system_setting"
+msgstr "Pengaturan sistem"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "Dari tanggal %(from)s ke %(to)s"
+
+msgid "reportExport_author"
+msgstr "Penerbit"
+
+msgid "reportExport_createTime"
+msgstr "Buat waktu"
+
+msgid "pdfExport_pageSize"
+msgstr "Ukuran Halaman"
+
+msgid "pdfExport_orientation"
+msgstr "Orientasi"
+
+msgid "pdfExport_footerLeft"
+msgstr "Kiri Bawah"
+
+msgid "pdfExport_footerRight"
+msgstr "Kanan Bawah"
+
+msgid "pdfExport_auto"
+msgstr "Otomatis"
+
+msgid "pdfExport_orientation_portrait"
+msgstr "Potrait"
+
+msgid "pdfExport_orientation_landscape"
+msgstr "Lanscape"
+
+msgid "pdfExport_blank"
+msgstr "Kosong"
+
+msgid "pdfExport_pageToPage"
+msgstr "Jumlah halaman"
+
+msgid "pdfExport_author"
+msgstr "Penerbit"
+
+msgid "pdfExport_time"
+msgstr "Waktu"
+
+msgid "user_createFrom_legendInformation"
+msgstr "Informasi"
+
+msgid "user_createFrom_legendPermission"
+msgstr "Izin"
+
+msgid "user_createFrom_isStaffNoCheckMsg"
+msgstr "Jika kolom ini tidak diperiksa, usur tidak dapat untuk login"
+
+msgid "permission_verboseName_add"
+msgstr "Tambah"
+
+msgid "permission_verboseName_view"
+msgstr "Lihat"
+
+msgid "permission_verboseName_change"
+msgstr "Merubah"
+
+msgid "permission_verboseName_delete"
+msgstr "Hapus"
+
+msgid "permission_verboseName_changePassword"
+msgstr "Ubah kata sandi"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "Karyawan"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "Departemen"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "Posisi"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "Area"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "Mengundurkan diri"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "Dokumen"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "Dokumen karyawan"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "Bio-Photo"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "Alurkerja (ID)"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "Alur kerja (Mesin)"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "Alur kerja (Peran)"
+
+msgid "permission_verboseName_attDeptAttrule"
+msgstr "Aturan Department"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "Pengaturan laporan"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "Jadwal"
+
+msgid "permission_verboseName_attShift"
+msgstr "Shift"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "Catatan manual"
+
+msgid "permission_verboseName_attLeave"
+msgstr "Cuti"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "Lembur"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "Jenis cuti"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "Liburan"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "Penghitungan laporan"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "Laporan harian kehadiran"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "Jumlah kehadiran"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "Jumlah cuti"
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "Total waktu kartu "
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "Laporan Masuk(pertama) dan keluar(terakhir)"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "Pengecualian laporan"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "Jumlah Department"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "Rekap waktu kartu"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "Laporan (terlambat)"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "Laporan (pulang lebih awal)"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "Laporan (tidak hadir)"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "Laporan Transaksi(ganda)"
+
+msgid "permission_verboseName_attTraining"
+msgstr "Pelatihan"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "Istirahat"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "Jadwal"
+
+msgid "permission_verboseName_attSetting"
+msgstr "Pengaturan kehadiran"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "Jadwal sementara"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "Jenis pelatihan"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "Ubah jadwal"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "Laporan ijin"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "Perangkat"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "Catatan perangkat"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "Perintah"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "Unggah catatan"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "Bio-Template"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "Pesan umum"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "Pesan pribadi"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "Kode kerja"
+
+msgid "permission_verboseName_iclockEmployeeGps"
+msgstr "Lokasi untuk Karyawan"
+
+msgid "permission_verboseName_iclockDepartmentGps"
+msgstr "Lokasi untuk Departement"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "List aplikasi"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "Pengumuman"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "Pemberitahuan"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "Catatan kegiatan"
+
+msgid "permission_verboseName_iclockDeviceConfig"
+msgstr "Konfigurasi"
+
+msgid "permission_verboseName_sysUser"
+msgstr "Pengguna"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "Grup"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "Pengaturan FTP"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "Eksport otomatis"
+
+msgid "permission_verboseName_SyncEmployee"
+msgstr "Tabel karyawan"
+
+msgid "permission_verboseName_SyncJob"
+msgstr "Tabel posisi"
+
+msgid "permission_verboseName_SyncDepartment"
+msgstr "Tabel departement"
+
+msgid "permission_verboseName_SyncArea"
+msgstr "Tabel area"
+
+msgid "permission_verboseName_payrollReportPermission"
+msgstr "Laporan Ijin"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "Catatan"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "Booksmarks"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "Konfigurasi"
+
+msgid "permission_verboseName_psnl"
+msgstr "Personil"
+
+msgid "permission_verboseName_iclock"
+msgstr "Perangkat"
+
+msgid "permission_verboseName_att"
+msgstr "Kehadiran"
+
+msgid "permission_verboseName_payroll"
+msgstr "Penggajian"
+
+msgid "permission_verboseName_sys"
+msgstr "Sistem"
+
+msgid "autoExport_task_manualStart"
+msgstr "Tanggal mulai"
+
+msgid "autoExport_task_manualEnd"
+msgstr "Tanggal selesai"
+
+msgid "autoExport_task_queryField"
+msgstr "Dipisahkan oleh"
+
+msgid "autoExport_task_filePrefix"
+msgstr "Nama file"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "Format pengaturan"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "Pengaturan pemisah data"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "Pengaturan waktu export"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "Pengaturan lokasi export"
+
+msgid "autoExport_task_departments"
+msgstr "Departemen"
+
+msgid "autoExport_task_areas"
+msgstr "Area"
+
+msgid "autoExport_task_code"
+msgstr "Kode"
+
+msgid "autoExport_task_name"
+msgstr "Nama"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "Data Template"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "(Pindahkan berkas yang ingin dipindahkan dari sisi kanan ke textbox dibawah ini)"
+
+msgid "autoExport_task_shortDate"
+msgstr "Tanggal"
+
+msgid "autoExport_task_shortTime"
+msgstr "Waktu"
+
+msgid "autoExport_task_frequency"
+msgstr "Frekuensi"
+
+msgid "frequency_option_none"
+msgstr "Tidak"
+
+msgid "frequency_option_daily"
+msgstr "Harian"
+
+msgid "frequency_option_weekly"
+msgstr "Mingguan"
+
+msgid "frequency_option_monthly"
+msgstr "Bulanan"
+
+msgid "autoExport_task_exportDay"
+msgstr "Hari"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "Waktu unggah"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "Waktu punch"
+
+msgid "autoExport_task_interval"
+msgstr "Interval"
+
+msgid "autoExport_task_exportFormat"
+msgstr "Format"
+
+msgid "autoExport_task_exportTime"
+msgstr "Point waktu"
+
+msgid "autoExport_task_deadline"
+msgstr "Deadline"
+
+msgid "autoExport_deadline_previous"
+msgstr "Sebelumnya"
+
+msgid "autoExport_deadline_current"
+msgstr "Saat ini"
+
+msgid "autoExport_task_exportPath"
+msgstr "Lokasi export"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "(Posisi: \\files\\temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "Server FTP"
+
+msgid "autoExport_task_ftpPath"
+msgstr "Lokasi FTP"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "(Format: /Folder/)"
+
+msgid "autoExport_task_exportEmail"
+msgstr "Email"
+
+msgid "autoExport_task_empCodeLength"
+msgstr "ID Karyawan"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "Panjang ID Karyawan"
+
+msgid "autoExport_task_departmentCode"
+msgstr "Kode Department"
+
+msgid "autoExport_task_departmentName"
+msgstr "Nama Department"
+
+msgid "autoExport_task_punchTime"
+msgstr "Waktu Punch"
+
+msgid "autoExport_task_verifyType"
+msgstr "Jenis verifikasi"
+
+msgid "autoExport_task_workCode"
+msgstr "Kode kerja"
+
+msgid "autoExport_task_cardNumber"
+msgstr "Nomor kartu"
+
+msgid "autoExport_task_areaAlias"
+msgstr "Area"
+
+msgid "autoExport_task_terminalAlias"
+msgstr " Alias Perangkat"
+
+msgid "autoExport_task_terminalSN"
+msgstr "Nomor serial"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "Migrasi dari"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "Basis data"
+
+msgid "db_sqlserver"
+msgstr "MSSQL Server"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "Alamat Database"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "Database Port"
+
+msgid "dataMigrate_front_databaseName"
+msgstr "Nama Database"
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "Pengguna Database"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "Password Database"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "Kolom yang akan dimigrasi"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "Periode Migrasi Transaksi"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "Status Migrasi"
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "Tes koneksi"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "Migrasi"
+
+msgid "dataMigrate_front_btn_clearConnectInfo"
+msgstr "Hapus koneksi"
+
+msgid "dataMigrate_front_area_or_zone"
+msgstr "Area/Zona"
+
+msgid "dataMigrate_front_startTime"
+msgstr "Awal mulai"
+
+msgid "dataMigrate_front_endTime"
+msgstr "Akhir mulai"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "Berkas (Sqlite)"
+
+msgid "dataMigrate_cache_clean"
+msgstr "Bersihkan cache"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "Jika migrasi tidak tereksekusi, coba ini untuk menyelesaikannya."
+
+msgid "exportForm_itemLabel_scope"
+msgstr "Lingkup Export:"
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "Halaman saat ini"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "Semua data"
+
+msgid "line_taken_btn"
+msgstr "Klik untuk mendapatkan notifikasi token LINE"
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "Pengaturan Alarm kehadiran"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "Ketika batas keterlambatan melebihi"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "Ketika batas pulang lebih awal melebihi"
+
+msgid "alertSettingPage_label_absentExceed"
+msgstr "Ketika batas ketidakhadiran melebihi"
+
+msgid "alertSettingPage_exceedUnit_times"
+msgstr "Waktu"
+
+msgid "alertSettingPage_label_emailSendingFrequency"
+msgstr "Frekwensi pengiriman"
+
+msgid "alertSettingPage_label_emailSendingDay"
+msgstr "Hari"
+
+msgid "alertSettingPage_label_emailSendingTime"
+msgstr "Waktu"
+
+msgid "alertSettingPage_label_sendingDay"
+msgstr "Hari pengiriman"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "Hari(Saatini)"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "Hari selanjutnya"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "Termasuk hari ini"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "Pengaturan alarm persetujuan"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "Alarm Email"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "Alarm"
+
+msgid "alertSettingPage_btn_submit"
+msgstr "Setuju"
+
+msgid "backup_database"
+msgstr "Basis data"
+
+msgid "backup_database_name"
+msgstr "Nama database"
+
+msgid "backup_store_path"
+msgstr "Lokasi penyimpanan"
+
+msgid "backup_frequency"
+msgstr "Frekuensi"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "Hanya satu kali"
+
+msgid "backup_day"
+msgstr "Hari"
+
+msgid "backup_time"
+msgstr "Waktu"
+
+msgid "backup_last_backup"
+msgstr "Terakhir Backup"
+
+msgid "backup_file"
+msgstr "Cadangkan berkas"
+
+msgid "btn_save"
+msgstr "Simpan"
+
+msgid "btn_view"
+msgstr "Tampilkan"
+
+msgid "btn_hide"
+msgstr "Sembunyikan"
+
+msgid "btn_apply"
+msgstr "Terapkan"
+
+msgid "btn_backup"
+msgstr "Cadangkan"
+
+msgid "emailSettingPage_label_smtpServer"
+msgstr "Server SMTP"
+
+msgid "emailSettingPage_label_smtpServerPort"
+msgstr "Port"
+
+msgid "emailSettingPage_label_enableSSL"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "Akun email"
+
+msgid "emailSettingPage_help_emailAccount"
+msgstr "Nama/user Domain"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "Kata sandi"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "Alamat Email"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "Setuju"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "Pengaturan komunikasi perangkat"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "AKtifkan registrasi perangkat"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "Dengan mengaktifkan opsi ini, hanya perangkat yang ditandai yang dapat menggungah user"
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "Aktifkan unggahan(nama)"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "Aaktifkan unggahan(nama)"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "Aktifkan unggahan(Kartu)"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "Aktifkan unggahan(Kartu)"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "Pengaturan lainnya"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "Backup foto"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "Lokasi backup foto(Kayawan)"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "Setuju"
+
+msgid "translation_option_english"
+msgstr "English"
+
+msgid "translation_option_korean"
+msgstr "Korea"
+
+msgid "translation_option_japanese"
+msgstr "Jepang"
+
+msgid "translation_option_spanish"
+msgstr "Spanyol"
+
+msgid "translation_option_thai"
+msgstr "Thailand"
+
+msgid "translation_option_arabic"
+msgstr "Arab"
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr "Google terjemahan"
+
+msgid "translation_btn_onlineTranslate"
+msgstr "Terjemahan online"
+
+msgid "database_backup_is_under_processing"
+msgstr "Sedang memproses backup database, silahkan ulangi ketika proses selesai"
+
+msgid "dbMigrate_status_processing"
+msgstr "Pengolahan"
+
+msgid "dbMigrate_status_finish"
+msgstr "Selesai"
+
+msgid "dbMigrate_status_exception"
+msgstr "Pengecualian"
+
+msgid "dbMigrate_status_pending"
+msgstr "Menunggu"
+
+msgid "login_authorize_license_missing"
+msgstr "Lisensi tidak ditemukan."
+
+msgid "login_authorize_incorrectUPK"
+msgstr "UPK Bermasalah"
+
+msgid "login_authorize_md5_error"
+msgstr "Berkas sistem sudah dimodifikasi tanpa Otorisasi/Hak akses"
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "Batas perangkat telah melebihi angka yang ditentukan"
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "Batas karyawan telah melebihi angka yang ditentukan"
+
+msgid "login_authorize_license_app_exceed"
+msgstr "Batas aplikasi telah melebihi angka yang ditentukan"
+
+msgid "login_authorize_database_error"
+msgstr "Tabel database yang ditandai bermasalah, dimohon untuk diperbaiki segera"
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "Koneksi database gagal, %(db_ver)s."
+
+msgid "login_authorize_illegal_username"
+msgstr "Invalid username"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "Gagal masuk, %(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "Gagal masuk, Username atau Password salah."
+
+msgid "login_authorize_invalid_username"
+msgstr "Nama pengguna tidak valid"
+
+msgid "login_authorize_illegal_login"
+msgstr "Login gagal"
+
+msgid "login_authorize_license_inactive"
+msgstr "Licence sudah tidak aktif"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "Perangkat"
+
+msgid "menu_device_terminal"
+msgstr "Perangkat"
+
+msgid "menu_device_terminalCommand"
+msgstr "Perintah perangkat"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "Pesan"
+
+msgid "menu_device_publicMessage"
+msgstr "Umum"
+
+msgid "menu_device_privateMessage"
+msgstr "Pribadi"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "Data"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "Kode kerja"
+
+msgid "menu_device_terminalBioData"
+msgstr "Bio-Template"
+
+msgid "menu_device_transaction"
+msgstr "Transaksi"
+
+msgid "menu_group_device_terminalLog"
+msgstr "Catatan"
+
+msgid "menu_device_terminalLog"
+msgstr "Catatan(Perangkat)"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "Catatan(Unggahan)"
+
+msgid "menu_group_mobile_application"
+msgstr "Aplikasi seluler"
+
+msgid "menu_mobile_appList"
+msgstr "Akun"
+
+msgid "menu_mobile_announcement"
+msgstr "Pengumuman"
+
+msgid "menu_mobile_notification"
+msgstr "Pemberitahuan"
+
+msgid "menu_mobile_appActionLog"
+msgstr "Catatan(Operasi)"
+
+msgid "menu_group_deviceConfiguration"
+msgstr "Configurasi"
+
+msgid "menu_iclock_deviceConfig"
+msgstr "Configurasi"
+
+msgid "privateMessage_field_employee"
+msgstr "Karyawan"
+
+msgid "privateMessage_field_startTime"
+msgstr "Waktu mulai"
+
+msgid "privateMessage_field_duration"
+msgstr "Durasi"
+
+msgid "privateMessage_field_content"
+msgstr "Konten"
+
+msgid "privateMsg_action_add"
+msgstr "Tambah"
+
+msgid "privateMsg_action_addDescription"
+msgstr "Tambah"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "Tambah"
+
+msgid "send_message"
+msgstr "Kirim pesan"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "Konfirmasi pengiriman pesan?"
+
+msgid "publicMessage_field_terminal"
+msgstr "Perangkat"
+
+msgid "publicMessage_field_startTime"
+msgstr "Waktu mulai"
+
+msgid "publicMessage_field_duration"
+msgstr "Durasi"
+
+msgid "publicMessage_field_content"
+msgstr "Konten"
+
+msgid "publicMsg_action_add"
+msgstr "Tambah"
+
+msgid "publicMsg_action_addDescription"
+msgstr "Tambah"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "Tambah"
+
+msgid "terminal_op_reboot"
+msgstr "Hidupkan ulang"
+
+msgid "terminal_op_rebootDescription"
+msgstr "Hidupkan ulang perangkat"
+
+msgid "terminal_op_rebootHelp"
+msgstr "Mulai ulang perangkat"
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "Apakah Anda yakin untuk Menghidupkan ulang perangkat yang dipilih(s)?"
+
+msgid "terminal_action_reUploadData"
+msgstr "Unggah data pengguna"
+
+msgid "terminal_action_reUploadDataDescription"
+msgstr "Unggah kembali data pengguna dari perangkat"
+
+msgid "terminal_action_reUploadDataHelpTxt"
+msgstr "Unggah kembali data pengguna dari perangkat"
+
+msgid "reUploadData_field_employee"
+msgstr "Karyawan"
+
+msgid "reUploadData_field_employeeCode"
+msgstr "ID Karyawan"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "Apakah Anda yakin akan mengunggah kembali data untuk terminal yang dipilih(s)?"
+
+msgid "reUploadData_field_transaction"
+msgstr "Transaksi"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "Waktu mulai"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "Waktu selesai"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "Unggah transaksi"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "Unggah transaksi"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "Unggah transaksi"
+
+msgid "reloadData_field_employee"
+msgstr "Karyawan"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "Foto karyawan"
+
+msgid "reloadData_field_fingerprint"
+msgstr "Sidik jari"
+
+msgid "reloadData_field_face"
+msgstr "Wajah"
+
+msgid "reloadData_field_palm"
+msgstr "Telapak tangan"
+
+msgid "reloadData_field_fingerVein"
+msgstr "Pembuluh jari"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "Bio-Photo"
+
+msgid "terminal_op_reloadData"
+msgstr "Sinkronisasi data ke perangkat"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "Sinkronisasi data pengguna dari sistem ke perangkat"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "Sinkronisasi data pengguna dari sistem ke perangkat"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "Waktu mulai"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "Waktu berakhir"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "Bersihkan semua"
+
+msgid "terminal_op_clearData"
+msgstr "Bersihkan semua data"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "Bersihkan semua data pada perangkat(data pengguna, transaksi, foto dll.)"
+
+msgid "terminal_op_clearDataHelp"
+msgstr "Bersihkan semua data pada perangkat(data pengguna, transaksi, foto dll.)"
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "Apakah anda yakin ingin bersihkan semua data yang dipilih {0} perangkat(s)?"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "Bersihkan data kehadiran"
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "Bersihkan data kehadiran"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "Bersihkan data kehadiran"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr "Apakah anda yakin untuk bersihkan semua transaksi yang dipilih {0} perangkat(s)?"
+
+msgid "terminal_op_readInformation"
+msgstr "Baca informasi"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "Baca informasi"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "Baca informasi"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "Apakah anda yakin untuk baca informasi dari perangkat yang dipilih"
+
+msgid "terminal_op_deleteCapture"
+msgstr "Hapus foto"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "Hapus semua foto"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "Hapus semua foto"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "Apakah anda yakin bersihkan foto yang dipilih {0} perangkat(s)"
+
+msgid "terminal_op_clearAll"
+msgstr "Hapus semua data"
+
+msgid "terminal_op_clearAllHelpTxt"
+msgstr "Operasi ini akan menghapus semua data pada perangkat, termasuk data transaksi, data user, foto dan sebagainya"
+
+msgid "terminal_op_clearAllDescription"
+msgstr "Operasi ini akan menghapus semua data pada perangkat, termasuk data transaksi, data user, foto dan sebagainya"
+
+msgid "terminal_op_clearAllConfirmation"
+msgstr "Apa anda yakin untuk menghapus semua data pada perangkat"
+
+msgid "duplicate_punch_period"
+msgstr "Duplikasi periode sentuhan(menit)"
+
+msgid "minutes/seconds"
+msgstr "Menit"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "Duplikat periode sentuhan"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "Duplikat periode sentuhan"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "Duplikat periode sentuhan"
+
+msgid "terminal_capture"
+msgstr "Foto"
+
+msgid "capture_no_photo"
+msgstr "Tidak ada foto"
+
+msgid "capture_take_photo_no_save"
+msgstr "Ambil foto tapi tidak menyimpan"
+
+msgid "capture_verify_photo_and_save"
+msgstr "Verifikasi foto dan simpan"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "Verifikasi berhasil dan simpan"
+
+msgid "capture_verify_failed_and_save"
+msgstr "Verifikasi gagal dan simpan"
+
+msgid "terminal_op_captureSetting"
+msgstr "Pengaturan Foto"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "Ubah pengaturan untuk mengaktifkan atau menonaktifkan menyimpan foto yang diambil."
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "Ubah pengaturan untuk mengaktifkan atau menonaktifkan menyimpan foto yang diambil."
+
+msgid "terminal_captureUpload"
+msgstr "Unggah tangkapan"
+
+msgid "captureUpload_disabled"
+msgstr "Nonaktifkan"
+
+msgid "captureUpload_enabled"
+msgstr "Aktifkan"
+
+msgid "terminal_op_captureUpload"
+msgstr "Unggah Foto"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "Unggah Foto"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "Unggah Foto"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "Perbarui file"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "Perbarui Firmware"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "Perbarui Firmware"
+
+msgid "action_transactionCorrection_start"
+msgstr "Waktu mulai"
+
+msgid "action_transactionCorrection_end"
+msgstr "Waktu berkahir"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "Koreksi Transaksi"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "Verifikasi jumlah transaksi pada perangkat dalam periode"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "Verifikasi jumlah transaksi pada perangkat dalam periode"
+
+msgid "terminal_op_pullFile"
+msgstr "Unduh berkas"
+
+msgid "terminal_op_pullFileDescription"
+msgstr "Unduh berkas dari perangkat, biasanya perangkat akan masuk mode maintenance, pastikan device tidak digunakan untuk sementara"
+
+msgid "terminal_op_pullFileHelpTxt"
+msgstr "Unduh berkas dari perangkat, biasanya perangkat akan masuk mode maintenance, pastikan device tidak digunakan untuk sementara"
+
+msgid "terminal_op_clearCommand"
+msgstr "Hapus perintah yang tertunda"
+
+msgid "terminal_op_clearCommandDescription"
+msgstr "Hapus semua perintah yang tertunda"
+
+msgid "terminal_op_clearCommandHelpTxt"
+msgstr "Hapus semua perintah yang tertunda"
+
+msgid "terminal_op_clearCommandConfirmation"
+msgstr "Apa kamu yakin akan menghapus semua perintah"
+
+msgid "action_pullFile_filePath"
+msgstr "Lokasi berkas"
+
+msgid "terminal_op_enrollRemotely"
+msgstr "Daftar remote"
+
+msgid "terminal_op_enrollRemotelyDescription"
+msgstr "Daftar biometrik dari perangkat"
+
+msgid "terminal_op_enrollRemotelyHelpTxt"
+msgstr "daftar biometrik dari perangkat"
+
+msgid "enrollRemotely_field_bioType"
+msgstr "Tipe Bio"
+
+msgid "enrollRemotely_bioType_card"
+msgstr "Kartu MF"
+
+msgid "enrollRemotely_bioType_fingerprint"
+msgstr "Sidik Jari"
+
+msgid "enrollRemotely_bioType_face"
+msgstr "Wajah"
+
+msgid "enrollRemotely_bioType_palm"
+msgstr "Telapak"
+
+msgid "enrollRemotely_field_empCode"
+msgstr "ID karyawan"
+
+msgid "enrollRemotely_field_finger"
+msgstr "Jari"
+
+msgid "enrollRemotely_finger_leftHandLittle"
+msgstr "Kelingking(Tangan Kiri)"
+
+msgid "enrollRemotely_finger_leftHandRing"
+msgstr "Jari Manis((Tangan Kiri)"
+
+msgid "enrollRemotely_finger_leftHandMiddle"
+msgstr "Jari Tengah(Tangan Kiri)"
+
+msgid "enrollRemotely_finger_leftHandFore"
+msgstr "Jari Telunjuk(Tangan Kiri)"
+
+msgid "enrollRemotely_finger_leftHandThumb"
+msgstr "Jempol(Tangan Kiri)"
+
+msgid "enrollRemotely_finger_rightHandThumb"
+msgstr "Jempol(Tangan Kanan)"
+
+msgid "enrollRemotely_finger_rightHandFore"
+msgstr "Jari Telunjuk(Tangan Kanan)"
+
+msgid "enrollRemotely_finger_rightHandMiddle"
+msgstr "Jari Tengah(Tangan Kanan)"
+
+msgid "enrollRemotely_finger_rightHandRing"
+msgstr "Jari Manis(Tangan Kanan)"
+
+msgid "enrollRemotely_finger_rightHandLittle"
+msgstr "Kelingking(Tangan Kanan)"
+
+msgid "terminal_op_newArea"
+msgstr "Area Baru"
+
+msgid "terminal_op_newAreaDescription"
+msgstr "Area Baru"
+
+msgid "terminal_op_newAreaHelpTxt"
+msgstr "Area Baru"
+
+msgid "terminal_field_numberReduce"
+msgstr "Nomor kurang dari"
+
+msgid "terminal_field_numberReduceHelpText"
+msgstr "0 - 999"
+
+msgid "loopDelTransaction_helpText_tip1"
+msgstr "Ketika traksaksi penuh, akan menghapus nomor traksaksi berdasarkan nilai input(0 berarti tidak dihapus)"
+
+msgid "terminal_op_loopDelTransaction"
+msgstr "Pengulangan transaksi yang dihapus"
+
+msgid "terminal_op_loopDelTransactionDescription"
+msgstr "Pengulangan transaksi yang dihapus"
+
+msgid "terminal_op_loopDelTransactionHelpTxt"
+msgstr "Pengulangan transaksi yang dihapus"
+
+msgid "terminalNewArea_error_duplicateAreaCode"
+msgstr "Duplikasi kode area"
+
+msgid "terminal_field_alias"
+msgstr "Nama perangkat"
+
+msgid "terminal_field_sn"
+msgstr "Nomor Serial"
+
+msgid "terminal_state"
+msgstr "Keadaan"
+
+msgid "op_menu_group_dataClean"
+msgstr "Data Bersih"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "Transfer Data"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "Menu perangkat"
+
+msgid "upload_file"
+msgstr "Unggah file"
+
+msgid "usb_data_upload"
+msgstr "Unggah transaksi USB"
+
+msgid "file_format_incorrect"
+msgstr "Format file salah"
+
+msgid "device_not_found"
+msgstr "Perangkat tidak ditemukan"
+
+msgid "system_error"
+msgstr "Sistem bermasalah"
+
+msgid "read_file_failed"
+msgstr "Gagal membaca berkas"
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "Baris %(row_num)s salah."
+
+msgid "transaction_column_employeeName"
+msgstr "Nama depan"
+
+msgid "transaction_column_employeeLastName"
+msgstr "Nama belakang"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "Departmen"
+
+msgid "transaction_column_employeePosition"
+msgstr "Posisi"
+
+msgid "transaction_punch_date"
+msgstr "Tanggal"
+
+msgid "transaction_punch_time"
+msgstr "Waktu"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "Perangkat"
+
+msgid "send_work_code"
+msgstr "Kirim ke perangkat"
+
+msgid "send_work_code_to_terminal"
+msgstr "Mengirim kode kerja ke perangkat"
+
+msgid "remove_work_code"
+msgstr "Hapus dari perangkat"
+
+msgid "remove_work_code_from_terminal"
+msgstr "Menghapus kode kerja dari perangkat."
+
+msgid "bio_fingerprint"
+msgstr "Sidik jari"
+
+msgid "bio_face"
+msgstr "Wajah"
+
+msgid "bio_finger_vein"
+msgstr "Pembuluh darah(Jari)"
+
+msgid "bio_palm"
+msgstr "Telapak"
+
+msgid "terminal_verifyOption_password"
+msgstr "Kata sandi"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "Sidik jari"
+
+msgid "terminal_verifyOption_badge"
+msgstr "ID Karyawan"
+
+msgid "terminal_verifyOption_card"
+msgstr "Kartu"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "Sidikjari/Katasandi"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "Sidikjari/Kartu"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "Kata sandi/Kartu"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "ID Karyawan & Sidikjari"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "Sidikjari & Katasandi"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "Sidikjari & Kartu"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "Katasandi & Kartu"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "Sidikjari & Katasandi & Kartu"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "ID Karyawan & Sidikjari & Katasandi"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "Sidikjari & Kartu & ID Karyawan"
+
+msgid "terminal_verifyOption_face"
+msgstr "Wajah"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "Wajah & Sidikjari"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "Wajah & Katasandi"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "Wajah & Kartu"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "Wajah & Sidik jari & Kartu"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "Wajah & Sidikjari & Katasandi"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "Pembuluh darah(Jari)"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "Pembuluh darah(Jari) & Katasandi"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "Pembuluh darah(Jari) & Kartu"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "Pembuluh darah(Jari) & Katasandi & Kartu"
+
+msgid "terminal_verifyOption_palm"
+msgstr "Telapak"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "Telapak & Kartu"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "Telapak & Wajah"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "Telapak & Sidikjari"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "Telapak & Sidikjari & Kartu"
+
+msgid "terminal_verifyOption_gps"
+msgstr "GPS"
+
+msgid "terminal_verifyOption_aiCamera"
+msgstr "AI Kamera"
+
+msgid "terminal_verifyOption_other"
+msgstr "Lainnya"
+
+msgid "transaction_punchState_checkIn"
+msgstr "Masuk"
+
+msgid "transaction_punchState_checkOut"
+msgstr "Keluar"
+
+msgid "transaction_punchState_breakOut"
+msgstr "Keluar"
+
+msgid "transaction_punchState_breakIn"
+msgstr "Dalam"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "Lembur pada"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "Lembur berakhir"
+
+msgid "transaction_punchState_noStatus"
+msgstr "Tidak ada status"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "Berhasil"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "Parameter salah, error: -1"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "Transfer foto pengguna gagal,  error: -2"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "Aktifitas Perangkat(Read&Write) gagal,  error: -3"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "Transfer Bio-Template Gagal,  error: -9"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "Penguna tidak terdaftar,  error: -10"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "Formate FP Template tidak sesuai,  error: -11"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "Template FP tidak sesuai,  error: -12"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "Kapasitas Perangkat Melebihi,  error: -1001"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "Perangkat tidak mendukung,  error: -1002"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "Waktu Habis,  error: -1003"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "Pengecualian data,  error: -1004"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "Perangkat sedang melakukan perintah lain,  error: -1005"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "Data terlalu panjang,  error: -1006"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "Kesalahan memori perangkat,  error: -1007"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "Mendapatkan data dari server gagal,  error: -1008"
+
+msgid "deviceLog_action_powerOn"
+msgstr "Nyalakan"
+
+msgid "deviceLog_action_powerOff"
+msgstr "Tombol nonaktif"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "Verifikasi gagal"
+
+msgid "deviceLog_action_alarm"
+msgstr "Alarm"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "Masuk menu"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "Perbarui Pengaturan"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "Daftarkan Sidikjari"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "Daftarkan Katasandi"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "Daftarkan Kartu"
+
+msgid "deviceLog_action_deleteUser"
+msgstr "Hapus pengguna"
+
+msgid "deviceLog_action_deleteFP"
+msgstr "Hapus Sidikjari"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "Hapus Kata Sandi"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "Hapus kartu RF"
+
+msgid "deviceLog_action_cleanData"
+msgstr "Bersihkan data"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "Buat kartu MF"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "Daftarkan Kartu MF"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "Hapus Kartu MF"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "Bersihkan kartu MF"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "Pindahkan pendaftaran data ke Kartu"
+
+msgid "deviceLog_action_migrateDataCard2Device"
+msgstr "Salin tanggal pada kartu ke perangkat"
+
+msgid "deviceLog_action_setupTime"
+msgstr "Atur waktu"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "Kembalikan ke pengaturan pabrik"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "Hapus akses masuk"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "Hapus hak administrator"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "Perbarui pengaturan akses kontrol"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "Perbarui pengaturan akses kontrol pengguna"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "Perbarui zona waktu"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "Perbarui pengaturan kombinasi kunci"
+
+msgid "deviceLog_action_unlock"
+msgstr "Buka"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "Daftarkan pengguna baru"
+
+msgid "deviceLog_action_updateFP"
+msgstr "Perbarui sidik jari"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "Alarm paksaan"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "Anti pass-back"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "Hapus foto "
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "Perbarui pengguna lain"
+
+msgid "deviceLog_action_holiday"
+msgstr "Liburan"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "Daftarkan foto pengguna"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "Perbarui foto pengguna"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "Daftarkan nama pengguna"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "Daftarkan hak pengguna"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "Perbarui telapak tangan"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "Hapus telapak tangan"
+
+msgid "iclock_model_deviceConfig"
+msgstr "Konfigurasi Perangkat"
+
+msgid "deviceConfig_deviceCommunicationSetting"
+msgstr "Pengaturan komunikasi perangkat"
+
+msgid "deviceConfig_field_enableRegistration"
+msgstr "Registrasi perangkat"
+
+msgid "deviceConfig_field_enableResignedFilterHelpText"
+msgstr "Pemisah karyawan yang sudah mengundurkan diri, ketika data karyawan yang sudah keluar terupload dari perangkat, sistem akan mengirim perintah untuk menghapusnya dari perangkat"
+
+msgid "deviceConfig_field_enableResignedFilter"
+msgstr "Memisahkan karyawan tidak aktif"
+
+msgid "deviceConfig_field_autoAdd"
+msgstr "Ijinkan Otomatis menambahkan"
+
+msgid "deviceConfig_field_enableNameUpload"
+msgstr "Ijinkan Mengupdate Nama"
+
+msgid "deviceConfig_field_enableNameUploadHelpTxt"
+msgstr "Dapat menggungah nama pengguna dari perangkat"
+
+msgid "deviceConfig_field_enableCardUpload"
+msgstr "Ijinkan mengunggah kartu"
+
+msgid "deviceConfig_field_enableCardUploadHelpTxt"
+msgstr "Dapat mengunggah nomor kartu pengguna dari perangkat"
+
+msgid "deviceConfig_deviceDataRetentionSetting"
+msgstr "Pengaturan memory data(Atur pada 9999 untuk menyimpan data)"
+
+msgid "deviceConfig_field_transactionRetention"
+msgstr "Transaksi"
+
+msgid "deviceConfig_field_transactionRetentionHelpTxt"
+msgstr "90 - 9999 hari"
+
+msgid "deviceConfig_field_commandRetention"
+msgstr "Perintah"
+
+msgid "deviceConfig_field_commandRetentionHelpTxt"
+msgstr "5 - 9999 Hari"
+
+msgid "deviceConfig_field_devLogRetention"
+msgstr "Catatan Perangkat"
+
+msgid "deviceConfig_field_devLogRetentionHelpTxt"
+msgstr "15 - 9999 hari"
+
+msgid "deviceConfig_field_uploadLogRetention"
+msgstr "Unggah catatan"
+
+msgid "deviceConfig_field_uploadLogRetentionHelpTxt"
+msgstr "15 - 9999 hari "
+
+msgid "deviceConfig_field_retentionUnit"
+msgstr "Hari"
+
+msgid "deviceConfig_bioPhotoApprovalPolicy"
+msgstr "Kebijakan persetujuan Bio-Photo"
+
+msgid "deviceConfig_field_editBioPhotoPolicy"
+msgstr "Ubah Karyawan"
+
+msgid "deviceConfig_field_importBioPhotoPolicy"
+msgstr "Kumpulan inport"
+
+msgid "deviceConfig_field_mobileBioPhotoPolicy"
+msgstr "Registrasi Mobile"
+
+msgid "deviceConfig_field_deviceBioPhotoPolicy"
+msgstr "Upload Perangkat"
+
+msgid "employee_disabled"
+msgstr "Karyawan Dinonaktifkan"
+
+msgid "employee_not_found"
+msgstr "Karyawan tidak ditemukan"
+
+msgid "terminal_not_found"
+msgstr "Perangkat tidak ditemukan"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "Negara"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "Kota"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "Perusahaan"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "Industri"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "Kontak"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "Pemasok"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "Telepon"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "Email"
+
+msgid "license_active_customerInfoForm_address"
+msgstr "Alamat"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "Berkas SN"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "Nama berkas harus diakhiri dengan -SN.xml"
+
+msgid "license_active_generatingUPKFailed"
+msgstr "Menghasilkan UPK gagal"
+
+msgid "license_active_systemFileWasModified"
+msgstr "Sistem berkas telah dirubah, tolong jangan merubah berkas sistem dengan wewenang"
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "File lisensi tidak tersedia."
+
+msgid "license_active_activeSuccessful"
+msgstr "Pengaktifan berhasil"
+
+msgid "license_active_onlineActiveFailedServerNoResponse"
+msgstr "Pengaktifan online gagal, Linsensi server tidak merespon"
+
+msgid "license_active_snFileIsRequired"
+msgstr "Diperlukan berkas SN"
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "Pengaktifan online gagal, Lisensi server tidak terkonfigurasi"
+
+msgid "online_active_onlineActiveFailed"
+msgstr "Pengaktifan online gagal"
+
+msgid "onlineActive_error_inactiveLicense"
+msgstr "Lisensi tidak aktif"
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "Berhasil aktif"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "Pengaktifan online gagal, pengecualian sistem."
+
+msgid "license_active_snFileIsWrong"
+msgstr "Berkas SN salah"
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "File UPK dalam SN tidak ditemukan"
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "Pembuatan berkas UPK gagal, Pengecualian sistem"
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "Linsensi Berkas"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "Nama file harus diakhiri dengan -License.xml"
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "Lisensi tidak ditemukan, tidak dapat diperbarui."
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "Perbaruan Lisensi gagal."
+
+msgid "online_active_licenseNotFound"
+msgstr "Lisensi tidak ditemukan"
+
+msgid "license_expiredDate_permanent"
+msgstr "Permanen"
+
+msgid "license_capacity_unlimited"
+msgstr "Tidak terbatas"
+
+msgid "terminal_field_ipAddress"
+msgstr "IP Perangkat"
+
+msgid "terminal_field_realIPAddress"
+msgstr "IP asli"
+
+msgid "terminal_field_timezone"
+msgstr "Zona Waktu"
+
+msgid "terminal_field_area"
+msgstr "Area"
+
+msgid "terminal_field_heartbeat"
+msgstr "Permintaan Detak Jantung"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "Detik"
+
+msgid "terminal_field_transferMode"
+msgstr "Mode Transfer"
+
+msgid "deviceModel_option_attendance"
+msgstr "Kehadiran"
+
+msgid "deviceModel_option_accessController"
+msgstr "Akses Kontrol"
+
+msgid "deviceModel_option_informationScreen"
+msgstr "Informasi Layar"
+
+msgid "deviceModel_option_AICamera"
+msgstr "Kamera AI"
+
+msgid "transferMode_option_realTime"
+msgstr "Langsung/Terkini"
+
+msgid "transferMode_option_timing"
+msgstr "Waktu"
+
+msgid "dataSources_option_terminal"
+msgstr "Perangkat"
+
+msgid "dataSources_option_manualLog"
+msgstr "Catatan Manual"
+
+msgid "dataSources_option_mobile"
+msgstr "Ponsel"
+
+msgid "terminal_field_transferInterval"
+msgstr "Jarak Pengiriman"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "Menit"
+
+msgid "bioData_field_employee"
+msgstr "Karyawan"
+
+msgid "bioData_field_bioTemplate"
+msgstr "Template"
+
+msgid "bioData_field_bioIndex"
+msgstr "Bio-Index"
+
+msgid "bioData_field_templateIndex"
+msgstr "Indeks Template"
+
+msgid "bioData_field_bioType"
+msgstr "Bio-Type"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "Versi Utama"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "Versi Kecil"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "Format"
+
+msgid "bioData_field_isValid"
+msgstr "Valid"
+
+msgid "bioData_field_isDuress"
+msgstr "Dengan paksaan"
+
+msgid "bioData_field_createTime"
+msgstr "Waktu"
+
+msgid "bioData_field_updateTime"
+msgstr "Perbarui Waktu"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "Nomor Seri"
+
+msgid "iclock_model_bioData"
+msgstr "Bio-Data"
+
+msgid "privateMessage_field_lastSend"
+msgstr "Pengiriman Terakhir"
+
+msgid "iclock_model_privateMessage"
+msgstr "Pesan Pribadi"
+
+msgid "publicMessage_field_lastSend"
+msgstr "Pengiriman Terakhir"
+
+msgid "iclock_model_publicMessage"
+msgstr "Pesan Publik"
+
+msgid "terminal_field_state"
+msgstr "Keadaan"
+
+msgid "terminal_field_transferTime"
+msgstr "Waktu Transfer"
+
+msgid "terminal_field_productType"
+msgstr "Tipe Produk"
+
+msgid "terminal_field_isAttendance"
+msgstr "Kehadiran"
+
+msgid "terminal_field_enableAccessControl"
+msgstr "Aktifkan akses kontrol"
+
+msgid "terminal_field_isRegistration"
+msgstr "Registrasi Perangkat"
+
+msgid "terminal_field_purpose"
+msgstr "Tujuan"
+
+msgid "terminal_field_accessControllerType"
+msgstr "Akses Kontrol"
+
+msgid "terminal_field_authentication"
+msgstr "Mode Verifikasi"
+
+msgid "terminal_field_style"
+msgstr "Tipe"
+
+msgid "terminal_field_uploadFlag"
+msgstr "Unggah Bendera"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "Versi Firmware"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "Update Protokol"
+
+msgid "terminal_field_pushVersion"
+msgstr "Update Versi"
+
+msgid "terminal_field_language"
+msgstr "Bahasa"
+
+msgid "terminal_field_isTft"
+msgstr "Tft"
+
+msgid "terminal_field_terminalName"
+msgstr "Model Perangkat"
+
+msgid "terminal_field_platform"
+msgstr "Platform"
+
+msgid "terminal_field_oemVendor"
+msgstr "Vendor"
+
+msgid "terminal_field_logStamp"
+msgstr "Catatan stampel"
+
+msgid "terminal_field_operationLogStamp"
+msgstr "Catatan operasi stampel"
+
+msgid "terminal_field_captureStamp"
+msgstr "Foto stampel"
+
+msgid "terminal_field_userCount"
+msgstr "Total pengguna"
+
+msgid "terminal_field_userCapacity"
+msgstr "Kapasitas pengguna"
+
+msgid "terminal_field_photoFuncOn"
+msgstr "Fungsi foto aktif"
+
+msgid "terminal_field_transactionCount"
+msgstr "Total transaksi"
+
+msgid "terminal_field_transactionCapacity"
+msgstr "Kapasitas transaksi"
+
+msgid "terminal_field_fpFuncOn"
+msgstr "Fungsi sidik jari aktif"
+
+msgid "terminal_field_fingerprintCount"
+msgstr "Total sidik jari"
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr "Kapasitas sidik jari"
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr "Versi Algoritma(Sidik Jari)"
+
+msgid "terminal_field_faceFuncOn"
+msgstr "Fungsi Wajah aktif"
+
+msgid "terminal_field_faceCount"
+msgstr "Total Wajah"
+
+msgid "terminal_field_faceCapacity"
+msgstr "Kapasitas Wajah"
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr "Versi Algoritma(Wajah)"
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr "Fungsi pembuluh darah aktif"
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "Total pembuluh darah"
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr "Kapasitas pembuluh darah"
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr "Versi Algoritma(Pembuluh Darah)"
+
+msgid "terminal_field_palmFuncOn"
+msgstr "Fungsi Telapak AKtif"
+
+msgid "terminal_field_palmCount"
+msgstr "Total Telapak"
+
+msgid "terminal_field_palmCapacity"
+msgstr "Kapasitas Telapak"
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr "Versi Algoritma(Telapak)"
+
+msgid "terminal_field_lockFunc"
+msgstr "Mendukung Akses Kontrol"
+
+msgid "terminal_field_lastActivity"
+msgstr "Aktivitas Terakhir"
+
+msgid "terminal_field_uploadTime"
+msgstr "Waktu Pengunggahan"
+
+msgid "terminal_field_syncTime"
+msgstr "Sinkronisasi Terakhir"
+
+msgid "terminal_field_cmdCount"
+msgstr "Perintah"
+
+msgid "iclock_model_terminal"
+msgstr "Perangkat"
+
+msgid "command_field_terminal"
+msgstr "Perangkat"
+
+msgid "command_field_content"
+msgstr "Konten"
+
+msgid "command_field_commit_time"
+msgstr "Waktu Menjalankan"
+
+msgid "command_field_transferTime"
+msgstr "Waktu Transfer"
+
+msgid "command_field_returnTime"
+msgstr "Waktu Pengembalian"
+
+msgid "command_field_returnValue"
+msgstr "Nilai Pengembalian"
+
+msgid "iclock_model_terminalCommand"
+msgstr "Perintah"
+
+msgid "menu_device_errorCommandLog"
+msgstr "Catatan Error"
+
+msgid "terminal_model_errorCommandLog"
+msgstr "Catatan Error"
+
+msgid "errorCommandLog_field_terminal"
+msgstr "Perangkat"
+
+msgid "errorCommandLog_field_errorCode"
+msgstr "Kode Error"
+
+msgid "errorCommandLog_field_errorMsg"
+msgstr "Pesan Error"
+
+msgid "errorCommandLog_field_dataOrigin"
+msgstr "Perintah Error"
+
+msgid "errorCommandLog_field_cmd"
+msgstr "ID Perintah"
+
+msgid "errorCommandLog_field_additional"
+msgstr "Pesan Tambahan"
+
+msgid "errorCommandLog_field_uploadTime"
+msgstr "Waktu Unggahan"
+
+msgid "terminalEmployee_field_sn"
+msgstr "Nomor Seri"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "ID Karyawan"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "Hak Istimewa"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "Karyawan"
+
+msgid "terminalLog_field_terminal"
+msgstr "Perangkat"
+
+msgid "terminalLog_field_timezone"
+msgstr "Zona Waktu"
+
+msgid "terminalLog_field_administrator"
+msgstr "Administrator"
+
+msgid "terminalLog_field_actionName"
+msgstr "Aksi"
+
+msgid "terminalLog_field_actionTime"
+msgstr "Waktu Aksi"
+
+msgid "terminalLog_field_object"
+msgstr "Objek"
+
+msgid "terminalLog_field_param1"
+msgstr "Parameter "
+
+msgid "terminalLog_field_param2"
+msgstr "Parameter "
+
+msgid "terminalLog_field_param3"
+msgstr "Parameter "
+
+msgid "terminalLog_field_uploadTime"
+msgstr "Waktu unggah"
+
+msgid "iclock_model_terminalLog"
+msgstr "Catatan Perangkat"
+
+msgid "terminalParameter_field_terminal"
+msgstr "Perangkat"
+
+msgid "terminalParameter_field_type"
+msgstr "Tipe"
+
+msgid "terminalParameter_field_name"
+msgstr "Nama"
+
+msgid "terminalParameter_field_value"
+msgstr "Nilai"
+
+msgid "iclock_model_terminalParameter"
+msgstr "Parameter Perangkat"
+
+msgid "transaction_field_employeeCode"
+msgstr "ID Karyawan"
+
+msgid "transaction_field_employee"
+msgstr "Karyawan"
+
+msgid "transaction_field_punchTime"
+msgstr "Waktu sentuhan"
+
+msgid "transaction_field_punchState"
+msgstr "Status sentuhan"
+
+msgid "transaction_field_verifyType"
+msgstr "Tipe verifikasi"
+
+msgid "transaction_field_workCode"
+msgstr "Kode Kerja"
+
+msgid "transaction_field_terminalSN"
+msgstr "Nomor Seri"
+
+msgid "transaction_terminal_alias"
+msgstr "Nama Perangkat"
+
+msgid "transaction_field_terminal"
+msgstr "Perangkat"
+
+msgid "transaction_field_areaAlias"
+msgstr "Area"
+
+msgid "transaction_field_longitude"
+msgstr "Bujur"
+
+msgid "transaction_field_latitude"
+msgstr "lintang"
+
+msgid "transaction_field_gpsLocation"
+msgstr "GPS"
+
+msgid "transaction_field_mobile"
+msgstr "Ponsel"
+
+msgid "transaction_field_source"
+msgstr "Sumber"
+
+msgid "transaction_field_purpose"
+msgstr "Tujuan"
+
+msgid "transaction_field_crcCode"
+msgstr "Kode CRC"
+
+msgid "transaction_field_isAttendance"
+msgstr "Kehadiran"
+
+msgid "transaction_field_reserved"
+msgstr "Cadangan"
+
+msgid "transaction_field_uploadTime"
+msgstr "Waktu unggah"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "Status Sinkronisasi"
+
+msgid "transaction_field_synchronized_time"
+msgstr "Waktu Sinkronkan"
+
+msgid "iclock_model_transaction"
+msgstr "Transaksi"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "Perangkat"
+
+msgid "terminalUploadLog_field_event"
+msgstr "Aktifitas"
+
+msgid "terminalUploadLog_field_content"
+msgstr "Konten"
+
+msgid "terminalUploadLog_field_count"
+msgstr "Hitung"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "Hitungan Kesalahan"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "Waktu Pengunggahan"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "Catatan unggahan perangkat"
+
+msgid "terminalWorkCode_field_code"
+msgstr "Kode"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "Nama"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "Aktivitas Terakhir"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "Kode Kerja"
+
+msgid "employee_photo"
+msgstr "Foto"
+
+msgid "biometric_template"
+msgstr "Bio-Template"
+
+msgid "fingerprint"
+msgstr "Sidik Jari"
+
+msgid "attendance_capture"
+msgstr "Foto"
+
+msgid "transaction_field_firstName"
+msgstr "Nama Depan"
+
+msgid "transaction_field_lastName"
+msgstr "Nama Belakang"
+
+msgid "transaction_field_department"
+msgstr "Departemen"
+
+msgid "transaction_field_position"
+msgstr "Posisi"
+
+msgid "transaction_field_punchDate"
+msgstr "Tanggal sentuhan"
+
+msgid "transaction_field_area"
+msgstr "Area"
+
+msgid "chart_present"
+msgstr "Hadir"
+
+msgid "chart_today"
+msgstr "Hari ini"
+
+msgid "chart_absent"
+msgstr "Tidak Hadir"
+
+msgid "dashboard_exception"
+msgstr "Pengecualian Kehadiran"
+
+msgid "dashboard_history"
+msgstr "Rekap "
+
+msgid "chart_late"
+msgstr "Terlambat"
+
+msgid "chart_early_leave"
+msgstr "Pulang lebih awal"
+
+msgid "dashboard_real_time_monitor"
+msgstr "Monitoring terkini"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "Subjek"
+
+msgid "announcement_filed_content"
+msgstr "Konten"
+
+msgid "announcement_filed_emp"
+msgstr "ID Karyawan"
+
+msgid "mobile_action_publicNotice"
+msgstr "Dorong Pemberitahuan Publik"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "Dorong Pemberitahuan Publik"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "Dorong Pemberitahuan Publik"
+
+msgid "mobile_action_privateNotice"
+msgstr "Dorong Pemberitahuan Pribadi"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "Dorong Pemberitahuan Pribadi"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "Dorong Pemberitahuan Pribadi"
+
+msgid "title_required"
+msgstr "Judul diperlukan"
+
+msgid "content_required"
+msgstr "Konten harus diisi"
+
+msgid "appNotice_field_content"
+msgstr "Konten"
+
+msgid "mobile_action_pushNotification"
+msgstr "Dorong Notifikasi"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "Dorong Notifikasi"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "Dorong Notifikasi"
+
+msgid "applist_action_forceOffline"
+msgstr "Paksa(offline)"
+
+msgid "force_offline_confirm {0} {1}"
+msgstr "Apa anda yakin akan memaksa perangkat untuk offline {0} {1}"
+
+msgid "app_account_disable_confirm {0} {1}"
+msgstr "Apa anda yakin untuk menonaktifkan perangkat {0} {1}"
+
+msgid "app_account_enable_confirm {0} {1}"
+msgstr "apa anda yakin untuk mengaktifkan perangkat {0} {1}"
+
+msgid "applist_action_disable"
+msgstr "Nonaktifkan"
+
+msgid "applist_action_enable"
+msgstr "Aktifkan"
+
+msgid "announce_all_emp"
+msgstr "Semua"
+
+msgid "announcement_filed_sender"
+msgstr "Pengirim"
+
+msgid "announcement_category_public"
+msgstr "Publik"
+
+msgid "announcement_category_private"
+msgstr "Pribadi"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "Android"
+
+msgid "activeStatus_option_active"
+msgstr "Aktif"
+
+msgid "activeStatus_option_inactive"
+msgstr "Tidak aktif"
+
+msgid "notification_category_leave"
+msgstr "Cuti"
+
+msgid "notification_category_overtime"
+msgstr "Lembur"
+
+msgid "notification_category_manualLog"
+msgstr "Catatan Manual"
+
+msgid "notification_category_training"
+msgstr "Pelatihan"
+
+msgid "notification_category_schedule"
+msgstr "Jadwal"
+
+msgid "notification_category_announcement"
+msgstr "Pengumuman"
+
+msgid "notification_category_exception"
+msgstr "Pengecualian"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "Pengumuman Publik"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "Pengumuman Pribadi"
+
+msgid "notification_subCategory_late"
+msgstr "Terlambat"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "Pulang lebih awal"
+
+msgid "notification_subCategory_absent"
+msgstr "Tidak hadir"
+
+msgid "notification_readStatus_unread"
+msgstr "Belum Dibaca"
+
+msgid "notification_readStatus_read"
+msgstr "Terbaca"
+
+msgid "appActionLog_status_exception"
+msgstr "Pengecualian"
+
+msgid "appActionLog_status_successful"
+msgstr "Berhasil"
+
+msgid "announcement_field_category"
+msgstr "Kategori"
+
+msgid "announcement_field_sender"
+msgstr "Pengirim"
+
+msgid "announcement_field_systemSender"
+msgstr "Pengirim Sistem"
+
+msgid "announcement_field_noticeTime"
+msgstr "Perhatikan Waktu"
+
+msgid "app_model_announcement"
+msgstr "Pengumuman"
+
+msgid "actionLog_field_user"
+msgstr "Pengguna"
+
+msgid "actionLog_field_client"
+msgstr "Klien"
+
+msgid "actionLog_field_action"
+msgstr "Aksi"
+
+msgid "actionLog_field_params"
+msgstr "Parameters"
+
+msgid "actionLog_field_describe"
+msgstr "Deskripsi"
+
+msgid "actionLog_field_status"
+msgstr "Status"
+
+msgid "actionLog_field_actionTime"
+msgstr "Waktu Aksi"
+
+msgid "actionLog_field_remoteIp"
+msgstr "Remote Ip"
+
+msgid "app_model_actionLog"
+msgstr "Catatan Aksi"
+
+msgid "appList_field_userName"
+msgstr "Nama Pengguna"
+
+msgid "appList_field_loginTime"
+msgstr "Waktu Masuk"
+
+msgid "appList_field_lastActive"
+msgstr "Terakhir kali aktif"
+
+msgid "appList_field_token"
+msgstr "Token"
+
+msgid "appList_field_deviceToken"
+msgstr "Token Perangkat"
+
+msgid "appList_field_clientId"
+msgstr "Id Klien"
+
+msgid "appList_field_clientCategory"
+msgstr "Kategori Klien"
+
+msgid "appList_field_runStatus"
+msgstr "Jalankan Status"
+
+msgid "appList_field_accessStatus"
+msgstr "Status APlikasi"
+
+msgid "app_model_appList"
+msgstr "Daftar Aplikasi"
+
+msgid "appNotice_field_receiver"
+msgstr "Penerima"
+
+msgid "appNotice_field_sender"
+msgstr "Pengirim"
+
+msgid "appNotice_field_systemSender"
+msgstr "Pengirim Sistem"
+
+msgid "appNotice_field_category"
+msgstr "Kategori"
+
+msgid "appNotice_field_subCategory"
+msgstr "Sub Kategori"
+
+msgid "appNotice_field_source"
+msgstr "Sumber"
+
+msgid "appNotice_field_sendTime"
+msgstr "Kirim Waktu"
+
+msgid "appNotice_field_readStatus"
+msgstr "Baca Status"
+
+msgid "appNotice_field_readTime"
+msgstr "Waktu Baca"
+
+msgid "app_model_notification"
+msgstr "Pemberitahuan"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "GPS Untuk Karyawan"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "GPS Untuk Karyawan"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "Tambahkan"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "Tambahkan"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "Tambahkan"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "Karyawan"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "Bujur"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "Lintang"
+
+msgid "gpsForEmployee_field_location"
+msgstr "Lokasi"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "Jarak (Meter)"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "Meter"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "Tanggal Mulai"
+
+msgid "gpsForEmployee_field_endDate"
+msgstr "Tanggal Akhir"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "Tumpang tindih rentang tanggal"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "GPS Untuk Departemen"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "GPS Untuk Departemen"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "Tambahkan"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "Tambahkan"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "Tambahkan"
+
+msgid "gpsForDepartment_field_department"
+msgstr "Departemen"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "Bujur"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "Lintang"
+
+msgid "gpsForDepartment_field_location"
+msgstr "Lokasi"
+
+msgid "gpsForDepartment_field_distance"
+msgstr "Jarak (Meter)"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "Meter"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "Tanggal Mulai"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "Tanggal Akhir"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "Tumpang tindih rentang tanggal"
+
+msgid "gps_distance_invalid"
+msgstr "Jarak tidak sesuai"
+
+msgid "gps_date_invalid_range"
+msgstr "Jarak tanggal tidak sesuai"
+
+msgid "gps_latitude_invalid_range"
+msgstr "Lintang harus lebih besar dari [-90, 90]"
+
+msgid "departmentGps_select_dept"
+msgstr "Tolong pilih departemen"
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "Jaringan tidak stabil, coba lagi"
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "Diluar Lokasi"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "Karyawan %(emp)s Jadwal tumpang tindih dari aplikasi"
+
+msgid "menu_group_psnl_organization"
+msgstr "Organisasi"
+
+msgid "menu_psnl_department"
+msgstr "Departemen"
+
+msgid "menu_psnl_position"
+msgstr "Posisi"
+
+msgid "menu_psnl_area"
+msgstr "Area"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "Karyawan"
+
+msgid "menu_psnl_employee"
+msgstr "Karyawan"
+
+msgid "menu_psnl_resign"
+msgstr "Mengundurkan diri"
+
+msgid "menu_psnl_certification"
+msgstr "Dokumen"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "Dokumen karyawan"
+
+msgid "menu_iclock_bioPhoto"
+msgstr "Bio-Photo"
+
+msgid "menu_group_workflow"
+msgstr "Alur kerja"
+
+msgid "menu_workflow_workflowRole"
+msgstr "Aturan"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "Mesin"
+
+msgid "menu_workflow_workflowNode"
+msgstr "ID"
+
+msgid "menu_group_configuration"
+msgstr "Konfigurasi"
+
+msgid "area_action_adjustEmployee"
+msgstr "Atur karyawan"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "Atur karyawan pada area yang dipilih"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "Atur karyawan"
+
+msgid "select_none_employee"
+msgstr "Silakan pilih karyawan"
+
+msgid "bioPhoto_field_userPhoto"
+msgstr "Foto Pengguna"
+
+msgid "bioPhoto_field_bioPhoto"
+msgstr "Bio-Photo"
+
+msgid "bioPhoto_field_approvalState"
+msgstr "Status Persetujuan"
+
+msgid "bioPhoto_approvalState_approvalPassed"
+msgstr "Persetujuan diterima"
+
+msgid "bioPhoto_approvalState_reject"
+msgstr "Ditolak"
+
+msgid "bioPhoto_field_remark"
+msgstr "Catatan"
+
+msgid "biophoto_approve"
+msgstr "Menyetujui"
+
+msgid "approval_can_not_approve_again"
+msgstr "Persetujuan tidak dapat disetujui lagi"
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "Foto karyawan(%(emp_code)s) Disetujui"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "Foto karyawan(%(emp_code)s) sudah ada)"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "Foto karyawan(%(emp_code)s) tidak ditemukan"
+
+msgid "bioPhoto_action_qrCode"
+msgstr "Kode QR"
+
+msgid "dataImport_action_importBioPhoto"
+msgstr "Import Bio-photo"
+
+msgid "dataImport_action_importBioPhotoHelpTxt"
+msgstr "Import bio-photo untuk karyawan"
+
+msgid "dataImport_action_importBioPhotoDescription"
+msgstr "import bio-photo untuk karyawan"
+
+msgid "bioPhotoImport_error_noPhotoSelected"
+msgstr "Pilih foto karyawan untuk di unggah"
+
+msgid "bioPhotoImport_error_userNoFound_{pin}"
+msgstr "Karyawan ({pin}) tidak ditemukan"
+
+msgid "bioPhotoImport_button_upload"
+msgstr "Unggah"
+
+msgid "bioPhotoImport_button_clear"
+msgstr "Hapus"
+
+msgid "bioPhotoImport_helpText_tip1"
+msgstr "1. Nama dari foto HARUS ID Karyawan"
+
+msgid "department_action_adjustEmployee"
+msgstr "Atur Karyawan"
+
+msgid "dataImport_action_import"
+msgstr "Impor"
+
+msgid "resign_action_disableAttendance"
+msgstr "Matikan Absensi"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "Tunjuk departemen karyawan"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "Atur karyawan"
+
+msgid "dataImport_field_file"
+msgstr "Berkas"
+
+msgid "data_import_fileHelpTxt"
+msgstr "Unduh template dan isi data pada template"
+
+msgid "dataImport_action_importEmployee"
+msgstr "Import karyawan"
+
+msgid "dataImport_action_importEmployeeHelpTxt"
+msgstr "Import karyawan(XL)"
+
+msgid "dataImport_action_importEmployeeDescription"
+msgstr "Import karyawan(XL)"
+
+msgid "dataImport_action_importDocument"
+msgstr "Import Dokumen"
+
+msgid "dataImport_action_importDocumentHelpTxt"
+msgstr "Pengaturan alarm dokument tidak aktif/kadaluarsa(XL)"
+
+msgid "dataImport_action_importDocumentDescription"
+msgstr "Pengaturan alarm dokument tidak aktif/kadaluarsa(XL)"
+
+msgid "dataImport_action_importPhoto"
+msgstr "Import foto"
+
+msgid "dataImport_action_importPhotoHelpTxt"
+msgstr "Import foto personal untuk karyawan"
+
+msgid "dataImport_action_importPhotoDescription"
+msgstr "Import foto personal untuk karyawan"
+
+msgid "empPhotoImport_error_noPhoto"
+msgstr "Pilih foto untuk di unggah"
+
+msgid "empPhotoImport_error_{pin}NotFound"
+msgstr "Karyawan ({pin}) tidak ditemukan"
+
+msgid "empPhotoImport_error_{pin}SizeExceed25KB"
+msgstr "Ukuran foto karyawan ({pin}) melebihi  (25kb)"
+
+msgid "empPhotoImport_button_upload"
+msgstr "Unggah"
+
+msgid "empPhotoImport_button_clear"
+msgstr "Bersihkan"
+
+msgid "empPhotoImport_helpText_title"
+msgstr "Pemberitahuan"
+
+msgid "empPhotoImport_helpText_tip1"
+msgstr "1. Nama dari foto HARUS ID Karyawan"
+
+msgid "empPhotoImport_helpText_tip2"
+msgstr "2. Ukuran maximal foto (25kb("
+
+msgid "dataImport_field_overwrite"
+msgstr "Timpa"
+
+msgid "dataImport_field_ignoreError"
+msgstr "Abaikan Error"
+
+msgid "employee_action_resynchronize2Device"
+msgstr "Sinkronisasi ulang ke perangkat"
+
+msgid "employee_action_resynchronize2DeviceConfirmation"
+msgstr "Apakah anda yakin untuk sinkronisasi ulang data ke perangkat?"
+
+msgid "dataRange_option_all"
+msgstr "Semua"
+
+msgid "dataRange_option_specified"
+msgstr "Spesifik"
+
+msgid "reUploadFromDevice_field_device"
+msgstr "Perangkat"
+
+msgid "reUploadFromDevice_field_deviceSN"
+msgstr "Nomor seri"
+
+msgid "eUploadFromDevice_field_deviceSNHelpTxt"
+msgstr "Seharusnya menggunakan ',', untuk mengabungkan nomor seri perangkat, jika nilai 0, maka akan memilih perangkat berdasarkan area"
+
+msgid "employee_action_reUploadFromDevice"
+msgstr "Upload ulang melalui perangkat"
+
+msgid "employee_action_reUploadFromDeviceConfirmation"
+msgstr "Apakah anda yakin untuk upload ulang data karyawan melalui perangkat?"
+
+msgid "employeeResign_field_date"
+msgstr "Tanggal Pengunduran diri"
+
+msgid "employeeResign_field_leaveType"
+msgstr "Tipe Pengunduran diri"
+
+msgid "employeeResign_field_reason"
+msgstr "Alasan"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "Matikan Kehadiran"
+
+msgid "employee_action_resignation"
+msgstr "Pengunduran Diri"
+
+msgid "employee_action_transferDepartment"
+msgstr "Transfer Departmen"
+
+msgid "transferDepartment_field_remarks"
+msgstr "Catatan"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "Area dibutuhkan"
+
+msgid "employee_action_transferArea"
+msgstr "Transfer Area"
+
+msgid "transferArea_field_remarks"
+msgstr "Catatan"
+
+msgid "employee_action_transferPosition"
+msgstr "Transfer posisi"
+
+msgid "transferPosition_field_remarks"
+msgstr "Catatan"
+
+msgid "employee_action_passProbation"
+msgstr "Lulus Masa Percobaan"
+
+msgid "employee_action_passProbationConfirmation"
+msgstr "Apakah anda yakin karyawan ini lulus masa percobaan?"
+
+msgid "bio_templateType_fingerprint"
+msgstr "Sidikjari"
+
+msgid "bio_templateType_face"
+msgstr "Wajah"
+
+msgid "bio_templateType_fingerVein"
+msgstr "Pembuluh darah jari"
+
+msgid "bio_templateType_palm"
+msgstr "Telapak Tangan"
+
+msgid "delete_biometric_templates"
+msgstr "Hapus template biometric"
+
+msgid "enable_mobile_application"
+msgstr "Aktifkan"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "Apakah anda yakin aktifkan aplikasi mobile {0} {1}"
+
+msgid "disable_mobile_application"
+msgstr "Nonaktifkan"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr "Apakah anda yakin nonaktifkan aplikasi mobile {0} {1}"
+
+msgid "position_action_adjustEmployee"
+msgstr "Atur Karyawan"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "Atur karyawan untuk posisi yang dipilih"
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "Atur karyawan"
+
+msgid "resign_field_employee"
+msgstr "Karyawan"
+
+msgid "resign_field_resignDate"
+msgstr "Tanggal mengundurkan diri"
+
+msgid "resign_field_resignType"
+msgstr "Tipe mengundurkan diri"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "Kehadiran"
+
+msgid "resign_field_resignReason"
+msgstr "Alasan mengundurkan diri"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "Tambah"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "Tambah"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "Tambah"
+
+msgid "resign_action_reinstatement"
+msgstr "Mengembalikan lagi"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "Mengembalikan lagi"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "Mengembalikan lagi"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "Apakah Anda yakin akan mengembalikannya {0} {1}?"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "Apakah anda yakin untuk menonaktifkan fungsi kehadiran {0} {1}"
+
+msgid "area_field_code"
+msgstr "Kode Area"
+
+msgid "area_field_name"
+msgstr "Nama area"
+
+msgid "area_field_parentArea"
+msgstr "Area utama"
+
+msgid "area_field_resignEmployeeCount"
+msgstr "Total pengunduran diri"
+
+msgid "area_field_employeeCount"
+msgstr "Total karyawan"
+
+msgid "area_field_deviceCount"
+msgstr "Total perangkat"
+
+msgid "area_name_defaultValue"
+msgstr "Tidak memeliki wewenang"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "Kesalahan pada baris %(index)s, kode area kosong"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "Kesalahan pada baris %(index)s,Panjang maksimal kode area adalah %(length)s"
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "Kesalahan pada baris %(index)s, nama area kosong"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "Kesalahan pada baris %(index)s, Panjang maximal nama area adalah %(length)s"
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr "Izin baris data %(index)s tidak dapat ditetapkan lebih tinggi dari izin area atau subregion %(index_name)s."
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "Kesalahan basis data: SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "Gagal menghapus, sedang digunakan oleh karyawan"
+
+msgid "certification_field_code"
+msgstr "Kode Sertifikasi"
+
+msgid "certification_field_name"
+msgstr "Nama sertifikasi"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "Kesalahan data pada baris %(index)s, kode seertifikasi kosong"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, Panjang maksimal kode sertifikat adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "Kesalahan data pada baris %(index)s, Format harus %(male)s/%(female)s"
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr "Kesalahan data pada baris %(index)s, Nama seertifikasi kosong"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, Panjang maxsimal pada nama sertifikat adalah%(length)s"
+
+msgid "department_field_code"
+msgstr "Kode Department"
+
+msgid "department_filed_name"
+msgstr "Nama Department"
+
+msgid "department_field_parentDepartment"
+msgstr "Departemen utama"
+
+msgid "default_department"
+msgstr "Departemen"
+
+msgid "department_filed_employeeCount"
+msgstr "Total karyawan"
+
+msgid "department_filed_resignedCount"
+msgstr "Total pengunduran diri"
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "Kesalahan pada baris %(index)s, kode department kosong"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, Panjang maximal dari kode departemen adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "Kesalahan data pada baris %(index)s, nama department kosong"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, Panjang maxsimal dari nama departemen adalah %(length)s"
+
+msgid "op_menu_group_import"
+msgstr "Impor"
+
+msgid "op_menu_group_adjustment"
+msgstr "Transfer personel"
+
+msgid "op_menu_group_app"
+msgstr "Aplikasi"
+
+msgid "op_menu_group_more"
+msgstr "Detail"
+
+msgid "emp_field_fingerprint"
+msgstr "Sidikjari"
+
+msgid "emp_field_face"
+msgstr "Wajah"
+
+msgid "emp_field_palm"
+msgstr "Telapak"
+
+msgid "emp_field_vlFace"
+msgstr "Wajah"
+
+msgid "emp_field_area"
+msgstr "Area"
+
+msgid "emp_field_cardNumber"
+msgstr "Nomor kartu."
+
+msgid "area_code"
+msgstr "Nomor Area"
+
+msgid "emp_field_birthday"
+msgstr "Ulang tahun"
+
+msgid "emp_field_gender"
+msgstr "Jenis kelamin"
+
+msgid "emp_field_mobile"
+msgstr "Ponsel"
+
+msgid "emp_field_email"
+msgstr "Email"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "Kesalahan pada baris %(index)s Kode karyawan kosong"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr "Kesalahan pada baris %(index)s, Panjang maximal kode karyawan adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "Nama depan karyawan pada baris kosong(%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "Kesalahan pada data %(index)s, Panjang maximal nama depan adalah%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "Kesalahan pada baris %(index)s, Panjang maximal nama belakang adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "Kesalahan pada baris %(index)s, Panjang maximal kode posisi adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "Kesalahan pada baris %(index)s, Panjang maximal nama posisi adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "Kesalahan pada baris %(index)s, Panjang maximal nomor kartu adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "Kesalahan pada baris %(index)s, Panjang maximal mobile adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr "kesalahan pada baris %(index)s, Panjang maximal email adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "Jenis email di baris %(index)s salah"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "tanggal ulangtahun dibaris %(index)s harus yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "tanggal hired dibaris %(index)s harus yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, Panjang maximal nama area adalah %(length)s"
+
+msgid "employeeCert_field_employee"
+msgstr "karyawan"
+
+msgid "employeeCert_field_expireOn"
+msgstr "tanggal kadaluwarsa"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "Peringatan Email"
+
+msgid "employeeCert_field_before"
+msgstr "peringatan sebelumnya"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "Tambah"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "Tambah"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "Tambah"
+
+msgid "certification"
+msgstr "Sertifikasi"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr "kesalaha data pada baris %(index)s ID Karyawan tidak ada"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr "Kesalahan data pada baris %(index)s sertifikasi kosong "
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr "kesalahan data pada baris %(index)s kode sertifikasi tidak terdaftar"
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr "kesalahan data pada baris %(index)s tanggal kadaluwarsa salah"
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr "kesalahan data pada baris %(index)s peringatan email salah, format seharusnya %(no)s/%(yes)s"
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "kesalhan data pada baris %(index)s"
+
+msgid "position_field_code"
+msgstr "Kode posisi"
+
+msgid "position_field_name"
+msgstr "Nama posisi"
+
+msgid "position_field_parentPosition"
+msgstr "Utama"
+
+msgid "position_field_employeeCount"
+msgstr "Total Karyawan"
+
+msgid "position_field_resignedCount"
+msgstr "Total Pengunduran diri"
+
+msgid "position_default_value"
+msgstr "Posisi"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "kesalahan data pada baris %(index)s, kode posisi kosong"
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "kesalahan data pada baris %(index)s, nama posisi kosong"
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "kesalahan data pada baris %s, format seharusnya yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr "kesalahan data pada baris %(index)s, Panjang maximal alasan pengunduran diri adalah %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "kesalahan data pada baris %(index)s, nomor karyawan tidak ada"
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "kesalahan data pada baris %(index)s, tanggal mengundurkan diri kosong"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr "kesalahan data pada baris %(index)s, Jenis format mengundurkan diri seharusnya %(expect)s"
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "Jenis mengundurkan diri pada baris kosong(%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr "Kesalahan pada baris %(index)s, Absen seharusnya %(expect)s"
+
+msgid "department_field_name"
+msgstr "Nama Department"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "Abaikan"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "Menimpa"
+
+msgid "devicePrivilege_option_employee"
+msgstr "Karyawan"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "Daftar"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "Sistem Administrator"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "Super Administrator"
+
+msgid "employee_genderOption_male"
+msgstr "Laki-Laki"
+
+msgid "employee_genderOption_female"
+msgstr "Perempuan"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "Permanen"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "Sementara"
+
+msgid "employee_appStatusOption_enable"
+msgstr "Aktifkan"
+
+msgid "employee_appStatusOption_disable"
+msgstr "Nonaktifkan"
+
+msgid "employee_appRoleOption_employee"
+msgstr "Karyawan"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "Administrator"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "Terapkan mode grup"
+
+msgid "employee_verificationOption_any"
+msgstr "Apapun"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "Sidikjari/Kata Sandi/ Kartu"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "Sidik jari"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "Hanya ID User"
+
+msgid "employee_verificationOption_password"
+msgstr "Kata sandi"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "Hanya kartu"
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "Sidikjari/kata sandi"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "Sidikjari/kartu"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "Kata sandi/kartu"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "Sidikjari&kata sandi"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "Sidikjari&kartu"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "Kata sandi&kartu"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "ID Pengguna&kata sandi"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "Sidikjari & Kata sandi & Kartu"
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "ID Pengguna & Sidikjari & Kata sandi"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "Sidikjari & Kartu/ID Pengguna"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "Hanya wajah"
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "Wajah & Sidikjari"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "Wajah & Katasandi"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "Wajah & Kartu"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "Wajah & Sidikjari & Kartu"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "Wajah & Sidikjari & Katasandi"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "Pembuluh darah(Sidikjari)"
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "Pembuluh darah(Sidikjari) & Kata sandi"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "Pembuluh darah(Sidikjari) & Kartu"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "Pembuluh darah(Sidikjari) & Katasandi & Kartu"
+
+msgid "employee_verificationOption_palm"
+msgstr "Telapak"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "Telapak & Kartu"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "Telapak & Wajah"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "Telapak & Sidik jari"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "Telapak & Sidikjari & Wajah"
+
+msgid "resign_typeOption_pending"
+msgstr "Menunggu"
+
+msgid "resign_typeOption_processing"
+msgstr "Sedang proses"
+
+msgid "resign_typeOption_done"
+msgstr "Selesai"
+
+msgid "resign_typeOption_quit"
+msgstr "Keluar"
+
+msgid "resign_typeOption_dismissed"
+msgstr "Pecat"
+
+msgid "resign_typeOption_resign"
+msgstr "Mengundurkan diri"
+
+msgid "resign_typeOption_transfer"
+msgstr "Transfer"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "Tetap Bekerja Tanpa Gaji"
+
+msgid "approve_pending"
+msgstr "Menunggu"
+
+msgid "approve_approval_passed"
+msgstr "Persetujuan diterima"
+
+msgid "approve_rejected"
+msgstr "Ditolak"
+
+msgid "approve_auto_approved"
+msgstr "Persetujuan otomatis"
+
+msgid "module_parameter_error"
+msgstr "Kesalahan Parameter"
+
+msgid "invalid_file_format"
+msgstr "format file tidak sesuai"
+
+msgid "please_select_file"
+msgstr "silahkan pilih karyawan"
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "berkas %(index)s  diperlukan"
+
+msgid "invalid_file_format:%(index)s"
+msgstr "format berkas tidak valid: %(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "Berkas seharusnya hanya berukuran 1 lembar"
+
+msgid "file_data_must_be_more_than_two"
+msgstr "Berkas membutuhkan setidaknya satu baris data"
+
+msgid "no_matched_fields"
+msgstr "Tidak ada kolom yang cocok pada berkas"
+
+msgid "file_data_cannot_be_empty"
+msgstr "Berkas import tidak ditemukan"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "Kesalahan basis data"
+
+msgid "area_field_isDefault"
+msgstr "Default"
+
+msgid "parent_can_not_itself"
+msgstr "Utama tidak bisa menjadi itu sendiri"
+
+msgid "psnl_model_area"
+msgstr "Area"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "%(name)s mengandung sub-area tidak bisa dihapus"
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s mengandung karyawan tidak bisa dihapus."
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "%(name)s mengandung perangkat tidak dapat dihapus."
+
+msgid "default_area_can_not_be_removed"
+msgstr "Area default tidak dapat dihapus"
+
+msgid "assigned_time"
+msgstr "Waktu yang Ditugaskan"
+
+msgid "model_assign_area_to_employee"
+msgstr "Karyawan"
+
+msgid "bioPhoto_field_employee"
+msgstr "Karyawan"
+
+msgid "bioPhoto_field_firstName"
+msgstr "Nama depan"
+
+msgid "bioPhoto_field_lastName"
+msgstr "Nama belakang"
+
+msgid "bioPhoto_field_email"
+msgstr "Email"
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "Nomor seri"
+
+msgid "bioPhoto_field_registerPhoto"
+msgstr "Registrasi foto"
+
+msgid "bioPhoto_field_registerTime"
+msgstr "Registrasi waktu"
+
+msgid "bioPhoto_field_approvalPhoto"
+msgstr "Foto disetujui"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "Foto"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "Waktu melakukan"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "Waktu persetujuan"
+
+msgid "iclock_model_bioPhoto"
+msgstr "Bio-Photo"
+
+msgid "psnl_model_certification"
+msgstr "Dokumen"
+
+msgid "document_is_using_can_not_delete."
+msgstr "Dokument sedang digunakan dan tidak dapat dihapus"
+
+msgid "department_field_isDefault"
+msgstr "Default"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr "Tidak bisa menjadi Orang tua dari dirinya sendiri"
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "%(name)s mengandung sub-department yang tidak dapat dihapus."
+
+msgid "default_department_can_not_be_removed."
+msgstr "department default tidak bisa dihapus."
+
+msgid "psnl_model_department"
+msgstr "Departemen"
+
+msgid "emp_field_localizedName"
+msgstr "Nama local"
+
+msgid "emp_field_passport_number"
+msgstr "Nomor passport"
+
+msgid "emp_field_driver_license_automobile"
+msgstr "SIM A"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "SIM C"
+
+msgid "emp_field_photo"
+msgstr "Foto"
+
+msgid "emp_field_selfPassword"
+msgstr "Self Password"
+
+msgid "emp_field_devicePassword"
+msgstr "PIN"
+
+msgid "emp_field_devicePrivilege"
+msgstr "Wewenang Perangkat"
+
+msgid "emp_field_accessGroup"
+msgstr "Akses Group"
+
+msgid "emp_field_accessTimezone"
+msgstr "Akses Zona Waktu"
+
+msgid "emp_field_address"
+msgstr "Alamat"
+
+msgid "emp_field_postcode"
+msgstr "Kode Pos"
+
+msgid "emp_field_officeTel"
+msgstr "Nomor Kantor"
+
+msgid "emp_field_contactTel"
+msgstr "Nomor Pribadi"
+
+msgid "emp_field_national"
+msgstr "Warga Negara"
+
+msgid "emp_field_religion"
+msgstr "Agama"
+
+msgid "emp_field_title"
+msgstr "Judul"
+
+msgid "emp_field_enrollSN"
+msgstr "Daftarkan perangkat"
+
+msgid "emp_field_SSN"
+msgstr "SSN"
+
+msgid "emp_field_updateTime"
+msgstr "perbarui waktu"
+
+msgid "emp_field_verifyMode"
+msgstr "Mode Verifikasi"
+
+msgid "emp_field_city"
+msgstr "Kota"
+
+msgid "emp_field_isAdmin"
+msgstr "Admin"
+
+msgid "emp_field_type"
+msgstr "Jenis Karyawan"
+
+msgid "emp_field_enableAtt"
+msgstr "Aktifkan Kehadiran"
+
+msgid "emp_field_enableOvertime"
+msgstr "Aktifkan Lembur"
+
+msgid "emp_field_enableHoliday"
+msgstr "Aktifkan Liburan"
+
+msgid "emp_field_workflowRole"
+msgstr "Alur kerja(Peran)"
+
+msgid "employee_certification"
+msgstr "Sertifikat Karyawan"
+
+msgid "emp_field_appStatus"
+msgstr "Status Aplikasi"
+
+msgid "emp_field_appRole"
+msgstr "Peran Aplikasi"
+
+msgid "emp_field_lastLogin"
+msgstr "Terakhir Login"
+
+msgid "emp_field_isActive"
+msgstr "aktif"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr "Nomor kartu telah terdaftar, jika anda ingin mendaftarkan kartu kembali, tolong hapus nomor kartu pada pemegang kartu %(index)s"
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "karyawan(%(code)s) tidak ditemukan."
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "bersihkan aturan alur kerja gagal: %(message)s"
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "pengecualian %(message)s"
+
+msgid "model_employee"
+msgstr "Karyawan"
+
+msgid "invalid_picture_format"
+msgstr "Format foto tidak sesuai"
+
+msgid "personnel_photo_size_must_not_exceed_16kb"
+msgstr "Ukuran maximal foto(16kb)"
+
+msgid "employeeCert_field_cert"
+msgstr "Dokumen"
+
+msgid "pnsl_model_empProfile"
+msgstr "profil karyawan"
+
+msgid "position_field_isDefault"
+msgstr "Default"
+
+msgid "psnl_model_position"
+msgstr "Posisi"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "Orang(Induk) tua tidak bisa berasal dari dirinya sendiri"
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "%(name)s Posisi mengandung posisi-pendukung, tidak bisa dihapus"
+
+msgid "default_position_can_not_be_removed."
+msgstr "Posisi default tidak dapat dihapus."
+
+msgid "psnl_model_resign"
+msgstr "mengundurkan diri"
+
+msgid "data_import_labelFile"
+msgstr "Impor berkas:"
+
+msgid "date_import_labelExistingData"
+msgstr "Data terdaftar:"
+
+msgid "data_import_fileTemplateDemo"
+msgstr "Demo template:"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "Unduh Template"
+
+msgid "data_import_description"
+msgstr "Deskripsi"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1. Baris paling atas dalam berkas template harus diisi"
+
+msgid "data_import_areaImportRequired2"
+msgstr "2. Kode, Nama wajib diisi"
+
+msgid "data_import_areaImportRequired3"
+msgstr "3. Induk/Orangtua harus Kode Area"
+
+msgid "data_import_areaImportRequired4"
+msgstr "4. Semua nilai kolom harus berisi format text"
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "Reload "
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "Unduh"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1.Baris paling atas dalam berkas template harus diisi"
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2. Kode, Nama wajib diisi"
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3. Semua nilai kolom harus berisi format text"
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1.Baris paling atas dalam berkas template harus diisi"
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2. Kode, Nama wajib diisi"
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3. Orangtua departemen harus berupa Kode Departemen"
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4. Semua nilai kolom harus berupa format text"
+
+msgid "departmentList_search_department"
+msgstr "Departemen"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1.Baris paling atas dalam berkas template harus diisi"
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2. ID Karyawan, Nama depan, Departement harus diisi"
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3. Semua nilai kolom harus berupa format text"
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4. Nomor Kartu harus unik"
+
+msgid "personnel_profile"
+msgstr "Profil"
+
+msgid "register_fingerprint"
+msgstr "Registrasi Sidikjari"
+
+msgid "fingerprint_registration"
+msgstr "Registrasi"
+
+msgid "download_driver"
+msgstr "Unduh Driver"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr "(Ukuran optimal 120x140 pixel)"
+
+msgid "employee_title_clickToUploadPhoto"
+msgstr "Klik untuk menggungah foto"
+
+msgid "employee_title_UploadPhoto"
+msgstr "Foto"
+
+msgid "employee_label_fingerprintRegistered"
+msgstr "Registrasi Sidikjari"
+
+msgid "employee_btn_fingerprintEnroll"
+msgstr "Mendaftarkan"
+
+msgid "employee_title_clickToUploadBioPhoto"
+msgstr "Klik untuk menggunduh Bio-Photo"
+
+msgid "employee_basicInformation_setting"
+msgstr "Profil"
+
+msgid "employee_moreDetail_setting"
+msgstr "Informasi Pribadi"
+
+msgid "employee_attendance_settings"
+msgstr "Pengaturan Kehadiran"
+
+msgid "employee_document_settings"
+msgstr "Dokument"
+
+msgid "employee_accessController_settings"
+msgstr "Akses Kontrol"
+
+msgid "employee_app_setting"
+msgstr "Pengaturan Aplikasi"
+
+msgid "payroll_setting"
+msgstr "Pengaturan Pengajian"
+
+msgid "employee_deviceRelate_setting"
+msgstr "Pengaturan akses perangkat"
+
+msgid "employee_editPage_addCert"
+msgstr "Tambah"
+
+msgid "registered_fingerprint:"
+msgstr "Sidik jari terdaftar"
+
+msgid "employee_field_employeeCode"
+msgstr "ID Karyawan"
+
+msgid "employee_field_employeeFirstName"
+msgstr "Nama depan"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "Karyawan"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "Dipilih"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1.Baris paling atas dalam berkas template harus diisi"
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2. Sertifikat. Karyawan, Pemberitahuan Email harus diisi"
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3.Semua kolom harus berupa format teks"
+
+msgid "data_import_positionImportRequired1"
+msgstr "1.Baris paling atas dalam berkas template harus diisi"
+
+msgid "data_import_positionImportRequired2"
+msgstr "2. Kode, Nama harus diisi"
+
+msgid "data_import_positionImportRequired3"
+msgstr "3. Posisi orang tua harus berupa kode posisi"
+
+msgid "data_import_positionImportRequired4"
+msgstr "4.Semua nilai kolom harus berupa format teks"
+
+msgid "data_import_resignImportRequired1"
+msgstr "1.Baris paling atas dalam berkas template harus diisi"
+
+msgid "data_import_resignImportRequired2"
+msgstr "2. ID Karyawan, Tanggal Pengunduran diri, Tipe pengunduran diri harus diisi"
+
+msgid "data_import_resignImportRequired3"
+msgstr "3.Semua kolom harus berupa format teks"
+
+msgid "BioTime 8.0"
+msgstr "BioTime 8.0"
+
+msgid "mobile_photo_register"
+msgstr "Registrasi Foto"
+
+msgid "mobile_onlineRegister_employeeCode"
+msgstr "ID Karyawan"
+
+msgid "mobile_employee_first_name"
+msgstr "Nama depan"
+
+msgid "mobile_employee_last_name"
+msgstr "Nama belakang"
+
+msgid "mobile_employee_email"
+msgstr "Email"
+
+msgid "mobile_onlineRegister_remark"
+msgstr "Catatan"
+
+msgid "mobile_photo_enroll"
+msgstr "Daftarkan"
+
+msgid "lng_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "lng_option_traditionalChinese"
+msgstr "中文繁體"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "Pусский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Bahasa Indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "lng_option_cambodian"
+msgstr "ជនជាតិខ្មែរ។"
+
+msgid "menu_personnel"
+msgstr "Personil"
+
+msgid "ADMS"
+msgstr "ADMS"
+
+msgid "menu_terminal"
+msgstr "Perangkat"
+
+msgid "menu_attendance"
+msgstr "Kehadiran"
+
+msgid "menu_system"
+msgstr "Sistem"
+
+msgid "menu_group_employee_request"
+msgstr "Permintaan"
+
+msgid "menu_request_employee_leave"
+msgstr "Cuti"
+
+msgid "menu_request_employee_overtime"
+msgstr "Lembur"
+
+msgid "menu_request_employee_manual_log"
+msgstr "Catatan Manual"
+
+msgid "menu_request_employee_training"
+msgstr "Pelatihan"
+
+msgid "menu_group_employee_approval"
+msgstr "Persetujuan"
+
+msgid "menu_approve_employee_leave"
+msgstr "cuti"
+
+msgid "menu_approve_employee_overtime"
+msgstr "lembur"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "Catatan Manual"
+
+msgid "menu_approve_employee_training"
+msgstr "Pelatihan"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "Ubah Jadwal"
+
+msgid "menu_group_employee_report"
+msgstr "Laporan"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "Catatan Jadwal"
+
+msgid "menu_staff_detailReport"
+msgstr "Total waktu pada kartu"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "Laporan Kesimpulan karyawan"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "Laporan Transaksi ganda"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "Istirahat"
+
+msgid "menu_staff_timeCardReport"
+msgstr "Waktu Kartu"
+
+msgid "staff_leave_actionDelete"
+msgstr "Tambah"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "ID Karyawan"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "Nama depan"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "Nama belakang"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "Tanggal"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "Jadwal sebelumnya"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "Jadwal"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "Penyetuju terakhir"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "Status saat ini"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "Status pengajuan"
+
+msgid "attendance_analyze"
+msgstr "Analisa Kehadiran"
+
+msgid "csv_export"
+msgstr "Csv Export"
+
+msgid "pdf_export"
+msgstr "PDF Export"
+
+msgid "xlsx_export"
+msgstr "Xlsx Export"
+
+msgid "staff_search_startDate"
+msgstr "tanggal mulai"
+
+msgid "staff_search_endDate"
+msgstr "tanggal berakhir"
+
+msgid "staff_approval_approvalState"
+msgstr "Keadaan pengajuan"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "Menunggu"
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "Disetujui"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "Ditolak"
+
+msgid "staff_search_searchTitle"
+msgstr "Cari"
+
+msgid "staff_search_clearTitle"
+msgstr "Bersihkan pencarian"
+
+msgid "staff_leave_startTime"
+msgstr "Waktu mulai"
+
+msgid "staff_leave_endTime"
+msgstr "Waktu berakhir"
+
+msgid "staff_leave_leaveCategory"
+msgstr "Kategori"
+
+msgid "staff_leave_applyReason"
+msgstr "Alasan"
+
+msgid "staff_leave_empCode"
+msgstr "ID karyawan"
+
+msgid "staff_leave_firstName"
+msgstr "Nama Depan"
+
+msgid "staff_leave_lastName"
+msgstr "Nama Belakang"
+
+msgid "staff_leave_applyTime"
+msgstr "Terapkan Waktu"
+
+msgid "staff_leave_lastApprover"
+msgstr "Penyetuju Terakhir"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "Status saat ini"
+
+msgid "staff_leave_approvalState"
+msgstr "Status perngajuan"
+
+msgid "staff_search_category"
+msgstr "Kategori"
+
+msgid "staff_leave_actionAdd"
+msgstr "Tambah"
+
+msgid "staff_manualLog_empCode"
+msgstr "ID karyawan"
+
+msgid "staff_manualLog_firstName"
+msgstr "Nama depan"
+
+msgid "staff_manualLog_lastName"
+msgstr "Nama belakang"
+
+msgid "staff_manualLog_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "staff_manualLog_punchTime"
+msgstr "Waktu Sentuhan"
+
+msgid "staff_manualLog_punchState"
+msgstr "Status Sentuhan"
+
+msgid "staff_manualLog_workCode"
+msgstr "Kode kerja"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "Penyetuju Terakhir"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "Status saat ini"
+
+msgid "staff_manualLog_approvalState"
+msgstr "Status pengajuan"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "Hapus"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "Tambah"
+
+msgid "staff_manualLog_applyReason"
+msgstr "Alasan"
+
+msgid "staff_overtime_startTime"
+msgstr "Waktu mulai"
+
+msgid "staff_overtime_endTime"
+msgstr "Waktu berakhir"
+
+msgid "staff_overtime_overtimeType"
+msgstr "Tipe lembur"
+
+msgid "staff_overtime_applyReason"
+msgstr "Alasan"
+
+msgid "normal_overtime"
+msgstr "Lembur"
+
+msgid "weekend_overtime"
+msgstr "Lembur akhir pekan"
+
+msgid "holiday_overtime"
+msgstr "Lembur liburan"
+
+msgid "staff_overtime_actionDelete"
+msgstr "Hapus"
+
+msgid "staff_overtime_empCode"
+msgstr "ID Karyawan"
+
+msgid "staff_overtime_firstName"
+msgstr "Nama depan"
+
+msgid "staff_overtime_lastName"
+msgstr "Nama belakang"
+
+msgid "staff_overtime_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "staff_overtime_lastApprover"
+msgstr "Penyetuju Terakhir"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "Status saat ini"
+
+msgid "staff_overtime_approvalSate"
+msgstr "Status Pengajuan"
+
+msgid "staff_overtime_actionAdd"
+msgstr "Tambah"
+
+msgid "search_start_date"
+msgstr "Tanggal mulai"
+
+msgid "search_end_date"
+msgstr "Tanggal berakhir"
+
+msgid "timetable"
+msgstr "Jadwal"
+
+msgid "userProfile_itemLabel_language"
+msgstr "Bahasa"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "Kata sandi lama"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "Kata sandi baru"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "Konfirmasi kata sandi"
+
+msgid "staff_training_empCode"
+msgstr "ID Karyawan"
+
+msgid "staff_training_firstName"
+msgstr "Nama depan"
+
+msgid "staff_training_lastName"
+msgstr "Nama belakang"
+
+msgid "staff_training_applyTime"
+msgstr "Terapkan waktu"
+
+msgid "staff_training_trainingCategory"
+msgstr "Jenis pelatihan"
+
+msgid "staff_training_startTime"
+msgstr "Waktu mulai"
+
+msgid "staff_training_endTime"
+msgstr "Waktu berakhir"
+
+msgid "staff_training_lastApprover"
+msgstr "Penyetuju Terakhir"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "Status saat ini"
+
+msgid "staff_training_approvalState"
+msgstr "Status pengajuan"
+
+msgid "staff_training_actionDelete"
+msgstr "Hapus"
+
+msgid "staff_training_actionAdd"
+msgstr "Tambah"
+
+msgid "the_old_pwd_is_required"
+msgstr "Kata sandi lama harus diisi"
+
+msgid "the_new_pwd_is_required"
+msgstr "Kata sandi baru harus diisi"
+
+msgid "the_two_password_are_different"
+msgstr "Kata sandi tidak cocok"
+
+msgid "the_old_pwd_is_wrong"
+msgstr "Kata sandi salah"
+
+msgid "setting_employee_pwd_failed"
+msgstr "Kata sandi gagal terganti"
+
+msgid "system_exception_illegal_login"
+msgstr "Permintaan tidak disetujui"
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "Modifikasi kata sandi anda"
+
+msgid "model_action_add"
+msgstr "Tambah"
+
+msgid "model_action_modify"
+msgstr "Ubah"
+
+msgid "system_welcome"
+msgstr "Selamat datang"
+
+msgid "system_userMenu_op_language"
+msgstr "Bahasa"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "Kata sandi"
+
+msgid "system_userMenu_op_about"
+msgstr "Tentang"
+
+msgid "system_userMenu_op_logout"
+msgstr "Keluar"
+
+msgid "filter_title_search"
+msgstr "Cari dengan memisahkan"
+
+msgid "filter_title_clear"
+msgstr "Hapus pemisah"
+
+msgid "user_username"
+msgstr "Nama pengguna"
+
+msgid "user_password"
+msgstr "Kata sandi"
+
+msgid "software_version"
+msgstr "Versi Software"
+
+msgid "authorized_information"
+msgstr "Informasi Wewenang"
+
+msgid "label_customer_code"
+msgstr "Kode pelanggan"
+
+msgid "label_used_devices"
+msgstr "Digunakan Perangkat"
+
+msgid "label_used_employees"
+msgstr "Digunakan Karyawan"
+
+msgid "label_used_apps"
+msgstr "Digunakan Aplikasi"
+
+msgid "label_authorized_date"
+msgstr "Tanggal Wewenang"
+
+msgid "label_expired_date"
+msgstr "Tanggal Kadaluarsa"
+
+msgid "label_authorized_company"
+msgstr "Wewenang Perusahaan"
+
+msgid "license_activation"
+msgstr "Aktivasi Lisensi"
+
+msgid "online_activation"
+msgstr "Aktivasi Online"
+
+msgid "download_upk"
+msgstr "Unduh UPK"
+
+msgid "offline_activation"
+msgstr "Aktivasi Online"
+
+msgid "online_upgrade_license"
+msgstr "Pembaruan Online"
+
+msgid "export_license"
+msgstr "Export Lisensi"
+
+msgid "import_license"
+msgstr "Import Lisensi"
+
+msgid "aboutPage_title_licenseMigration"
+msgstr "Migrasi Lisensi"
+
+msgid "server_information"
+msgstr "Informasi Server"
+
+msgid "label_machine"
+msgstr "Mesin"
+
+msgid "label_processor"
+msgstr "Prosesor"
+
+msgid "label_platform"
+msgstr "Platform"
+
+msgid "label_ram_total"
+msgstr "RAM"
+
+msgid "label_ram_free"
+msgstr "RAM Bebas"
+
+msgid "user_authenticate"
+msgstr "Autentifikasi"
+
+msgid "user_login"
+msgstr "Login Admin"
+
+msgid "employee_self"
+msgstr "Layanan pribadi"
+
+msgid "login_username"
+msgstr "Nama pengguna"
+
+msgid "login_pwd"
+msgstr "Kata sandi"
+
+msgid "btn_user_login"
+msgstr "Masuk"
+
+msgid "btn_fp_login"
+msgstr "Sidikjari"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "Tolong install Driver Sidikjari"
+
+msgid "login_emp_number"
+msgstr "ID Karyawan"
+
+msgid "login_emp_pwd"
+msgstr "Kata sandi"
+
+msgid "btn_emp_login"
+msgstr "Masuk"
+
+msgid "login_about_btn_title"
+msgstr "Klik untuk melihat detail lisensi"
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+
+msgid "system_about"
+msgstr "Tentang"
+
+msgid "last_approver"
+msgstr "Penyetuju Terakhir"
+
+msgid "tool_filters"
+msgstr "Dipisahkan"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "ID Karyawan tidak ditemukan, Registrasi dari sistem terlebih dahuli"
+
+msgid "employee_photo_not_found"
+msgstr "Foto karyawan tidak ditemukan"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "Foto tidak sesuai, Wajah tidak ditemukan"
+
+msgid "workflowRole_field_employee"
+msgstr "Karyawan"
+
+msgid "workflowRole_field_role"
+msgstr "Alurkerja(Peran)"
+
+msgid "workflow_action_assignEmployee"
+msgstr "Menugaskan Karyawan"
+
+msgid "workflow_action_assignEmployeeHelpTxt"
+msgstr "Menugaskan Karyawan pada alurkerja(Peran)"
+
+msgid "workFlowRoleAssignEmployee_error_noneEmployee"
+msgstr "Pilih Karyawan"
+
+msgid "workFlowRoleAssignEmployee_error_noneWorkflowRole"
+msgstr "Pilih Alurkerja(Peran)"
+
+msgid "workflowEngine_field_code"
+msgstr "Kode"
+
+msgid "workflowEngine_field_name"
+msgstr "Nama"
+
+msgid "workflowEngine_field_startDate"
+msgstr "Tanggal mulai"
+
+msgid "workflowEngine_field_endDate"
+msgstr "Tanggal berakhir"
+
+msgid "workflowEngine_field_departments"
+msgstr "Departemen"
+
+msgid "workflowEngine_field_contentType"
+msgstr "Jenis konten"
+
+msgid "workflow_model_workflowNode"
+msgstr "Alurkerja(ID)"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "Posisi"
+
+msgid "workflow_node_is_required"
+msgstr "Alurkerja(ID) harus diisi"
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "Alurkerja(ID) dan nama harus diisi"
+
+msgid "workflow_node_is_unique"
+msgstr "Alukerja(ID) harus uniq"
+
+msgid "workflowEngine_field_employee"
+msgstr "Karyawan"
+
+msgid "node_code"
+msgstr "Nomor Alurkerja(ID)"
+
+msgid "node_name"
+msgstr "Nama Alurkerja"
+
+msgid "workflow_node_approver"
+msgstr "Penyetuju"
+
+msgid "workflow_node_notifier"
+msgstr "Pemberitahuan"
+
+msgid "employee_count"
+msgstr "Jumlah Karyawan"
+
+msgid "approval_field_approvalStatus"
+msgstr "Status persetujuan"
+
+msgid "workflowEngine_field_description"
+msgstr "Deskripsi"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "Refleksikan Objek"
+
+msgid "workflowEngine_field_type"
+msgstr "Tipe Alurkerja"
+
+msgid "workflowEngine_field_informType"
+msgstr "Tipe informasi"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "Tidak ada"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "Email"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "Peringatan"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "Email&Peringatan"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "Waktu cuti tidak valid, waktu akhir harus lebih lama dari waktu mulai."
+
+msgid "the_workflow_is_already_used"
+msgstr "Alur kerja sudah digunakan."
+
+msgid "workflow_model_workflowEngine"
+msgstr "Alurkerja(Mesin)"
+
+msgid "is_last_node"
+msgstr "Alurkerja(ID) terakhir"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr "Pengguna tidak diijinkan untuk menerima tugas tersebut"
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr "Pengguna tidak memiliki wewenang untuk mengoprasikan alur kerja ini"
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr "Pengguna tidak diijinkan untuk menolak tugas Alurkerja"
+
+msgid "workflow_node_instance"
+msgstr "Contoh Alurkerja(ID)"
+
+msgid "workflow_code"
+msgstr "Nomor Alur kerja"
+
+msgid "workflow_name"
+msgstr "Nama Alur Kerja"
+
+msgid "issue_date"
+msgstr "Tanggal Penerbitan"
+
+msgid "workflow_description"
+msgstr "Deskripsi"
+
+msgid "content_type"
+msgstr "Tipe Alur Kerja"
+
+msgid "inform_type"
+msgstr "Tipe Notifikasi"
+
+msgid "del_flag"
+msgstr "Hapus Bendera"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr "Applikasi sudah disetujui"
+
+msgid "workflow_instance"
+msgstr "Contoh Alurkerja"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "Departemen itu sendiri"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "Semua"
+
+msgid "workflowNode_field_code"
+msgstr "Kode"
+
+msgid "workflowNode_field_name"
+msgstr "Nama"
+
+msgid "workflowNode_field_orderID"
+msgstr "ID Pesanan"
+
+msgid "workflowNode_field_approverType"
+msgstr "Tipe Penyetuju"
+
+msgid "workflowNode_field_approver"
+msgstr "Penyetuju"
+
+msgid "workflowNode_field_notifierType"
+msgstr "Tipe Pemberitahuan"
+
+msgid "workflowNode_field_notifier"
+msgstr "Pemberitahuan"
+
+msgid "workflowNode_field_approverScope"
+msgstr "Lingkup penyetuju"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "Lingkup Pemberitahuan"
+
+msgid "workflow_engine_name"
+msgstr "Nama Alur Kerja"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "Alur kerja sudah digunakan"
+
+msgid "workflowRole_field_code"
+msgstr "Kode"
+
+msgid "workflowRole_field_name"
+msgstr "Nama peran"
+
+msgid "workflowRole_field_description"
+msgstr "Deskripsi"
+
+msgid "workflow_model_workflowRole"
+msgstr "Aturan alur kerja"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "%(name)s mengandung perangkat tidak dapat dihapus."
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "%(name)s masih digunakan oleh node alur kerja dan tidak dapat dibatalkan."
+
+msgid "node_state"
+msgstr "Status Alurkerja"
+
+msgid "notifier_type_no_selected"
+msgstr "Pilih tipe pemberitahuan"
+
+msgid "name"
+msgstr "Nama"
+
+msgid "remark"
+msgstr "Catatan"
+
+msgid "information_workflow"
+msgstr "Informasi"
+
+msgid "workflow_content_type"
+msgstr "Tipe konten"
+
+msgid "instance_issue_date"
+msgstr "Tanggal penerbitan"
+
+msgid "approve"
+msgstr "Menyetujui"
+
+msgid "remark_is_missing"
+msgstr "Catatan hilang"
+
+msgid "workflow_instance_id_is_missing"
+msgstr "Contoh Alurkerja(ID) tidak ditemukan"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "Contoh Alurkerja(ID) tidak ditemukan"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "Contoh Alurkerja(ID) tidak ditemukan"
+
+msgid "did_not_have_match_workflow"
+msgstr "Tidak cocok dengan Alurkerja"
+
+msgid "verity_type"
+msgstr "Tipe autentikasi"
+
+msgid "lineNotify_field_messageHead"
+msgstr "Judul Pesan"
+
+msgid "lineNotify_field_messageTail"
+msgstr "Akhir Pesan"
+
+msgid "export_title_departments"
+msgstr "Departemen"
+
+msgid "export_title_positions"
+msgstr "Posisi"
+
+msgid "export_title_areas"
+msgstr "Area"
+
+msgid "export_title_employees"
+msgstr "Karyawan"
+
+msgid "export_title_resigns"
+msgstr "Mengundurkan diri"
+
+msgid "export_title_certifications"
+msgstr "Dokumen"
+
+msgid "export_title_employeecertifications"
+msgstr "Dokumen karyawan"
+
+msgid "export_title_terminals"
+msgstr "Perangkat"
+
+msgid "export_title_terminalcommands"
+msgstr "Perintah Perangkat"
+
+msgid "export_title_publicmessages"
+msgstr "Umum"
+
+msgid "export_title_privatemessages"
+msgstr "Privasi"
+
+msgid "export_title_terminalworkcodes"
+msgstr "Kode kerja"
+
+msgid "export_title_biodatas"
+msgstr "Bio-Template"
+
+msgid "export_title_terminallogs"
+msgstr "Catatan perangkat"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "Unggah catatan"
+
+msgid "export_title_break_times"
+msgstr "Istirahat"
+
+msgid "export_title_time_intervals"
+msgstr "Jadwal"
+
+msgid "export_title_att_shifts"
+msgstr "Shift"
+
+msgid "export_title_att_schedules"
+msgstr "Jadwal"
+
+msgid "export_title_temp_schedules"
+msgstr "Jadwal sementara"
+
+msgid "export_title_employeeschedule_report"
+msgstr "Jadwal karyawan"
+
+msgid "export_title_manual_logs"
+msgstr "Catatan manual"
+
+msgid "export_title_leaves"
+msgstr "Cuti"
+
+msgid "export_title_overtimes"
+msgstr "Lembur"
+
+msgid "export_title_trainings"
+msgstr "Pelatihan"
+
+msgid "export_title_holiday"
+msgstr "Liburan"
+
+msgid "export_title_leave_categorys"
+msgstr "Jenis cuti"
+
+msgid "export_title_training_categorys"
+msgstr "Jenis pelatihan"
+
+msgid "export_title_transactions"
+msgstr "Transaksi"
+
+msgid "export_field_employee_area"
+msgstr "Area"
+
+msgid "export_field_device_count"
+msgstr "Total Perangkat"
+
+msgid "export_field_employee"
+msgstr "Karyawan"
+
+msgid "export_field_employee_name"
+msgstr "Nama pertama"
+
+msgid "new_schedule"
+msgstr "Atur Jadwal"
+
+msgid "new_schedule_description"
+msgstr "Tambah jadwal"
+
+msgid "new_schedule_help_txt"
+msgstr "Tambah jadwal"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "Kategori default tidak bisa dihapus"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "Kategori diugunakan tidak bisa dihapus"
+
+msgid "base_setting"
+msgstr "Pengaturan sistem"
+
+msgid "calculation_rule"
+msgstr "Terlambat"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "Transaksi"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "Panjang ID Karyawan"
+
+msgid "menu_device_remoteupgrade"
+msgstr "Perangkat"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "Perangkat"
+
+msgid "remoteUpgrade_field_password"
+msgstr "Kata sandi"
+
+msgid "remoteUpgrade_action_add"
+msgstr "Tambah"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "Tambah"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "Tambah"
+
+msgid "upgrade_file_error"
+msgstr "Unggah Berkas"
+
+msgid "please_select_device"
+msgstr "Silahkan pilih karyawan"
+
+msgid "password_is_required"
+msgstr "Berkas SN diperlukan."
+
+msgid "password_is_error"
+msgstr "Password tidak cocok"
+
+msgid "set_upgrade_password_first"
+msgstr "Kata sandi"
+
+msgid "please_select_upgrade_file"
+msgstr "Pilih berkas untuk memperbarui"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "Perbarui berkas"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "Waktu melakukan"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "Waktu Transfer"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "Waktu pengembalian"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "Nilai Pengembalian"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "Perbarui remote"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "Bersihkan cache ketika tidak bekerja setelah beberapa menit"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "Simpled Chinese"
+
+msgid "deviceLanguage_option_English"
+msgstr "English"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "Spanish"
+
+msgid "deviceLanguage_option_French"
+msgstr "French"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "Arabic"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "Portuguese"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "Russian"
+
+msgid "deviceLanguage_option_German"
+msgstr "German"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "Persian"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "Thai"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "Indonesian"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "Japanese"
+
+msgid "deviceLanguage_option_Korean"
+msgstr "Korean"
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "Vietnamese"
+
+msgid "deviceLanguage_option_Turkish"
+msgstr "Turkish"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "Hebrew"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "Czech"
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "Dutch"
+
+msgid "deviceLanguage_option_Italian"
+msgstr "Italian"
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "Slovak"
+
+msgid "deviceLanguage_option_Greek"
+msgstr "Greek"
+
+msgid "deviceLanguage_option_Polish"
+msgstr "Polish"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr "Traditional Chinese"
+
+msgid "adminLog_action_login"
+msgstr "Masuk"
+
+msgid "adminLog_action_logout"
+msgstr "Keluar"
+
+msgid "adminLog_action_add"
+msgstr "Tambah"
+
+msgid "adminLog_action_change"
+msgstr "Ubah"
+
+msgid "adminLog_action_delete"
+msgstr "Hapus"
+
+msgid "app_download"
+msgstr "Unduh applikasi"
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr "Masuk lebih awal(Lembur) gagal"
+
+msgid "minimum_above_overtime_invalid"
+msgstr "Pulang lebih lama(Lembur) gagal"
+
+msgid "delete_default_user_alert"
+msgstr "Pengguna(Admin) tidak bisa dihapus"
+
+msgid "delete_user_self_alert"
+msgstr "User saat ini tidak dapat dihapus"
+
+msgid "biophoto_upload"
+msgstr "Unggah Foto"
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr "Karyawan tidak ada: "
+
+msgid "biophoto_upload_error_photo"
+msgstr "Foto gagal: "
+
+msgid "biophoto_upload_other_errors"
+msgstr "Error Lainnya: "
+
+msgid "biophoto_upload_ignore_error"
+msgstr "Abaikan kesalahan"
+
+msgid "biophoto_upload_select_files"
+msgstr "Pilih berkas"
+
+msgid "biophoto_upload_start"
+msgstr "Mulai"
+
+msgid "staff_training_applyReason"
+msgstr "Alasan"
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr "Duplikat alur kerja untuk waktu interval ini"
+
+msgid "holiday_duration_invalid"
+msgstr "Timpang tindih Liburan."
+
+msgid "migrate_sqlite_file_is_required"
+msgstr "File database Sqlite diperlukan."
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr "Karyawan %(emp)s sudah ada dokumen %(certification)s"
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr "Terlalu banyak gambar yang dipilih, maximal 500"
+
+msgid "autoExport_task_time"
+msgstr "Waktu"
+
+msgid "autoExport_task_date"
+msgstr "Tanggal"
+
+msgid "no_record"
+msgstr "Tidak ada Data"
+
+msgid "autoExport_task_punchState"
+msgstr "Status sentuhan"
+
+msgid "adjust_timeinterval"
+msgstr "Jadwal"
+
+msgid "app_login_failed"
+msgstr "Login Gagal"
+
+msgid "appLogin_param_client_missing"
+msgstr "Parameter klien tidak ditemukan."
+
+msgid "appLogin_incorrect_username_or_password"
+msgstr "Username atau Password tidak sesuai"
+
+msgid "appLogin_illegal_request"
+msgstr "Aktifitas tidak terdaftar"
+
+msgid "app_account_disabled"
+msgstr "Akun dinonaktifkan"
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "Akun dinonaktifkan, hubungi admin untuk pengaktifan akun."
+
+msgid "appLogin_request_blocked"
+msgstr "Permintaan diblokir"
+
+msgid "app_client_already_block_by_administrator"
+msgstr "Aplikasi klien telah diblokir oleh admin"
+
+msgid "app_client_blocked"
+msgstr "Aplikasi klien diblokir"
+
+msgid "system_exception"
+msgstr "Pengecualian Sistem"
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "Parameter tidak menemukan username"
+
+msgid "appLogin_params_exception"
+msgstr "Pengecualian parameter"
+
+msgid "app_sign_out_successful"
+msgstr "Berhasil keluar"
+
+msgid "appLogout_illegal_request"
+msgstr "Permintaan tidak terdaftar"
+
+msgid "biotime_app_password_reset"
+msgstr "Reset password BioTime"
+
+msgid "app_password_reset_failed"
+msgstr "Reset password gagal"
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "Reset password harus dilakukan pada mobile yang aktif"
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "Operasi ilegal. Hubungi Admin"
+
+msgid "app_password_reset_user_not_exists"
+msgstr "Pengguna tidak terdaftar"
+
+msgid "app_password_reset_user_not_found"
+msgstr "Pengguna tidak ditemukan"
+
+msgid "app_manuallog_wrong_data"
+msgstr "Data salah"
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "Kode kerja tidak ditemukan"
+
+msgid "app_manuallog_data_exception"
+msgstr "Pengecualian Data"
+
+msgid "app_manuallog_request_already_processing"
+msgstr "Permintaan sudah diproses"
+
+msgid "request_already_processing"
+msgstr "Permintaan sudah diproses"
+
+msgid "object_not_found"
+msgstr "Objek tidak ditemukan"
+
+msgid "object_id_not_found"
+msgstr "ID Objek tidak ditemukan"
+
+msgid "app_application_remove_success"
+msgstr "Removed Successful."
+
+msgid "app_application_remove_rejected"
+msgstr "Aplikasi yang disetujui tidak dapat dihapus"
+
+msgid "app_attendance_date_today"
+msgstr "Hari ini"
+
+msgid "app_attendance_date_yesterday"
+msgstr "Kemarin"
+
+msgid "app_attendance_date_this_week"
+msgstr "Minggu ini"
+
+msgid "app_attendance_date_last_week"
+msgstr "Minggu lalu"
+
+msgid "app_attendance_date_this_month"
+msgstr "Bulan ini"
+
+msgid "app_attendance_date_last_month"
+msgstr "Bulan Lalu"
+
+msgid "app_attendance_date_user-defined"
+msgstr "Pengguna tidak ditemukan"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "Wantu sentuhan tidak sesuai, silahkan coba lagi"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "Informasi GPS tidak sesuai"
+
+msgid "app_clockIn_gps_required"
+msgstr "Informasi GPS dibutuhkan"
+
+msgid "app_clockIn_upload_failed"
+msgstr "Unggah gagal"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "Kode kerja tidak ditemukan"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "Ulasan Logo"
+
+msgid "companySettingPage_size_200x75"
+msgstr "Dimensi 200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "Pengaturan perusahaan"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "Logo Perusahaan"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "Klik untuk unggah logo"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "Tampilkan Logo"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "Jangan Tampilkan Logo"
+
+msgid "companySettingPage_posOption_left"
+msgstr "Kiri"
+
+msgid "companySettingPage_posOption_center"
+msgstr "Tengah"
+
+msgid "companySettingPage_posOption_right"
+msgstr "Kanan"
+
+msgid "companySettingPage_label_companyName"
+msgstr "Nama perusahaan"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "Tampilkan nama perusahaan"
+
+msgid "companySettingPage_btn_submit"
+msgstr "Confirmasi"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "Tugas %(task_code)s export berhasil"
+
+msgid "company_logo_setting"
+msgstr "Pengaturan logo perusahaan"
+
+msgid "company_name_setting"
+msgstr "Pengaturan nama perusahaan"
+
+msgid "area_tree_selectAll"
+msgstr "Pilih semua"
+
+msgid "area_tree_multipleSelect"
+msgstr "Pilih beberapa"
+
+msgid "area_tree_selectSubArea"
+msgstr "Pilih Sub-Area"
+
+msgid "please_input_a_valid_number"
+msgstr "Masukan nomor yang terdaftar"
+
+msgid "report_exportColumnTitle_statics"
+msgstr "Statistik"
+
+msgid "menu_sys_languageTranslate"
+msgstr "Terjemahan bahasa"
+
+msgid "language_translate_field_lan"
+msgstr "Bahasa"
+
+msgid "language_translate_field_name"
+msgstr "Nama Bahasa"
+
+msgid "language_translate_field_build"
+msgstr "Dibuat pada"
+
+msgid "auto_deduct"
+msgstr "Otomatis mengurangi"
+
+msgid "required_punch"
+msgstr "Dibutuhkan sentuhan"
+
+msgid "training_name"
+msgstr "Nama pelatihan"
+
+msgid "minimum_unit"
+msgstr "Minimal satuan"
+
+msgid "unit"
+msgstr "Satuan"
+
+msgid "round_off"
+msgstr "Pembulatan"
+
+msgid "report_symbol"
+msgstr "Simbil laporan"
+
+msgid "reference"
+msgstr "Referensi"
+
+msgid "translated"
+msgstr "Terjemahan"
+
+msgid "language_key"
+msgstr "Kunci Bahasa"
+
+msgid "original_password"
+msgstr "Password bawaan"
+
+msgid "front_end_minutes"
+msgstr "Menit"
+
+msgid "att_action_approve"
+msgstr "Disetujui"
+
+msgid "report_item_min_unit_empty"
+msgstr "Kosong"
+
+msgid "report_item_min_unit_invalid"
+msgstr "Tidak sesuai"
+
+msgid "menu_sys_indTableLog"
+msgstr "Tabel menegah"
+
+msgid "IndTableLog_field_contentType"
+msgstr "Tipe konten"
+
+msgid "IndTableLog_field_postTime"
+msgstr "Waktu posting"
+
+msgid "IndTableLog_field_postCount"
+msgstr "Total Posting"
+
+msgid "IndTableLog_field_updateTime"
+msgstr "Waktu update"
+
+msgid "IndTableLog_field_updateStatus"
+msgstr "Status update"
+
+msgid "IndTableLog_field_updateDescription"
+msgstr "Deskripsi"
+
+msgid "base_inmedit_field_invalid"
+msgstr "Tidak sesuai"
+
+msgid "base_inmedit_field_error"
+msgstr "Kesalahan"
+
+msgid "base_inmedit_field_succ"
+msgstr "Berhasil"
+
+msgid "indtable_code_or_name_required {0}{1}"
+msgstr "Kode atau nama wajib diisi {0} {1}"
+
+msgid "indtabel_data_insert_error {0}{1}"
+msgstr "Error memasukan data {0} {1}"
+
+msgid "system_translate_btnRestart"
+msgstr "Mulai ulang"
+
+msgid "system_translate_btnDownload"
+msgstr "Unduh"
+
+msgid "select_download_language"
+msgstr "Tolong pilih bahasa untuk diunduh"
+
+msgid "fingerprint_download"
+msgstr "Driver Sidikjari"
+
+msgid "drive_download"
+msgstr "Unduh Driver"
+
+msgid "confirm_be_sure"
+msgstr "Apa anda yakin?"
+
+msgid "confirm_not_modify_audited"
+msgstr "Rekap telah diperiksa dan tidak bisa diubah"
+
+msgid "employeeSave_error_duplicateCard_{emp}"
+msgstr "Duplikasi kartu dengan {emp}"
+
+msgid "Choice Date"
+msgstr "Pilih tanggal"
+
+msgid "Now"
+msgstr "Sekarang"
+
+msgid "Date Range"
+msgstr "Jarak tanggal"
+
+msgid "module"
+msgstr "Modul"
+
+msgid "year"
+msgstr "Tahun"
+
+msgid "month"
+msgstr "Bulan"
+
+msgid "day"
+msgstr "Hari"
+
+msgid "From"
+msgstr "Dari"
+
+msgid "To"
+msgstr "Ke"
+
+msgid "time_unit_day"
+msgstr "Hari (s)"
+
+msgid "time_unit_hour"
+msgstr "Jam (s)"
+
+msgid "time_unit_minute"
+msgstr "Menit (s)"
+
+msgid "timeTable_helpText_tip2"
+msgstr "2.Waktu kartu yang tersedia harus >= Mulai check in dan < akhir check out"
+
+msgid "timeInterval_field_dayChange"
+msgstr "Hari ubah waktu"
+
+msgid "timeInterval_error_flexibleWorkTime_{duration}"
+msgstr "Waktu kerja butuh rata-rata 0-{durasi}"
+
+msgid "timeInterval_error_invalidCheckIn/Out"
+msgstr "Waktu Check In tidak bisa lebih lambat dari waktu check out"
+
+msgid "availablePunch_policy_any"
+msgstr "Beberapa"
+
+msgid "availablePunch_policy_punchStateBased"
+msgstr "Dasar Punch state"
+
+msgid "permission_verboseName_iclockTransaction"
+msgstr "Transaksi"
+
+msgid "autoExport_departments_helpTxt"
+msgstr "Ekspor semua dari default"
+
+msgid "autoExport_areas_helpTxt"
+msgstr "Ekspor semua dari default"
+
+msgid "autoExport_exportFormat_helpTxt"
+msgstr "Hanya mendukung .xls .csv .txt."
+
+msgid "gps_start_and_end_required"
+msgstr "Tanggal mulai dan tanggal berakhir diperlukan"
+
+msgid "lng_option_ukrainian"
+msgstr "Українська"
+
+msgid "Hello"
+msgstr "Hello"
+
+msgid "lineNotify_field_sendPhoto"
+msgstr "Kirim foto kehadiran"
+
+msgid "Enter Number"
+msgstr "Masukkan Nomor"
+
+msgid "Enter Keyword"
+msgstr "Masukkan keyword"
+
+msgid "device"
+msgstr "Perangkat"
+
+msgid "area_or_zone"
+msgstr "Area"
+
+msgid "position"
+msgstr "Posisi"
+
+msgid "att_action_revoke"
+msgstr "Pencabutan"
+
+msgid "revoke_reason"
+msgstr "Alasan pencabutan"
+
+msgid "only_approved_records_can_be_revoked"
+msgstr "Hanya catatan yang disetujui bisa dicabut"
+
+msgid "revoke_remark_is_required"
+msgstr "Alasan pencabutan diperlukan"
+
+msgid "application_has_approved_node"
+msgstr "Aplikasi audit ini,tidak bisa dimodifikasi"
+
+msgid "terminal_state_online"
+msgstr "Online"
+
+msgid "terminal_state_offline"
+msgstr "Offline"
+
+msgid "terminal_state_unauthorized"
+msgstr "Tidak resmi"
+
+msgid "terminal_state_communication"
+msgstr "Komunikasi"
+
+msgid "emp_field_fingervein"
+msgstr "Vena Jari"
+
+msgid "used_holiday_can_not_be_removed"
+msgstr "Liburan ini telah dipakai untuk kontrol akses liburan, silahkan hapus dari kontrol akses pertama"
+
+msgid "user_group_field_name"
+msgstr "Nama grup"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_department_code_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, maksimum panjang kode superior %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_position_code_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, maksimum panjang kode superior %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_area_code_maximum_is_%(length)s"
+msgstr "Kesalahan data pada baris %(index)s, maksimum panjang kode superior %(length)s"
+
+msgid "msg_all_saved_filters"
+msgstr "Semua Filter Tersimpan"
+
+msgid "msg_customize_filters"
+msgstr "Sesuaikan Filter Anda"
+
+msgid "dbBackupLog_field_isBackupPhoto"
+msgstr "Butuh Foto backup"
+
+msgid "dbBackupLog_field_isRestorePhoto"
+msgstr "Perlu mengembalikan foto"
+
+msgid "Null"
+msgstr "Batal"
+
+msgid "%(obj)s_is_already_used_in_%(objs)s_and_can_not_delete"
+msgstr "%(obj)s sedang menggunakan %(objs)s dan tidak bisa dihapus."
+
+msgid "this_field_can_not_include_space_tab_or_enter"
+msgstr "bidang ini tidak dapat memasukkan tab ruang atau masuk."
+
+msgid "the_breaktime_%(n1)s_and_%(n2)s_has_intersection"
+msgstr "waktu istirahat_%(n1)s_dan_%(n2)s_memiliki persimpangan."

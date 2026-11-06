@@ -1,0 +1,199 @@
+{% load i18n common %}
+<style>
+  .field-finger dl {
+    max-height: 115px;
+  }
+</style>
+
+<div id='id_enroll_remote' style="padding: 5px;height: 520px;width: 1100px;overflow: hidden;">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+    <div style="padding-bottom: 5px">{{ f.emp }}</div>
+    <div style="max-height: 140px;" class="layui-row">
+
+      <div class="layui-col-md3">
+        {% layui_inline f.bio_type %}
+      </div>
+      <div class="layui-col-md3">
+        {% layui_inline f.finger %}
+      </div>
+      <div class="button-3d layui-col-md3" lay-submit="" lay-filter="enroll_remote">
+        <button type="button" value="enroll_remote" id="enroll_btn" class="btn btn-md"
+          style="background:#7ac143;color:#fff;">Enroll</button>
+        <input type="hidden" name="action_name" value="5465726d696e616c456e726f6c6c52656d6f74656c79" />
+        <div id="selected_terminal"></div>
+      </div>
+    </div>
+    {% endwith %}
+  </form>
+    <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: #f8f8f8; padding: 10px; border: 1px solid #e6e6e6; border-radius: 4px;">
+      Noted:When the device registers personnel remotely, it is recommended to edit the device configuration with the following parameters: set Registration Device to YES, and set Connection Request Interval(sec) to 3
+    </div>
+
+</div>
+
+<script>
+  $('.layui-layer-btn0').hide()
+  var table = layui.table;
+
+  var complete = false;
+
+  function processBarDialog(id) {
+
+    var successID = "success" + id;
+    var progressID = "progress" + id;
+    const processBar = ''
+      + '<div style="padding: 5px;margin-top: 30px;">'
+      + '  <div class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="enroll_remote_progress">'
+      + '    <div class="layui-progress-bar" lay-percent="0%" style="background-color: #7ac143 !important" >'
+      + '      <span class="layui-progress-text">0%</span>'
+      + '    </div>'
+      + '  </div>'
+      + '</div>'
+      + '<div id="' + successID + '" style="padding: 10px; width: 100%;text-align: center;color:#57c5f7;font-size: 20px;">'
+      + '  <i class="fa fa-spinner fa-fw"></i>'
+      + '  <span id="' + progressID + '">' + gettext("Registering...") + '</span>'
+      + '</div>';
+
+    const progress_url = '/iclock/enroll_remote_progress/';
+    var success = false;
+    var error_count = 0;
+
+    var selected = table.checkStatus('id_grid_terminal').data;
+    var sn = ''
+    selected.forEach(function (item, index) {
+      sn = item.sn;
+    });
+
+    var wait_total_sec = 80;
+    var wait_count = 1;
+    layer.open({
+      type: 1
+      , title: "It is registering..." + $('#id_bio_type option:selected').text()
+      // , shade: false
+      , area: ['450px', '220px']
+      , btn: [gettext("btn_confirm")]
+      , content: processBar
+      , success: function (layero, import_layer) {
+
+        var confirmBtn = layero.find('.layui-layer-btn0');
+        confirmBtn.addClass('layui-btn-disabled');
+        confirmBtn.css('pointer-events', 'none');
+
+        var ProgressObserver = function () {
+          var progressStatus = layero.find("#" + successID).get(0);
+
+          function UpdateProgressBar(payload) {
+            if (payload.code >= 0) {
+              complete = true;
+            }
+            if (complete) {
+              layui.element.progress('enroll_remote_progress', '100%');
+              progressStatus.style.color = "#7ac143";
+              //  progressStatus.innerHTML = gettext("action_post_successful");
+
+              layero.find("#" + progressID).get(0).innerHTML = payload.msg;
+              if (payload.code == 0) {
+                layero.find("#" + progressID).get(0).innerHTML = gettext("fpRegister_tip_registerSuccessful");
+              }
+
+              var confirmBtn = layero.find('.layui-layer-btn0');
+              confirmBtn.removeClass('layui-btn-disabled');
+              confirmBtn.css('pointer-events', 'auto');
+
+              // setTimeout("layer.close(layer.index)", 10000);
+            } else {
+              layui.element.progress('enroll_remote_progress', parseInt((wait_count / wait_total_sec) * 100) + '%');
+              layero.find("#" + progressID).get(0).innerHTML = gettext("Registering...") + wait_count + 'S';
+              setTimeout(ProgressObserver, 1000);
+              wait_count++;
+              if (wait_count > wait_total_sec) {
+                complete = true;
+              }
+            }
+          }
+
+          function ProgressException(xhr, status, e) {
+            error_count++;
+            if (error_count < 2) {
+              setTimeout(ProgressObserver, 1000);
+            } else {
+              progressStatus.style.color = "red";
+              progressStatus.innerHTML = gettext("system_error_please_try_again");
+            }
+          }
+
+          $.ajax({
+            url: progress_url
+            , type: "POST"
+            , dataType: "json"
+            , data: { 'sn': sn }
+            , success: UpdateProgressBar
+            , error: ProgressException
+          })
+        };
+        layui.element.progress('calc_progress', '0%');
+        layero.find("#" + progressID).get(0).innerHTML = gettext("Registering...");
+        setTimeout(ProgressObserver, 1000);
+      }
+      , cancel: function (import_layer, layero) {
+        layer.close(import_layer);
+        complete = true;
+        return false;
+      }
+    });
+  }
+
+  layui.form.on('submit(enroll_remote)', function (data) {
+    var emp_code = data.field.emp_code || "";
+    if (!emp_code) {
+      layer.alert("Please select employee", { icon: 5, title: ' ', btn: gettext("btn_confirm") });
+      return false;
+    }
+    var selected = table.checkStatus('id_grid_terminal').data;
+    var selectedID = [];
+    selected.forEach(function (item, index) {
+      var tmp = '<input type="hidden" name="id" value="' + item.id + '"/>';
+      $("#selected_terminal").html(tmp);
+    });
+
+    $('#id_enroll_remote').find(".layui-form").ajaxSubmit({
+      url: "/iclock/terminal/action/"
+      , type: "POST"
+      , dataType: "json"
+      , success: function (callback) {
+        if (callback.code == -1) {
+          layer.alert(callback.msg, { icon: 5, title: ' ', btn: gettext("btn_confirm") });
+          return;
+        }
+        complete = false;
+        var id = new Date().getTime();
+        processBarDialog(id);
+        //   layer.alert(callback.message, { icon: 1, time: 2000, title: ' ', btn: gettext("btn_confirm") }, function () {
+        //   })
+        // } else {
+        //   layer.alert(callback.message, { icon: 5, title: ' ', btn: gettext("btn_confirm") });
+        // }
+
+      }
+      , error: function () {
+
+      }
+    })
+
+    return true;
+  })
+
+  layui.form.on('select(bio_type)', function () {
+    var bio_face = ["2", "9", "10", "19"];
+    var check_status = $('#id_bio_type').val();
+
+    if (bio_face.includes(check_status)) {
+      $("#id_finger").parent().hide();
+    }
+    else {
+      $("#id_finger").parent().show();
+    }
+  });
+</script>

@@ -1,0 +1,28 @@
+{% load i18n static common %}
+<div style="padding: 5px;min-height: 490px;width: 1100px;overflow: hidden;">
+    <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        {% with form.form as f %}
+            <div style="padding-bottom: 5px">{{ f.emp }}</div>
+        {% endwith %}
+        <div style="max-height: 100px;overflow-y:auto;">
+            <div class="layui-form-item">
+                {% for x,y in data.items %}
+                    <div class="layui-inline " style="padding-right: 10px;">
+                        <label class="layui-form-label " for="id_min_len_emp_code">{{ x }}<span
+                                class="required">*</span></label>
+                        <div class="layui-input-inline" style="display:flex;padding-right: 10px;width:250px;">
+                            <input type="number" name="{{ x }}" class="layui-input" value=""
+                                   style="display:inline-block;float:left;min-width:90px;max-width:90px;margin-right:10px;"
+                                   placeholder="Yearly"><input type="number" name="{{ x }}m" class="layui-input"
+                                                               style="display:inline-block;float:left;min-width:90px;max-width:90px;margin-right:10px;"
+                                                               value="" placeholder="Monthly">
+                            <div class="layui-form-mid"> {% trans 'leaveSchedule_add_or_edit_days' %}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,21 @@
+{% load i18n %}
+<div style="padding:10px;overflow:hidden">
+    <form id="id_admin_log" class="layui-form admin-login" method="post">
+        {% csrf_token %}
+        <div class="layui-form-item">
+            <label  for="id_user_name">{% trans 'user_username' %}<span class="required">*</span></label>
+
+            <div>
+                <input type="text" name="username" id="id_user_name" autocomplete="off" class="layui-input" maxlength="50" style='max-width:90%'>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label  for="id_password">{% trans 'user_password' %}<span class="required">*</span></label>
+
+            <div>
+                <input type="password" name="password" id="id_password" autocomplete="off" class="layui-input" maxlength="50" style='max-width:90%'>
+            </div>
+        </div>
+        <div class="layui-form-item"></div>
+    </form>
+</div>

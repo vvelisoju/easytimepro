@@ -1,0 +1,16 @@
+{% load i18n %}
+<li class="dropdown-submenu filter-multiselect">
+  <a>{% include "xadmin/filters/filter_or_exclude.html" %}<i class="fa fa-fw fa-filter {% if spec.is_used %}text-success{%else%}text-muted{% endif %}"></i> {{ title }}</a>
+  <ul class="dropdown-menu menu-height-limited">
+    {% for choice in choices %}
+        <li{% if choice.selected %} class="active"{% endif %}>
+        	<a href="javascript:void(0)" data-ref="{{ choice.query_string|iriencode }}">
+					<label>
+						<input type="checkbox" {% if choice.selected %} checked="checked"{% endif %}>
+						{{ choice.display }}
+					</label>
+        	</a>
+        </li>
+    {% endfor %}
+  </ul>
+</li>

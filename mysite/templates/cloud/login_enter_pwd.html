@@ -1,0 +1,199 @@
+{% extends "cloud/base_login.html" %}
+{% load i18n %}
+{% block main %}
+    <div class="zk-login-col">
+        <div class="col-md-9 col-md-offset-3">
+            {% block logo_box %}
+                {{ block.super }}
+            {% endblock %}
+            <div class="mb-3 card zk-login-card  text-white">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">Log in to your account</div>
+                </div>
+                <div class="card-body p-0">
+                    <form action="" class="zk-login-form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                            <input type="text" class="form-control text-center input-lg" id="username"
+                                   name="username" readonly value="{{ username }}">
+                        </div>
+                        {% if company_name %}
+                            <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-building" aria-hidden="true"></i>
+                                    </span>
+                                <input type="text" class="form-control text-center input-lg"
+                                       id="company_name"
+                                       name="company_name" readonly value="{{ company_name }}" style="font-size: 1rem;">
+                            </div>
+                        {% endif %}
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                            <input type="password" class="form-control text-center input-lg"
+                                   id="pwd"
+                                   placeholder="Password" required/>
+                            <span class="input-group-addon pwd-right-radius" onclick="viewPassword('pwd')">
+                                    <i id="pwd" class="fa fa-eye-slash"></i>
+
+                              </span>
+                        </div>
+                        <p class="text-center text-capitalize text-danger" id="msg"></p>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" onclick="login_cloud()"
+                                        class="btn btn-lg btn-block btn-primary zk-btn">Login
+                                </button>
+                            </div>
+                            <p class="text-center text-dark"><a href="{% url 'biotime:login' %}"
+                                                            class="text-warning text-underline" >{% trans "back_to_login" %}</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock main %}
+{% block page_script %}
+    <script>
+        document.body.onkeydown = function (e) {
+            if (e.keyCode == 13)
+                $("#btn-login").click();
+        };
+    </script>
+    <script>
+        function login_cloud() {
+            var pwd_input = $('#pwd');
+            var login_data = {
+                'username': $('#username').val(),
+                'password': pwd_input.val(),
+                'company_name': $('#company_name').val(),
+                'login_user': '{{ login_user }}',
+                csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+            };
+            if (pwd_input.val() !== '') {
+                $.ajax({
+                    url: "{% url 'biotime:login' %}",
+                    type: "POST",
+                    data: login_data,
+                    dataType: "json",
+                    success: function (callback) {
+                        console.log(callback);
+                        console.log("RET", callback.ret);
+                        var ret = callback.ret;
+                        if (ret === 0) {
+                            window.location.href = "{% url 'biotime:index' %}";
+                        }
+                        else if (ret === 1) {
+                            pwd_input.removeAttr('disabled');
+                            pwd_input.val('');
+                            pwd_input.blur();
+                            $('#msg').text(callback.message);
+                            $('#msg').removeAttr('hidden');
+                        }
+                        else if (ret === 3) {
+                            pwd_input.removeAttr('disabled');
+                            pwd_input.val('');
+                            pwd_input.blur();
+                            //$('#msg').text(callback.message);
+                            $('#msg').removeAttr('hidden');
+                            $('#loginErrorModal').modal('show');
+                            $('#loginErrorMsg').html(callback.message);
+                            var subsEndDate = myDateFormat(callback.subscription_dict.subscription_end_date);
+                            var subs_exception = callback.red_mark;
+                            //console.log(subs_exception);
+                            $('#loginErrorDetailsTable').html('');
+                            $('#loginErrorDetailsTable').append(
+                                '<tr>' +
+                                '<td style="width:240px;"><b>Subscription End Date</b></td>' +
+                                '<td>:</td>' +
+                                '<td class="subscription_end_date">' + subsEndDate + '</td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                '<td><b>Current Employees Count /<br> Max. Employees Limit</b></td>' +
+                                '<td>:</td>' +
+                                '<td class="current_employees_count">' + callback.subscription_dict.current_employees_count + ' / ' + callback.subscription_dict.max_employees_limit + '</td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                '<td><b>Current Devices Count /<br> Max. Devices Limit</b></td>' +
+                                '<td>:</td>' +
+                                '<td class="current_devices_count">' + callback.subscription_dict.current_devices_count + ' / ' + callback.subscription_dict.max_devices_limit + '</td>' +
+                                '</tr>' +
+                                '<tr>' +
+                                '<td><b>Current Transactions Count /<br> Max. Transactions Limit</b></td>' +
+                                '<td>:</td>' +
+                                '<td class="current_transactions_count">' + callback.subscription_dict.current_transactions_count + ' / ' + callback.subscription_dict.max_transactions_limit + '</td>' +
+                                '</tr>'
+                            );
+                             //Check Exception Field and Add Class text-danger
+                            if (subs_exception == 'subscription_end_date') {
+                                $('.subscription_end_date').addClass('text-danger subs-exp-field');
+
+                            }
+                            else if (subs_exception == 'current_employees_count') {
+                                $('.current_employees_count').addClass('text-danger subs-exp-field');
+                            }
+                            else if (subs_exception == 'current_devices_count') {
+                                $('.current_devices_count').addClass('text-danger subs-exp-field');
+                            }
+                            else if (subs_exception == 'current_transactions_count') {
+                                $('.current_transactions_count').addClass('text-danger subs-exp-field');
+                            }
+                            else {
+                                $('.subscription_end_date, .current_employees_count, .current_devices_count, .current_transactions_count').removeClass('text-danger subs-exp-field');
+                            }
+                            //end
+
+                        }
+
+                        else {
+                            pwd_input.removeAttr('disabled');
+                            pwd_input.val('');
+                            pwd_input.blur();
+                            $('#msg').text(callback.message);
+                            $('#msg').removeAttr('hidden');
+                        }
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        $('#pwd').removeAttr('disabled');
+                    }
+                });
+            }
+        }
+
+        function generate_pwd_email() {
+            window.location.href = "{% url 'biotime:generate_pwd_email' %}";
+        }
+
+        function viewPassword(id) {
+            var input = document.getElementById(id);
+            var icon_id = id + "_icon";
+            var icon = document.getElementById(icon_id);
+            var input_type = input.getAttribute("type");
+            if (input_type == 'password') {
+                input.setAttribute("type", "text");
+                icon.setAttribute("class", "fa fa-eye zk-pwd");
+            } else {
+                input.setAttribute("type", "password");
+                icon.setAttribute("class", "fa fa-eye-slash zk-pwd");
+            }
+        }
+        //Date Format
+        function myDateFormat(userDate) {
+        var d = new Date(userDate);
+        var year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+        var month = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+        var day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+        return  day + '-' + month + '-' + year;
+        }
+    </script>
+{% endblock page_script %}

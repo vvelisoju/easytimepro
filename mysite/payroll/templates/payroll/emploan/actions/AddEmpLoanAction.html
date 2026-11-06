@@ -1,0 +1,89 @@
+{% load i18n static %}
+{% load common %}
+{% block extend_js %}
+{% endblock %}
+<div style="padding: 10px;min-height: 350px;max-height: 550px;min-width: 550px">
+    <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+        <input type="hidden" id="id_model_pk" name="pk" value="{{ object_id }}"/>
+        {% csrf_token %}
+        {% with form.form as f %}
+            <div class="layui-form-item">
+                {{ f.emp }}
+            </div>
+            <div class="layui-form-item">
+                {% layui_inline f.loan_amount %}
+                {% layui_inline f.loan_time %}
+            </div>
+            <div class="layui-form-item">
+                {% layui_inline f.refund_cycle %}
+                <div class="layui-inline field-per_cycle_refund" title="">
+                    <label class="layui-form-label" for="id_per_cycle_refund"
+                           style="width: 173px; min-width: 0px; max-width: 173px;">{% trans 'empLoan_field_per_cycle_amount' %}
+                            </label>
+                    <div class="layui-input-inline ">
+                        <input type="number" name="per_cycle_refund" lay-verify="per_cycle_refund"
+                               class="layui-input" id="id_per_cycle_refund" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                {% layui_inline f.remark %}
+            </div>
+        {% endwith %}
+    </form>
+</div>
+
+<script>
+    layui.use(['form', 'laydate', 'element'], function () {
+        $('#id_refund_cycle').attr('lay-filter', 'refund_cycle');
+        var form = layui.form, laydate = layui.laydate, element = layui.element;
+        ;
+        $("form.layui-form input.layui-datetime").each(function () {
+            laydate.render({
+                    elem: this
+                    ,type: 'datetime'
+                    // ,min:minDate()
+            });
+        });
+        function minDate(){
+            var now = new Date();
+            return now.getFullYear() + '-' + (now.getMonth() + 1) + '-01';
+        }
+        $(function () {
+            $('#id_loan_amount').change(function () {
+                var loanValue = parseFloat($('#id_loan_amount').val());
+                var refundCycle = $('#id_refund_cycle').val();
+                if (loanValue <= 0) {
+                    layer.alert(gettext('the_amount_need_lager_than_zero'), {
+                    title: gettext('system_exception')
+                    , icon: 5
+                    , btn: gettext('btn_confirm')
+                    })
+                } else {
+                    // var periodRefund = Math.floor(loanValue / refundCycle);
+                    var periodRefund = Number(loanValue / refundCycle).toFixed(2);
+                    $('#id_per_cycle_refund').val(periodRefund);
+                    form.render();
+                }
+            });
+        });
+        form.on('select(refund_cycle)', function (data) {
+            var refundTimes = data.value;
+            var loanValue = parseFloat($('#id_loan_amount').val());
+            if (loanValue) {
+            var periodRefund =  Number(loanValue / refundTimes).toFixed(2);
+            $('#id_per_cycle_refund').val(periodRefund);
+            } else {
+            layer.alert(gettext('please_input_amount_first'), {
+                icon: 5, title: gettext('system_exception'),
+                 btn: gettext('btn_confirm')
+                });
+            }
+            form.render();
+        });
+        {% block form_verify %}
+      form.verify({});
+    {% endblock %}
+    form.render();
+    });
+</script>

@@ -1,0 +1,98 @@
+{% load i18n %}
+<style>
+  .datepicker-inline {
+    margin-left: 20px;
+  }
+  .dropdown-menu {
+    padding-top:10px;
+    top: 100px
+    left: 100%
+    transform: translateX(10px);
+  }
+  .arrow-left {
+    padding-left: 2px;
+    position: absolute;
+    top: 12%;
+    left: -12px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+    border-color: transparent rgb(190,190,190) transparent;
+  }
+  li.dropdown-submenu.filter-date ul.dropdown-menu li.active > a.filter-option-default {
+    background-color: #7ac143;
+  }
+</style>
+<li class="dropdown-submenu filter-date">
+	<a>{% include "xadmin/filters/filter_or_exclude.html" %}<i
+		class="fa fa-fw fa-filter {% if spec.is_used %}text-success{% else %}text-muted{% endif %}"></i> {{ title }}</a>
+	<ul class="dropdown-menu">
+
+		{% for choice in choices %}
+      {% if forloop.counter0 == 1 %}
+        <li class="dropdown-submenu menu-choice-date{% if choice_selected %} active{% endif %}">
+          <a>{% trans "Choice Date" %}</a>
+          <div class="dropdown-menu {% if is_bidi_language %}left{% else %}right{% endif %}">
+            <div class="arrow-left"></div>
+            <h3 class="popover-title">{% trans "Choice Date" %}</h3>
+            <div class="popover-content" style="padding: 9px 14px; width: 200px;">
+              <form method="get" action="" class="form-inline">
+                {{ form_params|safe }}
+                <div class="input-group mb-1">
+                  <span class="input-group-text">{% trans "YY" %}</span>
+                  <input name="{{ year_name }}" class="choice-year form-control" type="number"
+                         placeholder="{% trans 'year' %}" size="4" value="{{ year_val }}" min="0">
+                </div>
+                <div class="input-group mb-1">
+                  <span class="input-group-text">{% trans "MM" %}</span>
+                  <input name="{{ month_name }}" class="choice-month form-control" type="number"
+                         placeholder="{% trans 'month' %}" size="2" value="{{ month_val }}" min="0">
+                </div>
+                <div class="input-group mb-1">
+                  <span class="input-group-text">{% trans "DD" %}</span>
+                  <input name="{{ day_name }}" class="choice-day form-control" type="number" placeholder="{% trans 'day' %}"
+                         size="2" value="{{ day_val }}" min="0">
+                </div>
+                <button class="btn btn-success w-100" type="submit">{% trans "btn_apply" %}</button>
+              </form>
+            </div>
+          </div>
+        </li>
+        <li class="dropdown-submenu menu-date-range"><a>{% trans "Date Range" %}</a>
+          <div class="dropdown-menu {% if is_bidi_language %}left{% else %}right{% endif %}">
+            <div class="arrow-left"></div>
+            <h3 class="popover-title">{% trans "Date Range" %}</h3>
+            <div class="popover-content" style="width: 700px; padding: 9px 14px; ">
+              <form method="get" action="" class="form-inline">
+                <div class="ranges col-sm-3 hide-xs">
+                  <fieldset class="range_inputs">
+                    <label for="{{ since_name }}" style="justify-content: left;">{% trans "From" %}</label>
+                    <input class="form-control start_input" type="text" name="{{ since_name }}" value="{{ since_val }}"/>
+                    <label for="{{ until_name }}" style="justify-content: left;">{% trans "To" %}</label>
+                    <input class="form-control end_input" type="text" name="{{ until_name }}" value="{{ until_val }}"/>
+                    <button type="submit" class="btn btn-success btn-block">{% trans "btn_apply" %}</button>
+                  </fieldset>
+                </div>
+                <div class="row col-lg-9" style="margin-left: 10px;">
+                  <div class="calendar date-start col-lg-6" data-date="{{ since_val }}"></div>
+                  <div class="calendar date-end col-lg-6" data-date="{{ until_val }}"></div>
+                </div>
+                {#          <div class="col-xs-12">#}
+                {#            <button type="submit" class="btn btn-success btn-block show-xs">{% trans "btn_apply" %}</button>#}
+                {#          </div>#}
+                {{ form_params|safe }}
+              </form>
+            </div>
+          </div>
+        </li>
+      {% endif %}
+			<li{% if choice.selected %} class="active"{% endif %}>
+
+				<a class="{% if not forloop.first %}filter-option{% else %}filter-option-default{% endif %}"
+					 href="javascript:void(0)" data-ref="{{ choice.query_string|iriencode }}">{{ choice.display }}</a></li>
+		{% endfor %}
+	</ul>
+</li>

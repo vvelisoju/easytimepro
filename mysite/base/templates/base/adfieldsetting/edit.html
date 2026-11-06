@@ -1,0 +1,42 @@
+{% load i18n static %}
+<div id="{{ model_name }}_edit_form" style="{% block form_style %}padding: 10px;{% endblock %}">
+    {% block edit_form %}
+    <form class="layui-form data-form" action="" method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            {% for fieldset in adminform %}
+                {% include "layui/includes/fieldset_2c.html" %}
+            {% endfor %}
+        </div>
+        {% block add_fields %}
+        {% endblock %}
+    </form>
+    {% endblock %}
+</div>
+    <p style="margin: 20px 0 0 20px;">
+        <strong style="font-size: 13px;">
+            <span style="color: red;">*Note:  </span>
+            All fields in the form must have an Active Directory attribute name.
+        </strong>
+    </p>
+
+<style>
+    input:read-only {
+        background-color: #F3F3F3;
+    }
+</style>
+<script>
+    layui.use(['form', 'laydate'], function() {
+        var form = layui.form, laydate = layui.laydate;
+        form.render();
+        $("form.layui-form input.layui-datetime").each(function(){
+            laydate.render({elem: this, type: 'datetime'});
+        });
+        $("form.layui-form input.layui-date").each(function(){
+            laydate.render({elem: this, type: 'date'});
+        });
+        $("form.layui-form input.layui-time").each(function(){
+            laydate.render({elem: this, type: 'time'});
+        });
+    });
+</script>

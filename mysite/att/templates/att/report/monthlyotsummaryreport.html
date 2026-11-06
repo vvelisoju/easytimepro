@@ -1,0 +1,79 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+
+{% block search_form_init %}
+    var cur = moment(new Date());
+    var _start = cur.startOf('month').format('YYYY-MM');
+    var fullStartOfMonth = cur.startOf('month').format('YYYY-MM-DD');
+    var fullEndOfMonth = cur.endOf('month').format('YYYY-MM-DD');
+    var startDate = laydate.render({
+        elem: '#{{ model_name }}-start-date',
+        type: 'month',
+        value: _start,
+    });
+    $.extend(opts, {where: {start_date: fullStartOfMonth, end_date: fullEndOfMonth}});
+{% endblock %}
+
+{% block opts_modify %}
+    function buildDateCols(startDate) {
+        const start = moment(startDate).startOf('month');
+        const end = moment(startDate).endOf('month');
+        const dateCols = [];
+        for (let d = start.clone(); d.isSameOrBefore(end); d.add(1, 'day')) {
+            dateCols.push({
+                field: 'ot_' + d.format("DD"),
+                title: d.format("D dd"),
+                width: 50
+            });
+        }
+        return dateCols;
+    }
+
+    var userCols = [
+        {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}"},
+        {field:'first_name', title: "{% trans 'report_column_firstName' %}"},
+        {field:'last_name', title: "{% trans 'report_column_lastName' %}"},
+        {field:'gender', title: "{% trans 'report_column_gender' %}"},
+        {field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"},
+        {field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+    ];
+    var totalCols = [
+        {field:'total_wt', width:80, title: "{% trans 'report_column_totalWorkedDuration' %}"},
+        {field:'total_ot', width:80, title: "{% trans 'report_column_total_ot' %}"},
+        {field:'total', width:80, title: "Total"}
+    ];
+    var dateCols = buildDateCols(fullStartOfMonth);
+    _cols = userCols.concat(dateCols).concat(totalCols);
+    $.extend(opts, {
+        cols: [_cols],
+        method: "get",
+        url: "/att/api/monthlyOTSummaryReport/"
+    });
+{% endblock %}
+
+{% block columns_modify %}
+    var dateCols = buildDateCols(startDate);
+    _cols = userCols.concat(dateCols).concat(totalCols);
+    $.extend(opts, {
+        cols: [_cols],
+        method: "get",
+        where: c
+    });
+    tb = table.render(opts);
+    $.extend(action_opts, {
+        curTable: tb
+    });
+    $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+    form.on("submit({{ model_name }}-search)", function (data) {
+        refreshReport('');
+    });
+{% endblock %}
+
+{% block search_report_date %}
+    var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+    startDate = moment(startDate).startOf('month').format('YYYY-MM-DD');
+    var endDate = moment(startDate).endOf('month').format('YYYY-MM-DD');
+{% endblock %}
+
+{% block search_form_enddate %}
+{% endblock %}

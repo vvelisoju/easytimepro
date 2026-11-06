@@ -1,0 +1,25 @@
+{% extends 'staff/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+            {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+            ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+            ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+            ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+            ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+            ,{field:'dept_name', title: "{% trans 'report_column_departmentName' %}"}
+            ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+            ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+            ,{field:'work_code', title: "{% trans 'report_column_workCode' %}"}
+            ,{field:'att_date', title: "{% trans 'report_column_punchDate' %}", width:120, sort:true}
+            ,{field:'weekday', title: "{% trans 'report_column_attendanceWeekday' %}", width:120, sort:true}
+            ,{field:'punch_time', title: "{% trans 'report_column_punchTime' %}"}
+            ,{field:'punch_state', title: "{% trans 'report_column_punchState' %}"}
+            ,{field:'correct_state', title: "{% trans 'report_column_correctState' %}"}
+        ]]
+        ,method:'get'
+        ,url:  "/att/api/scheduledLogReport/"
+    });
+{% endblock %}

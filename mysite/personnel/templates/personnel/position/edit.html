@@ -1,0 +1,18 @@
+{% extends 'layui/edit.html' %}
+{% load i18n common %}
+{% block edit_form %}
+  <form class="layui-form data-form" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% with adminform.form as f %}
+      <div class="layui-form-item">
+        {% layui_inline f.position_code %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.position_name %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.parent_position %}
+      </div>
+    {% endwith %}
+  </form>
+{% endblock %}

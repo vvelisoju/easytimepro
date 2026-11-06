@@ -1,0 +1,48 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+            {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+            ,{field:'date', title: "{% trans 'report_column_attendanceDate' %}"}
+            ,{field:'client_name', title: "{% trans 'clientDetails_field_companyName' %}"}
+            ,{field:'checkin', title: "{% trans 'outdoorTrack_field_checkin' %}"}
+            ,{field:'checkout', title: "{% trans 'outdoorTrack_field_checkout' %}"}
+            ,{field:'Map View', title: "{% trans 'outdoor_map_view' %}", templet: function(obj){
+                return '<i class="fa fa-map-marker" aria-hidden="true" style="color:red; font-size: 1.5em;"onclick="MapViewFuntion('+obj.id+',3)"></i>'
+            }}
+            ,{field:'Text View', title: "{% trans 'outdoor_text_view' %}", templet: function(obj){
+                return '<i class="fa fa-file-text" aria-hidden="true" style="color:red; font-size: 1.5em;"onclick="TextViewFuntion('+obj.id+',3)"></i>'
+            }}
+            ,{field:'checkin_photo', title: "{% trans 'outdoorTrack_field_checkin_photo' %}", event:'getRecptFile', templet: function(obj){
+                if (obj.checkin_capture) {
+                    return '<a href="javascript:void(0);" style="color: #57c5f7", onclick="getAttCheckinPhoto(' + '\'' + obj.checkin_photo+ '\')">'+ 'Image' +'</a>';
+                 } else {
+                    return "";
+                 }
+            }}
+            ,{
+                field: 'checkout_photo',
+                title: "{% trans 'outdoorTrack_field_checkout_photo' %}",
+                templet: function(obj) {
+                    if (obj.checkout_capture) {
+                        return '<a href="javascript:void(0);" style="color: #57c5f7;" onclick="getAttCheckoutPhoto(\'' + obj.checkout_photo + '\')">Image</a>';
+                    } else {
+                        return '';
+                    }
+                }
+            }
+            ,{field:'checkin_latitude', title: "{% trans 'outdoorTrack_field_checkin_latitude'%}"}
+            ,{field:'checkin_longitude', title: "{% trans 'outdoorTrack_field_checkin_longitude'%}"}
+            ,{field:'checkout_latitude', title: "{% trans 'outdoorTrack_field_checkout_latitude'%}"}
+            ,{field:'checkout_longitude', title: "{% trans 'outdoorTrack_field_checkout_longitude'%}"}
+            ,{field:'visit_summary', title: "{% trans 'employee_visit_summary'%}"}
+            ,{field:'checkin_address', title: "{% trans 'outdoorTrack_field_checkin_address'%}"}
+            ,{field:'checkout_address', title: "{% trans 'outdoorTrack_field_checkout_address'%}"}
+           ,{field:'kilometer', title: "{% trans 'outdoorTrack_field_kilometer'%}"}
+        ]]
+        ,method: "get"
+        ,url: "/att/api/unscheduletrackReport/"
+    });
+{% endblock %}

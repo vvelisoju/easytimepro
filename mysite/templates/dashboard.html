@@ -1,0 +1,611 @@
+{% extends "admin_site.html" %}
+{% load i18n static iclock_tags compress %}
+
+{% block center %}
+  <div id="id_app_content" class="layui-fluid" style="background: #f0f3f5;">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+{#                <p class="current-company">Current Company: <span>ZKTeco</span></p>#}
+            </div>
+            {% get_current_language as LANGUAGE_CODE %}
+            {% if LANGUAGE_CODE == 'ar' or LANGUAGE_CODE == 'he' or LANGUAGE_CODE == 'fa' %}
+                <div class="col-md-6">
+                   <p class="current-company text-center">
+                      <span class="switch-ap ta-pandemic">
+                      <label for="switch-id" class="attendance">{% trans 'Pandemic' %}<br>{% trans 'Dashboard' %}</label>
+                      <input type="checkbox" class="switch" id="switch-id">
+                      <label for="switch-id"></label>
+                      <label for="switch-id" class="pandemic">{% trans 'Attendance' %}<br>{% trans 'Dashboard' %}</label>
+                      </span>
+                   </p>
+                </div>
+            {% else %}
+                <div class="col-md-6">
+                   <p class="current-company text-center">
+                      <span class="switch-ap ta-pandemic">
+                      <label for="switch-id" class="attendance">{% trans 'Attendance' %}<br>{% trans 'Dashboard' %}</label>
+                      <input type="checkbox" class="switch" id="switch-id">
+                      <label for="switch-id"></label>
+                      <label for="switch-id" class="pandemic">{% trans 'Pandemic' %}<br>{% trans 'Dashboard' %}</label>
+                      </span>
+                   </p>
+                </div>
+            {% endif %}
+        </div>
+    <div class="d-none" id="pandemic">
+      <div class="easy-pandemic-dashboard" id="">
+          <div class="first-container">
+         <div class="row">
+            <div class="col-md-12 col-md-12 col-sm-12">
+               <div class="mb-5 card text-dark pandemic-overall-statistics easy-card-bg">
+                  <div class="card-header text-center justify-content-center">
+                     {% trans 'All_stats' %}&nbsp;
+                     <i class="fa fa-database fa-lg"></i>
+                  </div>
+                  <div class="card-body">
+                     <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex align-items-center justify-content-center section-1">
+                           <ul class="list-group mr-5 mb-0">
+                              <li class="justify-content-between list-group-item border-0 text-dark bg-transparent font-weight-bold">
+                                 <span>
+                                 <img src="../static/cloud/static/images/high-temp.png" class="bg-img-icon-1 p-2">
+                                 </span>
+                                 {% trans 'high_temperature' %}
+                                 <span class="badge badge-secondary badge-pill" id="high_temp_count">( 20% )</span>
+                              </li>
+                              <li class="justify-content-between list-group-item border-0 text-dark bg-transparent font-weight-bold">
+                                 <span>
+                                 <img src="../static/cloud/static/images/warning.png" class="bg-img-icon-2 p-2">
+                                 </span>
+                                 {% trans 'Warning' %}
+                                 <span class="badge badge-secondary badge-pill" id="warning_count">( 30% )</span>
+                              </li>
+                              <li class="justify-content-between list-group-item border-0 text-dark bg-transparent font-weight-bold">
+                                 <span>
+                                 <img src="../static/cloud/static/images/normal-temp.png" class="bg-img-icon-3 p-2">
+                                 </span>
+                                 {% trans 'Normal' %}
+                                 <span class="badge badge-secondary badge-pill" id="normal_count">( 40% )</span>
+                              </li>
+                              <li class="justify-content-between list-group-item border-0 text-dark bg-transparent font-weight-bold">
+                                 <span>
+                                 <img src="../static/cloud/static/images/no-mask.png" class="bg-img-icon-4 p-2">
+                                 </span>
+                                 {% trans 'no_mask' %}
+                                 <span class="badge badge-secondary badge-pill" id="no_mask_count">( 10% )</span>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex align-items-center justify-content-center section-2">
+                           <div class="text-center text-dark font-weight-bold mt-5 pt-5 total-emp">
+                              <div class="emp-circle text-center p-4 d-flex justify-content-center align-items-center">
+                                 <i class="fa fa-users fa-5x text-white"> </i>
+                              </div>
+                              <p class="m-0">{% trans 'total_employees' %}</p>
+                              <span id="td_md_empcount">(200)</span>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex align-items-center justify-content-center section-3">
+                           <div class="statistics-legend">
+                              <ul class="list-inline">
+                                 <li class="list-inline-item"><i class="fa fa-circle high"></i>&nbsp; {% trans 'high_temperature' %}</li>
+                                 <li class="list-inline-item"><i class="fa fa-circle warning"></i>&nbsp; {% trans 'Warning' %}</li>
+                                 <li class="list-inline-item"><i class="fa fa-circle normal"></i>&nbsp; {% trans 'Normal' %}</li>
+                                 <li class="list-inline-item"><i class="fa fa-circle no-mask"></i>&nbsp; {% trans 'no_mask' %}</li>
+                              </ul>
+                           </div>
+                           <div style="height:250px; overflow:hidden;">
+                              <div id="easy-overall-stats" style="width: 100%; height: 250px; margin-top: 5.5em;"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+{#                  <div class="card-footer search-area-date">#}
+{#                     <div class="row">#}
+{#                        <div class="col-md-4 col-sm-4 col-sm-push-8 col-md-push-8 d-flex justify-content-center">#}
+{#                           <button type="button" class="btn btn-viewmore1 btn-sm-block">View More</button>#}
+{#                        </div>#}
+{#                        <div class="col-md-8 col-sm-8 col-sm-pull-4 col-md-pull-4">#}
+{#                           <div class="filter-date">#}
+{#                              <form class="form-inline">#}
+{#                                 <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group shadow-sm">#}
+{#                                    <label for="searchByDate" class="mr-sm-2 search-txt-date">Search By Date - </label>#}
+{#                                    <input type="date" id="searchByDate" class="form-control text-center" />#}
+{#                                 </div>#}
+{#                                 <button type="button"  class="btn btn-success zk-btn-go mb-2">Go</button>#}
+{#                              </form>#}
+{#                           </div>#}
+{#                        </div>#}
+{#                     </div>#}
+{#                  </div>#}
+               </div>
+            </div>
+         </div>
+
+         <div class="row" >
+            <div class="col-lg-6 col-md-12 col-sm-12">
+               <div class="mb-5 card  text-dark easy-card-bg ">
+                  <div class="card-header text-center justify-content-center">
+                     {% trans 'real_time_data' %} &nbsp;
+                     <i class="fa fa-database fa-lg"></i>
+                     <a href="#" style="display: none;">
+                     <img src="../static/cloud/static/images/expand.png" alt="expand" class="expand-icon hidden">
+                     </a>
+                  </div>
+                  <div class="card-body realtime-data pandemic-realtime-data">
+                     <!-- <div class="scroll-area-md">--> <!-- small scroll bar for real time data in Pandemic Dashboard-->
+                      <div style="overflow: hidden auto;">
+                        <div class="scrollbar-container">
+                            <div class="row">
+                                <div class="card" style="">
+                                    <div class="card-body real-time">
+                                        <div id="pandamic-dashboard-table-temp" class="table-responsive">
+                                          <table class="align-middle mb-0 table-borderless zk-tbl dashboard-table" style="width:100%;">
+                                             <tbody>
+                                                <tr class="normal-bg" id="pandemic-real-time-data-sample">
+                                                   <td class="seperator-right">
+                                                      <div class="widget-content p-0">
+                                                         <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                               <div class="widget-content-left">
+                                                                  <img class="img-circle emp-img" src="../static/cloud/static/images/avatars/2.jpg"  alt="employee image">
+                                                               </div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                               <div class="emp-name text-white">Justin</div>
+                                                               <div class="emp-id text-white">Emp. Id: 123456</div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <span class="location-txt text-white">Bangalore HO, Mahadevpura</span>
+                                                   </td>
+                                                   <td class="text-center seperator-left">
+                                                      <div class="row pandemic-temp">
+                                                         <div class="col-md-6 col-sm-6 col-xs-5">
+                                                            <h6 class="title text-white">Body Temp.</h6>
+                                                            <p class="body-temp text-white">35 &#8451;</p>
+                                                         </div>
+                                                         <div class="col-md-6 col-sm-6 col-xs-7">
+                                                            <h6 class="title text-white">Masked Face</h6>
+                                                            <p class="temp-var text-white">Yes</p>
+                                                         </div>
+                                                      </div>
+                                                   </td>
+                                                   <td class="text-center seperator-left" >
+                                                      <div class="widget-content p-0">
+                                                         <img src="../static/cloud/static/images/camera.png" class="camera-img" alt="Camera Ban" />
+                                                      </div>
+                                                   </td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+               <div class="mb-5 card text-dark easy-card-bg">
+                  <div class="card-header text-center justify-content-center">
+                     {% trans 'dept_stat' %}&nbsp;
+                     <i class="fa fa-circle-o-notch fa-lg"></i>
+                       <a href="#" style="display:none;">
+                        <img src="../static/cloud/static/images/expand.png" alt="expand" class="expand-icon hidden">
+                        </a>
+                  </div>
+                  <div class="card-body department-statistics">
+                     <div class="row" >
+                        <div class="col-md-3 col-sm-6 col-xs-6  mb-4">
+                           <div class="circular-progress-bar high">
+                              <h6 class="dept-stats-title">{% trans 'high_temperature' %}</h6>
+                              <!-- Progress bar High -->
+                              <div class="progress mx-auto" id="high-temp-per" data-value='40'>
+                                 <span class="progress-left">
+                                 <span class="progress-bar "></span>
+                                 </span>
+                                 <span class="progress-right">
+                                 <span class="progress-bar"></span>
+                                 </span>
+                                 <div class="progress-value w-100 height-100 img-circle d-flex justify-content-center align-items-center">
+                                    <div class="pb-value"><small id="high-temp-per1">40%</small></div>
+                                 </div>
+                              </div>
+                              <!-- END -->
+                           </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 mb-4">
+                           <div class="circular-progress-bar warning">
+                              <h6 class="dept-stats-title">{% trans 'Warning' %}</h6>
+                              <!-- Progress bar Warning -->
+                              <div class="progress mx-auto" id="warning-per" data-value='60'>
+                                 <span class="progress-left">
+                                 <span class="progress-bar"></span>
+                                 </span>
+                                 <span class="progress-right">
+                                 <span class="progress-bar"></span>
+                                 </span>
+                                 <div class="progress-value w-100 height-100 img-circle d-flex justify-content-center align-items-center">
+                                    <div class="pb-value"><small id="warning-per1">60%</small></div>
+                                 </div>
+                              </div>
+                              <!-- END -->
+                           </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6  mb-4">
+                           <div class="circular-progress-bar normal">
+                              <h6 class="dept-stats-title">{% trans 'Normal' %}</h6>
+                              <!-- Progress bar Normal -->
+                              <div class="progress mx-auto" id="normal-per" data-value='80'>
+                                 <span class="progress-left">
+                                 <span class="progress-bar"></span>
+                                 </span>
+                                 <span class="progress-right">
+                                 <span class="progress-bar"></span>
+                                 </span>
+                                 <div class="progress-value w-100 height-100 img-circle d-flex justify-content-center align-items-center">
+                                    <div class="pb-value"><small id="normal-per1">80%</small></div>
+                                 </div>
+                              </div>
+                              <!-- END -->
+                           </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6  mb-4">
+                           <div class="circular-progress-bar no-mask">
+                              <h6 class="dept-stats-title">{% trans 'no_mask' %}</h6>
+                              <!-- Progress bar No Mask -->
+                              <div class="progress mx-auto" id="no-mask-per" data-value='20'>
+                                 <span class="progress-left">
+                                 <span class="progress-bar"></span>
+                                 </span>
+                                 <span class="progress-right">
+                                 <span class="progress-bar"></span>
+                                 </span>
+                                 <div class="progress-value w-100 height-100 img-circle d-flex justify-content-center align-items-center">
+                                    <div class="pb-value"><small id="no-mask-per1">20%</small></div>
+                                 </div>
+                              </div>
+                              <!-- END -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-footer search-area invisible">
+                     <div class="row">
+                        <div class="col-md-3 col-sm-4 col-sm-push-8 col-md-push-9">
+                           <button class="btn btn-block btn-viewmore">View More</button>
+                        </div>
+                        <div class="col-md-9 col-sm-8 col-sm-pull-4 col-md-pull-3">
+                           <div class="filter-form">
+                              <form class="form-inline">
+                                 <div class="position-relative form-group">
+                                    <label for="searchByDept" class="search-txt">Search by Department - </label>&nbsp;&nbsp;
+                                    <select type="select" id="searchByDept" class="form-control zk-select">
+                                       <option selected disabled>---Select Department--</option>
+                                       <option>Research & Development</option>
+                                       <option>HR Department</option>
+                                       <option>Sales & Marketing</option>
+                                    </select>
+                                 </div>
+                                 <button type="button" class="btn btn-success zk-btn-go mb-2">Go</button>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+    </div>
+  </div>
+  </div>
+
+    <div id="att_dashboard">
+      <div class="layui-row layui-col-space15" style="top: 30px; padding-bottom:0;margin:-7.5px; padding-top: 0;">
+        <div class="layui-col-md1"></div>
+        <div class="layui-col-md10 pt-0">
+          {% if software_type == 9 and not user.is_employee %}
+            <fieldset class="layui-elem-field layui-field-title" style="margin-bottom: 0; border-style: none;">
+              <legend style="margin-bottom: 0; margin-left: 0;">{% trans 'current_company' %}: {{ user.get_current_company_name }}</legend>
+            </fieldset>
+          {% endif %}
+
+          <div class="layui-row layui-col-space15 pt-0">
+            <div class="layui-col-md12 pt-0">
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #6382d2;">
+                      <a id="totalEmployees" href="javascript:void(0);" onclick="downloadFiles('totalEmployees')" aria-label="Total Employees">
+                          <svg class="expand-icon" fill="#6382d2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#6382d2;"><b><span
+                                  id="empcount">0</span></b></div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'total_employees' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #73d2c7;">
+                      <a id="newJoinees" href="javascript:void(0);" aria-label="New Joiners">
+                          <svg class="expand-icon" fill="#73d2c7" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#73d2c7;"><b><span
+                                  id="newjoinercount">0</span></b></div>
+                            <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'new_joinee' %}
+                                <span class="text-format">{% trans 'last7days' %}</span>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #6b6d6f;">
+                      <a id="resignedEmployees" href="javascript:void(0);" aria-label="Resigned Employees">
+                          <svg class="expand-icon" fill="#6b6d6f" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#6b6d6f;"><b><span
+                                  id="resigncount">0</span></b></div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'resign' %}
+                              <span class="text-format">{% trans 'last7days' %}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #61a0a8;">
+                      <a id="totalDevices" href="javascript:void(0);" style="fill: blue" aria-label="Total Devices">
+                          <svg class="expand-icon" fill="#61a0a8" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#61a0a8;"><b><span
+                                  id="devicecount">0</span></b></div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'total_devices' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #b278da;">
+                      <a id="verifications" href="javascript:void(0);" aria-label="Verifications">
+                          <svg class="expand-icon" fill="#b278da" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#b278da;"><b><span id="punchcount">0</span></b>
+                          </div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'Verification' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #7ac145;">
+                      <a id="presentEmployees" href="javascript:void(0);" aria-label="Present Employees">
+                          <svg class="expand-icon" fill="#7ac145" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#7ac145;"><b><span
+                                  id="inofficecount">0</span></b></div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'Present' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #ce5e79;">
+                      <a id="absentEmployees" href="javascript:void(0);" aria-label="Absent Employees">
+                          <svg class="expand-icon" fill="#ce5e79" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#ce5e79;"><b><span
+                                  id="absentcount">0</span></b></div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'Absent' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #daac3e;">
+                      <a id="lateEmployees" href="javascript:void(0);" aria-label="Late Employees">
+                          <svg class="expand-icon" fill="#daac3e" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#daac3e;"><b><span
+                                  id="latearrival">0</span></b></div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'late' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #66bfce;">
+                      <a id="earlyEmployees" href="javascript:void(0);" aria-label="Early Employees">
+                          <svg class="expand-icon" fill="#66bfce" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#66bfce;"><b><span id="earlycount">0</span></b>
+                          </div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'early_leave' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="layui-col-md2" style="width: 20% !important;">
+                <div class="layui-card-body pt-0" style="border: none;">
+                  <a href="#" style="text-decoration: none;">
+                    <div class="card-dashboard-show dashboard-card dashboard-widget-content"
+                         style="padding: 1.5em; margin: 0; border-left: 5px solid #e6771a;">
+                      <a id="leaveEmployees" href="javascript:void(0);" aria-label="Leave Employees">
+                          <svg class="expand-icon" fill="#e6771a" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                          </svg>
+                      </a>
+                      <div class="widget-content-wrapper">
+                        <div class="dashboard-widget-content-left">
+                          <div class="dashboard-widget-numbers" style="color:#e6771a;"><b><span id="leavecount">0</span></b>
+                          </div>
+                          <div class="dashboard-widget-heading dashboard-mt-3">{% trans 'on_leave' %}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md1"></div>
+        <div class="layui-col-md3">
+          <div class="layui-card" style="border-radius: 12px;">
+            <div class="layui-card-body" style="border-radius: 12px;">
+              <div id="chartDeviceStatus" class="" style="height: 135px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md7">
+          <div class="layui-card" style="border-radius: 12px;">
+            <div class="layui-card-body" style="border-radius: 12px;">
+              <div id="chartCompare" class="" style="height: 135px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md1"></div>
+      </div>
+
+      <!-- Real-Time Monitor -->
+      <div class="layui-row layui-col-space15" style="margin-bottom: 2em;">
+        <div class="layui-col-md1"></div>
+        <div class="layui-col-md10">
+          <div class="layui-card" style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .05);  border-radius: 12px;">
+            <div class="layui-card-body real-time" style="border-radius: 12px;">
+              <div class="layui-row">
+                <div class="layui-col-md6">
+                  <div class="layui-card">
+                    <div class="layui-card-body ">
+                      <div id="dashboard-table" style="overflow-x:hidden; overflow-y: auto;">
+                        <table class="dashboard-table" style="width: 100%">
+                          <thead></thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-col-md6">
+                  <div class="layui-card-body ">
+                    <div id="areaCapacity" style="height: 135px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-col-md1"></div>
+      </div>
+      <!-- //End -->
+      <!-- //easy TimePro dashboard -->
+
+      <div id="obj_tooltip"></div>
+    </div>
+  </div>
+{% endblock %}
+{% block extension_js %}
+  {{ block.super }}
+  {% compress js file dashboard_js %}
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}?v=1.15"></script>
+    <script type="text/javascript" src="{% static '/cloud/static/js-new/charts/loader.js' %}"></script>
+    <script type="text/javascript" src="{% static '/cloud/static/js-new/easy-script.js' %}"></script>
+  {% endcompress %}
+{% endblock %}
+

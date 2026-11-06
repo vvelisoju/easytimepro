@@ -1,0 +1,19 @@
+{% load i18n %}
+<style>
+  #id_language_div dl { max-height:100px; }
+</style>
+<div>
+  <form id="id_lngForm" class="layui-form" action="" method="post">
+    {% csrf_token %}
+    <div id='id_language_div' class="layui-form-item" style="padding:20px 0 0 0;">
+      <label for="id_language" class="layui-form-label" style="width: 150px;">{% trans 'userProfile_itemLabel_language' %}</label>
+      <div class="layui-input-inline">
+        <select id="id_language" name="language">
+          {% for lng in languages %}
+            <option value="{{ lng.0 }}" {{ language }} {% if lng.0 == language %}selected{% endif %}>{{ lng.1 }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,18 @@
+{% extends 'staff/includes/approval_search_form.html' %}
+{% load i18n %}
+{% block searchFormExtra %}
+  <div class="layui-inline">
+    <label for="" class="layui-form-label">{% trans 'punch_state' %}</label>
+    <div class="layui-input-inline">
+      <select name="state" id="state" >
+        <option value="">{% trans '----------' %}</option>
+        <option value="0">{% trans 'check_in' %}</option>
+        <option value="1">{% trans 'check_out' %}</option>
+        <option value="3">{% trans 'break_in' %}</option>
+        <option value="2">{% trans 'break_out' %}</option>
+        <option value="4">{% trans 'overtime_in' %}</option>
+        <option value="5">{% trans 'overtime_out' %}</option>
+      </select>
+    </div>
+  </div>
+{% endblock %}

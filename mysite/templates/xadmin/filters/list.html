@@ -1,0 +1,19 @@
+{% load i18n %}
+<style>
+	ul.dropdown-menu.menu-height-limited li.active > a.filter-option {
+    	background-color: #7ac143;
+	}
+</style>
+<li class="dropdown-submenu">
+	<a>{% include "xadmin/filters/filter_or_exclude.html" %}<i
+		class="fa fa-fw fa-filter {% if spec.is_used %}text-success{% else %}text-muted{% endif %}"></i> {{ title }}</a>
+	<ul class="dropdown-menu menu-height-limited">
+    <input type="text" placeholder="{% trans "Search" %}" class="filter-search-input">
+		{% for choice in choices %}
+			<li{% if choice.selected %} class="active"{% endif %}>
+{#				<a class="{% if not forloop.first %}filter-option{% else %}filter-option-default{% endif %}"#}
+        <a class="filter-option"
+					 href="javascript:void(0)" data-ref="{{ choice.query_string|iriencode }}">{{ choice.display }}</a></li>
+		{% endfor %}
+	</ul>
+</li>

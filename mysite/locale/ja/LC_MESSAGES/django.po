@@ -1,0 +1,8478 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "有効なメールアドレスを入力してください."
+
+msgid "user_field_username"
+msgstr "ユーザー名"
+
+msgid "user_field_usernameHelpTxt"
+msgstr "必須，30文字以下，文字、数字、および@/。/+/-/_のみ."
+
+msgid "user_field_usernameValidator"
+msgstr "有効なユーザー名を入力してください."
+
+msgid "user_field_password"
+msgstr "パスワード"
+
+msgid "user_field_firstName"
+msgstr "名"
+
+msgid "user_field_lastName"
+msgstr "姓"
+
+msgid "user_field_email"
+msgstr "メール"
+
+msgid "user_field_authorizedDepartment"
+msgstr "認可された部門"
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "選択せずにすべての部門を処理する"
+
+msgid "user_field_authorizedArea"
+msgstr "認可されたエリア"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "選択せずにすべての部門を処理する"
+
+msgid "user_field_loginTimes"
+msgstr "ログイン時間"
+
+msgid "user_field_staff"
+msgstr "有効"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_active"
+msgstr "アクティブ"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_superuser"
+msgstr "スーパーユーザー"
+
+msgid "user_field_dateJoined"
+msgstr "参加日"
+
+msgid "user_field_lastLogin"
+msgstr "前回のログイン"
+
+msgid "base_model_user"
+msgstr "ユーザー"
+
+msgid "userProfile_field_username"
+msgstr "ユーザー名"
+
+msgid "userProfile_field_pinTabs"
+msgstr "ピンタブ"
+
+msgid "userProfile_field_hideColumns"
+msgstr "列を非表示"
+
+msgid "userProfile_field_order"
+msgstr "列の順序"
+
+msgid "userProfile_field_preferences"
+msgstr "プロフィール"
+
+msgid "base_model_userProfile"
+msgstr "ユーザープロフィール"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "削除"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "選択したレコードを削除する"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "選択したレコードを削除する"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "選択した{0} {1}を本当に削除しますか"
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "選択したノードを本当に削除しますか?"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "選択したドキュメントを本当に削除しますか?"
+
+msgid "common_action_new"
+msgstr "新規"
+
+msgid "common_action_newDescription"
+msgstr "新規"
+
+msgid "common_action_newHelpTxt"
+msgstr "新規"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "アクション："
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "別を追加 %(verbose_name)s"
+
+msgid "helpers_deleteText_remove"
+msgstr "移動"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr "ブックマークに有効なパラメーターがありません."
+
+msgid "bookmark_duplication_echo"
+msgstr "同じ名前のブックマークが使用されていたため、名前を変更したり、前のレコードを上書きしたりできます."
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "有効"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "無効"
+
+msgid "baseModel_field_createTime"
+msgstr "時間作成"
+
+msgid "baseModel_field_createUser"
+msgstr "ユーザー作成"
+
+msgid "baseModel_field_changeTime"
+msgstr "時間変更"
+
+msgid "baseModel_field_changeUser"
+msgstr "ユーザー変更"
+
+msgid "baseModel_field_dataStatus"
+msgstr "データの状態"
+
+msgid "userProfile_languageChange_successful"
+msgstr "成功しました"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "無効ログイン"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "スーパーユーザーが必要です"
+
+msgid "action_not_available"
+msgstr "無効なアクション"
+
+msgid "hiddenField_save_successful"
+msgstr "成功しました"
+
+msgid "hiddenField_reset_successful"
+msgstr "成功しました"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "禁じられました"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "パラメータエラー"
+
+msgid "columnOrder_save_successful"
+msgstr "成功しました"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "パラメータエラー"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "{num}個を超えるタブは許可されません"
+
+msgid "pinTab_saveError_duplicate"
+msgstr "重複"
+
+msgid "duplicate"
+msgstr "重複"
+
+msgid "pinTab_remove_successful"
+msgstr "成功しました"
+
+msgid "pinTab_action_parameterError"
+msgstr "パラメータエラー"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "禁じられました"
+
+msgid "login_authorize_license_expired"
+msgstr "ライセンスはすでに期限切れいます"
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "ライセンスは%(day)s 日後に期限切れになります "
+
+msgid "booleanFieldFilter_option_all"
+msgstr "すべて"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "はい"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "いいえ"
+
+msgid "fieldFilter_option_all"
+msgstr "すべて"
+
+msgid "textFieldFilter_option_contain"
+msgstr "含む"
+
+msgid "textFieldFilter_option_exact"
+msgstr "正確に"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "開始"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "終わり"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "の1つ"
+
+msgid "textFieldFilter_option_regex"
+msgstr "正規表現"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "任意の日付"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "日付付き"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "日付なし"
+
+msgid "dateFieldFilter_option_today"
+msgstr "今日"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "昨日"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "過去7日間"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "今週"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "今月"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "今年"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "いつでも"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "時間とともに"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "時間なし"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "イン"
+
+msgid "base_model_bookmarks"
+msgstr "ブックマーク"
+
+msgid "report_column_empCode"
+msgstr "従業員ID"
+
+msgid "report_column_firstName"
+msgstr "名"
+
+msgid "report_column_lastName"
+msgstr "姓"
+
+msgid "report_column_nickName"
+msgstr "ニックネーム"
+
+msgid "report_column_gender"
+msgstr "性別"
+
+msgid "report_column_departmentCode"
+msgstr "部門コード"
+
+msgid "report_column_departmentName"
+msgstr "部門"
+
+msgid "report_column_positionCode"
+msgstr "役職コード"
+
+msgid "report_column_positionName"
+msgstr "役職"
+
+msgid "report_column_workCode"
+msgstr "仕事コード"
+
+msgid "report_column_dataSources"
+msgstr "データソース"
+
+msgid "report_column_punchDate"
+msgstr "日付"
+
+msgid "report_column_punchTime"
+msgstr "時間"
+
+msgid "report_column_punchState"
+msgstr "パンチ状態"
+
+msgid "report_column_correctState"
+msgstr "正しい状態"
+
+msgid "report_column_lateDuration"
+msgstr "遅刻"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "早退"
+
+msgid "report_column_absentDuration"
+msgstr "不在"
+
+msgid "report_column_actualWorkDuration"
+msgstr "稼働"
+
+msgid "report_column_shortDuration"
+msgstr "ショート"
+
+msgid "report_column_overtimeDuration"
+msgstr "残業"
+
+msgid "report_column_normalWorkTime"
+msgstr "ノーマルWT"
+
+msgid "report_column_normalOvertime"
+msgstr "ノーマルOT"
+
+msgid "report_column_weekendOvertime"
+msgstr "週末OT"
+
+msgid "report_column_holidayOvertime"
+msgstr "休日OT"
+
+msgid "report_column_overtimeLevel1"
+msgstr "OTレベル1"
+
+msgid "report_column_overtimeLevel2"
+msgstr "OTレベル2"
+
+msgid "report_column_overtimeLevel3"
+msgstr "OTレベル3"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "病気休暇"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "臨時休暇"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "産休"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "恩情休暇"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "年次休暇"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "出張"
+
+msgid "report_column_attendanceDate"
+msgstr "日付"
+
+msgid "report_column_attendanceWeekday"
+msgstr "平日"
+
+msgid "report_column_exception"
+msgstr "例外"
+
+msgid "report_column_timeIntervalName"
+msgstr "時刻表"
+
+msgid "report_column_checkInTime"
+msgstr "チェックイン"
+
+msgid "report_column_checkOutTime"
+msgstr "チェックアウト"
+
+msgid "report_column_deviceTn"
+msgstr "デバイス[イン]"
+
+msgid "report_column_deviceOut"
+msgstr "デバイス[アウト]"
+
+msgid "report_column_workCodeIn"
+msgstr "仕事コード[イン]"
+
+msgid "report_column_workCodeOut"
+msgstr "仕事コード[アウト]"
+
+msgid "report_column_clockInTime"
+msgstr "クロックイン"
+
+msgid "report_column_clockOutTime"
+msgstr "クロックアウト"
+
+msgid "report_column_totalTimeDuration"
+msgstr "合計時間"
+
+msgid "report_column_dutyWorkedTime"
+msgstr "デューティWT"
+
+msgid "report_column_actualWorkedTime"
+msgstr "実際WT"
+
+msgid "report_column_unscheduled"
+msgstr "予定外"
+
+msgid "report_column_remaining"
+msgstr "残り"
+
+msgid "report_column_breakOutTime"
+msgstr "ブレイクアウト"
+
+msgid "report_column_breakInTime"
+msgstr "ブレイクイン"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "実際の休憩時間"
+
+msgid "report_column_breakTime"
+msgstr "休憩時間"
+
+msgid "report_column_breakLateDuration"
+msgstr "遅刻[休憩時間]"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "早退[休憩時間]"
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "不在[休憩時間]"
+
+msgid "report_column_totalWorkedDuration"
+msgstr "合計WT"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "実際に働いた"
+
+msgid "report_column_leaveDuration"
+msgstr "休暇"
+
+msgid "report_column_overtime"
+msgstr "残業"
+
+msgid "report_column_missIn"
+msgstr "ミスイン"
+
+msgid "report_column_missOut"
+msgstr "ミスアウト"
+
+msgid "report_column_present"
+msgstr "現在"
+
+msgid "report_column_dayOff"
+msgstr "休日"
+
+msgid "report_column_weekend"
+msgstr "週末"
+
+msgid "report_column_holiday"
+msgstr "休日"
+
+msgid "report_column_trainingDuration"
+msgstr "トレーニング"
+
+msgid "report_column_timetableDuration"
+msgstr "持続"
+
+msgid "report_column_scheduledBreakTime"
+msgstr "複数の休憩時間"
+
+msgid "report_column_attendanceDuration"
+msgstr "勤務時間"
+
+msgid "report_column_breakTimeDuration"
+msgstr "休憩時間"
+
+msgid "report_column_approvalOvertime"
+msgstr "承認OT"
+
+msgid "report_column_timetableDays"
+msgstr "勤務日"
+
+msgid "report_column_cardNumber"
+msgstr "カードNo."
+
+msgid "report_column_firstPunch"
+msgstr "最初のパンチ"
+
+msgid "report_column_lastPunch"
+msgstr "最後のパンチ"
+
+msgid "report_column_totalDuration"
+msgstr "合計時間"
+
+msgid "report_column_firstIn"
+msgstr "最初のチェックイン"
+
+msgid "report_column_lastOut"
+msgstr "最後のチェックアウト"
+
+msgid "report_column_exceptionDescription"
+msgstr "説明"
+
+msgid "report_column_employeeCount"
+msgstr "従業員 Qty."
+
+msgid "report_column_lateTimes"
+msgstr "遅刻(回)"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "早退(回)"
+
+msgid "report_column_absentTimes"
+msgstr "不在(回)"
+
+msgid "report_column_punchTimes"
+msgstr "回"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "要約時間"
+
+msgid "report_column_timetable"
+msgstr "時刻表"
+
+msgid "fixed_time"
+msgstr "定時"
+
+msgid "report_column_gpsLocation"
+msgstr "GPSの位置"
+
+msgid "report_column_longitude"
+msgstr "経度"
+
+msgid "report_column_latitude"
+msgstr "緯度"
+
+msgid "report_column_areaAlias"
+msgstr "エリア"
+
+msgid "report_column_terminalAlias"
+msgstr "デバイス"
+
+msgid "report_column_terminalSN"
+msgstr "シリアル番号"
+
+msgid "menu_att_transactionReport"
+msgstr "トランザクション"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "スケジュールされたログ"
+
+msgid "menu_att_dailyReport"
+msgstr "毎日勤怠"
+
+msgid "menu_att_detailReport"
+msgstr "合計タイムカード"
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "従業員概要"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "休暇の概要"
+
+msgid "menu_att_FILOReport"
+msgstr "ファーストインラストアウト"
+
+msgid "menu_att_firstLastReport"
+msgstr "ファースト & ラスト"
+
+msgid "menu_att_firstInLastOutReport"
+msgstr "ファーストインラストアウト"
+
+msgid "menu_att_exceptionReport"
+msgstr "例外"
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "部門概要"
+
+msgid "menu_att_timeCardReport"
+msgstr "タイムカード"
+
+msgid "menu_att_lateReport"
+msgstr "遅刻"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "早退"
+
+msgid "menu_att_overtimeReport"
+msgstr "残業"
+
+msgid "menu_att_absentReport"
+msgstr "不在"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "複数のトランザクション"
+
+msgid "menu_att_breakTimeReport"
+msgstr "複数の休憩時間"
+
+msgid "menu_group_att_configuration"
+msgstr "構成"
+
+msgid "menu_staff_transactionReport"
+msgstr "トランザクションレポート"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "シフトオーバーラップ"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "スケジュールレコードは監査では修正できません."
+
+msgid "att_model_leave"
+msgstr "休暇"
+
+msgid "leave_field_employee"
+msgstr "従業員"
+
+msgid "leave_field_startTime"
+msgstr "開始時間"
+
+msgid "leave_field_endTime"
+msgstr "終了時間"
+
+msgid "leave_field_leaveCategory"
+msgstr "カテゴリー"
+
+msgid "leave_field_reason"
+msgstr "申請理由"
+
+msgid "leave_field_approvalState"
+msgstr "状態"
+
+msgid "leave_field_approvalReason"
+msgstr "備考"
+
+msgid "leave_action_new"
+msgstr "新規"
+
+msgid "leave_action_newDescription"
+msgstr "新しい休暇を追加する"
+
+msgid "leave_action_newHelpTxt"
+msgstr "新しい休暇を追加する"
+
+msgid "leave_time_invalid_range"
+msgstr "無効な休暇時間、終了時間は開始時間より後でなければなりません."
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "無効な時間、開始時間は従業員の雇用日より後でなければなりません[%s]."
+
+msgid "leave_time_overlap"
+msgstr "%s 従業員の休暇時間重複"
+
+msgid "select_employee"
+msgstr "従業員を選択してください"
+
+msgid "manualLog_field_employee"
+msgstr "従業員"
+
+msgid "manualLog_field_punchTime"
+msgstr "パンチタイム"
+
+msgid "manualLog_field_punchState"
+msgstr "パンチ状態"
+
+msgid "manualLog_field_workCode"
+msgstr "仕事コード"
+
+msgid "manualLog_field_applyReason"
+msgstr "申請理由"
+
+msgid "manualLog_field_approvalState"
+msgstr "状態"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "備考"
+
+msgid "manualLog_Action_new"
+msgstr "新規"
+
+msgid "manualLog_Action_newDescription"
+msgstr "新しいマニュアルログを追加する"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "新しいマニュアルログを追加する"
+
+msgid "manual_log_time_greater_now"
+msgstr "パンチ時間は今より長くすることはできません."
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "無効な時間、開始時間は従業員の雇用日より後でなければなりません[%s]."
+
+msgid "manual_log_repeat"
+msgstr "%s パンチタイムを繰り返す"
+
+msgid "overtime_field_employee"
+msgstr "従業員"
+
+msgid "overtime_field_startTime"
+msgstr "開始時間"
+
+msgid "overtime_field_endTime"
+msgstr "終了時間"
+
+msgid "overtime_field_overtimeType"
+msgstr "残業タイプ"
+
+msgid "overtime_field_applyReason"
+msgstr "申請理由"
+
+msgid "overtime_field_approvalState"
+msgstr "状態"
+
+msgid "overtime_field_approvalRemark"
+msgstr "備考"
+
+msgid "overtime_action_new"
+msgstr "新規"
+
+msgid "overtime_action_newDescription"
+msgstr "新しい残業を追加する"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "新しい残業を追加する"
+
+msgid "overtime_time_overlap"
+msgstr "%s 人員残業重複"
+
+msgid "schedule_action_addSchedule"
+msgstr "スケジュールを追加する"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "スケジュールを追加する"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "スケジュールを追加する"
+
+msgid "scheduledAssign_error_datePeriodError"
+msgstr "無効な期間"
+
+msgid "scheduledAssign_error_shiftNotFound"
+msgstr "無効なシフト"
+
+msgid "scheduledAssign_error_empNotFound"
+msgstr "従業員が見つかりません"
+
+msgid "scheduledAssign_error_deptNotFound"
+msgstr "部門が見つかりません"
+
+msgid "scheduledAssign_error_schdOverlap_%(obj)s_%(start_date)s_%(end_date)s"
+msgstr " %(obj)sのスケジュールは %(start_date)s- %(end_date)sが重複している."
+
+msgid "please_select_time_intervals"
+msgstr "時刻表を選択してください"
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s(%(name)s) 重複スケジュールは %(start)sから%(end)sまでです"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "重複パンチ期間エラー"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "%(d)s日に%(t)s と %(ss)sが重複している "
+
+msgid "shift_not_found"
+msgstr "シフトが見つかりません"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "シフト(%(shift)s)は使用している"
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "別名(%(alias)s)を重複する"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "一時スケジュールを追加する"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "一時スケジュールを追加する"
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "一時スケジュールを追加する"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "従業員を選択してください"
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "部門を選択してください"
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "時刻表を選択してください"
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(date)s日に%(timetableA)s と %(timetableB)s が重複している"
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "処理に失敗しました"
+
+msgid "training_field_employee"
+msgstr "従業員"
+
+msgid "training_field_startTime"
+msgstr "開始時間"
+
+msgid "training_field_endTime"
+msgstr "終了時間"
+
+msgid "training_field_trainingCategory"
+msgstr "トレーニングタイプ"
+
+msgid "training_field_applyReason"
+msgstr "申請理由"
+
+msgid "training_field_approvalState"
+msgstr "状態"
+
+msgid "training_field_approvalRemark"
+msgstr "リマーク"
+
+msgid "training_action_new"
+msgstr "追加"
+
+msgid "training_action_newDescription"
+msgstr "新しいトレーニングを追加する"
+
+msgid "training_action_newHelpTxt"
+msgstr "新しいトレーニングを追加する"
+
+msgid "training_time_overlap"
+msgstr "%s 人員トレーニング時間を重複する"
+
+msgid "shift_field_timeInterval"
+msgstr "時刻表"
+
+msgid "deptAttルール_field_alias"
+msgstr "名"
+
+msgid "departmentルール_action_batchAdd"
+msgstr "追加"
+
+msgid "departmentルール_action_batchAddDescription"
+msgstr "複数の部門ルールを追加する"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "複数の部門ルールを追加する"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s はすでにルールを設定しています"
+
+msgid "holiday_field_alias"
+msgstr "名"
+
+msgid "holiday_field_startDate"
+msgstr "開始日"
+
+msgid "holiday_field_duration"
+msgstr "持続(日)"
+
+msgid "holiday_field_workType"
+msgstr "休日出勤"
+
+msgid "holiday_field_overtimeLevel"
+msgstr "OTレベル"
+
+msgid "holiday_field_overtimeLevel1"
+msgstr "OTレベル1"
+
+msgid "holiday_field_overtimeLevel2"
+msgstr "OTレベル2"
+
+msgid "holiday_field_overtimeLevel3"
+msgstr "OTレベル3"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "新規"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "休日を新規する"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "休日を新規する"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr "週末の設定は既に使用されており、変更できません."
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr "計算設定でファンクションキーに同じ値を使用できません."
+
+msgid "calculation_item_actualPresent"
+msgstr "実際の現状"
+
+msgid "calculation_item_durationOrShort"
+msgstr "持続/ショート"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "合計時間/合計作業時間"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "休憩時間/実際の休憩時間"
+
+msgid "calculation_item_timetableDuration"
+msgstr "時刻表を持続する"
+
+msgid "calculation_item_late"
+msgstr "遅刻"
+
+msgid "calculation_item_earlyLeave"
+msgstr "早退"
+
+msgid "calculation_item_leave"
+msgstr "休暇"
+
+msgid "calculation_item_absent"
+msgstr "不在"
+
+msgid "calculation_item_overtime"
+msgstr "残業"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "クロックインなし"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "クロックアウトなし"
+
+msgid "calculation_item_present"
+msgstr "現在"
+
+msgid "calculation_item_dayOff"
+msgstr "休日"
+
+msgid "calculation_item_weekend"
+msgstr "週末"
+
+msgid "calculation_item_holiday"
+msgstr "休日"
+
+msgid "replace_existing_shift_even_using"
+msgstr "を使用して既存のシフトを置き換えます"
+
+msgid "remove_overlap_schedule"
+msgstr "重複なスケジュールを削除する"
+
+msgid "enable_work_on_weekend_as"
+msgstr "週末のように作業"
+
+msgid "work_type"
+msgstr "として働く"
+
+msgid "enable_work_on_day_off_as"
+msgstr "休日の仕事"
+
+msgid "auto_shift"
+msgstr "柔軟なシフト"
+
+msgid "select_date"
+msgstr "日付を選択してください."
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr "%(d)s日に%(t)s と %(ss)sが重複している "
+
+msgid "breakTime_validationError_durationGreatThanPeriod"
+msgstr "期間を超えています."
+
+msgid "breakTime_validationError_earlyGreatThanDuration"
+msgstr "初期の長さは休憩時間を超えることができません."
+
+msgid "breakTime_validationError_overGreatThanRangeDuration"
+msgstr "休憩は休憩時間を超えます."
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr "休憩時間はタイムテーブルによって使用され、編集できません."
+
+msgid "breakTime_validationError_invalidNumber"
+msgstr "数値は0より大きい必要があります"
+
+msgid "please_select_time_table"
+msgstr "時刻表を選択してください."
+
+msgid "%s error_of_sql statement_adding_failed."
+msgstr "%s SQLステートメントの追加に失敗エラー."
+
+msgid "menu_group_att_rule"
+msgstr "ルール"
+
+msgid "menu_att_globalRule"
+msgstr "グローバルルール"
+
+msgid "menu_att_departmentRule"
+msgstr "部門ルール"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "シフト"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "スケジュール"
+
+msgid "menu_att_breakTime"
+msgstr "休憩時間"
+
+msgid "menu_att_timeInterval"
+msgstr "時刻表"
+
+msgid "menu_att_shift"
+msgstr "シフト"
+
+msgid "menu_att_departmentSchedule"
+msgstr "部門スケジュール"
+
+msgid "menu_att_employeeSchedule"
+msgstr "従業員スケジュール"
+
+msgid "menu_att_temporarySchedule"
+msgstr "一時的なスケジュール"
+
+msgid "menu_att_scheduleView"
+msgstr "スケジュール表示"
+
+msgid "menu_group_approvalManagement"
+msgstr "承認"
+
+msgid "menu_att_manualLog"
+msgstr "マニュアルログ"
+
+msgid "menu_att_leave"
+msgstr "休暇"
+
+msgid "menu_att_overtime"
+msgstr "残業"
+
+msgid "menu_att_training"
+msgstr "トレーニング"
+
+msgid "menu_att_adjustSchedule"
+msgstr "スケジュール調整"
+
+msgid "menu_group_att_holiday"
+msgstr "休日"
+
+msgid "menu_att_holiday"
+msgstr "休日"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "タイプ"
+
+msgid "menu_att_leaveType"
+msgstr "休暇タイプ"
+
+msgid "menu_att_trainingType"
+msgstr "トレーニングタイプ"
+
+msgid "menu_group_att_reportSetting"
+msgstr "レポート設定"
+
+msgid "menu_att_reportSetting"
+msgstr "レポート設定"
+
+msgid "menu_group_att_transaction"
+msgstr "トランザクション"
+
+msgid "menu_att_transaction"
+msgstr "トランザクション"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "計算"
+
+msgid "menu_att_reportCalculate"
+msgstr "計算"
+
+msgid "menu_group_att_nonSchedulingReport"
+msgstr "トランザクションレポート"
+
+msgid "menu_group_att_report"
+msgstr "スケジューリングレポート"
+
+msgid "menu_group_att_summaryReport"
+msgstr "概要レポート"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "モニター"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "部門勤怠"
+
+msgid "att_model_attendanceDetail"
+msgstr "勤怠の詳細"
+
+msgid "att_model_attendanceException"
+msgstr "勤怠の例外"
+
+msgid "att_calc_log"
+msgstr "出席計算ログ"
+
+msgid "attRule_field_paramName"
+msgstr "名"
+
+msgid "attRule_field_paramValue"
+msgstr "値"
+
+msgid "att_model_attRule"
+msgstr "勤怠ルール"
+
+msgid "schedule_field_employee"
+msgstr "従業員"
+
+msgid "schedule_field_startDate"
+msgstr "開始日"
+
+msgid "schedule_field_endDate"
+msgstr "終了日"
+
+msgid "schedule_field_shift"
+msgstr "シフト"
+
+msgid "att_model_schedule"
+msgstr "スケジュール"
+
+msgid "deptSchedule_field_department"
+msgstr "部門"
+
+msgid "deptSchedule_field_startDate"
+msgstr "開始日"
+
+msgid "deptSchedule_field_endDate"
+msgstr "終了日"
+
+msgid "deptSchedule_field_shift"
+msgstr "シフト"
+
+msgid "att_model_deptSchedule"
+msgstr "部門スケジュール"
+
+msgid "deptSchedule_action_add"
+msgstr "新規"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "部門スケジュール追加"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "部門スケジュール追加"
+
+msgid "attShift_field_code"
+msgstr "シフトNO."
+
+msgid "attShift_field_alias"
+msgstr "シフト名"
+
+msgid "attShift_field_cycleUnit"
+msgstr "単位"
+
+msgid "attShift_field_cycle"
+msgstr "サイクル"
+
+msgid "work_on_weekend_as"
+msgstr "週末の仕事"
+
+msgid "work_on_day_off_as"
+msgstr "休業日"
+
+msgid "attShift_field_autoShift"
+msgstr "自動シフト"
+
+msgid "shift_name_repeat"
+msgstr "シフト名 (%s)すでに存在していました"
+
+msgid "att_model_shift"
+msgstr "シフト"
+
+msgid "breakTime_field_alias"
+msgstr "名"
+
+msgid "breakTime_field_startTime"
+msgstr "開始時間"
+
+msgid "breakTime_field_endTime"
+msgstr "終了時間"
+
+msgid "breakTime_field_duration"
+msgstr "持続"
+
+msgid "breakTime_field_durationHelpTxt"
+msgstr "休憩時間の長さ、単位は分."
+
+msgid "breakTime_field_startMargin"
+msgstr "ブレイクアウトマージン"
+
+msgid "breakTime_field_endMargin"
+msgstr "終了時間マージン"
+
+msgid "breakTime_field_endMarginHelpTxt"
+msgstr "終了時間 = 開始時間 + 持続 + 終了時間マージン,単位は分."
+
+msgid "breakTime_field_allowDuration"
+msgstr "休憩時間を許可する"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "パンチ状態ベース"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "重複パンチポリシー"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "重複パンチ期間"
+
+msgid "breakTime_field_useMultiplePunch"
+msgstr "マルチイン／アウト"
+
+msgid "breakTime_field_calculateType"
+msgstr "計算タイプ"
+
+msgid "breakTime_field_minimumBreakTime"
+msgstr "最小休憩時間(m)"
+
+msgid "breakTime_field_earlyIn"
+msgstr "早出"
+
+msgid "breakTime_field_minEarlyIn"
+msgstr "最小早出"
+
+msgid "breakTime_field_lateIn"
+msgstr "遅延"
+
+msgid "breakTime_field_minLateIn"
+msgstr "最小遅延"
+
+msgid "breakTime_field_considerBreakInEarly"
+msgstr "早めに検討する"
+
+msgid "breakTime_field_breakInEarlyAs"
+msgstr "早く戻る"
+
+msgid "breakTime_field_considerBreakInLate"
+msgstr "後で検討する"
+
+msgid "breakTime_field_breakInLateAs"
+msgstr "遅れて考える"
+
+msgid "att_model_breakTime"
+msgstr "休憩時間"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "基本設定"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "パンチ設定が必要"
+
+msgid "changeSchedule_field_employee"
+msgstr "従業員"
+
+msgid "changeSchedule_field_attDate"
+msgstr "日付"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "前のスケジュール"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "新しいスケジュール"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "申請時間"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "申請理由"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "リマーク"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "状態"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "承認時間"
+
+msgid "changeSchedule_field_approver"
+msgstr "承認者"
+
+msgid "att_model_changeSchedule"
+msgstr "スケジュール調整"
+
+msgid "change_schedule"
+msgstr "スケジュール調整"
+
+msgid "emp_field_employeeCode"
+msgstr "従業員ID"
+
+msgid "emp_field_firstName"
+msgstr "名"
+
+msgid "emp_field_lastName"
+msgstr "姓"
+
+msgid "employee_field_position"
+msgstr "役職"
+
+msgid "employee_field_department"
+msgstr "部門"
+
+msgid "deptAttRule_field_department"
+msgstr "部門"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "ルール"
+
+msgid "att_model_deptAttRule"
+msgstr "部門ルール"
+
+msgid "departmentRule_tab_calculationRule"
+msgstr "計算ルール"
+
+msgid "departmentRule_tab_overtimeSetting"
+msgstr "残業設定"
+
+msgid "holiday_field_department"
+msgstr "部門"
+
+msgid "att_model_holiday"
+msgstr "休日"
+
+msgid "leaveCategory"
+msgstr "休暇カテゴリー"
+
+msgid "leave_field_applyReason"
+msgstr "申請理由"
+
+msgid "leave_field_applyTime"
+msgstr "申請時間"
+
+msgid "leave_field_approvalRemark"
+msgstr "承認リマーク"
+
+msgid "leave_field_approvalTime"
+msgstr "承認時間"
+
+msgid "leave_field_approvalLevel"
+msgstr "承認レベル"
+
+msgid "leave_field_approver"
+msgstr "承認者"
+
+msgid "leave_approve_audit"
+msgstr "監査によって休暇記録を変更することはできません."
+
+msgid "leaveCategory_field_name"
+msgstr "名"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "最小単位"
+
+msgid "leaveCategory_field_unit"
+msgstr "単位"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "四捨五入"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "レポートシンボル"
+
+msgid "this_category_name_already_exists."
+msgstr "タイプ名は既に存在します"
+
+msgid "this_report_symbol_already_exists."
+msgstr "レポートシンボルは既に存在します"
+
+msgid "att_model_leaveCategory"
+msgstr "休暇タイプ"
+
+msgid "manualLog_field_applyTime"
+msgstr "申請時間"
+
+msgid "manualLog_field_approvalTime"
+msgstr "承認時間"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "承認レベル"
+
+msgid "manualLog_field_approver"
+msgstr "承認者"
+
+msgid "manuallog_approve_audit"
+msgstr "監査によって手動記録を変更することはできません."
+
+msgid "att_model_manualLog"
+msgstr "マニュアルログ"
+
+msgid "overtime_field_applyTime"
+msgstr "申請時間"
+
+msgid "overtime_field_approvalReason"
+msgstr "備考"
+
+msgid "overtime_field_approvalTime"
+msgstr "承認時間"
+
+msgid "overtime_field_approvalLevel"
+msgstr "承認レベル"
+
+msgid "overtime_field_approver"
+msgstr "承認者"
+
+msgid "overtime_approve_audit"
+msgstr "残業記録は監査によって変更できません."
+
+msgid "att_model_overtime"
+msgstr "残業"
+
+msgid "reportParam_field_name"
+msgstr "名"
+
+msgid "reportParam_field_value"
+msgstr "値"
+
+msgid "att_model_reportParameter"
+msgstr "レポートパラメータ"
+
+msgid "calculation_item_actualAttendance"
+msgstr "実際に働いていました"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "勤務持続/短"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "合計時間/合計作業時間"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "休憩時間/実際の休憩時間"
+
+msgid "calculation_item_noCheckIn"
+msgstr "クロックインなし"
+
+msgid "calculation_item_noCheckOut"
+msgstr "クロックアウトなし"
+
+msgid "calculation_item_training"
+msgstr "トレーニング"
+
+msgid "report_display_checkIn"
+msgstr "チェックイン"
+
+msgid "report_display_checkOut"
+msgstr "チェックアウト"
+
+msgid "report_display_breakOut"
+msgstr "ブレイクアウト"
+
+msgid "report_display_breakIn"
+msgstr "ブレイクイン"
+
+msgid "report_display_overtimeIn"
+msgstr "残業中"
+
+msgid "report_display_overtimeOut"
+msgstr "残業時間"
+
+msgid "report_display_unknown"
+msgstr "未知"
+
+msgid "shiftDetail_field_shift"
+msgstr "シフト"
+
+msgid "shiftDetail_field_inTime"
+msgstr "チェックイン時間"
+
+msgid "shiftDetail_field_outTime"
+msgstr "チェックアウト時間"
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "日の索引"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "時刻表"
+
+msgid "att_model_shiftDetail"
+msgstr "シフト詳細"
+
+msgid "tempSchedule_field_employee"
+msgstr "従業員"
+
+msgid "tempSchedule_field_startTime"
+msgstr "開始時間"
+
+msgid "tempSchedule_field_endTime"
+msgstr "終了時間"
+
+msgid "tempSchedule_field_rule"
+msgstr "一時スケジュールルール"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "時刻表ID"
+
+msgid "tempSchedule_field_workType"
+msgstr "仕事タイプ"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "時刻表"
+
+msgid "att_model_tempSchedule"
+msgstr "一時スケジュール"
+
+msgid "time_unit_day"
+msgstr "日(s)"
+
+msgid "time_unit_hour"
+msgstr "時(s)"
+
+msgid "time_unit_minute"
+msgstr "分(s)"
+
+msgid "timeInterval_field_alias"
+msgstr "名"
+
+msgid "timeInterval_field_type"
+msgstr "タイプ"
+
+msgid "timeInterval_field_checkIn"
+msgstr "チェックイン"
+
+msgid "timeInterval_field_checkOut"
+msgstr "チェックアウト"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "チェックイン開始"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "チェックイン終了"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "チェックアウト開始"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "チェックアウト終了"
+
+msgid "timeInterval_field_crossDay"
+msgstr "クロスデイ(s)"
+
+msgid "timeTable_helpText_tip1"
+msgstr "1.クロスデイ設定はすべてチェックインに基づいています."
+
+msgid "timeTable_helpText_tip2"
+msgstr "2.利用可能なタイムカードは、> =チェックイン開始および<チェックアウト終了である必要があります"
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "(イン)先のマージン"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "(イン)上記のマージン"
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "(アウト)先のマージン"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "(アウト)上記のマージン"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "勤怠持続"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "チェックインを選択して出勤時間を設定します"
+
+msgid "timeInterval_label_checkOut"
+msgstr "チェックアウト"
+
+msgid "timeInterval_txt_days"
+msgstr "日"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "最大3日間"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "チェックアウトのほうがチェックインより早い"
+
+msgid "timeInterval_checkOut_title"
+msgstr "チェックアウト設定"
+
+msgid "timeInterval_field_inRequired"
+msgstr "必要な出勤"
+
+msgid "timeInterval_field_outRequired"
+msgstr "必要な退勤"
+
+msgid "timeInterval_field_allowLate"
+msgstr "遅刻を許す"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "早退を許す"
+
+msgid "timeInterval_field_paidDay"
+msgstr "平日"
+
+msgid "timeInterval_field_earlyIn"
+msgstr "早出"
+
+msgid "timeInterval_field_minEarlyIn"
+msgstr "最小早出"
+
+msgid "timeInterval_field_lateOut"
+msgstr "ライトアウト"
+
+msgid "timeInterval_field_minLateOut"
+msgstr "最小ライトアウト"
+
+msgid "timeInterval_field_overtimeLevel"
+msgstr "OTレベル"
+
+msgid "timeInterval_field_overtimeLevel1"
+msgstr "OTレベル1"
+
+msgid "timeInterval_field_overtimeLevel2"
+msgstr "OTレベル2"
+
+msgid "timeInterval_field_overtimeLevel3"
+msgstr "OTレベル3"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "早出OT"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "最小OT(早出)"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "ライトアウトOT"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "最小OT(ライトアウト)"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "交換"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "マルチイン/アウト"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "重複パンチポリシー"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "重複パンチ期間"
+
+msgid "timeInterval_field_workTimeType"
+msgstr "勤務時間タイプ"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "勤務時間"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "分"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "パンチ状態ベース"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "残業を有効にする"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "最小残業"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "分"
+
+msgid "timeInterval_field_workType"
+msgstr "仕事タイプ"
+
+msgid "timeInterval_field_dayChange"
+msgstr "日変わり時間"
+
+msgid "timeInterval_field_breakTime"
+msgstr "休憩時間"
+
+msgid "timeInterval_error_invalidWorkDay"
+msgstr "無効な値、値は0.1～9.9の間で指定する必要がある"
+
+msgid "time_duration_greater_user_defined"
+msgstr "期間が定義された1人のユーザーよりも長い."
+
+msgid "att_model_timeInterval"
+msgstr "時刻表"
+
+msgid "timeInterval_action_新規NormalTimetable"
+msgstr "通常の時刻表を新規する"
+
+msgid "timeInterval_action_新規NormalTimetable_description"
+msgstr "通常の時刻表を新規する"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "通常の時刻表を新規する"
+
+msgid "timeInterval_filed_crossDayUnit"
+msgstr "日(s)"
+
+msgid "timeInterval_error_invalidOvertimeValue"
+msgstr "無効な残業値"
+
+msgid "timeInterval_error_invalidFieldValue"
+msgstr "{field}'s 値が無効です"
+
+msgid "timeInterval_error_invalidCheckOvertimeLevel"
+msgstr "残業レベルの値L3>=L2>=L1が必要."
+
+msgid "timeInterval_error_flexibleWorkTime"
+msgstr "作業時間は0-1440の範囲内である必要があります."
+
+msgid "timeInterval_error_flexibleWorkTime_{duration}"
+msgstr "作業時間は0-{duration}の範囲内である必要があります."
+
+msgid "timeInterval_error_invalidCheckIn/Out"
+msgstr "チェックイン時間はチェックアウト時間よりも後になることはできません"
+
+msgid "timeInterval_error_invalidCheckInStart"
+msgstr "無効なチェックイン開始"
+
+msgid "timeInterval_error_invalidCheckInEnd"
+msgstr "無効なチェックイン終了"
+
+msgid "timeInterval_error_invalidCheckOutStart"
+msgstr "無効なチェックアウト開始"
+
+msgid "timeInterval_error_invalidCheckOutEnd"
+msgstr "無効なチェックアウト終了"
+
+msgid "timeInterval_error_invalidCheckOut"
+msgstr "無効なチェックアウト"
+
+msgid "timeInterval_error_invalidEarlyIn"
+msgstr "無効な早出セットアップ"
+
+msgid "timeInterval_error_invalidLateOut"
+msgstr "無効な遅延設定"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "基本設定"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "休憩時間設定"
+
+msgid "timeInterval_tab_unscheduledTimeSetting"
+msgstr "予定外の時間設定"
+
+msgid "timeInterval_tab_overtimeLevelSetting"
+msgstr "OTレベル設定"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "ルール設定"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "ソフト時刻表を新規する"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "ソフト時刻表を新規する"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "ソフト時刻表を新規する"
+
+msgid "training_field_applyTime"
+msgstr "申請時間"
+
+msgid "training_field_approvalTime"
+msgstr "承認時間"
+
+msgid "training_field_approvalLevel"
+msgstr "承認レベル"
+
+msgid "training_field_approver"
+msgstr "承認者"
+
+msgid "training_approve_audit"
+msgstr "トレーニング記録を監査で変更することはできません."
+
+msgid "att_model_training"
+msgstr "トレーニング"
+
+msgid "mulTransaction_field_employee"
+msgstr "従業員ID"
+
+msgid "mulTransaction_field_dataType"
+msgstr "データタイプ"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "ノーマルパンチ"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "休憩時間"
+
+msgid "mulTransaction_field_date"
+msgstr "日付"
+
+msgid "mulTransaction_field_timetable"
+msgstr "時刻表"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "データ索引"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "出勤"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "出勤ID"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "退勤"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "退勤ID"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "合計時間"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "勤務時間"
+
+msgid "att_model_multipleTransaction"
+msgstr "複数のトランザクション"
+
+msgid "att_model_scheduledTransaction"
+msgstr "トランザクションをスケジュールする"
+
+msgid "based_on_schedule"
+msgstr "スケジュールに関連"
+
+msgid "first_check_in"
+msgstr "最初のチェックイン"
+
+msgid "last_check_out"
+msgstr "最後のチェックアウト"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "残業を無効"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "計算OT"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "承認OT"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "承認OT優先度"
+
+msgid "attRule_missIn_late"
+msgstr "遅延"
+
+msgid "attRule_missIn_absent"
+msgstr "不在"
+
+msgid "attRule_missIn_noComplete"
+msgstr "不完全"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "早退"
+
+msgid "attRule_missOut_absent"
+msgstr "不在"
+
+msgid "attRule_missOut_noComplete"
+msgstr "不完全"
+
+msgid "must_check_in"
+msgstr "チェックインが必要"
+
+msgid "using_leave_end_time"
+msgstr "休暇終了時間を使用する"
+
+msgid "must_check_out"
+msgstr "チェックアウトが必要"
+
+msgid "using_leave_start_time"
+msgstr "開始時間を使用する"
+
+msgid "using_training_end_time"
+msgstr "トレーニング終了時間を使用する"
+
+msgid "using_training_start_time"
+msgstr "トレーニング開始時間を使用する"
+
+msgid "overtimeLevel_ignore"
+msgstr "無視"
+
+msgid "overtimeLevel_dependsOnWorkTime"
+msgstr "作業時間に依存する"
+
+msgid "overtimeLevel_dependsOnOvertime"
+msgstr "OTに依存する"
+
+msgid "unscheduled_ignore"
+msgstr "無視"
+
+msgid "unscheduled_move2normalWork"
+msgstr "ノーマル仕事に移動"
+
+msgid "unscheduled_move2overtime"
+msgstr "残業OTに移動"
+
+msgid "unscheduled_move2normalOvertime"
+msgstr "ノーマルOTに移動"
+
+msgid "unscheduled_move2weekendOvertime"
+msgstr "週末OTに移動"
+
+msgid "unscheduled_move2holidayOvertime"
+msgstr "休日OTに移動"
+
+msgid "boolean_option_no"
+msgstr "いいえ"
+
+msgid "boolean_option_yes"
+msgstr "はい"
+
+msgid "boolean_option_enable"
+msgstr "有効"
+
+msgid "boolean_option_disable"
+msgstr "無効"
+
+msgid "availablePunch_policy_any"
+msgstr "任意"
+
+msgid "availablePunch_policy_punchStateBased"
+msgstr "パンチ状態ベース"
+
+msgid "breakTime_calculateMode_autoDeduct"
+msgstr "自動控除"
+
+msgid "breakTime_calculateMode_requiredPunch"
+msgstr "必要なパンチ"
+
+msgid "breakTime_earlyInMode_normalWork"
+msgstr "ノーマル仕事"
+
+msgid "breakTime_earlyInMode_normalOvertime"
+msgstr "ノーマルOT"
+
+msgid "breakTime_lateInMode_ignore"
+msgstr "無視"
+
+msgid "breakTime_lateInMode_move2Late"
+msgstr "遅刻に移動"
+
+msgid "breakTime_lateInMode_move2EarlyOut"
+msgstr "アーリーアウトに移動"
+
+msgid "breakTime_lateInMode_move2Absence"
+msgstr "不在に移動"
+
+msgid "breakTime_lateInMode_late"
+msgstr "遅刻"
+
+msgid "breakTime_lateInMode_earlyLeave"
+msgstr "早退"
+
+msgid "breakTime_lateInMode_absent"
+msgstr "不在"
+
+msgid "timeInterval_typeOption_normal"
+msgstr "ノーマル"
+
+msgid "timeInterval_typeOption_flexible"
+msgstr "フレキシブル"
+
+msgid "timeInterval_typeOption_basedOnRule"
+msgstr "ルールベース"
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "ユーザー定義"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "ノーマル仕事"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "休日"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "週末"
+
+msgid "shift_OTOption_normalWork"
+msgstr "ノーマル仕事"
+
+msgid "shift_OTOption_normalOT"
+msgstr "ノーマルOT"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "週末OT"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "日"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "週"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "月"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "一時的なスケジュールをアクティブにする"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "追加可能なスケジュールを追加する"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "ノーマル仕事"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "ノーマルOT"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "週末OT"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "休日OT"
+
+msgid "approvalStatus_option_pending"
+msgstr "保留中"
+
+msgid "approvalStatus_option_reApply"
+msgstr "再申請"
+
+msgid "approvalStatus_option_revoke"
+msgstr "取り消す"
+
+msgid "approvalStatus_option_auditing"
+msgstr "監査"
+
+msgid "approvalStatus_option_approved"
+msgstr "承認済み"
+
+msgid "approvalStatus_option_reject"
+msgstr "拒否された"
+
+msgid "punchState_option_checkIn"
+msgstr "チェックイン"
+
+msgid "punchState_option_checkOut"
+msgstr "チェックアウト"
+
+msgid "punchState_option_breakOut"
+msgstr "ブレイクアウト"
+
+msgid "punchState_option_breakIn"
+msgstr "ブレイクイン"
+
+msgid "punchState_option_overtimeIn"
+msgstr "オーヴァータイムイン"
+
+msgid "punchState_option_overtimeOut"
+msgstr "オーヴァータイムアウト"
+
+msgid "punchState_option_noStatus"
+msgstr "ステタスなし"
+
+msgid "overtime_option_normalOvertime"
+msgstr "正常OT"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "週末OT"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "休日OT"
+
+msgid "calculationUnit_option_hour"
+msgstr "時"
+
+msgid "calculationUnit_option_minute"
+msgstr "分"
+
+msgid "calculationUnit_option_workday"
+msgstr "平日"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "HH:MM"
+
+msgid "overtime_option_normalWork"
+msgstr "ノーマル仕事"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "休日(%(holiday)s)"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "週末"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "休日"
+
+msgid "report_exceptionDisplay_Holiday"
+msgstr "休日"
+
+msgid "absent_report"
+msgstr "不在レポート"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "チェックインなし"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "チェックアウトなし"
+
+msgid "weekday_option_monday"
+msgstr "月"
+
+msgid "weekday_option_tuesday"
+msgstr "火"
+
+msgid "weekday_option_wednesday"
+msgstr "水"
+
+msgid "weekday_option_thursday"
+msgstr "木"
+
+msgid "weekday_option_friday"
+msgstr "金"
+
+msgid "weekday_option_saturday"
+msgstr "土"
+
+msgid "weekday_option_sunday"
+msgstr "日"
+
+msgid "attRule_globalRule_basicSetting"
+msgstr "基本設定"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "週末設定"
+
+msgid "attRule_globalRule_overtimeSetting"
+msgstr "残業設定"
+
+msgid "attRule_globalRule_calculationSetting"
+msgstr "計算設定"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "APP設定"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "チェックインルール"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "スケジュールに基づく"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "ファーストイン"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "チェックアウトルール"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "ラストアウト"
+
+msgid "attRule_globalRule_monday"
+msgstr "月曜日"
+
+msgid "attRule_globalRule_workingOnMonday"
+msgstr "月に出勤"
+
+msgid "attRule_globalRule_tuesday"
+msgstr "火"
+
+msgid "attRule_globalRule_workingOnTuesday"
+msgstr "火に出勤"
+
+msgid "attRule_globalRule_wednesday"
+msgstr "水"
+
+msgid "attRule_globalRule_workingOnWednesday"
+msgstr "水に出勤"
+
+msgid "attRule_globalRule_thursday"
+msgstr "木"
+
+msgid "attRule_globalRule_workingOnThursday"
+msgstr "木に出勤"
+
+msgid "attRule_globalRule_friday"
+msgstr "金"
+
+msgid "attRule_globalRule_workingOnFriday"
+msgstr "金に出勤"
+
+msgid "attRule_globalRule_saturday"
+msgstr "土"
+
+msgid "attRule_globalRule_workingOnSaturday"
+msgstr "土に出勤"
+
+msgid "attRule_globalRule_sunday"
+msgstr "日曜日"
+
+msgid "attRule_globalRule_workingOnSunday"
+msgstr "日に出勤"
+
+msgid "attRule_globalRule_OTLevel1"
+msgstr "OTレベル1"
+
+msgid "attRule_globalRule_OTLevel2"
+msgstr "OTレベル2"
+
+msgid "attRule_globalRule_OTLevel3"
+msgstr "OTレベル3"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "残業ルール"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "パンチ間隔の重複"
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "月"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "火"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "水"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "木"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "金"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "土"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "日"
+
+msgid "attRule_weekendSetting_titleWeekend"
+msgstr "週末"
+
+msgid "attRule_weekendSetting_workingOnDay"
+msgstr "仕事中"
+
+msgid "attRule_weekendSetting_OTLV1"
+msgstr "OTレベル1 (時)"
+
+msgid "attRule_weekendSetting_OTLV2"
+msgstr "OTレベル2 (時)"
+
+msgid "attRule_weekendSetting_OTLV3"
+msgstr "OTレベル3 (時)"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "計算ルール"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "遅延が超過する場合"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "分, 欠席"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "早退が超過する場合"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "分,不在"
+
+msgid "attRule_globalRule_missIn"
+msgstr "チェックインがなし"
+
+msgid "attRule_globalRule_missOut"
+msgstr "チェックアウトがなし"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "計算項目"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "チェックイン"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "チェックアウト"
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "ブレイクアウト"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "ブレイクイン"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "オーヴァータイムイン"
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "オーヴァータイムアウト"
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "キャプチャー"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "不要"
+
+msgid "attRule_globalRule_required"
+msgstr "必須"
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "仕事コード"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "ファンクションキー"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "保存"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "従業員"
+
+msgid "schedule_empFrameOption_department"
+msgstr "部門"
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "従業員"
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "部門"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "すべての従業員を選択する"
+
+msgid "schedule_action_shiftCover"
+msgstr "シフトを上書き"
+
+msgid "schedule_action_scheduleCover"
+msgstr "スケジュールを上書き"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "時刻表"
+
+msgid "form_helpText_title"
+msgstr "お知らせ"
+
+msgid "shift_helpText_tip1"
+msgstr "1. 左側からタイムテーブルを選択して、右側のシフトに記入します."
+
+msgid "shift_helpText_tip2"
+msgstr "2. 単位が日である場合、サイクルは366を超えることはできません."
+
+msgid "shift_helpText_tip3"
+msgstr "3. 単位が週の場合、サイクルは52を超えることはできません."
+
+msgid "shift_helpText_tip4"
+msgstr "4. 単位が月の場合、サイクルは12を超えることはできません."
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "詳細"
+
+msgid "shiftList_search_shift"
+msgstr "シフト"
+
+msgid "department_tree_selectAll"
+msgstr "すべて選択"
+
+msgid "department_tree_multipleSelect"
+msgstr "複数選択"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "サブ-部門を選択してください"
+
+msgid "calculation_page_empSearch"
+msgstr "従業員検索"
+
+msgid "calculation_page_startDate"
+msgstr "開始日"
+
+msgid "calculation_page_endDate"
+msgstr "終了日"
+
+msgid "calculation_page_attCalculate"
+msgstr "勤怠計算"
+
+msgid "emp_field_hireDate"
+msgstr "採用日"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "残業ルール"
+
+msgid "report_searchField_startDate"
+msgstr "開始日"
+
+msgid "report_searchField_endDate"
+msgstr "終了日"
+
+msgid "report_searchField_employee"
+msgstr "従業員"
+
+msgid "report_column_workDay"
+msgstr "勤務日"
+
+msgid "report_column_breakDuration"
+msgstr "休憩時間"
+
+msgid "report_column_totalDurationHrs"
+msgstr "合計時間(時)"
+
+msgid "report_column_breakDurationHrs"
+msgstr "休憩時間(時)"
+
+msgid "report_column_totalDayOff"
+msgstr "休日(日)"
+
+msgid "report_column_totalWeekend"
+msgstr "週末(日)"
+
+msgid "report_column_totalHoliday"
+msgstr "休日(日)"
+
+msgid "report_display_setting"
+msgstr "レポートの表示設定"
+
+msgid "short_date_format"
+msgstr "短時間フォーマット"
+
+msgid "short_time_format"
+msgstr "短時間フォーマット"
+
+msgid "resignEmployee_display"
+msgstr "従業員のディスプレイを辞任する"
+
+msgid "multiple_dept"
+msgstr "部門ツリーを表示する"
+
+msgid "reportSetting_tab_basicDisplaySetting"
+msgstr "基本的なディスプレイ"
+
+msgid "reportSetting_tab_functionKeyDisplay"
+msgstr "ファンクションキーの表示"
+
+msgid "reportSetting_tab_reportItemsDisplay"
+msgstr "レポートアイテムの表示"
+
+msgid "reportSetting_funcKeyField_ID"
+msgstr "ID"
+
+msgid "reportSetting_funcKeyField_value"
+msgstr "値"
+
+msgid "reportSetting_funcKeyField_name"
+msgstr "名"
+
+msgid "reportSetting_itemField_ID"
+msgstr "ID"
+
+msgid "reportSetting_itemField_name"
+msgstr "名"
+
+msgid "reportSetting_itemField_minimumUnit"
+msgstr "最小単位"
+
+msgid "reportSetting_itemField_roundOff"
+msgstr "四捨五入"
+
+msgid "reportSetting_itemField_symbol"
+msgstr "シンボル"
+
+msgid "calculation_item_minimumUnit"
+msgstr "最小単位"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "時"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "分"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "平日"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "HH:MM"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "数値精度"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "切り捨てする"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "四捨五入"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "切り上げする"
+
+msgid "symbol_in_report"
+msgstr "レポート内のシンボル"
+
+msgid "replace_schedule_as_following_range"
+msgstr "スケジュールを次の範囲に置き換えます."
+
+msgid "breakTime_number"
+msgstr "ブレークコード"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "エクスポートスタイル:"
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "ディフォルト"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "従業員ウイズ"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "部門ウイズ"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "日付ワイズ"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "ページワイズ"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "開始日と終了日を選択してください."
+
+msgid "attCalculation_alert_dateRangeInvalid"
+msgstr "無効な時間、終了日は開始日より後でなければなりません"
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "従業員を選択してください"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "計算完了"
+
+msgid "shift_getDetail_error_notFound"
+msgstr "シフトが見つかりません."
+
+msgid "menu_sys_authGroup"
+msgstr "グループ"
+
+msgid "menu_sys_authUser"
+msgstr "ユーザー"
+
+msgid "menu_sys_emailSetting"
+msgstr "メール設定"
+
+msgid "menu_sys_alertSetting"
+msgstr "アラート設定"
+
+msgid "menu_sys_pdfReportSetting"
+msgstr "PDFエクスポート"
+
+msgid "menu_sys_ftpSetting"
+msgstr "Ftp設定"
+
+msgid "menu_sys_filterBookmark"
+msgstr "ブックマーク"
+
+msgid "menu_sys_databaseBackup"
+msgstr "バックアップ"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "移動する"
+
+msgid "menu_sys_autoExport"
+msgstr "自動的にエクスポートする"
+
+msgid "menu_group_sysMiddlewareTable"
+msgstr "ミドルウェア表"
+
+msgid "menu_sys_middlewareTableDepartment"
+msgstr "部門"
+
+msgid "menu_sys_middlewareTablePosition"
+msgstr "役職"
+
+msgid "menu_sys_middlewareTableArea"
+msgstr "エリア"
+
+msgid "menu_sys_middlewareTableEmployee"
+msgstr "従業員"
+
+msgid "middlewareTable_field_postTime"
+msgstr "提出時間"
+
+msgid "middlewareTable_field_flag"
+msgstr "フラッグ"
+
+msgid "middlewareTable_field_updateTime"
+msgstr "目標時間"
+
+msgid "middlewareTable_field_syncResult"
+msgstr "状態"
+
+msgid "emp_field_multipleArea"
+msgstr "複数エリア"
+
+msgid "emp_field_activeStatus"
+msgstr "アクティブステータス"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "補助設定"
+
+msgid "menu_sys_companySetting"
+msgstr "会社の設定"
+
+msgid "menu_line_notify"
+msgstr "LINEアプリ通知"
+
+msgid "menu_group_sys_user"
+msgstr "ユーザー"
+
+msgid "menu_group_sys_configuration"
+msgstr "構成"
+
+msgid "menu_group_sys_database"
+msgstr "データベース"
+
+msgid "menu_group_sys_integration"
+msgstr "統合"
+
+msgid "menu_group_sys_log"
+msgstr "ログ"
+
+msgid "menu_sys_log"
+msgstr "ログ"
+
+msgid "menu_group_sys_task"
+msgstr "タスク"
+
+msgid "menu_sys_intervalSchedule"
+msgstr "間隔"
+
+msgid "menu_sys_crontabSchedule"
+msgstr "クロンタブ"
+
+msgid "menu_sys_periodicTask"
+msgstr "定期的なタスク"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "開始日"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "終了日"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "クエリバイ"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "マニュアルエクスポート"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "手動で実行タスクを選択する"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "手動で実行タスクを選択する"
+
+msgid "user_action_changePassword"
+msgstr "パスワード変更"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "選択したユーザーのパスワードを変更してもよろしいですか?"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s主キー%(key)sを持つオブジェクトは存在しません."
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "パスワードの変更に成功した."
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "パスワード変更"
+
+msgid "adminLog_field_objects"
+msgstr "オブジェクト"
+
+msgid "group_field_name"
+msgstr "名"
+
+msgid "autoExport_task_error_data"
+msgstr "無効なデータ"
+
+msgid "autoExport_task_error_email"
+msgstr "無効なメール"
+
+msgid "autoExport_task_error_interval"
+msgstr "無効な間隔値"
+
+msgid "autoExport_task_error_time_point"
+msgstr "無効なタイムポイント値"
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "従業員IDの長さ"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "ファイル名"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "無効なパスワード形式または不明なハッシュアルゴリズム."
+
+msgid "password_mismatch_errorMessage"
+msgstr "二つのフィールドは一致しなかった."
+
+msgid "user_createForm_password"
+msgstr "パスワード"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "パスワードの確認"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "検証のため、前と同じように入力してください."
+
+msgid "stmp_server_is_required"
+msgstr "SMTPサーバーは必須です."
+
+msgid "email_account_is_required"
+msgstr "メールアカウントは必須です."
+
+msgid "email_password_is_required"
+msgstr "メールパスワードは必須です."
+
+msgid "store_path_is_required"
+msgstr "SNファイルは必須です."
+
+msgid "store_path_is_wrong"
+msgstr "保存パスが間違った"
+
+msgid "autoExport_task_error_data: "
+msgstr "無効なデータ"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "従業員IDの長さ"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "時間範囲"
+
+msgid "software_category_is_required"
+msgstr "ソフトウェアカテゴリは必須です."
+
+msgid "migrate_fields_is_required"
+msgstr "移行フィールドが必要です."
+
+msgid "migrate_database_type_is_required"
+msgstr "移行データベースのタイプが必要です."
+
+msgid "migrate_database_address_is_required"
+msgstr "移行データベースのIPアドレスが必要です."
+
+msgid "migrate_database_port_is_required"
+msgstr "移行データベースのポート番号が必要です."
+
+msgid "migrate_database_name_is_required"
+msgstr "移行データベース名が必要です."
+
+msgid "migrate_database_user_is_required"
+msgstr "移行データベースのユーザー名が必要です."
+
+msgid "migrate_database_password_is_required"
+msgstr "移行データベースのパスワードが必要です."
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "接続テストに失敗しました"
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "データベース接続例外"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured"
+msgstr "バックアップに失敗しました。sqlcmd.exeが設定されていることを確認してください。"
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured"
+msgstr "バックアップに失敗しました。mysqldump.exeが設定されていることを確認してください."
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured"
+msgstr "バックアップに失敗しました。pg_dump.exeが設定されていることを確認してください."
+
+msgid "backup_failed_please_make_sure_exp_is_configured"
+msgstr "バックアップに失敗しました。exp.exeが設定されていることを確認してください."
+
+msgid "dbBackup_action_dbRestoreErrorPSQLNotFount"
+msgstr "復元に失敗しました。psql.exeが設定されていることを確認してください."
+
+msgid "dbBackup_action_dbRestoreErrorNoSupport"
+msgstr "復元に失敗しました。PostgreSQLデータベースのみをサポートしています."
+
+msgid "dbBackup_action_dbRestoreErrorFileNoFound"
+msgstr "復元に失敗しました、バックアップファイルが見つかりません."
+
+msgid "dbBackup_action_dbRestoreErrorIllegalDatabaseName"
+msgstr "復元に失敗しました。データベース名が使用していないことを確認してください."
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(engine)バックアップは利用できません."
+
+msgid "adminLog_field_user"
+msgstr "ユーザー"
+
+msgid "adminLog_field_action"
+msgstr "アクション"
+
+msgid "adminLog_field_contentType"
+msgstr "コンテンツのタイプ"
+
+msgid "adminLog_field_actionStatus"
+msgstr "状態"
+
+msgid "actionStatus_option_fail"
+msgstr "失敗"
+
+msgid "actionStatus_option_success"
+msgstr "成功"
+
+msgid "adminLog_field_description"
+msgstr "説明"
+
+msgid "adminLog_field_ipAddress"
+msgstr "IPアドレス"
+
+msgid "adminLog_field_routable"
+msgstr "ルーティング可能"
+
+msgid "adminLog_field_operationTime"
+msgstr "アクション時間"
+
+msgid "base_model_adminLog"
+msgstr "ログ"
+
+msgid "autoExportTask_field_code"
+msgstr "コード"
+
+msgid "autoExportTask_field_name"
+msgstr "名"
+
+msgid "autoExportTask_field_params"
+msgstr "パラメータ"
+
+msgid "base_model_autoExportTask"
+msgstr "自動エクスポート"
+
+msgid "bookmark_field_title"
+msgstr "タイトル"
+
+msgid "bookmark_field_user"
+msgstr "ユーザー"
+
+msgid "bookmark_field_contentType"
+msgstr "コンテンツのタイプ"
+
+msgid "bookmark_field_filtersString"
+msgstr "フィルター"
+
+msgid "bookmark_menu_noBookmarks"
+msgstr "ブックマークなし"
+
+msgid "bookmark_menu_newBookmark"
+msgstr "新しいブックマーク"
+
+msgid "bookmark_menu_enterBookmarkTitle"
+msgstr "ブックマークのタイトルを入力します"
+
+msgid "bookmark_menu_saveBookmark"
+msgstr "ブックマークを保存する"
+
+msgid "bookmark_field_isShared"
+msgstr "共有されています"
+
+msgid "bookmark_field_savedTime"
+msgstr "時間を節約"
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "タイトルが重複しています"
+
+msgid "base_model_bookmark"
+msgstr "ブックマーク"
+
+msgid "base_integrationTable_employee"
+msgstr "従業員"
+
+msgid "base_integrationTable_position"
+msgstr "役職"
+
+msgid "base_integrationTable_department"
+msgstr "部門"
+
+msgid "base_integrationTable_area"
+msgstr "エリア"
+
+msgid "enableStatus_option_enable"
+msgstr "有効"
+
+msgid "enableStatus_option_disable"
+msgstr "無効"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "リアルタイム"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "日中の出席概要"
+
+msgid "lineNotify_field_department"
+msgstr "部門"
+
+msgid "lineNotify_field_includeSubDepartment"
+msgstr "サブ部門を含む"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "トークン"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "接続をクリックする"
+
+msgid "lineNotify_field_messageType"
+msgstr "メッセージタイプ"
+
+msgid "lineNotify_field_pushTime"
+msgstr "プッシュ時間"
+
+msgid "lineNotify_field_isValid"
+msgstr "有効にする"
+
+msgid "lineNotify_field_remark"
+msgstr "リマーク"
+
+msgid "base_model_lineNotifySetting"
+msgstr "ライン通知設定"
+
+msgid "dbMigrate_field_name"
+msgstr "名を移行する"
+
+msgid "dbMigrate_field_value"
+msgstr "コンテンツを移行する"
+
+msgid "base_model_dbBackupLog"
+msgstr "DBバックアップログ"
+
+msgid "dbBackupLog_field_type"
+msgstr "データベース"
+
+msgid "dbBackupLog_field_name"
+msgstr "データベース名"
+
+msgid "dbBackupLog_field_operator"
+msgstr "オペレーター"
+
+msgid "dbBackupLog_field_filePath"
+msgstr "保存パス"
+
+msgid "dbBackupLog_field_isBackupPhoto"
+msgstr "写真のバックアップが必要です"
+
+msgid "dbBackupLog_field_isRestorePhoto"
+msgstr "写真の復元が必要です"
+
+msgid "dbBackupLog_field_time"
+msgstr "時間"
+
+msgid "dbBackupLog_field_status"
+msgstr "状態"
+
+msgid "dbBackupLog_field_remark"
+msgstr "リマーク"
+
+msgid "dbBackupLog_field_frequency"
+msgstr "頻度"
+
+msgid "dbBackupLog_field_pointDay"
+msgstr "日"
+
+msgid "dbBackupLog_field_pointTime"
+msgstr "時間"
+
+msgid "dbBackupLog_action_dbBackupAuto"
+msgstr "自動でバックアップ"
+
+msgid "dbBackupLog_action_dbBackupManually"
+msgstr "手動でバックアップ"
+
+msgid "dbBackupLog_action_dbBackupManuallyConfirmation"
+msgstr "データベースを手動でバックアップしてもよろしいですか?"
+
+msgid "backup_status_success"
+msgstr "成功"
+
+msgid "backup_status_failed"
+msgstr "失敗"
+
+msgid "dbBackupLog_action_dbRestoreManually"
+msgstr "手動で復元"
+
+msgid "dbBackupLog_field_backupFile"
+msgstr "バックアップファイル"
+
+msgid "model_send_email"
+msgstr "送信"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "パスワード"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "公開鍵"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "ホストアドレス"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "ポート番号"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "認証方式"
+
+msgid "sftpSetting_field_username"
+msgstr "ユーザー名"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "パスワード"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "SSHキー"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "パスワード"
+
+msgid "sftp_setting"
+msgstr "SFTP設定"
+
+msgid "sysParam_field_name"
+msgstr "名"
+
+msgid "sysParam_field_type"
+msgstr "タイプ"
+
+msgid "sysParam_field_value"
+msgstr "値"
+
+msgid "sysParam_default_ルールName"
+msgstr "デフォルト勤怠ルール"
+
+msgid "system_setting"
+msgstr "システム設定"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "%(from)sから%(to)sまで"
+
+msgid "reportExport_author"
+msgstr "著者"
+
+msgid "reportExport_createTime"
+msgstr "時間作成"
+
+msgid "pdfExport_pageSize"
+msgstr "ページサイズ"
+
+msgid "pdfExport_orientation"
+msgstr "方向"
+
+msgid "pdfExport_footerLeft"
+msgstr "フッター左"
+
+msgid "pdfExport_footerRight"
+msgstr "フッター右"
+
+msgid "pdfExport_auto"
+msgstr "自動"
+
+msgid "pdfExport_orientation_portrait"
+msgstr "肖像"
+
+msgid "pdfExport_orientation_landscape"
+msgstr "ランドスケープ"
+
+msgid "pdfExport_blank"
+msgstr "空白"
+
+msgid "pdfExport_pageToPage"
+msgstr "ページ/合計ページ"
+
+msgid "pdfExport_author"
+msgstr "著者"
+
+msgid "pdfExport_time"
+msgstr "時間"
+
+msgid "user_createFrom_legendInformation"
+msgstr "情報"
+
+msgid "user_createFrom_legendPermission"
+msgstr "許可"
+
+msgid "user_createFrom_isStaffNoCheckMsg"
+msgstr "このフィールドがチェックされていない場合、このユーザーはログインを許可しません"
+
+msgid "permission_verboseName_add"
+msgstr "追加"
+
+msgid "permission_verboseName_view"
+msgstr "ビュー"
+
+msgid "permission_verboseName_change"
+msgstr "編集"
+
+msgid "permission_verboseName_delete"
+msgstr "削除"
+
+msgid "permission_verboseName_changePassword"
+msgstr "パスワード変更"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "従業員"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "部門"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "役職"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "エリア"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "辞職"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "資料"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "従業員資料"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "Bio-写真"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "ワークフローノード"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "ワークフローエンジン"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "ワークフロー役割"
+
+ msgid "permission_verboseName_attDeptAttルール"
+msgstr "部門ルール"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "レポート設定"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "時刻表"
+
+msgid "permission_verboseName_attShift"
+msgstr "シフト"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "マニュアルログ"
+
+msgid "permission_verboseName_attLeave"
+msgstr "休暇"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "残業"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "休暇タイプ"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "休日"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "レポート計算"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "毎日の勤怠レポート"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "従業員概要"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "休暇概要"
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "タイムカード合計"
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "ファストインラストアウト"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "例外レポート"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "部門概要"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "タイムカードレポート"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "遅刻レポート"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "早退レポート"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "欠席レポート"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "複数のトランザクション"
+
+msgid "permission_verboseName_attTraining"
+msgstr "トレーニング"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "休憩時間"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "スケジュール"
+
+msgid "permission_verboseName_attSetting"
+msgstr "勤怠設定"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "一時的なスケジュール"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "トレーニングタイプ"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "スケジュールを変更する"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "レポート許可"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "デバイス"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "操作ログ"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "コマンド"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "アップロードログ"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "Bio-テンプレート"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "パブリックメッセージ"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "私信"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "仕事コード"
+
+msgid "permission_verboseName_iclockTransaction"
+msgstr "トランザクション"
+
+msgid "permission_verboseName_iclockEmployeeGps"
+msgstr "従業員のジオフェンス"
+
+msgid "permission_verboseName_iclockDepartmentGps"
+msgstr "部門のジオフェンス"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "Appリスト"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "告知"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "お知らせ"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "アクションログ"
+
+msgid "permission_verboseName_iclockdeviceConfig"
+msgstr "構成"
+
+msgid "permission_verboseName_sysUser"
+msgstr "ユーザー"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "グループ"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "FTP設定"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "自動でエクスポート"
+
+msgid "permission_verboseName_SyncEmployee"
+msgstr "従業員ミドルウェア表"
+
+msgid "permission_verboseName_SyncJob"
+msgstr "役職ミドルウェア表"
+
+msgid "permission_verboseName_SyncDepartment"
+msgstr "部門ミドルウェア表"
+
+msgid "permission_verboseName_SyncArea"
+msgstr "エリアミドルウェア表"
+
+msgid "permission_verboseName_payrollReportPermission"
+msgstr "レポート許可"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "ログ"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "ブックマーク"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "構成"
+
+msgid "permission_verboseName_psnl"
+msgstr "人事"
+
+msgid "permission_verboseName_iclock"
+msgstr "デバイス"
+
+msgid "permission_verboseName_att"
+msgstr "勤怠"
+
+msgid "permission_verboseName_payroll"
+msgstr "給与"
+
+msgid "permission_verboseName_sys"
+msgstr "システム"
+
+msgid "autoExport_task_manualStart"
+msgstr "開始日"
+
+msgid "autoExport_task_manualEnd"
+msgstr "終了日"
+
+msgid "autoExport_task_queryField"
+msgstr "フィルタによる"
+
+msgid "autoExport_task_filePrefix"
+msgstr "ファイル名"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "フォーマット設定"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "データフィルタ設定"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "エクスポート時間設定"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "エクスポートパス設定"
+
+msgid "autoExport_task_departments"
+msgstr "部門"
+
+msgid "autoExport_departments_helpTxt"
+msgstr "デフォルトですべてエクスポート"
+
+msgid "autoExport_task_areas"
+msgstr "エリア"
+
+msgid "autoExport_areas_helpTxt"
+msgstr "デフォルトですべてエクスポート"
+
+msgid "autoExport_task_code"
+msgstr "コード"
+
+msgid "autoExport_task_name"
+msgstr "名"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "データテンプレート"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "(エクスポートするフィールドを右から下のテキストボックスに入れてください.)"
+
+msgid "autoExport_task_shortDate"
+msgstr "短期フォーマット"
+
+msgid "autoExport_task_shortTime"
+msgstr "短時間フォーマット"
+
+msgid "autoExport_task_frequency"
+msgstr "頻度"
+
+msgid "frequency_option_none"
+msgstr "No"
+
+msgid "frequency_option_daily"
+msgstr "毎日"
+
+msgid "frequency_option_weekly"
+msgstr "毎週"
+
+msgid "frequency_option_monthly"
+msgstr "毎月"
+
+msgid "autoExport_task_exportDay"
+msgstr "日"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "アップロード時間"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "パンチタイム"
+
+msgid "autoExport_task_interval"
+msgstr "間隔"
+
+msgid "autoExport_task_exportFormat"
+msgstr "ファイルフォーマット"
+
+msgid "autoExport_exportFormat_helpTxt"
+msgstr ".xls .csv .txtのみをサポートする."
+
+msgid "autoExport_task_exportTime"
+msgstr "タイムポイント"
+
+msgid "autoExport_task_deadline"
+msgstr "今日を含む"
+
+msgid "autoExport_deadline_previous"
+msgstr "前"
+
+msgid "autoExport_deadline_current"
+msgstr "現在"
+
+msgid "autoExport_task_exportPath"
+msgstr "エクスポートパス"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "(役職: \\files\\temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "FTPサーバー"
+
+msgid "autoExport_task_ftpPath"
+msgstr "FTPパス"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "(Format: /Folder/)"
+
+msgid "autoExport_task_exportEmail"
+msgstr "メール"
+
+msgid "autoExport_task_empCodeLength"
+msgstr "ID桁"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "従業員IDの数字"
+
+msgid "autoExport_task_departmentCode"
+msgstr "部門コード"
+
+msgid "autoExport_task_departmentName"
+msgstr "部門名"
+
+msgid "autoExport_task_punchTime"
+msgstr "パンチタイム"
+
+msgid "autoExport_task_verifyType"
+msgstr "検証タイプ"
+
+msgid "autoExport_task_workCode"
+msgstr "仕事コード"
+
+msgid "autoExport_task_cardNumber"
+msgstr "カード番号"
+
+msgid "autoExport_task_areaAlias"
+msgstr "エリア"
+
+msgid "autoExport_task_terminalAlias"
+msgstr "デバイスエイリアス"
+
+msgid "autoExport_task_terminalSN"
+msgstr "シリアル番号"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "から移行"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "データベース"
+
+msgid "db_sqlserver"
+msgstr "MSSQLサーバー"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "アドレス"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "ポート"
+
+msgid "dataMigrate_front_databaseName"
+msgstr "名"
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "ユーザー"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "パスワード"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "フィールドを移行する"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "期間"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "移行ステータス"
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "接続テスト"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "移行"
+
+msgid "dataMigrate_front_btn_clearConnectInfo"
+msgstr "接続をクリアする"
+
+msgid "dataMigrate_front_area_or_zone"
+msgstr "エリア/ゾーン"
+
+msgid "dataMigrate_front_startTime"
+msgstr "開始時間"
+
+msgid "dataMigrate_front_endTime"
+msgstr "終了時間"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "Sqliteファイル"
+
+msgid "dataMigrate_cache_clean"
+msgstr "キャッシュを削除する"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "移行が実行されなかった場合は、これを試して解決してください."
+
+msgid "exportForm_itemLabel_scope"
+msgstr "輸出範囲:"
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "現在のページ"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "すべてのデータ"
+
+msgid "line_taken_btn"
+msgstr "ここをクリックして回線のWebページに入り、LINE通知トークンを取得します"
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "勤怠アラート設定"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "遅延数が通信量が契約容量の上限を超えた場合"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "早退の数が超えたとき"
+
+msgid "alertSettingPage_label_absentExceed"
+msgstr "欠席者数が超過した場合"
+
+msgid "alertSettingPage_exceedUnit_times"
+msgstr "時間"
+
+msgid "alertSettingPage_label_emailSendingFrequency"
+msgstr "送信頻度"
+
+msgid "alertSettingPage_label_emailSendingDay"
+msgstr "日"
+
+msgid "alertSettingPage_label_emailSendingTime"
+msgstr "時間"
+
+msgid "alertSettingPage_label_sendingDay"
+msgstr "送信日"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "当日"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "次の日"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "現在の日を含む"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "アラート設定の承認"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "メールアラート"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "ポップアラート"
+
+msgid "alertSettingPage_btn_submit"
+msgstr "提出"
+
+msgid "backup_database"
+msgstr "データベース"
+
+msgid "backup_database_name"
+msgstr "データベース名"
+
+msgid "backup_store_path"
+msgstr "保存先"
+
+msgid "backup_frequency"
+msgstr "頻度"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "一回限り"
+
+msgid "backup_day"
+msgstr "日"
+
+msgid "backup_time"
+msgstr "時間"
+
+msgid "backup_last_backup"
+msgstr "最後のバックアップ"
+
+msgid "backup_file"
+msgstr "バックアップファイル"
+
+msgid "btn_save"
+msgstr "保存"
+
+msgid "btn_view"
+msgstr "ビュー"
+
+msgid "btn_hide"
+msgstr "非表示"
+
+msgid "btn_apply"
+msgstr "申請"
+
+msgid "btn_backup"
+msgstr "バックアップ"
+
+msgid "emailSettingPage_label_smtpServer"
+msgstr "SMTPサーバー"
+
+msgid "emailSettingPage_label_smtpServerPort"
+msgstr "ポート"
+
+msgid "emailSettingPage_label_enableSSL"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "メールアカウント"
+
+msgid "emailSettingPage_help_emailAccount"
+msgstr "ドメイン名/ドメインユーザー"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "パスワード"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "メールアドレス"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "提出"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "デバイスコミュニケーション設定"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "登録デバイスを有効にする"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "このオプションを有効にすると、登録をマークしたデバイスのみがユーザーデータをアップロードできます。."
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "名前のアップロードを有効にする"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "名前のアップロードを有効にする"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "カードのアップロードを有効にする"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "カードのアップロードを有効にする"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "他の設定"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "写真のバックアップ"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "従業員写真のバックアップ パス"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "提出"
+
+msgid "translation_option_english"
+msgstr "英語"
+
+msgid "translation_option_korean"
+msgstr "韓国語"
+
+msgid "translation_option_japanese"
+msgstr "日本語"
+
+msgid "translation_option_spanish"
+msgstr "スペイン語"
+
+msgid "translation_option_thai"
+msgstr "タイ"
+
+msgid "translation_option_arabic"
+msgstr "アラビア語"
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr "Google翻訳"
+
+msgid "translation_btn_オンラインTranslate"
+msgstr "オンライン翻訳"
+
+msgid "database_backup_is_under_processing"
+msgstr "データベースのバックアップが処理中です。しばらくしてからもう一度お試しください."
+
+msgid "dbMigrate_status_processing"
+msgstr "処理"
+
+msgid "dbMigrate_status_finish"
+msgstr "完成"
+
+msgid "dbMigrate_status_exception"
+msgstr "例外"
+
+msgid "dbMigrate_status_pending"
+msgstr "保留中"
+
+msgid "login_authorize_license_missing"
+msgstr "ライセンスが見つかりません."
+
+msgid "login_authorize_incorrectUPK"
+msgstr "不正なUPK"
+
+msgid "login_authorize_md5_error"
+msgstr "システムファイルは許可なく変更されました。"
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "デバイスの数はすでに許可数を超えています。"
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "従業員数はすでに許可数を超えています。"
+
+msgid "login_authorize_license_app_exceed"
+msgstr "アプリの数は既に許可数を超えています。"
+
+msgid "login_authorize_database_error"
+msgstr "データベーステーブルがクラッシュしたとマークされています。確認して修復してください。"
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "データベース接続に失敗しました, %(db_ver)s."
+
+msgid "login_authorize_illegal_username"
+msgstr "不正なユーザー名"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "ログインに失敗しました, %(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "ログインに失敗しました、ユーザー名またはパスワードが間違っています."
+
+msgid "login_authorize_invalid_username"
+msgstr "無効なユーザー名"
+
+msgid "login_authorize_illegal_login"
+msgstr "無効なログイン"
+
+msgid "login_authorize_license_inactive"
+msgstr "ライセンスは無効です"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "デバイス"
+
+msgid "menu_device_terminal"
+msgstr "デバイス"
+
+msgid "menu_device_terminalCommand"
+msgstr "デバイスコマンド"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "メッセージ"
+
+msgid "menu_device_publicMessage"
+msgstr "パブリック"
+
+msgid "menu_device_privateMessage"
+msgstr "プライベート"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "データ"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "仕事コード"
+
+msgid "menu_device_terminalBioData"
+msgstr "Bio-テンプレート"
+
+msgid "menu_device_transaction"
+msgstr "トランザクション"
+
+msgid "menu_group_device_terminalLog"
+msgstr "ログ"
+
+msgid "menu_device_terminalLog"
+msgstr "操作ログ"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "ロッグをアップロード"
+
+msgid "menu_group_mobile_application"
+msgstr "モバイルアプリ"
+
+msgid "menu_mobile_appList"
+msgstr "アカウント"
+
+msgid "menu_mobile_announcement"
+msgstr "告知"
+
+msgid "menu_mobile_notification"
+msgstr "お知らせ"
+
+msgid "menu_mobile_appActionLog"
+msgstr "操作ログ"
+
+msgid "menu_group_deviceConfiguration"
+msgstr "構成"
+
+msgid "menu_iclock_deviceConfig"
+msgstr "構成"
+
+msgid "privateMessage_field_employee"
+msgstr "従業員"
+
+msgid "privateMessage_field_startTime"
+msgstr "開始時間"
+
+msgid "privateMessage_field_duration"
+msgstr "持続"
+
+msgid "privateMessage_field_content"
+msgstr "コンテンツ"
+
+msgid "privateMsg_action_add"
+msgstr "新規"
+
+msgid "privateMsg_action_addDescription"
+msgstr "新規"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "新規"
+
+msgid "send_message"
+msgstr "送信"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "メッセージを送信してもよろしいですか?"
+
+msgid "publicMessage_field_terminal"
+msgstr "デバイス"
+
+msgid "publicMessage_field_startTime"
+msgstr "開始時間"
+
+msgid "publicMessage_field_duration"
+msgstr "持続"
+
+msgid "publicMessage_field_content"
+msgstr "コンテンツ"
+
+msgid "publicMsg_action_add"
+msgstr "新規"
+
+msgid "publicMsg_action_addDescription"
+msgstr "新規"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "新規"
+
+msgid "terminal_op_reboot"
+msgstr "再起動"
+
+msgid "terminal_op_rebootDescription"
+msgstr "デバイスを再起動します"
+
+msgid "terminal_op_rebootHelp"
+msgstr "デバイスを再起動します"
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "選択したデバイスを再起動しますか?"
+
+msgid "terminal_action_reUploadData"
+msgstr "ユーザーデータをアップロードする"
+
+msgid "terminal_action_reUploadDataDescription"
+msgstr "デバイスからユーザーデータを再アップロードする"
+
+msgid "terminal_action_reUploadDataHelpTxt"
+msgstr "デバイスからユーザーデータを再アップロードする"
+
+msgid "reUploadData_field_employee"
+msgstr "従業員"
+
+msgid "reUploadData_field_employeeCode"
+msgstr "従業員ID"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "選択した端末のデータを再アップロードしてよろしいですか(s)?"
+
+msgid "reUploadData_field_transaction"
+msgstr "トランザクション"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "開始時間"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "終了時間"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "トランザクションをアップロードする"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "トランザクションをアップロードする"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "トランザクションをアップロードする"
+
+msgid "reloadData_field_employee"
+msgstr "従業員"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "写真"
+
+msgid "reloadData_field_fingerprint"
+msgstr "指紋"
+
+msgid "reloadData_field_face"
+msgstr "顔"
+
+msgid "reloadData_field_palm"
+msgstr "手のひら"
+
+msgid "reloadData_field_fingerVein"
+msgstr "指静脈"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "Bio-写真"
+
+msgid "terminal_op_reloadData"
+msgstr "データをデバイスに同期する"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "システムからデバイスへのユーザーデータの同期"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "システムからデバイスへのユーザーデータの同期"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "開始時間"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "終了時間"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "全てクリアする"
+
+msgid "terminal_op_clearData"
+msgstr "全てのデータをクリアする"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "デバイスに含まれるすべてのデータをクリアします（ユーザーデータ、トランザクション、写真など）"
+
+msgid "terminal_op_clearDataHelp"
+msgstr "デバイスに含まれるすべてのデータをクリアします（ユーザーデータ、トランザクション、写真など）"
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "選択した{0}デバイスのすべてのデータをクリアしてもよろしいですか(s)?"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "勤怠データをクリアする "
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "勤怠データをクリアする"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "勤怠データをクリアする"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr "選択した{0}デバイスのすべてのトランザクションをクリアしてもよろしいですか(s)?"
+
+msgid "terminal_op_readInformation"
+msgstr "情報を読み取る"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "情報を読み取る"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "情報を読み取る"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "選択したデバイスから情報を読みますか？"
+
+msgid "terminal_op_deleteCapture"
+msgstr "キャプチャー画像をクリアする"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "デバイスのすべてのキャプチャー写真をクリアする"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "デバイス内すべてのキャプチャー画像をクリアする"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "選択した{0}デバイスのキャプチャーをクリアしますか？(s)"
+
+msgid "terminal_op_clearAll"
+msgstr "すべてデータをクリアする"
+
+msgid "terminal_op_clearAllHelpTxt"
+msgstr "この操作は、デバイス内のすべてのデータをクリアします。データには、トランザクション、ユーザーデータ、キャプチャなどが含まれます."
+
+msgid "terminal_op_clearAllDescription"
+msgstr "この操作は、デバイス内のすべてのデータをクリアします。データには、トランザクション、ユーザーデータ、キャプチャなどが含まれます."
+
+msgid "terminal_op_clearAllConfirmation"
+msgstr "デバイス内すべてのデータをクリアしてもよろしいですか?"
+
+msgid "duplicate_punch_period"
+msgstr "重複パンチ期間 (m)"
+
+msgid "minutes/seconds"
+msgstr "分"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "重複パンチ期間"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "重複パンチ期間"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "重複パンチ期間"
+
+msgid "terminal_capture"
+msgstr "キャプチャー"
+
+msgid "capture_no_photo"
+msgstr "写真なし"
+
+msgid "capture_take_photo_no_save"
+msgstr "撮影して保存しない"
+
+msgid "capture_verify_photo_and_save"
+msgstr "認証画像を撮影して保存する"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "認証成功画像を撮影して保存する"
+
+msgid "capture_verify_failed_and_save"
+msgstr "認証失敗画像を撮影して保存する"
+
+msgid "terminal_op_captureSetting"
+msgstr "キャプチャー設定"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "設定を変更して、キャプチャ画像の保存を有効または無効にします."
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "設定を変更して、キャプチャ画像の保存を有効または無効にします."
+
+msgid "terminal_captureUpload"
+msgstr "キャプチャーをアップロードする"
+
+msgid "captureUpload_disabled"
+msgstr "無効"
+
+msgid "captureUpload_enabled"
+msgstr "有効"
+
+msgid "terminal_op_captureUpload"
+msgstr "キャプチャーをアップロードする"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "キャプチャーをアップロードする"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "キャプチャーをアップロードする"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "ファイルをアップグレードする"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "ファームウェアをアップグレードする"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "ファームウェアをアップグレードする"
+
+msgid "action_transactionCorrection_start"
+msgstr "開始時間"
+
+msgid "action_transactionCorrection_end"
+msgstr "終了時間"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "トランザクション修正"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "期間内のデバイストランザクション数を確認する"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "期間内のデバイストランザクション数を確認する"
+
+msgid "terminal_op_pullFile"
+msgstr "ファイルをダウンロードする"
+
+msgid "terminal_op_pullFileDescription"
+msgstr "通常、デバイスのメンテナンスに使用しているデバイスからファイルをダウンロードします。デバイスの空き時間中にこの機能を使用してください, "
+
+msgid "terminal_op_pullFileHelpTxt"
+msgstr "通常、デバイスのメンテナンスに使用しているデバイスからファイルをダウンロードします。デバイスの空き時間中にこの機能を使用してください, "
+
+msgid "terminal_op_clearCommand"
+msgstr "保留中のコマンドクリア"
+
+msgid "terminal_op_clearCommandDescription"
+msgstr "すべての保留中のコマンドをクリアする"
+
+msgid "terminal_op_clearCommandHelpTxt"
+msgstr "すべての保留中のコマンドをクリアする"
+
+msgid "terminal_op_clearCommandConfirmation"
+msgstr "すべての保留中のコマンドをクリアしてもよろしいですか?"
+
+msgid "action_pullFile_filePath"
+msgstr "ファイルパス"
+
+msgid "terminal_op_enrollRemotely"
+msgstr "リモートで登録する"
+
+msgid "terminal_op_enrollRemotelyDescription"
+msgstr "デバイスから生体認証を登録する"
+
+msgid "terminal_op_enrollRemotelyHelpTxt"
+msgstr "デバイスから生体認証を登録する"
+
+msgid "enrollRemotely_field_bioType"
+msgstr "Bioタイプ"
+
+msgid "enrollRemotely_bioType_card"
+msgstr "MFカード"
+
+msgid "enrollRemotely_bioType_fingerprint"
+msgstr "指紋"
+
+msgid "enrollRemotely_bioType_face"
+msgstr "顔"
+
+msgid "enrollRemotely_bioType_palm"
+msgstr "手のひら"
+
+msgid "enrollRemotely_field_empCode"
+msgstr "従業員 ID"
+
+msgid "enrollRemotely_field_finger"
+msgstr "指"
+
+msgid "enrollRemotely_finger_leftHandLittle"
+msgstr "(左手)小指"
+
+msgid "enrollRemotely_finger_leftHandRing"
+msgstr "(左手)薬指"
+
+msgid "enrollRemotely_finger_leftHandMiddle"
+msgstr "(左手)中指"
+
+msgid "enrollRemotely_finger_leftHandFore"
+msgstr "(左手)人さし指"
+
+msgid "enrollRemotely_finger_leftHandThumb"
+msgstr "(左手)親指"
+
+msgid "enrollRemotely_finger_rightHandThumb"
+msgstr "(右手)親指"
+
+msgid "enrollRemotely_finger_rightHandFore"
+msgstr "(右手)人さし指"
+
+msgid "enrollRemotely_finger_rightHandMiddle"
+msgstr "(右手)中指"
+
+msgid "enrollRemotely_finger_rightHandRing"
+msgstr "(右手)薬指"
+
+msgid "enrollRemotely_finger_rightHandLittle"
+msgstr "(右手)小指"
+
+msgid "terminal_op_newArea"
+msgstr "エリア新規"
+
+msgid "terminal_op_newAreaDescription"
+msgstr "エリア新規"
+
+msgid "terminal_op_newAreaHelpTxt"
+msgstr "エリア新規"
+
+msgid "terminal_field_numberReduce"
+msgstr "削減数"
+
+msgid "terminal_field_numberReduceHelpText"
+msgstr "0 - 999"
+
+msgid "loopDelTransaction_helpText_tip1"
+msgstr "1.1.デバイスのトランザクションがいっぱいになると、入力値に基づいてトランザクションベースの数が削除されます（0は削除されないことを意味します）."
+
+msgid "terminal_op_loopDelTransaction"
+msgstr "ループトランザクション削除"
+
+msgid "terminal_op_loopDelTransactionDescription"
+msgstr "ループトランザクション削除"
+
+msgid "terminal_op_loopDelTransactionHelpTxt"
+msgstr "ループトランザクション削除"
+
+msgid "terminalNewArea_error_duplicateAreaCode"
+msgstr "エリア番号が重複しています"
+
+msgid "terminal_field_alias"
+msgstr "デバイス名"
+
+msgid "terminal_field_sn"
+msgstr "シリアル番号"
+
+msgid "terminal_state"
+msgstr "状態"
+
+
+msgid "op_menu_group_dataClean"
+msgstr "データを削除"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "データを転送"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "デバイスメニュー"
+
+msgid "upload_file"
+msgstr "ファイルをアップロードする"
+
+msgid "usb_data_upload"
+msgstr "USBトランザクションをアップロード"
+
+msgid "file_format_incorrect"
+msgstr "ファイル形式が正しくありません"
+
+msgid "device_not_found"
+msgstr "デバイスが見つかりません"
+
+msgid "system_error"
+msgstr "システムエラー"
+
+msgid "read_file_failed"
+msgstr "ファイルの読み取りに失敗しました"
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "行 %(row_num)sが正しくありません."
+
+msgid "transaction_column_employeeName"
+msgstr "名"
+
+msgid "transaction_column_employeeLastName"
+msgstr "姓"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "部門"
+
+msgid "transaction_column_employeePosition"
+msgstr "役職"
+
+msgid "transaction_punch_date"
+msgstr "日付"
+
+msgid "transaction_punch_time"
+msgstr "時間"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "デバイス"
+
+msgid "send_work_code"
+msgstr "デバイスに送信"
+
+msgid "send_work_code_to_terminal"
+msgstr "仕事コードをデバイスに送信する."
+
+msgid "remove_work_code"
+msgstr "デバイスから削除"
+
+msgid "remove_work_code_from_terminal"
+msgstr "デバイスから仕事コードを削除する."
+
+msgid "bio_fingerprint"
+msgstr "指紋"
+
+msgid "bio_face"
+msgstr "顔"
+
+msgid "bio_finger_vein"
+msgstr "指静脈"
+
+msgid "bio_palm"
+msgstr "手のひら"
+
+msgid "terminal_verifyOption_password"
+msgstr "パスワード"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "指紋"
+
+msgid "terminal_verifyOption_badge"
+msgstr "従業員 ID"
+
+msgid "terminal_verifyOption_card"
+msgstr "カード"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "指紋/パスワード"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "指紋/カード"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "パスワード/カード"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "従業員ID&指紋"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "指紋&パスワード"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "指紋&カード"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "パスワード&カード"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "指紋&パスワード&カード"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "従業員ID&指紋&パスワード"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "指紋 & カード & 従業員 ID"
+
+msgid "terminal_verifyOption_face"
+msgstr "顔"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "顔&指紋"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "顔&パスワード"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "顔&カード"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "顔&指紋&カード"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "顔&指紋&パスワード"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "指静脈"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "指静脈&パスワード"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "指静脈&カード"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "指静脈&パスワード&カード"
+
+msgid "terminal_verifyOption_palm"
+msgstr "手のひら"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "手のひら&カード"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "手のひら&顔"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "手のひら&指紋"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "手のひら&指紋&カード"
+
+msgid "terminal_verifyOption_gps"
+msgstr "GPS"
+
+msgid "terminal_verifyOption_aiCamera"
+msgstr "AIカメラ"
+
+msgid "terminal_verifyOption_other"
+msgstr "その他"
+
+msgid "transaction_punchState_checkIn"
+msgstr "チェックイン"
+
+msgid "transaction_punchState_checkOut"
+msgstr "チェックアウト"
+
+msgid "transaction_punchState_breakOut"
+msgstr "ブレイクアウト"
+
+msgid "transaction_punchState_breakIn"
+msgstr "ブレイクイン"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "オーバタイムイン"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "オーバタイムアウト"
+
+msgid "transaction_punchState_noStatus"
+msgstr "ステータスなし"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "成功しました"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "パラメータが正しくありません, エラー: -1"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "ユーザー写真転送エラー, エラー: -2"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "デバイスの読み取りまたは書き込みエラー, エラー: -3"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "バイオ-テンプレート転送エラー, エラー: -9"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "ユーザーが存在しません, エラー: -10"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "不正なFPテンプレートフォーマット, エラー: -11"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "不正なFPテンプレート, エラー: -12"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "デバイス容量の制限, エラー: -1001"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "デバイスはサポートされていません, エラー: -1002"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "タイムアウト, エラー: -1003"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "データ例外, エラー: -1004"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "デバイスビジー, エラー: -1005"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "データが長すぎる, エラー: -1006"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "デバイスメモリーエラー, エラー: -1007"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "サーバーデータの取得に失敗した, エラー: -1008"
+
+msgid "deviceLog_action_powerOn"
+msgstr "電源オン"
+
+msgid "deviceLog_action_powerOff"
+msgstr "電源オフ"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "検証に失敗しました"
+
+msgid "deviceLog_action_alarm"
+msgstr "アラーム"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "メニューを入力する"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "アップデート設定"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "指紋を登録する"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "パスワードを登録する"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "カードをを登録する"
+
+msgid "deviceLog_action_deleteUser"
+msgstr "ユーザーを削除する "
+
+msgid "deviceLog_action_deleteFP"
+msgstr "指紋を削除する"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "パスワードを削除する"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "RFカードを削除する"
+
+msgid "deviceLog_action_cleanData"
+msgstr "データをクリアする"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "MFカードを新規する"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "MFカードを追加する"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "MFカード登録を削除する"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "MF カードをクリアする"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "登録データをカードに移動する"
+
+msgid "deviceLog_action_migrateDataCard2device"
+msgstr "カードの日付をデバイスにコピーする"
+
+msgid "deviceLog_action_setupTime"
+msgstr "設定時間"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "工場出荷時の設定にリセット"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "アクセスエントリを削除する"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "管理者権限をクリアする"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "アクセス制御設定を更新する"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "ユーザーアクセス制御設定を更新する"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "タイムゾーンを更新する"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "ロック解除の組合せ設定を更新する"
+
+msgid "deviceLog_action_unlock"
+msgstr "ロック解除"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "新ユーザーを追加する"
+
+msgid "deviceLog_action_updateFP"
+msgstr "指紋を更新する"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "強迫アラーム"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "アンチパスバック"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "勤怠写真を削除する"
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "他のユーザーを更新する"
+
+msgid "deviceLog_action_holiday"
+msgstr "休日"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "ユーザー写真を登録する"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "ユーザー写真を更新する"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "ユーザー名を登録する"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "ユーザー特権を登録する"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "手のひらを更新する"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "手のひらを削除する"
+
+msgid "iclock_model_deviceConfig"
+msgstr "デバイス構成"
+
+msgid "deviceConfig_deviceCommunicationSetting"
+msgstr "デバイス通信設定"
+
+msgid "deviceConfig_field_enableRegistration"
+msgstr "デバイス登録"
+
+msgid "deviceConfig_field_enableResignedFilterHelpText"
+msgstr "従業員の辞任フィルター、デバイスからの従業員データの辞任をアップロードすると、システムは削除コマンドを再送信してデバイスから削除する."
+
+msgid "deviceConfig_field_enableResignedFilter"
+msgstr "辞任したフィルター"
+
+msgid "deviceConfig_field_autoAdd"
+msgstr "自動追加を許可"
+
+msgid "deviceConfig_field_enableNameUpload"
+msgstr "アップロード名を許可"
+
+msgid "deviceConfig_field_enableNameUploadHelpTxt"
+msgstr "デバイスからユーザーの名をアップロードできるようにする"
+
+msgid "deviceConfig_field_enableCardUpload"
+msgstr "カードのアップロードを許可 "
+
+msgid "deviceConfig_field_enableCardUploadHelpTxt"
+msgstr "デバイスからユーザーのカード番号をアップロードできるようにする"
+
+msgid "deviceConfig_deviceDataRetentionSetting"
+msgstr "データ保持設定（データを保持するには9999を設定）"
+
+msgid "deviceConfig_field_transactionRetention"
+msgstr "トランザクション"
+
+msgid "deviceConfig_field_transactionRetentionHelpTxt"
+msgstr "90 - 9999日"
+
+msgid "deviceConfig_field_commandRetention"
+msgstr "コマンド"
+
+msgid "deviceConfig_field_commandRetentionHelpTxt"
+msgstr "5 - 9999日"
+
+msgid "deviceConfig_field_devLogRetention"
+msgstr "デバイスログ"
+
+msgid "deviceConfig_field_devLogRetentionHelpTxt"
+msgstr "15 - 9999日"
+
+msgid "deviceConfig_field_uploadLogRetention"
+msgstr "ログのアップロード"
+
+msgid "deviceConfig_field_uploadLogRetentionHelpTxt"
+msgstr "15 - 9999日"
+
+msgid "deviceConfig_field_retentionUnit"
+msgstr "日"
+
+msgid "deviceConfig_bioPhotoApprovalPolicy"
+msgstr "Bio-写真承認ポリシー"
+
+msgid "deviceConfig_field_editBioPhotoPolicy"
+msgstr "従業員編集"
+
+msgid "deviceConfig_field_importBioPhotoPolicy"
+msgstr "バッチインポート"
+
+msgid "deviceConfig_field_mobileBioPhotoPolicy"
+msgstr "モバイル登録"
+
+msgid "deviceConfig_field_deviceBioPhotoPolicy"
+msgstr "デバイスアップロード"
+
+msgid "employee_disabled"
+msgstr "従業員が無効にする"
+
+msgid "employee_not_found"
+msgstr "従業員が見つかりません"
+
+msgid "terminal_not_found"
+msgstr "デバイスが見つかりません"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "国"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "市"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "会社"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "工業"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "連絡先"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "サプライヤー"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "電話"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "メール"
+
+msgid "license_active_customerInfoForm_address"
+msgstr "アドレス"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "SNファイル"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "ファイル名が* -SN * .xmlのファイルを選択してください"
+
+msgid "license_active_generatingUPKFailed"
+msgstr "UPKの生成に失敗しました"
+
+msgid "license_active_systemFileWasModified"
+msgstr "システムファイルが変更されました。承認されたシステムファイルを変更しないでください。."
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "ライセンスファイルは利用できません."
+
+msgid "license_active_activeSuccessful"
+msgstr "アクティブに成功しました"
+
+msgid "license_active_オンラインActiveFailedServerNoResponse"
+msgstr "オンラインアクティブに失敗しました、ライセンスサーバーは応答しません."
+
+msgid "license_active_snFileIsRequired"
+msgstr "SNファイルが必要です"
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "オンラインアクティブに失敗しました、ライセンスサーバーが構成されていません."
+
+msgid "online_active_onlineActiveFailed"
+msgstr "オンラインアクティブに失敗しました."
+
+msgid "onlineActive_error_inactiveLicense"
+msgstr "ライセンスは無効です."
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "アクティブに成功しました"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "オンラインアクティブに失敗しました、システム例外."
+
+msgid "license_active_snFileIsWrong"
+msgstr "SNファイルが間違っています"
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "SNファイルのUPKが見つかりません"
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "UPKファイルの生成に失敗しました、システム例外"
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "ライセンスファイル"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "ファイル名の末尾は-ライセンス.xmlが必要です"
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "ライセンスが見つかりません、アップグレードできません."
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "ライセンスアップグレードに失敗しました."
+
+msgid "online_active_licenseNotFound"
+msgstr "ライセンスが見つかりません"
+
+msgid "license_expiredDate_permanent"
+msgstr "恒久"
+
+msgid "license_capacity_unlimited"
+msgstr "無制限"
+
+msgid "terminal_field_ipAddress"
+msgstr "デバイスIP"
+
+msgid "terminal_field_realIPAddress"
+msgstr "リアルIP"
+
+msgid "terminal_field_timezone"
+msgstr "タイムゾーン"
+
+msgid "terminal_field_area"
+msgstr "エリア"
+
+msgid "terminal_field_heartbeat"
+msgstr "ハートビートをリクエスト"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "秒"
+
+msgid "terminal_field_transferMode"
+msgstr "転送モード"
+
+msgid "deviceModel_option_attendance"
+msgstr "勤怠"
+
+msgid "deviceModel_option_accessController"
+msgstr "アクセスコントローラ"
+
+msgid "deviceModel_option_informationScreen"
+msgstr "情報スクリー"
+
+msgid "deviceModel_option_AICamera"
+msgstr "AIカメラ"
+
+msgid "transferMode_option_realTime"
+msgstr "リアルタイム"
+
+msgid "transferMode_option_timing"
+msgstr "タイミング"
+
+msgid "dataSources_option_terminal"
+msgstr "デバイス"
+
+msgid "dataSources_option_manualLog"
+msgstr "マニュアルログ"
+
+msgid "dataSources_option_mobile"
+msgstr "モバイル"
+
+msgid "terminal_field_transferInterval"
+msgstr "転送間隔"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "分"
+
+msgid "bioData_field_employee"
+msgstr "従業員"
+
+msgid "bioData_field_bioTemplate"
+msgstr "テンプレート"
+
+msgid "bioData_field_bioIndex"
+msgstr "Bio-索引"
+
+msgid "bioData_field_templateIndex"
+msgstr "テンプレート索引"
+
+msgid "bioData_field_bioType"
+msgstr "Bio-タイプ"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "メジャーバージョン"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "マイナーバージョン"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "フォーマット"
+
+msgid "bioData_field_isValid"
+msgstr "有効"
+
+msgid "bioData_field_isDuress"
+msgstr "強迫"
+
+msgid "bioData_field_createTime"
+msgstr "作成時間"
+
+msgid "bioData_field_updateTime"
+msgstr "更新時間"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "シリアル番号"
+
+msgid "iclock_model_bioData"
+msgstr "Bio-データ"
+
+msgid "privateMessage_field_lastSend"
+msgstr "最終送信"
+
+msgid "iclock_model_privateMessage"
+msgstr "プライベートメッセージ"
+
+msgid "publicMessage_field_lastSend"
+msgstr "最終送信"
+
+msgid "iclock_model_publicMessage"
+msgstr "パブリックメッセージ"
+
+msgid "terminal_field_state"
+msgstr "状態"
+
+msgid "terminal_field_transferTime"
+msgstr "転送時間"
+
+msgid "terminal_field_productType"
+msgstr "パブリックタイプ"
+
+msgid "terminal_field_isAttendance"
+msgstr "勤怠デバイス"
+
+msgid "terminal_field_enableAccessControl"
+msgstr "アクセス制御を有効にする"
+
+msgid "terminal_field_isRegistration"
+msgstr "デバイスを登録する"
+
+msgid "terminal_field_purpose"
+msgstr "目的"
+
+msgid "terminal_field_accessControllerType"
+msgstr "アクセスコントローラ"
+
+msgid "terminal_field_authentication"
+msgstr "検証モード"
+
+msgid "terminal_field_style"
+msgstr "タイプ"
+
+msgid "terminal_field_uploadFlag"
+msgstr "フラッグアップロード"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "ファームウェアバージョン"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "プッシュプロトコル"
+
+msgid "terminal_field_pushVersion"
+msgstr "プッシュバージョン"
+
+msgid "terminal_field_language"
+msgstr "言語"
+
+msgid "terminal_field_isTft"
+msgstr "Tft"
+
+msgid "terminal_field_terminalName"
+msgstr "デバイスモデル"
+
+msgid "terminal_field_platform"
+msgstr "プラットフォーム"
+
+msgid "terminal_field_oemVendor"
+msgstr "仕入先"
+
+msgid "terminal_field_logStamp"
+msgstr "ログスタンプ"
+
+msgid "terminal_field_operationLogStamp"
+msgstr "操作ログスタンプ"
+
+msgid "terminal_field_captureStamp"
+msgstr "キャプチャースタンプ"
+
+msgid "terminal_field_userCount"
+msgstr "ユーザーQty."
+
+msgid "terminal_field_userCapacity"
+msgstr "ユーザー容量"
+
+msgid "terminal_field_photoFuncOn"
+msgstr "写真機能有効"
+
+msgid "terminal_field_transactionCount"
+msgstr "トランザクションQty."
+
+msgid "terminal_field_transactionCapacity"
+msgstr "トランザクション容量"
+
+msgid "terminal_field_fpFuncOn"
+msgstr "指紋機能有効"
+
+msgid "terminal_field_fingerprintCount"
+msgstr "指紋Qty."
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr "指紋容量"
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr "指紋アルゴリズムバージョン"
+
+msgid "terminal_field_faceFuncOn"
+msgstr "顔機能有効"
+
+msgid "terminal_field_faceCount"
+msgstr "顔Qty."
+
+msgid "terminal_field_faceCapacity"
+msgstr "顔容量"
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr "顔アルゴリズムバージョン"
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr "指静脈機能有効"
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "指静脈Qty."
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr "指静脈容量"
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr "指静脈アルゴリズムバージョン"
+
+msgid "terminal_field_palmFuncOn"
+msgstr "手のひら機能有効"
+
+msgid "terminal_field_palmCount"
+msgstr "手のひらQty."
+
+msgid "terminal_field_palmCapacity"
+msgstr "手のひら容量"
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr "手のひらアルゴリズムバージョン"
+
+msgid "terminal_field_lockFunc"
+msgstr "アクセスコントロールをサポートする"
+
+msgid "terminal_field_lastActivity"
+msgstr "最後のアクティビティ"
+
+msgid "terminal_field_uploadTime"
+msgstr "アップロード時間"
+
+msgid "terminal_field_syncTime"
+msgstr "最終同期"
+
+msgid "terminal_field_cmdCount"
+msgstr "Cmd"
+
+msgid "iclock_model_terminal"
+msgstr "デバイス"
+
+msgid "command_field_terminal"
+msgstr "デバイス"
+
+msgid "command_field_content"
+msgstr "コンテンツ"
+
+msgid "command_field_commit_time"
+msgstr "コミット時間"
+
+msgid "command_field_transferTime"
+msgstr "乗り換え時間"
+
+msgid "command_field_returnTime"
+msgstr "返却時間"
+
+msgid "command_field_returnValue"
+msgstr "戻り値"
+
+msgid "iclock_model_terminalCommand"
+msgstr "コマンド"
+
+msgid "menu_device_errorCommandLog"
+msgstr "エラーログ"
+
+msgid "terminal_model_errorCommandLog"
+msgstr "エラーログ"
+
+msgid "errorCommandLog_field_terminal"
+msgstr "デバイス"
+
+msgid "errorCommandLog_field_errorCode"
+msgstr "エラーコード"
+
+msgid "errorCommandLog_field_errorMsg"
+msgstr "エラーメッセージ"
+
+msgid "errorCommandLog_field_dataOrigin"
+msgstr "エラーコマンド"
+
+msgid "errorCommandLog_field_cmd"
+msgstr "コマンドID"
+
+msgid "errorCommandLog_field_additional"
+msgstr "余分なメッセージ"
+
+msgid "errorCommandLog_field_uploadTime"
+msgstr "アップロード時間"
+
+msgid "terminalEmployee_field_sn"
+msgstr "シリアル番号"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "従業員ID"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "特権"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "従業員"
+
+msgid "terminalLog_field_terminal"
+msgstr "デバイス"
+
+msgid "terminalLog_field_timezone"
+msgstr "タイムゾーン"
+
+msgid "terminalLog_field_administrator"
+msgstr "管理者"
+
+msgid "terminalLog_field_actionName"
+msgstr "アクション"
+
+msgid "terminalLog_field_actionTime"
+msgstr "アクション時間"
+
+msgid "terminalLog_field_object"
+msgstr "オブジェクト"
+
+msgid "terminalLog_field_param1"
+msgstr "パラメータ"
+
+msgid "terminalLog_field_param2"
+msgstr "パラメータ"
+
+msgid "terminalLog_field_param3"
+msgstr "パラメータ"
+
+msgid "terminalLog_field_uploadTime"
+msgstr "アップロード時間"
+
+msgid "iclock_model_terminalLog"
+msgstr "デバイスログ"
+
+msgid "terminalParameter_field_terminal"
+msgstr "デバイス"
+
+msgid "terminalParameter_field_type"
+msgstr "タイプ"
+
+msgid "terminalParameter_field_name"
+msgstr "名"
+
+msgid "terminalParameter_field_value"
+msgstr "値"
+
+msgid "iclock_model_terminalParameter"
+msgstr "デバイスパラメータ"
+
+msgid "transaction_field_employeeCode"
+msgstr "従業員ID"
+
+msgid "transaction_field_employee"
+msgstr "従業員"
+
+msgid "transaction_field_punchTime"
+msgstr "パンチ時間"
+
+msgid "transaction_field_punchState"
+msgstr "パンチ状態"
+
+msgid "transaction_field_verifyType"
+msgstr "検証タイプ"
+
+msgid "transaction_field_workCode"
+msgstr "仕事コード"
+
+msgid "transaction_field_terminalSN"
+msgstr "シリアル番号"
+
+msgid "transaction_terminal_alias"
+msgstr "デバイス名"
+
+msgid "transaction_field_terminal"
+msgstr "デバイス"
+
+msgid "transaction_field_areaAlias"
+msgstr "エリア"
+
+msgid "transaction_field_longitude"
+msgstr "経度"
+
+msgid "transaction_field_latitude"
+msgstr "緯度"
+
+msgid "transaction_field_gpsLocation"
+msgstr "GPS"
+
+msgid "transaction_field_mobile"
+msgstr "モバイル"
+
+msgid "transaction_field_source"
+msgstr "ソース"
+
+msgid "transaction_field_purpose"
+msgstr "目的"
+
+msgid "transaction_field_crcCode"
+msgstr "CRCコード"
+
+msgid "transaction_field_isAttendance"
+msgstr "勤怠"
+
+msgid "transaction_field_reserved"
+msgstr "予約済み"
+
+msgid "transaction_field_uploadTime"
+msgstr "アップロード時間"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "同期ステータス"
+
+msgid "transaction_field_synchronized_time"
+msgstr "同期時間"
+
+msgid "iclock_model_transaction"
+msgstr "トランザクション"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "デバイス"
+
+msgid "terminalUploadLog_field_event"
+msgstr "イベント"
+
+msgid "terminalUploadLog_field_content"
+msgstr "コンテンツ"
+
+msgid "terminalUploadLog_field_count"
+msgstr "カウント"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "エラーカウント"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "アップロード時間"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "デバイスアップロードログ"
+
+msgid "terminalWorkCode_field_code"
+msgstr "コード"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "名"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "最後のアクティビティ"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "仕事コード"
+
+msgid "employee_photo"
+msgstr "写真"
+
+msgid "biometric_template"
+msgstr "Bio-テンプレート"
+
+msgid "fingerprint"
+msgstr "指紋"
+
+msgid "attendance_capture"
+msgstr "キャプチャー"
+
+msgid "transaction_field_firstName"
+msgstr "名"
+
+msgid "transaction_field_lastName"
+msgstr "姓"
+
+msgid "transaction_field_department"
+msgstr "部門"
+
+msgid "transaction_field_position"
+msgstr "役職"
+
+msgid "transaction_field_punchDate"
+msgstr "パンチ日付"
+
+msgid "transaction_field_area"
+msgstr "エリア"
+
+msgid "chart_present"
+msgstr "現在"
+
+msgid "chart_today"
+msgstr "今日"
+
+msgid "chart_absent"
+msgstr "不在"
+
+msgid "dashboard_exception"
+msgstr "勤怠例外"
+
+msgid "dashboard_history"
+msgstr "歴史"
+
+msgid "chart_late"
+msgstr "遅刻"
+
+msgid "chart_early_leave"
+msgstr "早退"
+
+msgid "dashboard_real_time_monitor"
+msgstr "リアルタイムモニター"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "件名"
+
+msgid "announcement_filed_content"
+msgstr "コンテンツ"
+
+msgid "announcement_filed_emp"
+msgstr "従業員ID"
+
+msgid "mobile_action_publicNotice"
+msgstr "パブリック通知をプッシュ"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "パブリック通知をプッシュ"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "パブリック通知をプッシュ"
+
+msgid "mobile_action_privateNotice"
+msgstr "プライベート通知をプッシュ"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "プライベート通知をプッシュ"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "プライベート通知をプッシュ"
+
+msgid "title_required"
+msgstr "タイトルが必要です"
+
+msgid "content_required"
+msgstr "コンテンツが必要です"
+
+msgid "appNotice_field_content"
+msgstr "コンテンツ"
+
+msgid "mobile_action_pushNotification"
+msgstr "プッシュ通知"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "プッシュ通知"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "プッシュ通知"
+
+msgid "applist_action_forceOffline"
+msgstr "強制的にオフライン"
+
+msgid "force_offline_confirm {0} {1}"
+msgstr "デバイスを強制的にオフラインにしますか{0} {1}"
+
+msgid "app_account_disable_confirm {0} {1}"
+msgstr "デバイスを無効にしますか {0} {1}"
+
+msgid "app_account_enable_confirm {0} {1}"
+msgstr "デバイスを有効にしますか {0} {1}"
+
+msgid "applist_action_disable"
+msgstr "無効"
+
+msgid "applist_action_enable"
+msgstr "有効"
+
+msgid "announce_all_emp"
+msgstr "全て"
+
+msgid "announcement_filed_sender"
+msgstr "送信者"
+
+msgid "announcement_category_public"
+msgstr "パブリック"
+
+msgid "announcement_category_private"
+msgstr "プライベート"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "アンドロイド"
+
+msgid "activeStatus_option_active"
+msgstr "アクティブ"
+
+msgid "activeStatus_option_inactive"
+msgstr "非アクティブ"
+
+msgid "notification_category_leave"
+msgstr "休暇"
+
+msgid "notification_category_overtime"
+msgstr "残業"
+
+msgid "notification_category_manualLog"
+msgstr "マニュアルログ"
+
+msgid "notification_category_training"
+msgstr "トレーニング"
+
+msgid "notification_category_schedule"
+msgstr "スケジュール"
+
+msgid "notification_category_announcement"
+msgstr "告知"
+
+msgid "notification_category_exception"
+msgstr "例外"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "パブリック通知"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "プライベート通知"
+
+msgid "notification_subCategory_late"
+msgstr "遅刻"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "早退"
+
+msgid "notification_subCategory_absent"
+msgstr "欠席"
+
+msgid "notification_readStatus_unread"
+msgstr "未読"
+
+msgid "notification_readStatus_read"
+msgstr "読取"
+
+msgid "appActionLog_status_exception"
+msgstr "例外"
+
+msgid "appActionLog_status_successful"
+msgstr "成功しました"
+
+msgid "announcement_field_category"
+msgstr "カテゴリー"
+
+msgid "announcement_field_sender"
+msgstr "発信人"
+
+msgid "announcement_field_systemSender"
+msgstr "システム発信人"
+
+msgid "announcement_field_noticeTime"
+msgstr "通知時間"
+
+msgid "app_model_announcement"
+msgstr "発表"
+
+msgid "actionLog_field_user"
+msgstr "ユーザー"
+
+msgid "actionLog_field_client"
+msgstr "依頼人"
+
+msgid "actionLog_field_action"
+msgstr "アクション"
+
+msgid "actionLog_field_params"
+msgstr "パラメータ"
+
+msgid "actionLog_field_describe"
+msgstr "説明"
+
+msgid "actionLog_field_status"
+msgstr "状態"
+
+msgid "actionLog_field_actionTime"
+msgstr "アクション時間"
+
+msgid "actionLog_field_remoteIp"
+msgstr "リモートIp"
+
+msgid "app_model_actionLog"
+msgstr "アクションログ"
+
+msgid "appList_field_userName"
+msgstr "ユーザー名"
+
+msgid "appList_field_loginTime"
+msgstr "ログイン時間"
+
+msgid "appList_field_lastActive"
+msgstr "最後のアクティブ"
+
+msgid "appList_field_token"
+msgstr "トークン"
+
+msgid "appList_field_deviceToken"
+msgstr "デバイストークン"
+
+msgid "appList_field_clientId"
+msgstr "依頼人Id"
+
+msgid "appList_field_clientCategory"
+msgstr "依頼人カテゴリー"
+
+msgid "appList_field_runStatus"
+msgstr "実行ステータス"
+
+msgid "appList_field_accessStatus"
+msgstr "APPステータス"
+
+msgid "app_model_appList"
+msgstr "Appリスト"
+
+msgid "appNotice_field_receiver"
+msgstr "受信者"
+
+msgid "appNotice_field_sender"
+msgstr "送信者"
+
+msgid "appNotice_field_systemSender"
+msgstr "システム送信者"
+
+msgid "appNotice_field_category"
+msgstr "カテゴリー"
+
+msgid "appNotice_field_subCategory"
+msgstr "サブカテゴリー"
+
+msgid "appNotice_field_source"
+msgstr "ソース"
+
+msgid "appNotice_field_sendTime"
+msgstr "送信時間"
+
+msgid "appNotice_field_readStatus"
+msgstr "読み取りステータス"
+
+msgid "appNotice_field_readTime"
+msgstr "読み取り時間"
+
+msgid "app_model_notification"
+msgstr "お知らせ"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "従業員のジオフェンス"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "従業員のジオフェンス"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "新規"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "新規"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "新規"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "従業員"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "経度"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "緯度"
+
+msgid "gpsForEmployee_field_location"
+msgstr "場所"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "距離(メートル)"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "メートル"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "開始日"
+
+msgid "gpsForEmployee_field_endDate"
+msgstr "終了日"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "期間が重複する"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "部門のジオフェンス"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "部門のジオフェンス"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "新規"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "新規"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "新規"
+
+msgid "gpsForDepartment_field_department"
+msgstr "部門"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "経度"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "緯度"
+
+msgid "gpsForDepartment_field_location"
+msgstr "場所"
+
+msgid "gpsForDepartment_field_distance"
+msgstr "距離(メートル)"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "メートル"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "開始日"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "終了日"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "期間が重複する"
+
+msgid "gps_distance_invalid"
+msgstr "無効な距離."
+
+msgid "gps_date_invalid_range"
+msgstr "無効な日付範囲"
+
+msgid "gps_start_and_end_required"
+msgstr "開始日と終了日が必要です."
+
+msgid "gps_latitude_invalid_range"
+msgstr "緯度の値は [-90,90]"
+
+msgid "departmentGps_select_dept"
+msgstr "部門を選択してください."
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "ネットワークが安定していません。もう一度お試しください."
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "外れた場所"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "従業員 %(emp)の申請スケジュールが重複している"
+
+msgid "menu_group_psnl_organization"
+msgstr "組織"
+
+msgid "menu_psnl_department"
+msgstr "部門"
+
+msgid "menu_psnl_position"
+msgstr "役職"
+
+msgid "menu_psnl_area"
+msgstr "エリア"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "従業員"
+
+msgid "menu_psnl_employee"
+msgstr "従業員"
+
+msgid "menu_psnl_resign"
+msgstr "辞任"
+
+msgid "menu_psnl_certification"
+msgstr "資料"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "従業員資料"
+
+msgid "menu_iclock_bioPhoto"
+msgstr "Bio-写真"
+
+msgid "menu_group_workflow"
+msgstr "ワークフロー"
+
+msgid "menu_workflow_workflowRole"
+msgstr "ワークフロー役割"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "ワークフロービルダー"
+
+msgid "menu_workflow_workflowNode"
+msgstr "ワークフローノード"
+
+msgid "menu_group_configuration"
+msgstr "構成"
+
+msgid "area_action_adjustEmployee"
+msgstr "人事異動"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "当該作業員を選択したエリアに転送する"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "人事異動"
+
+msgid "select_none_employee"
+msgstr "作業員を選択してください"
+
+msgid "bioPhoto_field_userPhoto"
+msgstr "ユーザー写真"
+
+msgid "bioPhoto_field_bioPhoto"
+msgstr "Bio-写真"
+
+msgid "bioPhoto_field_approvalState"
+msgstr "承認状態"
+
+msgid "bioPhoto_approvalState_approvalPassed"
+msgstr "承認済み"
+
+msgid "bioPhoto_approvalState_reject"
+msgstr "拒否された"
+
+msgid "bioPhoto_field_remark"
+msgstr "リマーク"
+
+msgid "biophoto_approve"
+msgstr "承認"
+
+msgid "approval_can_not_approve_again"
+msgstr "承認は再び承認できません"
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "作業員の写真(%(emp_code)s) が承認された"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "作業員の写真(%(emp_code)s) すでに存在しています)"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "作業員の写真(%(emp_code)s)が見つかりません"
+
+msgid "bioPhoto_action_qrCode"
+msgstr "QRコード"
+
+msgid "dataImport_action_importBioPhoto"
+msgstr "Bio-写真インポート"
+
+msgid "dataImport_action_importBioPhotoHelpTxt"
+msgstr "作業員のbio-写真をインポートする."
+
+msgid "dataImport_action_importBioPhotoDescription"
+msgstr "作業員のbio-写真をインポートする."
+
+msgid "bioPhotoImport_error_noPhotoSelected"
+msgstr "アップロードしたい写真を選択してください."
+
+msgid "bioPhotoImport_error_userNoFound_{pin}"
+msgstr "従業員({pin})が見つかりません."
+
+msgid "bioPhotoImport_button_upload"
+msgstr "アップロード"
+
+msgid "bioPhotoImport_button_clear"
+msgstr "クリア"
+
+msgid "bioPhotoImport_helpText_tip1"
+msgstr "1.写真の名前は従業員IDでなければなりません."
+
+msgid "department_action_adjustEmployee"
+msgstr "人事異動"
+
+msgid "dataImport_action_import"
+msgstr "インポート"
+
+msgid "resign_action_disableAttendance"
+msgstr "勤怠を無効にする"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "当該作業員を選択部門に転送する"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "人事異動"
+
+msgid "dataImport_field_file"
+msgstr "ファイル"
+
+msgid "data_import_fileHelpTxt"
+msgstr "テンプレートをダウンロードに従ってデータを記入してください."
+
+msgid "dataImport_action_importEmployee"
+msgstr "従業員インポート"
+
+msgid "dataImport_action_importEmployeeHelpTxt"
+msgstr "Excelファイル経由での従業員のインポート"
+
+msgid "dataImport_action_importEmployeeDescription"
+msgstr "Excelファイル経由での従業員のインポート"
+
+msgid "dataImport_action_importDocument"
+msgstr "資料をインポート"
+
+msgid "dataImport_action_importDocumentHelpTxt"
+msgstr "Excelファイルを介したインポートドキュメントの期限切れアラート設定"
+
+msgid "dataImport_action_importDocumentDescription"
+msgstr "Excelファイルを介したインポートドキュメントの期限切れアラート設定"
+
+msgid "dataImport_action_importPhoto"
+msgstr "写真をインポート"
+
+msgid "dataImport_action_importPhotoHelpTxt"
+msgstr "従業員の写真をインポート."
+
+msgid "dataImport_action_importPhotoDescription"
+msgstr "従業員の写真をインポート."
+
+msgid "empPhotoImport_error_noPhoto"
+msgstr "アップロードしたい写真を選択してください."
+
+msgid "empPhotoImport_error_{pin}NotFound"
+msgstr "従業員({pin}) が見つかりません"
+
+msgid "empPhotoImport_error_{pin}SizeExceed25KB"
+msgstr "従業員({pin}) 写真サイズが25KBを超えています."
+
+msgid "empPhotoImport_button_upload"
+msgstr "アップロード"
+
+msgid "empPhotoImport_button_clear"
+msgstr "クリア"
+
+msgid "empPhotoImport_helpText_title"
+msgstr "お知らせ"
+
+msgid "empPhotoImport_helpText_tip1"
+msgstr "1.写真名は従業員IDでなければなりません."
+
+msgid "empPhotoImport_helpText_tip2"
+msgstr "2.写真の最大サイズは25kb."
+
+msgid "dataImport_field_overwrite"
+msgstr "上書き"
+
+msgid "dataImport_field_ignoreError"
+msgstr "エラー無視 "
+
+msgid "employee_action_resynchronize2device"
+msgstr "デバイスに再同期"
+
+msgid "employee_action_resynchronize2deviceConfirmation"
+msgstr "ユーザーデータをデバイスに再同期しますか？"
+
+msgid "dataRange_option_all"
+msgstr "すべて"
+
+msgid "dataRange_option_specified"
+msgstr "指定された"
+
+msgid "reUploadFromdevice_field_device"
+msgstr "デバイス"
+
+msgid "reUploadFromdevice_field_deviceSN"
+msgstr "シリアル番号"
+
+msgid "eUploadFromdevice_field_deviceSNHelpTxt"
+msgstr "値が空の場合、複数のデバイスシリアル番号を結合するために ','を使用することがサポートされています"
+
+msgid "employee_action_reUploadFromdevice"
+msgstr "デバイスから再アップロード"
+
+msgid "employee_action_reUploadFromdeviceConfirmation"
+msgstr "デバイスから従業員データを再アップロードしますか？"
+
+msgid "employeeResign_field_date"
+msgstr "辞任日"
+
+msgid "employeeResign_field_leaveType"
+msgstr "辞任タイプ"
+
+msgid "employeeResign_field_reason"
+msgstr "理由"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "勤怠"
+
+msgid "employee_action_resignation"
+msgstr "辞任"
+
+msgid "employee_action_transferDepartment"
+msgstr "部門転送"
+
+msgid "transferDepartment_field_remarks"
+msgstr "備考"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "エリアが必要です"
+
+msgid "employee_action_transferArea"
+msgstr "エリア移動"
+
+msgid "transferArea_field_remarks"
+msgstr "備考"
+
+msgid "employee_action_transferPosition"
+msgstr "役職転送"
+
+msgid "transferPosition_field_remarks"
+msgstr "備考"
+
+msgid "employee_action_passProbation"
+msgstr "保護観察に合格"
+
+msgid "employee_action_passProbationConfirmation"
+msgstr "従業員は保護観察に合格しますか?"
+
+msgid "bio_templateType_fingerprint"
+msgstr "指紋"
+
+msgid "bio_templateType_face"
+msgstr "顔"
+
+msgid "bio_templateType_fingerVein"
+msgstr "指静脈"
+
+msgid "bio_templateType_palm"
+msgstr "手のひら"
+
+msgid "delete_biometric_templates"
+msgstr "生体認証テンプレートの削除"
+
+msgid "enable_mobile_application"
+msgstr "有効"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "モバイルアプリケーションを有効にしますか？{0} {1}"
+
+msgid "disable_mobile_application"
+msgstr "無効"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr "モバイルアプリケーションを無効にしますか？{0} {1}"
+
+msgid "position_action_adjustEmployee"
+msgstr "人事異動"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "当該作業員を選択した役職に転送する"
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "人事異動"
+
+msgid "resign_field_employee"
+msgstr "作業員"
+
+msgid "resign_field_resignDate"
+msgstr "辞任日"
+
+msgid "resign_field_resignType"
+msgstr "辞任タイプ"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "勤怠"
+
+msgid "resign_field_resignReason"
+msgstr "辞任理由"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "新規"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "新規"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "新規"
+
+msgid "resign_action_reinstatement"
+msgstr "復職"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "復職"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "復職"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "復職してもよろしいですか {0} {1}?"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "勤怠機能を無効にしますか？{0} {1}"
+
+msgid "area_field_code"
+msgstr "エリアコード"
+
+msgid "area_field_name"
+msgstr "エリア名"
+
+msgid "area_field_parentArea"
+msgstr "上級"
+
+msgid "area_field_resignEmployeeCount"
+msgstr "辞任Qty."
+
+msgid "area_field_employeeCount"
+msgstr "作業員Qty."
+
+msgid "area_field_deviceCount"
+msgstr "デバイスQty."
+
+msgid "area_name_defaultValue"
+msgstr "許可されていません"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "行%(index)sがエラー, エリアコードが空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "行%(index)sがエラー,エリアコードの最大長さは%(length)"
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "行%(index)sがエラー, エリア名が空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "行%(index)sがエラー, エリアコードの最小長さは %(length)s"
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr "データの%(index)s行は%(index_name)s セクターまたはそれ自体のサブセクターよりも高い権限を設定できません."
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "データベースエラー: SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "削除に失敗しました。従業員が使用しています"
+
+msgid "certification_field_code"
+msgstr "証明書コード"
+
+msgid "certification_field_name"
+msgstr "証明書名"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "行 %(index)sのエラーデータは、証明書コードは空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "行 %(index)sのエラーデータは,証明書コードの最大長さは%(length)"
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "行 %(index)sのエラーデータは, フォーマットは %(male)/%(female)です"
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr "行 %(index)sのエラーデータは, 証明書名が空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr "行 %(index)sのエラーデータは, 証明書名の最大長は %(length)s"
+
+msgid "department_field_code"
+msgstr "部門コード"
+
+msgid "department_filed_name"
+msgstr "部門名"
+
+msgid "department_field_parentDepartment"
+msgstr "上級"
+
+msgid "default_department"
+msgstr "部門"
+
+msgid "department_filed_employeeCount"
+msgstr "作業員Qty."
+
+msgid "department_filed_resignedCount"
+msgstr "辞任Qty."
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "行 %(index)sのエラーデータは,部門コードが空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "行 %(index)sのエラーデータは, 部門コードの最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "行 %(index)sのエラーデータは,部門名が空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "行 %(index)sのエラーデータは,部門名の最大長さは %(length)s"
+
+msgid "op_menu_group_import"
+msgstr "インポート"
+
+msgid "op_menu_group_adjustment"
+msgstr "人事異動"
+
+msgid "op_menu_group_app"
+msgstr "App"
+
+msgid "op_menu_group_more"
+msgstr "さらに"
+
+msgid "emp_field_fingerprint"
+msgstr "指紋"
+
+msgid "emp_field_face"
+msgstr "顔"
+
+msgid "emp_field_palm"
+msgstr "手のひら"
+
+msgid "emp_field_vlFace"
+msgstr "VL 顔"
+
+msgid "emp_field_area"
+msgstr "エリア"
+
+msgid "emp_field_cardNumber"
+msgstr "カード NO."
+
+msgid "area_code"
+msgstr "エリア番号"
+
+msgid "emp_field_birthday"
+msgstr "誕生日"
+
+msgid "emp_field_gender"
+msgstr "性別"
+
+msgid "emp_field_mobile"
+msgstr "モバイル"
+
+msgid "emp_field_email"
+msgstr "メール"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "行%(index)sのエラーは従業員コードが空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは, 従業員コードの最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "行の(%(index)s)従業員の名前が空です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは,名の最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは, 姓の最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは, 位置コードの最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは, 役職名の最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは, カード番号の最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは, モバイルの最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーは, メールの最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "行%(index)sのメールタイプが間違っています"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "行 %(index)sの誕生日はyyyy-mm-ddというフォーマットが必要です"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "行%(index)sの雇用日はyyyy-mm-ddというフォーマットが必要です"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr "行 %(index)sのエラーデータは, エリア名の最大長は %(length)s"
+
+msgid "employeeCert_field_employee"
+msgstr "作業員"
+
+msgid "employeeCert_field_expireOn"
+msgstr "有効期限"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "メールアラート"
+
+msgid "employeeCert_field_before"
+msgstr "前に警告する"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "新規"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "新規"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "新規"
+
+msgid "certification"
+msgstr "証明書"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr "行 %(index)sのエラーデータは従業員IDが存在しません"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr "行 %(index)sのエラーデータは証明書は空です"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr "行 %(index)sのエラーデータは証明書コードが存在しません"
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr "行 %(index)sのエラーデータは有効期限が間違っています"
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr "行 %(index)sのエラーデータは電子メール警告が間違っている、フォーマットは %(no)s/%(yes)s"
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "行 %(index)sのエラーデータ"
+
+msgid "position_field_code"
+msgstr "役職コード"
+
+msgid "position_field_name"
+msgstr "役職名"
+
+msgid "position_field_parentPosition"
+msgstr "上級"
+
+msgid "position_field_employeeCount"
+msgstr "作業員Qty."
+
+msgid "position_field_resignedCount"
+msgstr "辞任Qty."
+
+msgid "position_default_value"
+msgstr "役職"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "行 %(index)sのエラーデータは,役職コードが空です"
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "行 %(index)sのエラーデータは, 役職名が空です"
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "行 %(index)sのエラーデータは, フォーマットは yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr "行 %(index)sのエラーデータは, 辞任理由の最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "行 %(index)sのエラーデータは,従業員番号は存在しません"
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "行 %(index)sのエラーデータは,辞任日が空です"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr "行 %(index)sのエラーデータは,辞任タイプの形式は %(expect)s"
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "行(%(index)s)の辞任タイプが空です"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr "行 %(index)sのエラーデータは,勤怠は%(expect)s"
+
+msgid "department_field_name"
+msgstr "部門名"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "無視"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "上書き"
+
+msgid "devicePrivilege_option_employee"
+msgstr "従業員"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "登録"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "システム管理者"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "スーパー管理者"
+
+msgid "employee_genderOption_male"
+msgstr "男性"
+
+msgid "employee_genderOption_female"
+msgstr "女性"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "恒久"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "一時的"
+
+msgid "employee_appStatusOption_enable"
+msgstr "有効"
+
+msgid "employee_appStatusOption_disable"
+msgstr "無効"
+
+msgid "employee_appRoleOption_employee"
+msgstr "従業員"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "管理者"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "グループモード申請"
+
+msgid "employee_verificationOption_any"
+msgstr "任意"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "指紋/パスワード/カード"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "指紋"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "ユーザーIDのみ"
+
+msgid "employee_verificationOption_password"
+msgstr "パスワード"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "カードのみ"
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "指紋/パスワード"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "指紋/カード"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "パスワード/カード"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "指紋&パスワード"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "指紋&カード"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "パスワード&カード"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "ユーザーID&指紋"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "指紋&パスワード&カード"
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "ユーザーID&指紋&パスワード"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "指紋&カード/ユーザーID"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "顔のみ"
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "顔&指紋"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "顔&パスワード"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "顔&カード"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "顔&指紋&カード"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "顔&指紋&パスワード"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "指静脈"
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "指静脈&パスワード"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "指静脈&カード"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "指静脈&パスワード&カード"
+
+msgid "employee_verificationOption_palm"
+msgstr "手のひら"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "手のひら&カード"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "手のひら&顔"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "手のひら&指紋"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "手のひら&指紋&顔"
+
+msgid "resign_typeOption_pending"
+msgstr "保留中"
+
+msgid "resign_typeOption_processing"
+msgstr "処理中"
+
+msgid "resign_typeOption_done"
+msgstr "完了"
+
+msgid "resign_typeOption_quit"
+msgstr "終了"
+
+msgid "resign_typeOption_dismissed"
+msgstr "却下"
+
+msgid "resign_typeOption_resign"
+msgstr "辞任"
+
+msgid "resign_typeOption_transfer"
+msgstr "転送"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "給与なしで仕事を保持"
+
+msgid "approve_pending"
+msgstr "保留中"
+
+msgid "approve_approval_passed"
+msgstr "承認済み"
+
+msgid "approve_rejected"
+msgstr "拒否された"
+
+msgid "approve_auto_approved"
+msgstr "自動承認"
+
+msgid "module_parameter_error"
+msgstr "パラメータエラー"
+
+msgid "invalid_file_format"
+msgstr "無効なファイルフォーマット"
+
+msgid "please_select_file"
+msgstr "従業員を選択してください"
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "%(index)s フィールドは必須項目です"
+
+msgid "invalid_file_format:%(index)s"
+msgstr "無効なファイルフォーマット: %(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "ファイルには1つのシートのみを含む必要があります"
+
+msgid "file_data_must_be_more_than_two"
+msgstr "ファイルには少なくとも1行のデータが必要です"
+
+msgid "no_matched_fields"
+msgstr "ファイルに一致するフィールドがありません"
+
+msgid "file_data_cannot_be_empty"
+msgstr "インポートファイルが見つかりません"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "データベース エラー"
+
+msgid "area_field_isDefault"
+msgstr "ディフォルト"
+
+msgid "parent_can_not_itself"
+msgstr "上司はそれ自体ではありえない"
+
+msgid "psnl_model_area"
+msgstr "エリア"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "%(name)s を含むサブエリアは削除できません."
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s を含む作業員は削除できません."
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "%(name)sを含むデバイスは削除できません."
+
+msgid "default_area_can_not_be_removed"
+msgstr "デフォルトエリアは削除できません"
+
+msgid "assigned_time"
+msgstr "割り当てられた時間"
+
+msgid "model_assign_area_to_employee"
+msgstr "従業員"
+
+msgid "bioPhoto_field_employee"
+msgstr "従業員"
+
+msgid "bioPhoto_field_firstName"
+msgstr "名"
+
+msgid "bioPhoto_field_lastName"
+msgstr "姓"
+
+msgid "bioPhoto_field_email"
+msgstr "メール"
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "シリアル番号"
+
+msgid "bioPhoto_field_registerPhoto"
+msgstr "登録写真"
+
+msgid "bioPhoto_field_registerTime"
+msgstr "登録時間"
+
+msgid "bioPhoto_field_approvalPhoto"
+msgstr "承認写真"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "写真"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "コミット時間"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "承認時間"
+
+msgid "iclock_model_bioPhoto"
+msgstr "Bio-写真"
+
+msgid "psnl_model_certification"
+msgstr "資料"
+
+msgid "document_is_using_can_not_delete."
+msgstr "ドキュメントは使用中であり、削除できません."
+
+msgid "department_field_isDefault"
+msgstr "ディフォルト"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr "上司を自分自身として設定することはできません."
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "%(name)s サブー部門を含むは削除できません."
+
+msgid "default_department_can_not_be_removed."
+msgstr "デフォルトの配置は削除できません."
+
+msgid "psnl_model_department"
+msgstr "部門"
+
+msgid "emp_field_localizedName"
+msgstr "地元名"
+
+msgid "emp_field_passport_number"
+msgstr "パスポート NO."
+
+msgid "emp_field_driver_license_automobile"
+msgstr "免許証"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "オートバイ免許証"
+
+msgid "emp_field_photo"
+msgstr "写真"
+
+msgid "emp_field_selfPassword"
+msgstr "セルフパスワード"
+
+msgid "emp_field_devicePassword"
+msgstr "PIN"
+
+msgid "emp_field_devicePrivilege"
+msgstr "デバイス特権"
+
+msgid "emp_field_accessGroup"
+msgstr "アクセスグループ"
+
+msgid "emp_field_accessTimezone"
+msgstr "アクセスタイムゾーン"
+
+msgid "emp_field_address"
+msgstr "アドレス"
+
+msgid "emp_field_postcode"
+msgstr "郵便番号"
+
+msgid "emp_field_officeTel"
+msgstr "オフィス電話"
+
+msgid "emp_field_contactTel"
+msgstr "連絡先"
+
+msgid "emp_field_national"
+msgstr "全国"
+
+msgid "emp_field_religion"
+msgstr "宗教"
+
+msgid "emp_field_title"
+msgstr "タイトル"
+
+msgid "emp_field_enrollSN"
+msgstr "デバイスを登録する"
+
+msgid "emp_field_SSN"
+msgstr "SSN"
+
+msgid "emp_field_updateTime"
+msgstr "更新時間"
+
+msgid "emp_field_verifyMode"
+msgstr "認証モード"
+
+msgid "emp_field_city"
+msgstr "市"
+
+msgid "emp_field_isAdmin"
+msgstr "管理者"
+
+msgid "emp_field_type"
+msgstr "雇用タイプ"
+
+msgid "emp_field_enableAtt"
+msgstr "勤怠を有効"
+
+msgid "emp_field_enableOvertime"
+msgstr "残業を有効"
+
+msgid "emp_field_enableHoliday"
+msgstr "休日を有効"
+
+msgid "emp_field_workflowRole"
+msgstr "ワークフロー役割"
+
+msgid "employee_certification"
+msgstr "従業員証明書"
+
+msgid "emp_field_appStatus"
+msgstr "APPステータス"
+
+msgid "emp_field_appRole"
+msgstr "APP役割"
+
+msgid "emp_field_lastLogin"
+msgstr "最終ログイン"
+
+msgid "emp_field_isActive"
+msgstr "アクティブ"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr "カード番号は既に存在します。カードを再発行する場合は、最初にカードの所有者%(index)sを削除してください."
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "従業員(%(code)s) が見つかりません."
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "ワークフローロールのクリアが失敗しました: %(message)s"
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "例外 %(message)s"
+
+msgid "model_employee"
+msgstr "従業員"
+
+msgid "invalid_picture_format"
+msgstr "無効な写真フォーマット"
+
+msgid "personnel_写真_size_must_not_exceed_16kb"
+msgstr "写真の最大サイズは16KBです"
+
+msgid "employeeCert_field_cert"
+msgstr "資料"
+
+msgid "pnsl_model_empProfile"
+msgstr "従業員プロフィール"
+
+msgid "position_field_isDefault"
+msgstr "ディフォルト"
+
+msgid "psnl_model_position"
+msgstr "役職"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "上司はそれ自体で設定することができない"
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "位置'%(name)s'に含まれるサブ位置は削除できません."
+
+msgid "default_position_can_not_be_removed."
+msgstr "デフォルトの役職は削除できません."
+
+msgid "psnl_model_resign"
+msgstr "辞任"
+
+msgid "data_import_labelFile"
+msgstr "ファイルをインポート:"
+
+msgid "date_import_labelExistingData"
+msgstr "既存のデータ:"
+
+msgid "data_import_fileTemplateDemo"
+msgstr "テンプレートデモ:"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "テンプレートをダウンロードする"
+
+msgid "data_import_description"
+msgstr "説明"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1.ファイルテンプレートのヘッドである必要があります"
+
+msgid "data_import_areaImportRequired2"
+msgstr "2.コード、名は必須フィールドである必要があります"
+
+msgid "data_import_areaImportRequired3"
+msgstr "3.上司エリアはエリアコードである必要があります"
+
+msgid "data_import_areaImportRequired4"
+msgstr "4. すべての列の値はテキスト形式である必要があります"
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "リフレッシュ"
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "ダウンロード"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1.ファイルテンプレートのヘッドである必要があります"
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2.認証コードと名前である必要があります"
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3.すべての列の値はテキスト形式である必要があります"
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1.ファイルテンプレートのヘッドが必要です"
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2.コード、名は必須フィールドです"
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3.上司部門は部門コード必要があります"
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4. すべての列の値はテキスト形式が必要です"
+
+msgid "departmentList_search_department"
+msgstr "部門"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1.ファイルテンプレートのヘッドが必要です"
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2.従業員ID、名、部門コードは必須フィールドです"
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3. すべての列の値はテキスト形式が必要です"
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4.カード番号は一意でなければなりません"
+
+msgid "personnel_profile"
+msgstr "プロフィール"
+
+msgid "register_fingerprint"
+msgstr "指紋を登録する"
+
+msgid "fingerprint_registration"
+msgstr "登録"
+
+msgid "download_driver"
+msgstr "ドライバをダウンロードする"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr "(最適サイズ120×140ピクセル)"
+
+msgid "employee_title_clickToUploadPhoto"
+msgstr "クリックして写真をアップロード"
+
+msgid "employee_title_UploadPhoto"
+msgstr "写真"
+
+msgid "employee_label_fingerprintRegistered"
+msgstr "登録された指紋(v10)"
+
+msgid "employee_btn_fingerprintEnroll"
+msgstr "登録"
+
+msgid "employee_title_clickToUploadBioPhoto"
+msgstr "クリックしてbio-写真をアップロード"
+
+msgid "employee_basicInformation_setting"
+msgstr "プロフィール"
+
+msgid "employee_moreDetail_setting"
+msgstr " プライベート情報"
+
+msgid "employee_attendance_settings"
+msgstr "勤怠設定"
+
+msgid "employee_document_settings"
+msgstr "資料"
+
+msgid "employee_accessController_settings"
+msgstr "アクセスコントローラー"
+
+msgid "employee_app_setting"
+msgstr "App設定"
+
+msgid "payroll_setting"
+msgstr "給与設定"
+
+msgid "employee_deviceRelate_setting"
+msgstr "デバイスアクセス設定"
+
+msgid "employee_editPage_addCert"
+msgstr "新規"
+
+msgid "registered_fingerprint:"
+msgstr "登録済みの指紋:"
+
+msgid "employee_field_employeeCode"
+msgstr "従業員 ID"
+
+msgid "employee_field_employeeFirstName"
+msgstr "名"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "従業員"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "選択済み"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1.ファイルテンプレートのヘッドが必要です"
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2.認証、従業員、メールアラートは必須フィールドです"
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3. すべての列の値はテキスト形式が必要です"
+
+msgid "data_import_positionImportRequired1"
+msgstr "1.ファイルテンプレートのヘッドが必要です"
+
+msgid "data_import_positionImportRequired2"
+msgstr "2.コード、名前は必須フィールドです"
+
+msgid "data_import_positionImportRequired3"
+msgstr "3.上位の役職は役職コードでなければなりません"
+
+msgid "data_import_positionImportRequired4"
+msgstr "4. すべての列の値はテキスト形式が必要です"
+
+msgid "data_import_resignImportRequired1"
+msgstr "1.ファイルテンプレートのヘッドが必要です"
+
+msgid "data_import_resignImportRequired2"
+msgstr "2.従業員ID、退職日、退職タイプは必須フィールドです"
+
+msgid "data_import_resignImportRequired3"
+msgstr "3. すべての列の値はテキスト形式が必要です"
+
+msgid "BioTime 8.0"
+msgstr ""
+
+msgid "mobile_photo_register"
+msgstr "写真登録"
+
+msgid "mobile_onlineRegister_employeeCode"
+msgstr "作業員ID"
+
+msgid "mobile_employee_first_name"
+msgstr "名"
+
+msgid "mobile_employee_last_name"
+msgstr "姓"
+
+msgid "mobile_employee_email"
+msgstr "メール"
+
+msgid "mobile_onlineRegister_remark"
+msgstr "リマーク"
+
+msgid "mobile_photo_enroll"
+msgstr "提出"
+
+msgid "lng_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "lng_option_traditionalChinese"
+msgstr "中文繁體"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "Pусский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Bahasa Indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "lng_option_cambodian"
+msgstr "ជនជាតិខ្មែរ។"
+
+msgid "lng_option_japanese"
+msgstr "日本語"
+
+msgid "lng_option_ukrainian"
+msgstr "Українська"
+
+msgid "menu_personnel"
+msgstr "人事"
+
+msgid "ADMS"
+msgstr "ADMS"
+
+msgid "menu_terminal"
+msgstr "デバイス"
+
+msgid "menu_attendance"
+msgstr "勤怠"
+
+msgid "menu_system"
+msgstr "システム"
+
+msgid "menu_group_employee_request"
+msgstr "リクエスト"
+
+msgid "menu_request_employee_leave"
+msgstr "休暇"
+
+msgid "menu_request_employee_overtime"
+msgstr "残業"
+
+msgid "menu_request_employee_manual_log"
+msgstr "マニュアルログ"
+
+msgid "menu_request_employee_training"
+msgstr "トレーニング"
+
+msgid "menu_group_employee_approval"
+msgstr "承認"
+
+msgid "menu_approve_employee_leave"
+msgstr "休暇"
+
+msgid "menu_approve_employee_overtime"
+msgstr "残業"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "マニュアルログ"
+
+msgid "menu_approve_employee_training"
+msgstr "トレーニング"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "スケジュールの変更"
+
+msgid "menu_group_employee_report"
+msgstr "レポート"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "スケジュールログ"
+
+msgid "menu_staff_detailReport"
+msgstr "合計タイムカード"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "従業員の概要"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "複数のトランザクション"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "複数の休憩時間"
+
+msgid "menu_staff_timeCardReport"
+msgstr "タイムカード"
+
+msgid "staff_leave_actionDelete"
+msgstr "新規"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "作業員ID"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "名"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "姓"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "日付"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "前の時刻表"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "時刻表"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "申請時間"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "最終承認者"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "現在の状態"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "承認状態"
+
+msgid "attendance_analyze"
+msgstr "勤怠分析"
+
+msgid "csv_export"
+msgstr "Csvエクスポート"
+
+msgid "pdf_export"
+msgstr "PDFエクスポート"
+
+msgid "xlsx_export"
+msgstr "Xlsxエクスポート"
+
+msgid "staff_search_startDate"
+msgstr "開始日"
+
+msgid "staff_search_endDate"
+msgstr "終了日"
+
+msgid "staff_approval_approvalState"
+msgstr "承認状態"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "保留中"
+
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "承認済み"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "拒否された"
+
+msgid "staff_search_searchTitle"
+msgstr "検索"
+
+msgid "staff_search_clearTitle"
+msgstr "クリア検索"
+
+msgid "staff_leave_startTime"
+msgstr "開始時間"
+
+msgid "staff_leave_endTime"
+msgstr "終了時間"
+
+msgid "staff_leave_leaveCategory"
+msgstr "カテゴリー"
+
+msgid "staff_leave_applyReason"
+msgstr "理由"
+
+msgid "staff_leave_empCode"
+msgstr "作業員ID"
+
+msgid "staff_leave_firstName"
+msgstr "名"
+
+msgid "staff_leave_lastName"
+msgstr "姓"
+
+msgid "staff_leave_applyTime"
+msgstr "申請時間"
+
+msgid "staff_leave_lastApprover"
+msgstr "最終承認者"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "現在の状態"
+
+msgid "staff_leave_approvalState"
+msgstr "承認状態"
+
+msgid "staff_search_category"
+msgstr "カテゴリー"
+
+msgid "staff_leave_actionAdd"
+msgstr "新規"
+
+msgid "staff_manualLog_empCode"
+msgstr "作業員ID"
+
+msgid "staff_manualLog_firstName"
+msgstr "名"
+
+msgid "staff_manualLog_lastName"
+msgstr "姓"
+
+msgid "staff_manualLog_applyTime"
+msgstr "申請時間"
+
+msgid "staff_manualLog_punchTime"
+msgstr "パンチ時間"
+
+msgid "staff_manualLog_punchState"
+msgstr "パンチ状態"
+
+msgid "staff_manualLog_workCode"
+msgstr "仕事コード"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "最終承認者"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "現在の状態"
+
+msgid "staff_manualLog_approvalState"
+msgstr "承認状態"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "削除"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "新規"
+
+msgid "staff_manualLog_applyReason"
+msgstr "理由"
+
+msgid "staff_overtime_startTime"
+msgstr "開始時間"
+
+msgid "staff_overtime_endTime"
+msgstr "終了時間"
+
+msgid "staff_overtime_overtimeType"
+msgstr "残業タイプ"
+
+msgid "staff_overtime_applyReason"
+msgstr "理由"
+
+msgid "normal_overtime"
+msgstr "ノーマルOT"
+
+msgid "weekend_overtime"
+msgstr "週末OT"
+
+msgid "holiday_overtime"
+msgstr "休日OT"
+
+msgid "staff_overtime_actionDelete"
+msgstr "削除"
+
+msgid "staff_overtime_empCode"
+msgstr "作業員ID"
+
+msgid "staff_overtime_firstName"
+msgstr "名"
+
+msgid "staff_overtime_lastName"
+msgstr "姓"
+
+msgid "staff_overtime_applyTime"
+msgstr "申請時間"
+
+msgid "staff_overtime_lastApprover"
+msgstr "最終承認者"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "現在の状態"
+
+msgid "staff_overtime_approvalSate"
+msgstr "承認状態"
+
+msgid "staff_overtime_actionAdd"
+msgstr "新規"
+
+msgid "search_start_date"
+msgstr "開始日"
+
+msgid "search_end_date"
+msgstr "終了日"
+
+msgid "timetable"
+msgstr "時刻表"
+
+msgid "userProfile_itemLabel_language"
+msgstr "言語"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "古いパスワード"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "新しいパスワード"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "パスワード確認"
+
+msgid "staff_training_empCode"
+msgstr "作業員ID"
+
+msgid "staff_training_firstName"
+msgstr "名"
+
+msgid "staff_training_lastName"
+msgstr "姓"
+
+msgid "staff_training_applyTime"
+msgstr "申請時間"
+
+msgid "staff_training_trainingCategory"
+msgstr "トレーニングタイプ"
+
+msgid "staff_training_startTime"
+msgstr "開始時間"
+
+msgid "staff_training_endTime"
+msgstr "終了時間"
+
+msgid "staff_training_lastApprover"
+msgstr "最終承認者"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "現在の状態"
+
+msgid "staff_training_approvalState"
+msgstr "承認状態"
+
+msgid "staff_training_actionDelete"
+msgstr "削除"
+
+msgid "staff_training_actionAdd"
+msgstr "新規"
+
+msgid "the_old_pwd_is_required"
+msgstr "古いパスワードが必要です."
+
+msgid "the_new_pwd_is_required"
+msgstr "新しいパスワードが必要です."
+
+msgid "the_two_password_are_different"
+msgstr "確認パスワードが一致しません "
+
+msgid "the_old_pwd_is_wrong"
+msgstr "パスワードが間違っています"
+
+msgid "setting_employee_pwd_failed"
+msgstr "パスワードの変更に失敗しました"
+
+msgid "system_exception_illegal_login"
+msgstr "リクエストは許可されていません"
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "パスワードを変更する."
+
+msgid "model_action_add"
+msgstr "新規"
+
+msgid "model_action_modify"
+msgstr "編集"
+
+msgid "system_welcome"
+msgstr "歓迎"
+
+msgid "system_userMenu_op_language"
+msgstr "言語"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "パスワード"
+
+msgid "system_userMenu_op_about"
+msgstr "さらに"
+
+msgid "system_userMenu_op_logout"
+msgstr "ログアウト"
+
+msgid "filter_title_search"
+msgstr "フィルターで検索する"
+
+msgid "filter_title_clear"
+msgstr "フィルターをクリアする"
+
+msgid "user_username"
+msgstr "ユーザー名"
+
+msgid "user_password"
+msgstr "パスワード"
+
+msgid "software_version"
+msgstr "ソフトウェアバージョン"
+
+msgid "authorized_information"
+msgstr "使用済み情報"
+
+msgid "label_customer_code"
+msgstr "お客さんコード"
+
+msgid "label_used_devices"
+msgstr "使用済みデバイス"
+
+msgid "label_used_employees"
+msgstr "使用済み従業員"
+
+msgid "label_used_apps"
+msgstr "使用済みAPP"
+
+msgid "label_authorized_date"
+msgstr "承認日"
+
+msgid "label_expired_date"
+msgstr "有効期限"
+
+msgid "label_authorized_company"
+msgstr "認定された会社"
+
+msgid "license_activation"
+msgstr "ライセンスアクティベーション"
+
+msgid "online_activation"
+msgstr "オンラインアクティベーション"
+
+msgid "download_upk"
+msgstr "UPKをダウンロード"
+
+msgid "offline_activation"
+msgstr "オフラインアクティベーション"
+
+msgid "online_upgrade_license"
+msgstr "オンラインをアップグレード"
+
+msgid "export_license"
+msgstr "ライセンスをエクスポート"
+
+msgid "import_license"
+msgstr "ライセンスをインポート"
+
+msgid "aboutPage_title_licenseMigration"
+msgstr "ライセンス移行"
+
+msgid "server_information"
+msgstr "サーバー情報"
+
+msgid "label_machine"
+msgstr "機械"
+
+msgid "label_processor"
+msgstr "プロセッサー"
+
+msgid "label_platform"
+msgstr "プラットフォーム"
+
+msgid "label_ram_total"
+msgstr "RAM"
+
+msgid "label_ram_free"
+msgstr "空きRAM"
+
+msgid "user_authenticate"
+msgstr "認証"
+
+msgid "user_login"
+msgstr "管理者ログイン"
+
+msgid "employee_self"
+msgstr "セルフサービス"
+
+msgid "login_username"
+msgstr "ユーザー名"
+
+msgid "login_pwd"
+msgstr "パスワード"
+
+msgid "btn_user_login"
+msgstr "ログイン"
+
+msgid "btn_fp_login"
+msgstr "指紋"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "指紋ドライバをインストールしてください."
+
+msgid "login_emp_number"
+msgstr "従業員ID"
+
+msgid "login_emp_pwd"
+msgstr "パスワード"
+
+msgid "btn_emp_login"
+msgstr "ログイン"
+
+msgid "login_about_btn_title"
+msgstr "クリックしてライセンスの詳細を確認します."
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr ""
+
+msgid "system_about"
+msgstr "さらに"
+
+msgid "last_approver"
+msgstr "最終承認者"
+
+msgid "tool_filters"
+msgstr "フィルター"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "従業員IDが見つかりません。最初にシステムから登録してください."
+
+msgid "employee_photo_not_found"
+msgstr "従業員の写真が見つかりません"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "無効な写真、顔が見つかりません."
+
+msgid "workflowRole_field_employee"
+msgstr "従業員"
+
+msgid "workflowRole_field_role"
+msgstr "ワークフロー役割"
+
+msgid "workflow_action_assignEmployee"
+msgstr "従業員を割り当てる"
+
+msgid "workflow_action_assignEmployeeHelpTxt"
+msgstr "従業員をワークフロー役割に割り当てる"
+
+msgid "workFlowRoleAssignEmployee_error_noneEmployee"
+msgstr "従業員を選択してください."
+
+msgid "workFlowRoleAssignEmployee_error_noneWorkflowRole"
+msgstr "ワークフロー役割を選択してください."
+
+msgid "workflowEngine_field_code"
+msgstr "コード"
+
+msgid "workflowEngine_field_name"
+msgstr "名"
+
+msgid "workflowEngine_field_startDate"
+msgstr "開始日"
+
+msgid "workflowEngine_field_endDate"
+msgstr "終了日"
+
+msgid "workflowEngine_field_departments"
+msgstr "部門"
+
+msgid "workflowEngine_field_contentType"
+msgstr "コンテンツタイプ"
+
+msgid "workflow_model_workflowNode"
+msgstr "ワークフローノード"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "役職"
+
+msgid "workflow_node_is_required"
+msgstr "ワークフローノードが必要です"
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "ワークフローノードと名が必要です"
+
+msgid "workflow_node_is_unique"
+msgstr "ワークフローノードは一意です"
+
+msgid "workflowEngine_field_employee"
+msgstr "従業員"
+
+msgid "node_code"
+msgstr "ノード番号"
+
+msgid "node_name"
+msgstr "ノード名"
+
+msgid "workflow_node_approver"
+msgstr "承認者"
+
+msgid "workflow_node_notifier"
+msgstr "通知者"
+
+msgid "employee_count"
+msgstr "従業員数"
+
+msgid "approval_field_approvalStatus"
+msgstr "承認状況"
+
+msgid "workflowEngine_field_description"
+msgstr "説明"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "オブジェクトを反映する"
+
+msgid "workflowEngine_field_type"
+msgstr "ワークフロータイプ"
+
+msgid "workflowEngine_field_informType"
+msgstr "通知タイプ"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "なし"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "メール"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "アラート"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "メール&アラート"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "無効な休暇時間、終了時間は開始時間より後でなければなりません."
+
+msgid "the_workflow_is_already_used"
+msgstr "既に使用されたワークフロー."
+
+msgid "workflow_model_workflowEngine"
+msgstr "ワークフローエンジン"
+
+msgid "is_last_node"
+msgstr "最後のノード"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr "ユーザーはこのタスクノードを承認できません."
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr "ユーザーには、このワークフローノードを操作する権限がありません."
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr "ユーザーはこのタスクノードを拒否できません."
+
+msgid "workflow_node_instance"
+msgstr "ワークフローノードインスタンス"
+
+msgid "workflow_code"
+msgstr "ワークフロー番号"
+
+msgid "workflow_name"
+msgstr "ワークフロー名"
+
+msgid "issue_date"
+msgstr "発行日"
+
+msgid "workflow_description"
+msgstr "説明"
+
+msgid "content_type"
+msgstr "ワークフロータイプ"
+
+msgid "inform_type"
+msgstr "お知らせタイプ"
+
+msgid "del_flag"
+msgstr "フラッグの削除"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr "申請はすでに承認されています"
+
+msgid "workflow_instance"
+msgstr "ワークフローインスタンス"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "自部門"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "すべて"
+
+msgid "workflowNode_field_code"
+msgstr "コード"
+
+msgid "workflowNode_field_name"
+msgstr "名"
+
+msgid "workflowNode_field_orderID"
+msgstr "オーダーID"
+
+msgid "workflowNode_field_approverType"
+msgstr "承認者タイプ"
+
+msgid "workflowNode_field_approver"
+msgstr "承認者"
+
+msgid "workflowNode_field_notifierType"
+msgstr "通知者タイプ"
+
+msgid "workflowNode_field_notifier"
+msgstr "通知者"
+
+msgid "workflowNode_field_approverScope"
+msgstr "承認者範囲"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "通知範囲"
+
+msgid "workflow_engine_name"
+msgstr "ワークフロー名"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "ワークフローノードはすでに使用されている."
+
+msgid "workflowRole_field_code"
+msgstr "コード"
+
+msgid "workflowRole_field_name"
+msgstr "役割名"
+
+msgid "workflowRole_field_description"
+msgstr "説明"
+
+msgid "workflow_model_workflowRole"
+msgstr "ワークフローの役割"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "%(name)sを含まれているデバイスは削除できません."
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "%(name)sまだワークフローノードによって使用されており、キャンセルできません."
+
+msgid "node_state"
+msgstr "ノード状態"
+
+msgid "notifier_type_no_selected"
+msgstr "通知者タイプを選択してください."
+
+msgid "name"
+msgstr "名"
+
+msgid "remark"
+msgstr "リマーク"
+
+msgid "information_workflow"
+msgstr "情報"
+
+msgid "workflow_content_type"
+msgstr "コンテンツタイプ"
+
+msgid "instance_issue_date"
+msgstr "発行日"
+
+msgid "approve"
+msgstr "承認"
+
+msgid "remark_is_missing"
+msgstr "リマークがない."
+
+msgid "workflow_instance_id_is_missing"
+msgstr "ワークフローノードインスタンスが見つかりません"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "ワークフローノードインスタンスが見つかりません"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "ワークフローノードインスタンスが見つかりません"
+
+msgid "did_not_have_match_workflow"
+msgstr "一致するワークフローがありませんでした"
+
+msgid "verity_type"
+msgstr "認証タイプ"
+
+msgid "lineNotify_field_messageHead"
+msgstr "メッセージのヘッド"
+
+msgid "lineNotify_field_messageTail"
+msgstr "メッセージの尾"
+
+msgid "export_title_departments"
+msgstr "部門"
+
+msgid "export_title_positions"
+msgstr "役職"
+
+msgid "export_title_areas"
+msgstr "エリア"
+
+msgid "export_title_employees"
+msgstr "従業員"
+
+msgid "export_title_resigns"
+msgstr "辞任"
+
+msgid "export_title_certifications"
+msgstr "資料"
+
+msgid "export_title_employeecertifications"
+msgstr "作業員資料"
+
+msgid "export_title_terminals"
+msgstr "デバイス"
+
+msgid "export_title_terminalcommands"
+msgstr "デバイスコマンド"
+
+msgid "export_title_publicmessages"
+msgstr "パブリック"
+
+msgid "export_title_privatemessages"
+msgstr "プライベート"
+
+msgid "export_title_terminalworkcodes"
+msgstr "仕事コード"
+
+msgid "export_title_biodatas"
+msgstr "Bio-テンプレート"
+
+msgid "export_title_terminallogs"
+msgstr "デバイスログ"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "ログをアップロードする"
+
+msgid "export_title_break_times"
+msgstr "休憩時間"
+
+msgid "export_title_time_intervals"
+msgstr "時刻表"
+
+msgid "export_title_att_shifts"
+msgstr "シフト"
+
+msgid "export_title_att_schedules"
+msgstr "スケジュール"
+
+msgid "export_title_temp_schedules"
+msgstr "仮スケジュール"
+
+msgid "export_title_employeeschedule_report"
+msgstr "従業員スケジュール"
+
+msgid "export_title_manual_logs"
+msgstr "マニュアルログ"
+
+msgid "export_title_leaves"
+msgstr "休暇"
+
+msgid "export_title_overtimes"
+msgstr "オーバータイム"
+
+msgid "export_title_trainings"
+msgstr "トレーニング"
+
+msgid "export_title_holiday"
+msgstr "休日"
+
+msgid "export_title_leave_categorys"
+msgstr "休暇タイプ"
+
+msgid "export_title_training_categorys"
+msgstr "トレーニングタイプ"
+
+msgid "export_title_transactions"
+msgstr "トランザクション"
+
+msgid "export_field_employee_area"
+msgstr "エリア"
+
+msgid "export_field_device_count"
+msgstr "デバイスQty."
+
+msgid "export_field_employee"
+msgstr "従業員"
+
+msgid "export_field_employee_name"
+msgstr "名"
+
+msgid "new_schedule"
+msgstr "スケジュール調整"
+
+msgid "new_schedule_description"
+msgstr "スケジュール新規"
+
+msgid "new_schedule_help_txt"
+msgstr "スケジュール新規"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "デフォルトのカテゴリは削除できません"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "使用済みカテゴリは削除できません"
+
+msgid "base_setting"
+msgstr "システム設定"
+
+msgid "calculation_ルール"
+msgstr "遅刻"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "トランザクション"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "従業員ID長さ"
+
+msgid "menu_device_remoteupgrade"
+msgstr "デバイス"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "デバイス"
+
+msgid "remoteUpgrade_field_password"
+msgstr "パスワード"
+
+msgid "remoteUpgrade_action_add"
+msgstr "新規"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "新規"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "新規"
+
+msgid "upgrade_file_error"
+msgstr "ファイルアップグレード"
+
+msgid "please_select_device"
+msgstr "従業員を選択してください"
+
+msgid "password_is_required"
+msgstr "SNファイルが必要です."
+
+msgid "password_is_error"
+msgstr "2つのパスワードフィールドが一致しません."
+
+msgid "set_upgrade_password_first"
+msgstr "パスワード"
+
+msgid "please_select_upgrade_file"
+msgstr "アップグレードするファイルを選択してください"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "ファイルをアップグレードする"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "時間をコミットする"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "乗り換え時間"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "返却時間"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "戻り値"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "アップグレードをリモートする"
+
+msgid "Hello"
+msgstr "Hello"
+
+msgid "lineNotify_field_sendPhoto"
+msgstr "勤怠の写真を送信する"
+
+msgid "Enter Number"
+msgstr "番号を入力する"
+
+msgid "Enter Keyword"
+msgstr "キーワードを入力する"
+
+msgid "device"
+msgstr "デバイス"
+
+msgid "area_or_zone"
+msgstr "エリア"
+
+msgid "position"
+msgstr "役職"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "1分後に機能しない場合、キャッシュをクリアする"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "中国語（簡体）"
+
+msgid "deviceLanguage_option_English"
+msgstr "英語"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "スペイン語"
+
+msgid "deviceLanguage_option_French"
+msgstr "フランス語"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "アラビア語"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "ポルトガル語"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "ロシア語"
+
+msgid "deviceLanguage_option_German"
+msgstr "ドイツ語"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "ペルシャ語"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "タイ語"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "インドネシア語"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "日本語"
+
+msgid "deviceLanguage_option_Korean"
+msgstr "韓国語"
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "ベトナム語"
+
+msgid "deviceLanguage_option_Turkish"
+msgstr "トルコ語"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "ヘブライ語"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "チェコ語"
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "オランダ語"
+
+msgid "deviceLanguage_option_Italian"
+msgstr "イタリア語"
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "スロバキア語"
+
+msgid "deviceLanguage_option_Greek"
+msgstr "ギリシャ語"
+
+msgid "deviceLanguage_option_Polish"
+msgstr "ポーランド語"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr "中国語（繁体）"
+
+msgid "adminLog_action_login"
+msgstr "ログイン"
+
+msgid "adminLog_action_logout"
+msgstr "ログアウト"
+
+msgid "adminLog_action_add"
+msgstr "新規"
+
+msgid "adminLog_action_change"
+msgstr "変更"
+
+msgid "adminLog_action_delete"
+msgstr "削除"
+
+msgid "app_download"
+msgstr "Appダウンロード"
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr "最小残業より早いのは無効"
+
+msgid "minimum_above_overtime_invalid"
+msgstr "遅延時間外の最低時間"
+
+msgid "delete_default_user_alert"
+msgstr "管理者ユーザーは削除できません"
+
+msgid "delete_user_self_alert"
+msgstr "現在のユーザーは削除できません"
+
+msgid "biophoto_upload"
+msgstr "写真アップロード"
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr "従業員が存在しません: "
+
+msgid "biophoto_upload_error_photo"
+msgstr "エラー写真: "
+
+msgid "biophoto_upload_other_errors"
+msgstr "その他のエラー: "
+
+msgid "biophoto_upload_ignore_error"
+msgstr "エラーを無視する"
+
+msgid "biophoto_upload_select_files"
+msgstr "ファイルを選択する"
+
+msgid "biophoto_upload_start"
+msgstr "開始"
+
+msgid "staff_training_applyReason"
+msgstr "理由"
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr "この時間間隔の複製ワークフロー"
+
+msgid "holiday_duration_invalid"
+msgstr "休日重複."
+
+msgid "migrate_sqlite_file_is_required"
+msgstr "Sqliteデータベースファイルが必要です."
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr "作業員%(emp)s 既にドキュメントがあります %(certification)s"
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr "選択した画像が多すぎます。500以下に制限してください."
+
+msgid "autoExport_task_time"
+msgstr "時間"
+
+msgid "autoExport_task_date"
+msgstr "日付"
+
+msgid "no_record"
+msgstr "データなし"
+
+msgid "autoExport_task_punchState"
+msgstr "パンチ状態"
+
+msgid "adjust_timeinterval"
+msgstr "時刻表"
+
+msgid "app_login_failed"
+msgstr "ログイン失敗."
+
+msgid "appLogin_param_client_missing"
+msgstr "依頼人パラメータが不足している."
+
+msgid "appLogin_incorrect_username_or_password"
+msgstr "ユーザー名またはパスワード"
+
+msgid "appLogin_illegal_request"
+msgstr "不正なリクエスト."
+
+msgid "app_account_disabled"
+msgstr "アカウントが無効です."
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "アカウントが無効です。管理者に連絡して有効にしてください."
+
+msgid "appLogin_request_blocked"
+msgstr "ブロックされたリクエスト."
+
+msgid "app_client_already_block_by_administrator"
+msgstr "App依頼者は既に管理者によってブロックされています."
+
+msgid "app_client_blocked"
+msgstr "App依頼者がブロックされました."
+
+msgid "system_exception"
+msgstr "システム例外."
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "要求パラメーターはユーザー名を見つけることができません."
+
+msgid "appLogin_params_exception"
+msgstr "パラメータ例外."
+
+msgid "app_sign_out_successful"
+msgstr "ログアウト成功."
+
+msgid "appLogout_illegal_request"
+msgstr "不正なリクエスト."
+
+msgid "biotime_app_password_reset"
+msgstr "Biotimeアプリパスワードのリセット."
+
+msgid "app_password_reset_failed"
+msgstr "パスワードのリセットに失敗しました."
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "パスワードのリセットは、アクティブなモバイルで行う必要があります."
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "違法な操作。管理者に連絡してください."
+
+msgid "app_password_reset_user_not_exists"
+msgstr "ユーザーが存在しません."
+
+msgid "app_password_reset_user_not_found"
+msgstr "ユーザーが見つかりません."
+
+msgid "app_manuallog_wrong_data"
+msgstr "誤ったデータ."
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "ワークコードが見つかりません."
+
+msgid "app_manuallog_data_exception"
+msgstr "データ例外."
+
+msgid "app_manuallog_request_already_processing"
+msgstr "リクエストは既に処理中です."
+
+msgid "request_already_processing"
+msgstr "リクエストは既に処理中です."
+
+msgid "object_not_found"
+msgstr "オブジェクトが見つかりません."
+
+msgid "object_id_not_found"
+msgstr "オブジェクトIDが見つかりません."
+
+msgid "app_application_remove_success"
+msgstr "削除成功."
+
+msgid "app_application_remove_rejected"
+msgstr "承認されたアプリケーションは削除できません."
+
+msgid "app_attendance_date_today"
+msgstr "今日"
+
+msgid "app_attendance_date_yesterday"
+msgstr "昨日"
+
+msgid "app_attendance_date_this_week"
+msgstr "今週"
+
+msgid "app_attendance_date_last_week"
+msgstr "先週"
+
+msgid "app_attendance_date_this_month"
+msgstr "今月"
+
+msgid "app_attendance_date_last_month"
+msgstr "先月"
+
+msgid "app_attendance_date_user-defined"
+msgstr "ユーザー定義"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "無効なパンチ時間です。もう一度お試しください"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "GPS情報を無効にする"
+
+msgid "app_clockIn_gps_required"
+msgstr "GPS情報が必要です"
+
+msgid "app_clockIn_upload_failed"
+msgstr "アップロードに失敗しました"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "仕事コードが見つかりません"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "ロゴレビュー"
+
+msgid "companySettingPage_size_200x75"
+msgstr "寸法200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "会社の設定"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "会社ロゴ"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "クリックしてログをアップロードする"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "ロゴ表示"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "非表示"
+
+msgid "companySettingPage_posOption_left"
+msgstr "左"
+
+msgid "companySettingPage_posOption_center"
+msgstr "中心"
+
+msgid "companySettingPage_posOption_right"
+msgstr "右"
+
+msgid "companySettingPage_label_companyName"
+msgstr "会社名"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "会社名表示"
+
+msgid "companySettingPage_btn_submit"
+msgstr "提出"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "タスク %(task_code)s は正常にエクスポート."
+
+msgid "company_logo_setting"
+msgstr "会社ロゴ設定"
+
+msgid "company_name_setting"
+msgstr "会社名の設定"
+
+msgid "area_tree_selectAll"
+msgstr "すべて選択"
+
+msgid "area_tree_multipleSelect"
+msgstr "複数選択"
+
+msgid "area_tree_selectSubArea"
+msgstr "サブエリアの選択"
+
+msgid "please_input_a_valid_number"
+msgstr "有効な番号を入力してください"
+
+msgid "report_exportColumnTitle_statics"
+msgstr "統計"
+
+msgid "menu_sys_languageTranslate"
+msgstr "言語翻訳"
+
+msgid "language_translate_field_lan"
+msgstr "言語"
+
+msgid "language_translate_field_name"
+msgstr "言語名"
+
+msgid "language_translate_field_build"
+msgstr "ビルトイン"
+
+msgid "auto_deduct"
+msgstr "自動控除"
+
+msgid "required_punch"
+msgstr "必要なパンチ"
+
+msgid "training_name"
+msgstr "トレーニング名"
+
+msgid "minimum_unit"
+msgstr "最小単位"
+
+msgid "unit"
+msgstr "単位"
+
+msgid "round_off"
+msgstr "四捨五入"
+
+msgid "report_symbol"
+msgstr "レポート記号"
+
+msgid "reference"
+msgstr "参照"
+
+msgid "translated"
+msgstr "翻訳済み"
+
+msgid "language_key"
+msgstr "言語キー"
+
+msgid "original_password"
+msgstr "元のパスワード"
+
+msgid "front_end_minutes"
+msgstr "分"
+
+msgid "att_action_approve"
+msgstr "承認"
+
+msgid "report_item_min_unit_empty"
+msgstr " 空です"
+
+msgid "report_item_min_unit_invalid"
+msgstr " 無効です"
+
+msgid "menu_sys_indTableLog"
+msgstr "中間テーブル"
+
+msgid "IndTableLog_field_contentType"
+msgstr "コンテンツタイプ"
+
+msgid "IndTableLog_field_postTime"
+msgstr "ポスト時間"
+
+msgid "IndTableLog_field_postCount"
+msgstr "ポスト数"
+
+msgid "IndTableLog_field_updateTime"
+msgstr "時間更新"
+
+msgid "IndTableLog_field_updateStatus"
+msgstr "状態更新"
+
+msgid "IndTableLog_field_updateDescription"
+msgstr "説明"
+
+msgid "base_inmedit_field_invalid"
+msgstr "無効"
+
+msgid "base_inmedit_field_error"
+msgstr "エラー"
+
+msgid "base_inmedit_field_succ"
+msgstr "成功"
+
+msgid "indtable_code_or_name_required {0}{1}"
+msgstr "コードまたは名が必要です {0}{1}"
+
+msgid "indtabel_data_insert_error {0}{1}"
+msgstr "データ挿入エラー{0}{1}"
+
+msgid "system_translate_btnRestart"
+msgstr "再起動"
+
+msgid "system_translate_btnDownload"
+msgstr "ダウンロード"
+
+msgid "select_download_language"
+msgstr "ダウンロードする言語を選択してください"
+
+msgid "fingerprint_download"
+msgstr "指紋ドライバ"
+
+msgid "drive_download"
+msgstr "ドライバダウンロード"
+
+msgid "confirm_be_sure"
+msgstr "本気ですか?"
+
+msgid "confirm_not_modify_audited"
+msgstr "監査されたレコードは変更できません."
+
+msgid "employeeSave_error_duplicateCard_{emp}"
+msgstr "重複するカード {emp}"
+
+msgid "Choice Date"
+msgstr "日付を選択する"
+
+msgid "Now"
+msgstr "今"
+
+msgid "Date Range"
+msgstr "日付の範囲"
+
+msgid "module"
+msgstr "モジュール"
+
+msgid "year"
+msgstr "年"
+
+msgid "month"
+msgstr "月"
+
+msgid "day"
+msgstr "日"
+
+msgid "From"
+msgstr "から"
+
+msgid "To"
+msgstr "まで"
+
+msgid "att_action_revoke"
+msgstr "取り消す"
+
+msgid "revoke_reason"
+msgstr "取り消す理由"
+
+msgid "only_approved_records_can_be_revoked"
+msgstr "承認された記録のみを取り消すことができます"
+
+msgid "revoke_remark_is_required"
+msgstr "取り消す理由が必要です"
+
+msgid "application_has_approved_node"
+msgstr "このアプリケーションは監査中です。変更できません."
+
+msgid "terminal_state_オンライン"
+msgstr "オンライン"
+
+msgid "terminal_state_offline"
+msgstr "オフライン"
+
+msgid "terminal_state_unauthorized"
+msgstr "無許可"
+
+msgid "terminal_state_communication"
+msgstr "通信済み"
+
+msgid "emp_field_fingervein"
+msgstr "指静脈"
+
+msgid "used_holiday_can_not_be_removed"
+msgstr "この休日はアクセス制御の休日に使用されていました。最初にアクセス制御から削除してください."
+
+msgid "user_group_field_name"
+msgstr "グループ名"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_department_code_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーデータ, 上位コードの最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_position_code_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーデータ, 上位コードの最大長は %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_area_code_maximum_is_%(length)s"
+msgstr "行%(index)sのエラーデータ, 上位コードの最大長は %(length)s"
+
+msgid "employeeSave_error_invalidDate"
+msgstr "無効な雇用日"
+
+msgid "%(obj)s_is_already_used_in_%(objs)s_and_can_not_delete"
+msgstr "%(obj)s で使用している %(objs)s 削除できません."
+
+msgid "this_field_can_not_include_space_tab_or_enter"
+msgstr "このフィールドにはスペースタブを含むことも、入力することもできません."
+
+msgid "msg_all_saved_filters"
+msgstr "保存されたすべてのフィルター"
+
+msgid "msg_customize_filters"
+msgstr "フィルターをカスタマイズする"
+
+msgid "the_breaktime_%(n1)s_and_%(n2)s_has_intersection"
+msgstr "休憩時間%(n1)s と %(n2)s 交差点がある."
+
+msgid "Null"
+msgstr "ヌル"

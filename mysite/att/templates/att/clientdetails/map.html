@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load common %}
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}
+      xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static "layui/css/layui.css" %}?v=2.4.3"/>
+  <link rel="stylesheet" type="text/css" href="{% static "css/layui.admin.css" %}?v=1.1"/>
+  <script src="{% static 'locale/i18n.min.js' %}?v=1.2"></script>
+  <script src="{{ STATIC_URL }}locale/i18n_{{ LANGUAGE_CODE|default:'en' }}.js?v=1.3"></script>
+  <script src="{% static "layui/layui.js" %}?v=2.4.3" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={% MAPS_API_KEY %}&libraries=places">
+  </script>
+</head>
+<body style="max-height: 500px">
+<div class=layui-form-item" style="margin-top:5px;">
+  <div class="layui-inline">
+    <label class="layui-form-label" for="id_map_distance">Distance</label>
+    <div class="layui-input-inline">
+      <input type="text" name="distance" class="layui-input" id="id_map_distance">
+    </div>
+  </div>
+</div>
+<div class=layui-form-item" style="margin-top:5px;">
+  <div class="layui-inline">
+    <label class="layui-form-label" for="id_search_map">Search Map</label>
+    <div class="layui-input-inline">
+      <input type="text" name="search_map" class="layui-input" id="id_search_map" style="width: 500px">
+    </div>
+  </div>
+</div>
+<div id="map-canvas" style="height: 500px;width: 575px; margin-left: 45px; margin-top: 5px"></div>
+<div style="margin-left: 45px">
+  <span id="gps_add"></span><br>
+  <span id="gps_pos"></span>
+</div>
+<script>
+  google.maps.event.addDomListener(window, 'load', intilize);
+  var circle, map, geometrylocation, geometryaddress, marker, zoomUpdate, base_page, mapDistance;
+  var initLat = '12.9891657',
+      initLon = '77.6885258';
+
+  function intilize() {
+    var autocomplete = new google.maps.places.Autocomplete(document.getElementById('id_search_map'));
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+      var place = autocomplete.getPlace();
+      zoomUpdate = 18;
+      if (place !== undefined) {
+        if (place.formatted_address === undefined) {
+          formatAddress();
+        } else {
+          showInMap(place.geometry.location);
+        }
+      } else {
+        showInMap(new google.maps.LatLng(initLat, initLon), true);
+      }
+    });
+  }
+
+  function formatAddress() {
+    var geocoder = new google.maps.Geocoder();
+    var address = document.getElementById('id_search_map').value;
+    geocoder.geocode({'address': address}, function (results, status) {
+      if (status === 'OK') {
+        geometrylocation = results[0].geometry.location;
+        geometryaddress = results[0].formatted_address;
+        if (typeof (map) == "undefined") {
+          map = new google.maps.Map(document.getElementById("map-canvas"), {center: geometrylocation, zoom: 6});
+          marker = new google.maps.Marker({
+            position: geometrylocation,
+            map: map,
+            draggable: true
+          });
+
+          google.maps.event.addListener(marker, 'dragend', function () {
+            geocodePosition(marker.getPosition());
+          });
+        } else {
+          map.setOptions({center: geometrylocation, zoom: map.getZoom()});
+          marker.setPosition(geometrylocation);
+        }
+      }
+      else{
+        layer.alert(gettext('invalid_location'), {title: gettext("layer_title"), icon: 5, btn: gettext("btn_confirm")});
+      }
+    });
+  }
+
+  function showInMap(pos, noPos) {
+    if (typeof (map) == "undefined") {
+      var mapOption = {
+        center: pos,
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      if (noPos) {
+        mapOption['zoom'] = 5;
+        zoomUpdate = 5
+      } else {
+        zoomUpdate = 18
+      }
+
+      map = new google.maps.Map(document.getElementById("map-canvas"), mapOption);
+      marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        draggable: true
+      });
+      marker.addListener('click', function () {
+        map.setZoom(zoomUpdate);
+        map.setCenter(marker.getPosition());
+      });
+
+      google.maps.event.addListener(marker, 'dragend', function () {
+        geocodePosition(marker.getPosition());
+      });
+    } else {
+      map.setOptions({center: pos, zoom: 12});
+      marker.setPosition(pos);
+    }
+    geocodePosition(marker.getPosition());
+  }
+
+  function geocodePosition(pos) {
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode
+    ({latLng: pos}, function (responses) {
+      if (responses && responses.length > 0) {
+        geometrylocation = pos;
+        geometryaddress = responses[0].formatted_address;
+        document.getElementById('gps_add').innerText = geometryaddress;
+        document.getElementById('gps_pos').innerText = geometrylocation
+      }
+      if (!(circle===undefined)){
+        circle.setOptions({center: pos, radius: parseFloat(mapDistance)});
+      }else {
+        circle = new google.maps.Circle({
+        strokeColor: "#7ac143",
+        strokeOpacity: 0.8,
+        strokeWeight: 1.5,
+        fillColor: "#7ac143",
+        fillOpacity: 0.35,
+        map: map,
+        center: pos,
+        radius: parseFloat(mapDistance)
+      })
+      }
+
+    });
+  }
+
+  function updateDistannce() {
+    circle.setOptions({center: marker.getPosition(), radius: parseFloat(mapDistance)});
+  }
+
+  function initMap() {
+    base_page = window.parent.document;
+    mapDistance = base_page.getElementById('id_distance').value;
+    if (!mapDistance || isNaN(mapDistance)) {
+      mapDistance = 0
+    }
+    document.getElementById('id_map_distance').value = mapDistance;
+    var tempLat = base_page.getElementById('id_latitude').value;
+    var tempLon = base_page.getElementById('id_longitude').value;
+    if (tempLat === '' || tempLon === '') {
+      showInMap(new google.maps.LatLng(initLat, initLon), true);
+    } else {
+      showInMap(new google.maps.LatLng(tempLat, tempLon));
+    }
+  }
+
+  layui.use(['form'], function () {
+    var form = layui.form;
+    var $ = layui.$;
+    form.render();
+    $(document).ready(function () {
+      initMap();
+      $('#id_map_distance').on("input", function (ee) {
+        //change distance need change circle also.
+        if (!isNaN(this.value)) {
+          mapDistance = this.value
+        } else {
+          mapDistance = 0
+        }
+        updateDistannce()
+      })
+    });
+  })
+</script>
+</body>
+</html>

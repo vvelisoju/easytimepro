@@ -1,0 +1,144 @@
+{% load i18n iclock_tags static common %}
+{% autoescape off %}
+    <div id="{{ model_name }}_edit_form" style="padding: 10px; height: 460px; width: 100%;">
+        <form class="layui-form data-form" action="" method="post" style="height: 400px;">
+            {% csrf_token %}
+            {% with adminform.form as f %}
+                <div class="layui-form-item">
+                    {% layui_inline f.area %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.combination_no %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.combination_name %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.remark %}
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label" for="id_group_1">
+                                {% trans 'accCombination_field_group1' %}
+                            </label>
+                            <div class="layui-input-inline" >
+                                <select id="id_group_1" name="group_1" lay-filter="group1_select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label" for="id_group_2">
+                                {% trans 'accCombination_field_group2' %}
+                            </label>
+                            <div class="layui-input-inline" >
+                                <select id="id_group_2" name="group_2" lay-filter="group2_select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label" for="id_group_3">
+                                {% trans 'accCombination_field_group3' %}
+                            </label>
+                            <div class="layui-input-inline" >
+                                <select id="id_group_3" name="group_3" lay-filter="group3_select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label" for="id_group_4">
+                                {% trans 'accCombination_field_group4' %}
+                            </label>
+                            <div class="layui-input-inline" >
+                                <select id="id_group_4" name="group_4" lay-filter="group4_select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label" for="id_group_5">
+                                {% trans 'accCombination_field_group5' %}
+                            </label>
+                            <div class="layui-input-inline" >
+                                <select id="id_group_5" name="group_5" lay-filter="group5_select"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-hidden">
+                    {% layui_inline f.group1 %}
+                    {% layui_inline f.group2 %}
+                    {% layui_inline f.group3 %}
+                    {% layui_inline f.group4 %}
+                    {% layui_inline f.group5 %}
+                </div>
+            {% endwith %}
+        </form>
+    </div>
+    <script>
+        layui.use(['element', 'layer', 'laydate', 'form'], function () {
+            var element = layui.element, laydate = layui.laydate, form = layui.form;
+
+            $("#id_group_no").attr("min", "1").attr("max", "10");
+
+            $.ajax({
+                url: "/acc/api/accgroupss/?area="+$("#id_area").val()
+                , type: "GET"
+                , dataType: "json"
+                , success: function (response) {
+                    var data = response.data;
+                    var html1 = "<option value='0'>---------</option>";
+                    var html2 = "<option value='0'>---------</option>";
+                    var html3 = "<option value='0'>---------</option>";
+                    var html4 = "<option value='0'>---------</option>";
+                    var html5 = "<option value='0'>---------</option>";
+                    var group1_no = $("#id_group1").val();
+                    var group2_no = $("#id_group2").val();
+                    var group3_no = $("#id_group3").val();
+                    var group4_no = $("#id_group4").val();
+                    var group5_no = $("#id_group5").val();
+                    for (var i = 0; i < data.length; i++) {
+                        html1 += '<option value="' + data[i]['group_no'] +'"' + (data[i]['group_no'].toString()===group1_no ? 'selected':'')+'>'+ data[i]['group_no'] + '</option>';
+                        html2 += '<option value="' + data[i]['group_no'] +'"' + (data[i]['group_no'].toString()===group2_no ? 'selected':'')+'>'+ data[i]['group_no'] + '</option>';
+                        html3 += '<option value="' + data[i]['group_no'] +'"' + (data[i]['group_no'].toString()===group3_no ? 'selected':'')+'>'+ data[i]['group_no'] + '</option>';
+                        html4 += '<option value="' + data[i]['group_no'] +'"' + (data[i]['group_no'].toString()===group4_no ? 'selected':'')+'>'+ data[i]['group_no'] + '</option>';
+                        html5 += '<option value="' + data[i]['group_no'] +'"' + (data[i]['group_no'].toString()===group5_no ? 'selected':'')+'>'+ data[i]['group_no'] + '</option>';
+                    }
+                    $("#id_group_1").append(html1);
+                    $("#id_group_2").append(html2);
+                    $("#id_group_3").append(html3);
+                    $("#id_group_4").append(html4);
+                    $("#id_group_5").append(html5);
+                    form.render('select');
+                }
+                , error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.trace(arguments);
+                    form.render();
+                }
+            });
+            element.render();
+            form.render();
+
+            form.on('select(group1_select)', function (data) {
+                $("#id_group1").val(data.value);
+            });
+            form.on('select(group2_select)', function (data) {
+                $("#id_group2").val(data.value);
+            });
+            form.on('select(group3_select)', function (data) {
+                $("#id_group3").val(data.value);
+            });
+            form.on('select(group4_select)', function (data) {
+                $("#id_group4").val(data.value);
+            });
+            form.on('select(group5_select)', function (data) {
+                $("#id_group5").val(data.value);
+            });
+            $("#id_area_name").val($(".related-widget-wrapper .layui-input").val());
+        });
+
+    </script>
+{% endautoescape %}

@@ -1,0 +1,285 @@
+{% load i18n %}
+<div class="parallel-db-export-form">
+  <form action="" class="layui-form" lay-filter="parallelDBExportForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" style=" height: 470px">
+          <div class="layui-card-header"><i class="fa fa-database"></i><span style="padding-left: 5px">{% trans 'menu_sys_ParallelDB_table_columns' %}</span></div>
+          <div class="layui-card-body"  style="margin-top: 10px">
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_table_name" class="layui-form-label" style="width:177px; margin-right:3px">{% trans 'parallelDbExport_field_tableName' %}<span
+                  class="required">*</span>:</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_table_name" name="table_name" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_emp_code" class="layui-form-label" style="width:120px">{% trans 'parallelDbExport_field_employeeCode' %}<span
+                  class="required">*</span>:</label>
+                <div class="layui-input-inline" style="margin-left:6px">
+                  <input type="text" id="id_emp_code" name="emp_code" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_punch_time" class="layui-form-label" style="width:170px">{% trans 'parallelDbExport_field_punchTime' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_punch_time" name="punch_time" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_punch_date_time" class="layui-form-label" style="width:170px; margin-right:3px">{% trans 'parallelDbExport_field_punchDateTime' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_punch_date_time" name="punch_date_time"  autocomplete="off"
+                         placeholder="" value="" lay-verify="" class="layui-input">
+                </div>
+                <label for="id_punch_date" class="layui-form-label" style="width:120px">{% trans 'parallelDbExport_field_punchDate' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_punch_date" name="punch_date" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_punch_state" class="layui-form-label" style="width:170px">{% trans 'parallelDbExport_field_punchState' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_punch_state" name="punch_state" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_punch_states" class="layui-form-label" style="width:170px; margin-right:3px">{% trans 'parallelDbExport_field_punchStates' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_punch_states" name="punch_states"  autocomplete="off"
+                         placeholder="" value="" lay-verify="" class="layui-input">
+                </div>
+                <label for="id_punch_date" class="layui-form-label" style="width:120px">{% trans 'parallelDbExport_field_verifyType' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_verify_type" name="verify_type" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_verify_types" class="layui-form-label" style="width:170px">{% trans 'parallelDbExport_field_verifyTypes' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_verify_types" name="verify_types" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_terminal_sn" class="layui-form-label" style="width:170px; margin-right:3px">{% trans 'parallelDbExport_field_terminalSn' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_terminal_sn" name="terminal_sn"  autocomplete="off"
+                         placeholder="" value="" lay-verify="" class="layui-input">
+                </div>
+                <label for="id_terminal_alias" class="layui-form-label" style="width:120px">{% trans 'parallelDbExport_field_terminalAlias' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_terminal_alias" name="terminal_alias" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_area_alias" class="layui-form-label" style="width:170px">{% trans 'parallelDb_field_areaAlias' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_area_alias" name="area_alias" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_work_code" class="layui-form-label" style="width:170px; margin-right:3px">{% trans 'parallelDb_field_workcode' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_work_code" name="work_code"  autocomplete="off"
+                         placeholder="" value="" lay-verify="" class="layui-input">
+                </div>
+                <label for="id_upload_time" class="layui-form-label" style="width:120px">{% trans 'parallelDb_field_uploadTime' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_upload_time" name="upload_time" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_purpose" class="layui-form-label" style="width:170px">{% trans 'parallelDb_field_purpose' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_purpose" name="purpose" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_emp_id" class="layui-form-label" style="width:170px; margin-right:3px">{% trans 'parallelDb_field_employee' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_emp_id" name="emp_id"  autocomplete="off"
+                         placeholder="" value="" lay-verify="" class="layui-input">
+                </div>
+                <label for="id_terminal_id" class="layui-form-label" style="width:120px">{% trans 'parallelDb_field_terminal' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_terminal_id" name="terminal_id" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_source" class="layui-form-label" style="width:170px">{% trans 'parallelDb_field_source' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_source" name="source" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_temperature" class="layui-form-label" style="width:170px; margin-right:3px">{% trans 'autoExport_task_temperature' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_temperature" name="temperature"  autocomplete="off"
+                         placeholder="" value="" lay-verify="" class="layui-input">
+                </div>
+                <label for="id_mask_flag" class="layui-form-label" style="width:120px">{% trans 'autoExport_task_maskflag' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_mask_flag" name="mask_flag" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+                <label for="id_terminal_ip" class="layui-form-label" style="width:170px">{% trans 'parallelDb_field_ipAddress' %}:</label>
+                <div class="layui-input-inline" style="margin-left:7px">
+                  <input type="text" id="id_terminal_ip" name="terminal_ip" autocomplete="off" placeholder="" value=""
+                         lay-verify="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div style="margin: 0 0 0 50px;">
+              <strong style="font-size: 13px;">
+              <span style="color: red;">*Note:  </span>
+              <div style="margin-left: 40px;">
+                <p>1. {% trans "parallel_database_column_constraints" %}</p>
+                <p>2. {% trans "parallel_database_table_column_name_validation" %}</p>
+              </div>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item" id="fieldFormBtn">
+      <div class="layui-input-block layui-inline" style="margin-left:30px">
+        <button class="layui-btn" lay-submit="" lay-filter="submit_btn" id="submit_btn">
+          {% trans 'adSettingPage_btn_submit' %}
+        </button>
+      </div>
+      <div class="layui-inline" id="id_export_table_clear">
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form;
+        form.render();
+
+        form.on('submit(submit_btn)', function(data){
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var field_names = {
+                table_name: data.field['table_name'],
+                emp_code: data.field['emp_code'],
+                punch_time: data.field['punch_time'],
+                punch_date_time: data.field['punch_date_time'],
+                punch_date: data.field['punch_date'],
+                punch_state: data.field['punch_state'],
+                punch_states: data.field['punch_states'],
+                verify_type: data.field['verify_type'],
+                verify_types: data.field['verify_types'],
+                terminal_sn: data.field['terminal_sn'],
+                terminal_alias: data.field['terminal_alias'],
+                area_alias: data.field['area_alias'],
+                work_code: data.field['work_code'],
+                upload_time: data.field['upload_time'],
+                purpose: data.field['purpose'],
+                emp_id: data.field['emp_id'],
+                terminal_id: data.field['terminal_id'],
+                source: data.field['source'],
+                temperature: data.field['temperature'],
+                mask_flag: data.field['mask_flag'],
+                terminal_ip: data.field['terminal_ip'],
+            }
+
+            if (!field_names['table_name'].trim() || !field_names['emp_code'].trim()){
+                layer.msg(gettext('{% trans 'please_fill_required_fields' %}'), {icon: 5});
+                return false;
+            }
+
+            const values = Object.values(field_names);
+            const uniqueSet = new Set(values.filter(item => item !== ""));
+            const uniqueArray = [...uniqueSet, ...values.filter(item => item === "")];
+            if (uniqueArray.length !== values.length) {
+                layer.msg(gettext('{% trans 'duplicate_column_exist' %}'), {icon: 5});
+                return false;
+            }
+
+            var pattern = /^[a-z0-9_]*$/;
+            for (var i = 0; i < values.length; i++) {
+                if (!pattern.test(values[i].trim())) {
+                    layer.msg(gettext('{% trans 'parallel_database_table_column_name_data_validation' %}'), {icon: 5});
+                    return false;
+                }
+            }
+
+            var loadIndex = layer.load();
+            $.ajax({
+            url: "/base/api/parallelDBExport/",
+                type: "POST",
+                data: {'name': 'paralleldbexport', value: JSON.stringify(field_names), csrfmiddlewaretoken: csrf},
+                dataType: 'json',
+                success: function (response, xhr) {
+                    layer.msg(gettext(response.detail), {icon: 6});
+                    document.getElementById('id_export_table_clear').innerHTML= "<button class='layui-btn' id='id_deltable_btn' lay-submit='' lay-filter='delTables'>{% trans 'clear_parallel_db' %}</button>"
+                    layer.close(loadIndex);
+                }, error: function (xhr, error, e) {
+                    layer.msg(gettext(xhr.responseJSON.detail), {icon: 5});
+                    layer.close(loadIndex);
+                }
+            })
+            return false;
+        });
+
+        form.on('submit(delTables)', function (data) {
+            var loadIndex = layer.load();
+            layer.confirm("{% trans 'are_you_sure_to_delete_the_selected_item' %}", {
+                title:gettext('layer_title'),
+                btn: [gettext('btn_confirm'), gettext('btn_cancel')],
+            }, function (index){
+                $.ajax({
+                    url: "/base/api/parallelDBExport/delTables/",
+                    type: 'GET',
+                    success: function (response, xhr) {
+                        layer.msg(gettext('action_notification_successful'), {icon: 6});
+                        $("form").find('input[type="text"]').each(function(){
+                            $(this).val("");
+                        });
+                        document.getElementById('id_export_table_clear').innerHTML= ""
+                        layer.close(loadIndex);
+                    }, error: function (xhr, error, e) {
+                        layer.msg(gettext('action_notification_failed'), {icon: 5});
+                        layer.close(loadIndex);
+                    }
+                })
+            });
+            layer.close(loadIndex);
+            return false;
+        });
+
+        $(function () {
+            var apiUrl = '/base/api/parallelDBExport/?name=paralleldbexport';
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                dataType: 'json',
+                success: function (response, xhr) {
+                    var datas = response.data;
+                    if (datas.length > 0) {
+                        form.val('parallelDBExportForm', datas[0]);
+                        document.getElementById('id_export_table_clear').innerHTML= "<button class='layui-btn' id='id_deltable_btn' lay-submit='' lay-filter='delTables''>{% trans 'clear_parallel_db' %}</button>"
+                    }
+                }, error: function (xhr, error, e) {
+
+                }
+            });
+        });
+    })
+
+</script>

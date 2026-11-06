@@ -1,0 +1,18 @@
+{% extends 'staff/includes/request_search_form.html' %}
+{% load i18n %}
+{% block searchFormExtra_fore %}
+    <div class="layui-inline">
+        <label for="" class="layui-form-label">{% trans 'report_column_empCode' %}</label>
+        <div class="layui-input-inline">
+            <input id="{{ model_name }}-emp_code" type="text" name="{{ model_name }}-emp_code" lay-verify="required"
+                   autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label for="" class="layui-form-label">{% trans 'report_column_firstName' %}</label>
+        <div class="layui-input-inline">
+            <input id="{{ model_name }}-first_name" type="text" name="{{ model_name }}-first_name"
+                   lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,532 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "Tính lương"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "Hồ sơ nhân viên"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "Hồ sơ nhân viên"
+
+msgid "menu_group_payroll_formula"
+msgstr "Công thức"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "Công thức khấu trừ"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "Công thức ngoại lệ"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "Tăng công thức"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "Công thức nghỉ"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "Công thức tăng ca"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "Quỹ bổ sung"
+
+msgid "menu_payroll_extraincrease"
+msgstr "Tăng thêm"
+
+msgid "menu_payroll_extradeduction"
+msgstr "Khấu trừ thêm"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "Cấu trúc lương"
+
+msgid "menu_payroll_salarystructure"
+msgstr "Cấu trúc lương"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "Tiền vay"
+
+msgid "menu_payroll_empLoan"
+msgstr "Tiền vay"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "Lương tạm ứng"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "Lương tạm ứng"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "Hoàn trả"
+
+msgid "menu_payroll_reimbursement"
+msgstr "Hoàn trả"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Tính toán"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "Tính toán lương"
+
+msgid "menu_group_payroll_report"
+msgstr "Báo cáo"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "Cấu trúc lương"
+
+msgid "menu_payroll_increase_report"
+msgstr "Tăng vật phẩm"
+
+msgid "menu_payroll_deduction_report"
+msgstr "Các khoản khấu trừ"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "Chi tiết mức lương"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "Thông số chấm công"
+
+msgid "paroll_mode_monthly"
+msgstr "Hàng tháng"
+
+msgid "paroll_type_cash"
+msgstr "Tiền mặt"
+
+msgid "paroll_type_check"
+msgstr "Séc"
+
+msgid "paroll_type_bank_transfer"
+msgstr "Chuyển khoản ngân hàng"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "Hồ sơ nhân viên"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "Chế độ thanh toán"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "Hình thức thanh toán"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "Tên ngân hàng"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "Tài khoản ngân hàng"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "ID nhân sự"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "Tên"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "Họ"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "ID đại lý"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "Tài khoản đại lý"
+
+msgid "payroll_model_deductionFormula"
+msgstr "Công thức khấu trừ"
+
+msgid "deductionFormula_field_name"
+msgstr "Tên"
+
+msgid "deductionFormula_field_formula"
+msgstr "Công thức"
+
+msgid "deductionFormula_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "Công thức ngoại lệ"
+
+msgid "exceptionFormula_field_name"
+msgstr "Tên"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "Loại ngoại lệ"
+
+msgid "exceptionFormula_field_formula"
+msgstr "Công thức"
+
+msgid "exceptionFormula_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_increasementFormula"
+msgstr "Tăng công thức"
+
+msgid "increasementFormula_field_name"
+msgstr "Tên"
+
+msgid "increasementFormula_field_formula"
+msgstr "Công thức"
+
+msgid "increasementFormula_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_leaveFormula"
+msgstr "Công thức nghỉ"
+
+msgid "leaveFormula_field_name"
+msgstr "Tên"
+
+msgid "leaveFormula_field_category"
+msgstr "Loại nghỉ"
+
+msgid "leaveFormula_field_formula"
+msgstr "Công thức"
+
+msgid "leaveFormula_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "Công thức tăng ca"
+
+msgid "overtimeFormula_field_name"
+msgstr "Tên"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "Cấp tăng ca"
+
+msgid "overtimeFormula_field_formula"
+msgstr "Công thức"
+
+msgid "overtimeFormula_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_extraIncrease"
+msgstr "Tăng thêm"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "Thêm"
+
+msgid "extraIncrease_field_employee"
+msgstr "Nhân viên"
+
+msgid "extraIncrease_field_amount"
+msgstr "Khoảng"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "Thời gian phát hành"
+
+msgid "extraIncrease_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_extraDeduction"
+msgstr "Khấu trừ thêm"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "Thêm"
+
+msgid "extraDeduction_field_employee"
+msgstr "Nhân viên"
+
+msgid "extraDeduction_field_amount"
+msgstr "Khoảng"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "Thời gian phát hành"
+
+msgid "extraDeduction_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_salarystructure"
+msgstr "Cấu trúc lương"
+
+msgid "salaryStructure_field_amount"
+msgstr "Lương căn bản"
+
+msgid "salaryStructure_field_formula"
+msgstr "Công thức lương"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "Ngày có hiệu lực"
+
+msgid "salaryStructure_field_remark"
+msgstr "Ghi chú"
+
+msgid "salaryStructure_field_formulas"
+msgstr "Công thức"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "Lương tạm ứng"
+
+msgid "salaryAdvance_field_amount"
+msgstr "Khoảng"
+
+msgid "salaryAdvance_field_time"
+msgstr "Thời gian phát hành"
+
+msgid "salaryAdvance_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_Reimbursement"
+msgstr "Hoàn trả"
+
+msgid "Reimbursement_field_amount"
+msgstr "Khoảng"
+
+msgid "Reimbursement_field_time"
+msgstr "Thời gian hoàn trả"
+
+msgid "Reimbursement_field_file"
+msgstr "Biên lai hoàn tiền"
+
+msgid "Reimbursement_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_model_empLoan"
+msgstr "Tiền vay"
+
+msgid "empLoan_field_employee"
+msgstr "ID nhân viên"
+
+msgid "empLoan_field_loanAmount"
+msgstr "Khoảng vay"
+
+msgid "empLoan_field_loanTime"
+msgstr "Thời gian vay"
+
+msgid "empLoan_field_refundCycle"
+msgstr "Chu kỳ hoàn tiền"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "Số tiền hoàn trả mỗi kỳ"
+
+msgid "empLoan_field_clean_time"
+msgstr "Thời gian xóa"
+
+msgid "empLoan_field_remark"
+msgstr "Ghi chú"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "Thêm"
+
+msgid "payroll_action_addRmb"
+msgstr "Thêm"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "Thêm"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "Thêm"
+
+msgid "reimbursement_file"
+msgstr "Biên lai hoàn tiền"
+
+msgid "report_column_overtimeFormula1"
+msgstr "OT1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "OT2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "OT3"
+
+msgid "report_column_increaseFormula"
+msgstr "Tăng công thức"
+
+msgid "report_column_deductionFormula"
+msgstr "Công thức khấu trừ"
+
+msgid "report_column_lateFormula"
+msgstr "Công thức trễ"
+
+msgid "report_column_absentFormula"
+msgstr "Công thức nghỉ"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "Công thức về sớm"
+
+msgid "payroll_model_monthlysalary"
+msgstr "Báo cáo lương hàng tháng"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "Lương cơ bản"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "Ngày có hiệu lực"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "Ngày tính toán"
+
+msgid "monthlySalary_field_ot1"
+msgstr "OT1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "OT2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "OT3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "Vào trễ"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "Ra sớm"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "Nghỉ"
+
+msgid "monthlySalary_field_increase"
+msgstr "Tăng"
+
+msgid "monthlySalary_field_deduction"
+msgstr "Khấu trừ"
+
+msgid "monthlySalary_field_leave"
+msgstr "Nghỉ"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "Tăng thêm"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "Khấu trừ thêm"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "Tổng số tiền cho vay"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "Số tiền cho vay hoàn trả"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "Số tiền cho vay chưa hoàn trả"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "Khấu trừ cho vay"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "Tăng cho vay"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "Tăng nâng cao "
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "Khấu trừ trước"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "Hoàn trả"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "Tổng tăng"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "Tổng số khấu trừ"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "Tổng số tiền lương"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "Mức lương cơ bản không thể ít hơn không!"
+
+msgid "menu_payroll_setting"
+msgstr "Cài đặt bản lương"
+
+msgid "payroll_attParamUnit"
+msgstr "Đơn vị tham số chấm công"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}:Nhân viên {1} có cơ cấu lương hiệu quả."
+
+msgid "receipt_file_format_constraints"
+msgstr "Chỉ hỗ trợ tệp tin hình ảnh jpg / jpeg / png / bmp ."
+
+msgid "1_period"
+msgstr "Giai đoạn 1"
+
+msgid "2_periods"
+msgstr "Giai đoạn 2"
+
+msgid "3_periods"
+msgstr "Giai đoạn 3"
+
+msgid "4_periods"
+msgstr "Giai đoạn 4"
+
+msgid "5_periods"
+msgstr "Giai đoạn 5"
+
+msgid "6_periods"
+msgstr "Giai đoạn 6"
+
+msgid "7_periods"
+msgstr "Giai đoạn 7"
+
+msgid "8_periods"
+msgstr "Giai đoạn 8"
+
+msgid "9_periods"
+msgstr "Giai đoạn 9"
+
+msgid "10_periods"
+msgstr "Giai đoạn 10"
+
+msgid "11_periods"
+msgstr "Giai đoạn 11"
+
+msgid "12_periods"
+msgstr "Giai đoạn 12"
+
+msgid "deductionformula_addform_note"
+msgstr "Lưu ý: Khoản khấu trừ này có hiệu lực hàng tháng."
+
+msgid "increasementformula_addform_note"
+msgstr "Lưu ý: Mức tăng này có hiệu lực hàng tháng."
+
+msgid "caleulator_title"
+msgstr "Máy tính"
+
+msgid "caleulator_basicSalary"
+msgstr "Lương cơ bản"
+
+msgid "caleulator_scheduleDays"
+msgstr "Ngày lịch trình "
+
+msgid "caleulator_schedulePeriod"
+msgstr "Giai đoạn lịch trình "
+
+msgid "caleulator_check"
+msgstr "Kiểm tra"
+
+msgid "report_column_total_increase_formula"
+msgstr "Tổng công thức tăng"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "Tổng công thức tăng tên"
+
+msgid "report_column_total_increase_expression"
+msgstr "Tổng biểu thức tăng "
+
+msgid "report_column_total_deduction_formula"
+msgstr "Tổng công thức khấu trừ"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "Tổng công thức khấu trừ Tên"
+
+msgid "report_column_total_deduction_expression"
+msgstr "Tổng số công thức khấu trừ"
+
+msgid "empPayrollProfile_field_ssn b"
+msgstr "SSN"

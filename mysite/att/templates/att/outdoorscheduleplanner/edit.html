@@ -1,0 +1,268 @@
+{% load i18n static %}
+{% load common %}
+<style>
+  .pac-container {
+    z-index: 1100 !important;
+  }
+    .layui-inline{
+        margin-right:0px;
+    }
+    #map {
+        height: 100%;
+      }
+</style>
+<div id="{{ model_name }}_edit_form" style="padding: 10px;height: 490px;">
+    <form class="layui-form data-form" action="" method="post" >
+        {% csrf_token %}
+        {% with adminform.form as f %}
+            <div class="layui-form-item">
+                {% layui_inline f.schedule_name %}
+            <hr>
+            </div>
+        {% for i in '12345'|make_list %}
+             <div class="div-show{{ forloop.counter }}">
+                <div class="layui-form-item">
+                    {% if forloop.counter == 1 %}
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <span style="color: red;position: absolute;left: 35%;top: 0%;margin-left: 0px;">*</span>{% layui_inline f.company_name1  %}
+                        <input  type="hidden" class="company_id{{ forloop.counter }}" name="clients" placeholder="Company" value="">
+                    </div>
+                    {% endif %}
+                    {% if forloop.counter == 2 %}
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <span style="color: red;position: absolute;left: 35%;top: 0%;margin-left: 0px;">*</span>{% layui_inline f.company_name2  %}
+                        <input  type="hidden" class="company_id{{ forloop.counter }}" name="clients" placeholder="Company" value="">
+                    </div>
+                    {% endif %}
+                    {% if forloop.counter == 3 %}
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <span style="color: red;position: absolute;left: 35%;top: 0%;margin-left: 0px;">*</span>{% layui_inline f.company_name3  %}
+                        <input  type="hidden" class="company_id{{ forloop.counter }}" name="clients" placeholder="Company" value="">
+                    </div>
+                    {% endif %}
+                    {% if forloop.counter == 4 %}
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <span style="color: red;position: absolute;left: 35%;top: 0%;margin-left: 0px;">*</span>{% layui_inline f.company_name4  %}
+                        <input  type="hidden" class="company_id{{ forloop.counter }}" name="clients" placeholder="Company" value="">
+                    </div>
+                    {% endif %}
+                    {% if forloop.counter == 5 %}
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <span style="color: red;position: absolute;left: 35%;top: 0%;margin-left: 0px;">*</span>{% layui_inline f.company_name5  %}
+                        <input  type="hidden" class="company_id{{ forloop.counter }}" name="clients" placeholder="Company" value="">
+                    </div>
+                    {% endif %}
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <label for="" class="layui-form-label">{% trans 'SchedulePlanner_field_created_date'  %}</label>
+                        <div class="layui-input-inline">
+                            <input id="id_Date{{ forloop.counter }}" type="text" name="dates" autocomplete="off" class="layui-input" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <label for="" class="layui-form-label">{% trans 'SchedulePlanner_field_inclock' %}</label>
+                        <div class="layui-input-inline">
+                        <input id="in-clock{{ forloop.counter }}" type="text" name="inclock" autocomplete="off" class="layui-input" value="">
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="margin-top:20px;margin-left:8px;">
+                        <label for="" class="layui-form-label">{% trans 'SchedulePlanner_field_outclock' %}</label>
+                        <div class="layui-input-inline">
+                            <input id="out-clock{{ forloop.counter }}" type="text" name="outclock" autocomplete="off" class="layui-input" value="">
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="margin-top:20px;">
+                        <i id="{{ forloop.counter }}" class="fa fa-map-marker emp_map btn btn-primary" aria-hidden="true" style="font-size: 1.5em;cursor:pointer;">{% trans 'SchedulePlanner_field_location' %}</i>
+                    </div>
+                </div>
+                    <hr>
+             </div>
+        {% endfor %}
+        {% endwith %}
+        <input type="hidden" id="savedrow" name="div-show" value="{{ data_count }}">
+        <input type="hidden" id="client_details_edit" name="sclient_details" value="{{ data }}">
+        <div class="layui-inline">
+            <button type="button" class="btn btn-primary" value="+" onclick="addRow()">{% trans 'SchedulePlanner_field_add' %}</button>
+            <button type="button"  class="btn btn-primary" value="+" onclick="removeRow()">{% trans 'SchedulePlanner_field_remove' %}</button>
+        </div>
+    </form>
+</div>
+
+<script>
+layui.use(['laydate','form'], function () {
+    var form = layui.form;
+    laydate = layui.laydate;
+    var date = new Date();
+    laydate.render({
+        elem: '#id_Date1'
+        ,type: 'date'
+        ,value: date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01',
+    });
+    laydate.render({
+          elem: '#in-clock1'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+    laydate.render({
+          elem: '#out-clock1'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+     laydate.render({
+        elem: '#id_Date2'
+        ,type: 'date'
+        ,value: date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01',
+    });
+    laydate.render({
+          elem: '#in-clock2'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+    laydate.render({
+          elem: '#out-clock2'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+     laydate.render({
+        elem: '#id_Date3'
+        ,type: 'date'
+        ,value: date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01'
+    });
+    laydate.render({
+          elem: '#in-clock3'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+    laydate.render({
+          elem: '#out-clock3'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+     laydate.render({
+        elem: '#id_Date4'
+        ,type: 'date'
+        ,value: date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01'
+    });
+    laydate.render({
+          elem: '#in-clock4'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+    laydate.render({
+          elem: '#out-clock4'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+    laydate.render({
+        elem: '#id_Date5'
+        ,type: 'date'
+        ,value: date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01'
+    });
+    laydate.render({
+          elem: '#in-clock5'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+    laydate.render({
+          elem: '#out-clock5'
+          ,type: 'time'
+          ,value: '00:00:00'
+    });
+    form.on('select(company_name1)', function (data) {
+        $(".company_id1").val($("select[name=company_name1]").val());
+    });
+    form.on('select(company_name2)', function (data) {
+        $(".company_id2").val($("select[name=company_name2]").val());
+    });
+    form.on('select(company_name3)', function (data) {
+        $(".company_id3").val($("select[name=company_name3]").val());
+    });
+    form.on('select(company_name4)', function (data) {
+        $(".company_id4").val($("select[name=company_name4]").val());
+    });
+    form.on('select(company_name5)', function (data) {
+        $(".company_id5").val($("select[name=company_name5]").val());
+    });
+});
+$('.emp_map').click(function () {
+    var compny_id = Number($(this).attr("id"));
+    var test = "company_name"+compny_id;
+      var url = '/att/get_location/?id='+$("select[name="+test+"]").val();
+      layer.open({
+        title: 'Map',
+        type: 2,
+        area: ['600px', '600px'],
+        fixed: false, //不固定
+        maxmin: false,
+        btn: ['Cancel'],
+        content: url,
+        yes: function (index, layero) {
+          layer.close(index);
+        }
+      });
+});
+</script>
+<script>
+    function addRow(){
+        var divNumber = Number($('input[name=div-show]').val());
+        if($(".company_id"+divNumber).val() == ''){
+            layer.alert(gettext("Please_select_company_name"), {
+                    title: gettext('system_exception')
+                    , icon: 5
+                    , btn: gettext('btn_confirm')
+                })
+        }else{
+            divNumber += 1
+            if (divNumber < 6) {
+                $('.div-show' + divNumber).css('display', 'block');
+                $('input[name=div-show]').val(divNumber);
+            } else {
+                layer.alert(gettext("sorry_you_can_add_only_four_client"), {
+                    title: gettext('system_exception')
+                    , icon: 5
+                    , btn: gettext('btn_confirm')
+                })
+            }
+        }
+    }
+    function removeRow (input) {
+        var divNumber = Number($('input[name=div-show]').val());
+        if(divNumber > 1) {
+            $('.div-show' + divNumber).css('display', 'none');
+            $('.div-show' + divNumber).find(':input').val('');
+            divNumber -=1
+            $('input[name=div-show]').val(divNumber);
+        }else{
+            layer.alert(gettext('sorry_default_client_cannot_be_removed'), {
+                title: gettext('system_exception')
+                , icon: 5
+                , btn: gettext('btn_confirm')
+            })
+        }
+    }
+
+</script>
+<script>
+    $(function () {
+        var div_count = Number($('#savedrow').val());
+        var client_details_edit = eval($('#client_details_edit').val());
+        var z;
+        for(z=1;z<6;z++){
+            var test = "company_name"+z;
+            if(z <= div_count){
+                var some = client_details_edit[z-1]['client_id'];
+                var query =$("#id_company_name"+z).siblings().children('div').children('input');
+                $("select[name="+test+"] option[value='" + some + "']").attr("selected", true);
+                query.val($("select[name="+test+"] option[value='" + some + "']")[0].innerText);
+                $('.company_id'+z).val(client_details_edit[z-1]['client_id']);
+                $('#id_Date'+z).val(client_details_edit[z-1]['dates']);
+                $('#in-clock'+z).val(client_details_edit[z-1]['inclock']);
+                $('#out-clock'+z).val(client_details_edit[z-1]['outclock']);
+            }else{
+                 $('.div-show'+z).css('display',"none");
+            }
+        }
+    });
+
+</script>

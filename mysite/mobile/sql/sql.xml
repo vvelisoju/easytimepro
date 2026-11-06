@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlgroup>
+    <sql id="announcement">
+        <content engine="default">
+            <![CDATA[
+            select anc.id, anc.subject, anc.content, anc.create_time, anc.sender, u.first_name as name, anc.system_sender, au.username
+                from mobile_announcement anc
+                left join personnel_employee u on u.emp_code = anc.sender
+                left join auth_user au on au.username = anc.system_sender
+                where anc.category='%(category)s' %(and)s
+            ]]>
+            <part id="receiver">
+            <![CDATA[
+                and anc.receiver_id = %(receiver)s
+            ]]>
+            </part>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+            select anc.id, anc.subject, dbms_lob.substr(anc.content), anc.create_time, anc.sender, u.first_name as name, anc.system_sender, au.username
+                from mobile_announcement anc
+                left join personnel_employee u on u.emp_code = anc.sender
+                left join auth_user au on au.username = anc.system_sender
+                where anc.category='%(category)s' %(and)s
+            ]]>
+            <part id="receiver">
+            <![CDATA[
+                and anc.receiver_id = %(receiver)s
+            ]]>
+            </part>
+        </content>
+    </sql>
+
+    <sql id="attendance_employee">
+        <content engine="postgresql">
+            <![CDATA[
+                select distinct emp_code, first_name from (
+                select  u.emp_code as emp_code, u.first_name as first_name, to_char(punch_time,'yyyy-mm-dd')
+                from iclock_transaction c
+                left join personnel_employee u on u.id = c.emp_id
+                where punch_time >= '%(start)s' and punch_time < '%(end)s' %(and)s
+                group by u.id, u.first_name, to_char(punch_time,'yyyy-mm-dd')
+                order by to_char(punch_time,'yyyy-mm-dd') desc ) a
+            ]]>
+        </content>
+         <content engine="mysql">
+            <![CDATA[
+                select distinct emp_code, first_name from (
+                select  u.emp_code as emp_code, u.first_name as first_name, date_format(punch_time, '%%Y-%%m-%%d')
+                from iclock_transaction c
+                left join personnel_employee u on u.id = c.emp_id
+                where punch_time >= '%(start)s' and punch_time < '%(end)s'
+                group by u.id, u.first_name,date_format(punch_time, '%%Y-%%m-%%d')
+                order by date_format(punch_time, '%%Y-%%m-%%d') desc) a
+            ]]>
+        </content>
+        <content engine="oracle">
+        <![CDATA[
+                select distinct emp_code, first_name from (
+                select  u.emp_code as emp_code, u.first_name as first_name, to_char(punch_time,'yyyy-mm-dd')
+                from iclock_transaction c
+                left join personnel_employee u on u.id = c.emp_id
+                where punch_time >= '%(start)s' and punch_time < '%(end)s'
+                order by to_char(punch_time,'yyyy-mm-dd') desc) a
+            ]]>
+        </content>
+        <content engine="default">
+            <![CDATA[
+                select distinct emp_code, first_name from (
+                select  u.emp_code as emp_code, u.first_name as first_name, convert(nvarchar(10), punch_time,120)
+                from iclock_transaction c
+                left join personnel_employee u on u.id = c.emp_id
+                where punch_time >= '%(start)s' and punch_time < '%(end)s' %(and)s
+                group by u.id, u.first_name, convert(nvarchar(10), punch_time,120)
+                order by convert(nvarchar(10), punch_time,120) desc ) a
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="attendance">
+        <content engine="default">
+            <![CDATA[
+                select emp_code, convert(nvarchar(10), punch_time,120) as att_date, min(punch_time) as check_in, max(punch_time)
+                as check_out  from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(start)s' and punch_time < '%(end)s'
+                group by emp_id, convert(nvarchar(10), punch_time,120)
+                order by convert(nvarchar(10), punch_time,120) desc
+            ]]>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select emp_code, date_format(punch_time, '%%Y-%%m-%%d') as att_date, min(punch_time) as check_in, max(punch_time)
+                as check_out  from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(start)s' and punch_time < '%(end)s'
+                group by emp_id, date_format(punch_time, '%%Y-%%m-%%d')
+                order by date_format(punch_time, '%%Y-%%m-%%d') desc
+            ]]>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, min(punch_time)::timestamp(0) without time zone as check_in, max(punch_time)::timestamp(0) without time zone as check_out
+                from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(start)s' and punch_time < '%(end)s'
+                group by emp_id, to_char(punch_time,'yyyy-mm-dd')
+                order by to_char(punch_time,'yyyy-mm-dd') desc
+			]]>
+        </content>
+        <content engine="oracle">
+        <![CDATA[
+                select emp_code, to_char(punch_time,'yyyy-mm-dd') as att_date, min(punch_time) as check_in, max(punch_time)
+                as check_out  from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(start)s' and punch_time < '%(end)s'
+                group by emp_id, to_char(punch_time,'yyyy-mm-dd')
+                order by to_char(punch_time,'yyyy-mm-dd') desc
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="manual_punch_application">
+        <content engine="default">
+            <![CDATA[
+            select abstractexception_ptr_id, emp_code, first_name, punch_time, punch_state, apply_reason, apply_time, audit_status, approver, audit_reason,audit_time
+                    from (
+                        SELECT s.abstractexception_ptr_id, u.emp_code,u.first_name , s.punch_time,s.punch_state, s.apply_reason,s.apply_time,w.audit_status,
+                        s.audit_user_id as approver,
+                        s.audit_reason,
+                        s.audit_time
+                        FROM  att_manuallog s
+                        inner join personnel_employee u on u.id = s.employee_id
+                        inner join workflow_abstractexception w on w.id = s.abstractexception_ptr_id
+                        WHERE %(where)s
+                    ) b
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="leave_application">
+        <content engine="default">
+            <![CDATA[
+                select abstractexception_ptr_id, emp_code, first_name, start_time, end_time, apply_reason, category_name, apply_time, audit_status, approver, audit_reason, audit_time
+                    from (
+                        SELECT s.abstractexception_ptr_id, u.emp_code,u.first_name , s.start_time,s.end_time,s.apply_reason,l.category_name,s.apply_time,w.audit_status,
+                        s.employee_id as approver,
+                        s.audit_reason,
+                        s.audit_time
+                        FROM att_leave s
+                        inner join personnel_employee u on u.id = s.employee_id
+                        inner join att_leavecategory l on s.category_id = l.id
+                        inner join workflow_abstractexception w on w.id = s.abstractexception_ptr_id
+                        WHERE %(where)s
+                    ) b
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="reimbursement_application">
+        <content engine="default">
+            <![CDATA[
+                select b."workflow_abstractException_id", emp_code, first_name, rmb_start_date, rmb_end_date, rmb_remark, rmb_amount, apply_time, audit_status, approver, audit_reason, audit_time
+                    from (
+                        SELECT re."workflow_abstractException_id", u.emp_code, u.first_name, re.rmb_start_date, re.rmb_end_date, re.rmb_remark, re.rmb_amount, re.apply_time, w.audit_status,
+                        re.audit_user_id as approver,
+                        re.audit_reason,
+                        re.audit_time
+                        FROM payroll_reimbursement re
+                        inner join personnel_employee u on u.id = re.employee_id
+                        inner join workflow_abstractException w on w.id = re."workflow_abstractException_id"
+                        WHERE %(where)s
+                    ) b
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="overtime_application">
+        <content engine="default">
+            <![CDATA[
+            select abstractexception_ptr_id, emp_code, first_name, start_time, end_time, apply_reason, overtime_type, apply_time, audit_status, approver, audit_reason, audit_time
+            from(    
+                        SELECT ot.abstractexception_ptr_id, u.emp_code,u.first_name, ot.start_time, ot.end_time, ot.apply_reason, ot.overtime_type, ot.apply_time, 
+                        w.audit_status as audit_status,
+                        ot.employee_id as approver,
+                        ot.audit_reason as audit_reason,
+                        ot.audit_time as audit_time
+                        FROM att_overtime ot
+                        inner join personnel_employee u on u.id = ot.employee_id
+                        inner join workflow_abstractexception w on w.id = ot.abstractexception_ptr_id
+                        WHERE  %(where)s
+                    ) b
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="training_application">
+        <content engine="default">
+            <![CDATA[
+                select id, emp_code, first_name, start_time, end_time, apply_reason, category, apply_time, audit_status, approver, audit_reason, audit_time
+                    from (
+                        SELECT atn.abstractexception_ptr_id as id, u.emp_code,u.first_name, atn.start_time, atn.end_time, atn.apply_reason, atc.category_name as category, atn.apply_time, w.audit_status,
+                        atn.employee_id as approver,
+                        atn.audit_reason,
+                        atn.audit_time
+                        FROM att_training atn
+                        inner join att_trainingcategory atc on atc.id = atn.category_id
+                        inner join personnel_employee u on u.id = atn.employee_id
+                        inner join workflow_abstractexception w on w.id = atn.abstractexception_ptr_id
+                        WHERE %(where)s
+                    ) b
+                    ]]>
+        </content>
+    </sql>
+
+    <sql id="notification">
+        <content engine="default">
+            <![CDATA[
+                select sub_category, receiver_id, system_sender, content, source, notification_time
+                from mobile_appnotification
+                where category = %(category)s and receiver_id = %(receiver)s
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select sub_category, receiver_id, system_sender, dbms_lob.substr(content), source, notification_time
+                from mobile_appnotification
+                where category = %(category)s and receiver_id = %(receiver)s
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="read_notification">
+        <content engine="default">
+            <![CDATA[
+                update mobile_appnotification set read_status = 1, read_time = '%(read_time)s'
+                where category = %(category)s and receiver_id = %(receiver)s and read_status = 0
+			]]>
+        </content>
+    </sql>
+
+    <sql id="get_work_time">
+        <content engine="default">
+            <![CDATA[
+            select att_date, o_total, o_short, o_overtime
+            from att_attdetail
+            where employee_id = %(userid)s and att_date >= '%(start)s' and att_date < '%(end)s'
+            order by att_date
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="top3transaction">
+        <content engine="default">
+            <![CDATA[
+            select top 3 punch_time, verify_type, longitude, latitude, source, terminal_sn, gps_location
+                from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(start)s' and punch_time < '%(end)s'
+                order by punch_time desc
+            ]]>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select punch_time, verify_type, longitude, latitude, source, terminal_sn, gps_location
+                from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(start)s' and punch_time < '%(end)s'
+                order by punch_time desc limit 3
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select punch_time, verify_type, longitude, latitude, source, terminal_sn, gps_location
+                from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= to_date('%(start)s','YYYY-MM-DD HH24:MI:SS') and punch_time < to_date('%(end)s','YYYY-MM-DD HH24:MI:SS')
+                and rownum<=3 order by punch_time desc
+            ]]>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+               select punch_time, verify_type, longitude, latitude, source, terminal_sn, gps_location
+                from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(start)s' and punch_time < '%(end)s'
+                order by punch_time desc limit 3
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="transaction_employee">
+        <content engine="default">
+            <![CDATA[
+               select distinct c.emp_code, u.first_name
+               from iclock_transaction c
+               left join personnel_employee u on u.id = c.emp_id
+               where c.punch_time <= '%(current_day)s' and c.punch_time >= '%(previous_day)s'
+               and c.emp_id !='%(emp_id)s' and c.company_id = '%(company_hex_id)s'
+            ]]>
+        </content>
+    </sql>
+    <sql id="transaction_employee_search_by_empCode">
+        <content engine="default">
+            <![CDATA[
+               select distinct c.emp_code, u.first_name
+               from iclock_transaction c
+               left join personnel_employee u on u.id = c.emp_id
+               where c.punch_time <= '%(current_day)s' and c.punch_time >= '%(previous_day)s'
+               and c.company_id = '%(company_hex_id)s' and (UPPER(u.first_name) LIKE UPPER('%(emp_code)s') OR UPPER(u.emp_code) LIKE UPPER('%(emp_code)s'))
+            ]]>
+        </content>
+    </sql>
+     <sql id="transaction_department">
+        <content engine="default">
+            <![CDATA[
+               select distinct c.emp_code, u.first_name
+               from iclock_transaction c
+               left join personnel_employee u on u.id = c.emp_id
+               inner join personnel_department d on d.id = u.department_id
+               where c.punch_time <= '%(current_day)s' and c.punch_time >= '%(previous_day)s'
+               and c.emp_id !='%(emp_id)s' and c.company_id = '%(company_hex_id)s'
+               and u.department_id = '%(department)s'
+            ]]>
+        </content>
+    </sql>
+    <sql id="employee_transaction">
+        <content engine="default">
+            <![CDATA[
+            select punch_time, punch_state, longitude, latitude, source, terminal_sn, gps_location
+                from iclock_transaction
+                where emp_id = '%(emp_id)s' and punch_time >= '%(previous_day)s' and punch_time <= '%(current_day)s'
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="attendance_summary">
+        <content engine="default">
+            <![CDATA[
+                select
+                    sum(case when late_count > 0 then 1 else 0 end) as late_count,
+                    sum(case when early_count > 0 then 1 else 0 end) as early_leave_count,
+                    sum(case when absent_count > 0 then 1 else 0 end) as absent_count,
+                    sum(case when leave_time > 0 then 1 else 0 end) as leave_count,
+                    sum(case when overtime > 0 then 1 else 0 end) as overtime_count
+                from att_attdetail
+                where employee_id=%(userid)s and att_date >= '%(start)s' and att_date <='%(end)s'
+                group by employee_id
+            ]]>
+        </content>
+    </sql>
+
+    <sql id="schedule_application">
+        <content engine="default">
+            <![CDATA[
+            select
+            id, emp_code, name, previous_timeinterval, alias, apply_reason, att_date, apply_time, audit_status, approver, audit_reason, audit_time
+                    from (
+                        SELECT acs.abstractexception_ptr_id as id, u.emp_code,u.first_name as name, acs.previous_timeinterval, sc.alias, acs.apply_reason, acs.att_date, acs.apply_time, w.audit_status,
+                        acs.approver,
+                        acs.audit_reason,
+                        acs.audit_time
+                        FROM att_changeschedule acs
+                        inner join att_timeinterval sc on sc.id = acs.timeinterval_id
+                        inner join personnel_employee u on u.id = acs.employee_id
+                        inner join workflow_abstractexception w on w.id = acs.abstractexception_ptr_id
+                        WHERE %(where)s
+                    ) b
+			]]>
+        </content>
+    </sql>
+
+</sqlgroup>

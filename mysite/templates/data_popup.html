@@ -1,0 +1,27 @@
+{% load iclock_tags %}
+{% load i18n %}
+{% autoescape off %}
+
+  <div id="id_form">
+    <div style="float: left;">
+      <form method="post" id="id_edit_form" enctype="multipart/form-data">
+        <div style="float: left;">
+          {% block form_title %}
+            {{ form_title }}
+          {% endblock %}
+          <table style="width: 100%;">
+
+            <tr>
+              <th><span style="color: red" >*</span>input1</th>
+              <td style='vertical-align:top;'> input1</td>
+            </tr>
+            {% block form %}
+            {% endblock form %}
+          </table>
+        </div>
+
+      </form>
+      <br/>
+    </div>
+  </div>
+{% endautoescape %}

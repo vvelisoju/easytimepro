@@ -1,0 +1,167 @@
+{% load i18n static %}
+<div><div class="layui-fluid employee-frame"><div class="layui-row">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <div class="layui-col-md3">
+                <div class="layui-card-header" style="height: 33px; border-right: 1px solid #e6e6e6">
+                    <div id="dept-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+                        <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i class="fa fa-fw fa-check-square-o"></i></a></span>
+                        <span style="padding: 0 5px"></span>
+                        <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i class="fa fa-fw fa-list"></i></a></span>
+                        <span style="padding: 0 5px"></span>
+                        <span name="sub"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i class="fa fa-fw fa-sitemap"></i></a></span>
+                    </div>
+                </div>
+                <div class="layui-card-body" style="height: 218px; overflow: hidden;border: 1px solid #e6e6e6;">
+                    <ul id="{{ widget.stamp }}_tree" class="ztree" style="height: 212px; overflow: auto;padding: 5px;"></ul>
+                </div>
+            </div>
+            <div class="layui-col-md9">
+                <div id="employee-search-form" class="layui-form employee-search-form">
+                    {% csrf_token %}
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label for="" class="layui-form-label">{% trans 'employee_field_employeeCode' %}</label>
+                            <div class="layui-input-inline"><input id="id_emp_code" name="emp_code" type="text"></div>
+                        </div>
+                        <div class="layui-inline">
+                            <label for="" class="layui-form-label">{% trans 'employee_field_employeeFirstName' %}</label>
+                            <div class="layui-input-inline"><input id="first_name"  name="first_name" type="text"></div>
+                        </div>
+                        <div class="layui-inline">
+                            <div class="button-3d" lay-submit="" lay-filter="{{ widget.stamp }}-search">
+                              <i class="fa fa-fw fa-search"></i>
+                            </div>
+                            <div class="button-3d" lay-submit="" lay-filter="{{ widget.stamp }}-search-clear">
+                              <i class="layui-icon layui-icon-fonts-clear layuiadmin-button-btn"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-body">
+                    <table id="id_{{ widget.stamp }}_emp_frame" class="layui-hide" lay-filter="{{ widget.stamp }}_emp_frame"></table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-hide" id="{{ widget.stamp }}_emp_pool"></div>
+    </div>
+</div></div></div>
+<script>
+    layui.use(['table', 'form', 'element'], function(){
+        var table=layui.table, form=layui.form, element=layui.element, $=layui.jquery;
+        element.render();
+        var csrf_token = $("input[name=csrfmiddlewaretoken]").val();
+        var picked_table = table.render({
+            id: "id_{{ widget.stamp }}_emp_frame",
+            elem: "#id_{{ widget.stamp }}_emp_frame",
+            toolbar: false,
+            canSelectRow: 'false',
+            url: "/personnel/api/employee/",
+            method: 'GET',
+            cellMinWidth: 80,
+            autowidth: 'true',
+            height: '220',
+            size: 'sm',
+            cols: [
+                [
+                    {field:'id', type:"checkbox"},
+                    {field:'emp_code', title:"{% trans 'emp_field_employeeCode' %}"},
+                    {field:'first_name', title:"{% trans 'emp_field_firstName' %}"},
+                    {field:'department', title:"{% trans 'employee_field_department' %}"}
+                ]
+            ],
+            loading: true,
+            page: {
+              layout: ['prev', 'page', 'next', 'limit', 'count']
+              ,limits: [20, 50, 80, 100, 200]
+              ,limit: 50
+            },
+            pagerId: "pages",
+            where: {
+                csrfmiddlewaretoken: csrf_token
+            },
+            done: function(res, curr, count){
+              this.where={csrfmiddlewaretoken: csrf_token};
+            }
+        });
+        var setting = {
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                onClick: onClick
+            }
+        };
+        function onClick(event, treeId, treeNode, clickFlag){
+            table.reload(picked_table.config.id, {where: {
+                csrfmiddlewaretoken: csrf_token,
+                department_id__in: get_department_param(treeNode),
+            }})
+        }
+        function get_department_param(treeNode){
+            sub_contain_val = $("input[name=sub_contain]").next()
+            if (sub_contain_val.hasClass('layui-form-checked')){
+                ch_id = []
+                ch_id.push(treeNode.id)
+                if (treeNode.check_Child_State==0){
+                    for(var i=0;i<treeNode.children.length;i++){
+                        ch_id = get_department_children_param(treeNode.children[i],ch_id)
+                    }
+                }
+                return ch_id.join(',')
+            }else{
+                return treeNode.id
+            }
+
+        }
+        function get_department_children_param(treeNode_ch,ch_id) {
+            ch_id.push(treeNode_ch.id)
+            if (treeNode_ch.check_Child_State==0){
+               for(var i=0;i<treeNode_ch.children.length;i++){
+                ch_id = get_department_children_param(treeNode_ch.children[i],ch_id)
+            }
+            }
+            return ch_id
+        }
+        var search_name = "{{ widget.stamp }}-search";
+        var search_clear_name = "{{ widget.stamp }}-search-clear";
+        form.on('submit(' + search_name + ')', function () {
+          var whereData = {};
+          $("#employee-search-form").find(".layui-input-inline input").each(function() {
+            if ($(this).val()){
+              whereData[$(this).attr('name')] = $(this).val();
+            }
+          });
+          if (whereData){
+            whereData['csrfmiddlewaretoken'] = csrf_token;
+            table.reload(picked_table.config.id, {
+              where: whereData})        
+          }
+        });
+        form.on('submit(' + search_clear_name + ')', function () {
+          $("#employee-search-form").find(".layui-input-inline input,select").each(function () {
+            $(this).val("");
+          });
+          $(".employee-frame .ztree .curSelectedNode").removeClass('curSelectedNode');
+          table.reload(picked_table.config.id, {where: {}});
+        });
+        $.ajax({
+            url: "{% url 'biotime:personnel_department_tree_nodes' %}",
+            type: "GET",
+            dataType: "json",
+            success: function(nodes){
+                var t = $.fn.zTree.init($("#{{ widget.stamp }}_tree"), setting, nodes);
+            }
+        });
+        table.on('checkbox({{ widget.stamp }}_emp_frame)', function(obj){
+            var emps = table.checkStatus(picked_table.config.id).data;
+            var tmp = '';
+            emps.forEach(function (emp, i) {
+               tmp += '<input type="hidden" name="employee" value="'+emp.id+'"/>';
+            });
+            $("#{{ widget.stamp }}_emp_pool").html(tmp);
+        })
+    });
+</script>

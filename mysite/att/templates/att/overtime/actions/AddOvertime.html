@@ -1,0 +1,37 @@
+{% load i18n static common %}
+<div id='id_add_overtime' style="padding: 5px;height: 500px;width: 1100px;overflow-x: hidden;">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div style="padding-bottom: 5px">{{ f.emp }}</div>
+      <div class="layui_form_item">
+        {% layui_inline f.start_time %}
+        {% layui_inline f.end_time %}
+        {% layui_inline f.overtime_type %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.reason %}
+      </div>
+    {% endwith %}
+  </form>
+</div>
+<script>
+  layui.use(['form', 'laydate'], function () {
+    var form = layui.form;
+    var laydate = layui.laydate;
+  if ($(window).height()<600) $('#id_add_overtime').height($(window).height()-100)
+    $("form.layui-form input.layui-datetime").each(function () {
+      laydate.render({elem: this, type: 'datetime'});
+    });
+    $("form.layui-form input.layui-date").each(function () {
+      laydate.render({elem: this, type: 'date'});
+    });
+    $("form.layui-form input.layui-time").each(function () {
+      laydate.render({elem: this, type: 'time'});
+    });
+    {% block form_verify %}
+      form.verify({});
+    {% endblock %}
+    form.render();
+  });
+</script>

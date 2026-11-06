@@ -1,0 +1,36 @@
+{% load i18n %}
+<link href="{% static 'css/bootstrap.min3.3.7.css' %}" rel="stylesheet">
+<link href="{% static 'css/reports.css' %}" rel="stylesheet">
+<div class="easy-reports">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div  class="report-sub-heading">{% trans 'My Schedule' %}</div><div class="report-wrapper" data-groups="4" data-app="att" ></div>
+                <div  class="report-sub-heading">{% trans 'Transaction Reports' %}</div><div class="report-wrapper" data-groups="5" data-app="att" ></div>
+                <div  class ="report-sub-heading"  >{% trans 'Scheduling Reports' %}</div><div class="report-wrapper" data-groups="6" data-app="att" ></div>
+                <div  class ="report-sub-heading" >{% trans 'Monthly Reports' %}</div><div class="report-wrapper" data-groups="7" data-app="att" > </div>
+                <div  class ="report-sub-heading"  >{% trans 'Summary Reports' %}</div><div class="report-wrapper" data-groups="8" data-app="att" ></div>
+            </div>
+        </div>
+    </div>
+ </div>
+<script>
+   $(function () {
+       var h = $('#main_body').height()-100;
+       $('#main_body .easy-reports').height(h);
+       let group, li;
+       {% for m,n in data.items %}
+            group = $("div[data-groups='{{ m|safe }}']");
+           {% for i,j in n.items %}
+               li = "<div class='report-box'><li datatype='reports' title='Click here' value='{{ j.0|safe }}'><img class='report_img' value='{{ j.0|safe }}' src='{{ MEDIA_URL }}images/guide/icons/{{ j.1 }}' alt={{ i|safe }} /><p value='{{ j.0|safe }}' class='report_name'>{{ i|safe }}</p></li></div>";
+               group.append(li);
+           {% endfor %}
+       {% endfor %}
+       $(document).on("click", "li[datatype='reports'], li[datatype='reports'] img.report_img, li[datatype='reports'] p.report_name", function (event) {
+           let $target = event.target;
+           let value = $target.getAttribute('value');
+           let a = $($("#side_menu_nav li.layui-hide a[hex=" + value + "]"));
+           a.click();
+       });
+   });
+</script>

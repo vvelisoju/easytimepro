@@ -1,0 +1,61 @@
+{% load i18n %}
+{% load iclock_tags %}
+{% block content_body %}
+    <div style="width:1080px; height:400px;">
+        <div class="layui-row" >
+            <div class="layui-col-md12"></div>
+            <div class="layui-col-md6" style="padding: 15px">
+                <div class="module">
+                    <table id="id_unselected_emp" class="layui-table" lay-filter="unselected_emp"></table>
+                </div>
+            </div>
+            <div class="layui-col-md6" style="padding: 15px">
+                <div class="module">
+                    <table id="id_selected_emp" class="layui-table"></table>
+                </div>
+            </div>
+            <div class="layui-col-md12"></div>
+            <script>
+            $(function () {
+                {% autoescape off %}
+                    layui.use('table', function () {
+                        var grid_opts = {{ grid_opts }};
+                        var $ = layui.jquery;
+                        var table = layui.table;
+                        $.extend(grid_opts, {
+                            id: "id_unselected_emp",
+                            elem: "#id_unselected_emp",
+                            cellMinWidth: 80,
+                            height: '400',
+                            loading: true,
+                            page: true,
+                            even: true,
+                            where: {
+                              csrfmiddlewaretoken: "{{csrf_token}}"
+                            }
+                        });
+                        console.log(grid_opts)
+                        table.render(grid_opts);
+                        $.extend(grid_opts, {
+                            id: "id_selected_emp",
+                            elem: "#id_selected_emp",
+                            page: false,
+                            url: "",
+                            data: []
+                        });
+                        table.render(grid_opts);
+                        table.on('checkbox(unselected_emp)', function(obj){
+                            var checkStatus = table.checkStatus('id_unselected_emp');
+                            console.log(checkStatus.data);
+                            table.reload('id_selected_emp', {
+                                data:checkStatus.data
+                            });
+                            //table.reload('id_unselected_emp', {})
+                        });
+                    });
+                {% endautoescape %}
+            });
+            </script>
+        </div>
+    </div>
+{% endblock %}

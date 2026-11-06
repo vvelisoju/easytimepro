@@ -1,0 +1,59 @@
+{% load i18n xadmin_tags %}
+<style>
+    .bookmark-tab {
+        padding: 15px;
+    }
+    .bookmark-tab:hover {
+        text-decoration: none;
+        background-color: #eee;
+    }
+    .arrow {
+	padding-left:2px;
+    position: absolute;
+    top: 15%;
+    left: -12px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+    border-color: transparent rgb(190,190,190) transparent;
+}
+
+</style>
+<li class="dropdown bookmarks" style="display:inline-flex;white-space:nowrap;">
+	<a id="{{ model_name }}drop-bookmark" class="dropdown-toggle bookmark-tab"  role="button" data-bs-toggle="dropdown"
+	   title="{% trans 'msg_all_saved_filters' %}" href="#" style="color:#333;">
+		<i class="fa fa-book"></i> {{ bk_menu_title|truncatechars:9 }}</a>
+	<ul id="{{ model_name }}_bookmark_menu" class="dropdown-menu" role="menu">
+		{% for bk in bk_bookmarks %}
+			<li class="with_menu_btn">
+				<a href="javascript:void(0)" class="filter-bk-link" title="{{ bk.title }}" data-filters="{{ bk.filters|base64_encode }}">
+          <i class="fa fa-bookmark"></i> {{ bk.title }}
+        </a>
+			</li>
+		{% empty %}
+			<li><a class="mute">{% trans "bookmark_menu_noBookmarks" %}</a></li>
+		{% endfor %}
+		{% if has_add_permission_bookmark %}
+			<li class="divider add-bookmark"></li>
+			<li class="dropdown-submenu add-bookmark"><a href="#"><i class="fa fa-plus"></i> {% trans "bookmark_menu_newBookmark" %}</a>
+				<div class="dropdown-menu">
+					<div class="arrow"></div>
+					<div class="popover-content" style="padding: 9px 14px; width:180px;">
+						<form id="{{ model_name }}_bk_form" class="bookmark_form" method="post" action="javascript:void(0);">
+							{% csrf_token %}
+							<input type="hidden" name="filters" value=""/>
+							<input name="title" type="text" autocomplete="off" class="form-control bookmark_title_name" style="font-size: 12px;" placeholder="{% trans 'bookmark_menu_enterBookmarkTitle' %}…"/>
+							<input id="{{ model_name }}_bk_is_share" type="checkbox" name="is_share"/>
+              <label for="{{ model_name }}_bk_is_share" style="font-weight: bold">{% trans 'bookmark_field_isShared' %}</label>
+              <input type="button" id="{{ model_name }}_bk_submit" class="btn btn-success" data-action="{{ bk_post_url }}"
+                  value="{% trans 'bookmark_menu_saveBookmark' %}" style="display: block;">
+						</form>
+					</div>
+				</div>
+			</li>
+		{% endif %}
+	</ul>
+</li>

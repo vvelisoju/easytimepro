@@ -1,0 +1,28 @@
+{% extends 'payroll/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+             {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+            ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+            ,{field:'department', title: "{% trans 'report_column_departmentName' %}"}
+            ,{field:'calc_time', title: "{% trans 'monthlySalary_field_calc_time' %}"}
+            ,{field:'total_increase', title: "{% trans 'monthlySalary_field_total_increase' %}"}
+
+            ,{field:'ot1', title: "{% trans 'monthlySalary_field_ot1' %}"}
+            ,{field:'ot2', title: "{% trans 'monthlySalary_field_ot2' %}"}
+            ,{field:'ot3', title: "{% trans 'monthlySalary_field_ot3' %}"}
+            ,{field:'normal_ot', title: "{% trans 'report_column_normalOvertime' %}"}
+            ,{field:'weekend_ot', title: "{% trans 'report_column_weekendOvertime' %}"}
+            ,{field:'holiday_ot', title: "{% trans 'report_column_holidayOvertime' %}"}
+
+            ,{field:'increase', title: "{% trans 'monthlySalary_field_increase' %}"}
+            ,{field:'extra_increase', title: "{% trans 'monthlySalary_field_extra_increase' %}"}
+            ,{field:'loan_increase', title: "{% trans 'monthlySalary_field_loan_increase' %}"}
+            ,{field:'advance_increase', title: "{% trans 'monthlySalary_field_advance_increase' %}"}
+            ,{field:'reimbursement', title: "{% trans 'monthlySalary_field_reimbursement' %}"}
+        ]]
+        ,url: "/payroll/api/report/increase_report/"
+    });
+{% endblock %}

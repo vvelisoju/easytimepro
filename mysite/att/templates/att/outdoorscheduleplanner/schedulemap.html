@@ -1,0 +1,40 @@
+{% load i18n static %}
+{% load common %}
+<body>
+<div id="googleMap" style="width:600px;height:600px;"></div>
+<script>
+function myMap() {
+    {% for x in mapplotdetails %}
+        {% if x.latitude and x.longitude is not None %}
+            var uluru = {lat: {{ x.latitude }}, lng: {{ x.longitude }}};
+            var map = new google.maps.Map(document.getElementById('googleMap'), {zoom: 5, center: uluru});
+        {% endif %}
+    {% endfor %}
+
+    var infowindow =  new google.maps.InfoWindow({
+        content: ''
+    });
+    {% for x in mapplotdetails %}
+        {% if x.latitude and x.longitude is not None %}
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng({{ x.latitude }}, {{ x.longitude }}),
+                map: map
+            });
+            bindInfoWindow(marker, map, infowindow, "<p><h4>{{ x.client }}</h4>{{ x.address }}</p>");
+        {% endif %}
+    {% endfor %}
+}
+function bindInfoWindow(marker, map, infowindow, html, Ltitle) {
+    google.maps.event.addListener(marker, 'mouseover', function() {
+            infowindow.setContent(html);
+            infowindow.open(map, marker);
+
+    });
+    google.maps.event.addListener(marker, 'mouseout', function() {
+        infowindow.close();
+
+    });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key={% MAPS_API_KEY %}&v=3.31&libraries=places&callback=myMap"></script>
+</body>

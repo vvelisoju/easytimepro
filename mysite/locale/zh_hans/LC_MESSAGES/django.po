@@ -1,0 +1,8566 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_hans\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "请输入有效的邮箱地址"
+
+msgid "user_field_username"
+msgstr "用户名"
+
+msgid "user_field_usernameHelpTxt"
+msgstr "必填。用户名不能多于30个字符。只允许使用字母、数字、@/./+/-/_"
+
+msgid "user_field_usernameValidator"
+msgstr "请输入有效的用户名。"
+
+msgid "user_field_password"
+msgstr "密码"
+
+msgid "user_field_firstName"
+msgstr "姓名"
+
+msgid "user_field_lastName"
+msgstr "姓氏"
+
+msgid "user_field_email"
+msgstr "邮箱"
+
+msgid "user_field_authorizedDepartment"
+msgstr "授权部门"
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "没有选择则默认授权全部部门"
+
+msgid "user_field_authorizedArea"
+msgstr "授权区域"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "没有选择则默认授权全部区域"
+
+msgid "user_field_loginTimes"
+msgstr "登录次数"
+
+msgid "user_field_staff"
+msgstr "员工"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr ""
+
+msgid "user_field_active"
+msgstr "激活"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr ""
+
+msgid "user_field_superuser"
+msgstr "超级管理员"
+
+msgid "user_field_dateJoined"
+msgstr "加入日期"
+
+msgid "user_field_lastLogin"
+msgstr "最后登录时间"
+
+msgid "base_model_user"
+msgstr "用户"
+
+msgid "userProfile_field_username"
+msgstr "用户名"
+
+msgid "userProfile_field_pinTabs"
+msgstr "锁定标签页"
+
+msgid "userProfile_field_hideColumns"
+msgstr "隐藏列"
+
+msgid "userProfile_field_order"
+msgstr "字段排序"
+
+msgid "userProfile_field_preferences"
+msgstr "基本资料"
+
+msgid "base_model_userProfile"
+msgstr "用户信息"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "删除"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "删除选中数据"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "删除选中数据"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "是否确定删除选中数据?"
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "是否确定删除选中节点？"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "是否确定删除选中证件?"
+
+msgid "common_action_new"
+msgstr "新增"
+
+msgid "common_action_newDescription"
+msgstr "新增"
+
+msgid "common_action_newHelpTxt"
+msgstr "新增"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "操作:"
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "新增%(verbose_name)s"
+
+msgid "helpers_deleteText_remove"
+msgstr "刪除"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr "书签缺少有效参数。"
+
+msgid "bookmark_duplication_echo"
+msgstr "书签名称已经存在，是否覆盖？"
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "有效"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "无效"
+
+msgid "baseModel_field_createTime"
+msgstr "创建时间"
+
+msgid "baseModel_field_createUser"
+msgstr "创建用户"
+
+msgid "baseModel_field_changeTime"
+msgstr "更改时间"
+
+msgid "baseModel_field_changeUser"
+msgstr "更改者"
+
+msgid "baseModel_field_dataStatus"
+msgstr "状态"
+
+msgid "userProfile_languageChange_successful"
+msgstr "语言修改成功"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "无效登录"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "必须为超级管理员"
+
+msgid "action_not_available"
+msgstr "无效操作"
+
+msgid "hiddenField_save_successful"
+msgstr "操作成功"
+
+msgid "hiddenField_reset_successful"
+msgstr "操作成功"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "禁止操作"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "参数错误"
+
+msgid "columnOrder_save_successful"
+msgstr "保存成功"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "参数错误"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "最多不能锁定超过{num}个标签页"
+
+msgid "pinTab_saveError_duplicate"
+msgstr "重复操作"
+
+msgid "duplicate"
+msgstr "重复"
+
+msgid "pinTab_remove_successful"
+msgstr "操作成功"
+
+msgid "pinTab_action_parameterError"
+msgstr "参数错误"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "禁止操作"
+
+msgid "login_authorize_license_expired"
+msgstr "许可过期"
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "许可在%(day)s天之后过期"
+
+msgid "booleanFieldFilter_option_all"
+msgstr "全部"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "是"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "否"
+
+msgid "fieldFilter_option_all"
+msgstr "全部"
+
+msgid "textFieldFilter_option_contain"
+msgstr "包含"
+
+msgid "textFieldFilter_option_exact"
+msgstr "等于"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "开头为"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "结束为"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "其中一个"
+
+msgid "textFieldFilter_option_regex"
+msgstr "正则匹配"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "任意日期"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "带日期"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "不带日期"
+
+msgid "dateFieldFilter_option_today"
+msgstr "今天"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "昨天"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "前7天"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "当前周"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "当前月"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "今年"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "任何时间"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "带时间"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "不带时间"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "进"
+
+msgid "base_model_bookmarks"
+msgstr "书签"
+
+msgid "report_column_empCode"
+msgstr "人员编号"
+
+msgid "report_column_firstName"
+msgstr "姓名"
+
+msgid "report_column_lastName"
+msgstr "姓氏"
+
+msgid "report_column_nickName"
+msgstr "昵称"
+
+msgid "report_column_gender"
+msgstr "性别"
+
+msgid "report_column_departmentCode"
+msgstr "部门编号"
+
+msgid "report_column_departmentName"
+msgstr "部门"
+
+msgid "report_column_positionCode"
+msgstr "职位编号"
+
+msgid "report_column_positionName"
+msgstr "职位名称"
+
+msgid "report_column_workCode"
+msgstr "工作代码"
+
+msgid "report_column_dataSources"
+msgstr "数据源"
+
+msgid "report_column_punchDate"
+msgstr "签卡日期"
+
+msgid "report_column_punchTime"
+msgstr "签卡时间"
+
+msgid "report_column_punchState"
+msgstr "考勤状态"
+
+msgid "report_column_correctState"
+msgstr "更正状态"
+
+msgid "report_column_lateDuration"
+msgstr "迟到"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "早退"
+
+msgid "report_column_absentDuration"
+msgstr "旷工"
+
+msgid "report_column_actualWorkDuration"
+msgstr "实际工作时长"
+
+msgid "report_column_shortDuration"
+msgstr "缺勤时长"
+
+msgid "report_column_overtimeDuration"
+msgstr "加班时长"
+
+msgid "report_column_normalWorkTime"
+msgstr "正常工作时长"
+
+msgid "report_column_normalOvertime"
+msgstr "正常加班"
+
+msgid "report_column_weekendOvertime"
+msgstr "周末加班"
+
+msgid "report_column_holidayOvertime"
+msgstr "节假日加班"
+
+msgid "report_column_overtimeLevel1"
+msgstr "加班等级1"
+
+msgid "report_column_overtimeLevel2"
+msgstr "加班等级2"
+
+msgid "report_column_overtimeLevel3"
+msgstr "加班等级3"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "病假"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "事假"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "产假"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "探亲假"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "年假"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "出差假"
+
+msgid "report_column_attendanceDate"
+msgstr "日期"
+
+msgid "report_column_attendanceWeekday"
+msgstr "工作日"
+
+msgid "report_column_exception"
+msgstr "考勤异常"
+
+msgid "report_column_timeIntervalName"
+msgstr "班次"
+
+msgid "report_column_checkInTime"
+msgstr "签到时间"
+
+msgid "report_column_checkOutTime"
+msgstr "签退时间"
+
+msgid "report_column_deviceTn"
+msgstr "签到设备"
+
+msgid "report_column_deviceOut"
+msgstr "签退设备"
+
+msgid "report_column_workCodeIn"
+msgstr "签到工作代码"
+
+msgid "report_column_workCodeOut"
+msgstr "签退工作代码"
+
+msgid "report_column_clockInTime"
+msgstr "实际签到时间"
+
+msgid "report_column_clockOutTime"
+msgstr "实际签退时间"
+
+msgid "report_column_totalTimeDuration"
+msgstr "总时长"
+
+msgid "report_column_dutyWorkedTime"
+msgstr "应工作时长"
+
+msgid "report_column_actualWorkedTime"
+msgstr "实际工作时长"
+
+msgid "report_column_unscheduled"
+msgstr "未排班"
+
+msgid "report_column_remaining"
+msgstr "剩余的"
+
+msgid "report_column_breakOutTime"
+msgstr "外出"
+
+msgid "report_column_breakInTime"
+msgstr "外出返回"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "实际休息时长"
+
+msgid "report_column_breakTime"
+msgstr "休息时长"
+
+msgid "report_column_breakLateDuration"
+msgstr "迟到（休息）"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "早退（休息）"
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "旷工（休息）"
+
+msgid "report_column_totalWorkedDuration"
+msgstr "总工作时长"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "实际工作时长"
+
+msgid "report_column_leaveDuration"
+msgstr "请假时长"
+
+msgid "report_column_overtime"
+msgstr "加班"
+
+msgid "report_column_missIn"
+msgstr "无签到记录"
+
+msgid "report_column_missOut"
+msgstr "无签退记录"
+
+msgid "report_column_present"
+msgstr "出勤"
+
+msgid "report_column_dayOff"
+msgstr "休息日"
+
+msgid "report_column_weekend"
+msgstr "周末"
+
+msgid "report_column_holiday"
+msgstr "节假日"
+
+msgid "report_column_trainingDuration"
+msgstr "培训时长"
+
+msgid "report_column_timetableDuration"
+msgstr "班次时长"
+
+msgid "report_column_scheduledBreakTime"
+msgstr "休息时间段"
+
+msgid "report_column_attendanceDuration"
+msgstr "应工作时长"
+
+msgid "report_column_breakTimeDuration"
+msgstr "休息时长"
+
+msgid "report_column_approvalOvertime"
+msgstr "加班单"
+
+msgid "report_column_timetableDays"
+msgstr "工作日"
+
+msgid "report_column_cardNumber"
+msgstr "卡号"
+
+msgid "report_column_firstPunch"
+msgstr "首次打卡"
+
+msgid "report_column_lastPunch"
+msgstr "最后打卡"
+
+msgid "report_column_totalDuration"
+msgstr "总时长"
+
+msgid "report_column_firstIn"
+msgstr "首次签到"
+
+msgid "report_column_lastOut"
+msgstr "最后签退"
+
+msgid "report_column_exceptionDescription"
+msgstr "描述"
+
+msgid "report_column_employeeCount"
+msgstr "人员数量"
+
+msgid "report_column_lateTimes"
+msgstr "迟到次数"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "早退次数"
+
+msgid "report_column_absentTimes"
+msgstr "旷工次数"
+
+msgid "report_column_punchTimes"
+msgstr "次数"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "总时长"
+
+msgid "report_column_timetable"
+msgstr "班次"
+
+msgid "fixed_time"
+msgstr "固定时间"
+
+msgid "report_column_gpsLocation"
+msgstr "GPS定位"
+
+msgid "report_column_longitude"
+msgstr "经度"
+
+msgid "report_column_latitude"
+msgstr "纬度"
+
+msgid "report_column_areaAlias"
+msgstr "区域"
+
+msgid "report_column_terminalAlias"
+msgstr "设备"
+
+msgid "report_column_terminalSN"
+msgstr "序列号"
+
+msgid "menu_att_transactionReport"
+msgstr "原始考勤记录"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "排班日志"
+
+msgid "menu_att_dailyStatusReport"
+msgstr "每日考勤状态"
+
+msgid "menu_att_detailReport"
+msgstr "考勤明细表"
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "考勤汇总表"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "请假汇总表"
+
+msgid "menu_att_FILOReport"
+msgstr "汇总最早与最晚"
+
+msgid "menu_att_firstLastReport"
+msgstr "首进末出报表"
+
+msgid "menu_att_firstInLastOutReport"
+msgstr "首进末出"
+
+msgid "menu_att_exceptionReport"
+msgstr "考勤异常明细表"
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "部门汇总表"
+
+msgid "menu_att_timeCardReport"
+msgstr "打卡详情表"
+
+msgid "menu_att_lateReport"
+msgstr "迟到报表"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "早退报表"
+
+msgid "menu_att_overtimeReport"
+msgstr "加班报表"
+
+msgid "menu_att_absentReport"
+msgstr "旷工报表"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "多卡统计"
+
+msgid "menu_att_breakTimeReport"
+msgstr "休息时间统计"
+
+msgid "menu_group_att_configuration"
+msgstr "参数配置"
+
+msgid "menu_staff_transactionReport"
+msgstr "原始记录表"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "班次重叠"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "审核时，排班记录不能修改。"
+
+msgid "att_model_leave"
+msgstr "请假"
+
+msgid "leave_field_employee"
+msgstr "人员"
+
+msgid "leave_field_startTime"
+msgstr "开始时间"
+
+msgid "leave_field_endTime"
+msgstr "结束时间"
+
+msgid "leave_field_leaveCategory"
+msgstr "分类"
+
+msgid "leave_field_reason"
+msgstr "理由"
+
+msgid "leave_field_approvalState"
+msgstr "状态"
+
+msgid "leave_field_approvalReason"
+msgstr "备注"
+
+msgid "leave_action_new"
+msgstr "新增"
+
+msgid "leave_action_newDescription"
+msgstr "新增请假"
+
+msgid "leave_action_newHelpTxt"
+msgstr "新增请假"
+
+msgid "leave_time_invalid_range"
+msgstr "请假时间无效，结束时间必须晚于开始时间"
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "无效时间，开始时间必须晚于员工入职日期[%s]"
+
+msgid "leave_time_overlap"
+msgstr "%s人员休假时间重叠"
+
+msgid "select_employee"
+msgstr "请选择员工"
+
+msgid "manualLog_field_employee"
+msgstr "人员"
+
+msgid "manualLog_field_punchTime"
+msgstr "打卡时间"
+
+msgid "manualLog_field_punchState"
+msgstr "打卡状态"
+
+msgid "manualLog_field_workCode"
+msgstr "工作代码"
+
+msgid "manualLog_field_applyReason"
+msgstr "申请原因"
+
+msgid "manualLog_field_approvalState"
+msgstr "状态"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "备注"
+
+msgid "manualLog_Action_new"
+msgstr "新增"
+
+msgid "manualLog_Action_newDescription"
+msgstr "新增补签卡"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "新增补签卡"
+
+msgid "manual_log_time_greater_now"
+msgstr "打卡时间不能超过现在"
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "无效时间，开始时间必须晚于员工入职日期[%s]"
+
+msgid "manual_log_repeat"
+msgstr "%s重复打卡时间"
+
+msgid "overtime_field_employee"
+msgstr "人员"
+
+msgid "overtime_field_startTime"
+msgstr "开始时间"
+
+msgid "overtime_field_endTime"
+msgstr "结束时间"
+
+msgid "overtime_field_overtimeType"
+msgstr "加班类型"
+
+msgid "overtime_field_applyReason"
+msgstr "申请原因"
+
+msgid "overtime_field_approvalState"
+msgstr "状态"
+
+msgid "overtime_field_approvalRemark"
+msgstr "备注"
+
+msgid "overtime_action_new"
+msgstr "新增"
+
+msgid "overtime_action_newDescription"
+msgstr "新增加班"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "新增加班"
+
+msgid "overtime_time_overlap"
+msgstr "%s人员加班重叠"
+
+msgid "schedule_action_addSchedule"
+msgstr "新增排班"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "新增排班"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "新增排班"
+
+msgid "scheduledAssign_error_datePeriodError"
+msgstr "无效时间段"
+
+msgid "scheduledAssign_error_shiftNotFound"
+msgstr "无效班次"
+
+msgid "scheduledAssign_error_empNotFound"
+msgstr "人员不存在"
+
+msgid "scheduledAssign_error_deptNotFound"
+msgstr "部门不存在"
+
+msgid "scheduledAssign_error_schdOverlap_%(obj)s_%(start_date)s_%(end_date)s"
+msgstr "排班 %(obj)s 在时间段 %(start_date)s - %(end_date)s重叠。"
+
+msgid "please_select_time_intervals"
+msgstr "请选择时段"
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s(%(name)s) 班次从%(start)s到 %(end)s重复"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "重复打卡间隔错误"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "在%(d)s，%(t)s 和 %(ss)s重叠 "
+
+msgid "shift_not_found"
+msgstr "没有找到班次"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "这个班次(%(shift)s)使用中"
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "重复命名(%(alias)s)"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "新增临时排班"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "新增临时排班"
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "新增临时排班"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "请选择人员"
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "请选择部门"
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "请选择时间段"
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(timetableA)s 和%(timetableB)s在%(date)s上重叠"
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "处理失败"
+
+msgid "training_field_employee"
+msgstr "人员"
+
+msgid "training_field_startTime"
+msgstr "开始时间"
+
+msgid "training_field_endTime"
+msgstr "结束时间"
+
+msgid "training_field_trainingCategory"
+msgstr "培训类型"
+
+msgid "training_field_applyReason"
+msgstr "申请原因"
+
+msgid "training_field_approvalState"
+msgstr "状态"
+
+msgid "training_field_approvalRemark"
+msgstr "备注"
+
+msgid "training_action_new"
+msgstr "新增"
+
+msgid "training_action_newDescription"
+msgstr "新增培训"
+
+msgid "training_action_newHelpTxt"
+msgstr "新增培训"
+
+msgid "training_time_overlap"
+msgstr "%s人员培训时间重叠"
+
+msgid "shift_field_timeInterval"
+msgstr "时间段"
+
+msgid "deptAttRule_field_alias"
+msgstr "名称"
+
+msgid "departmentRule_action_batchAdd"
+msgstr "新增"
+
+msgid "departmentRule_action_batchAddDescription"
+msgstr "为多个部门添加规则"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "为多个部门添加规则"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s已经设置了规则"
+
+msgid "holiday_field_alias"
+msgstr "名称"
+
+msgid "holiday_field_startDate"
+msgstr "开始时间"
+
+msgid "holiday_field_duration"
+msgstr "持续时长（天）"
+
+msgid "holiday_field_workType"
+msgstr "工作类型"
+
+msgid "holiday_field_overtimeLevel"
+msgstr "加班等级"
+
+msgid "holiday_field_overtimeLevel1"
+msgstr "加班等级1"
+
+msgid "holiday_field_overtimeLevel2"
+msgstr "加班等级2"
+
+msgid "holiday_field_overtimeLevel3"
+msgstr "加班等级3"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "新增"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "新增假期"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "新增假期"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr "周末设置已使用，无法修改"
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr "在计算设置中不能使用相同的功能键"
+
+msgid "calculation_item_actualPresent"
+msgstr "实际出勤"
+
+msgid "calculation_item_durationOrShort"
+msgstr "持续时间/缺勤时长"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "总时长/总的工作时长"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "休息时长/实际休息时长"
+
+msgid "calculation_item_timetableDuration"
+msgstr "时间段时长"
+
+msgid "calculation_item_late"
+msgstr "迟到"
+
+msgid "calculation_item_earlyLeave"
+msgstr "早退"
+
+msgid "calculation_item_leave"
+msgstr "请假"
+
+msgid "calculation_item_absent"
+msgstr "旷工"
+
+msgid "calculation_item_overtime"
+msgstr "加班"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "未签到"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "未签退"
+
+msgid "calculation_item_present"
+msgstr "出勤"
+
+msgid "calculation_item_dayOff"
+msgstr "休息日"
+
+msgid "calculation_item_weekend"
+msgstr "周末"
+
+msgid "calculation_item_holiday"
+msgstr "节假日"
+
+msgid "replace_existing_shift_even_using"
+msgstr "更换现有班次并使用"
+
+msgid "remove_overlap_schedule"
+msgstr "移除重叠的排班"
+
+msgid "enable_work_on_weekend_as"
+msgstr "周末工作记为"
+
+msgid "work_type"
+msgstr "工作记为"
+
+msgid "enable_work_on_day_off_as"
+msgstr "休息日工作记为"
+
+msgid "auto_shift"
+msgstr "智能排班"
+
+msgid "select_date"
+msgstr "请选择日期"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr "%(t)s 和 %(ss)s 在第%(d)s天重叠"
+
+msgid "breakTime_validationError_earlyGreatThanDuration"
+msgstr "提前时间不能超过允许的休息时长"
+
+msgid "breakTime_validationError_overGreatThanRangeDuration"
+msgstr "超出时间不能大于休息时间段时长"
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr "休息时间段已经在使用，不能编辑"
+
+msgid "breakTime_validationError_invalidNumber"
+msgstr "数字必须大于0"
+
+msgid "please_select_time_table"
+msgstr "请选择时段"
+
+msgid "%s error_of_sql statement_adding_failed."
+msgstr "%s 添加SQL语句失败。"
+
+msgid "menu_group_att_rule"
+msgstr "考勤规则"
+
+msgid "menu_att_globalRule"
+msgstr "考勤规则(全局)"
+
+msgid "menu_att_departmentRule"
+msgstr "部门考勤规则"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "班次管理"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "排班管理"
+
+msgid "menu_att_breakTime"
+msgstr "休息时间段"
+
+msgid "menu_att_timeInterval"
+msgstr "时间段"
+
+msgid "menu_att_shift"
+msgstr "班次"
+
+msgid "menu_att_departmentSchedule"
+msgstr "部门排班"
+
+msgid "menu_att_employeeSchedule"
+msgstr "人员排班"
+
+msgid "menu_att_temporarySchedule"
+msgstr "临时排班"
+
+msgid "menu_att_scheduleView"
+msgstr "排班预览"
+
+msgid "menu_group_approvalManagement"
+msgstr "审批管理"
+
+msgid "menu_att_manualLog"
+msgstr "补签卡"
+
+msgid "menu_att_leave"
+msgstr "请假"
+
+msgid "menu_att_overtime"
+msgstr "加班"
+
+msgid "menu_att_training"
+msgstr "培训"
+
+msgid "menu_att_adjustSchedule"
+msgstr "调班"
+
+msgid "menu_group_att_holiday"
+msgstr "节假日管理"
+
+msgid "menu_att_holiday"
+msgstr "节假日"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "请假管理"
+
+msgid "menu_att_leaveType"
+msgstr "请假类型"
+
+msgid "menu_att_trainingType"
+msgstr "培训类型"
+
+msgid "menu_group_att_reportSetting"
+msgstr "报表设置"
+
+msgid "menu_att_reportSetting"
+msgstr "报表设置"
+
+msgid "menu_group_att_transaction"
+msgstr "考勤记录"
+
+msgid "menu_att_transaction"
+msgstr "原始考勤记录"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "考勤计算"
+
+msgid "menu_att_reportCalculate"
+msgstr "考勤计算"
+
+msgid "menu_group_att_nonSchedulingReport"
+msgstr "考勤记录报表"
+
+msgid "menu_group_att_report"
+msgstr "考勤报表"
+
+msgid "menu_group_att_summaryReport"
+msgstr "统计报表"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "实时监控"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "部门考勤"
+
+msgid "att_model_attendanceDetail"
+msgstr "考勤明细"
+
+msgid "att_model_attendanceException"
+msgstr "考勤异常"
+
+msgid "att_calc_log"
+msgstr "考勤计算日志"
+
+msgid "attRule_field_paramName"
+msgstr "名称"
+
+msgid "attRule_field_paramValue"
+msgstr "值"
+
+msgid "att_model_attRule"
+msgstr "考勤规则"
+
+msgid "schedule_field_employee"
+msgstr "人员"
+
+msgid "schedule_field_startDate"
+msgstr "开始日期"
+
+msgid "schedule_field_endDate"
+msgstr "结束日期"
+
+msgid "schedule_field_shift"
+msgstr "班次"
+
+msgid "att_model_schedule"
+msgstr "排班"
+
+msgid "deptSchedule_field_department"
+msgstr "部门"
+
+msgid "deptSchedule_field_startDate"
+msgstr "开始日期"
+
+msgid "deptSchedule_field_endDate"
+msgstr "结束日期"
+
+msgid "deptSchedule_field_shift"
+msgstr "班次"
+
+msgid "att_model_deptSchedule"
+msgstr "部门排班"
+
+msgid "deptSchedule_action_add"
+msgstr "新增"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "新增部门排班"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "新增部门排班"
+
+msgid "attShift_field_code"
+msgstr "班次编号"
+
+msgid "attShift_field_alias"
+msgstr "班次名称"
+
+msgid "attShift_field_cycleUnit"
+msgstr "单位"
+
+msgid "attShift_field_cycle"
+msgstr "周期"
+
+msgid "work_on_weekend_as"
+msgstr "周末工作记为"
+
+msgid "work_on_day_off_as"
+msgstr "休息日工作记为"
+
+msgid "attShift_field_autoShift"
+msgstr "智能排班"
+
+msgid "shift_name_repeat"
+msgstr "班次名称(%s)已存在"
+
+msgid "att_model_shift"
+msgstr "班次"
+
+msgid "breakTime_field_alias"
+msgstr "名称"
+
+msgid "breakTime_field_startTime"
+msgstr "开始时间"
+
+msgid "breakTime_field_endTime"
+msgstr "结束时间"
+
+msgid "breakTime_field_duration"
+msgstr "休息时长"
+
+msgid "breakTime_field_durationHelpTxt"
+msgstr "休息时间段时长，单位为分钟。"
+
+msgid "breakTime_field_startMargin"
+msgstr "外出范围"
+
+msgid "breakTime_field_endMargin"
+msgstr "结束时间范围"
+
+msgid "breakTime_field_endMarginHelpTxt"
+msgstr "结束时间 = 开始时间 + 持续时长 + 结束时间范围，结束时间范围的单位为分钟。"
+
+msgid "breakTime_field_allowDuration"
+msgstr "休息时长"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "基于打卡状态"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "打卡间隔类型"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "重复打卡间隔（m）"
+
+msgid "breakTime_field_useMultiplePunch"
+msgstr "启用多进多出"
+
+msgid "breakTime_field_calculateType"
+msgstr "计算类型"
+
+msgid "breakTime_field_minimumBreakTime"
+msgstr "最小休息时间"
+
+msgid "breakTime_field_earlyIn"
+msgstr "早归"
+
+msgid "breakTime_field_minEarlyIn"
+msgstr "最小早归时长"
+
+msgid "breakTime_field_lateIn"
+msgstr "迟到"
+
+msgid "breakTime_field_minLateIn"
+msgstr "最小迟到分钟数"
+
+msgid "breakTime_field_considerBreakInEarly"
+msgstr "外出早归记为"
+
+msgid "breakTime_field_breakInEarlyAs"
+msgstr "外出早归记为"
+
+msgid "breakTime_field_considerBreakInLate"
+msgstr "外出迟归记为"
+
+msgid "breakTime_field_breakInLateAs"
+msgstr "外出迟归记为"
+
+msgid "att_model_breakTime"
+msgstr "休息时间段"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "基本设置"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "要求打卡设置"
+
+msgid "changeSchedule_field_employee"
+msgstr "人员"
+
+msgid "changeSchedule_field_attDate"
+msgstr "日期"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "以前的排班"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "新的排班"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "申请时间"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "申请原因"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "备注"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "状态"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "审核时间"
+
+msgid "changeSchedule_field_approver"
+msgstr "审批人"
+
+msgid "att_model_changeSchedule"
+msgstr "排班调整"
+
+msgid "change_schedule"
+msgstr "排班调整"
+
+msgid "emp_field_employeeCode"
+msgstr "人员编号"
+
+msgid "emp_field_firstName"
+msgstr "姓名"
+
+msgid "emp_field_lastName"
+msgstr "姓氏"
+
+msgid "employee_field_position"
+msgstr "职位"
+
+msgid "employee_field_department"
+msgstr "部门"
+
+msgid "deptAttRule_field_department"
+msgstr "部门"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "考勤规则"
+
+msgid "att_model_deptAttRule"
+msgstr "部门考勤规则"
+
+msgid "departmentRule_tab_calculationRule"
+msgstr "计算规则"
+
+msgid "departmentRule_tab_overtimeSetting"
+msgstr "加班设置"
+
+msgid "holiday_field_department"
+msgstr "部门"
+
+msgid "att_model_holiday"
+msgstr "节假日"
+
+msgid "leaveCategory"
+msgstr "请假类别"
+
+msgid "leave_field_applyReason"
+msgstr "申请原因"
+
+msgid "leave_field_applyTime"
+msgstr "申请时间"
+
+msgid "leave_field_approvalRemark"
+msgstr "备注"
+
+msgid "leave_field_approvalTime"
+msgstr "审批时间"
+
+msgid "leave_field_approvalLevel"
+msgstr "审批级别"
+
+msgid "leave_field_approver"
+msgstr "审批人"
+
+msgid "leave_approve_audit"
+msgstr "审批时休假记录不能被修改"
+
+msgid "leaveCategory_field_name"
+msgstr "名称"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "最小单位"
+
+msgid "leaveCategory_field_unit"
+msgstr "单位"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "四舍五入"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "报表符号"
+
+msgid "this_category_name_already_exists."
+msgstr "类型名称已经存在"
+
+msgid "this_report_symbol_already_exists."
+msgstr "报表符号已经被使用"
+
+msgid "the_default_category_name_cannot_be_modified"
+msgstr "默认类别名称不能修改。"
+
+msgid "att_model_leaveCategory"
+msgstr "请假类型"
+
+msgid "manualLog_field_applyTime"
+msgstr "申请时间"
+
+msgid "manualLog_field_approvalTime"
+msgstr "审批时间"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "审批级别"
+
+msgid "manualLog_field_approver"
+msgstr "审批人"
+
+msgid "manuallog_approve_audit"
+msgstr "审批时补签申请不能被修改"
+
+msgid "att_model_manualLog"
+msgstr "补签"
+
+msgid "overtime_field_applyTime"
+msgstr "申请时间"
+
+msgid "overtime_field_approvalReason"
+msgstr "原因"
+
+msgid "overtime_field_approvalTime"
+msgstr "审批时间"
+
+msgid "overtime_field_approvalLevel"
+msgstr "审批级别"
+
+msgid "overtime_field_approver"
+msgstr "审批人"
+
+msgid "overtime_approve_audit"
+msgstr "审核时加班申请不能被修改。"
+
+msgid "att_model_overtime"
+msgstr "加班"
+
+msgid "reportParam_field_name"
+msgstr "名称"
+
+msgid "reportParam_field_value"
+msgstr "值"
+
+msgid "att_model_reportParameter"
+msgstr "报表参数"
+
+msgid "calculation_item_actualAttendance"
+msgstr "实际工作时长"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "需要工作时长/缺勤"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "总时长/总的工作时长"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "休息时长/实际休息时长"
+
+msgid "calculation_item_noCheckIn"
+msgstr "未签到"
+
+msgid "calculation_item_noCheckOut"
+msgstr "未签退"
+
+msgid "calculation_item_training"
+msgstr "培训"
+
+msgid "report_display_checkIn"
+msgstr "签到"
+
+msgid "report_display_checkOut"
+msgstr "签退"
+
+msgid "report_display_breakOut"
+msgstr "外出"
+
+msgid "report_display_breakIn"
+msgstr "外出返回"
+
+msgid "report_display_overtimeIn"
+msgstr "加班签到"
+
+msgid "report_display_overtimeOut"
+msgstr "加班签退"
+
+msgid "report_display_unknown"
+msgstr "未知数"
+
+msgid "shiftDetail_field_shift"
+msgstr "班次"
+
+msgid "shiftDetail_field_inTime"
+msgstr "签到时间"
+
+msgid "shiftDetail_field_outTime"
+msgstr "签退时间"
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "日期索引"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "时间段"
+
+msgid "att_model_shiftDetail"
+msgstr "班次详情"
+
+msgid "tempSchedule_field_employee"
+msgstr "人员"
+
+msgid "tempSchedule_field_startTime"
+msgstr "开始时间"
+
+msgid "tempSchedule_field_endTime"
+msgstr "结束时间"
+
+msgid "tempSchedule_field_rule"
+msgstr "临时排班规则"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "时间段编号"
+
+msgid "tempSchedule_field_workType"
+msgstr "工作类型"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "时间段"
+
+msgid "att_model_tempSchedule"
+msgstr "临时排班"
+
+msgid "timeInterval_field_alias"
+msgstr "名称"
+
+msgid "timeInterval_field_type"
+msgstr "类型"
+
+msgid "timeInterval_field_checkIn"
+msgstr "签到"
+
+msgid "timeInterval_field_checkOut"
+msgstr "签退"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "开始签到时间"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "结束签到时间"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "开始签退时间"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "结束签退时间"
+
+msgid "timeInterval_field_crossDay"
+msgstr "跨天"
+
+msgid "timeTable_helpText_tip1"
+msgstr "1. 所有跨天设置都需基于签到时间。"
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "签到开始范围"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "签到结束范围"
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "签退开始范围"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "签退结束范围"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "考勤时长"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "点击通过设置签退时长来设置考勤时长"
+
+msgid "timeInterval_label_checkOut"
+msgstr "签退时间"
+
+msgid "timeInterval_txt_days"
+msgstr "天"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "最多支持3天"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "签退时间小于签到时间"
+
+msgid "timeInterval_checkOut_title"
+msgstr "签退设置"
+
+msgid "timeInterval_field_inRequired"
+msgstr "必须签到"
+
+msgid "timeInterval_field_outRequired"
+msgstr "必须签退"
+
+msgid "timeInterval_field_allowLate"
+msgstr "允许迟到"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "允许早退"
+
+msgid "timeInterval_field_paidDay"
+msgstr "工作日"
+
+msgid "timeInterval_field_earlyIn"
+msgstr "早到"
+
+msgid "timeInterval_field_minEarlyIn"
+msgstr "最小早到分钟数"
+
+msgid "timeInterval_field_lateOut"
+msgstr "晚退"
+
+msgid "timeInterval_field_minLateOut"
+msgstr "最小晚退分钟数"
+
+msgid "timeInterval_field_overtimeLevel"
+msgstr "加班等级"
+
+msgid "timeInterval_field_overtimeLevel1"
+msgstr "加班等级1"
+
+msgid "timeInterval_field_overtimeLevel2"
+msgstr "加班等级2"
+
+msgid "timeInterval_field_overtimeLevel3"
+msgstr "加班等级3"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "早到是否记加班"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "最小加班分钟数（提早签到）"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "晚退是否记加班"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "最小加班分钟数（延迟签退）"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "变更时间点"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "多进多出"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "打卡间隔类型"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "重复打卡间隔"
+
+msgid "timeInterval_field_workTimeType"
+msgstr "工作时长类型"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "工作时长"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "分钟"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "基于打卡状态"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "开启加班"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "加班最小分钟数"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "分钟"
+
+msgid "timeInterval_field_workType"
+msgstr "工作类型"
+
+msgid "timeInterval_field_dayChange"
+msgstr "工作日开始时间"
+
+msgid "timeInterval_field_breakTime"
+msgstr "休息时间"
+
+msgid "timeInterval_error_invalidWorkDay"
+msgstr "无效工作天数，值的范围应为：0.1-9.9"
+
+msgid "time_duration_greater_user_defined"
+msgstr "时长大于用户自定义时长。"
+
+msgid "att_model_timeInterval"
+msgstr "考勤时间段"
+
+msgid "timeInterval_action_addNormalTimetable"
+msgstr "新增普通时间段"
+
+msgid "timeInterval_action_addNormalTimetable_description"
+msgstr "新增普通时间段"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "新增普通时间段"
+
+msgid "timeInterval_filed_crossDayUnit"
+msgstr "天"
+
+msgid "timeInterval_error_invalidOvertimeValue"
+msgstr "无效加班值"
+
+msgid "timeInterval_error_invalidFieldValue"
+msgstr "{field}的值无效"
+
+msgid "timeInterval_error_invalidCheckOvertimeLevel"
+msgstr "加班等级的值必须为 等级3>=等级2>=等级1"
+
+msgid "timeInterval_error_flexibleWorkTime"
+msgstr "工作时间需要在0-1440范围"
+
+msgid "timeInterval_error_invalidCheckInStart"
+msgstr "无效签到开始时间"
+
+msgid "timeInterval_error_invalidCheckInEnd"
+msgstr "无效签到结束时间"
+
+msgid "timeInterval_error_invalidCheckOutStart"
+msgstr "无效签到开始时间"
+
+msgid "timeInterval_error_invalidCheckOutEnd"
+msgstr "无效签退结束时间"
+
+msgid "timeInterval_error_invalidCheckOut"
+msgstr "无效签退时间"
+
+msgid "timeInterval_error_invalidEarlyIn"
+msgstr "无效早到设置"
+
+msgid "timeInterval_error_invalidLateOut"
+msgstr "无效晚退设置"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "基本设置"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "休息时间段设置"
+
+msgid "timeInterval_tab_unscheduledTimeSetting"
+msgstr "未排班时间设置"
+
+msgid "timeInterval_tab_overtimeLevelSetting"
+msgstr "加班等级设置"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "规则设置"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "新增弹性时间段"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "新增弹性时间段"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "新增弹性时间段"
+
+msgid "training_field_applyTime"
+msgstr "申请时间"
+
+msgid "training_field_approvalTime"
+msgstr "审批时间"
+
+msgid "training_field_approvalLevel"
+msgstr "审批级别"
+
+msgid "training_field_approver"
+msgstr "审批人"
+
+msgid "training_approve_audit"
+msgstr "审批时培训记录不能被修改"
+
+msgid "att_model_training"
+msgstr "培训"
+
+msgid "mulTransaction_field_employee"
+msgstr "人员编号"
+
+msgid "mulTransaction_field_dataType"
+msgstr "数据类型"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "正常打卡"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "休息时间段"
+
+msgid "mulTransaction_field_date"
+msgstr "日期"
+
+msgid "mulTransaction_field_timetable"
+msgstr "时段"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "数据索引"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "签到"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "签到编号"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "签退"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "签退编号"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "总时长"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "工作时长"
+
+msgid "att_model_multipleTransaction"
+msgstr "多卡记录"
+
+msgid "att_model_scheduledTransaction"
+msgstr "排班记录"
+
+msgid "based_on_schedule"
+msgstr "基于排班"
+
+msgid "first_check_in"
+msgstr "最早签到"
+
+msgid "last_check_out"
+msgstr "最晚签退"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "不开启加班"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "计算加班"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "只计算加班单OT"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "优先计算加班单OT"
+
+msgid "attRule_missIn_late"
+msgstr "迟到"
+
+msgid "attRule_missIn_absent"
+msgstr "旷工"
+
+msgid "attRule_missIn_noComplete"
+msgstr "未完成"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "早退"
+
+msgid "attRule_missOut_absent"
+msgstr "旷工"
+
+msgid "attRule_missOut_noComplete"
+msgstr "未完成"
+
+msgid "must_check_in"
+msgstr "必须签到"
+
+msgid "using_leave_end_time"
+msgstr "使用请假结束时间"
+
+msgid "must_check_out"
+msgstr "必须签退"
+
+msgid "using_leave_start_time"
+msgstr "使用请假开始时间"
+
+msgid "using_training_end_time"
+msgstr "使用培训结束时间"
+
+msgid "using_training_start_time"
+msgstr "使用培训开始时间"
+
+msgid "overtimeLevel_ignore"
+msgstr "忽略"
+
+msgid "overtimeLevel_dependsOnWorkTime"
+msgstr "基于工作时长"
+
+msgid "overtimeLevel_dependsOnOvertime"
+msgstr "基于加班时长"
+
+msgid "unscheduled_ignore"
+msgstr "忽略"
+
+msgid "unscheduled_move2normalWork"
+msgstr "记为正常工作"
+
+msgid "unscheduled_move2overtime"
+msgstr "记为加班"
+
+msgid "unscheduled_move2normalOvertime"
+msgstr "记为正常加班"
+
+msgid "unscheduled_move2weekendOvertime"
+msgstr "记为周末加班"
+
+msgid "unscheduled_move2holidayOvertime"
+msgstr "记为节假日加班"
+
+msgid "boolean_option_no"
+msgstr "否"
+
+msgid "boolean_option_yes"
+msgstr "是"
+
+msgid "boolean_option_enable"
+msgstr "启用"
+
+msgid "boolean_option_disable"
+msgstr "禁用"
+
+msgid "availablePunch_policy_any"
+msgstr "不限"
+
+msgid "availablePunch_policy_punchStateBased"
+msgstr "基于打卡状态"
+
+msgid "breakTime_calculateMode_autoDeduct"
+msgstr "自动扣除"
+
+msgid "breakTime_calculateMode_requiredPunch"
+msgstr "要求打卡"
+
+msgid "breakTime_earlyInMode_normalWork"
+msgstr "正常工作"
+
+msgid "breakTime_earlyInMode_normalOvertime"
+msgstr "正常加班"
+
+msgid "breakTime_lateInMode_ignore"
+msgstr "忽略"
+
+msgid "breakTime_lateInMode_move2Late"
+msgstr "记为迟到"
+
+msgid "breakTime_lateInMode_move2EarlyOut"
+msgstr "记为早退"
+
+msgid "breakTime_lateInMode_move2Absence"
+msgstr "记为旷工"
+
+msgid "breakTime_lateInMode_late"
+msgstr "迟到"
+
+msgid "breakTime_lateInMode_earlyLeave"
+msgstr "早退"
+
+msgid "breakTime_lateInMode_absent"
+msgstr "旷工"
+
+msgid "timeInterval_typeOption_normal"
+msgstr "普通时间段"
+
+msgid "timeInterval_typeOption_flexible"
+msgstr "弹性时间段"
+
+msgid "timeInterval_typeOption_basedOnRule"
+msgstr "基于考勤规则"
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "用户自定义"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "正常工作"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "休息日"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "周末"
+
+msgid "shift_OTOption_normalWork"
+msgstr "正常工作"
+
+msgid "shift_OTOption_normalOT"
+msgstr "正常加班"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "周末加班"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "天"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "周"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "月"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "仅临时排班有效"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "追加于员工排班之后"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "正常工作"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "正常加班"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "周末加班"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "节假日加班"
+
+msgid "approvalStatus_option_pending"
+msgstr "待审批"
+
+msgid "approvalStatus_option_reApply"
+msgstr "重新申请"
+
+msgid "approvalStatus_option_revoke"
+msgstr "撤回"
+
+msgid "approvalStatus_option_auditing"
+msgstr "审批中"
+
+msgid "approvalStatus_option_approved"
+msgstr "批准"
+
+msgid "approvalStatus_option_reject"
+msgstr "拒绝"
+
+msgid "punchState_option_checkIn"
+msgstr "签到"
+
+msgid "punchState_option_checkOut"
+msgstr "签退"
+
+msgid "punchState_option_breakOut"
+msgstr "外出"
+
+msgid "punchState_option_breakIn"
+msgstr "外出返回"
+
+msgid "punchState_option_overtimeIn"
+msgstr "加班签到"
+
+msgid "punchState_option_overtimeOut"
+msgstr "加班签退"
+
+msgid "punchState_option_noStatus"
+msgstr "无状态"
+
+msgid "overtime_option_normalOvertime"
+msgstr "正常加班"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "周末加班"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "节假日加班"
+
+msgid "calculationUnit_option_hour"
+msgstr "小时"
+
+msgid "calculationUnit_option_minute"
+msgstr "分钟"
+
+msgid "calculationUnit_option_workday"
+msgstr "工作日"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "时：分"
+
+msgid "overtime_option_normalWork"
+msgstr "正常工作"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "节假日(%(holiday)s)"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "周末"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "休息日"
+
+msgid "report_exceptionDisplay_Holiday"
+msgstr "节假日"
+
+msgid "absent_report"
+msgstr "旷工报表"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "无签到"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "无签退"
+
+msgid "time.months.january"
+msgstr "一月"
+
+msgid "time.months.february"
+msgstr "二月"
+
+msgid "time.months.march"
+msgstr "三月"
+
+msgid "time.months.april"
+msgstr "四月"
+
+msgid "time.months.may"
+msgstr "五月"
+
+msgid "time.months.june"
+msgstr "六月"
+
+msgid "time.months.july"
+msgstr "七月"
+
+msgid "time.months.august"
+msgstr "八月"
+
+msgid "time.months.september"
+msgstr "九月"
+
+msgid "time.months.october"
+msgstr "十月"
+
+msgid "time.months.november"
+msgstr "十一月"
+
+msgid "time.months.december"
+msgstr "十二月"
+
+msgid "weekday_option_monday"
+msgstr "周一"
+
+msgid "weekday_option_tuesday"
+msgstr "周二"
+
+msgid "weekday_option_wednesday"
+msgstr "周三"
+
+msgid "weekday_option_thursday"
+msgstr "周四"
+
+msgid "weekday_option_friday"
+msgstr "周五"
+
+msgid "weekday_option_saturday"
+msgstr "周六"
+
+msgid "weekday_option_sunday"
+msgstr "周天"
+
+msgid "attRule_globalRule_basicSetting"
+msgstr "基本设置"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "周末设置"
+
+msgid "attRule_globalRule_overtimeSetting"
+msgstr "加班设置"
+
+msgid "attRule_globalRule_calculationSetting"
+msgstr "考勤计算设置"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "手机APP设置"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "签到规则"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "基于排班"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "最早原则"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "签退规则"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "最晚原则"
+
+msgid "attRule_globalRule_monday"
+msgstr "周一"
+
+msgid "attRule_globalRule_workingOnMonday"
+msgstr "周一工作"
+
+msgid "attRule_globalRule_tuesday"
+msgstr "周二"
+
+msgid "attRule_globalRule_workingOnTuesday"
+msgstr "周二工作"
+
+msgid "attRule_globalRule_wednesday"
+msgstr "周三"
+
+msgid "attRule_globalRule_workingOnWednesday"
+msgstr "周三工作"
+
+msgid "attRule_globalRule_thursday"
+msgstr "周四"
+
+msgid "attRule_globalRule_workingOnThursday"
+msgstr "周四工作"
+
+msgid "attRule_globalRule_friday"
+msgstr "周五"
+
+msgid "attRule_globalRule_workingOnFriday"
+msgstr "周五工作"
+
+msgid "attRule_globalRule_saturday"
+msgstr "周六"
+
+msgid "attRule_globalRule_workingOnSaturday"
+msgstr "周六上班"
+
+msgid "attRule_globalRule_sunday"
+msgstr "周日"
+
+msgid "attRule_globalRule_workingOnSunday"
+msgstr "周日工作"
+
+msgid "attRule_globalRule_OTLevel1"
+msgstr "加班等级1"
+
+msgid "attRule_globalRule_OTLevel2"
+msgstr "加班等级2"
+
+msgid "attRule_globalRule_OTLevel3"
+msgstr "加班等级3"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "加班规则"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "重复打卡间隔"
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "星期一"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "星期二"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "星期三"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "星期四"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "星期五"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "星期六"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "星期日"
+
+msgid "attRule_weekendSetting_titleWeekend"
+msgstr "周末"
+
+msgid "attRule_weekendSetting_workingOnDay"
+msgstr "工作日"
+
+msgid "attRule_weekendSetting_OTLV1"
+msgstr "加班等级1 （小时）"
+
+msgid "attRule_weekendSetting_OTLV2"
+msgstr "加班等级2（小时）"
+
+msgid "attRule_weekendSetting_OTLV3"
+msgstr "加班等级3（小时）"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "考勤计算规则"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "一次迟到超过"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "分钟时记为旷工"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "一次早退大于"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "分钟时记为旷工"
+
+msgid "attRule_globalRule_missIn"
+msgstr "上班无签到记录时记"
+
+msgid "attRule_globalRule_missOut"
+msgstr "下班无签退记录时记"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "计算项目"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "签到"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "签退规则"
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "外出"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "外出回来"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "加班签到"
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "加班签退"
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "考勤照片"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "非必填"
+
+msgid "attRule_globalRule_required"
+msgstr "必填"
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "工作代码"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "功能键"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "保存"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "人员"
+
+msgid "schedule_empFrameOption_department"
+msgstr "部门"
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "人员"
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "部门"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "选择所有员工"
+
+msgid "schedule_action_shiftCover"
+msgstr "覆盖班次"
+
+msgid "schedule_action_scheduleCover"
+msgstr "覆盖排班"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "时段"
+
+msgid "form_helpText_title"
+msgstr "通知"
+
+msgid "shift_helpText_tip1"
+msgstr "1. 通过选择左侧时间段来填写右侧班次。"
+
+msgid "shift_helpText_tip2"
+msgstr "2. 当单位为天时，周期的值不能超过366。"
+
+msgid "shift_helpText_tip3"
+msgstr "3. 当单位为周时，周期的值不能超过52。"
+
+msgid "shift_helpText_tip4"
+msgstr "4. 当单位为月时，周期的值不能超过12。"
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "详情"
+
+msgid "shiftList_search_shift"
+msgstr "班次"
+
+msgid "department_tree_selectAll"
+msgstr "选择全部"
+
+msgid "department_tree_multipleSelect"
+msgstr "多次选择"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "选择子部门"
+
+msgid "calculation_page_empSearch"
+msgstr "人员搜索"
+
+msgid "calculation_page_startDate"
+msgstr "开始日期"
+
+msgid "calculation_page_endDate"
+msgstr "结束日期"
+
+msgid "calculation_page_attCalculate"
+msgstr "考勤计算"
+
+msgid "emp_field_hireDate"
+msgstr "雇佣日期"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "加班规则"
+
+msgid "report_searchField_startDate"
+msgstr "开始日期"
+
+msgid "report_searchField_endDate"
+msgstr "结束日期"
+
+msgid "report_searchField_employee"
+msgstr "人员"
+
+msgid "report_column_workDay"
+msgstr "工作日"
+
+msgid "report_column_breakDuration"
+msgstr "休息时间"
+
+msgid "report_column_totalDurationHrs"
+msgstr "总时长（小时）"
+
+msgid "report_column_breakDurationHrs"
+msgstr "休息时长（小时）"
+
+msgid "report_column_totalDayOff"
+msgstr "休息日（天）"
+
+msgid "report_column_totalWeekend"
+msgstr "周末（天）"
+
+msgid "report_column_totalHoliday"
+msgstr "节假日（天）"
+
+msgid "report_display_setting"
+msgstr "报表显示设置"
+
+msgid "short_date_format"
+msgstr "短日期格式"
+
+msgid "short_time_format"
+msgstr "短时间格式"
+
+msgid "resignEmployee_display"
+msgstr "离职人员显示"
+
+msgid "multiple_dept"
+msgstr "显示部门树"
+
+msgid "reportSetting_tab_basicDisplaySetting"
+msgstr "基本设置"
+
+msgid "reportSetting_tab_functionKeyDisplay"
+msgstr "功能键显示"
+
+msgid "reportSetting_tab_reportItemsDisplay"
+msgstr "报表显示设置"
+
+msgid "reportSetting_funcKeyField_ID"
+msgstr "编号"
+
+msgid "reportSetting_funcKeyField_value"
+msgstr "值"
+
+msgid "reportSetting_funcKeyField_name"
+msgstr "名称"
+
+msgid "reportSetting_itemField_ID"
+msgstr "编号"
+
+msgid "reportSetting_itemField_name"
+msgstr "名称"
+
+msgid "reportSetting_itemField_minimumUnit"
+msgstr "最小单位"
+
+msgid "reportSetting_itemField_roundOff"
+msgstr "四舍五入"
+
+msgid "reportSetting_itemField_symbol"
+msgstr "标志"
+
+msgid "calculation_item_minimumUnit"
+msgstr "最小单位"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "小时"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "分钟"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "工作日"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "时：分"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "数值精度"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "向下取整"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "四舍五入"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "向上取整"
+
+msgid "symbol_in_report"
+msgstr "报表中的表示符号"
+
+msgid "replace_schedule_as_following_range"
+msgstr "按照以下范围替换排班。"
+
+msgid "breakTime_number"
+msgstr "休息时间段编号"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "导出样式："
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "默认"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "按人员统计"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "按部门统计"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "按日期统计"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "按页统计"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "请选择开始时间和结束时间"
+
+msgid "attCalculation_alert_dateRangeInvalid"
+msgstr "无效时间，结束时间必须晚于开始时间"
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "请选择人员"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "计算完成"
+
+msgid "shift_getDetail_error_notFound"
+msgstr "班次未找到。"
+
+msgid "menu_sys_authGroup"
+msgstr "权限组"
+
+msgid "menu_sys_authUser"
+msgstr "用户"
+
+msgid "menu_sys_emailSetting"
+msgstr "邮箱设置"
+
+msgid "menu_sys_alertSetting"
+msgstr "提醒设置"
+
+msgid "menu_sys_pdfReportSetting"
+msgstr "PDF导出"
+
+msgid "menu_sys_ftpSetting"
+msgstr "FTP设置"
+
+msgid "menu_sys_filterBookmark"
+msgstr "书签"
+
+msgid "menu_sys_databaseBackup"
+msgstr "备份"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "迁移"
+
+msgid "menu_sys_autoExport"
+msgstr "自动导出"
+
+msgid "menu_group_sysMiddlewareTable"
+msgstr "中间表"
+
+msgid "menu_sys_middlewareTableDepartment"
+msgstr "部门"
+
+msgid "menu_sys_middlewareTablePosition"
+msgstr "职位"
+
+msgid "menu_sys_middlewareTableArea"
+msgstr "区域"
+
+msgid "menu_sys_middlewareTableEmployee"
+msgstr "人员"
+
+msgid "middlewareTable_field_postTime"
+msgstr "提交时间"
+
+msgid "middlewareTable_field_flag"
+msgstr "标志"
+
+msgid "middlewareTable_field_updateTime"
+msgstr "更新时间"
+
+msgid "middlewareTable_field_syncResult"
+msgstr "状态"
+
+msgid "emp_field_multipleArea"
+msgstr "多区域"
+
+msgid "emp_field_activeStatus"
+msgstr "激活状态"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "辅助设置"
+
+msgid "menu_sys_companySetting"
+msgstr "公司设置"
+
+msgid "menu_line_notify"
+msgstr "Line应用通知"
+
+msgid "menu_group_sys_user"
+msgstr "用户"
+
+msgid "menu_group_sys_configuration"
+msgstr "系统配置"
+
+msgid "menu_group_sys_database"
+msgstr "数据库管理"
+
+msgid "menu_group_sys_integration"
+msgstr "集成"
+
+msgid "menu_group_sys_log"
+msgstr "系统日志"
+
+msgid "menu_sys_log"
+msgstr "日志"
+
+msgid "menu_group_sys_task"
+msgstr "任务"
+
+msgid "menu_sys_intervalSchedule"
+msgstr "间隔"
+
+msgid "menu_sys_crontabSchedule"
+msgstr "Crontab"
+
+msgid "menu_sys_periodicTask"
+msgstr "定期任务"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "开始时间"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "结束时间"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "查询"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "手动导出"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "选择要手动执行的任务"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "选择要手动执行的任务"
+
+msgid "user_action_changePassword"
+msgstr "修改密码"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "您确定要更改所选用户的密码吗?"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "主键为%(key)r的对象%(name)s不存在。"
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "修改密码成功"
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "修改密码"
+
+msgid "adminLog_field_objects"
+msgstr "对象"
+
+msgid "group_field_name"
+msgstr "名称"
+
+msgid "autoExport_task_error_data"
+msgstr "无效数据"
+
+msgid "autoExport_task_error_email"
+msgstr "无效邮箱"
+
+msgid "autoExport_task_error_interval"
+msgstr "无效的区间值"
+
+msgid "autoExport_task_error_time_point"
+msgstr "无效时间点"
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "人员编号长度"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "文件名"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "无效密码格式或者未知的哈希算法。"
+
+msgid "password_mismatch_errorMessage"
+msgstr "两个密码字段不匹配"
+
+msgid "user_createForm_password"
+msgstr "密码"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "确认密码"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "输入与之前相同的密码进行验证。"
+
+msgid "stmp_server_is_required"
+msgstr "SMTP服务器必填"
+
+msgid "email_account_is_required"
+msgstr "邮箱帐户必填"
+
+msgid "email_password_is_required"
+msgstr "邮箱密码必填。"
+
+msgid "store_path_is_required"
+msgstr "SN文件必填"
+
+msgid "store_path_is_wrong"
+msgstr "存储路径错误"
+
+msgid "autoExport_task_error_data: "
+msgstr "无效数据"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "人员编号长度"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "时间范围"
+
+msgid "software_category_is_required"
+msgstr "软件类型必填"
+
+msgid "migrate_fields_is_required"
+msgstr "迁移字段必填"
+
+msgid "migrate_database_type_is_required"
+msgstr "迁移的数据库类型必填"
+
+msgid "migrate_database_address_is_required"
+msgstr "迁移的数据库IP地址必填"
+
+msgid "migrate_database_port_is_required"
+msgstr "迁移的数据库端口号必填"
+
+msgid "migrate_database_name_is_required"
+msgstr "迁移的数据库名称必填"
+
+msgid "migrate_database_user_is_required"
+msgstr "迁移的数据库的用户名必填"
+
+msgid "migrate_database_password_is_required"
+msgstr "迁移的数据库密码必填"
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "测试连接失败"
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "数据库连接异常"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured"
+msgstr "备份失败，请确保sqlcmd.exe已配置。"
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured"
+msgstr "备份失败，请去报mysqldump.exe已配置。"
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured"
+msgstr "备份失败，请确保pg_dump.exe已配置。"
+
+msgid "backup_failed_please_make_sure_exp_is_configured"
+msgstr "备份失败，请确保exp.exe已配置。"
+
+msgid "dbBackup_action_dbRestoreErrorPSQLNotFount"
+msgstr "还原失败，请确保psql.exe已配置。"
+
+msgid "dbBackup_action_dbRestoreErrorNoSupport"
+msgstr "还原失败，仅支持PostgreSQL数据库。"
+
+msgid "dbBackup_action_dbRestoreErrorFileNoFound"
+msgstr "还原失败，备份文件不存在。"
+
+msgid "dbBackup_action_dbRestoreErrorIllegalDatabaseName"
+msgstr "还原失败，请确保数据库名未被使用。"
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(engine)备份不可用"
+
+msgid "adminLog_field_user"
+msgstr "用户"
+
+msgid "adminLog_field_action"
+msgstr "操作"
+
+msgid "adminLog_field_contentType"
+msgstr "内容类型"
+
+msgid "adminLog_field_actionStatus"
+msgstr "状态"
+
+msgid "actionStatus_option_fail"
+msgstr "操作失败"
+
+msgid "actionStatus_option_success"
+msgstr "操作成功"
+
+msgid "adminLog_field_description"
+msgstr "描述"
+
+msgid "adminLog_field_ipAddress"
+msgstr "IP地址"
+
+msgid "adminLog_field_routable"
+msgstr "可路由"
+
+msgid "adminLog_field_operationTime"
+msgstr "操作时间"
+
+msgid "base_model_adminLog"
+msgstr "日志"
+
+msgid "autoExportTask_field_code"
+msgstr "编号"
+
+msgid "autoExportTask_field_name"
+msgstr "名称"
+
+msgid "autoExportTask_field_params"
+msgstr "参数"
+
+msgid "base_model_autoExportTask"
+msgstr "自动导出"
+
+msgid "bookmark_field_title"
+msgstr "标题"
+
+msgid "bookmark_field_user"
+msgstr "用户名"
+
+msgid "bookmark_field_contentType"
+msgstr "内容类型"
+
+msgid "bookmark_field_filtersString"
+msgstr "过滤器"
+
+msgid "bookmark_menu_noBookmarks"
+msgstr "无书签"
+
+msgid "bookmark_menu_newBookmark"
+msgstr "新书签"
+
+msgid "bookmark_menu_enterBookmarkTitle"
+msgstr "输入书签名称"
+
+msgid "bookmark_menu_saveBookmark"
+msgstr "保存书签"
+
+msgid "bookmark_field_isShared"
+msgstr "共享"
+
+msgid "bookmark_field_savedTime"
+msgstr "保存时间"
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "重复的标题"
+
+msgid "base_model_bookmark"
+msgstr "书签"
+
+msgid "base_integrationTable_employee"
+msgstr "用户名"
+
+msgid "base_integrationTable_position"
+msgstr "职位"
+
+msgid "base_integrationTable_department"
+msgstr "部门"
+
+msgid "base_integrationTable_area"
+msgstr "区域"
+
+msgid "enableStatus_option_enable"
+msgstr "启用"
+
+msgid "enableStatus_option_disable"
+msgstr "禁用"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "实时推送"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "当日考勤汇总"
+
+msgid "lineNotify_field_department"
+msgstr "部门"
+
+msgid "lineNotify_field_includeSubDepartment"
+msgstr "包括子部门"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "秘钥"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "单击底部连接"
+
+msgid "lineNotify_field_messageType"
+msgstr "短消息类型"
+
+msgid "lineNotify_field_pushTime"
+msgstr "推送时间"
+
+msgid "lineNotify_field_isValid"
+msgstr "有效的"
+
+msgid "lineNotify_field_remark"
+msgstr "备注"
+
+msgid "base_model_lineNotifySetting"
+msgstr "Line通知设置"
+
+msgid "dbMigrate_field_name"
+msgstr "迁移名称"
+
+msgid "dbMigrate_field_value"
+msgstr "迁移内容"
+
+msgid "base_model_dbBackupLog"
+msgstr "数据库备份日志"
+
+msgid "dbBackupLog_field_type"
+msgstr "数据库"
+
+msgid "dbBackupLog_field_name"
+msgstr "数据库名称"
+
+msgid "dbBackupLog_field_operator"
+msgstr "操作人"
+
+msgid "dbBackupLog_field_filePath"
+msgstr "存储路径"
+
+msgid "dbBackupLog_field_isBackupPhoto"
+msgstr "备份照片"
+
+msgid "dbBackupLog_field_isRestorePhoto"
+msgstr "还原照片"
+
+msgid "dbBackupLog_field_time"
+msgstr "时间"
+
+msgid "dbBackupLog_field_status"
+msgstr "状态"
+
+msgid "dbBackupLog_field_remark"
+msgstr "备注"
+
+msgid "dbBackupLog_field_frequency"
+msgstr "频率"
+
+msgid "dbBackupLog_field_pointDay"
+msgstr "天"
+
+msgid "dbBackupLog_field_pointTime"
+msgstr "时间点"
+
+msgid "dbBackupLog_action_dbBackupAuto"
+msgstr "自动备份"
+
+msgid "dbBackupLog_action_dbBackupManually"
+msgstr "手动备份"
+
+msgid "dbBackupLog_action_dbBackupManuallyConfirmation"
+msgstr "确定手动备份数据库？"
+
+msgid "backup_status_success"
+msgstr "成功"
+
+msgid "backup_status_failed"
+msgstr "失败"
+
+msgid "dbBackupLog_action_dbRestoreManually"
+msgstr "手动还原"
+
+msgid "dbBackupLog_field_backupFile"
+msgstr "备份文件"
+
+msgid "model_send_email"
+msgstr "发送邮件"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "密码"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "公开密钥"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "主机地址"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "端口号"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "授权方式"
+
+msgid "sftpSetting_field_username"
+msgstr "用户名"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "密码"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "SSH秘钥"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "密码"
+
+msgid "sftp_setting"
+msgstr "SFTP 设置"
+
+msgid "sysParam_field_name"
+msgstr "名称"
+
+msgid "sysParam_field_type"
+msgstr "类型"
+
+msgid "sysParam_field_value"
+msgstr "值"
+
+msgid "sysParam_default_ruleName"
+msgstr "默认考勤规则"
+
+msgid "system_setting"
+msgstr "系统设置"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "日期从%(from)s到%(to)s"
+
+msgid "reportExport_author"
+msgstr "创建人"
+
+msgid "reportExport_createTime"
+msgstr "创建时间"
+
+msgid "pdfExport_pageSize"
+msgstr "页面大小"
+
+msgid "pdfExport_orientation"
+msgstr "方向"
+
+msgid "pdfExport_footerLeft"
+msgstr "左页脚"
+
+msgid "pdfExport_footerRight"
+msgstr "右页脚"
+
+msgid "pdfExport_auto"
+msgstr "自动"
+
+msgid "pdfExport_orientation_portrait"
+msgstr "肖像"
+
+msgid "pdfExport_orientation_landscape"
+msgstr "风景"
+
+msgid "pdfExport_blank"
+msgstr "空白"
+
+msgid "pdfExport_pageToPage"
+msgstr "当前页/总页码"
+
+msgid "pdfExport_author"
+msgstr "用户名"
+
+msgid "pdfExport_time"
+msgstr "时间"
+
+msgid "user_createFrom_legendInformation"
+msgstr "信息"
+
+msgid "user_createFrom_legendPermission"
+msgstr "许可"
+
+msgid "user_createFrom_isStaffNoCheckMsg"
+msgstr "未勾选此项， 用户将不允许登录"
+
+msgid "permission_verboseName_add"
+msgstr "新增"
+
+msgid "permission_verboseName_view"
+msgstr "查看"
+
+msgid "permission_verboseName_change"
+msgstr "编辑"
+
+msgid "permission_verboseName_delete"
+msgstr "删除"
+
+msgid "permission_verboseName_changePassword"
+msgstr "修改密码"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "人员"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "部门"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "职位"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "区域"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "人员离职"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "证件"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "人员证件"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "可见光人脸照片"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "审批流节点"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "审批流"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "审批流角色"
+
+msgid "permission_verboseName_attDeptAttrule"
+msgstr "部门规则"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "报表设置"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "时间段"
+
+msgid "permission_verboseName_attShift"
+msgstr "班次"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "补签卡"
+
+msgid "permission_verboseName_attLeave"
+msgstr "请假"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "加班"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "请假类型"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "节假日"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "报表计算"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "每日考勤统计表"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "考勤汇总表"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "请假汇总表"
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "考勤明细表"
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "汇总最早与最晚"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "考勤异常明细表"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "部门汇总表"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "打卡详情表"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "迟到报表"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "早退报表"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "旷工报表"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "多卡统计"
+
+msgid "permission_verboseName_attTraining"
+msgstr "培训"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "休息时间"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "排班"
+
+msgid "permission_verboseName_attSetting"
+msgstr "考勤设置"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "临时排班"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "培训类型"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "调班"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "报表权限"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "设备"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "设备日志"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "命令"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "上传日志"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "生物模板"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "公共短消息"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "个人短消息"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "工作代码"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "APP列表"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "公告"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "通知"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "操作日志"
+
+msgid "permission_verboseName_sysUser"
+msgstr "用户"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "组"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "FTP设置"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "自动导出"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "日志"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "书签"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "配置"
+
+msgid "permission_verboseName_psnl"
+msgstr "人事"
+
+msgid "permission_verboseName_iclock"
+msgstr "设备"
+
+msgid "permission_verboseName_att"
+msgstr "考勤"
+
+msgid "permission_verboseName_payroll"
+msgstr "薪资"
+
+msgid "permission_verboseName_sys"
+msgstr "系统设置"
+
+msgid "autoExport_task_manualStart"
+msgstr "开始日期"
+
+msgid "autoExport_task_manualEnd"
+msgstr "结束日期"
+
+msgid "autoExport_task_queryField"
+msgstr "搜索"
+
+msgid "autoExport_task_filePrefix"
+msgstr "文件名"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "格式设置"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "数据过滤设置"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "导出时间设置"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "导出路径设置"
+
+msgid "autoExport_task_departments"
+msgstr "部门"
+
+msgid "autoExport_task_areas"
+msgstr "区域"
+
+msgid "autoExport_task_code"
+msgstr "编号"
+
+msgid "autoExport_task_name"
+msgstr "名称"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "数据模板"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "(请将要导出的字段从右侧拖动到下面的文本框。)"
+
+msgid "autoExport_task_shortDate"
+msgstr "短日期格式"
+
+msgid "autoExport_task_shortTime"
+msgstr "短时间格式"
+
+msgid "autoExport_task_frequency"
+msgstr "频率"
+
+msgid "frequency_option_none"
+msgstr "否"
+
+msgid "frequency_option_daily"
+msgstr "每天"
+
+msgid "frequency_option_weekly"
+msgstr "每周"
+
+msgid "frequency_option_monthly"
+msgstr "每月"
+
+msgid "autoExport_task_exportDay"
+msgstr "天"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "上传时间"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "打卡时间"
+
+msgid "autoExport_task_interval"
+msgstr "时间间隔"
+
+msgid "autoExport_task_exportFormat"
+msgstr "导出格式"
+
+msgid "autoExport_task_exportTime"
+msgstr "导出时间"
+
+msgid "autoExport_task_deadline"
+msgstr "截止期限"
+
+msgid "autoExport_deadline_previous"
+msgstr "当天0点之前的数据"
+
+msgid "autoExport_deadline_current"
+msgstr "当天0点之后的数据"
+
+msgid "autoExport_task_exportPath"
+msgstr "导出路径"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "(位置:\\files\\temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "FTP服务器"
+
+msgid "autoExport_task_ftpPath"
+msgstr "FTP路径"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "（格式：/Folder/）"
+
+msgid "autoExport_task_exportEmail"
+msgstr "邮箱"
+
+msgid "autoExport_task_empCodeLength"
+msgstr "人员编号长度"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "人员编号长度"
+
+msgid "autoExport_task_departmentCode"
+msgstr "部门编号"
+
+msgid "autoExport_task_departmentName"
+msgstr "部门名称"
+
+msgid "autoExport_task_punchTime"
+msgstr "打卡时间"
+
+msgid "autoExport_task_verifyType"
+msgstr "验证类型"
+
+msgid "autoExport_task_workCode"
+msgstr "工作代码"
+
+msgid "autoExport_task_cardNumber"
+msgstr "卡号"
+
+msgid "autoExport_task_areaAlias"
+msgstr "区域"
+
+msgid "autoExport_task_terminalAlias"
+msgstr "设备别名"
+
+msgid "autoExport_task_terminalSN"
+msgstr "设备序列号"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "迁移数据来源"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "数据库"
+
+msgid "db_sqlserver"
+msgstr "MSSQL Server"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "数据库地址"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "数据库端口号"
+
+msgid "dataMigrate_front_databaseName"
+msgstr "数据库名"
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "数据库用户名"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "数据库密码"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "迁移字段"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "考勤数据迁移时间范围"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "迁移状态"
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "连接测试"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "迁移"
+
+msgid "dataMigrate_front_btn_clearConnectInfo"
+msgstr "清除连接"
+
+msgid "dataMigrate_front_area_or_zone"
+msgstr "区域"
+
+msgid "dataMigrate_front_startTime"
+msgstr "开始时间"
+
+msgid "dataMigrate_front_endTime"
+msgstr "结束时间"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "Sqlite文件"
+
+msgid "dataMigrate_cache_clean"
+msgstr "清理缓存"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "如果它没有执行迁移，请尝试该项解决。"
+
+msgid "exportForm_itemLabel_scope"
+msgstr "导出范围："
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "当前页"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "所有数据"
+
+msgid "line_taken_btn"
+msgstr "点击这里进入line的网页，获取line通知表"
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "考勤提醒设置"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "当迟到次数超过"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "当早退次数超过"
+
+msgid "alertSettingPage_label_absentExceed"
+msgstr "当旷工次数超过"
+
+msgid "alertSettingPage_exceedUnit_times"
+msgstr "次"
+
+msgid "alertSettingPage_label_emailSendingFrequency"
+msgstr "发送频率"
+
+msgid "alertSettingPage_label_emailSendingDay"
+msgstr "天"
+
+msgid "alertSettingPage_label_emailSendingTime"
+msgstr "时间"
+
+msgid "alertSettingPage_label_sendingDay"
+msgstr "发送日期"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "当天"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "下一天"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "包括当天"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "审批提醒设置"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "邮件提醒"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "弹窗提醒"
+
+msgid "alertSettingPage_btn_submit"
+msgstr "提交"
+
+msgid "backup_database"
+msgstr "数据库"
+
+msgid "backup_database_name"
+msgstr "数据库名"
+
+msgid "backup_store_path"
+msgstr "存储路径"
+
+msgid "backup_frequency"
+msgstr "备份频率"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "仅一次"
+
+msgid "backup_day"
+msgstr "备份日期"
+
+msgid "backup_time"
+msgstr "备份时间"
+
+msgid "backup_last_backup"
+msgstr "最近一次备份"
+
+msgid "backup_file"
+msgstr "备份文件"
+
+msgid "btn_save"
+msgstr "保存"
+
+msgid "btn_view"
+msgstr "查看"
+
+msgid "btn_hide"
+msgstr "隐藏"
+
+msgid "btn_apply"
+msgstr "确认"
+
+msgid "btn_backup"
+msgstr "备份"
+
+msgid "emailSettingPage_label_smtpServer"
+msgstr "SMTP服务器"
+
+msgid "emailSettingPage_label_smtpServerPort"
+msgstr "端口"
+
+msgid "emailSettingPage_label_enableSSL"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "邮箱账号"
+
+msgid "emailSettingPage_help_emailAccount"
+msgstr "域名"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "密码"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "邮箱地址"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "提交"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "设备通讯设置"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "启用登记机"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "启用该参数后只有标注为登记机的设置可以上传人员数据，非登记机只能上传考勤数据"
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "启用上传姓名功能"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "启用上传姓名功能"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "启用上传卡号功能"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "启用上传卡号功能"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "其他设置"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "用户照片备份"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "人员照片备份路径"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "提交"
+
+msgid "translation_option_english"
+msgstr "英语"
+
+msgid "translation_option_korean"
+msgstr "韩语"
+
+msgid "translation_option_japanese"
+msgstr "日语"
+
+msgid "translation_option_spanish"
+msgstr "西班牙语"
+
+msgid "translation_option_thai"
+msgstr "泰语"
+
+msgid "translation_option_arabic"
+msgstr "阿拉伯语"
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr "谷歌翻译"
+
+msgid "translation_btn_onlineTranslate"
+msgstr "在线翻译"
+
+msgid "database_backup_is_under_processing"
+msgstr "数据库备份正在处理中，请稍后再试。"
+
+msgid "dbMigrate_status_processing"
+msgstr "处理中"
+
+msgid "dbMigrate_status_finish"
+msgstr "完成"
+
+msgid "dbMigrate_status_exception"
+msgstr "异常"
+
+msgid "dbMigrate_status_pending"
+msgstr "待定"
+
+msgid "login_authorize_license_missing"
+msgstr "没有找到许可"
+
+msgid "login_authorize_md5_error"
+msgstr "未经授权修改系统文件"
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "设备数量已超过授权数量"
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "人员数量已超过授权人数"
+
+msgid "login_authorize_license_app_exceed"
+msgstr "手机APP客户端的数量已经超过了授权数量"
+
+msgid "login_authorize_database_error"
+msgstr "数据库表被标记为崩溃，请检查并修复"
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "数据库连接失败，%(db_ver)s"
+
+msgid "login_authorize_illegal_username"
+msgstr "非法用户名"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "登录失败,%(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "登录失败，用户名或密码错误"
+
+msgid "login_authorize_invalid_username"
+msgstr "无效用户名"
+
+msgid "login_authorize_illegal_login"
+msgstr "无效登录"
+
+msgid "login_authorize_license_inactive"
+msgstr "许可未激活。"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "设备管理"
+
+msgid "menu_device_terminal"
+msgstr "设备"
+
+msgid "menu_device_terminalCommand"
+msgstr "设备命令"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "短消息"
+
+msgid "menu_device_publicMessage"
+msgstr "公共短消息"
+
+msgid "menu_device_privateMessage"
+msgstr "个人短消息"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "数据管理"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "工作代码"
+
+msgid "menu_device_terminalBioData"
+msgstr "生物模板"
+
+msgid "menu_device_transaction"
+msgstr "考勤记录"
+
+msgid "menu_group_device_terminalLog"
+msgstr "设备日志"
+
+msgid "menu_device_terminalLog"
+msgstr "设备日志"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "上传日志"
+
+msgid "menu_group_mobile_application"
+msgstr "手机APP"
+
+msgid "menu_mobile_appList"
+msgstr "账户"
+
+msgid "menu_mobile_announcement"
+msgstr "公告"
+
+msgid "menu_mobile_notification"
+msgstr "通知"
+
+msgid "menu_mobile_appActionLog"
+msgstr "操作日志"
+
+msgid "menu_group_deviceConfiguration"
+msgstr "配置"
+
+msgid "menu_iclock_deviceConfig"
+msgstr "配置"
+
+msgid "privateMessage_field_employee"
+msgstr "人员"
+
+msgid "privateMessage_field_startTime"
+msgstr "开始时间"
+
+msgid "privateMessage_field_duration"
+msgstr "持续时间"
+
+msgid "privateMessage_field_content"
+msgstr "内容"
+
+msgid "privateMsg_action_add"
+msgstr "新增"
+
+msgid "privateMsg_action_addDescription"
+msgstr "新增"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "新增"
+
+msgid "send_message"
+msgstr "发送消息"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "您确定要发这个信息吗?"
+
+msgid "publicMessage_field_terminal"
+msgstr "设备"
+
+msgid "publicMessage_field_startTime"
+msgstr "开始时间"
+
+msgid "publicMessage_field_duration"
+msgstr "持续时间"
+
+msgid "publicMessage_field_content"
+msgstr "内容"
+
+msgid "publicMsg_action_add"
+msgstr "新增"
+
+msgid "publicMsg_action_addDescription"
+msgstr "新增"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "新增"
+
+msgid "terminal_op_reboot"
+msgstr "重启"
+
+msgid "terminal_op_rebootDescription"
+msgstr "重启设备"
+
+msgid "terminal_op_rebootHelp"
+msgstr "重启设备"
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "您确定要重新启动选定的设备吗?"
+
+msgid "terminal_action_reUploadData"
+msgstr "上传人员数据"
+
+msgid "terminal_action_reUploadDataDescription"
+msgstr "从设备重新上传用户信息"
+
+msgid "terminal_action_reUploadDataHelpTxt"
+msgstr "从设备重新上传人员数据"
+
+msgid "reUploadData_field_employee"
+msgstr "人员"
+
+msgid "reUploadData_field_employeeCode"
+msgstr "人员编号"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "您确定要为选定的终端机重新上载数据吗?"
+
+msgid "reUploadData_field_transaction"
+msgstr "考勤记录"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "开始时间"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "结束时间"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "上传考勤记录"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "上传考勤记录"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "上传考勤记录"
+
+msgid "reloadData_field_employee"
+msgstr "人员"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "人员照片"
+
+msgid "reloadData_field_fingerprint"
+msgstr "指纹数"
+
+msgid "reloadData_field_face"
+msgstr "人脸数"
+
+msgid "reloadData_field_palm"
+msgstr "掌纹数"
+
+msgid "reloadData_field_fingerVein"
+msgstr "指静脉数"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "可见光照片"
+
+msgid "terminal_op_reloadData"
+msgstr "重新同步数据到设备"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "重新同步人员数据到设备"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "重新同步人员数据到设备"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "开始时间"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "结束时间"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "全部清除"
+
+msgid "terminal_op_clearData"
+msgstr "清除全部数据"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "清除设备中的所有数据包括(用户数据、考勤记录、照片等)"
+
+msgid "terminal_op_clearDataHelp"
+msgstr "清除设备中的所有数据包括(用户数据、考勤记录、照片等)"
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "您确定要清除所选设备中的所有数据吗?"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "清除考勤数据"
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "清除考勤数据"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "清除考勤数据"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr "您确定要清除所选设备中的所有考勤记录吗？"
+
+msgid "terminal_op_readInformation"
+msgstr "读取设备信息"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "读取设备信息"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "读取设备信息"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "您确定要从所选设备读取信息吗"
+
+msgid "terminal_op_deleteCapture"
+msgstr "清除照片"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "清除设备中的所有抓拍照片"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "清除设备中的所有抓拍照片"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "您确定要清除所选设备的照片吗?"
+
+msgid "terminal_op_clearAll"
+msgstr "清除所有数据"
+
+msgid "terminal_op_clearAllHelpTxt"
+msgstr "该操作会清除设备所有数据，包括考勤记录，人员信息，抓拍的照片等。"
+
+msgid "terminal_op_clearAllDescription"
+msgstr "该操作将清除设备所有数据，数据包括考勤记录，人员信息，抓拍的照片等。"
+
+msgid "terminal_op_clearAllConfirmation"
+msgstr "确定清除设备所有数据？"
+
+msgid "duplicate_punch_period"
+msgstr "重复打卡间隔（m）"
+
+msgid "minutes/seconds"
+msgstr "分钟"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "重复打卡间隔"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "重复打卡间隔"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "重复打卡间隔"
+
+msgid "terminal_capture"
+msgstr "抓拍方式"
+
+msgid "capture_no_photo"
+msgstr "不拍照"
+
+msgid "capture_take_photo_no_save"
+msgstr "拍照不保存"
+
+msgid "capture_verify_photo_and_save"
+msgstr "拍照并保存"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "验证成功保存"
+
+msgid "capture_verify_failed_and_save"
+msgstr "验证失败保存"
+
+msgid "terminal_op_captureSetting"
+msgstr "抓拍设置"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "修改设置以启用或禁用保存捕获照片"
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "修改设置以启用或禁用保存捕获照片"
+
+msgid "terminal_captureUpload"
+msgstr "上传抓拍照片"
+
+msgid "captureUpload_disabled"
+msgstr "禁用"
+
+msgid "captureUpload_enabled"
+msgstr "开启"
+
+msgid "terminal_op_captureUpload"
+msgstr "上传抓拍照片"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "上传抓拍照片"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "上传抓拍照片"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "升级文件"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "升级固件"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "升级固件"
+
+msgid "action_transactionCorrection_start"
+msgstr "开始时间"
+
+msgid "action_transactionCorrection_end"
+msgstr "结束时间"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "记录更正"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "校验某段时间内的设备考勤记录计数"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "校验某段时间内的设备考勤记录计数"
+
+msgid "terminal_op_pullFile"
+msgstr "拉取设备文件"
+
+msgid "terminal_op_pullFileDescription"
+msgstr "从设备拉取文件，通常情况下用于设备维护。请在设备空闲时使用该功能。"
+
+msgid "terminal_op_pullFileHelpTxt"
+msgstr "从设备拉取文件，该功能通常用于设备维护。请在设备空闲时使用该功能。"
+
+msgid "terminal_op_clearCommand"
+msgstr "清除命令"
+
+msgid "terminal_op_clearCommandDescription"
+msgstr "清除所有下发命令"
+
+msgid "terminal_op_clearCommandHelpTxt"
+msgstr "清除所有下发的命令"
+
+msgid "terminal_op_clearCommandConfirmation"
+msgstr "确定清除所有待下发的命令？"
+
+msgid "action_pullFile_filePath"
+msgstr "文件路径"
+
+msgid "terminal_op_enrollRemotely"
+msgstr "远程登记"
+
+msgid "terminal_op_enrollRemotelyDescription"
+msgstr "从设备登记生物模板"
+
+msgid "terminal_op_enrollRemotelyHelpTxt"
+msgstr "从设备登记生物模板"
+
+msgid "enrollRemotely_field_bioType"
+msgstr "生物模板类型"
+
+msgid "enrollRemotely_bioType_card"
+msgstr "MF卡"
+
+msgid "enrollRemotely_bioType_fingerprint"
+msgstr "指纹"
+
+msgid "enrollRemotely_bioType_face"
+msgstr "人脸"
+
+msgid "enrollRemotely_bioType_palm"
+msgstr "掌纹"
+
+msgid "enrollRemotely_field_empCode"
+msgstr "人员编号"
+
+msgid "enrollRemotely_field_finger"
+msgstr "指纹"
+
+msgid "enrollRemotely_finger_leftHandLittle"
+msgstr "（左手）小指"
+
+msgid "enrollRemotely_finger_leftHandRing"
+msgstr "（左手）无名指"
+
+msgid "enrollRemotely_finger_leftHandMiddle"
+msgstr "（左手）中指"
+
+msgid "enrollRemotely_finger_leftHandFore"
+msgstr "（左手）食指"
+
+msgid "enrollRemotely_finger_leftHandThumb"
+msgstr "（左手）拇指"
+
+msgid "enrollRemotely_finger_rightHandThumb"
+msgstr "（右手）拇指"
+
+msgid "enrollRemotely_finger_rightHandFore"
+msgstr "（右手）食指"
+
+msgid "enrollRemotely_finger_rightHandMiddle"
+msgstr "（右手）中指"
+
+msgid "enrollRemotely_finger_rightHandRing"
+msgstr "（右手）无名指"
+
+msgid "enrollRemotely_finger_rightHandLittle"
+msgstr "（右手）小指"
+
+msgid "terminal_op_newArea"
+msgstr "新区域"
+
+msgid "terminal_op_newAreaDescription"
+msgstr "新区域"
+
+msgid "terminal_op_newAreaHelpTxt"
+msgstr "新区域"
+
+msgid "terminal_field_numberReduce"
+msgstr "减少的数量"
+
+msgid "terminal_field_numberReduceHelpText"
+msgstr "0 - 999"
+
+msgid "loopDelTransaction_helpText_tip1"
+msgstr "1. 当设备记录已满时，将根据输入值删除记录数量（0表示不删除）。"
+
+msgid "terminal_op_loopDelTransaction"
+msgstr "循环删除记录"
+
+msgid "terminal_op_loopDelTransactionDescription"
+msgstr "循环删除记录"
+
+msgid "terminal_op_loopDelTransactionHelpTxt"
+msgstr "循环删除记录"
+
+msgid "terminalNewArea_error_duplicateAreaCode"
+msgstr "区域编码重复"
+
+msgid "terminal_field_alias"
+msgstr "设备名称"
+
+msgid "terminal_field_sn"
+msgstr "设备序列号"
+
+msgid "terminal_state"
+msgstr "设备状态"
+
+msgid "op_menu_group_dataClean"
+msgstr "清除数据"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "数据传输"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "其他操作"
+
+msgid "upload_file"
+msgstr "上传文件"
+
+msgid "usb_data_upload"
+msgstr "U盘数据导入"
+
+msgid "file_format_incorrect"
+msgstr "文件格式不正确"
+
+msgid "device_not_found"
+msgstr "没有找到设备"
+
+msgid "system_error"
+msgstr "系统错误"
+
+msgid "read_file_failed"
+msgstr "文件读取失败"
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "行号 %(row_num)s不正确"
+
+msgid "transaction_column_employeeName"
+msgstr "姓名"
+
+msgid "transaction_column_employeeLastName"
+msgstr "姓氏"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "部门"
+
+msgid "transaction_column_employeePosition"
+msgstr "职位"
+
+msgid "transaction_punch_date"
+msgstr "日期"
+
+msgid "transaction_punch_time"
+msgstr "时间"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "设备"
+
+msgid "send_work_code"
+msgstr "发送到设备"
+
+msgid "send_work_code_to_terminal"
+msgstr "发送工作代码到设备"
+
+msgid "remove_work_code"
+msgstr "从设备移除"
+
+msgid "remove_work_code_from_terminal"
+msgstr "从设备移除工作代码"
+
+msgid "bio_fingerprint"
+msgstr "指纹"
+
+msgid "bio_face"
+msgstr "人脸"
+
+msgid "bio_finger_vein"
+msgstr "指静脉"
+
+msgid "bio_palm"
+msgstr "掌纹"
+
+msgid "terminal_verifyOption_password"
+msgstr "密码"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "指纹"
+
+msgid "terminal_verifyOption_badge"
+msgstr "人员编号"
+
+msgid "terminal_verifyOption_card"
+msgstr "卡号"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "指纹/密码"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "指纹/卡号"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "密码/卡号"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "工号&指纹"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "指纹&密码"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "指纹&卡号"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "密码&卡号"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "指纹&密码&卡号"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "指纹&卡号&密码"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "指纹&卡号&工号"
+
+msgid "terminal_verifyOption_face"
+msgstr "人脸"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "人脸&指纹"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "人脸&密码"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "人脸&卡号"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "人脸&指纹&卡号"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "人脸&指纹&密码"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "指静脉"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "指静脉&密码"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "指静脉&卡号"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "指静脉&密码&卡号"
+
+msgid "terminal_verifyOption_palm"
+msgstr "掌纹"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "掌纹&卡号"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "掌纹&人脸"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "掌纹&指纹"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "掌纹&指纹&卡号"
+
+msgid "terminal_verifyOption_gps"
+msgstr "定位"
+
+msgid "terminal_verifyOption_aiCamera"
+msgstr "AI摄像头"
+
+msgid "terminal_verifyOption_other"
+msgstr "其他"
+
+msgid "transaction_punchState_checkIn"
+msgstr "签到"
+
+msgid "transaction_punchState_checkOut"
+msgstr "签退"
+
+msgid "transaction_punchState_breakOut"
+msgstr "外出"
+
+msgid "transaction_punchState_breakIn"
+msgstr "外出返回"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "加班签到"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "加班签退"
+
+msgid "transaction_punchState_noStatus"
+msgstr "无状态"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "成功"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "参数不正确"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "用户照片传输错误"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "设备读或写错误"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "生物模板传输错误"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "用户不存在"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "非法指纹模板格式"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "非法指纹模板，错误：-12"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "设备容量限制"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "设备不支持"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "超时"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "数据异常"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "设备忙碌"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "数据太长"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "设备存储错误，错误-1007"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "服务器数据失败"
+
+msgid "deviceLog_action_powerOn"
+msgstr "通电"
+
+msgid "deviceLog_action_powerOff"
+msgstr "断电"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "验证失败"
+
+msgid "deviceLog_action_alarm"
+msgstr "警告"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "进入菜单"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "更新设置"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "登记指纹"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "登记密码"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "登记卡号"
+
+msgid "deviceLog_action_deleteUser"
+msgstr "删除用户"
+
+msgid "deviceLog_action_deleteFP"
+msgstr "删除指纹"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "删除密码"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "删除射频卡"
+
+msgid "deviceLog_action_cleanData"
+msgstr "清除数据"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "创建MF卡"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "登记MF卡"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "删除MF卡注册"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "删除MF卡"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "将注册数据移动到卡上"
+
+msgid "deviceLog_action_migrateDataCard2Device"
+msgstr "将卡片上的日期复制到设备上"
+
+msgid "deviceLog_action_setupTime"
+msgstr "建立时间"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "恢复工厂设置"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "删除访问入口"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "清除管理员特权"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "更新门禁管理设置"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "更新用户门禁管理设置"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "更新时间段"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "更新解锁组合设置"
+
+msgid "deviceLog_action_unlock"
+msgstr "开锁"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "登记新用户"
+
+msgid "deviceLog_action_updateFP"
+msgstr "更新指纹"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "胁迫报警"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "反潜"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "删除考勤照片"
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "更新其他用户"
+
+msgid "deviceLog_action_holiday"
+msgstr "节假日"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "注册用户照片"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "更新用户照片"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "注册用户名字"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "注册用户权限"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "更新掌纹"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "删除掌纹"
+
+msgid "iclock_model_deviceConfig"
+msgstr "设备配置"
+
+msgid "deviceConfig_deviceCommunicationSetting"
+msgstr "设备通讯设置"
+
+msgid "deviceConfig_field_enableRegistration"
+msgstr "登记机"
+
+msgid "deviceConfig_field_enableResignedFilterHelpText"
+msgstr "离职人员过滤，当从设备上载员工数据时，系统将重新发送删除命令，从设备删除离职人员。"
+
+msgid "deviceConfig_field_enableResignedFilter"
+msgstr "离职人员过滤"
+
+msgid "deviceConfig_field_autoAdd"
+msgstr "自动添加"
+
+msgid "deviceConfig_field_enableNameUpload"
+msgstr "上传姓名"
+
+msgid "deviceConfig_field_enableNameUploadHelpTxt"
+msgstr "启用从设备上传用户姓名功能"
+
+msgid "deviceConfig_field_enableCardUpload"
+msgstr "上传卡号"
+
+msgid "deviceConfig_field_enableCardUploadHelpTxt"
+msgstr "启用从设备上传人员卡号功能"
+
+msgid "deviceConfig_deviceDataRetentionSetting"
+msgstr "数据保留设置"
+
+msgid "deviceConfig_field_transactionRetention"
+msgstr "考勤记录"
+
+msgid "deviceConfig_field_transactionRetentionHelpTxt"
+msgstr "90 - 9999天"
+
+msgid "deviceConfig_field_commandRetention"
+msgstr "命令"
+
+msgid "deviceConfig_field_commandRetentionHelpTxt"
+msgstr "5 - 9999天"
+
+msgid "deviceConfig_field_devLogRetention"
+msgstr "设备日志"
+
+msgid "deviceConfig_field_devLogRetentionHelpTxt"
+msgstr "15 - 9999天"
+
+msgid "deviceConfig_field_uploadLogRetention"
+msgstr "上传日志"
+
+msgid "deviceConfig_field_uploadLogRetentionHelpTxt"
+msgstr "15 - 9999天"
+
+msgid "deviceConfig_field_retentionUnit"
+msgstr "天"
+
+msgid "deviceConfig_bioPhotoApprovalPolicy"
+msgstr "可见过对比照片审批设置"
+
+msgid "deviceConfig_field_editBioPhotoPolicy"
+msgstr "编辑人员"
+
+msgid "deviceConfig_field_importBioPhotoPolicy"
+msgstr "批量导入"
+
+msgid "deviceConfig_field_mobileBioPhotoPolicy"
+msgstr "手机登记"
+
+msgid "deviceConfig_field_deviceBioPhotoPolicy"
+msgstr "设备上传"
+
+msgid "employee_disabled"
+msgstr "员工禁用"
+
+msgid "employee_not_found"
+msgstr "没有找到员工"
+
+msgid "terminal_not_found"
+msgstr "没有找到设备"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "国家"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "城市"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "公司"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "行业"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "联系人"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "供应商"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "电话"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "邮箱"
+
+msgid "license_active_customerInfoForm_address"
+msgstr "地址"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "许可文件"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "文件名应该以-SN.xml结尾"
+
+msgid "license_active_generatingUPKFailed"
+msgstr "生成UPK失败"
+
+msgid "license_active_systemFileWasModified"
+msgstr "系统文件被修改，请不要修改已授权的系统文件"
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "许可文件不可用。"
+
+msgid "license_active_activeSuccessful"
+msgstr "激活成功"
+
+msgid "license_active_onlineActiveFailedServerNoResponse"
+msgstr "在线激活失败，许可服务没有响应"
+
+msgid "license_active_snFileIsRequired"
+msgstr "SN文件是必需的"
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "在线激活失败，许可服务未配置"
+
+msgid "online_active_onlineActiveFailed"
+msgstr "在线激活失败"
+
+msgid "onlineActive_error_inactiveLicense"
+msgstr "许可无效。"
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "激活成功"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "在线激活失败，系统异常"
+
+msgid "license_active_snFileIsWrong"
+msgstr "SN文件错误"
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "没有找到SN文件中的UPK"
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "UPK文件生成失败，系统异常"
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "许可文件"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "文件名应该以-License.xml结尾"
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "许可文件未找到，无法升级"
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "许可升级失败"
+
+msgid "online_active_licenseNotFound"
+msgstr "许可没有找到"
+
+msgid "license_expiredDate_permanent"
+msgstr "永久"
+
+msgid "license_capacity_unlimited"
+msgstr "无限制的"
+
+msgid "terminal_field_ipAddress"
+msgstr "设备IP"
+
+msgid "terminal_field_realIPAddress"
+msgstr "真实IP"
+
+msgid "terminal_field_timezone"
+msgstr "时区"
+
+msgid "terminal_field_area"
+msgstr "区域"
+
+msgid "terminal_field_heartbeat"
+msgstr "心跳请求"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "秒"
+
+msgid "terminal_field_transferMode"
+msgstr "数据上传方式"
+
+msgid "deviceModel_option_attendance"
+msgstr "考勤"
+
+msgid "deviceModel_option_accessController"
+msgstr "门禁设备"
+
+msgid "deviceModel_option_informationScreen"
+msgstr "信息屏"
+
+msgid "deviceModel_option_AICamera"
+msgstr "AI摄像头"
+
+msgid "transferMode_option_realTime"
+msgstr "实时上传"
+
+msgid "transferMode_option_timing"
+msgstr "定时上传"
+
+msgid "dataSources_option_terminal"
+msgstr "设备"
+
+msgid "dataSources_option_manualLog"
+msgstr "补签卡"
+
+msgid "dataSources_option_mobile"
+msgstr "手机"
+
+msgid "terminal_field_transferInterval"
+msgstr "上传间隔"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "分钟"
+
+msgid "bioData_field_employee"
+msgstr "人员"
+
+msgid "bioData_field_bioTemplate"
+msgstr "模板"
+
+msgid "bioData_field_bioIndex"
+msgstr "生物指数"
+
+msgid "bioData_field_templateIndex"
+msgstr "模板指数"
+
+msgid "bioData_field_bioType"
+msgstr "生物模板类型"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "主要版本"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "次要版本"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "格式"
+
+msgid "bioData_field_isValid"
+msgstr "有效的"
+
+msgid "bioData_field_isDuress"
+msgstr "胁迫指纹"
+
+msgid "bioData_field_createTime"
+msgstr "创建时间"
+
+msgid "bioData_field_updateTime"
+msgstr "上传时间"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "序列号"
+
+msgid "iclock_model_bioData"
+msgstr "生物数据"
+
+msgid "privateMessage_field_lastSend"
+msgstr "最后发送时间"
+
+msgid "iclock_model_privateMessage"
+msgstr "个人短消息"
+
+msgid "publicMessage_field_lastSend"
+msgstr "最后发送时间"
+
+msgid "iclock_model_publicMessage"
+msgstr "公共短消息"
+
+msgid "terminal_field_state"
+msgstr "状态"
+
+msgid "terminal_field_transferTime"
+msgstr "传输时间"
+
+msgid "terminal_field_productType"
+msgstr "产品类型"
+
+msgid "terminal_field_isAttendance"
+msgstr "考勤设备"
+
+msgid "terminal_field_enableAccessControl"
+msgstr "门禁设备"
+
+msgid "terminal_field_isRegistration"
+msgstr "登记机"
+
+msgid "terminal_field_purpose"
+msgstr "用途"
+
+msgid "terminal_field_accessControllerType"
+msgstr "门禁控制器"
+
+msgid "terminal_field_authentication"
+msgstr "验证方式"
+
+msgid "terminal_field_style"
+msgstr "类型"
+
+msgid "terminal_field_uploadFlag"
+msgstr "上传标志"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "固件版本"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "Push协议"
+
+msgid "terminal_field_pushVersion"
+msgstr "Push版本"
+
+msgid "terminal_field_language"
+msgstr "语言"
+
+msgid "terminal_field_isTft"
+msgstr "是否彩屏"
+
+msgid "terminal_field_terminalName"
+msgstr "产品型号"
+
+msgid "terminal_field_platform"
+msgstr "平台"
+
+msgid "terminal_field_oemVendor"
+msgstr "供应商"
+
+msgid "terminal_field_logStamp"
+msgstr "日志"
+
+msgid "terminal_field_operationLogStamp"
+msgstr "操作日志"
+
+msgid "terminal_field_captureStamp"
+msgstr "抓拍"
+
+msgid "terminal_field_userCount"
+msgstr "人员数量"
+
+msgid "terminal_field_userCapacity"
+msgstr "人员容量"
+
+msgid "terminal_field_photoFuncOn"
+msgstr "支持照片验证"
+
+msgid "terminal_field_transactionCount"
+msgstr "考勤记录数量"
+
+msgid "terminal_field_transactionCapacity"
+msgstr "考勤记录容量"
+
+msgid "terminal_field_fpFuncOn"
+msgstr "支持指纹验证"
+
+msgid "terminal_field_fingerprintCount"
+msgstr "指纹数量"
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr "指纹容量"
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr "指纹算法版本"
+
+msgid "terminal_field_faceFuncOn"
+msgstr "支持面部验证"
+
+msgid "terminal_field_faceCount"
+msgstr "人脸数量"
+
+msgid "terminal_field_faceCapacity"
+msgstr "面部容量"
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr "面部算法版本"
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr "支持指静脉验证"
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "指静脉"
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr "指静脉容量"
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr "指静脉算法版本"
+
+msgid "terminal_field_palmFuncOn"
+msgstr "支持掌纹验证"
+
+msgid "terminal_field_palmCount"
+msgstr "掌纹数量"
+
+msgid "terminal_field_palmCapacity"
+msgstr "掌纹容量"
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr "掌纹算法版本"
+
+msgid "terminal_field_lockFunc"
+msgstr "支持门禁"
+
+msgid "terminal_field_lastActivity"
+msgstr "最近联机时间"
+
+msgid "terminal_field_uploadTime"
+msgstr "最近上传时间"
+
+msgid "terminal_field_syncTime"
+msgstr "最近同步时间"
+
+msgid "terminal_field_cmdCount"
+msgstr "命令数量"
+
+msgid "iclock_model_terminal"
+msgstr "设备"
+
+msgid "command_field_terminal"
+msgstr "设备"
+
+msgid "command_field_content"
+msgstr "内容"
+
+msgid "command_field_commit_time"
+msgstr "提交时间"
+
+msgid "command_field_transferTime"
+msgstr "传递时间"
+
+msgid "command_field_returnTime"
+msgstr "返回时间"
+
+msgid "command_field_returnValue"
+msgstr "返回值"
+
+msgid "iclock_model_terminalCommand"
+msgstr "命令"
+
+msgid "menu_device_errorCommandLog"
+msgstr "错误日志"
+
+msgid "terminal_model_errorCommandLog"
+msgstr "错误日志"
+
+msgid "errorCommandLog_field_terminal"
+msgstr "设备"
+
+msgid "errorCommandLog_field_errorCode"
+msgstr "错误编码"
+
+msgid "errorCommandLog_field_errorMsg"
+msgstr "错误信息"
+
+msgid "errorCommandLog_field_dataOrigin"
+msgstr "错误命令"
+
+msgid "errorCommandLog_field_cmd"
+msgstr "命令编号"
+
+msgid "errorCommandLog_field_additional"
+msgstr "额外信息"
+
+msgid "errorCommandLog_field_uploadTime"
+msgstr "上传时间"
+
+msgid "terminalEmployee_field_sn"
+msgstr "序列号"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "人员编号"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "权限"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "人员"
+
+msgid "terminalLog_field_terminal"
+msgstr "设备"
+
+msgid "terminalLog_field_timezone"
+msgstr "时间段"
+
+msgid "terminalLog_field_administrator"
+msgstr "管理员"
+
+msgid "terminalLog_field_actionName"
+msgstr "动作"
+
+msgid "terminalLog_field_actionTime"
+msgstr "动作时间"
+
+msgid "terminalLog_field_object"
+msgstr "对象"
+
+msgid "terminalLog_field_param1"
+msgstr "参数"
+
+msgid "terminalLog_field_param2"
+msgstr "参数"
+
+msgid "terminalLog_field_param3"
+msgstr "参数"
+
+msgid "terminalLog_field_uploadTime"
+msgstr "上传时间"
+
+msgid "iclock_model_terminalLog"
+msgstr "设备日志"
+
+msgid "terminalParameter_field_terminal"
+msgstr "设备"
+
+msgid "terminalParameter_field_type"
+msgstr "类型"
+
+msgid "terminalParameter_field_name"
+msgstr "名称"
+
+msgid "terminalParameter_field_value"
+msgstr "值"
+
+msgid "iclock_model_terminalParameter"
+msgstr "设备参数"
+
+msgid "transaction_field_employeeCode"
+msgstr "人员编号"
+
+msgid "transaction_field_employee"
+msgstr "用户"
+
+msgid "transaction_field_punchTime"
+msgstr "打卡时间"
+
+msgid "transaction_field_punchState"
+msgstr "打卡状态"
+
+msgid "transaction_field_verifyType"
+msgstr "验证方式"
+
+msgid "transaction_field_workCode"
+msgstr "工作代码"
+
+msgid "transaction_field_terminalSN"
+msgstr "序列号"
+
+msgid "transaction_terminal_alias"
+msgstr "设备名称"
+
+msgid "transaction_field_terminal"
+msgstr "设备"
+
+msgid "transaction_field_areaAlias"
+msgstr "区域"
+
+msgid "transaction_field_longitude"
+msgstr "经度"
+
+msgid "transaction_field_latitude"
+msgstr "纬度"
+
+msgid "transaction_field_gpsLocation"
+msgstr "定位（GPS）"
+
+msgid "transaction_field_mobile"
+msgstr "手机"
+
+msgid "transaction_field_source"
+msgstr "来源"
+
+msgid "transaction_field_purpose"
+msgstr "目的"
+
+msgid "transaction_field_crcCode"
+msgstr "CRC码"
+
+msgid "transaction_field_isAttendance"
+msgstr "考勤"
+
+msgid "transaction_field_reserved"
+msgstr "保留"
+
+msgid "transaction_field_uploadTime"
+msgstr "上传时间"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "同步状态"
+
+msgid "transaction_field_synchronized_time"
+msgstr "同步时间"
+
+msgid "iclock_model_transaction"
+msgstr "考勤记录"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "设备"
+
+msgid "terminalUploadLog_field_event"
+msgstr "事件"
+
+msgid "terminalUploadLog_field_content"
+msgstr "内容"
+
+msgid "terminalUploadLog_field_count"
+msgstr "计数"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "错误计数"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "上传时间"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "设备上传日志"
+
+msgid "terminalWorkCode_field_code"
+msgstr "编号"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "名称"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "最后连接时间"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "工作代码"
+
+msgid "employee_photo"
+msgstr "用户照片"
+
+msgid "biometric_template"
+msgstr "生物模板"
+
+msgid "fingerprint"
+msgstr "指纹"
+
+msgid "attendance_capture"
+msgstr "抓拍照片"
+
+msgid "transaction_field_firstName"
+msgstr "姓名"
+
+msgid "transaction_field_lastName"
+msgstr "姓氏"
+
+msgid "transaction_field_department"
+msgstr "部门"
+
+msgid "transaction_field_position"
+msgstr "职位"
+
+msgid "transaction_field_punchDate"
+msgstr "打卡日期"
+
+msgid "transaction_field_area"
+msgstr "区域"
+
+msgid "chart_present"
+msgstr "出勤"
+
+msgid "chart_today"
+msgstr "今天"
+
+msgid "chart_absent"
+msgstr "旷工"
+
+msgid "dashboard_exception"
+msgstr "考勤异常"
+
+msgid "dashboard_history"
+msgstr "历史记录"
+
+msgid "chart_late"
+msgstr "迟到"
+
+msgid "chart_early_leave"
+msgstr "早退"
+
+msgid "dashboard_real_time_monitor"
+msgstr "实时监控"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "主题"
+
+msgid "announcement_filed_content"
+msgstr "内容"
+
+msgid "announcement_filed_emp"
+msgstr "人员编号"
+
+msgid "mobile_action_publicNotice"
+msgstr "推送公共通知"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "推送公共通知"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "推送公共通知"
+
+msgid "mobile_action_privateNotice"
+msgstr "推送个人通知"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "推送个人通知"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "推送个人通知"
+
+msgid "title_required"
+msgstr "标题必填"
+
+msgid "content_required"
+msgstr "内容必填"
+
+msgid "appNotice_field_content"
+msgstr "内容"
+
+msgid "mobile_action_pushNotification"
+msgstr "推送通知"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "推送通知"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "推送通知"
+
+msgid "applist_action_forceOffline"
+msgstr "强制下线"
+
+msgid "force_offline_confirm {0} {1}"
+msgstr "确定强制设备掉线{0} {1}"
+
+msgid "app_account_disable_confirm {0} {1}"
+msgstr "确认禁用设备 {0} {1}"
+
+msgid "app_account_enable_confirm {0} {1}"
+msgstr "确定启用设备 {0} {1}"
+
+msgid "applist_action_disable"
+msgstr "禁用"
+
+msgid "applist_action_enable"
+msgstr "启用"
+
+msgid "announce_all_emp"
+msgstr "全部"
+
+msgid "announcement_filed_sender"
+msgstr "发送人"
+
+msgid "announcement_category_public"
+msgstr "公共的"
+
+msgid "announcement_category_private"
+msgstr "个人的"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "安卓"
+
+msgid "activeStatus_option_active"
+msgstr "激活"
+
+msgid "activeStatus_option_inactive"
+msgstr "未激活"
+
+msgid "notification_category_leave"
+msgstr "请假"
+
+msgid "notification_category_overtime"
+msgstr "加班"
+
+msgid "notification_category_manualLog"
+msgstr "补签卡"
+
+msgid "notification_category_training"
+msgstr "培训"
+
+msgid "notification_category_schedule"
+msgstr "排班"
+
+msgid "notification_category_announcement"
+msgstr "通知"
+
+msgid "notification_category_exception"
+msgstr "异常"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "公共通知"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "个人通知"
+
+msgid "notification_subCategory_late"
+msgstr "迟到"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "早退"
+
+msgid "notification_subCategory_absent"
+msgstr "旷工"
+
+msgid "notification_readStatus_unread"
+msgstr "未读"
+
+msgid "notification_readStatus_read"
+msgstr "已读"
+
+msgid "appActionLog_status_exception"
+msgstr "异常"
+
+msgid "appActionLog_status_successful"
+msgstr "成功"
+
+msgid "announcement_field_category"
+msgstr "种类"
+
+msgid "announcement_field_sender"
+msgstr "发送人"
+
+msgid "announcement_field_systemSender"
+msgstr "系统发送人"
+
+msgid "announcement_field_noticeTime"
+msgstr "通知时间"
+
+msgid "app_model_announcement"
+msgstr "通知"
+
+msgid "actionLog_field_user"
+msgstr "用户"
+
+msgid "actionLog_field_client"
+msgstr "客户端"
+
+msgid "actionLog_field_action"
+msgstr "操作"
+
+msgid "actionLog_field_params"
+msgstr "参数"
+
+msgid "actionLog_field_describe"
+msgstr "描述"
+
+msgid "actionLog_field_status"
+msgstr "状态"
+
+msgid "actionLog_field_actionTime"
+msgstr "操作时间"
+
+msgid "actionLog_field_remoteIp"
+msgstr "远程IP"
+
+msgid "app_model_actionLog"
+msgstr "操作日志"
+
+msgid "appList_field_userName"
+msgstr "用户名"
+
+msgid "appList_field_loginTime"
+msgstr "登录时间"
+
+msgid "appList_field_lastActive"
+msgstr "最后在线时间"
+
+msgid "appList_field_token"
+msgstr "秘钥"
+
+msgid "appList_field_deviceToken"
+msgstr "设备口令"
+
+msgid "appList_field_clientId"
+msgstr "客户端编号"
+
+msgid "appList_field_clientCategory"
+msgstr "客户端类别"
+
+msgid "appList_field_runStatus"
+msgstr "运行状态"
+
+msgid "appList_field_accessStatus"
+msgstr "启用状态"
+
+msgid "app_model_appList"
+msgstr "手机APP列表"
+
+msgid "appNotice_field_receiver"
+msgstr "接收者"
+
+msgid "appNotice_field_sender"
+msgstr "发送人"
+
+msgid "appNotice_field_systemSender"
+msgstr "系统发送人"
+
+msgid "appNotice_field_category"
+msgstr "种类"
+
+msgid "appNotice_field_subCategory"
+msgstr "子类"
+
+msgid "appNotice_field_source"
+msgstr "数据源"
+
+msgid "appNotice_field_sendTime"
+msgstr "发送时间"
+
+msgid "appNotice_field_readStatus"
+msgstr "读取状态"
+
+msgid "appNotice_field_readTime"
+msgstr "读取时间"
+
+msgid "app_model_notification"
+msgstr "通知"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "人员定位"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "人员定位"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "新增"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "新增"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "新增"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "人员"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "经度"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "纬度"
+
+msgid "gpsForEmployee_field_location"
+msgstr "位置"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "距离（米）"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "米"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "开始日期"
+
+msgid "gpsForEmployee_field_endDate"
+msgstr "结束日期"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "日期范围重叠"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "部门定位"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "部门定位"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "新增"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "新增"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "新增"
+
+msgid "gpsForDepartment_field_department"
+msgstr "部门"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "经度"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "纬度"
+
+msgid "gpsForDepartment_field_location"
+msgstr "位置"
+
+msgid "gpsForDepartment_field_distance"
+msgstr "距离（米）"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "米"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "开始日期"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "结束日期"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "日期范围重叠"
+
+msgid "gps_distance_invalid"
+msgstr "无效距离。"
+
+msgid "gps_date_invalid_range"
+msgstr "日期范围无效"
+
+msgid "gps_latitude_invalid_range"
+msgstr "纬度值必须在 [-90,90]范围内。"
+
+msgid "departmentGps_select_dept"
+msgstr "请选择部门"
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "网络不稳定，请重试."
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "超出定位"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "员工%(emp)s的申请时间是重叠的"
+
+msgid "menu_group_psnl_organization"
+msgstr "组织"
+
+msgid "menu_psnl_department"
+msgstr "部门"
+
+msgid "menu_psnl_position"
+msgstr "职位"
+
+msgid "menu_psnl_area"
+msgstr "区域"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "人员"
+
+msgid "menu_psnl_employee"
+msgstr "人员"
+
+msgid "menu_psnl_resign"
+msgstr "离职"
+
+msgid "menu_psnl_certification"
+msgstr "证件"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "人员证件"
+
+msgid "menu_iclock_bioPhoto"
+msgstr "可见光对比照片"
+
+msgid "menu_group_workflow"
+msgstr "审批流"
+
+msgid "menu_workflow_workflowRole"
+msgstr "审批流角色"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "审批流"
+
+msgid "menu_workflow_workflowNode"
+msgstr "审批流节点"
+
+msgid "menu_group_configuration"
+msgstr "参数配置"
+
+msgid "area_action_adjustEmployee"
+msgstr "调整人员"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "调整人员到选定的区域"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "调整人员"
+
+msgid "select_none_employee"
+msgstr "请选择员工"
+
+msgid "bioPhoto_field_userPhoto"
+msgstr "用户照片"
+
+msgid "bioPhoto_field_bioPhoto"
+msgstr "可见光对比照片"
+
+msgid "bioPhoto_field_approvalState"
+msgstr "审批状态"
+
+msgid "bioPhoto_approvalState_approvalPassed"
+msgstr "审批通过"
+
+msgid "bioPhoto_approvalState_reject"
+msgstr "拒绝"
+
+msgid "bioPhoto_field_remark"
+msgstr "备注"
+
+msgid "biophoto_approve"
+msgstr "审批"
+
+msgid "approval_can_not_approve_again"
+msgstr "审核通过不能再次审批"
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "人员照片(%(emp_code)s)批准"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "人员照片(%(emp_code)s)已存在"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "没找到人员照片(%(emp_code)s)"
+
+msgid "bioPhoto_action_qrCode"
+msgstr "二维码"
+
+msgid "dataImport_action_importBioPhoto"
+msgstr "导入可见光对比照片"
+
+msgid "dataImport_action_importBioPhotoHelpTxt"
+msgstr "导入人员可见光对比照片"
+
+msgid "dataImport_action_importBioPhotoDescription"
+msgstr "导入人员可见光对比照片"
+
+msgid "bioPhotoImport_error_noPhotoSelected"
+msgstr "请选择要上传的照片"
+
+msgid "bioPhotoImport_error_userNoFound_{pin}"
+msgstr "未找到人员({pin}) "
+
+msgid "bioPhotoImport_button_upload"
+msgstr "上传"
+
+msgid "bioPhotoImport_button_clear"
+msgstr "清除"
+
+msgid "bioPhotoImport_helpText_tip1"
+msgstr "1. 照片名必须为人员编号。"
+
+msgid "department_action_adjustEmployee"
+msgstr "调整人员"
+
+msgid "dataImport_action_import"
+msgstr "导入"
+
+msgid "resign_action_disableAttendance"
+msgstr "禁用考勤"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "调整人员到选定的部门"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "人员调整"
+
+msgid "dataImport_field_file"
+msgstr "文件"
+
+msgid "data_import_fileHelpTxt"
+msgstr "只支持.xls文件"
+
+msgid "dataImport_action_importEmployee"
+msgstr "导入人员"
+
+msgid "dataImport_action_importEmployeeHelpTxt"
+msgstr "通过Excel文件导入人员"
+
+msgid "dataImport_action_importEmployeeDescription"
+msgstr "通过Excel文件导入人员"
+
+msgid "dataImport_action_importDocument"
+msgstr "导入证件"
+
+msgid "dataImport_action_importDocumentHelpTxt"
+msgstr "以Excel表格式导入证件过期提醒设置。"
+
+msgid "dataImport_action_importDocumentDescription"
+msgstr "通过Excel文件导入证件过期提醒设置"
+
+msgid "dataImport_action_importPhoto"
+msgstr "导入照片"
+
+msgid "dataImport_action_importPhotoHelpTxt"
+msgstr "导入人员照片"
+
+msgid "dataImport_action_importPhotoDescription"
+msgstr "导入人员照片"
+
+msgid "empPhotoImport_error_noPhoto"
+msgstr "请选择要上传的照片。"
+
+msgid "empPhotoImport_error_{pin}NotFound"
+msgstr "人员({pin})不存在"
+
+msgid "empPhotoImport_error_{pin}SizeExceed25KB"
+msgstr "人员({pin})照片超过25KB"
+
+msgid "empPhotoImport_button_upload"
+msgstr "上传"
+
+msgid "empPhotoImport_button_clear"
+msgstr "清除"
+
+msgid "empPhotoImport_helpText_title"
+msgstr "通知"
+
+msgid "empPhotoImport_helpText_tip1"
+msgstr "1. 照片名必须为人员编号。"
+
+msgid "empPhotoImport_helpText_tip2"
+msgstr "2. 照片最大尺寸为25KB。"
+
+msgid "dataImport_field_overwrite"
+msgstr "覆盖"
+
+msgid "dataImport_field_ignoreError"
+msgstr "忽略错误"
+
+msgid "employee_action_resynchronize2Device"
+msgstr "重新同步到设备"
+
+msgid "employee_action_resynchronize2DeviceConfirmation"
+msgstr "确定重新同步人员数据到设备？"
+
+msgid "dataRange_option_all"
+msgstr "全部"
+
+msgid "dataRange_option_specified"
+msgstr "指定的"
+
+msgid "reUploadFromDevice_field_device"
+msgstr "设备"
+
+msgid "reUploadFromDevice_field_deviceSN"
+msgstr "序列号"
+
+msgid "eUploadFromDevice_field_deviceSNHelpTxt"
+msgstr "支持使用'，'连接多个设备序列号，如果值为空将获得基于员工区域的设备"
+
+msgid "employee_action_reUploadFromDevice"
+msgstr "从设备重新上传"
+
+msgid "employee_action_reUploadFromDeviceConfirmation"
+msgstr "确定重新从设备上传人员数据？"
+
+msgid "employeeResign_field_date"
+msgstr "离职日期"
+
+msgid "employeeResign_field_leaveType"
+msgstr "离职类型"
+
+msgid "employeeResign_field_reason"
+msgstr "离职原因"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "考勤"
+
+msgid "employee_action_resignation"
+msgstr "离职"
+
+msgid "employee_action_transferDepartment"
+msgstr "调整部门"
+
+msgid "transferDepartment_field_remarks"
+msgstr "备注"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "区域必填"
+
+msgid "employee_action_transferArea"
+msgstr "调整区域"
+
+msgid "transferArea_field_remarks"
+msgstr "备注"
+
+msgid "employee_action_transferPosition"
+msgstr "调整职位"
+
+msgid "transferPosition_field_remarks"
+msgstr "备注"
+
+msgid "employee_action_passProbation"
+msgstr "通过试用期"
+
+msgid "employee_action_passProbationConfirmation"
+msgstr "确认员工通过试用期？"
+
+msgid "bio_templateType_fingerprint"
+msgstr "指纹"
+
+msgid "bio_templateType_face"
+msgstr "人脸"
+
+msgid "bio_templateType_fingerVein"
+msgstr "指静脉"
+
+msgid "bio_templateType_palm"
+msgstr "掌纹"
+
+msgid "delete_biometric_templates"
+msgstr "删除生物模板"
+
+msgid "enable_mobile_application"
+msgstr "启用"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "您确定启用移动应用程序{0}{1}吗？"
+
+msgid "disable_mobile_application"
+msgstr "禁用"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr "您确定要禁用移动应用程序{0}{1}吗？"
+
+msgid "position_action_adjustEmployee"
+msgstr "人员调整"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "调整员工到选定的职位"
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "人员调整"
+
+msgid "resign_field_employee"
+msgstr "人员"
+
+msgid "resign_field_resignDate"
+msgstr "离职日期"
+
+msgid "resign_field_resignType"
+msgstr "离职类型"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "关闭考勤功能"
+
+msgid "resign_field_resignReason"
+msgstr "离职原因"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "新增"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "新增"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "新增"
+
+msgid "resign_action_reinstatement"
+msgstr "复职"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "复职"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "复职"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "你确定要复职{0}{1}吗?"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "您确定要禁用考勤功能{0}{1}吗"
+
+msgid "area_field_code"
+msgstr "区域编号"
+
+msgid "area_field_name"
+msgstr "区域名称"
+
+msgid "area_field_parentArea"
+msgstr "上级区域"
+
+msgid "area_field_resignEmployeeCount"
+msgstr "离职人数"
+
+msgid "area_field_employeeCount"
+msgstr "员工数"
+
+msgid "area_field_deviceCount"
+msgstr "设备数"
+
+msgid "area_name_defaultValue"
+msgstr "未授权"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "%(index)s行数据错误，区域编号为空"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "%(index)s行数据错误，区域编号最大长度为%(length)s"
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "%(index)s行数据错误，区域名称为空"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "%(index)s行数据错误，区域名称最大长度为%(length)s"
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr "%(index)s的数据行权限不能设置为高于%(index_name)s的区域或子区域的权限。"
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "数据库错误:SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "删除失败，员工正在使用"
+
+msgid "certification_field_code"
+msgstr "证件编号"
+
+msgid "certification_field_name"
+msgstr "证件名称"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "%(index)s行上的数据错误，证件编号是空的"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，证件编号的最大长度为%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "%(index)s行上的数据错误，格式应该是%(male)s/%(female)s "
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr "%(index)s行上的数据错误，证件名称是空的"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，证件名称的最大长度为%(length)s"
+
+msgid "department_field_code"
+msgstr "部门编号"
+
+msgid "department_filed_name"
+msgstr "部门名称"
+
+msgid "department_field_parentDepartment"
+msgstr "上级部门"
+
+msgid "default_department"
+msgstr "部门"
+
+msgid "department_filed_employeeCount"
+msgstr "员工数"
+
+msgid "department_filed_resignedCount"
+msgstr "离职人数"
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "%(index)s行上的数据错误，部门编号是空的"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，部门编号的最大长度为%(length)s"
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "%(index)s行上的数据错误，部门名词是空的"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，部门名词的最大长度是%(length)s"
+
+msgid "op_menu_group_import"
+msgstr "导入"
+
+msgid "op_menu_group_adjustment"
+msgstr "调整"
+
+msgid "op_menu_group_app"
+msgstr "APP"
+
+msgid "op_menu_group_more"
+msgstr "更多"
+
+msgid "emp_field_fingerprint"
+msgstr "指纹"
+
+msgid "emp_field_face"
+msgstr "人脸"
+
+msgid "emp_field_palm"
+msgstr "掌纹"
+
+msgid "emp_field_vlFace"
+msgstr "可见光面部"
+
+msgid "emp_field_area"
+msgstr "区域"
+
+msgid "emp_field_cardNumber"
+msgstr "卡号"
+
+msgid "area_code"
+msgstr "区域编号"
+
+msgid "emp_field_birthday"
+msgstr "生日"
+
+msgid "emp_field_gender"
+msgstr "性别"
+
+msgid "emp_field_mobile"
+msgstr "手机号"
+
+msgid "emp_field_email"
+msgstr "邮箱"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "%(index)s行上的数据错误，员工编号是空的"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，员工编号的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "在(%(index)s)行上的姓氏是空的"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，姓氏的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，名字的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，职位编号的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，职位名称的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，卡号的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，手机号的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr "%(index)s行上的数据错误，邮箱的最大长度是%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "%(index)s行上的邮箱类型是错误的"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "%(index)s行上的生日日期格式应该是yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "%(index)s行上的聘用日期格式应该是yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr "第%(index)s行数据错误，区域名称最大长度为%(length)s"
+
+msgid "employeeCert_field_employee"
+msgstr "用户名"
+
+msgid "employeeCert_field_expireOn"
+msgstr "过期日期"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "邮箱提醒"
+
+msgid "employeeCert_field_before"
+msgstr "提前"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "新增"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "新增"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "新增"
+
+msgid "certification"
+msgstr "证书"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr "%(index)s行上的错误数据，用户ID不存在"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr "%(index)s行上的错误数据，证件是空的"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr "%(index)s行上的错误数据，证件编号不存在"
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr "%(index)s行上的错误数据，有效期是错的"
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr "%(index)s行上的错误数据，邮件设置错误，格式应该是%(no)s/%(yes)s"
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "%(index)s行上的错误数据"
+
+msgid "position_field_code"
+msgstr "职位编号"
+
+msgid "position_field_name"
+msgstr "职位名称"
+
+msgid "position_field_parentPosition"
+msgstr "上级职位"
+
+msgid "position_field_employeeCount"
+msgstr "员工数"
+
+msgid "position_field_resignedCount"
+msgstr "离职人数"
+
+msgid "position_default_value"
+msgstr "职位"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "%(index)s行上的错误数据，职位编号是空的"
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "%(index)s行上的错误数据，职位名称是空的"
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "第%s行数据错误，格式必须为yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr "%(index)s行上的错误数据，辞职原因的最长长度为%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "%(index)s行上的错误数据，员工编号不存在"
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "%(index)s行上的错误数据，辞职日期为空"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr "%(index)s行上的错误数据，辞职类型的格式应为%(expect)s"
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "(%(index)s)行上的离职类型是空的"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr "%(index)s行上的错误数据，关闭考勤功能的值必须是%(expect)s"
+
+msgid "department_field_name"
+msgstr "部门名称"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "忽略"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "覆盖"
+
+msgid "devicePrivilege_option_employee"
+msgstr "人员"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "注册"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "系统管理员"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "超级管理员"
+
+msgid "employee_genderOption_male"
+msgstr "男"
+
+msgid "employee_genderOption_female"
+msgstr "女"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "正式员工"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "临时员工"
+
+msgid "employee_appStatusOption_enable"
+msgstr "启用"
+
+msgid "employee_appStatusOption_disable"
+msgstr "禁用"
+
+msgid "employee_appRoleOption_employee"
+msgstr "人员"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "管理员"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "申请组模式"
+
+msgid "employee_verificationOption_any"
+msgstr "任何的"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "指纹/密码/卡号"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "指纹"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "仅人员编号"
+
+msgid "employee_verificationOption_password"
+msgstr "密码"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "只需卡号"
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "指纹/密码"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "指纹/卡号"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "密码/卡号"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "指纹&密码"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "指纹&卡号"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "密码&卡号"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "人员编号&指纹"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "指纹&密码&卡号"
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "人员编号&指纹&密码"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "指纹&卡号/用户ID"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "仅人脸"
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "人脸&指纹"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "人脸&密码"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "人脸&卡号"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "人脸&指纹&卡号"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "人脸&指纹&密码"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "指静脉"
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "指静脉&密码"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "指静脉&卡号"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "指静脉&密码&卡号"
+
+msgid "employee_verificationOption_palm"
+msgstr "掌纹"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "掌纹&卡号"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "掌纹&人脸"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "掌纹&指纹"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "掌纹&指纹&人脸"
+
+msgid "resign_typeOption_pending"
+msgstr "未审核"
+
+msgid "resign_typeOption_processing"
+msgstr "处理中"
+
+msgid "resign_typeOption_done"
+msgstr "完成"
+
+msgid "resign_typeOption_quit"
+msgstr "自离"
+
+msgid "resign_typeOption_dismissed"
+msgstr "开除"
+
+msgid "resign_typeOption_resign"
+msgstr "辞职"
+
+msgid "resign_typeOption_transfer"
+msgstr "调动"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "停职留薪"
+
+msgid "approve_pending"
+msgstr "未审核"
+
+msgid "approve_approval_passed"
+msgstr "审核通过"
+
+msgid "approve_rejected"
+msgstr "拒绝"
+
+msgid "approve_auto_approved"
+msgstr "自动批准"
+
+msgid "module_parameter_error"
+msgstr "参数错误"
+
+msgid "invalid_file_format"
+msgstr "无效的文件格式"
+
+msgid "please_select_file"
+msgstr "请选择文件"
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "字段%(index)s是必需的"
+
+msgid "invalid_file_format:%(index)s"
+msgstr "无效文件格式:%(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "文件应该只有一页"
+
+msgid "file_data_must_be_more_than_two"
+msgstr "该文件至少需要一行数据"
+
+msgid "no_matched_fields"
+msgstr "文件中没有匹配的字段"
+
+msgid "file_data_cannot_be_empty"
+msgstr "未找到导入文件"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "数据库错误"
+
+msgid "area_field_isDefault"
+msgstr "默认值"
+
+msgid "parent_can_not_itself"
+msgstr "上级区域不能是它们自己"
+
+msgid "psnl_model_area"
+msgstr "区域"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "%(name)s包含子区域无法删除"
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s中包含的员工无法删除"
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "%(name)s中包含的设备无法删除"
+
+msgid "default_area_can_not_be_removed"
+msgstr "无法删除默认区域"
+
+msgid "assigned_time"
+msgstr "分配时间"
+
+msgid "model_assign_area_to_employee"
+msgstr "人员"
+
+msgid "bioPhoto_field_employee"
+msgstr "人员"
+
+msgid "bioPhoto_field_firstName"
+msgstr "姓名"
+
+msgid "bioPhoto_field_lastName"
+msgstr "姓氏"
+
+msgid "bioPhoto_field_email"
+msgstr "邮箱"
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "序列号"
+
+msgid "bioPhoto_field_registerPhoto"
+msgstr "登记照片"
+
+msgid "bioPhoto_field_registerTime"
+msgstr "登记时间"
+
+msgid "bioPhoto_field_approvalPhoto"
+msgstr "批准照片"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "照片"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "提交时间"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "审核时间"
+
+msgid "iclock_model_bioPhoto"
+msgstr "可见光对比照片"
+
+msgid "psnl_model_certification"
+msgstr "证件"
+
+msgid "document_is_using_can_not_delete."
+msgstr "证件正在被使用，不能删除。"
+
+msgid "department_field_isDefault"
+msgstr "默认值"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr "不能设置上级为自己。"
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "%(name)s中包含的子部门无法删除"
+
+msgid "default_department_can_not_be_removed."
+msgstr "默认部门不能被删除"
+
+msgid "psnl_model_department"
+msgstr "部门"
+
+msgid "emp_field_localizedName"
+msgstr "本地姓名"
+
+msgid "emp_field_passport_number"
+msgstr "护照号"
+
+msgid "emp_field_driver_license_automobile"
+msgstr "汽车执照"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "摩托车执照"
+
+msgid "emp_field_photo"
+msgstr "照片"
+
+msgid "emp_field_selfPassword"
+msgstr "员工自助密码"
+
+msgid "emp_field_devicePassword"
+msgstr "设备密码"
+
+msgid "emp_field_devicePrivilege"
+msgstr "设备权限"
+
+msgid "emp_field_accessGroup"
+msgstr "门禁组"
+
+msgid "emp_field_accessTimezone"
+msgstr "门禁时间段"
+
+msgid "emp_field_address"
+msgstr "地址"
+
+msgid "emp_field_postcode"
+msgstr "邮政编码"
+
+msgid "emp_field_officeTel"
+msgstr "办公电话"
+
+msgid "emp_field_contactTel"
+msgstr "联络电话"
+
+msgid "emp_field_national"
+msgstr "国家"
+
+msgid "emp_field_religion"
+msgstr "宗教"
+
+msgid "emp_field_title"
+msgstr "标题"
+
+msgid "emp_field_enrollSN"
+msgstr "注册设备"
+
+msgid "emp_field_SSN"
+msgstr "社保号"
+
+msgid "emp_field_updateTime"
+msgstr "更新时间"
+
+msgid "emp_field_verifyMode"
+msgstr "验证方式"
+
+msgid "emp_field_city"
+msgstr "城市"
+
+msgid "emp_field_isAdmin"
+msgstr "管理"
+
+msgid "emp_field_type"
+msgstr "就业类型"
+
+msgid "emp_field_enableAtt"
+msgstr "开启考勤"
+
+msgid "emp_field_enableOvertime"
+msgstr "开启加班"
+
+msgid "emp_field_enableHoliday"
+msgstr "开启假日"
+
+msgid "emp_field_workflowRole"
+msgstr "工作流角色"
+
+msgid "employee_certification"
+msgstr "员工证件"
+
+msgid "emp_field_appStatus"
+msgstr "APP状态"
+
+msgid "emp_field_appRole"
+msgstr "APP角色"
+
+msgid "emp_field_lastLogin"
+msgstr "最后一次登录"
+
+msgid "emp_field_isActive"
+msgstr "已启用"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr "卡号已经存在，如果想重新发卡，请先删除卡的原始持有人%(index)s。"
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "人员(%(code)s)没有找到"
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "清除工作流失败: %(message)s"
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "异常%(message)s"
+
+msgid "model_employee"
+msgstr "人员"
+
+msgid "invalid_picture_format"
+msgstr "照片格式无效"
+
+msgid "personnel_photo_size_must_not_exceed_16kb"
+msgstr "照片的最大大小为16KB"
+
+msgid "employeeCert_field_cert"
+msgstr "证件"
+
+msgid "pnsl_model_empProfile"
+msgstr "用户信息"
+
+msgid "position_field_isDefault"
+msgstr "默认值"
+
+msgid "psnl_model_position"
+msgstr "职位"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "上级职位不能是自己"
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "职位 '%(name)s' 中包含子职位不能删除"
+
+msgid "default_position_can_not_be_removed."
+msgstr "默认职位不能被删除"
+
+msgid "psnl_model_resign"
+msgstr "辞职"
+
+msgid "data_import_labelFile"
+msgstr "导入文件:"
+
+msgid "date_import_labelExistingData"
+msgstr "现有的数据："
+
+msgid "data_import_fileTemplateDemo"
+msgstr "模板演示:"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "下载模板"
+
+msgid "data_import_description"
+msgstr "描述"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1.文件模板中的表头是必需的"
+
+msgid "data_import_areaImportRequired2"
+msgstr "2.编号、名称是必填字段"
+
+msgid "data_import_areaImportRequired3"
+msgstr "3.父区域填的必须是区域的编号"
+
+msgid "data_import_areaImportRequired4"
+msgstr "4.所有列值都应该是文本格式"
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "更新"
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "下载"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1.文件模板中的表头是必需的"
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2.需要证件编号和名称"
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3.所有列值都应该是文本格式"
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1.文件模板中的表头是必需的"
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2.编号、名称是必填字段"
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3.父部门填的必须是部门的编号"
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4.所有列值都应该是文本格式"
+
+msgid "departmentList_search_department"
+msgstr "部门"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1.文件模板中的表头是必需的"
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2.必填字段包括员工ID、姓名、部门编号"
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3.所有列值都应该是文本格式"
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4.卡号必须是唯一的"
+
+msgid "personnel_profile"
+msgstr "简介"
+
+msgid "register_fingerprint"
+msgstr "登记指纹"
+
+msgid "fingerprint_registration"
+msgstr "登记"
+
+msgid "download_driver"
+msgstr "下载驱动程序"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr "（最佳尺寸120×140像素）"
+
+msgid "employee_title_clickToUploadPhoto"
+msgstr "点击上传照片"
+
+msgid "employee_title_UploadPhoto"
+msgstr "照片"
+
+msgid "employee_label_fingerprintRegistered"
+msgstr "已登记的指纹（v10）"
+
+msgid "employee_btn_fingerprintEnroll"
+msgstr "登记"
+
+msgid "employee_title_clickToUploadBioPhoto"
+msgstr "点击上传可见光对比照片"
+
+msgid "employee_basicInformation_setting"
+msgstr "人员信息"
+
+msgid "employee_moreDetail_setting"
+msgstr "私人信息"
+
+msgid "employee_attendance_settings"
+msgstr "考勤设置"
+
+msgid "employee_document_settings"
+msgstr "证件"
+
+msgid "employee_accessController_settings"
+msgstr "门禁设置"
+
+msgid "employee_app_setting"
+msgstr "手机APP设置"
+
+msgid "payroll_setting"
+msgstr "薪资设置"
+
+msgid "employee_deviceRelate_setting"
+msgstr "设备设置"
+
+msgid "employee_editPage_addCert"
+msgstr "新增"
+
+msgid "registered_fingerprint:"
+msgstr "登记指纹："
+
+msgid "employee_field_employeeCode"
+msgstr "人员编号"
+
+msgid "employee_field_employeeFirstName"
+msgstr "姓名"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "人员"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "选择"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1.文件模板中的表头是必需的"
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2.证件、人员、电子邮件警告是必需的字段"
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3.所有列值都应该是文本格式"
+
+msgid "data_import_positionImportRequired1"
+msgstr "1. 文件模板中的表头是必需的"
+
+msgid "data_import_positionImportRequired2"
+msgstr "2.编号、名称是必填字段"
+
+msgid "data_import_positionImportRequired3"
+msgstr "3. 上级职位填的必须是职位的编号"
+
+msgid "data_import_positionImportRequired4"
+msgstr "4.所有列值都应该是文本格式"
+
+msgid "data_import_resignImportRequired1"
+msgstr "1.文件模板中的表头是必需的"
+
+msgid "data_import_resignImportRequired2"
+msgstr "2.人员ID、辞职日期、辞职类型是必填字段"
+
+msgid "data_import_resignImportRequired3"
+msgstr "3.所有列值都应该是文本格式"
+
+msgid "BioTime 8.0"
+msgstr ""
+
+msgid "mobile_photo_register"
+msgstr "照片登记"
+
+msgid "mobile_onlineRegister_employeeCode"
+msgstr "人员编号"
+
+msgid "mobile_employee_first_name"
+msgstr "姓名"
+
+msgid "mobile_employee_last_name"
+msgstr "姓氏"
+
+msgid "mobile_employee_email"
+msgstr "邮箱"
+
+msgid "mobile_onlineRegister_remark"
+msgstr "备注"
+
+msgid "mobile_photo_enroll"
+msgstr "登记"
+
+msgid "lng_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "lng_option_traditionalChinese"
+msgstr "中文繁體"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "Pусский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Orang indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "lng_option_cambodian"
+msgstr "ជនជាតិខ្មែរ។"
+
+msgid "menu_personnel"
+msgstr "人事"
+
+msgid "ADMS"
+msgstr "ADMS"
+
+msgid "menu_terminal"
+msgstr "设备"
+
+msgid "menu_attendance"
+msgstr "考勤"
+
+msgid "menu_system"
+msgstr "系统"
+
+msgid "menu_group_employee_request"
+msgstr "申请"
+
+msgid "menu_request_employee_leave"
+msgstr "请假"
+
+msgid "menu_request_employee_overtime"
+msgstr "加班"
+
+msgid "menu_request_employee_manual_log"
+msgstr "补签卡"
+
+msgid "menu_request_employee_training"
+msgstr "培训"
+
+msgid "menu_group_employee_approval"
+msgstr "审批"
+
+msgid "menu_approve_employee_leave"
+msgstr "请假"
+
+msgid "menu_approve_employee_overtime"
+msgstr "加班"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "补签"
+
+msgid "menu_approve_employee_training"
+msgstr "培训"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "调班"
+
+msgid "menu_group_employee_report"
+msgstr "报表"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "统计结果详情"
+
+msgid "menu_staff_detailReport"
+msgstr "考勤明细表"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "考勤汇总表"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "多卡统计"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "休息时间统计"
+
+msgid "menu_staff_timeCardReport"
+msgstr "打卡详情表"
+
+msgid "staff_leave_actionDelete"
+msgstr "新增"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "人员编号"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "姓名"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "姓氏"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "日期"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "原班次"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "时间段"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "申请时间"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "最后的审批人"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "当前状态"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "审批状态"
+
+msgid "attendance_analyze"
+msgstr "考勤分析"
+
+msgid "csv_export"
+msgstr "Csv导出"
+
+msgid "pdf_export"
+msgstr "PDF导出"
+
+msgid "xlsx_export"
+msgstr "Xlsx导出"
+
+msgid "staff_search_startDate"
+msgstr "开始日期"
+
+msgid "staff_search_endDate"
+msgstr "结束日期"
+
+msgid "staff_approval_approvalState"
+msgstr "审批状态"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "未审批"
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "批准"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "拒绝"
+
+msgid "staff_search_searchTitle"
+msgstr "搜索"
+
+msgid "staff_search_clearTitle"
+msgstr "清除"
+
+msgid "staff_leave_startTime"
+msgstr "开始时间"
+
+msgid "staff_leave_endTime"
+msgstr "结束时间"
+
+msgid "staff_leave_leaveCategory"
+msgstr "种类"
+
+msgid "staff_leave_applyReason"
+msgstr "原因"
+
+msgid "staff_leave_empCode"
+msgstr "人员编号"
+
+msgid "staff_leave_firstName"
+msgstr "姓名"
+
+msgid "staff_leave_lastName"
+msgstr "姓氏"
+
+msgid "staff_leave_applyTime"
+msgstr "申请时间"
+
+msgid "staff_leave_lastApprover"
+msgstr "最后的审批人"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "当前状态"
+
+msgid "staff_leave_approvalState"
+msgstr "审批状态"
+
+msgid "staff_search_category"
+msgstr "种类"
+
+msgid "staff_leave_actionAdd"
+msgstr "新增"
+
+msgid "staff_manualLog_empCode"
+msgstr "人员编号"
+
+msgid "staff_manualLog_firstName"
+msgstr "姓名"
+
+msgid "staff_manualLog_lastName"
+msgstr "姓氏"
+
+msgid "staff_manualLog_applyTime"
+msgstr "申请时间"
+
+msgid "staff_manualLog_punchTime"
+msgstr "打卡时间"
+
+msgid "staff_manualLog_punchState"
+msgstr "打卡状态"
+
+msgid "staff_manualLog_workCode"
+msgstr "工作代码"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "最后的审批人"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "当前状态"
+
+msgid "staff_manualLog_approvalState"
+msgstr "审批状态"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "删除"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "新增"
+
+msgid "staff_manualLog_applyReason"
+msgstr "申请原因"
+
+msgid "staff_overtime_startTime"
+msgstr "开始时间"
+
+msgid "staff_overtime_endTime"
+msgstr "结束时间"
+
+msgid "staff_overtime_overtimeType"
+msgstr "加班类型"
+
+msgid "staff_overtime_applyReason"
+msgstr "申请原因"
+
+msgid "normal_overtime"
+msgstr "正常加班"
+
+msgid "weekend_overtime"
+msgstr "周末加班"
+
+msgid "holiday_overtime"
+msgstr "节假日加班"
+
+msgid "staff_overtime_actionDelete"
+msgstr "删除"
+
+msgid "staff_overtime_empCode"
+msgstr "人员编号"
+
+msgid "staff_overtime_firstName"
+msgstr "姓名"
+
+msgid "staff_overtime_lastName"
+msgstr "姓氏"
+
+msgid "staff_overtime_applyTime"
+msgstr "申请时间"
+
+msgid "staff_overtime_lastApprover"
+msgstr "最后的审批人"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "当前状态"
+
+msgid "staff_overtime_approvalSate"
+msgstr "审批状态"
+
+msgid "staff_overtime_actionAdd"
+msgstr "新增"
+
+msgid "search_start_date"
+msgstr "开始日期"
+
+msgid "search_end_date"
+msgstr "结束日期"
+
+msgid "timetable"
+msgstr "时间段"
+
+msgid "userProfile_itemLabel_language"
+msgstr "语言"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "旧密码"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "新密码"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "确认密码"
+
+msgid "staff_training_empCode"
+msgstr "人员工号"
+
+msgid "staff_training_firstName"
+msgstr "姓名"
+
+msgid "staff_training_lastName"
+msgstr "姓氏"
+
+msgid "staff_training_applyTime"
+msgstr "申请时间"
+
+msgid "staff_training_trainingCategory"
+msgstr "培训类型"
+
+msgid "staff_training_startTime"
+msgstr "开始时间"
+
+msgid "staff_training_endTime"
+msgstr "结束时间"
+
+msgid "staff_training_lastApprover"
+msgstr "最后的审批人"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "当前状态"
+
+msgid "staff_training_approvalState"
+msgstr "审批状态"
+
+msgid "staff_training_actionDelete"
+msgstr "删除"
+
+msgid "staff_training_actionAdd"
+msgstr "新增"
+
+msgid "the_old_pwd_is_required"
+msgstr "需要输入旧密码。"
+
+msgid "the_new_pwd_is_required"
+msgstr "需要输入新密码。"
+
+msgid "the_two_password_are_different"
+msgstr "确认密码不匹配"
+
+msgid "the_old_pwd_is_wrong"
+msgstr "旧密码错误"
+
+msgid "setting_employee_pwd_failed"
+msgstr "修改密码失败"
+
+msgid "system_exception_illegal_login"
+msgstr "该请求是不允许的"
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "修改密码"
+
+msgid "model_action_add"
+msgstr "新增"
+
+msgid "model_action_modify"
+msgstr "编辑"
+
+msgid "system_welcome"
+msgstr "欢迎"
+
+msgid "system_userMenu_op_language"
+msgstr "系统语言"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "密码修改"
+
+msgid "system_userMenu_op_about"
+msgstr "关于"
+
+msgid "system_userMenu_op_logout"
+msgstr "注销"
+
+msgid "filter_title_search"
+msgstr "搜索"
+
+msgid "filter_title_clear"
+msgstr "清空"
+
+msgid "user_username"
+msgstr "用户名"
+
+msgid "user_password"
+msgstr "密码"
+
+msgid "software_version"
+msgstr "软件版本"
+
+msgid "authorized_information"
+msgstr "授权信息"
+
+msgid "label_customer_code"
+msgstr "客户编号"
+
+msgid "label_used_devices"
+msgstr "设备点数"
+
+msgid "label_used_employees"
+msgstr "人员点数"
+
+msgid "label_used_apps"
+msgstr "APP点数"
+
+msgid "label_authorized_date"
+msgstr "授权日期"
+
+msgid "label_expired_date"
+msgstr "过期日期"
+
+msgid "label_authorized_company"
+msgstr "授权公司"
+
+msgid "license_activation"
+msgstr "许可激活"
+
+msgid "online_activation"
+msgstr "在线激活"
+
+msgid "download_upk"
+msgstr "下载UPK"
+
+msgid "offline_activation"
+msgstr "离线激活"
+
+msgid "online_upgrade_license"
+msgstr "在线升级"
+
+msgid "export_license"
+msgstr "导出许可"
+
+msgid "import_license"
+msgstr "导入许可"
+
+msgid "aboutPage_title_licenseMigration"
+msgstr "许可迁移"
+
+msgid "server_information"
+msgstr "服务器信息"
+
+msgid "label_machine"
+msgstr "机器"
+
+msgid "label_processor"
+msgstr "处理器"
+
+msgid "label_platform"
+msgstr "平台"
+
+msgid "label_ram_total"
+msgstr "RAM"
+
+msgid "label_ram_free"
+msgstr "剩余内存空间"
+
+msgid "user_authenticate"
+msgstr "认证"
+
+msgid "user_login"
+msgstr "管理员登录"
+
+msgid "employee_self"
+msgstr "员工自助"
+
+msgid "login_username"
+msgstr "用户名"
+
+msgid "login_pwd"
+msgstr "密码"
+
+msgid "btn_user_login"
+msgstr "登录"
+
+msgid "btn_fp_login"
+msgstr "指纹"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "请下载指纹驱动"
+
+msgid "login_emp_number"
+msgstr "人员编号"
+
+msgid "login_emp_pwd"
+msgstr "密码"
+
+msgid "btn_emp_login"
+msgstr "登录"
+
+msgid "login_about_btn_title"
+msgstr "单击查看许可证详细信息"
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr ""
+
+msgid "system_about"
+msgstr "关于"
+
+msgid "last_approver"
+msgstr "最后的审批人"
+
+msgid "tool_filters"
+msgstr "过滤器"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "未找到人员ID，请先在系统中注册。"
+
+msgid "employee_photo_not_found"
+msgstr "未找到人员照片"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "保存照片失败，请重新检查您的照片。"
+
+msgid "workflowRole_field_employee"
+msgstr "人员"
+
+msgid "workflowRole_field_role"
+msgstr "工作流角色"
+
+msgid "workflow_action_assignEmployee"
+msgstr "分配人员"
+
+msgid "workflow_action_assignEmployeeHelpTxt"
+msgstr "给人员分配审批流角色"
+
+msgid "workFlowRoleAssignEmployee_error_noneEmployee"
+msgstr "请选择员工"
+
+msgid "workFlowRoleAssignEmployee_error_noneWorkflowRole"
+msgstr "请选择审批流角色"
+
+msgid "workflowEngine_field_code"
+msgstr "编号"
+
+msgid "workflowEngine_field_name"
+msgstr "名称"
+
+msgid "workflowEngine_field_startDate"
+msgstr "开始日期"
+
+msgid "workflowEngine_field_endDate"
+msgstr "结束日期"
+
+msgid "workflowEngine_field_departments"
+msgstr "部门"
+
+msgid "workflowEngine_field_contentType"
+msgstr "内容类型"
+
+msgid "workflow_model_workflowNode"
+msgstr "工作流节点"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "职位"
+
+msgid "workflow_node_is_required"
+msgstr "工作流节点是必填的"
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "工作流节点和名字是必填的"
+
+msgid "workflow_node_is_unique"
+msgstr "工作流节点是惟一的"
+
+msgid "workflowEngine_field_employee"
+msgstr "人员"
+
+msgid "node_code"
+msgstr "节点编号"
+
+msgid "node_name"
+msgstr "节点名称"
+
+msgid "workflow_node_approver"
+msgstr "审批人"
+
+msgid "workflow_node_notifier"
+msgstr "通知人"
+
+msgid "employee_count"
+msgstr "人员数"
+
+msgid "approval_field_approvalStatus"
+msgstr "审批状态"
+
+msgid "workflowEngine_field_description"
+msgstr "描述"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "反映对象"
+
+msgid "workflowEngine_field_type"
+msgstr "工作流类型"
+
+msgid "workflowEngine_field_informType"
+msgstr "通知类型"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "节点"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "邮箱"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "警报"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "邮箱&警报"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "请假时间无效，结束时间必须晚于开始时间。"
+
+msgid "the_workflow_is_already_used"
+msgstr "这个工作流已经被使用"
+
+msgid "workflow_model_workflowEngine"
+msgstr "工作流流程"
+
+msgid "is_last_node"
+msgstr "最后一个节点"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr "不允许用户批准此任务节点"
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr "用户没有在此工作流节点上操作的特权。"
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr "不允许用户拒绝此任务节点。"
+
+msgid "workflow_node_instance"
+msgstr "工作流节点实例"
+
+msgid "workflow_code"
+msgstr "工作流编号"
+
+msgid "workflow_name"
+msgstr "工作流名称"
+
+msgid "issue_date"
+msgstr "发布日期"
+
+msgid "workflow_description"
+msgstr "描述"
+
+msgid "content_type"
+msgstr "工作流类型"
+
+msgid "inform_type"
+msgstr "通知类型"
+
+msgid "del_flag"
+msgstr "删除标记"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr "申请已经批准"
+
+msgid "workflow_instance"
+msgstr "工作流实例"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "自己的部门"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "全部部门"
+
+msgid "workflowNode_field_code"
+msgstr "编号"
+
+msgid "workflowNode_field_name"
+msgstr "名称"
+
+msgid "workflowNode_field_orderID"
+msgstr "命令编号"
+
+msgid "workflowNode_field_approverType"
+msgstr "审批人类型"
+
+msgid "workflowNode_field_approver"
+msgstr "审批人"
+
+msgid "workflowNode_field_notifierType"
+msgstr "通知人类型"
+
+msgid "workflowNode_field_notifier"
+msgstr "通知人"
+
+msgid "workflowNode_field_approverScope"
+msgstr "审批人的范围"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "通知人的范围"
+
+msgid "workflow_engine_name"
+msgstr "工作流名称"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "工作流节点已经使用。"
+
+msgid "workflowRole_field_code"
+msgstr "编号"
+
+msgid "workflowRole_field_name"
+msgstr "角色名称"
+
+msgid "workflowRole_field_description"
+msgstr "描述"
+
+msgid "workflow_model_workflowRole"
+msgstr "工作流角色"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "无法删除%(name)s中包含的设备。"
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "%(name)s仍然被工作流节点使用，并且不能被取消。"
+
+msgid "node_state"
+msgstr "节点状态"
+
+msgid "notifier_type_no_selected"
+msgstr "请选择通知类型"
+
+msgid "name"
+msgstr "名称"
+
+msgid "remark"
+msgstr "备注"
+
+msgid "information_workflow"
+msgstr "信息"
+
+msgid "workflow_content_type"
+msgstr "内容类型"
+
+msgid "instance_issue_date"
+msgstr "下发日期"
+
+msgid "approve"
+msgstr "审批"
+
+msgid "remark_is_missing"
+msgstr "备注缺失"
+
+msgid "workflow_instance_id_is_missing"
+msgstr "未找到工作流节点实例"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "未找到工作流节点实例"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "未找到工作流节点实例"
+
+msgid "did_not_have_match_workflow"
+msgstr "没有匹配工作流"
+
+msgid "verity_type"
+msgstr "验证类型"
+
+msgid "lineNotify_field_messageHead"
+msgstr "消息标题"
+
+msgid "lineNotify_field_messageTail"
+msgstr "消息结尾"
+
+msgid "export_title_departments"
+msgstr "部门"
+
+msgid "export_title_positions"
+msgstr "职位"
+
+msgid "export_title_areas"
+msgstr "区域"
+
+msgid "export_title_employees"
+msgstr "人员"
+
+msgid "export_title_resigns"
+msgstr "离职"
+
+msgid "export_title_certifications"
+msgstr "证件"
+
+msgid "export_title_employeecertifications"
+msgstr "人员证件"
+
+msgid "export_title_terminals"
+msgstr "设备"
+
+msgid "export_title_terminalcommands"
+msgstr "设备命令"
+
+msgid "export_title_publicmessages"
+msgstr "公共短消息"
+
+msgid "export_title_privatemessages"
+msgstr "个人短消息"
+
+msgid "export_title_terminalworkcodes"
+msgstr "工作代码"
+
+msgid "export_title_biodatas"
+msgstr "生物模板"
+
+msgid "export_title_terminallogs"
+msgstr "设备日志"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "上传日志"
+
+msgid "export_title_break_times"
+msgstr "休息时间"
+
+msgid "export_title_time_intervals"
+msgstr "时间段"
+
+msgid "export_title_att_shifts"
+msgstr "班次"
+
+msgid "export_title_att_schedules"
+msgstr "排班"
+
+msgid "export_title_temp_schedules"
+msgstr "临时排班"
+
+msgid "export_title_employeeschedule_report"
+msgstr "人员排班"
+
+msgid "export_title_manual_logs"
+msgstr "补签"
+
+msgid "export_title_leaves"
+msgstr "请假"
+
+msgid "export_title_overtimes"
+msgstr "加班"
+
+msgid "export_title_trainings"
+msgstr "培训"
+
+msgid "export_title_holiday"
+msgstr "节假日"
+
+msgid "export_title_leave_categorys"
+msgstr "请假类型"
+
+msgid "export_title_training_categorys"
+msgstr "培训类型"
+
+msgid "export_title_transactions"
+msgstr "考勤记录"
+
+msgid "export_field_employee_area"
+msgstr "区域"
+
+msgid "export_field_device_count"
+msgstr "设备数量"
+
+msgid "export_field_employee"
+msgstr "人员"
+
+msgid "export_field_employee_name"
+msgstr "姓名"
+
+msgid "new_schedule"
+msgstr "调班"
+
+msgid "new_schedule_description"
+msgstr "新增排班"
+
+msgid "new_schedule_help_txt"
+msgstr "新增排班"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "无法删除默认类别"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "无法删除已使用的类别"
+
+msgid "base_setting"
+msgstr "系统设置"
+
+msgid "calculation_rule"
+msgstr "迟到"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "考勤记录"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "人员ID长度"
+
+msgid "menu_device_remoteupgrade"
+msgstr "设备"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "设备"
+
+msgid "remoteUpgrade_field_password"
+msgstr "密码"
+
+msgid "remoteUpgrade_action_add"
+msgstr "新增"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "新增"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "新增"
+
+msgid "upgrade_file_error"
+msgstr "上传文件"
+
+msgid "please_select_device"
+msgstr "请选择人员"
+
+msgid "password_is_required"
+msgstr "需要SN文件。"
+
+msgid "password_is_error"
+msgstr "两个密码字段不匹配"
+
+msgid "set_upgrade_password_first"
+msgstr "密码"
+
+msgid "please_select_upgrade_file"
+msgstr "请选择升级文件"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "升级文件"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "提交时间"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "传递时间"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "返回时间"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "返回值"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "远程升级"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "一分钟后不能正常工作，请清除缓存。"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "deviceLanguage_option_English"
+msgstr "英语"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "西班牙语"
+
+msgid "deviceLanguage_option_French"
+msgstr "法语"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "阿拉伯语"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "葡萄牙语"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "俄语"
+
+msgid "deviceLanguage_option_German"
+msgstr "德语"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "波斯语"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "泰语"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "印度尼西亚语"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "日语"
+
+msgid "deviceLanguage_option_Korean"
+msgstr "韩语"
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "越南语"
+
+msgid "deviceLanguage_option_Turkish"
+msgstr "土耳其语"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "希伯来语"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "捷克语"
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "荷兰语"
+
+msgid "deviceLanguage_option_Italian"
+msgstr "意大利语"
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "斯洛伐克语"
+
+msgid "deviceLanguage_option_Greek"
+msgstr "希腊语"
+
+msgid "deviceLanguage_option_Polish"
+msgstr "波兰语"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr "繁体中文"
+
+msgid "adminLog_action_login"
+msgstr "登录"
+
+msgid "adminLog_action_logout"
+msgstr "注销"
+
+msgid "adminLog_action_add"
+msgstr "新增"
+
+msgid "adminLog_action_change"
+msgstr "更改"
+
+msgid "adminLog_action_delete"
+msgstr "删除"
+
+msgid "app_download"
+msgstr "手机APP下载"
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr "提早签到最少加班无效"
+
+msgid "minimum_above_overtime_invalid"
+msgstr "延迟签退最少加班无效"
+
+msgid "delete_default_user_alert"
+msgstr "无法删除管理用户"
+
+msgid "delete_user_self_alert"
+msgstr "无法删除当前用户"
+
+msgid "biophoto_upload"
+msgstr "上传照片"
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr "员工不存在:"
+
+msgid "biophoto_upload_error_photo"
+msgstr "错误的照片:"
+
+msgid "biophoto_upload_other_errors"
+msgstr "其他错误:"
+
+msgid "biophoto_upload_ignore_error"
+msgstr "忽略错误"
+
+msgid "biophoto_upload_select_files"
+msgstr "选择文件"
+
+msgid "biophoto_upload_start"
+msgstr "开始"
+
+msgid "staff_training_applyReason"
+msgstr "申请原因"
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr "此时间间隔工作流重复"
+
+msgid "holiday_duration_invalid"
+msgstr "假期重叠"
+
+msgid "migrate_sqlite_file_is_required"
+msgstr "需要Sqlite数据库文件。"
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr "人员%(emp)s已经具有证件%(certification)s"
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr "选择的图片太多，请限制在500或更少。"
+
+msgid "autoExport_task_time"
+msgstr "时间"
+
+msgid "autoExport_task_date"
+msgstr "日期"
+
+msgid "no_record"
+msgstr "无数据"
+
+msgid "autoExport_task_punchState"
+msgstr "打卡状态"
+
+msgid "adjust_timeinterval"
+msgstr "时间段"
+
+msgid "app_login_failed"
+msgstr "登录失败"
+
+msgid "appLogin_param_client_missing"
+msgstr "参数缺失"
+
+msgid "appLogin_incorrect_username_or_password"
+msgstr "无效用户名或秒"
+
+msgid "appLogin_illegal_request"
+msgstr "非法请求"
+
+msgid "app_account_disabled"
+msgstr "帐号关闭"
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "帐号关闭，请联系管理员处理"
+
+msgid "appLogin_request_blocked"
+msgstr "请求被锁定"
+
+msgid "app_client_already_block_by_administrator"
+msgstr "手机APP客户端已被管理员禁用"
+
+msgid "app_client_blocked"
+msgstr "手机APP客户端被拦截"
+
+msgid "system_exception"
+msgstr "系统异常"
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "请求的参数不存在用户名"
+
+msgid "appLogin_params_exception"
+msgstr "参数异常"
+
+msgid "app_sign_out_successful"
+msgstr "登出成功"
+
+msgid "appLogout_illegal_request"
+msgstr "非法请求。"
+
+msgid "biotime_app_password_reset"
+msgstr "手机APP密码重置"
+
+msgid "app_password_reset_failed"
+msgstr "密码重置失败"
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "密码重置必须在手机APP客户端激活的情况下进行。"
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "非法操作，请联系管理员"
+
+msgid "app_password_reset_user_not_exists"
+msgstr "用户不存在。"
+
+msgid "app_password_reset_user_not_found"
+msgstr "用户不存在"
+
+msgid "app_manuallog_wrong_data"
+msgstr "数据错误。"
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "工作代码不存在"
+
+msgid "app_manuallog_data_exception"
+msgstr "数据异常"
+
+msgid "app_manuallog_request_already_processing"
+msgstr "请求已在处理"
+
+msgid "request_already_processing"
+msgstr "请求已在处理。"
+
+msgid "object_not_found"
+msgstr "对象不存在"
+
+msgid "object_id_not_found"
+msgstr "对象编号不存在"
+
+msgid "app_application_remove_success"
+msgstr "删除成功。"
+
+msgid "app_application_remove_rejected"
+msgstr "已审批的申请不能删除。"
+
+msgid "app_attendance_date_today"
+msgstr "今天"
+
+msgid "app_attendance_date_yesterday"
+msgstr "昨天"
+
+msgid "app_attendance_date_this_week"
+msgstr "当前周"
+
+msgid "app_attendance_date_last_week"
+msgstr "上一周"
+
+msgid "app_attendance_date_this_month"
+msgstr "当前月"
+
+msgid "app_attendance_date_last_month"
+msgstr "上一月"
+
+msgid "app_attendance_date_user-defined"
+msgstr "用户自定义"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "打卡时间无效，请重试。"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "无效GPS信息"
+
+msgid "app_clockIn_gps_required"
+msgstr "GPS信息必填"
+
+msgid "app_clockIn_upload_failed"
+msgstr "上传失败"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "工作代码无效"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "商标预览"
+
+msgid "companySettingPage_size_200x75"
+msgstr "尺寸 200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "公司设置"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "公司商标"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "点击上传商标"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "商标显示"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "不显示"
+
+msgid "companySettingPage_posOption_left"
+msgstr "左侧"
+
+msgid "companySettingPage_posOption_center"
+msgstr "中间"
+
+msgid "companySettingPage_posOption_right"
+msgstr "右侧"
+
+msgid "companySettingPage_label_companyName"
+msgstr "公司名称"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "公司名称显示"
+
+msgid "companySettingPage_btn_submit"
+msgstr "提交"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "任务 %(task_code)s 导出成功"
+
+msgid "company_logo_setting"
+msgstr "公司商标设置"
+
+msgid "company_name_setting"
+msgstr "公司名称设置"
+
+msgid "area_tree_selectAll"
+msgstr "选择全部"
+
+msgid "area_tree_multipleSelect"
+msgstr "多选"
+
+msgid "area_tree_selectSubArea"
+msgstr "选择子区域"
+
+msgid "please_input_a_valid_number"
+msgstr "请输入一个有效的数字"
+
+msgid "report_exportColumnTitle_statics"
+msgstr "统计"
+
+msgid "menu_sys_languageTranslate"
+msgstr "语言翻译"
+
+msgid "language_translate_field_lan"
+msgstr "语言"
+
+msgid "language_translate_field_name"
+msgstr "语言"
+
+msgid "language_translate_field_build"
+msgstr "是内置的"
+
+msgid "auto_deduct"
+msgstr "自动扣除"
+
+msgid "required_punch"
+msgstr "要求打卡"
+
+msgid "training_name"
+msgstr "培训名称"
+
+msgid "minimum_unit"
+msgstr "最小单位"
+
+msgid "unit"
+msgstr "单位"
+
+msgid "round_off"
+msgstr "四舍五入"
+
+msgid "report_symbol"
+msgstr "报表符号"
+
+msgid "reference"
+msgstr "参考"
+
+msgid "translated"
+msgstr "已翻译"
+
+msgid "language_key"
+msgstr "语言秘钥"
+
+msgid "original_password"
+msgstr "原始密码"
+
+msgid "front_end_minutes"
+msgstr "分钟"
+
+msgid "att_action_approve"
+msgstr "审批"
+
+msgid "report_item_min_unit_empty"
+msgstr "空白的"
+
+msgid "report_item_min_unit_invalid"
+msgstr "无效"
+
+msgid "menu_sys_indTableLog"
+msgstr "中间表"
+
+msgid "IndTableLog_field_contentType"
+msgstr "内容类型"
+
+msgid "IndTableLog_field_postTime"
+msgstr "下发时间"
+
+msgid "IndTableLog_field_postCount"
+msgstr "下发次数"
+
+msgid "IndTableLog_field_updateTime"
+msgstr "更新时间"
+
+msgid "IndTableLog_field_updateStatus"
+msgstr "更新状态"
+
+msgid "IndTableLog_field_updateDescription"
+msgstr "描述"
+
+msgid "base_inmedit_field_invalid"
+msgstr "无效"
+
+msgid "base_inmedit_field_error"
+msgstr "错误"
+
+msgid "base_inmedit_field_succ"
+msgstr "成功"
+
+msgid "indtable_code_or_name_required {0}{1}"
+msgstr "编号或者名称必填{0}{1}"
+
+msgid "indtabel_data_insert_error {0}{1}"
+msgstr "数据插入错误{0}{1}"
+
+msgid "system_translate_btnRestart"
+msgstr "重启"
+
+msgid "system_translate_btnDownload"
+msgstr "下载"
+
+msgid "select_download_language"
+msgstr "请选择需要下载的语言"
+
+msgid "fingerprint_download"
+msgstr "指纹驱动"
+
+msgid "drive_download"
+msgstr "下载驱动"
+
+msgid "confirm_be_sure"
+msgstr "确定要删除?"
+
+msgid "confirm_not_modify_audited"
+msgstr "已审核过的记录不能被修改."
+
+msgid "employeeSave_error_duplicateCard_{emp}"
+msgstr "与{emp}的卡号重复"
+
+msgid "Choice Date"
+msgstr "选择日期"
+
+msgid "Now"
+msgstr "当前"
+
+msgid "Date Range"
+msgstr "日期区间"
+
+msgid "Time Range"
+msgstr "时间区间"
+
+msgid "module"
+msgstr "模块"
+
+msgid "year"
+msgstr "年"
+
+msgid "month"
+msgstr "月"
+
+msgid "day"
+msgstr "日"
+
+msgid "From"
+msgstr "从"
+
+msgid "To"
+msgstr "到"
+
+msgid "att_action_revoke"
+msgstr "撤销"
+
+msgid "revoke_reason"
+msgstr "撤销理由"
+
+msgid "only_approved_records_can_be_revoked"
+msgstr "只有通过的记录才能撤销"
+
+msgid "revoke_remark_is_required"
+msgstr "撤销理由不能为空"
+
+msgid "application_has_approved_node"
+msgstr "此申请正在审核中，无法被修改"
+
+msgid "terminal_state_online"
+msgstr "在线"
+
+msgid "terminal_state_offline"
+msgstr "离线"
+
+msgid "breakTime_validationError_durationGreatThanPeriod"
+msgstr "持续时间超过时间段时长"
+
+msgid "time_unit_day"
+msgstr "天"
+
+msgid "time_unit_hour"
+msgstr "小时"
+
+msgid "time_unit_minute"
+msgstr "分钟"
+
+msgid "timeTable_helpText_tip2"
+msgstr "2. 有效卡的时间必须≥签到开始时间 且 ＜签退结束时间"
+
+msgid "timeInterval_error_flexibleWorkTime_{duration}"
+msgstr "工作时间需要在0-{duration}范围内。"
+
+msgid "timeInterval_error_invalidCheckIn/Out"
+msgstr "签到时间不能晚于签退时间"
+
+msgid "permission_verboseName_iclockTransaction"
+msgstr "考勤记录"
+
+msgid "permission_verboseName_iclockEmployeeGps"
+msgstr "人员定位"
+
+msgid "permission_verboseName_iclockDepartmentGps"
+msgstr "部门定位"
+
+msgid "permission_verboseName_iclockDeviceConfig"
+msgstr "配置"
+
+msgid "permission_verboseName_SyncEmployee"
+msgstr "人员"
+
+msgid "permission_verboseName_SyncJob"
+msgstr "职位"
+
+msgid "permission_verboseName_SyncDepartment"
+msgstr "部门"
+
+msgid "permission_verboseName_SyncArea"
+msgstr "区域"
+
+msgid "permission_verboseName_payrollReportPermission"
+msgstr "报表权限"
+
+msgid "autoExport_departments_helpTxt"
+msgstr "默认导出全部"
+
+msgid "autoExport_areas_helpTxt"
+msgstr "默认导出全部"
+
+msgid "autoExport_exportFormat_helpTxt"
+msgstr "仅支持.xls, .csv, .txt格式"
+
+msgid "login_authorize_incorrectUPK"
+msgstr "UPK文件不正确"
+
+msgid "gps_start_and_end_required"
+msgstr "开始时间和结束时间必填。"
+
+msgid "lng_option_ukrainian"
+msgstr "Українська"
+
+msgid "Hello"
+msgstr "Hello"
+
+msgid "lineNotify_field_sendPhoto"
+msgstr "发送考勤照片"
+
+msgid "Enter Number"
+msgstr "输入数字"
+
+msgid "Enter Keyword"
+msgstr "输入关键词"
+
+msgid "device"
+msgstr "设备"
+
+msgid "area_or_zone"
+msgstr "区域"
+
+msgid "position"
+msgstr "职位"
+
+msgid "terminal_state_unauthorized"
+msgstr "未授权"
+
+msgid "terminal_state_communication"
+msgstr "通讯中"
+
+msgid "emp_field_fingervein"
+msgstr "指静脉"
+
+msgid "used_holiday_can_not_be_removed"
+msgstr "该节假日已被用为门禁节假日，请先从门禁模块中删除。"
+
+msgid "user_group_field_name"
+msgstr "组名称"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_department_code_maximum_is_%(length)s"
+msgstr "行%(index)s存在数据错误，上级编码的最大长度为%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_position_code_maximum_is_%(length)s"
+msgstr "行%(index)s存在数据错误，上级编码的最大长度为%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_area_code_maximum_is_%(length)s"
+msgstr "行%(index)s存在数据错误，上级编码的最大长度为%(length)s"
+
+msgid "employeeSave_error_invalidDate"
+msgstr "入职日期无效"
+
+msgid "%(obj)s_is_already_used_in_%(objs)s_and_can_not_delete"
+msgstr "%(obj)s 正被 %(objs)s 使用，无法被删除。"
+
+msgid "this_field_can_not_include_space_tab_or_enter"
+msgstr "这个字段不能包含空格Tab或换行。"
+
+msgid "msg_all_saved_filters"
+msgstr "保存的过滤器"
+
+msgid "msg_customize_filters"
+msgstr "设置过滤器"
+
+msgid "Null"
+msgstr "空"
+
+msgid "the_breaktime_%(n1)s_and_%(n2)s_has_intersection"
+msgstr "休息时间段%(n1)s和%(n2)s有重复。"
+
+msgid "terminal.fields.enableDaylightSavingTime"
+msgstr "夏令时"
+
+msgid "terminal.fields.daylightSavingTimeMode"
+msgstr "夏令时模式"
+
+msgid "terminal.DLSTModeOpts.datetime"
+msgstr "按 日期/时间"
+
+msgid "terminal.DLSTModeOpts.weekday"
+msgstr "按 周/天"
+
+msgid "terminal.fields.daylightSavingTimeStartDate"
+msgstr "开始日期"
+
+msgid "terminal.fields.daylightSavingTimeStart"
+msgstr "开始时间"
+
+msgid "terminal.fields.daylightSavingTimeEndDate"
+msgstr "结束日期"
+
+msgid "terminal.fields.daylightSavingTimeEnd"
+msgstr "结束时间"
+
+msgid "terminal.fields.daylightSavingTimeStartMonth"
+msgstr "开始月份"
+
+msgid "terminal.fields.daylightSavingTimeStartWeek"
+msgstr "开始周"
+
+msgid "terminal.fields.daylightSavingTimeStartWeekday"
+msgstr "开始日"
+
+msgid "terminal.fields.daylightSavingTimeEndMonth"
+msgstr "结束月份"
+
+msgid "terminal.fields.daylightSavingTimeEndWeek"
+msgstr "结束周"
+
+msgid "terminal.fields.daylightSavingTimeEndWeekday"
+msgstr "结束日"
+
+msgid "terminal.actions.daylightSavingTime"
+msgstr "夏令时"
+
+msgid "terminal.actions.daylightSavingTime.description"
+msgstr "夏令时"
+
+msgid "terminal.actions.daylightSavingTime.helpTxt"
+msgstr "夏令时"

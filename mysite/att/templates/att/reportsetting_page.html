@@ -1,0 +1,256 @@
+{% extends 'abstract_edit.html' %}
+{% load i18n static %}
+{% load common %}
+{% block edit_form %}
+  {{ block.spuper }}
+  <div id="{{ model_name }}_edit_form" class="layui_body page-form">
+    <form class="layui-form" action="" method="post" id="param-data-form" lay-filter="reportSettingForm">
+      {% csrf_token %}
+      <div class="layui-tab" style="padding-top: 10px;">
+        <ul class="layui-tab-title">
+          <li class="layui-this">{% trans 'reportSetting_tab_basicDisplaySetting' %}</li>
+          <li>{% trans 'reportSetting_tab_functionKeyDisplay' %}</li>
+          <li>{% trans 'reportSetting_tab_reportItemsDisplay' %}</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div id="reportDisplayTab" class="layui-tab-item layui-show" style="min-height: 350px;">
+            <div class="layui-form-item" style="padding-top: 20px;">
+            {% layui_inline form.short_date %}
+             {% layui_inline form.short_time %}
+            </div>
+            <div class="layui-form-item" style="margin-bottom: 60px;">
+            {% layui_inline form.resign_emp %}
+              {% layui_inline form.work_day_related_display %}
+            </div>
+          </div>
+          <div id="funcKeyTab"  class="layui-tab-item">
+            <div id="funcKeyTable" style="padding: 10px 5px;">
+              <div class="layui-hide">{% layui_inline form.keys %}</div>
+              <table id="func_keys" class="layui-hide" lay-filter="funcKeys"></table>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div id="reportItemTable" style="padding: 10px 5px;min-height:350px;">
+              <div class="layui-hide">{% layui_inline form.items %}</div>
+              <table id="report_items" class="layui-hide" lay-filter="reportItems"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+        <hr>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <input type="button" class="layui-btn" lay-submit lay-filter="param-form-submit" id="report-setting-btn" value="{% trans 'attRule_globalRule_btnSave' %}">
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock edit_form %}
+
+{% block page_script %}
+  {{ block.super }}
+  <script>
+    $(function () {
+      layui.use(['table', 'form'], function () {
+          var table = layui.table, form=layui.form;
+          var keyOpts = {
+            id: 'func_keys'
+            ,elem: '#func_keys'
+            ,width: 500
+            , height: "full-250"
+            , text: {none: gettext('none_data')}
+            , request: {
+              pageName: 'page',
+              limitName: 'page_size'
+            }
+            , page: false
+            , limit: 50
+            , limits: [50, 100]
+            , cols: [[
+              {field: 'id', title: "{% trans 'reportSetting_funcKeyField_ID' %}"}
+              ,{field: 'value', width:"200", title: "{% trans 'reportSetting_funcKeyField_value' %}"}
+              ,{field: 'name', width:"200", title: "{% trans 'reportSetting_funcKeyField_name' %}", templet:function (d){
+                return '<input type="text" class="layui-input name_change" name="name" value='+d.name+' index="'+d.LAY_TABLE_INDEX+'">'
+              }},
+            ]]
+            ,data: []
+          };
+          var tableFuncKeys = table.render(keyOpts);
+          var opts = {
+            id: 'report_items'
+            ,elem: '#report_items'
+            //,width: 1500
+            , height: "full-250"
+            , text: {none: gettext('none_data')}
+            , request: {
+              pageName: 'page',
+              limitName: 'page_size'
+            }
+            , page: false
+            , limit: 50
+            , limits: [50, 100]
+            , cols: [[
+              {field: 'id', title: "{% trans 'reportSetting_itemField_ID' %}"},
+              {field: 'name', width:"150", title: "{% trans 'reportSetting_itemField_name' %}"},
+              {field: 'min_unit', width:"200", title: "{% trans 'reportSetting_itemField_minimumUnit' %}", templet:function (d){
+                  return '<input type="number" class="layui-input" name="min_unit" min="0" value=' +d.min_unit
+                      +' style="width:100px;height: 25px;" index="' + d.LAY_TABLE_INDEX+'">'
+                  }},
+              {field: 'unit', width:"200", title: "{% trans 'unit' %}", templet: function (d) {
+                if(parseInt(d.unit)===5){
+                  return '<select name="unit" lay-filter="unit" style="width:100px;height: 20px;" index="'+d.LAY_TABLE_INDEX+'">'
+                  +'<option value="5" '+(parseInt(d.unit)===5?"selected":"")+' >{% trans 'Times' %}</option>'
+                  +'</select>';
+                }
+                return '<select name="unit" lay-filter="unit" style="width:100px;height: 20px;" index="'+d.LAY_TABLE_INDEX+'">'
+                  +'<option value="1" '+(parseInt(d.unit)===1?"selected":"")+' >{% trans 'calculation_item_minimumUnitMinute' %}</option>'
+                  +'<option value="2" '+(parseInt(d.unit)===2?"selected":"")+' >{% trans 'calculation_item_minimumUnitHour' %}</option>'
+                  +'<option value="3" '+(parseInt(d.unit)===3?"selected":"")+' >{% trans 'calculation_item_minimumUnitWorkday' %}</option>'
+                  +'<option value="4" '+(parseInt(d.unit)===4?"selected":"")+' >{% trans 'calculation_item_minimumUnitMinuteFormat' %}</option>'
+                  +'</select>';
+              }},
+              {field: 'round_off', width:"200", title: "{% trans 'reportSetting_itemField_roundOff' %}", templet:function (d) {
+                return '<select name="round_off" lay-filter="round_off" style="width:100px;height: 20px;" index="'+d.LAY_TABLE_INDEX+'">'
+                  +'<option value="1" '+(parseInt(d.round_off)===1?"selected":"")+' >{% trans 'calculation_item_roundOffOptionRoundDown' %}</option>'
+                  +'<option value="2" '+(parseInt(d.round_off)===2?"selected":"")+' >{% trans 'calculation_item_roundOffOptionRoundOff' %}</option>'
+                  +'<option value="3" '+(parseInt(d.round_off)===3?"selected":"")+' >{% trans 'calculation_item_roundOffOptionRoundUp' %}</option>'
+                  +'</select>'
+              }},
+              //{field: 'symbol', width:"190", title: "{% trans 'reportSetting_itemField_symbol' %}", edit: "text"},
+              {field: 'symbol', width:"200", title: "{% trans 'reportSetting_itemField_symbol' %}", templet:function (d){
+                return '<input type="text" class="layui-input symbol_change" name="symbol" value='+d.symbol+' index="'+d.LAY_TABLE_INDEX+'">'
+              }},
+               //{field: 'color', width:"190", title: "{% trans 'reportSetting_itemField_color' %}", edit: "text"},
+              {field: 'report_color', width:"200", title: "{% trans 'reportSetting_itemField_color' %}", templet:function (d){
+                return '<input type="color" name="report_color" class="report-color" value='+d.report_color+' style="width:100px;height: 25px;" index="'+d.LAY_TABLE_INDEX+'">'
+              }},
+            ]]
+            ,data: []
+            ,done: function (res, curr, count) {
+              form.render('select');
+            }
+          };
+          var tableItems = table.render(opts);
+          form.on('select', function (data) {
+            var elem = data.elem;
+            var cacheData = layui.table.cache['report_items'];
+            var rowObj = cacheData[$(elem).attr('index')];
+            switch (elem.name) {
+              case 'unit':
+                $.extend(rowObj, {
+                  'unit': elem.value
+                });
+                break;
+              case 'round_off':
+                $.extend(rowObj, {
+                  'round_off': elem.value
+                });
+                break;
+
+              default: break;
+            }
+          });
+          form.on('submit(param-form-submit)', function () {
+              var cacheData = layui.table.cache['report_items'];
+              var unitInputs = $("#reportItemTable .layui-table  input[type='number']");
+              for(var i=0; i<unitInputs.length; i++)
+              {
+                  var rowObj = cacheData[$(unitInputs[i]).attr('index')];
+                  var item_name = rowObj['name'];
+                  var min_unit = $(unitInputs[i]).val();
+                  var msg = "{% trans 'reportSetting_itemField_minimumUnit' %}" + " of ";
+                  if (min_unit === "" || min_unit == null){
+                      msg =  msg + item_name + "{% trans 'report_item_min_unit_empty' %}";
+                      layer.alert(msg,
+                          {title: gettext('layer_title_error'), icon: 2, time: 3000, btn: []});
+                      return false;
+                  }
+                  else if(isNaN(min_unit)){
+                      msg =  msg + item_name + "{% trans 'report_item_min_unit_invalid' %}";
+                      layer.alert(msg,
+                          {title: gettext('layer_title_error'), icon: 2, time: 3000, btn: []});
+                      return false;
+                  }
+                  else if(parseInt(min_unit) < 0){
+                      msg =  msg + item_name + "{% trans 'report_item_min_unit_invalid' %}";
+                      layer.alert(msg,
+                          {title: gettext('layer_title_error'), icon: 2, time: 3000, btn: []});
+                      return false;
+                  }
+
+                  $.extend(rowObj, {
+                  'min_unit': min_unit
+                });
+              }
+            $("#id_keys").val(JSON.stringify(layui.table.cache['func_keys']));
+            $("#id_items").val(JSON.stringify(layui.table.cache['report_items']));
+            var action_url = "/att/report_setting_page/";
+            var data_form = "#param-data-form";
+            submit_callback(action_url, {
+              'alternative_form': data_form
+            })();
+          });
+          $.ajax({
+            url: "/att/api/report_setting/"
+            ,type: "GET"
+            ,dataType: 'json'
+            ,success: function (response) {
+              var row = [];
+              if(response.count > 0){
+                row = response.data[0];
+                keyOpts.data = JSON.parse(row.func_key);
+                tableFuncKeys.reload(keyOpts);
+                opts.data = JSON.parse(row.items);
+                tableItems.reload(opts);
+                form.val('reportSettingForm', $.extend(row, JSON.parse(row.func_key)));
+              }
+            }
+            ,error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+            }
+          });
+      });
+    });
+$(document.body).on('change', '.report-color', function(){
+    var color_item = $(this);
+    var color = color_item.val();
+    var cacheData = layui.table.cache['report_items'];
+    var rowObj = cacheData[$(color_item).attr('index')];
+    $.extend(rowObj, {
+      'report_color': color
+    });
+
+});
+$(document.body).on('change', '.symbol_change', function(){
+    var symbol_item = $(this);
+    var symbol = symbol_item.val();
+    var cacheData = layui.table.cache['report_items'];
+    var rowObj = cacheData[$(symbol_item).attr('index')];
+    var pattern = new RegExp('[=<>]');
+    if (pattern.test(symbol)) {
+      layer.msg('Invalid Input', {icon: 2});
+    } else {
+      $.extend(rowObj, {
+        'symbol': symbol
+      });
+    }
+
+});
+$(document.body).on('change', '.name_change', function(){
+    var name_item = $(this);
+    var name = name_item.val();
+    var cacheData = layui.table.cache['func_keys'];
+    var rowObj = cacheData[$(name_item).attr('index')];
+    var pattern = new RegExp('[=<>]');
+    if (pattern.test(name)) {
+      layer.msg('Invalid Input', {icon: 2});
+    } else {
+      $.extend(rowObj, {
+        'name': name
+      });
+    }
+
+});
+
+  </script>
+{% endblock page_script %}

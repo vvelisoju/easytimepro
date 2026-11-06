@@ -1,0 +1,199 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+{% block extend_js %}
+<link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar.min.css" %}"/>
+<script src="{% static "js/moment.min.js" %}"></script>
+<script src="{% static "js/fullcalendar.min.js" %}"></script>
+<style>
+  .test {border-top: dotted 1px #cccccc;}
+  .layui-form-label {width: 150px; min-width: 100px;}
+  .layui-form-item .layui-input-inline input {width: 195px !important;}
+  .layui-form-item .layui-input-inline .layui-date {width: 120px !important;}
+  .fc-toolbar h2 {font-weight: 400;}
+</style>
+{% endblock %}
+<div id="{{ model_name }}_edit_form" style="padding: 10px;height: 470px;width: 1000px;">
+  <form class="layui-form data-form" action="" method="post" >
+    <input type="hidden" id="id_model_pk" name="pk" value="{{ object_id }}"/>
+    {% csrf_token %}
+    {% with adminform.form as f %}
+      <div class="layui-form-item">
+        {% layui_inline f.employee %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.work_type %}
+      </div>
+
+      <div class="layui-form-item">
+        {% trans 'replace_schedule_as_following_range' %}:
+        {% layui_inline f.start_date %}
+        {% layui_inline f.end_date %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.rule_flag %}
+      </div> 
+      <div class="layui-form-item">
+          <div class="layui-inline external-events" style= "height: 355px; width:300px;">
+            <div class="event-title">{% trans 'time_interval' %}</div>
+            <div style="padding: 3px 0 3px 0;border-bottom: 1px solid #a4a9aa">
+              <input type="text" id="time-interval-name">
+              <span class="action_Search">&nbsp;</span>
+              <a id="id_query_tb" href="javascript:void(0);" class="Link_blue1">{% trans 'search' %}</a>
+            </div>
+            <div id="time-interval-div">
+              <table id="time-interval-list" lay-filter="time-interval-list"></table>
+            </div>
+          </div>  
+          <div class="layui-inline" id="fullcalendar" style="height: 355px; width: 650px;"></div>
+          <div id="events" class="displayN"></div>
+      </div>
+    {% endwith %}
+  </form>
+</div>
+<script>
+  function fillTimeIntervalList(param){
+    var url = "/att/timeinterval/getTimeIntervalList/";
+    var postData = new Object();
+    postData['csrfmiddlewaretoken'] = $("input[name='csrfmiddlewaretoken']").val();
+    if (param){
+      postData['name'] = param;
+    }
+    $.ajax({
+      type: "POST" ,
+      url: url,
+      data: postData,
+      dataType: "json",
+      success: function(returnData){
+        var table = layui.table;
+        table.render({
+          elem: "#time-interval-list",
+            // skin: 'line' //行边框风格
+          even: true, //开启隔行背景
+          size: 'sm', //小尺寸的表格
+          height: 280,
+          cellMinWidth: 80,
+          page: false,
+          data: returnData,
+          cols: [[
+            {type:'checkbox'},
+            {field:'SchName', title: 'time_interval_name', width:140, sort: true, 
+              templet: function(d){
+                var schName = '';
+                var schId = '<input type="hidden" id="id_time_interval" value='+d.SchclassID+'>'
+                if (d.DayOff === 1){
+                  schName = '<span style="color: blue">'+d.SchName+'</span>' ;
+                  return schName + schId
+                }
+                if (d.DayOff === 2){
+                  schName = '<span style="color: darkorange">'+d.SchName+'</span>' ;
+                  return schName + schId
+                }
+                else{
+                  schName = d.SchName;
+                  return schName + schId
+                }
+              }
+             },
+            {field:'Timeinterval', width: 100, title: 'time_interval'},
+          ]]
+        });
+       },
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        alert(textStatus+errorThrown);
+      }
+    });
+  }
+
+  $(function(){
+    fillTimeIntervalList();
+    function getEvents(){
+      var events = [];
+      $("#time-interval-div tbody input[type='checkbox']:checked").each(function(){
+        var timeinterval = $(this).parent().parent().parent().find("td:eq(1)");
+        var workType = $("#id_work_type").val();
+        var workTypeText = $("#id_work_type option:selected").text();
+        var flag = $("#id_rule_flag").val();
+        var flagText = $("#id_rule_flag option:selected").text();
+        var event = {
+          objId: timeinterval.find("input").val(),
+          workType: workType,
+          flag: flag,
+          text: timeinterval.attr('data-content') + ' ' + workTypeText + ' ' + flagText,
+        };
+        events.push(event);
+      });
+      return events;
+    };
+
+    $('#fullcalendar').fullCalendar({
+        height: 380,
+        width: 300,
+        header: {
+            center: '',
+            right: 'today prev,next'
+        },
+        editable: false,
+        selectable: true,
+        select: function(start, end) {
+            var events = getEvents();
+            var event_len = events.length;
+            if(event_len > 0){
+                for(var i=0; i < events.length; i++ ){
+                    var eventData = {
+                        objId: events[i].objId,
+                        workType: events[i].workType,
+                        flag: events[i].flag,
+                        title: events[i].text,
+                        start: start,
+                        end: end
+                    };
+                    $('#fullcalendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                }
+            }else{
+                $('#fullcalendar').fullCalendar('unselect');
+            }
+        },
+        eventClick: function(event) {
+            console.log(event)
+            $('#fullcalendar').fullCalendar( 'removeEvents', event._id)
+
+        },
+    });
+
+    $("#id_query_tb").click(function(){
+      var val = $("#time-interval-name").val();
+      fillTimeIntervalList(val);
+    });
+
+    $("#time-interval-name").keydown(function(event){
+      if(event.keyCode === 13){
+        $("#id_query_tb").click();
+      }
+    });
+
+    layui.use(['form', 'laydate'], function() {
+      var form = layui.form;
+      var laydate = layui.laydate;
+      $("form.layui-form input.layui-date").each(function(){
+        laydate.render({elem: this, type: 'date'});
+      });
+      form.render();
+    });
+  })
+
+  $(".layui-layer-btn0").click(function(e){
+    $("#events").empty();
+    $('#fullcalendar').fullCalendar( 'clientEvents', function(event){
+        var objId = event.objId;
+        var workType = event.workType;
+        var flag = event.flag;
+        var start = event.start.format();
+        var end = event.end.format();
+        var val = [objId, start, end, workType, flag].join(',');
+        var e = '<input name="event" type="hidden" value="' + val + '"/>'
+        $("#events").append(e);
+    })
+  });
+</script>
+{% endautoescape %}

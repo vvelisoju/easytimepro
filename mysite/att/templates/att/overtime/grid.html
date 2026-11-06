@@ -1,0 +1,150 @@
+{% extends "data_grid.html" %}
+{% load i18n %}
+{% load iclock_tags %}
+{% block filter_bar %}
+{{ block.super }}
+    {% csrf_token %}
+{% block row_event %}
+  {% if all_perms.change or all_perms.delete %}
+    <script type="text/html" id="model_{{ model_name }}_toolbar">
+      {% if all_perms.change %}
+        <a class="layui-btn layui-btn-xs" lay-event="edit" title="{% trans 'model_action_modify' %}"><i class="fa fa-fw fa-pencil-square-o"></i></a>
+      {% endif %}
+      {% if all_perms.delete %}
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" title="{% trans 'permission_verboseName_delete' %}"><i class="fa fa-fw fa-trash-o"></i></a>
+          <a class="layui-btn layui-btn-xs" lay-event="staffViewWorkflow" onclick="approvalEyeView()"><i class="fa fa-eye"></i></a>
+      {% endif %}
+    </script>
+  {% endif %}
+{% endblock row_event %}
+<script>
+function approvalEyeView() {
+    layui.use(['table'], function () {
+            var table = layui.table
+            table.on('tool({{ model_name }})', function (obj) {
+                var postParams = {workflow_instance_id: obj.data.id};
+                postParams['model_name'] = "{{ model_name }}";
+                postParams['csrfmiddlewaretoken'] = "{{ csrf_token }}"
+                function show_error(response){
+                    var res_msg = JSON.parse(response.responseText);
+                    var display_msg = '';
+                    for (var prop in res_msg) {
+                        var name = prop
+                        $('form input[name="' + prop + '"]').addClass('layui-form-danger');
+                        $('form select[name="' + prop + '"]').addClass('layui-form-danger');
+                        var input_lable = $('form input[name="' + prop + '"]').parent().parent().children().first().text();
+                        var select_lable = $('form input[name="' + prop + '"]').parent().parent().children().first().text();
+                        if(input_lable) {
+                          name = input_lable
+                        } else if(select_lable) {
+                          name = select_lable
+                        } else {
+                          name = gettext(name)
+                        }
+                        display_msg += '<p>'+ res_msg[prop] + '</p>'
+                        layer.msg(gettext(display_msg), {icon: 5});
+                    }
+                    {#layer.open(display_msg, {'icon': 5, btn: [gettext("btn_confirm")], title: gettext("layer_title")});#}
+                }
+                switch (obj.event) {
+                    case 'staffViewWorkflow':
+                        $.ajax({
+                            url: "/workflow/view/"
+                            , dataType: 'html'
+                            , data: postParams
+                            , type: 'GET'
+                            , success: function (response) {
+                                try {
+                                    var ret = JSON.parse(response);
+                                    if (ret['error_code'] != 0) {
+                                        layer.msg(ret['result'], {
+                                            icon: 0,
+                                            time: '2000',
+                                            shade: 0.1
+                                        });
+                                    }
+                                } catch (err) {
+                                    layer.open({
+                                        title: gettext('approval_workflow_view')
+                                        , area: ['auto', '']
+                                        , content: response
+                                        , btn: gettext("btn_confirm")
+                                        , success: function (layero, index) {
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                        break;
+                    case 'editPopUp':case 'edit':
+                        var tableId = "id_grid_{{ model_name }}";
+                        let obj_id = postParams['workflow_instance_id']
+                        var data = obj.data;
+                        $.ajax({
+                            url: "/att/overtime/edit/?obj_id="+obj_id
+                            , dataType: 'html'
+                            , type: 'GET'
+                            , success: function (response) {
+                                layer.open({
+                                          type: 1
+                                          , title: 'Edit'
+                                          , closeBtn: 1
+                                          , area: ['351px', '374px']
+                                          , maxmin: false
+                                          , shadeClose: false
+                                          , content: response
+                                          , btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+                                        , success: function (layero, index) {
+                                        },
+                                        yes: function (index, layero) {
+                                        var newForm = layero.find("form.layui-form");
+                                        $(newForm).ajaxSubmit({
+                                            url: "/staff/api/overtimes/" + data['id'] + "/",
+                                            type: "PUT",
+                                            success: function (response, status, xhr) {
+                                                layer.close(index);
+                                                layer.msg(gettext('save_successful'), {icon: 6, time: 600});
+                                                table.reload(tableId, true);
+                                                //bindAllActions();
+                                            },
+                                            error: function (response) {
+                                                show_error(response);
+                                            }
+                                        });
+                                    },
+                                    });
+                            }
+                        })
+                        break;
+                    case 'del':
+                        postParams['obj_ids'] = postParams['workflow_instance_id']
+                        delete postParams['workflow_instance_id']
+                        layer.confirm("{% trans 'confirm_be_sure' %}", {
+                            title: gettext("btn_confirm")
+                            , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+                        }, function (index) {
+                            obj.del();
+                            layer.close(index);
+                            $.ajax({
+                                url: '/att/overtime/del/'
+                                , dataType: 'html'
+                                , data: postParams
+                                , type: 'POST'
+                                , success: function (data) {
+                                    layer.msg(gettext('delete_successful'), {icon: 6, time: 600});
+                                    table.reload(tb.config.id, true);
+                                    //bindAllActions();
+                                }
+                            });
+                        });
+                        break
+                    default:
+                        break;
+                }
+            });
+        })
+}
+</script>
+{% endblock %}
+<script>
+</script>

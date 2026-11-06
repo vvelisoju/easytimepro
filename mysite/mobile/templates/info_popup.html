@@ -1,0 +1,17 @@
+{% load iclock_tags %}
+{% load i18n %}
+{% autoescape off %}
+<div id="id_form">
+    <div style="float: left;">
+      <form method="post" id="id_edit_form" enctype="multipart/form-data">
+        <div style="float: left;">
+          {% block form_title %}
+            {{ form_title }}
+          {% endblock %}
+          <p>To Execute?</p>
+        </div>
+      </form>
+      <br/>
+    </div>
+  </div>
+{% endautoescape %}

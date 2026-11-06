@@ -1,0 +1,111 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 270px;min-width: 550px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}" lay-filter="dbBackupForm">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_inline f.db_type %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.db_name %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.file_path %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.frequency %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.point_day %}
+        {% layui_inline f.point_time %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.is_backup_photo %}
+      </div>
+    {% endwith %}
+    <div>
+      <strong style="font-size: 13px;">
+        <span style="color: red;">*Note:  </span>
+        <div style="margin-left: 40px;">
+          <p>{% trans 'application_database_should_be_installed_in_same_server' %}</p>
+        </div>
+      </strong>
+    </div>
+  </form>
+</div>
+<script>
+  layui.use(['form', 'laydate'], function () {
+    var form = layui.form;
+    var laydate = layui.laydate;
+    $("form.layui-form input.layui-datetime").each(function () {
+      laydate.render({elem: this, type: 'datetime'});
+    });
+    $("form.layui-form input.layui-date").each(function () {
+      laydate.render({elem: this, type: 'date'});
+    });
+    $("form.layui-form input.layui-time").each(function () {
+      laydate.render({elem: this, type: 'time',format: 'HH:mm:ss'});
+    });
+    {% block form_verify %}
+      form.verify({});
+    {% endblock %}
+    form.render();
+    function dayChange(f, d){
+      switch(f){
+        case '1':   //Monthly
+          var options = '';
+          for(var i=1; i < 32; i ++){
+              options += '<option value="'+i+'">'+i+'</option>';
+          }
+          $("#id_point_day").html(options);
+          $("#id_point_day").val(d);
+          form.render('select');
+          break;
+        case '2':   //Weekly
+          var options = ''
+              + '<option value="'+0+'">'+gettext('monday')+'</option>'
+              + '<option value="'+1+'">'+gettext('tuesday')+'</option>'
+              + '<option value="'+2+'">'+gettext('wednesday')+'</option>'
+              + '<option value="'+3+'">'+gettext('thursday')+'</option>'
+              + '<option value="'+4+'">'+gettext('friday')+'</option>'
+              + '<option value="'+5+'">'+gettext('saturday')+'</option>'
+              + '<option value="'+6+'">'+gettext('sunday')+'</option>';
+          $("#id_point_day").html(options);
+          $("#id_point_day").val(d);
+          form.render('select');
+          break;
+        case '3':   //Daily
+          var options = '<option value="'+1+'">'+1+'</option>';
+          $("#id_point_day").html(options);
+          $("#id_point_day").val(1);
+          form.render('select');
+          break;
+        default: break;
+      }
+    }
+    form.on('select(frequency)', function (data) {
+      dayChange(data.value, $("#id_point_day").val())
+    })
+    $.ajax({
+      url: "/base/api/systemSetting/?name=db_backup"
+      ,type: "GET"
+      ,dataType: "json"
+      ,success: function(response, xhr){
+       // console.log(response.data);
+        if(response.data.length > 0){
+          var val = response.data[0];
+          if(val){
+            var formVal = JSON.parse(val.value);
+            dayChange(formVal.frequency, formVal.point_day);
+            form.val('dbBackupForm', formVal);
+          }else{
+              dayChange('1', 1);
+          }
+        }else {
+          dayChange('1', 1);
+        }
+      }
+      ,error: function(xhr, error, e){ }
+    });
+  });
+</script>

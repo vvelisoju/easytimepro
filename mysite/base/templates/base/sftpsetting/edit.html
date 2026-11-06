@@ -1,0 +1,47 @@
+{% load i18n static %}
+<div id="{{ model_name }}_edit_form" style="padding: 10px;">
+  <form class="layui-form data-form" action="" method="post" >
+    {% csrf_token %}
+    <div>
+      {% for fieldset in adminform %}
+        {% include "includes/fieldset.html" %}
+      {% endfor %}
+    </div>
+  </form>
+</div>
+<script>
+  $(function () {
+    {#var auth_method = e_rule.val();#}
+    var mapping = {
+      '0': ['user_password',],
+      '1': ['user_key', 'key_password']
+    };
+
+    function hide_irrelevant_field(method) {
+      if (method === undefined) {
+        method = $('#id_auth_method').val();
+      }
+      for (var m in mapping) {
+        mapping[m].forEach(function (elem/*, index*/) {
+          if (method === m) {
+            $('.layui-form-item.field-'+elem).show();
+          } else {
+            $('.layui-form-item.field-'+elem).hide();
+          }
+        })
+      }
+    }
+
+    layui.use('form', function () {
+      var form = layui.form,
+        $ = layui.jquery;
+      form.render();
+      hide_irrelevant_field();
+      form.on('select', function (data) {
+        if (data.elem.name === 'auth_method') {
+          hide_irrelevant_field(data.value);
+        }
+      });
+    });
+  });
+</script>

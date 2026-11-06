@@ -1,0 +1,1417 @@
+<!----------------- Subscription Configuration -------------------->
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
+    <meta name="description" content="" content="no">
+    <title>Intelligent Time | Dashboard | Subscription Management</title>
+    <link rel="shortcut icon" href="/static/cloud/static/images/favicon.ico" sizes="16x16 24x24 32x32 64x64">
+    <link href="/static/cloud/static/css/main.min.css" rel="stylesheet">
+    <link href="/static/cloud/static/css/custom.css" rel="stylesheet">
+{#    <link href="/static/cloud/static/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>#}
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="/static/cloud/static/js/jquery/jquery-3.5.1.min.js"></script>
+    <style>
+        .backend-dashboard__main {
+            display: block;
+        }
+        .backend-dashboard__outer .backend-dashboard__table thead th {
+            {#white-space: nowrap;#}
+            font-size: 11px;
+            text-align: left;
+            height: 40px;
+            vertical-align: middle;
+        }
+        .backend-dashboard__outer .backend-dashboard__table tbody td {
+            {#white-space: nowrap;#}
+            font-size: 11px;
+            text-align: left;
+            height: 40px;
+            vertical-align: middle;
+        }
+        .backend-dashboard__outer .backend-dashboard__table tbody td a i {
+            font-size: 11px;
+        }
+        .backend-dashboard__modal .backend-dashboard-modal__footer button[type="button"],
+        .backend-dashboard__modal .backend-dashboard-modal__footer button[type="submit"],
+        .backend-dashboard__card .backend-dashboard__header button[type="button"] {
+            padding: 1px 6px;
+            font-size: 14px;
+            border-radius: 0;
+        }
+        .backend-dashboard__modal form>.backend-dashboard-modal__body label {
+            font-size: 12px;
+        }
+        .backend-dashboard__modal form>.backend-dashboard-modal__body input[type="text"].form-control,
+        .backend-dashboard__modal form>.backend-dashboard-modal__body input[type="number"].form-control,
+        .backend-dashboard__modal form>.backend-dashboard-modal__body select.form-control {
+            height: calc(1.8rem + 2px);
+            font-size: 12px;
+            font-weight: 300;
+            border-radius: 0;
+        }
+        .backend-dashboard__modal form>.backend-dashboard-modal__body textarea.form-control {
+            font-size: 12px;
+            font-weight: 300;
+            border-radius: 0;
+        }
+        .backend-dashboard__card .backend-dashboard__header .my-btn-box {
+            margin-right: -20px;
+        }
+        .features-list-label {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+            font-size: 13px;
+            background: #337ab7;
+            border-radius: 5px;
+            color: #FFFFFF;
+        }
+
+    </style>
+</head>
+<body>
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-header header-shadow">
+        <div class="app-header__logo">
+            <div class="header__pane mr-auto">
+                <div>
+                    <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                            data-class="closed-sidebar" disabled>
+                     <span class="hamburger-box">
+                     <span class="hamburger-inner"></span>
+                     </span>
+                    </button>
+                </div>
+            </div>
+            <div class="logo-src text-center" style="width: 190px !important; height: 50px !important; cursor:pointer;"
+                 id="home-page">
+                <img src="/static/cloud/static/images/web_logo.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="app-header__mobile-menu">
+            <div>
+                <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                  <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+            </div>
+        </div>
+        <div class="app-header__menu">
+               <span>
+               <button type="button"
+                       class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+               <span class="btn-icon-wrapper">
+               <i class="fa fa-ellipsis-v fa-w-6"></i>
+               </span>
+               </button>
+               </span>
+        </div>
+        <div class="app-header__content pl-0" style="background: #474b4f;">
+            <div class="app-header-left">
+                <ul class="header-menu nav navList my-header-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link custom-nav-link">
+{#                          <i class="nav-link-icon fa fa-history"></i>#}
+                            {% trans 'vendor_management' %}
+                        </a>
+                    </li>
+                    {% if user.is_vendor_display or user.is_super_admin %}
+                    <li class="nav-item active">
+                        <a href='{% url 'biotime:subscription_configuration' %}' class="nav-link custom-nav-link">
+                            {% trans 'subscription_management' %}
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href='{% url 'biotime:firmware_configuration' %}' class="nav-link custom-nav-link">
+                            {% trans 'firmware_management' %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="app-header-right">
+                <div class="header-btn-lg pr-0">
+                    <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                            <div class="widget-content-left ml-3 header-user-info">
+                                <div class="widget-heading text-white">
+                                    admin@zkteco.com
+                                </div>
+                                <div class="widget-subheading text-white">
+                                    <small>Vendor</small>
+                                </div>
+                            </div>
+                            <div class="widget-content-left">
+                                <div class="btn-group">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                       class="p-0 btn">
+                                        <img width="42" class="rounded-circle"
+                                             src="/static/cloud/static/images/avatars/admin1.png" alt="">
+                                        <i class="fa fa-angle-down ml-2 opacity-8 text-white"></i>
+                                    </a>
+                                    <div tabindex="-1" role="menu" aria-hidden="true"
+                                         class="dropdown-menu dropdown-menu-left"
+                                         style="padding: 0px; border-radius: 0; min-width: 8rem;">
+                                        <button type="button" tabindex="0" class="dropdown-item"
+                                                onclick="location.href='/logout/'">
+                                            <i class="fa fa-sign-out"></i> Logout
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-main backend-dashboard__main">
+        <div class="app-sidebar sidebar-shadow d-none">
+            <div class="app-header__logo">
+                <div class="logo-src"></div>
+                <div class="header__pane ml-auto">
+                    <div>
+                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                                data-class="closed-sidebar" {% if user.is_super_admin %}disabled{% endif %}>
+                        <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                        </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                     <span class="hamburger-box">
+                     <span class="hamburger-inner"></span>
+                     </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                <button type="button"
+                class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                <span class="btn-icon-wrapper">
+                <i class="fa fa-ellipsis-v fa-w-6"></i>
+                </span>
+                </button>
+                </span>
+            </div>
+            <!-- Top Side Bar -->
+            <!-- //End -->
+            <div class="scrollbar-sidebar">
+                <div class="app-sidebar__inner">
+                    <ul class="vertical-nav-menu" id="backend_dashboard_company_menu">
+                        <li class="app-sidebar__heading" style="margin-bottom: 2.5em;"></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End -->
+        </div>
+
+        <div class="app-main__outer backend-dashboard__outer" style="padding-left:0px;">
+            <div class="app-main__inner">
+                <div class="app-page-title">
+                    <div class="page-title-wrapper">
+                        <div class="page-title-heading" style="width: 100%; justify-content: flex-start;">
+                            <div class="page-title-icon easy-icon-body">
+                                <i class="metismenu-icon pe-7s-timer fa-spin"></i>
+                            </div>
+                            <div>
+                                {% trans "cloud_current_company" %}: <span>{{ user.get_current_company_name }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if user.is_super_admin or user.is_vendor_display %}
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="card mb-3 backend-dashboard__card">
+                            <div class="card-header backend-dashboard__header">
+                                <div class="row d-grid w-100">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 text-left">
+                                        Features
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="my-btn-box text-right">
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addFeature">
+                                                <i class="fa fa-plus fa-fw"></i>Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" style="min-height: 280px;">
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-bordered table-hover mb-0 dataTable backend-dashboard__table"
+                                           id="subscriptionTable2">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th width="15%">Name</th>
+                                                <th width="20%">Display Status</th>
+                                                <th width="20%">Effective Status</th>
+                                                <th width="10%">Type</th>
+                                                <th width="5%">Country</th>
+{#                                                <th width="5%">Currency</th>#}
+                                                <th width="10%">Price</th>
+                                                <th width="15%">Description</th>
+                                                <th width="5%">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="getFeatureRecords">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+{#                          <div class="card-footer text-muted"></div>#}
+                            <div class="card-footer text-muted">
+                                <div class="col-md-6 p-0">
+                                    <div class="modalTotalCom pull-left">
+                                        <a href="javascript:void(0);">
+                                        Total
+                                        <span class="badge" id="feature_count"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 p-0">
+                                    <div class="app-main__inner pull-right p-0">
+                                        <nav class="text-right" aria-label="Page navigation example">
+                                            <ul class="pagination modalPagination" style="margin: 0;">
+                                                <li class="page-item modalPageItem">
+                                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-feature"
+                                                    style="padding: 0; border: 0;">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="card mb-3 backend-dashboard__card">
+                            <div class="card-header backend-dashboard__header">
+                                <div class="row d-grid w-100">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 text-left">
+                                        Discounts
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="my-btn-box text-right">
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addDiscount">
+                                                <i class="fa fa-plus fa-fw"></i>Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" style="min-height: 280px;">
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-bordered table-hover mb-0 dataTable backend-dashboard__table"
+                                           id="subscriptionTable1">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th>Effective Status</th>
+                                                <th>Discount Ratio</th>
+                                                <th class="text-center" width="60">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="getDiscountRecords">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <div class="col-md-6 p-0">
+                                    <div class="modalTotalCom pull-left">
+                                        <a href="javascript:void(0);">
+                                        Total
+                                        <span class="badge" id="discount_count"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 p-0">
+                                    <div class="app-main__inner pull-right p-0">
+                                        <nav class="text-right" aria-label="Page navigation example">
+                                            <ul class="pagination modalPagination" style="margin: 0;">
+                                                <li class="page-item modalPageItem">
+                                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-discount"
+                                                    style="padding: 0; border: 0;">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card mb-3 backend-dashboard__card">
+                            <div class="card-header backend-dashboard__header">
+                                <div class="row d-grid w-100">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 text-left">
+                                        Price Strategies
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="my-btn-box text-right">
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addPriceStrategies">
+                                                <i class="fa fa-plus fa-fw"></i>Add
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" style="min-height: 280px;">
+                                <div class="table-responsive-md">
+                                    <table class="table table-sm table-bordered table-condensed table-hover mb-0 dataTable backend-dashboard__table"
+                                           id="subscriptionTable6">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Company</th>
+                                                <th>User</th>
+                                                <th>Subs/month</th>
+                                                <th>Emp Threshold</th>
+                                                <th>Emp Unit</th>
+                                                <th>Device Threshold</th>
+                                                <th>Device Unit</th>
+                                                <th>WhatsApp Status</th>
+                                                <th>WhatsApp Threshold</th>
+                                                <th>WhatsApp Unit</th>
+                                                <th>Mob Stauts</th>
+                                                <th>Mob Threshold</th>
+                                                <th>Mob Unit</th>
+                                                <th>Trans Status</th>
+                                                <th>Trans Threshold</th>
+                                                <th>Trans Unit</th>
+                                                <th>Country</th>
+{#                                                <th>Currency</th>#}
+                                                <th>Effective Status</th>
+                                                <th>Discount</th>
+                                                <th>Feature</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="getPricestrategies">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+{#                          <div class="card-footer text-muted"></div>#}
+                            <div class="card-footer text-muted">
+                                <div class="col-md-6 p-0">
+                                    <div class="modalTotalCom pull-left">
+                                        <a href="javascript:void(0);">
+                                        Total
+                                        <span class="badge" id="price_strategies_count"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 p-0">
+                                    <div class="app-main__inner pull-right p-0">
+                                        <nav class="text-right" aria-label="Page navigation example">
+                                            <ul class="pagination modalPagination" style="margin: 0;">
+                                                <li class="page-item modalPageItem">
+                                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-price-strategy"
+                                                    style="padding: 0; border: 0;">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if user.is_super_admin or user.is_vendor_display %}
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card mb-3 backend-dashboard__card">
+                            <div class="card-header backend-dashboard__header">
+                                <div class="row d-grid w-100">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 text-left">
+                                        Orders
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="my-btn-box text-right">
+                                            <a href="/cloud/api/v1/internal/orders/export/?export_type=xls" type="button" class="btn btn-success" style="padding: 1px 6px;font-size: 14px; border-radius: 0;">
+                                                <i class="fa fa-print"></i> Export Orders
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" style="min-height: 280px;">
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-bordered table-hover mb-0 dataTable backend-dashboard__table"
+                                           id="subscriptionTable4">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th>Order Number</th>
+                                                <th>Company</th>
+                                                <th>Subscription Duration (in month)</th>
+                                                <th>Employees Count</th>
+                                                <th>Devices Count</th>
+                                                <th>Transactions Count</th>
+                                                <th>Mobile Apps Count</th>
+                                                <th>WhatsApp Push Count</th>
+                                                <th>Price Strategies Type</th>
+                                                <th>Feature</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="getOrderRecords">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+{#                          <div class="card-footer text-muted"></div>#}
+                            <div class="card-footer text-muted">
+                                <div class="col-md-6 p-0">
+                                    <div class="modalTotalCom pull-left">
+                                        <a href="javascript:void(0);">
+                                        Total
+                                        <span class="badge" id="orders_count"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 p-0">
+                                    <div class="app-main__inner pull-right p-0">
+                                        <nav class="text-right" aria-label="Page navigation example">
+                                            <ul class="pagination modalPagination" style="margin: 0;">
+                                                <li class="page-item modalPageItem">
+                                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-order"
+                                                    style="padding: 0; border: 0;">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <!-- //End -->
+            </div>
+            <div class="app-wrapper-footer">
+                <div class="app-footer">
+                    <div class="app-footer__inner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Modal Popup Starts here -->
+    <!-- Add Feature - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="addFeature" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header">
+                    <h5 class="modal-title">Add Feature</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="" method="post" onsubmit="return false;" id="validateFeature">
+                    <div class="modal-body backend-dashboard-modal__body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Name<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="featureName_post" required>
+                                    <div class="text-danger" id="errorFeature1" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Type<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" id="featureType_post" required>
+                                        <option value="0">Server</option>
+                                        <option value="1">Customization</option>
+                                        <option value="2">Prototype</option>
+                                    </select>
+                                    <div class="text-danger" id="errorFeature2" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Display Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" id="featureDisplay_post" required>
+                                        <option value="true">True</option>
+                                        <option value="false">False</option>
+                                    </select>
+                                    <div class="text-danger" id="errorFeature3" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Effective Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" id="featureEffective_post" required>
+                                        <option value="true">True</option>
+                                        <option value="false">False</option>
+                                    </select>
+                                    <div class="text-danger" id="errorFeature4" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Country<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="country" id="featureCountry_post" required>
+                                        <option value="IN" selected>India</option>
+                                        <option value="US">Others</option>
+                                    </select>
+                                    <div class="text-danger" id="errorFeature5" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" name="price" id="featurePrice_post" value="" required>
+                                    <div class="text-danger" id="errorFeature6" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+{#                            <div class="col-md-6">#}
+{#                                <div class="position-relative form-group">#}
+{#                                    <label for="" class="">#}
+{#                                        Currency<span class="text-danger">*</span>#}
+{#                                    </label>#}
+{#                                    <input type="text" class="form-control" name="currency" id="featureCurrency_post" required>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Description<span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control" id="featureDescription_post" required></textarea>
+                                    <div class="text-danger" id="errorFeature7" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer backend-dashboard-modal__footer">
+                        <button type="submit" class="btn btn-success" id="postFeature">
+                            <i class="fa fa-check fa-fw"></i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="reloadCancel()">
+                            <i class="fa fa-close fa-fw"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //End -->
+    <!-- Edit Feature - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="editFeature" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header">
+                    <h5 class="modal-title">Edit Feature</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="" action="" method="post" onsubmit="return false;">
+                    {% csrf_token %}
+                    <input type="hidden" class="form-control feature_id" id="feature_id">
+                    <div class="modal-body backend-dashboard-modal__body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Name<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control featureName" id="featureName_edit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Type<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control featureType" id="featureType_edit" required>
+{#                                        <option value="" selected disabled>--------</option>#}
+                                        <option id="edit_feature_server" value="0">Server</option>
+                                        <option id="edit_feature_customization" value="1">Customization</option>
+                                        <option id="edit_feature_prototype" value="2">Prototype</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Display Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control featureDisplay" id="featureDisplay_edit" required>
+{#                                        <option value="" selected disabled>--------</option>#}
+                                        <option id="status_feature_true" value="1">true</option>
+                                        <option id="status_feature_false" value="0">false</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Effective Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control featureEffective" id="featureEffective_edit" required>
+{#                                        <option value="" selected disabled>--------</option>#}
+                                        <option id="effective_feature_true" value="1">true</option>
+                                        <option id="effective_feature_false" value="0">false</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Country<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control featureCountry" name="country" id="featureCountry_edit" required>
+                                        <option value="IN" selected>India</option>
+                                        <option value="US">Others</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control featurePrice" name="price" id="featurePrice_edit" value="" required>
+                                </div>
+                            </div>
+{#                            <div class="col-md-6">#}
+{#                                <div class="position-relative form-group">#}
+{#                                    <label for="" class="">#}
+{#                                        Currency<span class="text-danger">*</span>#}
+{#                                    </label>#}
+{#                                    <input type="text" class="form-control featureCurrency" name="currency" id="featureCurrency_edit" required>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Description<span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control featureDescription" id="featureDescription_edit" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer backend-dashboard-modal__footer">
+                        <button type="submit" class="btn btn-success" id="updateFeature">
+                            <i class="fa fa-check fa-fw"></i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="reloadCancel()">
+                            <i class="fa fa-close fa-fw"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //End -->
+
+    <!-- Add Discount - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="addDiscount" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header">
+                    <h5 class="modal-title">Add Discount</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="" action="" method="post" onsubmit="return false;" id="validateDiscount">
+                    <div class="modal-body backend-dashboard-modal__body">
+                        <div class="position-relative form-group">
+                            <label for="" class="">
+                                Effective Status<span class="text-danger">*</span>
+                            </label>
+                            <select class="form-control" name="" id="effectiveStatus_post" required>
+{#                                <option value="" selected disabled></option>#}
+                                <option value="1">true</option>
+                                <option value="0">false</option>
+                            </select>
+                            <div class="text-danger" id="errorDiscount1" style="font-size: x-small;"></div>
+                        </div>
+                        <div class="position-relative form-group">
+                            <label for="" class="">
+                                Discount Ratio<span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control" name="" id="discountRatio_post" value="" required>
+                            <div class="text-danger" id="errorDiscount2" style="font-size: x-small;"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer backend-dashboard-modal__footer">
+                        <button type="submit" class="btn btn-success" id="postDiscount">
+                            <i class="fa fa-check fa-fw"></i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="reloadCancel()">
+                            <i class="fa fa-close fa-fw"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //End -->
+    <!-- Edit Discount - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="editDiscount" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header">
+                    <h5 class="modal-title">Edit Discount</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="" action="" method="post" onsubmit="return false;" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" class="form-control discount_id" id="discount_id">
+                    <div class="modal-body backend-dashboard-modal__body">
+                        <div class="position-relative form-group">
+                            <label for="" class="">
+                                Effective Status<span class="text-danger">*</span>
+                            </label>
+                            <select class="form-control effectiveStatus" id="effectiveStatus_edit" required>
+                                <option value="" selected disabled></option>
+                                <option id="edit_true" value="1">true</option>
+                                <option id="edit_false" value="0">false</option>
+                            </select>
+                        </div>
+                        <div class="position-relative form-group">
+                            <label for="" class="">
+                                Discount Ratio<span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control discountRatio" id="discountRatio_edit" value="" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer backend-dashboard-modal__footer">
+                        <button type="submit" class="btn btn-success" id="updateDiscount">
+                            <i class="fa fa-check fa-fw"></i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="reloadCancel()">
+                            <i class="fa fa-close fa-fw"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //End -->
+    <!-- Add Price Strategies - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="addPriceStrategies" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header">
+                    <h5 class="modal-title">Add Price Strategies</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="" action="" method="post" onsubmit="return false;" id="validatePriceStrategy">
+                    <div class="modal-body backend-dashboard-modal__body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Type<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="type" id="priceStrategiesType_post" required>
+                                        <option value="1">Free Trial</option>
+                                        <option value="2">Professional</option>
+                                        <option value="3">Premium </option>
+                                        <option value="4">EnterPrise</option>
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy1" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Subscription Price/month<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesSubscription_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy2" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Employee Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesEmpThr_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy3" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Employee Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesEmpPrc_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy4" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Device Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesDvcThr_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy5" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Device Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesDvcPrc_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy6" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        WhatsApp Push Counts Limit Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="" id="priceStrategiesWhatStatus_post">
+                                        <option value="1">true</option>
+                                        <option value="0">false</option>
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy7" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        WhatsApp Push Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesWhatThr_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy8" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        WhatsApp Push Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesWhatPrc_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy9" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Mobile App Counts Limit Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="" id="priceStrategiesMobStatus_post">
+                                        <option value="1">true</option>
+                                        <option value="0">false</option>
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy10" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Mobile Applications Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesMobThr_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy11" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Mobile Applications Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesMobPrc_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy12" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Transaction Counts Limit Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="type" id="priceStrategiesTrnsStatus_post">
+                                        <option value="1">true</option>
+                                        <option value="0">false</option>
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy13" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Transaction Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesTrnsThr_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy14" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Transaction Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="priceStrategiesTrnsPrc_post" required>
+                                    <div class="text-danger" id="errorPriceStrategy15" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Country<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="country" id="priceStrategiesCountry_post">
+                                        <option value="IN" selected>India</option>
+                                        <option value="US">Others</option>
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy16" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Discount<span class="text-danger">*</span>
+                                    </label>
+{#                                    <input type="number" class="form-control" id="priceStrategiesDiscount_post" required>#}
+                                    <select class="form-control" name="" id="priceStrategiesDiscount_post" required>
+
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy17" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Effective Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="type" id="priceStrategiesEffective_post">
+                                        <option value="1">true</option>
+                                        <option value="0">false</option>
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy18" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+{#                            <div class="col-md-4">#}
+{#                                <div class="position-relative form-group">#}
+{#                                    <label for="" class="">#}
+{#                                        Currency<span class="text-danger">*</span>#}
+{#                                    </label>#}
+{#                                    <input type="text" class="form-control" id="priceStrategiesCurrency" required>#}
+{#                                </div>#}
+{#                            </div>#}
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Company<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesVendor" name="vendor" id="priceStrategiesVendor_post">
+                                        {% if user.is_super_admin %}
+                                        <option value="">None</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Feature<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesFeature" name="feature" id="priceStrategiesFeature_post"
+                                            multiple="multiple" required style="height: calc(5rem + 2px);">
+
+                                    </select>
+                                    <div class="text-danger" id="errorPriceStrategy19" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer backend-dashboard-modal__footer">
+                        <button type="submit" class="btn btn-success" id="postPriceStrategies">
+                            <i class="fa fa-check fa-fw"></i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="reloadCancel()">
+                            <i class="fa fa-close fa-fw"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //End -->
+    <!-- Edit Price Strategies - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="editPriceStrategies" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header">
+                    <h5 class="modal-title">Edit Price Strategies</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="" action="" method="post" onsubmit="return false;">
+                    {% csrf_token %}
+                    <input type="hidden" class="form-control price_strat_id" id="price_strat_id">
+                    <div class="modal-body backend-dashboard-modal__body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Type<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesType" name="type" id="priceStrategiesType_edit" required>
+                                        <option value="" selected disabled>Select Type</option>
+                                        <option id="edit_prc_strat_trail" value="1">Free Trial</option>
+                                        <option id="edit_prc_strat_standard" value="2">Standard</option>
+                                        <option id="edit_prc_strat_premium" value="3">Premium</option>
+                                        <option id="edit_prc_strat_enterprise" value="4">Enterprise</option>
+                                        <option id="edit_prc_strat_customization" value="5">Customization</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Subscription Duration/month<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesSubscription" id="priceStrategiesSubscription_edit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Employee Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesEmpThr" id="priceStrategiesEmpThr_edit" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Employee Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesEmpPrc" id="priceStrategiesEmpPrc_edit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Device Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesDvcThr" id="priceStrategiesDvcThr_edit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Device Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesDvcPrc" id="priceStrategiesDvcPrc_edit" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        WhatsApp Push Counts Limit Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesWhatStatus" name="type" id="priceStrategiesWhatStatus_edit">
+                                        <option vlaue="" selected disabled>Select WhatsApp Push Status</option>
+                                        <option id="edit_prc_strat_what_true" value="1">true</option>
+                                        <option id="edit_prc_strat_what_false" value="0">false</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        WhatsApp Push Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesWhatThr" id="priceStrategiesWhatThr_edit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        WhatsApp Push Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesWhatPrc" id="priceStrategiesWhatPrc_edit" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Mobile App Counts Limit Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesMobStatus" name="type" id="priceStrategiesMobStatus_edit">
+                                        <option vlaue="" selected disabled>Select Mobile App Status</option>
+                                        <option id="edit_prc_strat_mob_true" value="1">true</option>
+                                        <option id="edit_prc_strat_mob_false" value="0">false</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Mobile Applications Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesMobThr" id="priceStrategiesMobThr_edit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Mobile Applications Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesMobPrc" id="priceStrategiesMobPrc_edit" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Transaction Counts Limit Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesTrnsStatus" name="type" id="priceStrategiesTrnsStatus_edit">
+                                        <option value="" selected disabled>Select Transaction Limit Status</option>
+                                        <option id="edit_prc_strat_trns_true" value="1">true</option>
+                                        <option id="edit_prc_strat_trns_false" value="0">false</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Transaction Threshold<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesTrnsThr" id="priceStrategiesTrnsThr_edit" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Transaction Unit Price<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control priceStrategiesTrnsPrc" id="priceStrategiesTrnsPrc_edit" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Country<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesCountry" name="country" id="priceStrategiesCountry_edit">
+                                        <option value="IN" selected>India</option>
+                                        <option value="US">Others</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Discount<span class="text-danger">*</span>
+                                    </label>
+{#                                    <input type="number" class="form-control priceStrategiesDiscount" id="priceStrategiesDiscount_edit" required>#}
+                                    <select class="form-control priceStrategiesDiscount" name="discount" id="priceStrategiesDiscount_edit" required>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Effective Status<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesEffective" name="type" id="priceStrategiesEffective_edit">
+                                        <option value="" selected disabled>Select Effective Status</option>
+                                        <option id="edit_prc_strat_effective_true" value="1">true</option>
+                                        <option id="edit_prc_strat_effective_false" value="0">false</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+{#                            <div class="col-md-4">#}
+{#                                <div class="position-relative form-group">#}
+{#                                    <label for="" class="">#}
+{#                                        Currency<span class="text-danger">*</span>#}
+{#                                    </label>#}
+{#                                    <input type="text" class="form-control" id="priceStrategiesCurrency" required>#}
+{#                                </div>#}
+{#                            </div>#}
+                              <div class="col-md-4">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Company<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesVendor" name="vendor" id="priceStrategiesVendor_edit">
+                                        {% if user.is_super_admin %}
+                                        <option value="" selected>None</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="position-relative form-group">
+                                    <label for="" class="">
+                                        Feature<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control priceStrategiesFeature" name="feature" id="priceStrategiesFeature_edit"
+                                            multiple="multiple" required style="height: calc(5rem + 2px);">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer backend-dashboard-modal__footer">
+                        <button type="submit" class="btn btn-success" id="updatePriceStrategies">
+                            <i class="fa fa-check fa-fw"></i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="reloadCancel()">
+                            <i class="fa fa-close fa-fw"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //End -->
+
+<!--Order Details - Modal Start-->
+<div class="modal fade backend-dashboard__modal" id="orderDetailsModal" tabindex="-1" role="dialog"  aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header backend-dashboard-modal__header">
+            <h4 class="modal-title"></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+            <div class="modal-body backend-dashboard-modal__body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-sm table-borderless  table-condensed b-0 backend-dashboard__table">
+                            <tbody id="orderDetailsTable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+      </div>
+   </div>
+</div>
+<!--Order Details Modal End-->
+    <!-- Error Message - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="errorMsgModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header" style="background:#d92550;padding:5px 10px;border-top-left-radius:0px;border-top-right-radius:0px;">
+                    <h5 class="modal-title text-light">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                    <div class="modal-body backend-dashboard-modal__body">
+                      <p class="text-center alert alert-danger" id="showErrorMsg"><b>This feature is in use, you cannot delete it.</b></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- //End -->
+</div>
+<!-- //End -->
+
+
+<script src="/static/cloud/static/js/jquery/bootstrap-4.5.0.min.js"></script>
+<script type="text/javascript" src="/static/cloud/static/js/main.min.js"></script>
+{#<script src="/static/cloud/static/js/subscription_configuration.js"></script>#}
+<script src="/static/cloud/static/js/feature.js"></script>
+<script src="/static/cloud/static/js/discount.js"></script>
+<script src="/static/cloud/static/js/price_strategy.js"></script>
+<script src="/static/cloud/static/js/order.js"></script>
+<script type="text/javascript">
+    $('#home-page').click(function () {
+        window.location.href = "/";
+    });
+</script>
+<script type="text/javascript">
+    function reloadCancel () {
+        location.reload();
+    }
+</script>
+</body>
+</html>

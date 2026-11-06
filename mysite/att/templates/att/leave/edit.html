@@ -1,0 +1,30 @@
+{% load i18n static common %}
+{% autoescape off %}
+<div id="{{ model_name }}_edit_form" style="padding: 10px;">
+    <form class="layui-form data-form" action="" method="post" >
+        {% csrf_token %}
+        {% with adminform.form as f %}
+            {% layui_form_item f.emp %}
+            {% layui_form_item f.start_time %}
+            {% layui_form_item f.end_time %}
+            {% layui_form_item f.category %}
+            {% layui_form_item f.leave_payment_type %}
+            {% layui_inline f.days %}
+            {% layui_form_item f.apply_reason %}
+        {% endwith %}
+    </form>
+</div>
+<script>
+    layui.use('form', function() {
+        var form = layui.form;
+        form.render();
+        $("form.layui-form input.layui-datetime").each(function () {
+                var laydate = layui.laydate;
+                laydate.render({
+                    elem: this,
+                    type: 'datetime'
+                });
+            });
+    });
+</script>
+{% endautoescape %}

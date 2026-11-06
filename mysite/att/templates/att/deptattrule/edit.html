@@ -1,0 +1,274 @@
+{% load i18n common %}
+<div style="padding: 10px 0 0 0; height: 320px; width: 780px">
+  <form class="layui-form action-form rule-batchAdd-form" action="" method="post"
+        id="{{ model_name }}_{{ action_repr }}"
+        lay-filter="departmentRuleModelForm">
+       <div class="layui-hide"><button id="idSubmitTrigger_{{ model_name }}" lay-submit lay-filter="submitTrigger_{{ model_name }}"></button></div>
+    {% csrf_token %}
+    {% with adminform.form as f %}
+      <div class="layui-form-item">
+        {% layui_inline f.alias %}
+        {% layui_inline f.department %}
+      </div>
+      <div class="layui-tab">
+        <ul class="layui-tab-title">
+          <li class="layui-this">{% trans 'departmentRule_tab_calculationRule' %}</li>
+          <li>{% trans 'departmentRule_tab_overtimeSetting' %}</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show">
+{#            <div class="layui-form-item" style="padding-top: 20px">#}
+{#              <div class="layui-inline field-mins_late_absent">#}
+{#                <label class="layui-form-label"#}
+{#                       for="id_lateAbsentMinute">{% trans 'attRule_globalRule_lateExceedPrefix' %}<span#}
+{#                    class="required">*</span></label>#}
+{##}
+{#                <div class="layui-input-inline ">#}
+{#                  <input type="number" name="mins_late_absent" value="100" lay-verify="mins_late_absent" required=""#}
+{#                         class="layui-input" id="id_lateAbsentMinute" min="0">#}
+{#                </div>#}
+{#                <div class="layui-form-mid">{% trans 'attRule_globalRule_lateExceedSuffix' %}</div>#}
+{#              </div>#}
+{#            </div>#}
+
+            <div class="layui-form-item">
+              <div class="layui-inline field-mins_late_absent">
+                <label class="layui-form-label" for="id_minslateabsent">{% trans 'attRule_globalRule_lateExceedPrefix' %}<span
+                    class="required">*</span></label>
+                <div class="layui-input-inline ">
+                  <input type="number" name="mins_late_absents" value="60" lay-verify="mins_late_absents" required=""
+                         class="layui-input" id="mins_late_absents" min="0">
+                </div>
+                <div class="layui-form-mid">{% trans 'front_end_minutes' %} {% trans 'Consider As ' %}</div>
+                <div class="layui-input-inline">
+                  <select name="mins_late_absent" id="id_minslateabsent" lay-filter="minslateabsent">
+                    <option value="0" selected="">{% trans 'attRule_missIn_absent' %}</option>
+                    <option value="1">{% trans 'attRule_missIn_present' %}</option>
+                    <option value="2">{% trans 'attRule_missIn_halfDay' %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="layui-form-item">
+              <div class="layui-inline field-mins_early_absent">
+                <label class="layui-form-label" for="id_minsearlyabsent">{% trans 'attRule_globalRule_earlyLeaveExceedPrefix' %}<span
+                    class="required">*</span></label>
+                <div class="layui-input-inline ">
+                  <input type="number" name="mins_early_absents" value="60" lay-verify="mins_early_absents" required=""
+                         class="layui-input" id="mins_early_absents" min="0">
+                </div>
+                <div class="layui-form-mid">{% trans 'front_end_minutes' %}  {% trans 'Consider As ' %}</div>
+                <div class="layui-input-inline">
+                  <select name="mins_early_absent" id="id_minsearlyabsent" lay-filter="minsearlyabsent">
+                    <option value="0" selected="">{% trans 'attRule_missIn_absent' %}</option>
+                    <option value="1">{% trans 'attRule_missOut_earlyLeave' %}</option>
+                    <option value="2">{% trans 'attRule_missIn_halfDay' %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+{#            <div class="layui-form-item">#}
+{#              <div class="layui-inline field-mins_early_absent">#}
+{#                <label class="layui-form-label"#}
+{#                       for="id_earlyLeaveAbsentMinute">{% trans 'attRule_globalRule_earlyLeaveExceedPrefix' %}<span#}
+{#                    class="required">*</span></label>#}
+{##}
+{#                <div class="layui-input-inline">#}
+{#                  <input type="number" name="mins_early_absent" value="100" lay-verify="mins_early_absent" required=""#}
+{#                         class="layui-input" id="id_earlyLeaveAbsentMinute" min="0">#}
+{#                </div>#}
+{#                <div class="layui-form-mid">{% trans 'attRule_globalRule_earlyLeaveExceedSuffix' %}</div>#}
+{#              </div>#}
+{#            </div>#}
+            <div class="layui-form-item" style="margin-bottom: 3px;">
+                <div class="layui-inline field-half_day_work">
+                    <label class="layui-form-label" for="id_half_day_works">{% trans 'attRule_globalRule_halfDayWork' %}<span
+                            class="required">*</span></label>
+                    <div class="layui-input-inline">
+                        <input type="number" name="half_day_work" value="240" lay-verify="half_day_work" required=""
+                               class="layui-input" id="id_half_day_works" min="0">
+                    </div>
+                    <div class="layui-form-mid">{% trans 'attRule_globalRule_halDayWorkSuffix' %}</div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline field-miss_in">
+                <label class="layui-form-label" for="id_missIn">{% trans 'attRule_globalRule_missIn' %}<span
+                    class="required">*</span></label>
+
+                <div class="layui-input-inline">
+                  <select name="miss_in" id="id_missIn" lay-filter="missIn">
+                    <option value="1" selected="">{% trans 'attRule_missIn_presents' %}</option>
+                    <option value="2">{% trans 'attRule_missIn_absent' %}</option>
+                    <option value="0">{% trans 'attRule_missIn_noComplete' %}</option>
+{#                    <option value="4">{% trans 'attRule_missIn_present' %}</option>#}
+                    <option value="5">{% trans 'attRule_missIn_halfDay' %}</option>
+                  </select>
+                </div>
+              </div>
+              <div id="id_missInLate" class="layui-inline field-miss_in_mins">
+                <div class="layui-input-inline ">
+{#                  <input type="number" name="miss_in_mins" value="60" lay-verify="miss_in_mins" required=""#}
+{#                         class="layui-input" id="id_missInLateMinute" min="0">#}
+                </div>
+{#                <div class="layui-form-mid layui-word-aux">{% trans 'front_end_minutes' %}</div>#}
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline field-miss_out">
+                <label class="layui-form-label" for="id_missOut">{% trans 'attRule_globalRule_missOut' %}<span
+                    class="required">*</span></label>
+
+                <div class="layui-input-inline ">
+                  <select name="miss_out" id="id_missOut" lay-filter="missOut">
+                    <option value="1" selected="">{% trans 'attRule_missIn_presents' %}</option>
+                    <option value="2">{% trans 'attRule_missOut_absent' %}</option>
+                    <option value="0">{% trans 'attRule_missOut_noComplete' %}</option>
+{#                    <option value="4">{% trans 'attRule_missOut_present' %}</option>#}
+                    <option value="5">{% trans 'attRule_missOut_halfDay' %}</option>
+                  </select>
+                </div>
+              </div>
+              <div id="id_missOutEarlyLeave" class="layui-inline field-miss_out_mins">
+                <div class="layui-input-inline ">
+{#                  <input type="number" name="miss_out_mins" value="60" lay-verify="miss_out_mins" required=""#}
+{#                         class="layui-input" id="id_missOutEarlyLeaveMinute" min="0">#}
+                </div>
+{#                <div class="layui-form-mid layui-word-aux">{% trans 'front_end_minutes' %}</div>#}
+              </div>
+            </div>
+          </div>
+          <div class="layui-tab-item ">
+            <div class="layui-form-item" style="padding-top: 20px">
+              <div class="layui-inline">
+                <label for="id_OTRule" class="layui-form-label">{% trans 'deptAttRule_field_overtimeRule' %}<span
+                    class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <select name="use_ot" id="id_OTRule" lay-filter="OTRule">
+                    <option value="0">{% trans 'attRule_overtimeRule_disableOvertime' %}</option>
+                    <option value="1" selected="">{% trans 'attRule_overtimeRule_calculationOvertime' %}</option>
+                    <option value="2">{% trans 'attRule_overtimeRule_approvalOvertime' %}</option>
+                    <option value="3">{% trans 'attRule_overtimeRule_approvalOvertimePriority' %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-hide">{% layui_inline f.rule %}</div>
+    {% endwith %}
+  </form>
+</div>
+<script>
+  $(function () {
+    layui.use(['form'], function () {
+      var form = layui.form;
+
+      form.verify({
+        mins_late_absents: [/^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("please_input_a_valid_number")],
+        mins_early_absents: [/^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("please_input_a_valid_number")],
+        miss_in_mins: [/^([0-9]{1,3}|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("please_input_a_valid_number")],
+        miss_out_mins: [/^([0-9]{1,3}|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("please_input_a_valid_number")],
+        half_day_work: [/^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("please_input_a_valid_number")]
+      });
+
+      var items = ['#id_alias', '#id_OTRule', '#id_minslateabsent', '#mins_late_absents', '#id_minsearlyabsent', '#mins_early_absents', '#id_earlyLeaveAbsentMinute', '#id_missIn', '#id_missInLateMinute', '#id_missOut', '#id_missOutEarlyLeaveMinute', '#id_half_day_works'];
+      var intiVal = $("#id_rule").val();
+        if(intiVal){
+          form.val('departmentRuleModelForm', JSON.parse(intiVal));
+        }
+      var jsonRule = function () {
+        var payload = {};
+        items.forEach(function(item){
+          var name = $(item).attr('name');
+          payload[name] = parseInt($(item).val());
+        });
+        $.extend(payload, {alias: $("#id_alias").val()});
+        $("#id_rule").val(JSON.stringify(payload));
+      };
+
+      form.on('select(OTRule)', function (data) {
+            jsonRule();
+        });
+        form.on("submit(submitTrigger_{{ model_name }})",function (data) {
+            return false;
+        })
+
+
+      form.on('select(minslateabsent)', function (data) {
+        var val = parseInt(data.value);
+        switch (val) {
+          case 1:
+              $("#id_minslateabsent").css("display", "");
+              break;
+          default:
+              $("#id_minslateabsent").css("display", "none");
+              break;
+        }
+        jsonRule();
+      });
+
+      form.on('select(minsearlyabsent)', function (data) {
+        var val = parseInt(data.value);
+        switch (val) {
+          case 1:
+              $("#id_minsearlyabsent").css("display", "");
+              break;
+          default:
+              $("#id_minsearlyabsent").css("display", "none");
+              break;
+        }
+        jsonRule();
+      });
+
+      form.on('select(missIn)', function (data) {
+        var val = parseInt(data.value);
+        switch (val) {
+          case 1:
+              $("#id_missInLate").css("display", "");
+              break;
+          default:
+              $("#id_missInLate").css("display", "none");
+              break;
+        }
+        jsonRule();
+      });
+      form.on('select(missOut)', function (data) {
+        var val = parseInt(data.value);
+        switch (val) {
+          case 1:
+              $("#id_missOutEarlyLeave").css("display", "");
+              break;
+          default:
+              $("#id_missOutEarlyLeave").css("display", "none");
+              break;
+        }
+        jsonRule();
+      });
+
+      items.forEach(function(item){
+        $(item).change(function(){
+          jsonRule();
+        })
+      });
+
+      if ($('#id_missIn').val() === '1'){
+          $("#id_missInLate").css("display", "");
+      }
+      else{
+          $("#id_missInLate").css("display", "none");
+      }
+      if ($('#id_missOut').val() === '1'){
+          $("#id_missOutEarlyLeave").css("display", "");
+      }
+      else{
+          $("#id_missOutEarlyLeave").css("display", "none");
+      }
+      form.render();
+    })
+  });
+</script>

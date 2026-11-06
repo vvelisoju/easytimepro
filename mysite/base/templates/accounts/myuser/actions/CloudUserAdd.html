@@ -1,0 +1,44 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div style="padding: 10px;min-height: 150px;height: 150px;width: 330px">
+  <form id="cloudUserAdd" action="" class="layui-form action-form" lay-filter="cloudUserAdd">
+    {% csrf_token %}
+    <div class=layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label"
+               for="id_username">{% trans 'Username' %}</label>
+          <span class="required">*</span></label>
+        <div class="layui-input-inline">
+          <input type="text" name="username" style="margin-top: 2px;"
+                 class="layui-input" id="id_username" autocomplete="off" placeholder="">
+        </div>
+      </div>
+    </div>
+    <div class=layui-form-item" style="margin-top: 10px;">
+      <div class="layui-inline">
+        <label class="layui-form-label"
+               for="id_email">{% trans 'Email' %}</label>
+          <span class="required">*</span></label>
+        <div class="layui-input-inline">
+          <input type="text" name="email" style="margin-top: 2px;"
+                 class="layui-input" id="id_email" autocomplete="off" placeholder="">
+        </div>
+      </div>
+    </div>
+    <div class=layui-form-item" style="margin-top: 30px;">
+      <div class="layui-inline">
+        <span>Notice:</span>
+        <p>We will send email to user for active account.</p>
+      </div>
+    </div>
+  </form>
+  </div>
+{% endautoescape %}
+
+<script>
+  layui.use(['form'], function () {
+    var form = layui.form;
+    form.render();
+  })
+</script>

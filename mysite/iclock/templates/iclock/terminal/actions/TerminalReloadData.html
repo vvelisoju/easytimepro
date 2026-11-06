@@ -1,0 +1,20 @@
+{% load i18n common %}
+<div style="padding: 10px;min-height: 100px;width: 360px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_switch f.emp %}
+        {% layui_switch f.emp_photo %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_switch f.bio_fp %}
+        {% layui_switch f.bio_face %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_switch f.bio_palm %}
+        {% layui_switch f.bio_fv %}
+      </div>
+    {% endwith %}
+  </form>
+</div>

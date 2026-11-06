@@ -1,0 +1,35 @@
+{% load i18n common %}
+<div>
+  <table id="id_pending_cmd" class="layui-hide" lay-filter="terminalPendingCMD"></table>
+</div>
+<script>
+  layui.use('table', function () {
+    var table = layui.table;
+    var cmdOpts = {
+      id: 'id_pending_cmd'
+      , elem: "#id_pending_cmd"
+      , height: 375
+      , text: {none: gettext('none_data')}
+      , request: {
+        pageName: 'page',
+        limitName: 'page_size'
+      }
+      , page: {
+        layout: ['count', 'prev', 'page', 'next', 'limit']
+        , limit: 50
+        , limits: [20, 50, 80, 100, 200]
+        , groups: 1
+      }
+      , cols: [[
+        {field: 'terminal_sn', title: "{% trans 'terminal_field_sn' %}", width: "120"}
+        ,{field: 'terminal_alias', title: "{% trans 'terminal_field_alias' %}", width: "120"}
+        ,{field: 'content', title: "{% trans 'command_field_content' %}", width: "200"}
+        ,{field: 'commit_time', title: "{% trans 'command_field_commit_time' %}", width: "160"}
+        ,{field: 'transfer_time', title: "{% trans 'command_field_transferTime' %}", width: "160"}
+      ]]
+      , url: '/iclock/api/pendingcommands/'
+      , where: {terminal:{{ obj }}, return_value__exact: ""}
+    };
+    table.render(cmdOpts);
+  })
+</script>

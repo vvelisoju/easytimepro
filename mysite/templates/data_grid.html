@@ -1,0 +1,183 @@
+{% load iclock_tags common xadmin_tags %}
+{% load i18n %}
+{% block content_title %}
+{% endblock %}
+<!--suppress HtmlFormInputWithoutLabel, JSUnusedAssignment, ES6ModulesDependencies -->
+<style>
+  .layui-layer-page.layui-layer-grim .layui-layer-content {
+    overflowX: hidden !important;
+    overflowY: hidden !important;
+    height: auto !important;
+    min-height: 400px !important;
+  }
+</style>
+{% block content_body %}
+  <div id="tab_{{ model_name }}">
+    {% block filter_bar %}
+      <div id="{{ model_name }}_navbar" class="navbar-collapse collapse" style="display: flex !important;">
+        <ul class="boot-nav navbar-boot-nav" style="display: inline-flex;">
+           {% view_block 'nav_bookmark' %}
+          {% view_block 'nav_menu' %}
+          <div id="{{ model_name }}_apply_filters" class="navbar-btn pull-left hide-xs layui-hide filters-apply"
+               title="{% trans 'filter_title_search' %}">
+            <a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="fa fa-fw fa-search"></i></a>
+          </div>
+          <div id="{{ model_name }}_clear_filters" class="navbar-btn pull-left hide-xs layui-hide filters-clear"
+               title="{% trans 'filter_title_clear' %}">
+            <a href="javascript:void(0)" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-eraser"></i></a>
+          </div>
+
+        </ul>
+      <div id="{{ model_name }}_filters_group" class="filters-group pull-left" style="overflow-y: auto;height:40px;font-size:10pt;"></div>
+      {% block filter_extra_bar %}
+      {% endblock filter_extra_bar %}
+      </div>
+    {% endblock filter_bar %}
+    <div class="layui-fluid" id="{{ model_name }}_fluid">
+      <div class="layui-card">
+        <div class="layui-card-body model-data-grid">
+          {% block main_body %}
+            <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+            <script type="text/html" id="{{ model_name }}_toolbar">
+              <div class="layui-btn-container grid-toolbar" style="">
+                {% block staff_button %}
+                  <ul class="layui-nav"></ul>
+                {% endblock %}
+              </div>
+            </script>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block init_script %}
+  <script>
+    //# sourceURL={{ model_name }}-data_grid.js
+    $(function () {
+      {% block extra_widget %}
+      {% endblock extra_widget %}
+
+      {% block dimension_info %}
+        var dimension = {
+          height: 'auto',
+          width: 'auto',
+          // tuple: (width, height)
+          actions: {}
+        };
+      {% endblock dimension_info %}
+      {% block tab_level_callback %}
+        var callback = { // each item has two categories of call: done and fail, respectively.
+          load: undefined,
+          edit: undefined,
+          delete: undefined,
+          actions: undefined  // general callback for action
+        };
+      {% endblock tab_level_callback %}
+
+
+      {% block valid_form %}
+      {% endblock valid_form %}
+      {% autoescape off %}
+        var model_name = "{{ model_name }}", path = "{{ table_path }}",
+          history_opts = {{ history_opts|py_dict_to_js }},
+          is_history = history_opts && history_opts.length;
+
+          path = is_history
+               ? concatenate_url(path, {
+            'history_opts': JSON.stringify(history_opts)
+          })
+               : concatenate_url(path, {
+            'except_limit': get_except_limit(model_name)
+          });
+
+        $.ajax({
+          type: 'GET',
+          url: path,
+          dataType: 'json',
+          success: function (res) {
+
+            var model_name = res.model_name, app_label = res.app_label
+            if (path.indexOf('history_opts')!=-1){
+                model_name = 'history_opts_' + model_name ; 
+            }
+              data_grid_opts = {
+                model: model_name, app: app_label, csrf_token: "{{ csrf_token }}",
+                dimension: dimension, callback: callback, is_history: is_history,
+                history_contenttype: res.history_contenttype,
+                del_url: res.del_url, edit_url: res.edit_url, export_url: res.export_url, history_url: res.history_url,
+                disabled_fields_url: res.disabled_fields_url,
+                disabled_action_panel_east: res.disabled_action_panel_east || [],
+                table_id: "id_grid_" + model_name, table_elem: "#id_grid_" + model_name,
+                toolbar_id: "#" + model_name + "_toolbar", fluid_container: "#" + model_name + "_fluid",
+                grid_opts: res['grid_opts'], actions: res['action_choices'],
+                all_perms: res['all_perms'], init_disabled_fields: res['disabled_fields'],
+                use_backend_hidden_fields: res['use_backend_hidden_fields']
+              };
+
+            {% block grid_opt_update %}
+              data_grid_opts[data_grid_opts.table_id] = data_grid_opts[data_grid_opts.table_id] || {};
+              data_grid_opts[data_grid_opts.table_id]['init_where'] = {};
+            {% endblock %}
+            $('#tab_' + model_name).dataGrid(data_grid_opts);
+            {% block table_resize_js %}{% endblock table_resize_js %}
+            {% block actionAfterTableRender %}{% endblock actionAfterTableRender %}
+          }, error: function (msg) {
+            console.error(msg);
+          }
+        });
+      {% endautoescape %}
+    });
+    {% block function_js %}
+    {% endblock function_js %}
+  </script>
+{% endblock %}
+{% block row_event %}
+  {% if all_perms.change or all_perms.delete %}
+    <script type="text/html" id="model_{{ model_name }}_toolbar">
+      {% if all_perms.change %}
+       <a class="layui-btn layui-btn-xs" lay-event="edit" title="{% trans 'model_action_modify' %}"><i class="fa fa-fw fa-pencil-square-o"></i></a>
+      {% endif %}
+      {% if all_perms.delete %}
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" title="{% trans 'permission_verboseName_delete' %}"><i class="fa fa-fw fa-trash-o"></i></a>
+      {% endif %}
+    </script>
+  {% endif %}
+{% endblock row_event %}
+{% block addition_script %}
+{% endblock %}
+<script>
+var url_params = undefined;
+function MapViewFuntion(id, type) {
+    var map_id = id;
+    var url = '/att/get_location_mappointer/?id=' + map_id +'&type='+type;
+    layer.open({
+        title: 'Map View',
+        type: 2,
+        area: ['615px', '615px'],
+        fixed: false, //不固定
+        maxmin: false,
+        btn: ['Cancel'],
+        content: url,
+        yes: function (index, layero) {
+            layer.close(index);
+        }
+    });
+}
+function TextViewFuntion(id,type) {
+    var text_id = id;
+    var url = '/att/get_location_textpointer/?id=' + text_id +'&type='+type;
+    layer.open({
+        title: 'Text View',
+        type: 2,
+        area: ['615px', '615px'],
+        fixed: false, //不固定
+        maxmin: false,
+        btn: ['Cancel'],
+        content: url,
+        yes: function (index, layero) {
+            layer.close(index);
+        }
+    });
+}
+</script>

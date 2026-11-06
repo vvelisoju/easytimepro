@@ -1,0 +1,384 @@
+{% extends 'layui/edit.html' %}
+{% load i18n static common %}
+{% block edit_form %}
+  <form class="layui-form data-form" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      {% with adminform.form as f %}
+        <div class="layui-form-item">
+          {% layui_inline f.start_date %}
+          {% layui_inline f.end_date %}
+        </div>
+        <div class="layui-form-item">
+          {% layui_inline f.workflow_code %}
+          {% layui_inline f.workflow_name %}
+        </div>
+        <div class="layui-form-item" onmouseover="requesterFunc()";>
+          {% layui_inline f.content_type %}
+          <div class="layui-inline field-before">
+            <label class="layui-form-label"
+                   for="id_type">{% trans 'workflowEngine_field_employee' %}</label>
+            <div class="layui-input-inline ">
+              <input name="type" id="id_type" lay-filter="id_type" value="" class="layui-input" style="cursor:pointer;" readonly>
+              <div id="employee_origin">
+                <script>
+                  var employee_origin_name = '';
+                  var globalEmpSelected = [];
+                  {% if f.instance.id %}
+                    {% for item in f.instance.employee.all %}
+                      $('#employee_origin').append('<input type="hidden" name="employee" value="{{ item.id }}"/>');
+                        var emp_disaply_name = ""
+                        {% if item.first_name %}
+                            emp_disaply_name = '{{ item.first_name }}'
+                        {% elif item.last_name %}
+                            emp_disaply_name = '{{ item.last_name }}'
+                        {% else %}
+                            emp_disaply_name = '{{ item.emp_code }}'
+                        {% endif %}
+                      employee_origin_name = emp_disaply_name + ',' + employee_origin_name;
+                      var emp_item = {
+                        id: '{{ item.id }}',
+                        emp_code: '{{ item.emp_code }}',
+                        {% if item.first_name %}
+                          first_name: '{{ item.first_name }}',
+                        {% else %}
+                          first_name: '',
+                        {% endif %}
+                        {% if item.last_name %}
+                          last_name: '{{ item.last_name }}',
+                        {% else %}
+                          last_name: '',
+                        {% endif %}
+                        {% if item.department.dept_name %}
+                          dept_name: '{{ item.department.dept_name }}',
+                        {% else %}
+                          dept_name: '',
+                        {% endif %}
+                      }
+                      globalEmpSelected.push(emp_item)
+                    {% endfor %}
+                  {% endif %}
+                  $('#id_type')[0].value = employee_origin_name.slice(0,-1);
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex;">
+            <div class="layui-form-item" id="hide-position-field" onmouseover="positionFunc()";>
+{#          {% if f.instance.id %}#}
+{#            {% for item in f.instance.employee.all %}#}
+{#            {% empty %} //when edit an engine whitout position and dept, there will be no class of field-applicant_position#}
+{#              {% layui_inline f.applicant_position %}#}
+{#              {% layui_inline f.departments %}#}
+{#            {% endfor %}#}
+{#          {% else %}#}
+            {% layui_inline f.applicant_position %}
+{#          {% endif %}#}
+            </div>
+            <div class="layui-form-item" id="hide-department-field" onmouseover="departmentFunc()";>
+                {% layui_inline f.departments %}
+            </div>
+        </div>
+        <div class="layui-hide">{{ f.workflow_node }}</div>
+    <script>
+        $.ajax({
+          success: function(){
+              if(employee_origin_name){
+                  $('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("disabled", "disabled");
+                  $('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("value", "");
+                  $('#{{ model_name }}_edit_form input[name^="applicant_position"]').attr("value", "");
+                  $('#{{ model_name }}_edit_form input[id^="departments"]').attr("disabled", "disabled")
+                  $('#{{ model_name }}_edit_form input[id^="departments"]').attr("value", "")
+                  $('#{{ model_name }}_edit_form input[name^="departments"]').attr("value", "");
+              }
+          }
+        })
+    </script>
+      {% endwith %}
+    </div>
+    <div class="layui-form-item work-flow" style="width: 750px">
+      <table id="id_wf_workflownode" class="layui-hide" lay-filter="wf_workflownode"></table>
+      <br>
+      <div>
+        <strong style="font-size: 13px;">
+            <span style="color: red;">*Note:  </span>
+            <div style="margin-left: 40px;">
+                <p>{% trans 'only_one_option_among_requester_department_and_position_can_be_selected' %}</p>
+            </div>
+        </strong>
+    </div>
+      <script type="text/html" id="wf_workflownode_toolbar">
+        <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit">Add Node</i></a>
+      </script>
+    </div>
+    <script type="text/html" id="barDemo">
+      <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del" style="color:#E84C3D;background-color:transparent">
+        <i class="fa fa-fw fa-trash-o"></i>
+      </a>
+    </script>
+    <script>
+      layui.use(['table', 'form', 'element', 'layer'], function () {
+        var table = layui.table, layer = layui.layer, form = layui.form;
+        var nodes = $("#id_workflow_node").val();
+        var data = null;
+        if (nodes != "") {
+          data = JSON.parse(nodes);
+        } else {
+          data = [];
+        }
+        var node_table = table.render({
+          id: "id_wf_workflownode"
+          , elem: "#id_wf_workflownode"
+          , toolbar: "#wf_workflownode_toolbar"
+          , defaultToolbar: []
+          , canSelectRow: 'false'
+          //LAY_CHECKED: true,
+          , autowidth: 'true'
+          , height: '220'
+          , even: true
+          , cols: [
+            [
+              {field: 'node_code', title: "{% trans 'node_code' %}", edit: 'text', sort: true, width: 200,
+                templet: d => d.node_code ? d.node_code.replace(/</g, '&lt;').replace(/>/g, '&gt;') : ''},
+              {field: 'node_name', title: "{% trans 'node_name' %}", edit: 'text', width: 200,
+                templet: d => d.node_name ? d.node_name.replace(/</g, '&lt;').replace(/>/g, '&gt;') : ''},
+              {field: 'operation', title: "{% trans 'Operation' %}", toolbar: '#barDemo'}
+            ]
+          ]
+          , url: ""
+          , data: data
+          , text: {
+            none: gettext("none_data")
+          }
+          , loading: true
+          , page: false
+        });
+        if (globalEmpSelected.length) {
+          {#$('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("disabled", "disabled")#}
+          {#$('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("value", "")#}
+          {#$('#{{ model_name }}_edit_form input[name^="applicant_position"]').attr("value", "");#}
+          {#$('#{{ model_name }}_edit_form input[id^="departments"]').attr("disabled", "disabled")#}
+          {#$('#{{ model_name }}_edit_form input[id^="departments"]').attr("value", "")#}
+          {#$('#{{ model_name }}_edit_form input[name^="departments"]').attr("value", "");#}
+        }
+        table.on('edit(wf_workflownode)', function (obj) {
+          var value = obj.value
+            , data = obj.data
+            , field = obj.field;
+          $("#id_workflow_node").val(JSON.stringify(table.cache['id_wf_workflownode']));
+        });
+        table.on('toolbar(wf_workflownode)', function (obj) {
+          var oldData = table.cache["id_wf_workflownode"];
+          var table_cache = new Array();
+          for (var i = 0; i < oldData.length; i++) {
+            if (oldData[i].length != 0) {
+              table_cache.push(table.cache['id_wf_workflownode'][i]);
+            }
+          }
+              var valid = true;
+              if (table_cache.length > 0){
+                for (var i = 0; i < table_cache.length; i++) {
+                  if (table_cache[i].node_name == '' || table_cache[i].node_code == '') {
+                    valid = false;
+                    layer.alert(
+                      gettext('workflow_node_is_required'),
+                      {
+                        title: gettext('system_exception')
+                        , icon: 5
+                        , btn: gettext('btn_confirm')
+                      }
+                    );
+                  }
+                }
+              }
+              if (valid) {
+                var data = {"node_code": '', "node_name": '', "operation": ''};
+                table_cache.push(data);
+              }
+              node_table.reload({data: table_cache});
+    });
+        table.on('tool(wf_workflownode)', function (obj) {
+          var data = obj.data;
+          switch (obj.event) {
+            case 'set_approver':
+              break;
+            case 'set_notifier':
+              if (data.approver_type == 0) {
+                layer.alert("{% trans 'notifier_type_no_selected' %}", {title: gettext('layer_title')});
+              } else {
+                console.log(data.notifier_type);
+              }
+              obj.update({notifier: 2222222});
+              break;
+            case 'del':
+              layer.confirm("{% trans 'are_you_sure_to_delete_the_selected_node' %}", {title:'Prompt', btn: [gettext('btn_confirm'), gettext('btn_cancel')]}, function (index) {
+                obj.del();
+                var table_cache = new Array();
+                for (var i = 0; i < table.cache['id_wf_workflownode'].length; i++) {
+                  if (table.cache['id_wf_workflownode'][i].length != 0) {
+                    table_cache.push(table.cache['id_wf_workflownode'][i]);
+                  }
+                }
+                $("#id_workflow_node").val(JSON.stringify(table_cache));
+                layer.close(index);
+              });
+              break;
+            default:
+              break;
+          }
+        });
+        form.on('select(approver_type)', function (data) {
+          var elem = $(data.elem);
+          var trElem = elem.parents('tr');
+          var tableData = table.cache['id_wf_workflownode'];
+          tableData[trElem.data('index')][elem.attr('name')] = data.value;
+          $.ajax({
+            url: "{% url 'biotime:node_receiver' %}?receiver=" + data.value,
+            type: "GET",
+            dataType: "html",
+            success: function (callback) {
+              $("td[data-field=approver] .layui-table-cell").html(callback);
+            }
+          });
+        });
+        form.on('select(notifier_type)', function (data) {
+          var elem = $(data.elem);
+          var trElem = elem.parents('tr');
+          var tableData = table.cache['id_wf_workflownode'];
+          tableData[trElem.data('index')][elem.attr('name')] = data.value;
+        });
+
+        function selectedEmployees(){
+          $.ajax({
+              url: "/personnel/filter_resign_employee/",
+              type: "GET",
+              dataType: "html",
+              success: function(pannel) {
+                  var selected_ops = {
+                      id: "id-employee-frame-selected"
+                      , elem: "#id-employee-frame-selected"
+                      , cellMinWidth: 80
+                      , height: '340'
+                      , width: '485'
+                      , page: false
+                      , text: {
+                        none: gettext("none_data")
+                      }
+                      , cols: [[
+                        {field: 'id', title: "ID", width: "40", type: "checkbox"}
+                        , {field: 'emp_code', title: "{% trans 'emp_field_employeeCode' %}", width: "80", sort: true}
+                        , {field: 'first_name', title: "{% trans 'emp_field_firstName' %}", width: "120", sort: true}
+                        , {field: 'last_name', title: "{% trans 'emp_field_lastName' %}", width: "120", sort: true}
+                        , {field: 'dept_name', title: "{% trans 'employee_field_department' %}", width: "120"}
+                      ]]
+                  }
+                  var selectedTB = table.render(selected_ops);
+                  $("#selected_count").html(globalEmpSelected.length);
+                  table.reload(selectedTB.config.id, {data: globalEmpSelected, limit: globalEmpSelected.length, initSort: 'id'});
+              }
+          })
+        }
+
+        $('#id_type').click(function () {
+          $.ajax({
+              url: "/personnel/filter_resign_employee/",
+              type: "GET",
+              dataType: "html",
+              success: function(pannel) {
+                  layer.open({
+                      type: 1,
+                      title: "{% trans 'workflowEngine_field_employee' %}",
+                      zIndex: 1003,
+                      area: ['1080px', '550px'],
+                      content: pannel,
+                      btn: [gettext("btn_confirm"), gettext("btn_cancel")],
+                      success: function(layero, index){
+                        // 将globalEmpSelected初始化到selected table
+                        for (i = 0; i < globalEmpSelected.length; i++) {
+                            globalEmpSelected[i]['LAY_CHECKED'] = true;
+                        }
+                        var selected_table = table.reload('id-employee-frame-selected', {data: globalEmpSelected});
+                        // 将globalEmpSelected初始化到unselect table
+                        var unselect = table.reload('id-employee-frame-unselect');
+                      },
+                      yes: function(index, layero){
+                        var name_val = $('#employeeFrameSelectedDetailContainer').val()
+                        $('#id_type')[0].value = name_val;
+                        $('#employee_origin').html('')
+                        globalEmpSelected = layui.table.checkStatus('id-employee-frame-selected').data;
+                        for (i = 0; i < globalEmpSelected.length; i++) {
+                            $('#employee_origin').append('<input type="hidden" name="employee" value="' + globalEmpSelected[i].id + '"/>');
+                        }
+                        if (globalEmpSelected.length) {
+                          var emp_name = ""
+                          for(i = globalEmpSelected.length-1; i >= 0; i--){
+                              var emp_name_or_id = ""
+                              if(globalEmpSelected[i].first_name){
+                                  emp_name_or_id = globalEmpSelected[i].first_name
+                              }
+                              else if(globalEmpSelected[i].last_name){
+                                  emp_name_or_id = globalEmpSelected[i].last_name
+                              }
+                              else{
+                                  emp_name_or_id = globalEmpSelected[i].emp_code
+                              }
+                              if(i === 0){
+                                  emp_name += emp_name_or_id;
+                              }
+                              else{
+                                  emp_name += emp_name_or_id+",";
+                              }
+                          }
+                          $('#id_type')[0].value = emp_name
+                          $('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("disabled", "disabled")
+                          $('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("value", "")
+                          $('#{{ model_name }}_edit_form input[name^="applicant_position"]').attr("value", "");
+                          $('#{{ model_name }}_edit_form input[id^="departments"]').attr("disabled", "disabled")
+                          $('#{{ model_name }}_edit_form input[id^="departments"]').attr("value", "")
+                          $('#{{ model_name }}_edit_form input[name^="departments"]').attr("value", "");
+                        } else {
+                          $('#{{ model_name }}_edit_form input[id^="applicant_position"]').removeAttr("disabled")
+                          $('#{{ model_name }}_edit_form input[id^="departments"]').removeAttr("disabled")
+                        }
+                        layer.close(index)
+                      }
+                  });
+                  selectedEmployees();
+              },
+              error: function(response) {
+                  console.log(response.responseText);
+              }
+          })
+        });
+      });
+    </script>
+    <script>
+        function departmentFunc() {
+            if ($('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("value") === "" && globalEmpSelected.length === 0){
+                $('#{{ model_name }}_edit_form input[id^="departments"]').attr("disabled", false);
+            }
+            else{
+                $('#{{ model_name }}_edit_form input[id^="departments"]').attr("disabled", "disabled");
+            }
+        }
+        function positionFunc() {
+            if (globalEmpSelected.length === 0 && $('#{{ model_name }}_edit_form input[id^="departments"]').attr("value") === ""){
+                $('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("disabled", false);
+            }
+            else{
+                $('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("disabled", "disabled");
+            }
+        }
+        function requesterFunc(){
+            if($('#{{ model_name }}_edit_form input[id^="applicant_position"]').attr("value") === "" && $('#{{ model_name }}_edit_form input[id^="departments"]').attr("value") === ""){
+                $('#{{ model_name }}_edit_form input[id^="id_type"]').attr("disabled", false);
+            }
+            else{
+                $('#{{ model_name }}_edit_form input[id^="id_type"]').attr("disabled", true);
+            }
+        }
+    </script>
+  </form>
+
+{% endblock %}

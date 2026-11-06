@@ -1,0 +1,39 @@
+{% load i18n static common %}
+<div style="padding: 10px;height: 160px;width: 360px">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-form-item">
+          {% layui_inline form.form.emp %}
+          {% layui_inline form.form.emp_code %}
+        </div>
+    </form>
+</div>
+<script>
+  layui.use(['form', 'jquery'], function () {
+    var form = layui.form;
+    var listenEmp = function(val){
+        switch (val) {
+          case '0':
+              $(".field-emp_code label span").remove();
+              var span_req ="<span class='required'>*</span>";
+              $(".field-emp_code label").append(span_req);
+              document.getElementById("id_emp_code").disabled=false;
+              break;
+          case '1':
+              $(".field-emp_code span").remove();
+              document.getElementById("id_emp_code").disabled=true;
+              break;
+          default:
+              break;
+      }
+      $(".layui-layer-btn0").click(function () {
+                if (document.getElementById("id_emp_code").value == ''){
+                  $("#id_emp_code").css({'border':'solid', 'border-color': 'red', 'border-width': '1px', 'border-radius': '2px'})
+                }
+              });
+    };
+    form.on('select(emp)', function(data){
+      listenEmp(data.value)
+    });
+  });
+</script>

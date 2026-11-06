@@ -1,0 +1,50 @@
+{% extends 'data_grid.html' %}
+{% block grid_opt_update %}
+    var cols = res['grid_opts']['cols'][0];
+    var payload = {};
+    cols.forEach(function(col, index){
+        payload[col.field] = col;
+    });
+    var photoRender = function(val){
+        return function(d){
+            if(d[val] != ''){
+                var timestamp = new Date().getTime();
+                var split_val = d[val].split('/');
+                var company_id = split_val[0];
+                var photo = split_val[1];
+                var value_encoded = company_id + '/' + encodeURIComponent(photo)
+                return '<div style="width: 100px"><img style="width: 100px;height: 120px" src="/files/photo/'+value_encoded+'.jpg?_='+timestamp+'" onerror="this.onerror=null;this.src=\'/files/photo/nophoto.gif\';"></div>';
+            }else{
+                return '<div style="width: 100px"><img style="width: 100px;height: 120px"></div>';
+            }
+        }
+    };
+    var bioPhotoRender = function(val){
+        return function(d){
+            if(d[val] != ''){
+                var timestamp = new Date().getTime();
+                var split_val = d[val].split('/');
+                var head_path = split_val[0];
+                var company_id = split_val[1];
+                var photo = split_val[2];
+                var value_encoded = head_path + '/' + company_id + '/' + encodeURIComponent(photo);
+                return '<div style="width: 100px"><img style="width: 100px;height: 120px" src="/files/'+value_encoded+'?_='+timestamp+'" onerror="this.onerror=null;this.src=\'/files/photo/nophoto.gif\';"></div>';
+            }else{
+                return '<div style="width: 100px"><img style="width: 100px;height: 120px"></div>';
+            }
+        }
+    };
+    $.extend(payload.id, {fixed:false})
+    $.extend(payload.hasd, {fixed:false})
+    $.extend(payload.employee, {fixed:false})
+    $.extend(payload.undefined, {fixed:false})
+    $.extend(payload.enroll_sn, {unresize:true, width:140})
+    $.extend(payload.user_photo, {unresize:true, width:110, templet:photoRender('user_photo')})
+    $.extend(payload.bio_photo, {unresize:true, width:110, templet:bioPhotoRender('bio_photo')})
+    $.extend(payload.commit_time, {unresize:true, width:160})
+    $.extend(payload.approval_time, {unresize:true, width:160})
+    $.extend(payload.approval_state, {unresize:true, width:120})
+
+    data_grid_opts.disabled_action_panel_east = ['exports'];
+
+{% endblock %}

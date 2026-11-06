@@ -1,0 +1,394 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_access"
+msgstr "التحكم فى الوصول"
+
+msgid "menu_group_access_control"
+msgstr "التحكم فى الوصول"
+
+msgid "menu_group_access_control_device"
+msgstr "جهاز"
+
+msgid "menu_access_timezone"
+msgstr "الفترة الزمنية"
+
+msgid "menu_access_holiday"
+msgstr "اجازة"
+
+msgid "menu_access_groups"
+msgstr "مجموعات"
+
+msgid "menu_access_combination"
+msgstr "مزيج"
+
+msgid "menu_access_privilege"
+msgstr "صلاحية"
+
+msgid "acc_timezone"
+msgstr "منطقة زمنية"
+
+msgid "acc_holiday"
+msgstr "اجازة"
+
+msgid "acc_groups"
+msgstr "مجموعة"
+
+msgid "acc_combination"
+msgstr "مزيج"
+
+msgid "acc_privilege"
+msgstr "صلاحية"
+
+msgid "accPrivilege_field_area"
+msgstr "منطقة"
+
+msgid "accPrivilege_field_employee"
+msgstr "موظف"
+
+msgid "accPrivilege_field_group"
+msgstr "مجموعة"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "وضع الفترة الزمنية"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "الفترة الزمنية 1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "الفترة الزمنية 2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "الفترة الزمنية 3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "وضع التحقق"
+
+msgid "clone_to_area"
+msgstr "نسخ الى منطقة"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "نطاق رقم الفترة الزمنية (1-50)"
+
+msgid "accTimezone_field_no"
+msgstr "رقم الفترة الزمنية"
+
+msgid "accTimezone_field_name"
+msgstr "اسم الفترة الزمنية"
+
+msgid "accTimezone_field_remark"
+msgstr "ملاحظة"
+
+msgid "accTimezone_field_start"
+msgstr "وقت البداية"
+
+msgid "accTimezone_field_end"
+msgstr "وقت النهاية"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "لايمكن ان يتم مسح الفترة الزمنية الافتراضية"
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "من فضلك ادخل 0-50"
+
+msgid "accTimezone_no_repeat"
+msgstr "رقم الفترة الزمنية موجود بالفعل"
+
+msgid "accHoliday_field_timezone"
+msgstr "الفترة الزمنية"
+
+msgid "accHoliday_field_holiday"
+msgstr "اسم الاجازة"
+
+msgid "accGroup_field_no"
+msgstr "رقم المجموعة"
+
+msgid "accGroup_field_name"
+msgstr "اسم المجموعة"
+
+msgid "accGroup_field_include_holiday"
+msgstr "شامل الاجازة"
+
+msgid "default_group_can_not_be_removed"
+msgstr "لايمكن ان يتم مسح المجموعة الافتراضية"
+
+msgid "accGroup_field_no_maxValue"
+msgstr "نطاق رقم المجموعة(1-99)"
+
+msgid "group_no_repeat"
+msgstr "رقم المجموعة موجود بالفعل"
+
+msgid "move_to_group_1"
+msgstr "انتقل الى المجموعة 1"
+
+msgid "current_group_1"
+msgstr "حاليا المجموعة 1"
+
+msgid "accCombination_field_no"
+msgstr "رقم المزيج"
+
+msgid "accCombination_field_name"
+msgstr "اسم المزيج"
+
+msgid "accCombination_field_group1"
+msgstr "موظف من مجموعة"
+
+msgid "accCombination_field_group2"
+msgstr "موظف من مجموعة"
+
+msgid "accCombination_field_group3"
+msgstr "موظف من مجموعة"
+
+msgid "accCombination_field_group4"
+msgstr "موظف من مجموعة"
+
+msgid "accCombination_field_group5"
+msgstr "موظف من مجموعة"
+
+msgid "accCombination_field_remark"
+msgstr "ملاحظة"
+
+msgid "combination_1_need_at_least_group"
+msgstr "المزيج 1 يحتاج مجموعه على الاقل"
+
+msgid "accPrivilege_action_adjust"
+msgstr "تعديل"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "قم بتعديل صلاحيات التحكم فى الوصول"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "قم بتعديل صلاحيات التحكم فى الوصول"
+
+msgid "select_none_timezone"
+msgstr "يجب ان يتم اختيار فترة زمنية"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "فرد"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "مجموعة"
+
+msgid "op_menu_group_groupMenu"
+msgstr "قائمة المجموعة"
+
+msgid "door_action_open"
+msgstr "فتح الباب"
+
+msgid "door_action_openHelpText"
+msgstr "فتح الباب"
+
+msgid "door_action_openDescription"
+msgstr "فتح الباب"
+
+msgid "door_action_cancelAlarm"
+msgstr "الغاء التحذير"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "الغاء التحذير"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "الغاء التحذير"
+
+msgid "accTerminal_field_doorName"
+msgstr "اسم الباب"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "تأخير غلق الباب"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "من فضلك ادخل 0-10"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "تأخير استشعار الباب"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "من فضلك ادخل من 1-255"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "نوع مستشعر الباب"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "تأخير تحذير الباب"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "عدد المحاولات للتحذير"
+
+msgid "terminal_name"
+msgstr "اسم الجهاز"
+
+msgid "menu_access_terminal"
+msgstr "جهاز"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "الاجازات الصالحة"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "الفترة الزمنيه ل NC"
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "الفترة الزمنية ل NO"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "التحذير الصوتى"
+
+msgid "duress_options"
+msgstr "خيارات البصمة بالاكراه"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "خاصية البصمة بالاكراه"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "التحذير عند تشابه 1:1"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "التحذير عند تشابه 1:N"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "التحذير عند الرقم السرى"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "تأخير التحذير"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "نظام منع المرور"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "اتجاة الباب"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "مفتوح طبيعى(NO)"
+
+msgid "door_sensor_type_normalClose"
+msgstr "مغلق طبيعى(NC)"
+
+msgid "door_sensor_type_none"
+msgstr "لا شئ"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "من فضلك ادخل 0-999"
+
+msgid "retry_times_to_alarm_none"
+msgstr "لا شئ"
+
+msgid "anti_passback_mode_no"
+msgstr "الغاء منع المرور"
+
+msgid "anti_passback_mode_in"
+msgstr "منع المرور دخول"
+
+msgid "anti_passback_mode_out"
+msgstr "منع المرور خروج"
+
+msgid "anti_passback_mode_inOut"
+msgstr "منع المرور دخول/خروج"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "الغاء منع المرور المحافظه على حالة الباب"
+
+msgid "door_direction_none"
+msgstr "لا شئ"
+
+msgid "door_direction_out"
+msgstr "خروج"
+
+msgid "door_direction_in"
+msgstr "دخول"
+
+msgid "anti_passback_setup"
+msgstr "اعدادات منع المرور"
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "هل انت واثق من فتح الجهاز\\الاجهزة"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "هل انت واثق من الغاء التحذير من الجهاز\\الاجهزة"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "تحقق من الوضع بواسطة RS485"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "بصمة الاصبع"
+
+msgid "485_verificationOption_Password"
+msgstr "الرقم السرى"
+
+msgid "485_verificationOption_Card"
+msgstr "كارت"
+
+msgid "door_action_setParameter"
+msgstr "اعداد المعلمه"
+
+msgid "door_action_setParameterHelpText"
+msgstr "اعداد معلمة التحكم فى الوصول"
+
+msgid "door_action_setParameterDescription"
+msgstr "اعداد معلمة التحكم فى الوصول"
+
+msgid "menu_group_payroll_calculation"
+msgstr "حساب"
+
+msgid "the_amount_need_lager_than_zeron"
+msgstr "لا يمكن ان تقل القيمه عن صفر"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "المنطقة الزمنيه مستخدمه لا يمكن مسحها"
+
+msgid "used_group_can_not_be_removed"
+msgstr "المجموعه مستخدمه لا يمكن مسحها"
+
+msgid "permission_verboseName_acc"
+msgstr "التحكم فى الوصول"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "الفترة الزمنية"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "الاجازة"
+
+msgid "permission_verboseName_accGroups"
+msgstr "المجموعات"
+
+msgid "permission_verboseName_accCombination"
+msgstr "المزيج"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "الصلاحية"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr "خيار التحكم بالدخول"
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "خاصية بصمة الطوارئ"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "إعدادات خاصية عدم الدخول لأكثر من مرة بدون تسجيل الخروج"
+
+msgid "menu_access_terminalCommand"
+msgstr "أوامر الجهاز"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "الفترة الزمنية رقم بين 0 - 50"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "القيمة بالثواني بين 0 - 999"
+
+msgid "accTerminal_field_pushTime"
+msgstr "وقت الإرسال"

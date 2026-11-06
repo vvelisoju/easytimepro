@@ -1,0 +1,41 @@
+{% load i18n %}
+{% spaceless %}
+<div {% if temp_hide_field %}style="display: none;"{% endif %}>
+  {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
+  {% if fieldset.description %}
+    <div class="description">{{ fieldset.description|safe }}</div>
+  {% endif %}
+  {% for line in fieldset %}
+    <div class="layui-form-item{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} layui-hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
+      {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+      {% if not line.fields|length_is:'1' %}
+        <div class="layui-inline">{% endif %}
+      {% for field in line %}
+        {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+        {% if field.is_checkbox %}
+          {{ field.field }}{{ field.label_tag }}
+        {% else %}
+          {{ field.label_tag }}
+          <div class="layui-input-inline {% if field.field.is_hidden %} layui-hidden {% endif %}">
+            {% if field.is_readonly %}
+              <div class="readonly">{{ field.contents }}</div>
+            {% else %}
+              {{ field.field }}
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if field.field.help_text %}
+          <a href="#" onclick="tipsPrompt(this);" class="fa fa-info-circle fa-lg fa-fw" aria-hidden="true" edbox
+             data-box-target="#{{ field.field.name }}_tips" style="padding-top: 8px;"
+             title="{{ field.field.help_text|escape }}"></a>
+          <div class="target-box" style="display: none;">
+            <div id="{{ field.field.name }}_tips" style="display: block;">{{ field.field.help_text|escape }}</div>
+          </div>
+          {#          <div class="layui-form-mid layui-word-aux"></div>#}
+        {% endif %}
+      {% endfor %}
+      {% if not line.fields|length_is:'1' %}</div>{% endif %}
+    </div>
+  {% endfor %}
+</div>
+{% endspaceless %}

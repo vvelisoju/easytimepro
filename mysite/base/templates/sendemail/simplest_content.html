@@ -1,0 +1,11 @@
+{% load i18n %}
+Dear {{ email_receiver }},
+{% autoescape off %}
+<h1>{{ email_title }}</h1>
+<p>{{ email_content }}</p>
+
+{% trans "Thanks for using our product!" %}<br>
+<hr>
+BioTime Email Bot<br>
+{% blocktrans %}The {{ company_name }} team{% endblocktrans %}
+{% endautoescape %}

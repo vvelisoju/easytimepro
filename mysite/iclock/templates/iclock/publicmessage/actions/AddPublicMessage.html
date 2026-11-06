@@ -1,0 +1,87 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div style="padding: 10px;min-height: 150px;max-height: 650px;">
+  <form id="publicmessage_addpublicmessage" action="" class="layui-form action-form" lay-filter="addPublicMessageForm">
+    {% csrf_token %}
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label"
+               for="id_terminal">{% trans 'publicMessage_field_terminal' %}<span class="required">*</span></label>
+        <div class="layui-input-inline" id="terminal_div">
+        </div>
+      </div>
+    </div>
+    <div class=layui-form-item" style="margin-top: 10px;">
+      <div class="layui-inline">
+        <lable class="layui-form-label" for="id_start_time">{% trans 'publicMessage_field_startTime' %}<span class="required">*</span></lable>
+        <div class="layui-input-inline">
+          <input type="text" name="start_time" style="margin-top: 2px;"
+                 class="layui-input layui-datetime"
+                 id="id_start_time" autocomplete="off" required placeholder="">
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item field-duration" style="margin-top: 18px;">
+        <lable class="layui-form-label"
+               for="id_duration">{% trans 'publicMessage_field_duration' %}<span class="required">*</span>
+        </lable>
+        <div class="layui-input-inline">
+          <input type="number" name="duration" min="1"  max= "9999"  class="layui-input" oninput="validity.valid||(value='');" value="60" required="" lay-verify="duration"
+                 id="id_duration">
+        </div>
+        <div class="layui-input-inline" style="margin-top: 3px">{% trans 'front_end_minutes' %}
+        </div>
+    </div>
+    <div class="layui-form-item field-content" style="margin-top: 18px;">
+        <lable class="layui-form-label"
+               for="id_content">{% trans 'publicMessage_field_content' %}<span class="required">*</span>
+        </lable>
+        <div class="layui-input-inline">
+          <textarea name="content" required class="layui-input layui-textarea"
+                    id="id_content"></textarea>
+        </div>
+    </div>
+  </form>
+  </div>
+{% endautoescape %}
+
+<script>
+  var t = new Date();
+  data_stamp = t.getTime();
+  $("#terminal_div").append("<div id=" + "terminal" + data_stamp + " class='layui-form-select tree-select'></div>");
+
+  function loadTreeData() {
+      var terminal_name = 'terminal', terminal_stamp = data_stamp;
+      var urlTerminal = "/base/terminal_tree_data/";
+
+      $.ajax({
+        url: urlTerminal
+        , type: "GET"
+        , dataType: "json"
+        , success: function (response, xhr) {
+          terminal_data = response;
+          $('#terminal' + data_stamp).zTreeSelect({
+            model: terminal_name,
+            name: terminal_name,
+            stamp: terminal_stamp,
+            input_type: "checkbox",
+            data: terminal_data
+          });
+        }
+        , error: function (xhr, error, e) {
+        }
+      });
+    }
+
+  layui.use(['form'], function () {
+    var form = layui.form;
+    $('input.layui-datetime').each(function () {
+      var laydate = layui.laydate;
+      laydate.render({elem: this, type: 'datetime'});
+    });
+    loadTreeData();
+    form.render();
+  })
+
+</script>

@@ -1,0 +1,32 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block search_form_init %}
+  var date = new Date();
+  var cur = moment(new Date());
+  var _start = cur.startOf('year').format('YYYY');
+  var fullStartOfYear = cur.startOf('year').format('YYYY-MM-DD');
+  var fullEndOfYear = cur.endOf('year').format('YYYY-MM-DD');
+
+  var startDate = laydate.render({
+    elem: '#{{ model_name }}-start-date',
+    type: 'year',
+    value: _start,
+  });
+  $.extend(opts, {where: {start_date: fullStartOfYear, end_date: fullEndOfYear}});
+{% endblock %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [{{ cols|safe }}]
+        ,method: "get"
+        ,url: "/att/api/yearlySummaryReport/"
+    });
+{% endblock %}
+{% block search_report_date %}
+  var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+  startDate = moment(startDate).startOf('year').format('YYYY-MM-DD');
+  var endDate = moment(startDate).endOf('year').format('YYYY-MM-DD');
+{% endblock %}
+
+{% block search_form_enddate %}
+{% endblock %}
+

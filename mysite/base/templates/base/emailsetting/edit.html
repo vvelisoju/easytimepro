@@ -1,0 +1,100 @@
+{% extends 'abstract_edit.html' %}
+{% load i18n static %}
+{% load common %}
+{% block edit_form %}
+  {{ block.super }}
+  <div id="{{ model_name }}_edit_form" rel='{{ form_url }}' class="layui_body page-form">
+    <form class="layui-form data-form" action="" method="post" >
+      {% csrf_token %}
+      <fieldset class="layui-elem-field layui-field-title" style="margin-top: 45px;">
+        <legend>{% trans 'email_server_setting' %}</legend>
+      </fieldset>
+      {% with adminform.form as f %}
+        <div class="email-server-setting">
+          {{ f.email_server_address|layui_item_field }}
+          {{ f.email_server_port|layui_item_field }}
+          {{ f.email_sender_account|layui_item_field }}
+          {{ f.email_sender_password|layui_item_field }}
+          {{ f.email_use_tls|layui_item_field }}
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+          <legend>{% trans 'alert_setting' %}</legend>
+        </fieldset>
+        <div class="alert-setting">
+          {{ f.alert_late_count|layui_item_field }}
+          {{ f.alert_early_count|layui_item_field }}
+          {{ f.alert_absent_count|layui_item_field }}
+          {{ f.alert_send_frequency|layui_item_field }}
+          {{ f.alert_weekly_send_day|layui_item_field }}
+          {{ f.alert_send_day|layui_item_field }}
+          {{ f.alert_send_time|layui_item_field }}
+          {{ f.alert_attendance_abnormal|layui_item_field }}
+        </div>
+
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+          <legend>{% trans 'prompt_setting' %}</legend>
+        </fieldset>
+        <div class="prompt-setting">
+          {{ f.prompt_review|layui_item_field }}
+        </div>
+
+        <div class="editformbtn">
+          <input type="button" class="layui-btn" lay-submit lay-filter="form-submit" value="{% trans 'ok' %}">
+        </div>
+      {% endwith %}
+    </form>
+  </div>
+{% endblock edit_form %}
+
+{% block page_script %}
+  {{ block.super }}
+  <script>
+    $(function () {
+
+      layui.use(['form', 'laydate'], function () {
+        var form = layui.form,
+          laydate = layui.laydate,
+          action_url = $("#{{ model_name }}_edit_form").attr('rel').replace('page', 'edit');
+        form.render();
+
+        $("form.layui-form input.layui-datetime").each(function () {
+          laydate.render({elem: this, type: 'datetime'});
+        });
+        $("form.layui-form input.layui-date").each(function () {
+          laydate.render({elem: this, type: 'date'});
+        });
+        $("form.layui-form input.layui-time").each(function () {
+          laydate.render({elem: this, type: 'time'});
+        });
+        form.on('submit(form-submit)', submit_callback(action_url));
+        var mapping = {
+          '0': ['alert_send_day'],
+          '1': ['alert_weekly_send_day',],
+        };
+
+        function hide_irrelevant_field(method) {
+          if (method === undefined) {
+            method = $('#id_alert_send_frequency').val();
+          }
+          for (var m in mapping) {
+            mapping[m].forEach(function (elem/*, index*/) {
+              if (method === m) {
+                $('.layui-form-item.field-' + elem).show();
+              } else {
+                $('.layui-form-item.field-' + elem).hide();
+              }
+            })
+          }
+        }
+
+        hide_irrelevant_field();
+        form.on('select', function (data) {
+          if (data.elem.name === 'alert_send_frequency') {
+            hide_irrelevant_field(data.value);
+          }
+        });
+
+      });
+    });
+  </script>
+{% endblock page_script %}

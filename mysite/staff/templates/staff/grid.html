@@ -1,0 +1,108 @@
+{% load i18n static %}
+<script src="{% static "js/staff.actions.js" %}?v=1.0.1"></script>
+<table id="{{ model_name }}_table" class="layui-hide" lay-filter="{{ model_name }}"></table>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container grid-toolbar"></div>
+</script>
+<script>
+    layui.use(['table', 'form', 'laypage'], function () {
+        var table = layui.table;
+        var form = layui.form;
+        var $ = layui.jquery;
+        {% autoescape off %}
+            var options = {{ grid_opts }};
+            var table_id = "{{ model_name }}_grid";
+            var actions = {{ action_choices }};
+        {% endautoescape %}
+        $.extend(options, {
+            id: table_id
+            , elem: "#{{ model_name }}_table"
+            , toolbar: "#toolbarDemo"
+            , defaultToolbar: []
+            , cellMinWidth: 80
+            , height: 'full-140'
+            , loading: true
+            , page: {
+                layout: ['prev', 'page', 'next', 'limit', 'count', 'refresh', 'skip']
+            }
+            , where: {
+                csrfmiddlewaretoken: "{{csrf_token}}"
+            }
+        });
+        var i = table.render(options);
+        var r = {
+            filter: {title: "Columns", layEvent: "columns", icon: "layui-icon-cols"},
+            exports: {title: "Export", layEvent: "export", icon: "layui-icon-export"},
+        }, d = [];
+        layui.each(['filter', 'exports'], function (e, t) {
+            var i = r[t];
+            d.push('<div class="layui-inline" title="' + i.title + '" lay-event="' + i.layEvent + '">' +
+                    '<i class="layui-icon ' + i.icon + '"></i>' + i.title + '</div>')
+            $(".layui-table-tool .layui-table-tool-self").html(d.join(""))
+        });
+        table.on('toolbar({{ model_name }})', function (obj) {
+            //var checkStatus = table.checkStatus(obj.config.id);
+            var i = $(this), c = obj.config, u = function(e){
+                var l = $(e.list), n = $('<ul class="layui-table-tool-panel"></ul>');
+                n.html(l), i.find(".layui-table-tool-panel")[0] || i.append(n), form.render(), n.on("click", function (e) {
+                  layui.stope(e)
+                }), e.done && e.done(n, l)
+            };
+            switch (obj.event) {
+                case 'columns':
+                    u({
+                        list: function(){
+                            var lis = [];
+                            layui.each(c.cols, function (e, t) {
+                                layui.each(t, function (t, i) {
+                                    i.field && "normal" == i.type && lis.push('<li><input type="checkbox" name="' + i.field + '" data-key="' + i.key + '" data-parentkey="' + (i.parentKey || "") + '" lay-skin="primary" ' + (i.hide ? "" : "checked") + ' title="' + i.title + '" lay-filter="header_cols"></li>')
+                                });
+                            });
+                            return lis.join("");
+                        }()
+                        ,done: function(){
+                            form.on("checkbox(header_cols)", function (e) {
+                                var i = $(e.elem), l = this.checked, n = i.data("key"), r = i.data("parentkey");
+                                layui.each(c.cols, function (e, t) {
+                                    layui.each(t, function (t, i) {
+                                        if (e + "-" + t === n) {
+                                            var d = i.hide;
+                                            i.hide = !l, $('.layui-table-box *[data-key="' + c.index + "-" + n + '"]')[l ? "removeClass" : "addClass"]("layui-hide")
+                                        }
+                                    })
+                                })
+                            });
+                        }
+                    });
+                    break;
+                case 'export':
+                    u({
+                        list: function(){
+                            return [ '<li data-type="pdf">{% trans "pdf_export" %}</li>', '<li data-type="xlsx">{% trans "xlsx_export" %}</li>','<li data-type="csv">{% trans "csv_export" %}</li>'].join("")
+                        }()
+                        ,done: function(e, i){
+                          i.on("click", function () {
+                            var export_type = $(this).data("type");
+                            var stamp = new Date().getTime();
+                              $.ajax({
+                                  url: "{{ export }}",
+                                  data: {stamp: stamp, export_type: export_type, csrfmiddlewaretoken: "{{csrf_token}}"},
+                                  type: "POST",
+                                  dataType: "json",
+                                  success: function(callback){
+                                    var newWindow = window.open("_blank");
+                                    console.log(callback)
+				                    newWindow.location = "{{ export }}?stamp="+callback['stamp'];
+                                  }
+                              });
+                          })
+                        }
+                    });
+                    break;
+            };
+        });
+        {% block action_render %}
+          $('div.grid-toolbar').actions({table: table, tableId: table_id, gridOpts: options, actions: actions});
+        {% endblock %}
+    })
+</script>

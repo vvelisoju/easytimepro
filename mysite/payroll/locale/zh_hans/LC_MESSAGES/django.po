@@ -1,0 +1,529 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_hans\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "薪资"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "人员信息"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "人员信息"
+
+msgid "menu_group_payroll_formula"
+msgstr "公式"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "扣款公式"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "异常公式"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "加款公式"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "请假公式"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "加班公式"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "额外金额"
+
+msgid "menu_payroll_extraincrease"
+msgstr "额外加款"
+
+msgid "menu_payroll_extradeduction"
+msgstr "额外扣款"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "薪资架构"
+
+msgid "menu_payroll_salarystructure"
+msgstr "薪资架构"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "借款"
+
+msgid "menu_payroll_empLoan"
+msgstr "借款"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "薪资预支"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "薪资预支"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "报销"
+
+msgid "menu_payroll_reimbursement"
+msgstr "报销"
+
+msgid "menu_group_payroll_calculation"
+msgstr "计算"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "薪资计算"
+
+msgid "menu_group_payroll_report"
+msgstr "报表"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "薪资架构"
+
+msgid "menu_payroll_increase_report"
+msgstr "加款项"
+
+msgid "menu_payroll_deduction_report"
+msgstr "扣款项"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "薪资详情"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "考勤报表"
+
+msgid "menu_payroll_setting"
+msgstr "参数配置"
+
+msgid "paroll_mode_monthly"
+msgstr "每月"
+
+msgid "paroll_type_cash"
+msgstr "现金"
+
+msgid "paroll_type_check"
+msgstr "支票"
+
+msgid "paroll_type_bank_transfer"
+msgstr "银行转账"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "人员信息"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "支付周期"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "支付周期"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "银行名"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "银行账号"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "人员编号"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "姓名"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "姓氏"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "代理编号"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "代理账号"
+
+msgid "payroll_model_deductionFormula"
+msgstr "扣款公式"
+
+msgid "deductionFormula_field_name"
+msgstr "名称"
+
+msgid "deductionFormula_field_formula"
+msgstr "公式"
+
+msgid "deductionFormula_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "异常公式"
+
+msgid "exceptionFormula_field_name"
+msgstr "名称"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "异常类型"
+
+msgid "exceptionFormula_field_formula"
+msgstr "公式"
+
+msgid "exceptionFormula_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_increasementFormula"
+msgstr "加款公式"
+
+msgid "increasementFormula_field_name"
+msgstr "名称"
+
+msgid "increasementFormula_field_formula"
+msgstr "公式"
+
+msgid "increasementFormula_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_leaveFormula"
+msgstr "请假公式"
+
+msgid "leaveFormula_field_name"
+msgstr "名称"
+
+msgid "leaveFormula_field_category"
+msgstr "请假类型"
+
+msgid "leaveFormula_field_formula"
+msgstr "公式"
+
+msgid "leaveFormula_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "加班公式"
+
+msgid "overtimeFormula_field_name"
+msgstr "名称"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "加班类型"
+
+msgid "overtimeFormula_field_formula"
+msgstr "公式"
+
+msgid "overtimeFormula_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_extraIncrease"
+msgstr "额外加款"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "新增"
+
+msgid "extraIncrease_field_employee"
+msgstr "人员"
+
+msgid "extraIncrease_field_amount"
+msgstr "金额"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "发放时间"
+
+msgid "extraIncrease_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_extraDeduction"
+msgstr "额外扣款"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "新增"
+
+msgid "extraDeduction_field_employee"
+msgstr "人员"
+
+msgid "extraDeduction_field_amount"
+msgstr "金额"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "发放时间"
+
+msgid "extraDeduction_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_salarystructure"
+msgstr "薪资架构"
+
+msgid "salaryStructure_field_amount"
+msgstr "基本薪资"
+
+msgid "salaryStructure_field_formula"
+msgstr "薪资公式"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "生效日期"
+
+msgid "salaryStructure_field_remark"
+msgstr "备注"
+
+msgid "salaryStructure_field_formulas"
+msgstr "公式"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "薪资预支"
+
+msgid "salaryAdvance_field_amount"
+msgstr "金额"
+
+msgid "salaryAdvance_field_time"
+msgstr "发放时间"
+
+msgid "salaryAdvance_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_Reimbursement"
+msgstr "报销"
+
+msgid "Reimbursement_field_amount"
+msgstr "金额"
+
+msgid "Reimbursement_field_time"
+msgstr "报销时间"
+
+msgid "Reimbursement_field_file"
+msgstr "报销凭证"
+
+msgid "Reimbursement_field_remark"
+msgstr "备注"
+
+msgid "payroll_model_empLoan"
+msgstr "借款"
+
+msgid "empLoan_field_employee"
+msgstr "人员编号"
+
+msgid "empLoan_field_loanAmount"
+msgstr "借款金额"
+
+msgid "empLoan_field_loanTime"
+msgstr "借款时间"
+
+msgid "empLoan_field_refundCycle"
+msgstr "还款周期"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "每期应还金额"
+
+msgid "empLoan_field_clean_time"
+msgstr "还清时间"
+
+msgid "empLoan_field_remark"
+msgstr "备注"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "新增"
+
+msgid "payroll_action_addRmb"
+msgstr "新增"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "新增"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "新增"
+
+msgid "reimbursement_file"
+msgstr "报销凭证"
+
+msgid "report_column_overtimeFormula1"
+msgstr "加班等级1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "加班等级2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "加班等级3"
+
+msgid "report_column_increaseFormula"
+msgstr "加款公式"
+
+msgid "report_column_deductionFormula"
+msgstr "扣款公式"
+
+msgid "report_column_lateFormula"
+msgstr "迟到公式"
+
+msgid "report_column_absentFormula"
+msgstr "缺勤公式"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "早退公式"
+
+msgid "payroll_model_monthlysalary"
+msgstr "每月薪资报表"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "基本薪资"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "生效日期"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "计算日期"
+
+msgid "monthlySalary_field_ot1"
+msgstr "加班等级1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "加班等级2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "加班等级3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "迟到"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "早退"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "缺勤"
+
+msgid "monthlySalary_field_increase"
+msgstr "固定加款"
+
+msgid "monthlySalary_field_deduction"
+msgstr "固定扣款"
+
+msgid "monthlySalary_field_leave"
+msgstr "请假"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "额外加款"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "额外扣款"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "总借款金额"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "还款金额"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "未还金额"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "每期应还金额"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "借款金额"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "预支金额"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "预支扣款"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "报销"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "总加款金额"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "总扣款金额"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "总薪资"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "基本薪资不能小于0！"
+
+msgid "payroll_attParamUnit"
+msgstr "考勤参数单位"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}:人员 {1} 存在有效的薪资架构."
+
+msgid "receipt_file_format_constraints"
+msgstr "只支持 jpg/jpeg/png/bmp 图片文件"
+
+msgid "1_period"
+msgstr "1期"
+
+msgid "2_periods"
+msgstr "2期"
+
+msgid "3_periods"
+msgstr "3期"
+
+msgid "4_periods"
+msgstr "4期"
+
+msgid "5_periods"
+msgstr "5期"
+
+msgid "6_periods"
+msgstr "6期"
+
+msgid "7_periods"
+msgstr "7期"
+
+msgid "8_periods"
+msgstr "8期"
+
+msgid "9_periods"
+msgstr "9期"
+
+msgid "10_periods"
+msgstr "10期"
+
+msgid "11_periods"
+msgstr "11期"
+
+msgid "12_periods"
+msgstr "12期"
+
+msgid "deductionformula_addform_note"
+msgstr "提示：此扣款每月生效"
+
+msgid "increasementformula_addform_note"
+msgstr "提示：此加款每月生效"
+
+msgid "caleulator_title"
+msgstr "计算器"
+
+msgid "caleulator_basicSalary"
+msgstr "基本薪资"
+
+msgid "caleulator_scheduleDays"
+msgstr "排班天数"
+
+msgid "caleulator_schedulePeriod"
+msgstr "排班周期"
+
+msgid "caleulator_check"
+msgstr "检查"
+
+msgid "report_column_total_increase_formula"
+msgstr "加款总公式"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "加款总公式名称"
+
+msgid "report_column_total_increase_expression"
+msgstr "加款表达式"
+
+msgid "report_column_total_deduction_formula"
+msgstr "扣款总公式"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "扣款总公式名称"
+
+msgid "report_column_total_deduction_expression"
+msgstr "扣款表达式"

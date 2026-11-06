@@ -1,0 +1,617 @@
+{% load i18n %}
+<div class="db-migrate-form">
+  <form id="id_dbMigrateForm" action="" class="layui-form" lay-filter="dbMigrateForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"></div>
+          <table>
+            <tbody>
+            <tr>
+              <td>
+                <div class="layui-card-body">
+                  <div class="layui-form-item">
+                    <div class="layui-inline">
+                      <label class="layui-form-label">{% trans 'dataMigrate_front_migrateFrom' %}
+                        <span class="required">*</span></label></label>
+                      <div class="layui-input-block" lay-filter="migrateCategory" id="id_migrate_category">
+                        <input name="migrate_software_type" type="radio" value="1"
+                               title="ZKTimeweb2.0" checked>
+                        <input name="migrate_software_type" type="radio" value="2"
+                               title="Biotime7.0">
+                        <input name="migrate_software_type" type="radio" value="3"
+                               title="WDMS5">
+                        <input name="migrate_software_type" type="radio" value="4"
+                               title="WDMS6" >
+                        <input name="migrate_software_type" type="radio" value="5"
+                               title="ZKTime.net3.0">
+                      <input name="migrate_software_type" type="radio" value="6"
+                             title="BioTime8.0/easyTimePro/easyWDMS">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" >
+                    <div class="layui-inline">
+                      <label for="id_migrate_database"
+                             class="layui-form-label">{% trans 'dataMigrate_front_databaseType' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-block">
+                        <select name="migrate_database_type" id="id_migrate_database"
+                                class="layui-input"
+                                lay-filter="migrateDatabase">
+                          <option name='migrate_database' value="sqlserver_ado">{% trans 'db_sqlserver' %}</option>
+                          <option name='migrate_database' value="mysql">{% trans 'db_mysql' %}</option>
+                          <option name='migrate_database' value="oracle" id="id_database_oracle">{% trans 'db_oracle' %}</option>
+                          <option name='migrate_database' value="postgresql" id="id_database_psql">{% trans 'db_postgresql' %}</option>
+                          <option name='migrate_database' value="sqlite" id="id_database_slt">{% trans 'db_sqlite' %}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline">
+                      <label for="id_database_addr"
+                             class="layui-form-label">{% trans 'dataMigrate_front_databaseAddress' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_addr" name="migrate_database_address"
+                               value=""
+                               autocomplete="off"
+                               placeholder="" lay-verify="" class="layui-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline">
+                      <label for="id_database_port"
+                             class="layui-form-label">{% trans 'dataMigrate_front_databasePort' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_port" name="migrate_database_port"
+                               value=""
+                               autocomplete="off" lay-verify="" class="layui-input">
+                      </div>
+                        <div class="layui-form-mid layui-word-aux">{% trans "enter_valid_port_number" %}</div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline">
+                      <label for="id_database_name"
+                             class="layui-form-label">{% trans 'dataMigrate_front_databaseName' %}<span
+                        class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_name" name="migrate_database_name"
+                               value=""
+                               autocomplete="off" placeholder="" lay-verify=""
+                               class="layui-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline">
+                      <label for="id_database_user"
+                             class="layui-form-label">{% trans 'dataMigrate_front_databaseUser' %}<span
+                        class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_user" name="migrate_database_user"
+                               value=""
+                               autocomplete="off" placeholder="" lay-verify=""
+                               class="layui-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-form-item" data-name="normal">
+                    <div class="layui-inline" >
+                      <label for="id_database_password"
+                             class="layui-form-label">{% trans 'dataMigrate_front_databasePassword' %}<span
+                        class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="password" id="id_database_password"
+                               name="migrate_database_password"
+                               value="" autocomplete="off" placeholder="" lay-verify=""
+                               class="layui-input">
+                      </div>
+                        <span id="isvisible" onclick="adjustvisible()">
+                            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                  </div>
+                    </div>
+                    <div class="layui-form-item" data-name="sqlite">
+                    <div class="layui-inline">
+                      <label for="id_database_sqlite"
+                             class="layui-form-label">{% trans 'dataMigrate_front_sqliteFile' %}
+                        <span class="required">*</span></label>
+                      <div class="layui-input-inline">
+                        <input type="text" id="id_database_sqlite" name="migrate_sqlite_database"
+                               value=""
+                               autocomplete="off"
+                               placeholder="" lay-verify="" class="layui-input">
+                      </div>
+                    </div>
+                    </div>
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">{% trans 'dataMigrate_front_migrateFields' %}</label>
+                    <div class="layui-input-block" lay-filter="migrateFields">
+                      <input type="checkbox" name="migrate_field" id="id_area" value="area"
+                             title={% trans "dataMigrate_front_area_or_zone" %}>
+                      <input type="checkbox" name="migrate_field" id="id_department"
+                             value="department"
+                             title={% trans "menu_psnl_department" %}>
+                      <input type="checkbox" name="migrate_field" id="id_position"
+                             value="position"
+                             title={% trans "menu_psnl_position" %}>
+                      <input type="checkbox" name="migrate_field" id="id_employee"
+                             value="employee"
+                             title={% trans "menu_psnl_employee" %}>
+                      <input type="checkbox" name="migrate_field" id="id_device" value="device"
+                             title={% trans "menu_device_terminal" %}>
+{#                      <input type="checkbox" name="migrate_field" id="id_fingerprint"#}
+{#                             value="fingerprint"#}
+{#                             title={% trans "bio_templateType_fingerprint" %}>#}
+{#                      <input type="checkbox" name="migrate_field" id="id_facetemp"#}
+{#                             value="facetemp"#}
+{#                             title={% trans "bio_templateType_face" %}>#}
+{#                      <input type="checkbox" name="migrate_field" id="id_biotemp" value="biotemp"#}
+{#                             title={% trans "menu_device_terminalBioData" %}>#}
+                      <input type="checkbox" name="migrate_field" id="id_transaction"
+                             value="transaction"
+                             title={% trans "menu_device_transaction" %} lay-filter="migrateTrans">
+                    </div>
+                  </div>
+                  <div class="layui-form-item" id="trans_period_div">
+                    <label class="layui-form-label">{% trans 'dataMigrate_front_transactionPeriod' %}</label>
+                    <div class="layui-input-block" lay-filter="transPeriod">
+                      {% trans "dataMigrate_front_startTime" %}:<input type="text" name="migrate_transaction_start" id="id_trans_start"
+                                        class='layui-input-time'>
+                      {% trans "dataMigrate_front_endTime" %}:<input type="text" name="migrate_transaction_end" id="id_trans_end"
+                                      class="layui-input-time">
+                    </div>
+                  </div>
+                  <div class="layui-form-item">
+                    <label for="id_database_name"
+                           class="layui-form-label">{% trans 'dataMigrate_front_migrateStatus' %}</label>
+                    <div class="layui-input-block" lay-filter="transPeriod">
+                      <input type="text" id="id_migrate_status" name="migrate_status"
+                             value="{{ migrate_process }}" style="cursor:default;" readonly="readonly">
+                        <r><button id="id_clean_cache"  lay-submit="" lay-filter="cleanCache">
+                        {% trans 'dataMigrate_cache_clean' %}</button> &nbsp; &nbsp;
+                          <button id="id_refresh_status"  lay-submit="" lay-filter="refreshStatus">
+                        {% trans 'dataMigrate_refresh_status' %}</button>
+                            <p style="font-family:times;color:grey">{% trans 'dataMigrate_cache_clean_help' %}</p>
+                        </r>
+                    </div>
+                  </div>
+              </td>
+              <td>
+                <table id="id_status_table" class="layui-table layui-hide" lay-filter="status_table">
+                  <tr>
+                    <fieldset class="layui-elem-field layui-field-title" style="margin: 50px 0 30px;">
+                    </fieldset>
+                    <div class="layui-progress" lay-showpercent="true">
+                      <div class="layui-progress-bar" lay-percent="20%"></div>
+                    </div>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+            <hr>
+          <div class="layui-form-item" id="migrate_form">
+            <div class="layui-input-block">
+              <button id="id_testconn_btn" class="layui-btn" lay-submit="" lay-filter="migrateTest">
+                {% trans 'dataMigrate_front_btn_testConnect' %}
+              </button>
+              <button id="id_migrate_btn" class="layui-btn layui-hide" lay-submit="" lay-filter="migrateExc">
+                {% trans 'dataMigrate_front_btn_Migrate' %}
+              </button>
+              <button id="id_clear_conn_btn" class="layui-btn" lay-submit="" lay-filter="clear_conn" onclick="cleartextboxes();">
+                {% trans 'dataMigrate_front_btn_clearConnectInfo' %}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+    function cleartextboxes() {
+        $("#id_database_addr").val("");
+        $("#id_database_port").val("");
+        $("#id_database_name").val("");
+        $("#id_database_user").val("");
+        $("input:password").val("");
+    }
+</script>
+<script>
+    // This logic is for the end user can not select end date less than the start date
+    var $ = layui.$;
+        var laydate = layui.laydate;
+        var nowTime = new Date().valueOf();
+        var max = null;
+        var start = laydate.render({
+        elem: '#id_trans_start',
+        type: 'datetime',
+        btns: ['clear', 'now', 'confirm'],
+        done: function(value, date){
+            endMax = end.config.max;
+            end.config.min = date;
+            end.config.min.month = date.month -1;
+                },
+            var end = laydate.render({
+                elem: '#id_trans_end',
+                type: 'date',
+                done: function(value, date) {
+                    if ($.trim(value) == '') {
+                        var curDate = new Date();
+                        date = {
+                            'date': curDate.getDate(),
+                            'month': curDate.getMonth() + 1,
+                            'year': curDate.getFullYear()
+                        };
+                    }
+                    start.config.max = date;
+                    start.config.max.month = date.month - 1;
+                },
+                change: function (value, date, endDate) {
+                    var timestamp2 = Date.parse(new Date(value));
+                    timestamp2 = timestamp2 / 1000;
+                    end.config.min = timestamp2;
+                    end.config.min.month = date.month - 1;
+                }
+
+            })
+        });
+</script>
+<script>
+    function initPage() {
+        var db_type = $('#id_migrate_database').val();
+        var isTrans = $("input:checkbox[id='#id_transaction']").is(':checked');
+        var mCategory = $('#id_migrate_category input[name="migrate_software_type"]:checked').val();
+        if (mCategory ==5){
+                $("#id_position").attr("disabled", "disabled");
+                $("#id_device").attr("disabled", "disabled");
+                $("#id_database_slt").removeAttr("disabled");
+            }else if(mCategory == 3){
+                $("#id_position").attr("disabled", "disabled");
+                $("#id_database_slt").attr("disabled", "disabled");
+            }else {
+            $("#id_database_slt").attr("disabled", "disabled");
+           }
+        if(isTrans == true){
+          $("#trans_period_div").show();
+        }else{
+          $("#trans_period_div").hide();
+        }
+      if(db_type=='sqlite'){
+          pageSwitch(true)
+      }else{
+          pageSwitch(false)
+      }
+  }
+  layui.use(['form', 'layer', 'laydate', 'element'], function () {
+    var maxHeight = window.innerHeight - 93 - Math.floor(Math.random() * -5 + 5)
+      , edit_form = $("#id_dbMigrateForm");
+    if (edit_form.closest('.layui-layer').length === 0) {
+      edit_form.closest('.layui-tab-item').css({
+        'height': maxHeight,
+        'overflow': 'auto'
+      });
+    }
+    var form = layui.form;
+    var laydate = layui.laydate;
+    var enableBtn = "layui-btn";
+    var unableBtn = "layui-btn layui-btn-disabled";
+    $("form.layui-form input.layui-input-time").each(function () {
+      laydate.render({elem: this, type: 'datetime'});
+    });
+    form.render();
+    $("#id_migrate_category").on('click',function(){
+        var softwareCategory = $('#id_migrate_category input[name="migrate_software_type"]:checked').val();
+        var dboracle = $("#id_database_oracle");
+        var dbpsql = $("#id_database_psql");
+        var dbsqlite = $("#id_database_slt");
+        if(softwareCategory==='3'){
+            dboracle.attr("disabled", "disabled");
+            dbpsql.attr("disabled", "disabled");
+            dbsqlite.attr("disabled", "disabled");
+            $("#id_position").attr("disabled", "disabled");
+        }else if(softwareCategory==='5'){
+            dboracle.attr("disabled", "disabled");
+            dbpsql.removeAttr("disabled");
+            dbsqlite.removeAttr("disabled");
+            $("#id_position").attr("disabled", "disabled");
+            $("#id_device").attr("disabled", "disabled");
+        }else{
+            dboracle.removeAttr("disabled");
+            dbpsql.removeAttr("disabled");
+            dbsqlite.attr("disabled", "disabled");
+            $("#id_position").removeAttr("disabled");
+            $("#id_device").removeAttr("disabled");
+        }
+        form.render();
+    });
+    form.on('select(migrateDatabase)', function (data) {
+        var databaseCategory = data.value;
+        var port = $("#id_database_port");
+        var dbname = $("#id_database_name");
+        var dbuser = $("#id_database_user");
+        var dbpwd = $("#id_database_password");
+        var softwareCategory = $('#id_migrate_category input[name="migrate_software_type"]:checked').val();
+        if(databaseCategory==='postgresql'){
+            pageSwitch(false);
+            if(softwareCategory==='1'){
+                port.val("")
+            }
+            dbname.val("zkeco_db");
+            dbuser.val("postgres");
+            dbpwd.val("suse_zkeco");
+        }else if(databaseCategory==='sqlite'){
+            pageSwitch(true);
+        }else{
+            pageSwitch(false);
+            if(databaseCategory==='sqlserver_ado'){
+                port.val("")
+            }else if(databaseCategory==='mysql'){
+                port.val("")
+            }else{
+                port.val("")
+            }
+            dbname.val("");
+            dbuser.val("");
+            dbpwd.val("");
+        }
+        form.render();
+    });
+    form.on('submit(refreshStatus)', function () {
+      var url = '/base/refresh_migrate_status/';
+      $.ajax({
+        url: url,
+        type: "GET",
+        success: function (res) {
+          $('#id_migrate_status').val(res);
+        }
+      });
+      return false;
+    });
+    
+    form.on('submit(cleanCache)', function(data){
+        var url = "/base/db_migrate/";
+        var csrf = data.field['csrfmiddlewaretoken'];
+        $.ajax({
+            url: url
+            ,type: "POST"
+            , data: { csrfmiddlewaretoken: csrf}
+            ,success: function (response, xhr) {
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+          layer.close(loadIndex);
+        }
+        , error: function (xhr, error, e) {
+          if (xhr.responseJSON.value) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('system_error_please_try_again'), {icon: 5});
+          }
+          layer.close(loadIndex);
+        }
+        });
+        return false;
+    });
+    form.on('submit(migrateExc)', function (data) {
+      var arr = new Array();
+      $("input:checkbox[name='migrate_field']:checked").each(function (i) {
+        arr[i] = $(this).val();
+      });
+      data.field.migrate_field = arr;
+      var csrf = data.field['csrfmiddlewaretoken'];
+      var value = {
+        migrate_software_type: data.field['migrate_software_type']
+        , migrate_database_type: data.field['migrate_database_type']
+        , migrate_database_address: data.field['migrate_database_address']
+        , migrate_database_port: data.field['migrate_database_port']
+        , migrate_database_name: data.field['migrate_database_name']
+        , migrate_database_user: data.field['migrate_database_user']
+        , migrate_database_password: data.field['migrate_database_password']
+        , migrate_database_tables: data.field['migrate_field']
+        , migrate_transaction_start: data.field['migrate_transaction_start']
+        , migrate_transaction_end: data.field['migrate_transaction_end']
+        , migrate_sqlite_database: data.field['migrate_sqlite_database']
+        , exc_migrate: 1
+          ,is_test: 0
+      };
+      var loadIndex = layer.load();
+      var url = "/base/api/dbMigrate/";
+      $.ajax({
+        url: url
+        , type: "POST"
+        , data: {'name': 'db_migrate', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.msg(gettext('backend processing....'), {icon: 6});
+          layer.close(loadIndex);
+        }
+        , error: function (xhr, error, e) {
+          if (xhr.responseJSON.value) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('system_error_please_try_again'), {icon: 5});
+          }
+          layer.close(loadIndex);
+        }
+      });
+      return false;
+    });
+    form.on('submit(migrateTest)', function (data) {
+      var csrf = data.field['csrfmiddlewaretoken'];
+      var value = {
+        migrate_software_type: data.field['migrate_software_type']
+        , migrate_database_type: data.field['migrate_database_type']
+        , migrate_database_address: data.field['migrate_database_address']
+        , migrate_database_port: data.field['migrate_database_port']
+        , migrate_database_name: data.field['migrate_database_name']
+        , migrate_database_user: data.field['migrate_database_user']
+        , migrate_database_password: data.field['migrate_database_password']
+        , migrate_sqlite_database: data.field['migrate_sqlite_database']
+        , exc_migrate: 0
+          ,is_test:1
+      };
+      var loadIndex = layer.load();
+      var url = "/base/api/dbMigrate/";
+      $.ajax({
+        url: url
+        , type: "POST"
+        , data: {'name': 'db_migrate', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.msg(gettext('connection_success'), {icon: 6});
+          $("#id_migrate_btn").removeClass();
+          $("#id_migrate_btn").attr('class', enableBtn);
+          layer.close(loadIndex);
+        }
+        , error: function (xhr, error, e) {
+          if (xhr.responseJSON.value) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('system_error_please_try_again'), {icon: 5});
+          }
+          layer.close(loadIndex);
+        }
+      });
+      return false;
+    });
+    form.on('submit(clear_conn)', function (data) {
+      var loadIndex = layer.load();
+      $.ajax({
+        url: '/base/api/dbMigrate/clear_conn/'
+        , type: "GET"
+        , success: function (response, xhr) {
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+          $("form").find('input[type="text"]').each(function(){
+              $(this).val("");});
+          $('input:checkbox[name="migrate_field"]:checked').each(function() {
+              $(this).prop("checked", false);
+          });
+          $('#id_database_password').val('');
+          $("#id_migrate_btn").attr('class', 'layui-btn layui-hide');
+        }
+      });
+      layer.close(loadIndex);
+      return false;
+    });
+    form.on('checkbox(migrateTrans)', function (obj) {
+      var isTrans = document.getElementById("id_transaction").checked;
+      if (isTrans == true) {
+        $("#trans_period_div").show();
+      } else {
+        $("#trans_period_div").hide();
+        $("#id_trans_start").val('');
+        $("#id_trans_end").val('');
+      }
+    });
+    $(function () {
+      var apiUrl = '/base/api/dbMigrate/?name=db_migrate';
+      $.ajax({
+        url: apiUrl,
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          var vdata = response.data;
+          if (vdata.length > 0) {
+            var val = vdata[0].value;
+            var paramValue = JSON.parse(val);
+            var migrate_fields = paramValue.migrate_database_tables;
+            if (migrate_fields){
+                fillFields(migrate_fields);
+            }else{
+              $("#trans_period_div").hide();
+            }
+            // var isTrans = document.getElementById("id_transaction").checked;
+            delete paramValue['migrate_database_tables'];
+            form.val('dbMigrateForm', paramValue);
+            var status = $("#id_migrate_status").val();
+            if (status === "processing") {
+              $("#id_testconn_btn").removeClass();
+              $("#id_testconn_btn").attr('class', unableBtn);
+            } else {
+              (
+                  $("#id_migrate_btn").removeClass(),
+                  $("#id_migrate_btn").attr('class', enableBtn),
+                  $("#id_migrate_btn").removeClass(),
+                  $("#id_migrate_btn").attr('class', enableBtn)
+              );
+            }
+            form.render();
+          }
+          initPage();
+          form.render();
+        }
+      });
+    });
+  });
+  function pageSwitch(sqlite){
+      if(sqlite){
+           $('div[data-name=normal]').hide();
+           $('div[data-name=sqlite]').show();
+           $('div[data-name=normal]').find("input").each(function () {
+            $(this).val('');
+          });
+      }else{
+          $('div[data-name=normal]').show();
+          $('div[data-name=sqlite]').hide();
+          $('#id_database_sqlite').val('');
+      }
+  }
+  function fillFields(fields) {
+    fields.forEach(function (elem) {
+      switch (elem) {
+        case 'area':
+          $("#id_area").prop('checked', true);
+          break;
+        case 'department':
+          $("#id_department").prop('checked', true);
+          break;
+        case 'position':
+          $("#id_position").prop('checked', true);
+          break;
+        case 'employee':
+          $("#id_employee").prop('checked', true);
+          break;
+        case 'transaction':
+          $('#id_transaction').prop('checked', true);
+          break;
+        case 'device':
+          $('#id_device').prop('checked', true);
+          break;
+        case 'fingerprint':
+          $('#id_fingerprint').prop('checked', true);
+          break;
+        case 'facetemp':
+          $('#id_facetemp').prop('checked', true);
+          break;
+        case 'biotemp':
+          $('#id_biotemp').prop('checked', true);
+          break;
+      }
+    });
+  };
+  var visible = true;
+  function adjustvisible() {
+    var classVis = "fa fa-eye";
+    var classUvis = "fa fa-eye-slash";
+    var input = $("#id_database_password");
+    if (visible) {
+      $("#isvisible").children("i").removeClass();
+      $("#isvisible").children("i").addClass(classVis);
+      visible = false;
+      input.attr("type", "text");
+    } else {
+      $("#isvisible").children("i").removeClass();
+      $("#isvisible").children("i").addClass(classUvis);
+      visible = true;
+      input.attr("type", "password");
+    }
+  }
+</script>

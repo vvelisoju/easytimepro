@@ -1,0 +1,31 @@
+{% load i18n static %}
+<div id="{{ model_name }}_edit_form" style="{% block form_style %}padding: 10px;{% endblock %}">
+    <form class="layui-form data-form" action="" method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+        {% block additional_fields_before %}
+        {% endblock %}
+        <div>
+            {% for fieldset in adminform %}
+              {% include "layui/includes/fieldset.html" %}
+            {% endfor %}
+        </div>
+        {% block additional_fields_after %}
+        {% endblock %}
+    </form>
+</div>
+<script>
+    layui.use(['form', 'laydate'], function() {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        $("form.layui-form input.layui-datetime").each(function(){
+            laydate.render({elem: this, type: 'datetime'});
+        });
+        $("form.layui-form input.layui-date").each(function(){
+            laydate.render({elem: this, type: 'date'});
+        });
+        $("form.layui-form input.layui-time").each(function(){
+            laydate.render({elem: this, type: 'time'});
+        });
+        form.render();
+    });
+</script>

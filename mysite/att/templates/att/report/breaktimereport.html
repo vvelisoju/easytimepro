@@ -1,0 +1,83 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+            {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+            ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+            ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+            ,{field:'gender', width:80, title: "{% trans 'report_column_gender' %}"}
+            ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+            ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+            ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+            ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+            ,{field:'att_date', width:80, title: "{% trans 'report_column_attendanceDate' %}", sort: true}
+            ,{field:'in_time0', title: "{% trans 'report_column_clockInTime' %}"}
+            ,{field:'out_time0', title: "{% trans 'report_column_clockOutTime' %}"}
+            ,{field:'total_time0', title: "{% trans 'report_column_totalTimeDuration' %}"}
+            ,{field:'total_time', title: "{% trans 'report_column_summaryTotalTimeDuration' %}"}
+            ,{field:'timetable', title: "{% trans 'report_column_timetable' %}"}
+        ]]
+        ,url: "/att/api/report/{{ model_name }}/"
+    });
+{% endblock %}
+{% block columns_modify %}
+    var cols = [], urlStr = '/att/breaktimecolumns/';
+    var params = {
+      employees: c.employees
+      ,departments: c.departments
+    }
+    var formParams = $("#{{ model_name }}-search-form").serializeArray();
+    formParams.forEach(function(item){
+      params[item.name] = item.value;
+    });
+    $.ajax({
+        type: "POST",
+        url: urlStr,
+        data: params,
+        cache:false,
+        async:false,
+        dataType: "json",
+        success: function(ret, status){
+            columns = ret.data;
+            cols.push(columns);
+        }
+    });
+    $.extend(opts, {
+        cols: cols
+        ,url: '/att/api/report/{{ model_name }}/'
+        ,where: params
+    });
+    //table.reload(tb.config.id, opts);
+    tb = table.render(opts);
+
+    var export_headers =[];
+    var report_headers = tb.config.cols[0];
+    var url = '/att/api/report/{{ model_name }}/export/?';
+    report_headers.forEach(function (item) {
+        if (item.hide === false)
+            export_headers.push(item.field)
+    })
+    url += 'start_date=' + c.start_date + '&end_date=' + c.end_date
+        +'&export_headers=' + export_headers+'&employees='+c.employees+'&departments='+c.departments;
+    $("#{{model_name}}_fluid" + " div.grid-toolbar").actions({
+        container: "#{{model_name}}_fluid",
+        actionContainer: "#{{model_name}}_fluid" + " div.grid-toolbar",
+        model: "{{model_name}}",
+        table: table,
+        tableId: "id_grid_{{model_name}}",
+        form: form,
+        element: element,
+        curTable: tb,
+        gridOpts: "",
+        actions: "",
+        export_url: url,
+        disabled_fields_url: "",
+        init_disabled_fields: [],
+        dimension: {height: "auto", width: "auto"},
+        disabled_action_panel_east: ["history"],
+        prefer_best_fit_op: 'best_fit',
+        callback: {}
+      });
+{% endblock %}

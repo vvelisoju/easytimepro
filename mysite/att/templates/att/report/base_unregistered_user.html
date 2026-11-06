@@ -1,0 +1,467 @@
+{% load i18n static %}
+{% load common %}
+<style>
+    .column-control {
+        min-width: 156px;
+    }
+</style>
+<div id="{{ model_name }}_fluid" class="layui-fluid">
+  <div class="layui-row layui-col-space15" style="margin-bottom: 0px">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header" style="background-color: #ffffff;">
+          <form id="{{ model_name }}-search-form" action="" class="layui-form fixed-search-form att-report-search-form">
+            {% csrf_token %}
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="" class="layui-form-label">{% trans 'report_searchField_startDate' %}</label>
+                <div class="layui-input-inline">
+                  <input id="{{ model_name }}-start-date" type="text" name="start_date"
+                         lay-verify="required"
+                         autocomplete="off" class="layui-input">
+                </div>
+              </div>
+            {% block search_form_enddate %}
+
+              <div class="layui-inline">
+                <label for="" class="layui-form-label">{% trans 'report_searchField_endDate' %}</label>
+                <div class="layui-input-inline">
+                  <input id="{{ model_name }}-end-date" type="text" name="end_date"
+                         lay-verify="required"
+                         autocomplete="off" class="layui-input">
+                </div>
+              </div>
+                {% endblock %}
+              <div class="layui-inline">
+                <div class="button-3d {{ model_name }}-search" lay-submit=""
+                     lay-filter="{{ model_name }}-search">
+                  <i class="fa fa-fw fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <div class="layui-hide"><input id="{{ model_name }}-selected-emp-container" type="hidden"></div>
+            <div class="layui-hide"><input id="{{ model_name }}SelectedEmployeeDetail" type="hidden"></div>
+          </form>
+        </div>
+        <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+        <script type="text/html" id="{{ model_name }}_toolbar">
+          <div class="layui-btn-container grid-toolbar" style="">
+            <ul class="layui-nav"></ul>
+          </div>
+        </script>
+      </div>
+    </div>
+         <p style="color:black; font-size: 10px;padding-left: 15px;margin-top: 0px;">{% trans 'disclaimer_unregistered_users_reports' %}</p>
+  </div>
+</div>
+<script>
+{% block extra_function %}
+{% endblock extra_function %}
+  $(function () {
+    var opts = {
+      id: "id_grid_{{ model_name }}"
+      , elem: "#id_grid_{{ model_name }}"
+      , cellMinWidth: 80
+      , height: 'full-180'
+      , page: {
+        layout: ['refresh', 'limit', 'prev', 'page', 'next', 'count', 'skip']
+        , curr: 1
+        , limits: [20, 50, 80, 100, 200]
+        , limit: 50
+      }
+      , method: 'post'
+      , toolbar: '#{{ model_name }}_toolbar'
+      , defaultToolbar: []
+      , smartReloadModel: true
+      , request: {
+        pageName: 'page',
+        limitName: 'page_size'
+      }
+      , text: {
+        none: gettext("none_data")
+      }
+      , done: function (res, curr, count) {
+        //this.where = {page:{curr:curr}};
+        setTimeout(function () {
+          $.fn.trigger_action_auto(opts.model, 'fit');
+        }, 10);
+        var height = $("#{{ model_name }}_fluid div.layui-table-view").height();
+        $("#{{ model_name }}-tree-container").height(height);
+        $("#{{ model_name }}-tree").height(height - 5);
+        $("#{{ model_name }}-tree-area").height(height - 5);
+      }
+    };
+    layui.use(['table', 'form', 'element', 'laydate', 'tablePlug'], function () {
+      var table = layui.table, form = layui.form, laydate = layui.laydate, tablePlug = layui.tablePlug,
+        element = layui.element;
+      tablePlug.smartReload.enable(true);
+      form.render();
+      {% block search_form_init %}
+      var date = new Date();
+      var _start = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01';
+      var _end = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-' + leftInsertZero(date.getDate());
+      var startDate = laydate.render({
+        elem: '#{{ model_name }}-start-date',
+        type: 'date',
+        value: _start,
+        max: _end,
+        done: function (value, date) {
+          if (Object.keys(date).length !== 0) {
+            endDate.config.min = {
+              year: date.year,
+              month: date.month - 1,
+              date: date.date
+            };
+          }
+          else {
+            endDate.config.min = {
+                year: 1900,
+                month: 01,
+                date: 01
+            };
+            endDate.config.max = {
+                year: 2099,
+                month: 12,
+                date: 31
+            };
+          }
+        }
+      });
+      var endDate = laydate.render({
+        elem: '#{{ model_name }}-end-date',
+        type: 'date',
+        value: _end,
+        min: _start,
+        done: function (value, date) {
+          if (Object.keys(date).length !== 0) {
+            startDate.config.max = {
+              year: date.year,
+              month: date.month - 1,
+              date: date.date
+            };
+          }
+          else {
+            startDate.config.min = {
+                year: 1900,
+                month: 01,
+                date: 01
+            };
+            startDate.config.max = {
+                year: 2099,
+                month: 12,
+                date: 31
+            };
+          }
+        }
+      });
+      $.extend(opts, {where: {start_date: _start, end_date: _end}});
+      {% endblock %}
+      {% block opts_modify %}
+        $.extend(opts, {});
+      {% endblock %}
+      {% autoescape off %}
+      var colIndex = {};
+      opts.cols[0].forEach(function(col, index){
+        $(document).on("mouseover", `.layui-table-header [data-field='${col.field}']`, function() {
+            var catalogKey = col.field;
+            if (catalog && catalog[catalogKey]) {
+                var titleText = gettext(catalogKey);
+                $(this).attr("title", titleText);
+            } else {
+                var headerText = $(this).text();
+                $(this).attr("title", headerText);
+            }
+        }).on("mousemove", function(e) {
+            $(".layui-table-tips").css("background-color", "black");
+        });
+        colIndex[col.field] = index;
+      });
+      var hidden_fields = {{ hidden_fields }};
+      var ordered_fields = {{ ordered_fields }};
+      hidden_fields.forEach(function(col){
+        var index = colIndex[col];
+        if (opts.cols[0][index] != undefined) {
+            opts.cols[0][index].hide = true;
+        }
+      });
+      if(ordered_fields.length > 0){
+        var cols = [];
+        ordered_fields.forEach(function(col){
+          cols.push(opts.cols[0][colIndex[col]]);
+        });
+        opts.cols[0] = cols
+      }
+      var tb = table.render(opts);
+      var zTree = null;
+      var zTree_area = null;
+      {% block report_export_url %}
+      var url = '/att/api/{{ model_name }}/export/';
+      {% endblock %}
+      var action_opts = {
+        container: "#{{model_name}}_fluid",
+        actionContainer: "#{{model_name}}_fluid" + " div.grid-toolbar",
+        model: "{{model_name}}",
+        table: table,
+        tableId: "id_grid_{{model_name}}",
+        form: form,
+        element: element,
+        curTable: tb,
+        grid_opts: opts,
+        actions: "",
+        export_url: url,
+        column_order_url:'/column_order/',
+        disabled_fields_url: "/disabled_fields/",
+        init_disabled_fields: hidden_fields,
+        dimension: {height: "auto", width: "auto"},
+        disabled_action_panel_east: ["history"],
+        prefer_best_fit_op: 'best_fit',
+        callback: {}
+        , csrf_token: "{{ csrf_token }}"
+      };
+      $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+      {% endautoescape %}
+
+      function refreshReport(searchType) {
+        //opts.page.curr = 1;
+        //table.render(opts);
+        {% block search_report_date %}
+        var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+        var endDate = $("#{{ model_name }}-search-form input[name='end_date']").val();
+        {% endblock %}
+        if(new Date(startDate) > new Date(endDate)){
+            layer.alert(gettext('end_date_can_not_greater_than_start_date'), {
+                title: gettext('system_exception')
+                , icon: 5
+                , btn: gettext('btn_confirm')
+            })
+            return false;
+        }
+        if (startDate === "") {
+          layer.msg(gettext("start_date_is_empty"));
+          return false;
+        }
+        if (endDate === "") {
+          layer.msg(gettext("end_date_is_empty"));
+          return false;
+        }
+        var c = {start_date: startDate, end_date: endDate};
+        if (searchType === 'd') {
+          $("#{{ model_name }}-selected-emp-container").val('-1');
+          $("#{{ model_name }}-employee").val("");
+        }
+
+        var emps = $("#{{ model_name }}-selected-emp-container").val();
+        c["employees"] = emps;
+
+        {% block columns_modify %}
+        tb = table.reload(tb.config.id, {where: c, page: {curr: 1}});
+        $.extend(action_opts, {
+            curTable: tb
+        });
+        $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+        {% endblock %}
+        form.on("submit({{ model_name }}-search)", function (data) {
+          refreshReport('');
+        });
+      }
+      function refreshReportByArea(searchType) {
+        //opts.page.curr = 1;
+        //table.render(opts);
+        refreshReport();
+      {% block search_report_date_area %}
+        var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+        var endDate = $("#{{ model_name }}-search-form input[name='end_date']").val();
+      {% endblock %}
+        if (startDate === "") {
+          layer.msg(gettext("start_date_is_empty"));
+          return false;
+        }
+        if (endDate === "") {
+          layer.msg(gettext("end_date_is_empty"));
+          return false;
+        }
+        var c = {start_date: startDate, end_date: endDate};
+        if (searchType === 'd') {
+          $("#{{ model_name }}-selected-emp-container").val('-1');
+          $("#{{ model_name }}-employee").val("");
+        }
+
+        var emps = $("#{{ model_name }}-selected-emp-container").val();
+        c["employees"] = emps;
+
+        {% block columns_modify1 %}
+        tb = table.reload(tb.config.id, {where: c, page: {curr: 1}});
+        $.extend(action_opts, {
+            curTable: tb
+        });
+        $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+        {% endblock %}
+        form.on("submit({{ model_name }}-search)", function (data) {
+          refreshReportByArea('');
+        });
+      }
+      function onClick(event, treeId, treeNode) {
+        if(treeId == "{{ model_name }}-tree") {
+            zTree.checkNode(treeNode, !treeNode.checked, false, false);
+            refreshReport('d');
+        }else{
+            zTree_area.checkNode(treeNode, !treeNode.checked, false, false);
+            refreshReportByArea('d');
+        }
+      }
+
+      function onCheck(event, treeId, treeNode) {
+        if(treeId == "{{ model_name }}-tree") {
+            refreshReport('d');
+        }else{
+            refreshReportByArea('d');
+        }
+      }
+
+      function department_tree() {
+        var setting = {
+          view: {
+            dblClickExpand: false,
+            showIcon: false,
+            showLine: true
+          },
+          data: {
+            simpleData: {
+              enable: true
+            }
+          },
+          check: {
+            enable: true,
+            chkboxType: {"Y": "", "N": ""},
+            chkStyle: 'checkbox',
+            radioType: "all"
+          },
+          callback: {
+            onClick: onClick
+            , onCheck: onCheck
+          }
+        };
+        $.ajax({
+          url: "{% url 'biotime:personnel_department_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree = $.fn.zTree.init($("#{{ model_name }}-tree"), setting, nodes);
+          }
+        });
+        $.ajax({
+          url: "{% url 'biotime:personnel_area_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree_area = $.fn.zTree.init($("#{{ model_name }}-tree-area"), setting, nodes);
+          }
+        });
+      }
+
+      department_tree();
+
+      $("#{{ model_name }}_search_employee").click(function () {
+        $.ajax({
+          url: "/personnel/filter_resign_employee/"
+          , type: "GET"
+          , dataType: "html"
+          , success: function (response) {
+            layer.open({
+              title: gettext("employee_frame_title")
+              , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+              , area: ['auto', 'auto']
+              , content: response
+              , yes: function (index, layero) {
+                var selectedEmp = $(layero).find("#employee-frame-selected-container").val();
+                var selectedEmpDetail = $(layero).find("#employeeFrameSelectedDetailContainer").val();
+                $("#{{ model_name }}-selected-emp-container").val(selectedEmp);
+                $("#{{ model_name }}-employee").val(selectedEmpDetail);
+                refreshReport('e');
+                refreshReportByArea('e');
+                layer.close(index);
+              }
+            });
+          }
+        });
+      });
+      $("#{{ model_name }}-dept-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        if ($(this).hasClass('selected')) {
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree.setting.check.chkStyle === 'checkbox') {
+              zTree.checkAllNodes(false);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree.getCheckedNodes(true);
+            zTree.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree.checkNode(nodes[0], true, false, true);
+            }
+            zTree.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+            zTree.setting.check.chkboxType = {"Y": "", "N": ""};
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree.setting.check.chkStyle === 'checkbox') {
+              zTree.checkAllNodes(true);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            zTree.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+            zTree.setting.check.chkboxType = {"Y": "s", "N": "s"};
+          }
+        }
+        zTree.refresh();
+      });
+      $("#{{ model_name }}-area-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        if ($(this).hasClass('selected')) {
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree_area.setting.check.chkStyle === 'checkbox') {
+              zTree_area.checkAllNodes(false);
+              refreshReportByArea('d');
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree_area.getCheckedNodes(true);
+            zTree_area.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree_area.checkNode(nodes[0], true, false, true);
+            }
+            zTree_area.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+            zTree_area.setting.check.chkboxType = {"Y": "", "N": ""};
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree_area.setting.check.chkStyle === 'checkbox') {
+              zTree_area.checkAllNodes(true);
+              refreshReportByArea('d');
+            }
+          } else if (name === 'mul') {
+            zTree_area.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+            zTree_area.setting.check.chkboxType = {"Y": "s", "N": "s"};
+          }
+        }
+        zTree_area.refresh();
+      });
+      $("#calculation_show_all").click(function () {
+        table.reload(tb.config.id, {where: {}});
+        department_tree();
+      });
+      form.on("submit({{ model_name }}-search)", function (data) {
+        refreshReport('');
+        refreshReportByArea('');
+      });
+    });
+  });
+</script>
+

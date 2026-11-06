@@ -1,0 +1,144 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>easy TimePro | Admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" sizes="16x16 24x24 32x32 64x64">
+  <style media="all">
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+    html {
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+    body {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #333;
+      background-color: #fff;
+      margin: 0 30px 0 30px;
+      display: block;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+    .logo {
+      text-align: center;
+    }
+    .block-left,
+    .block-right {
+      width: 50%;
+      float: left;
+    }
+    .block-left p {
+      float: left;
+      margin: 1.5em 0;
+    }
+    .block-right a img {
+      float: right;
+      width: 110px;
+      /*border: 1px solid #ccc;*/
+      margin-bottom: 5px;
+    }
+    .block1,
+    .block2,
+    .block3,
+    .block4 {
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+      float: left;
+      width: 100%;
+    }
+    .block4 {
+      text-align: right;
+    }
+     @page {
+      size: auto;   /* auto is the initial value */
+      margin: 0;  /* this affects the margin in the printer settings */
+    }
+  </style>
+</head>
+<body>
+    <div>
+      <div class="block1">
+        <div class="logo">
+          <a href="javascript:void(0);">
+            <img src="cid:logo_cid">
+          </a>
+          <h2>{{company_name1}}</h2>
+        </div>
+      </div>
+
+      <div class="block2">
+        <div class="block-left">
+          <p>
+            Dear <strong>{{emp}}</strong> <br>
+            Employee ID: {{eno}} <br>
+            There are some {{status}} attendance exception: <br>
+          </p>
+        </div>
+        <div class="block-right">
+          <a href="javascript:void(0);">
+            <img src="cid:user_cid"/>
+          </a>
+        </div>
+      </div>
+
+      <div class="block3" style="overflow-x:auto;">
+        <table>
+          <tr>
+            <th>START DATE</th>
+            <td>{{start_date1}}</td>
+          </tr>
+          <tr>
+            <th>END DATE</th>
+            <td>{{end_date1}}</td>
+          </tr>
+          <tr>
+            <th>LATE</th>
+            <td>{{late}}</td>
+          </tr>
+          <tr>
+            <th>EARLY LEAVE</th>
+            <td>{{early_leave}}</td>
+          </tr>
+          <tr>
+            <th>ABSENT</th>
+            <td>{{absent}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="block4">
+        <div class="block-footer">
+          <p>
+            <strong>{{email_signature}}</strong> <br>
+            {{email_signature1}} <br>
+            {{email_signature2}} <br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

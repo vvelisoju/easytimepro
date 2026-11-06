@@ -1,0 +1,394 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_access"
+msgstr "Kiểm soát truy cập"
+
+msgid "menu_group_access_control"
+msgstr "Kiểm soát truy cập"
+
+msgid "menu_group_access_control_device"
+msgstr "Thiết bị"
+
+msgid "menu_access_timezone"
+msgstr "Khoảng thời gian"
+
+msgid "menu_access_holiday"
+msgstr "Ngày lễ"
+
+msgid "menu_access_groups"
+msgstr "Các nhóm"
+
+msgid "menu_access_combination"
+msgstr "Sự phối hợp"
+
+msgid "menu_access_privilege"
+msgstr "Đặc quyền"
+
+msgid "acc_timezone"
+msgstr "Múi giờ"
+
+msgid "acc_holiday"
+msgstr "Ngày lễ"
+
+msgid "acc_groups"
+msgstr "Nhóm"
+
+msgid "acc_combination"
+msgstr "Sự phối hợp"
+
+msgid "acc_privilege"
+msgstr "Đặc quyền"
+
+msgid "accPrivilege_field_area"
+msgstr "Khu vực"
+
+msgid "accPrivilege_field_employee"
+msgstr "Nhân viên"
+
+msgid "accPrivilege_field_group"
+msgstr "Nhóm"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "Chế độ thời gian"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "Khoảng thời gian 1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "Khoảng thời gian 2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "Khoảng thời gian 3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "Chế độ xác minh"
+
+msgid "clone_to_area"
+msgstr "Sao chép đến các khu vực"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "Số thứ tự khoảng thời gian (1-50)"
+
+msgid "accTimezone_field_no"
+msgstr "Số thự tự khoảng thời gian"
+
+msgid "accTimezone_field_name"
+msgstr "Tên khoảng thời gian"
+
+msgid "accTimezone_field_remark"
+msgstr "Ghi chú"
+
+msgid "accTimezone_field_start"
+msgstr "Thời gian bắt đầu"
+
+msgid "accTimezone_field_end"
+msgstr "Thời gian kết thúc"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "Khoảng thời gian mặc định không thể bị xóa."
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "Vui lòng nhập 0-50"
+
+msgid "accTimezone_no_repeat"
+msgstr "Số thự tự khoảng thời gian đã tồn tại"
+
+msgid "accHoliday_field_timezone"
+msgstr "Khoảng thời gian"
+
+msgid "accHoliday_field_holiday"
+msgstr "Tên ngày lễ"
+
+msgid "accGroup_field_no"
+msgstr "Số thự tự nhóm"
+
+msgid "accGroup_field_name"
+msgstr "Tên nhóm"
+
+msgid "accGroup_field_include_holiday"
+msgstr "Bao gồm cả ngày lễ"
+
+msgid "default_group_can_not_be_removed"
+msgstr "Nhóm mặc định không thể bị xóa."
+
+msgid "accGroup_field_no_maxValue"
+msgstr "Số thứ tự nhóm khoảng (1-99)"
+
+msgid "group_no_repeat"
+msgstr "Số thứ tự nhóm đã tồn tại."
+
+msgid "move_to_group_1"
+msgstr "Di chuyển đến nhóm 1"
+
+msgid "current_group_1"
+msgstr "Nhóm hiện tại 1"
+
+msgid "accCombination_field_no"
+msgstr "Số kết hợp"
+
+msgid "accCombination_field_name"
+msgstr "Tên kết hợp"
+
+msgid "accCombination_field_group1"
+msgstr "Nhân viên từ nhóm"
+
+msgid "accCombination_field_group2"
+msgstr "Nhân viên từ nhóm"
+
+msgid "accCombination_field_group3"
+msgstr "Nhân viên từ nhóm"
+
+msgid "accCombination_field_group4"
+msgstr "Nhân viên từ nhóm"
+
+msgid "accCombination_field_group5"
+msgstr "Nhân viên từ nhóm"
+
+msgid "accCombination_field_remark"
+msgstr "Ghi chú"
+
+msgid "combination_1_need_at_least_group"
+msgstr "Kết hợp 1 cần ít nhất 1 nhóm"
+
+msgid "accPrivilege_action_adjust"
+msgstr "Điều chỉnh"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "Điều chỉnh đặc quyền kiểm soát truy cập"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "Điều chỉnh đặc quyền kiểm soát truy cập"
+
+msgid "select_none_timezone"
+msgstr "Cần một khoảng thời gian"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "Nhân viên"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "Nhóm"
+
+msgid "op_menu_group_groupMenu"
+msgstr "Danh sách nhóm"
+
+msgid "door_action_open"
+msgstr "Mở cửa"
+
+msgid "door_action_openHelpText"
+msgstr "Mở cửa"
+
+msgid "door_action_openDescription"
+msgstr "Mở cửa"
+
+msgid "door_action_cancelAlarm"
+msgstr "Tắt báo động"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "Tắt báo động"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "Tắt báo động"
+
+msgid "accTerminal_field_doorName"
+msgstr "Tên cửa"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "Độ trễ khóa cửa"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "Xin nhập 0-10"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "Độ trễ cảm biến cửa"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "Xin nhập 1-255"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "Loại cảm biến cửa"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "Độ trễ báo động cửa"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "Số lần thử lại để báo động"
+
+msgid "terminal_name"
+msgstr "Tên thiết bị đầu cuối"
+
+msgid "menu_access_terminal"
+msgstr "Thiết bị"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "Ngày lễ hợp lệ"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "Khoảng thời gian NC"
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "Khoảng thời gian NO"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "Loa báo động"
+
+msgid "duress_options"
+msgstr "Tùy chọn bắt buộc"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "Chức năng bắt buộc"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "Báo động khi tương xứng 1:1"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "Báo động khi tương xứng 1:N"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "Báo động khi nhập mật khẩu"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "Độ trễ báo động(s)"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "Chế độ chống quay ngược"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "Hướng cửa"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "Thường mở(NO)"
+
+msgid "door_sensor_type_normalClose"
+msgstr "Thường đóng(NC)"
+
+msgid "door_sensor_type_none"
+msgstr "Không"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "Xin nhập 0-999"
+
+msgid "retry_times_to_alarm_none"
+msgstr "Không"
+
+msgid "anti_passback_mode_no"
+msgstr "Không có chống quay ngược"
+
+msgid "anti_passback_mode_in"
+msgstr "Chống quay ngược : trong"
+
+msgid "anti_passback_mode_out"
+msgstr "Chống quay ngược : ngoài"
+
+msgid "anti_passback_mode_inOut"
+msgstr "Chống quay ngược : trong/ngoài"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "Không có trạng thái cửa chống quay ngược"
+
+msgid "door_direction_none"
+msgstr "Không"
+
+msgid "door_direction_out"
+msgstr "Ngoài"
+
+msgid "door_direction_in"
+msgstr "Trong"
+
+msgid "anti_passback_setup"
+msgstr "Cài đặt chống quay ngược"
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "Bạn có chắc chắn để mở khóa thiết bị đã chọn(s)?"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "Bạn có chắc chắn hủy cài đặt thiết bị đã chọn(s)?"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "Chế độ xác nhận bằng rs485"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "Vân tay"
+
+msgid "485_verificationOption_Password"
+msgstr "Mật khẩu"
+
+msgid "485_verificationOption_Card"
+msgstr "Thẻ"
+
+msgid "door_action_setParameter"
+msgstr "Cài đặt thông số "
+
+msgid "door_action_setParameterHelpText"
+msgstr "Đặt tham số kiểm soát truy cập"
+
+msgid "door_action_setParameterDescription"
+msgstr "Đặt tham số kiểm soát truy cập"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Tính toán"
+
+msgid "the_amount_need_lager_than_zeron"
+msgstr "Giá trị số lượng không thể nhỏ hơn không!"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "Múi giờ đã được sử dụng, không thể xóa."
+
+msgid "used_group_can_not_be_removed"
+msgstr "Nhóm đã được sử dụng, không thể xóa."
+
+msgid "permission_verboseName_acc"
+msgstr "Kiểm soát truy cập"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "Khoảng thời gian"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "Ngày lễ"
+
+msgid "permission_verboseName_accGroups"
+msgstr "Nhóm"
+
+msgid "permission_verboseName_accCombination"
+msgstr "Sự phối hợp"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "Đặc quyền"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr "Tùy chọn kiểm soát truy cập"
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "Tùy chọn bắt buộc"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "Cài đặt chống quay ngược"
+
+msgid "menu_access_terminalCommand"
+msgstr "Lệnh thiết bị"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "Số múi giờ (0 - 50)"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "0 - 999 (giây)"
+
+msgid "accTerminal_field_pushTime"
+msgstr "Thời gian đẩy "

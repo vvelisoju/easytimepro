@@ -1,0 +1,26 @@
+{% extends 'layui/edit.html' %}
+{% load i18n common %}
+{% block form_style %}padding: 10px;height:280px;{% endblock %}
+{% block edit_form %}
+  <form class="layui-form data-form" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      {% with adminform.form as f %}
+        <div class="layui-form-item">
+          {% layui_inline f.node_code %}
+          {% layui_inline f.node_name %}
+        </div>
+        <div class="layui-form-item">
+          {% layui_inline f.approver %}
+          {% layui_inline f.approve_scope %}
+        </div>
+        <div class="layui-form-item">
+          {% layui_inline f.notifier %}
+          {% layui_inline f.notify_scope %}
+        </div>
+      {% endwith %}
+    </div>
+    {% block add_fields %}
+    {% endblock %}
+  </form>
+{% endblock %}

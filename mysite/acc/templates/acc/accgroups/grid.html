@@ -1,0 +1,220 @@
+{% extends "access_grid.html" %}
+{% load i18n static acc_tags common %}
+{% block main_body %}
+    {% csrf_token %}
+  <div class="layui-row layui-col-space15" style="margin-top: 0px; margin-bottom:0px">
+    <div class="layui-col-md2">
+      <div class="layui-card side-grid-tree">
+        <div class="layui-card-header">
+          <a href="javascript:void(0);" data-toggle="tooltip" title="Refresh">
+            <span id="{{ model_name }}_show_all"><i class="fa fa-fw fa-refresh"></i></span>
+          </a>
+
+        </div>
+        <div id="id_{{ model_name }}flow" class="layui-card-body">
+          <ul id="{{ model_name }}_tree" class="ztree ztree-pure" style="overflow-y: auto;"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+      <script type="text/html" id="{{ model_name|safe }}_toolbar">
+        <div class="layui-btn-container grid-toolbar" style="">
+          <ul class="layui-nav"></ul>
+        </div>
+      </script>
+    </div>
+    <div class="layui-col-md4">
+        <div class="layui-table-view">
+            <div class="layui-table-tool">
+                <div class="layui-form" style="margin-bottom: 10px;">
+                    <div id="id_access_move_group" style="width: 55%;"></div>
+                </div>
+                <div id="id_empFrame">
+                    <table class="layui-hide" id="id_group_employees" lay-filter="group_employees"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-hidden">
+        <input type="hidden" id="{{ model_name }}_area">
+    </div>
+  </div>
+{% endblock %}
+
+{% block grid_opt_update %}
+    function update_side_ztree() {
+        $('#{{ model_name }}_show_all').trigger('click');
+    }
+
+    $.extend(true, dimension, {
+        actions: {
+          GeneralActionNew: ['auto', 'auto'],
+          GeneralActionDelete: ['auto', 'auto']
+        }
+    });
+
+    $.extend(true, callback, {
+        load: {
+            done: $.fn.resize_side_ztree_if_any
+        },
+        edit: {
+          done: update_side_ztree
+        },
+        delete: {
+          done: update_side_ztree
+        },
+        actions: {
+          GeneralActionNew: {
+            done: update_side_ztree
+          },
+          GeneralActionDelete: {
+            done: update_side_ztree
+          }
+        }
+    });
+    data_grid_opts["rowClick"] = function(obj){
+        show_group_employee(obj.data.id, obj.data.group_no);
+    }
+{% endblock grid_opt_update %}
+{% block function_js %}
+    var current_group_id = 0;
+    var current_group_no = 0;
+    var group_employeeTB;
+    var global_pm_codes = [];
+    var table_data = [];
+
+    function show_group_employee(group_id, group_no){
+        current_group_id = group_id;
+        current_group_no = group_no;
+        layui.table.reload(group_employeeTB.config.id, {where: {group:group_id}});
+        let area_id = $('#{{ model_name }}_area').val();
+        if (area_id) {
+            get_group_by_area(area_id);
+        }
+    }
+
+    function get_group_by_area(area_id) {
+        $.ajax({
+            url: '/acc/get_groups-by-area/?area_id=' + area_id,
+            type: "GET",
+            datatype: "json",
+            success: function (response) {
+                const groups = response.groups;
+                const btnContainer = $('#id_access_move_group').empty();
+                const select = $('<select>', {
+                    class: 'layui-select',
+                    'lay-filter': 'group_dropdown'
+                });
+                groups.forEach(group => {
+                    if (group.group_no != current_group_no) {
+                        select.append($('<option>', {
+                            value: group.id,
+                            text: `Move To Group ${group.group_no}`
+                        }));
+                    }
+                });
+                btnContainer.append(
+                    $('<div>', {
+                        class: 'layui-input-inline',
+                        html: select
+                    })
+                );
+                layui.form.render('select');
+            }
+        });
+    }
+
+    layui.use(['form','table'], function () {
+    var form = layui.form, table = layui.table;
+    table.on('checkbox(group_employees)', function (obj) {
+        if (obj.checked) {
+            if (obj.type === 'one') {
+                // Single checkbox checked
+                if (!global_pm_codes.includes(obj.data.id)) {
+                    global_pm_codes.push(obj.data.id);
+                }
+            } else {
+                // All checkbox checked
+                table_data.forEach(row => {
+                    if (!global_pm_codes.includes(row.id)) {
+                        global_pm_codes.push(row.id);
+                    }
+                });
+            }
+        } else {
+            if (obj.type === 'one') {
+                // Single checkbox unchecked
+                global_pm_codes = global_pm_codes.filter(id => id !== obj.data.id);
+            } else {
+                // All checkbox unchecked
+                const ids = table_data.map(row => row.id);
+                global_pm_codes = global_pm_codes.filter(id => !ids.includes(id));
+            }
+        }
+    });
+
+    group_employeeTB = table.render({
+        id: "id_group_employees",
+        elem: "#id_group_employees",
+        url: '/acc/api/accprivileges/',
+        cellMinWidth: 80,
+        limit: 50,
+        limits: [5, 10, 20, 50, 100],
+        page: { layout: ['limit', 'prev', 'page', 'next', 'count'], curr: 1 },
+        request: { pageName: 'page', limitName: 'page_size' },
+        text: { none: gettext("none_data") },
+        where: { group: 0 },
+        cols: [[
+            {field: 'id', title: "ID", width: "40", type: "checkbox"},
+            {field: 'emp_code', title: "{% trans 'emp_field_employeeCode' %}", width: "80", sort: true},
+            {field: 'emp_first_name', title: "{% trans 'emp_field_firstName' %}", width: "120", sort: true},
+            {field: 'emp_last_name', title: "{% trans 'emp_field_lastName' %}", width: "120", sort: true}
+        ]],
+        done: function (res) {
+            table_data = res.data;
+            if (global_pm_codes.length > 0) {
+                res.data.forEach(row => {
+                    if (global_pm_codes.includes(row.id)) {
+                        row.LAY_CHECKED = true;
+                    }
+                });
+                const allChecked = res.data.every(row => global_pm_codes.includes(row.id));
+                if (allChecked) {
+                    $('.layui-table-header input[type="checkbox"]').prop('checked', true);
+                    $('.layui-table-header .layui-form-checkbox').addClass('layui-form-checked');
+                }
+            }
+        }
+    });
+
+    form.on('select(group_dropdown)', function (data) {
+        let group_ids = data.value;
+        if (!group_ids) {
+            return;
+        }
+
+        if (global_pm_codes.length === 0) {
+            layer.alert("{% trans 'select_none_employee' %}", {
+                title: gettext('layer_title'),
+                icon: 5,
+                time: 3000,
+                btn: gettext("btn_confirm")
+            });
+            layui.form.render('select');
+            return;
+        }
+
+        $.post('/acc/move_to_group/', {
+            privilege_id: global_pm_codes.join(','),
+            group_id: group_ids,
+            csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+        },
+        function (response) {
+            show_group_employee(current_group_id, current_group_no);
+            global_pm_codes = [];
+            layui.form.render('select');
+        });
+    });
+});
+{% endblock %}

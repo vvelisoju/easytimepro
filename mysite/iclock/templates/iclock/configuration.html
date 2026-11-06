@@ -1,0 +1,214 @@
+{% load i18n common %}
+<div class="auxiliary-setting-form">
+  <form id="deviceConfigForm" action="" class="layui-form" lay-filter="deviceConfigurationForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" >
+          <div class="layui-card-header"><i class="fa fa-cog"></i><span style="padding-left: 5px">{% trans 'deviceConfig_deviceCommunicationSetting' %}</span></div>
+          <div class="layui-card-body" >
+            <div class="layui-form-item">
+              <div class="layui-inline" title="{% trans 'deviceConfig_field_enableRegistrationFilterHelpText' %}">
+                <label class="layui-form-label" style="min-width: 140px;margin-top: 6px;white-space: nowrap;width: auto;">{% trans 'deviceConfig_field_enableRegistration' %}</label>
+                <div class="layui-input-inline" style="width: 80px;" >
+                  <input type="checkbox" name="enable_registration" lay-skin="switch"
+                         lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                </div>
+              </div>
+
+                <div class="layui-inline" title="{% trans 'deviceConfig_field_enableSynchronizeRegisterHelpText' %}">
+                  <label class="layui-form-label" style="width: auto; margin-top: 6px; white-space: nowrap; ">{% trans 'deviceConfig_field_enableSynchronizeRegister' %}</label>
+                  <div class="layui-input-inline" style="width: 80px;" >
+                    <input type="checkbox" name="enable_synchronization_register" lay-skin="switch"
+                          lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                  </div>
+                </div>
+
+
+              <div class="layui-inline" title="{% trans 'deviceConfig_field_enableResignedFilterHelpText' %}">
+                <label class="layui-form-label" style="margin-top: 6px;white-space: nowrap;width: auto;">{% trans 'deviceConfig_field_enableResignedFilter' %}</label>
+                <div class="layui-input-inline" style="width: 80px;" >
+                  <input type="checkbox" name="enable_resigned_filter" lay-skin="switch"
+                         lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                </div>
+              </div>
+              
+              <div class="layui-inline" title="{% trans 'deviceConfig_field_enableSynchronizeHelpText' %}">
+                  <label class="layui-form-label" style="width: auto; margin-top: 6px; white-space: nowrap; ">{% trans 'deviceConfig_field_enableSynchronize' %}</label>
+                  <div class="layui-input-inline" style="width: 80px;" >
+                    <input type="checkbox" name="enable_synchronization_data" lay-skin="switch"
+                          lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                  </div>
+                </div>
+                <div class="layui-inline" title="{% trans 'deviceConfig_field_enableSynchronizeUSERPICHelpText' %}">
+                  <label class="layui-form-label" style="width: auto; margin-top: 6px; white-space: nowrap;">{% trans 'deviceConfig_field_enableSynchronizeUSERPIC' %}</label>
+                  <div class="layui-input-inline" style="width: 80px;" >
+                    <input type="checkbox" name="enable_synchronization_userpic" lay-skin="switch"
+                          lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                  </div>
+                </div>
+ 
+
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline" title="{% trans 'deviceConfig_field_autoAdd_helpText' %}">
+                <label class="layui-form-label" style="margin-top: 6px;white-space: nowrap;width: auto;">{% trans 'deviceConfig_field_autoAdd' %}</label>
+                <div class="layui-input-inline" style="width: 80px;" >
+                  <input type="checkbox" name="enable_auto_add" lay-skin="switch"
+                         lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                </div>
+              </div>
+              <div class="layui-inline" title="{% trans 'deviceConfig_field_enableEmployeeUploadHelpTxt' %}">
+                <label class="layui-form-label" style="margin-top: 6px; white-space: nowrap;width: auto;">{% trans 'deviceConfig_field_enableEmployeeUpload' %}</label>
+                <div class="layui-input-inline" style="width: 80px;" >
+                  <input type="checkbox" name="enable_employee_upload" lay-skin="switch"
+                         lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                </div>
+              <div class="layui-inline" title="{% trans 'deviceConfig_field_enableNameUploadHelpTxt' %}">
+                <label class="layui-form-label" style="margin-top: 6px; white-space: nowrap;width: auto;">{% trans 'deviceConfig_field_enableNameUpload' %}</label>
+                <div class="layui-input-inline" style="width: 80px;" >
+                  <input type="checkbox" name="enable_name_upload" lay-skin="switch"
+                         lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                </div>
+              </div>
+              <div class="layui-inline" title="{% trans 'deviceConfig_field_enableCardUploadHelpTxt' %}">
+                <label class="layui-form-label" style="margin-top: 6px;white-space: nowrap;width: auto;">{% trans 'deviceConfig_field_enableCardUpload' %}</label>
+                <div class="layui-input-inline" style="width: 80px;" >
+                  <input type="checkbox" name="enable_card_upload" lay-skin="switch"
+                         lay-text="{% trans 'enableStatus_option_enable' %}|{% trans 'enableStatus_option_disable' %}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md12">
+        <div class="layui-card" >
+          <div class="layui-card-header"><i class="fa fa-cog"></i><span style="padding-left: 5px">{% trans 'deviceConfig_bioPhotoApprovalPolicy' %}</span></div>
+          <div class="layui-card-body">
+            <div class="layui-form-item" style="white-space: nowrap;width: auto;">
+              {% layui_mid form.edit_policy %}
+              {% layui_mid form.import_policy %}
+            <div class="layui-form-item">
+              {% layui_mid form.mobile_policy %}
+              {% layui_mid form.device_policy %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md12">
+        <div class="layui-card" style="height: 220px">
+          <div class="layui-card-header"><i class="fa fa-cog"></i><span style="padding-left: 5px">{% trans 'deviceConfig_deviceDataRetentionSetting' %}</span></div>
+          <div class="layui-card-body" style="margin: 10px;">
+              {% layui_mid form.transaction_retention %}
+              {% layui_mid form.command_retention %}
+              {% layui_mid form.dev_log_retention %}
+              {% layui_mid form.upload_log_retention %}
+        </div>
+      </div>
+    </div>
+    <div class="layui-fixbar">
+      <a class="layui-btn" lay-submit lay-filter="auxiliarySettingSubmit">{% trans 'auxiliarySetting_btn_submit' %}</a>
+    </div>
+  </form>
+</div>
+<script>
+
+  $(function(){
+    layui.use('form', function(){
+      var form = layui.form;
+      form.render();
+      form.verify({
+        transaction_retention: function(value, item){
+           if ( value == null || value == '') {
+            return gettext('The required fields should not be empty')
+          }
+          else  if(value < 90 || value > 9999){
+            return gettext('form_verify_invalidNumber')
+          }
+        }
+        ,command_retention: function(value, item){
+            if ( value == null || value == '') {
+            return gettext('The required fields should not be empty')
+          }
+          else if(value < 5 || value > 9999){
+            return gettext('form_verify_invalidNumber')
+          }
+        }
+        ,dev_log_retention: function(value, item){
+            if ( value == null || value == '') {
+            return gettext('The required fields should not be empty')
+          }
+          else if(value < 15 || value > 9999){
+            return gettext('form_verify_invalidNumber')
+          }
+        }
+        ,upload_log_retention: function(value, item){
+            if ( value == null || value == '') {
+            return gettext('The required fields should not be empty')
+          }
+          else if(value < 15 || value > 9999){
+            return gettext('form_verify_invalidNumber')
+          }
+        }
+      });
+      form.val('deviceConfigurationForm', {
+          'enable_registration': 0
+          ,'enable_resigned_filter': 0
+          ,'enable_auto_add': 1
+          ,'enable_employee_upload': 1
+          ,'enable_name_upload': 1
+          ,'enable_card_upload': 1
+          ,'enable_synchronization_data': 1
+          ,'enable_synchronization_userpic': 0
+          ,'enable_synchronization_register': 1
+      });
+      form.on('submit(auxiliarySettingSubmit)', function(data){
+        var loadIndex = layer.load();
+        var value = {
+            enable_registration: data.field['enable_registration']?1:0
+            ,enable_resigned_filter: data.field['enable_resigned_filter']?1:0
+            ,enable_auto_add: data.field['enable_auto_add']?1:0
+            ,enable_employee_upload: data.field['enable_employee_upload']?1:0
+            ,enable_name_upload: data.field['enable_name_upload']?1:0
+            ,enable_card_upload: data.field['enable_card_upload']?1:0
+            ,enable_synchronization_data: data.field['enable_synchronization_data']?1:0
+            ,enable_synchronization_userpic: data.field['enable_synchronization_userpic']?1:0
+            ,enable_synchronization_register: data.field['enable_synchronization_register']?1:0
+        };
+        var formData = data.field;
+        $.extend(formData, value);
+        $.ajax({
+          url: "iclock/api/device_config/{{ uuid }}/",
+          type: "PUT",
+          data: formData,
+          dataType: "json",
+          headers:{"X-CSRFToken": '{{ csrf_token }}'},
+          success: function(response, xhr){
+            layer.close(loadIndex);
+            layer.msg(gettext('save_successful'), {icon: 6});
+          },
+          error: function(xhr, error, e){
+            layer.close(loadIndex);
+            if(xhr.responseJSON.value){
+                layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+            }else{
+                layer.msg(gettext('please_enter_correct_details'), {icon: 5});
+            }
+          }
+        });
+        return false;
+      });
+
+      $.ajax({
+        url: "iclock/api/device_config/{{ uuid }}/",
+        type: "GET",
+        dataType: "json",
+        success: function (response, xhr) {
+          form.val('deviceConfigurationForm', response);
+        }
+      });
+
+    });
+  })
+</script>

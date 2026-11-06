@@ -1,0 +1,36 @@
+{% load i18n static %}
+{% load common %}
+{% block extend_js %}
+{% endblock %}
+<div style="padding: 10px;min-height: 350px;max-height: 550px;min-width: 550px">
+    <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+        <input type="hidden" id="id_model_pk" name="pk" value="{{ object_id }}"/>
+        {% csrf_token %}
+        {% with form.form as f %}
+            <div class="layui-form-item">
+                {{ f.emp }}
+            </div>
+            <div class="layui-form-item">
+                {% layui_inline f.amount %}
+                {% layui_inline f.issued_time %}
+            </div>
+            <div class="layui-form-item">
+                {% layui_inline f.remark %}
+            </div>
+        {% endwith %}
+    </form>
+</div>
+
+<script>
+    layui.use(['form', 'laydate', 'element'], function () {
+        var form = layui.form, laydate = layui.laydate, element = layui.element;
+        $('#id_amount').attr('max', 0);
+        $("form.layui-form input.layui-datetime").each(function () {
+            laydate.render({elem: this, type: 'datetime'});
+        });
+        {% block form_verify %}
+      form.verify({});
+    {% endblock %}
+    form.render();
+    });
+</script>

@@ -1,0 +1,17 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 120px;min-width: 120px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_inline f.db_name %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.backup_file %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.is_restore_photo %}
+      </div>
+    {% endwith %}
+  </form>
+</div>

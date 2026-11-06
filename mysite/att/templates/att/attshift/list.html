@@ -1,0 +1,71 @@
+{% load i18n %}
+<div class="layui-row">
+  <div class="layui-col-md12">
+    <div class="layui-card">
+      <div class="layui-card-header">
+        <div class="layui-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <div class="layui-input-inline" style="width: 160px">
+                <input id="id_frameShiftSearch" type="text" placeholder="{% trans 'shiftList_search_shift' %}" name="frame-shift-search" autocomplete="off"
+                       class="layui-input">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <div class="button-3d" lay-submit="" lay-filter="ShiftSearch">
+                <i class="fa fa-fw fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-card-body">
+        <table id="id_attShiftList" class="layui-hide" lay-filter="attShiftList"></table>
+      </div>
+    </div>
+  </div>
+  <input id="id_selectedShift" type="text" class="layui-hide"/>
+</div>
+<script>
+  layui.use(['form', 'table', 'tablePlug'], function (){
+    var table = layui.table, tablePlug = layui.tablePlug, form=layui.form;
+    tablePlug.smartReload.enable(true);
+    var opts = {
+      elem: "#id_attShiftList"
+      ,page: true
+      ,height: 250
+      ,text: {none: gettext('none_data')}
+      ,request: {
+          pageName: 'page',
+          limitName: 'page_size'
+        }
+      ,page: {
+        layout: ['count', 'prev', 'page', 'next', 'limit']
+        ,limit: 50
+        ,limits: [20, 50, 80, 100, 200]
+        ,groups: 1
+      }
+      ,cols: [[
+          {field: 'id', type: 'radio'}
+          ,{field: 'alias', title: "{% trans 'attShift_field_alias' %}", width: 200}
+          ,{field: 'cycle_unit', title: "{% trans 'attShift_field_cycleUnit' %}", width: 90}
+          ,{field: 'shift_cycle', title: "{% trans 'attShift_field_cycle' %}", width: 90}
+      ]]
+      ,url: '/att/api/attshifts/'
+    };
+    var shiftTable = table.render(opts);
+    table.on('radio(attShiftList)', function(obj){
+      $("#id_selectedShift").val(JSON.stringify(obj.data))
+    });
+    form.on('submit(ShiftSearch)', function(){
+      var alias = $("#id_frameShiftSearch").val();
+      table.reload(shiftTable.config.id, {where: {alias__icontains: alias}})
+    });
+    $("#id_frameShiftSearch").keypress(function(event){
+      if (event.keyCode == "13") {
+        var alias = $(this).val();
+        table.reload(shiftTable.config.id, {where: {alias__icontains: alias}});
+      };
+    });
+  });
+</script>

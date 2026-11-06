@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+{% load i18n common %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="en">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
+        <meta name="description" content="" content="no">
+
+        <title>Intelligent Time | Dashboard</title>
+        <link rel="shortcut icon" href="{% static 'cloud/static/images/favicon.ico' %}" sizes="16x16 24x24 32x32 64x64">
+        <link href="{% static 'cloud/static/css/main.min.css' %}" rel="stylesheet">
+        <link href="{% static 'cloud/static/css/custom.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}"/>
+        <script src="{% static 'cloud/static/js/jquery/jquery-3.5.1.min.js' %}?v=2.2.4"></script>
+        <!-- Draggale Cards Popup -->
+        <script src="{% static 'cloud/static/js/jquery-ui.js' %}" type="text/javascript"></script>
+        <script>
+            $(function() {
+                $(".draggable").draggable({
+                    handle: ".modal-content",
+                    cursor: "move"
+                });
+            });
+        </script>
+        <!-- //End -->
+        <script>
+            window.user_is_super_admin = "{{ user.is_super_admin }}";
+            window.user_is_superuser_extra = "{{ user.is_superuser_extra }}";
+            window.user_vendor_company_id = "{{ user.vendor_company_id }}";
+        </script>
+        <style>
+            .errormsg {
+                border-color:red !important;
+            }
+            .successmsg {
+                border-color:green !important;
+            }
+            .features-list-label {
+            display: inline-block;
+            padding:5px;
+            margin:5px;
+            font-size:13px;
+            background: #337ab7;
+            border-radius:5px;
+            color:#FFFFFF;
+           }
+        </style>
+
+        <!-- <script>
+            document.onkeydown = function(e) {
+                if(event.keyCode == 123) {
+                    return false;
+                }
+                if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+            }
+        </script> -->
+
+    </head>
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+                <div class="header__pane mr-auto">
+                    <div>
+                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                                data-class="closed-sidebar" {% if user.is_super_admin %}disabled{% endif %}>
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="logo-src text-center" style="width: 190px !important; height: 50px !important;">
+                    <img src="{% static 'cloud/static/images/web_logo.png' %}" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button"
+                            class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+        </div>
+        <div class="app-header__content pl-0" style="background: #474b4f;">
+            <div class="app-header-left">
+                <ul class="header-menu nav navList my-header-menu">
+                    <li class="nav-item active">
+                        <a href="" class="nav-link custom-nav-link">
+                            {% trans 'vendor_management' %}
+                        </a>
+                    </li>
+                    {% if user.is_vendor_display or user.is_super_admin %}
+                        <li class="nav-item">
+                            <a href='{% url 'biotime:subscription_configuration' %}' class="nav-link custom-nav-link">
+                                {% trans 'subscription_management' %}
+                            </a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a href='{% url 'biotime:firmware_configuration' %}' class="nav-link custom-nav-link">
+                                {% trans 'firmware_management' %}
+                            </a>
+                        </li>
+    {#                   <li class="btn-group nav-item">#}
+    {#                        <a href="javascript:void(0);" class="nav-link nav-hover-link" style="font-size: 1.2em;">#}
+    {#                            <i class="nav-link-icon fa fa-lock"></i>#}
+    {#                            Access#}
+    {#                        </a>#}
+    {#                    </li>#}
+    {#                    <li class="dropdown nav-item">#}
+    {#                        <a href="javascript:void(0);" class="nav-link nav-hover-link" style="font-size: 1.2em;">#}
+    {#                            <i class="nav-link-icon fa fa-car"></i>#}
+    {#                            Parking#}
+    {#                        </a>#}
+    {#                    </li>#}
+                    </ul>
+                </div>
+                <div class="app-header-right">
+                    <div class="header-btn-lg pr-0">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left ml-3 header-user-info">
+                                    <div class="widget-heading text-white">
+                                        {{ email }}
+                                    </div>
+                                    <div class="widget-subheading text-white">
+                                        <small>{% trans "Vendor" %}</small>
+                                    </div>
+                                </div>
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                           class="p-0 btn">
+                                            <img width="42" class="rounded-circle"
+                                                 src="{% static 'cloud/static/images/avatars/admin1.png' %}" alt="">
+                                            <i class="fa fa-angle-down ml-2 opacity-8 text-white"></i>
+                                        </a>
+                                    <div tabindex="-1" role="menu" aria-hidden="true"
+                                         class="dropdown-menu dropdown-menu-left"
+                                         style="padding: 0px; border-radius: 0; min-width: 8rem;">
+                                        {% if not user.is_super_admin and user.vendor_company_id %}
+                                        <button type="button" tabindex="0" class="dropdown-item"
+                                                id="VendorInfoSettings">
+                                            <i class="fa fa-cogs"></i> {% trans "Settings" %}
+                                        </button>
+                                        {% endif %}
+                                        <button type="button" tabindex="1" class="dropdown-item"
+                                                onclick="location.href='{% url 'biotime:logout' %}'">
+                                            <i class="fa fa-sign-out"></i> {% trans "Logout" %}
+                                        </button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-main">
+            {% if not user.is_super_admin %}
+            <div class="app-sidebar sidebar-shadow">
+                <div class="app-header__logo">
+                    <div class="logo-src"></div>
+                    <div class="header__pane ml-auto">
+                        <div>
+                            <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                                    data-class="closed-sidebar">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-header__mobile-menu">
+                    <div>
+                        <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-header__menu">
+                    <span>
+                        <button type="button"
+                                class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                            <span class="btn-icon-wrapper">
+                                <i class="fa fa-ellipsis-v fa-w-6"></i>
+                            </span>
+                        </button>
+                    </span>
+                </div>
+                <!-- Top Side Bar -->
+    {#            <div class="scrollbar-sidebar">#}
+    {#                <div class="app-sidebar__inner">#}
+    {#                    <ul class="vertical-nav-menu">#}
+    {#                        <li class="app-sidebar__heading">Panel</li>#}
+    {#                        <li>#}
+    {#                            <a href="javascript:void(0);" class="mm-active easy-icon-sidenav">#}
+    {#                                <i class="metismenu-icon pe-7s-timer"></i>#}
+    {#                                Attendance#}
+    {#                            </a>#}
+    {#                        </li>#}
+    {#                        <li>#}
+    {#                            <a href="javascript:void(0);">#}
+    {#                                <i class="metismenu-icon pe-7s-lock"></i>#}
+    {#                                Access#}
+    {#                            </a>#}
+    {#                        </li>#}
+    {#                        <li>#}
+    {#                            <a href="javascript:void(0);">#}
+    {#                                <i class="metismenu-icon pe-7s-car">#}
+    {#                                </i>#}
+    {#                                Parking#}
+    {#                            </a>#}
+    {#                        </li>#}
+    {#                    </ul>#}
+    {#                </div>#}
+    {#            </div>#}
+                <!-- //End -->
+
+                <div class="scrollbar-sidebar">
+                    <div class="app-sidebar__inner">
+                        <ul class="vertical-nav-menu" id="backend_dashboard_company_menu">
+                            <li class="app-sidebar__heading" style="margin-bottom: 2.5em;"></li>
+    {#                        <li>#}
+    {#                            <a href="javascript:void(0);" class="mm-active easy-icon-sidenav">#}
+    {#                                <i class="metismenu-icon pe-7s-timer"></i>#}
+    {#                                Attendance#}
+    {#                            </a>#}
+    {#                        </li>#}
+    {#                        <li>#}
+    {#                            <a href="javascript:void(0);">#}
+    {#                                <i class="metismenu-icon pe-7s-lock"></i>#}
+    {#                                Access#}
+    {#                            </a>#}
+    {#                        </li>#}
+    {#                        <li>#}
+    {#                            <a href="javascript:void(0);">#}
+    {#                                <i class="metismenu-icon pe-7s-car">#}
+    {#                                </i>#}
+    {#                                Parking#}
+    {#                            </a>#}
+    {#                        </li>#}
+                        </ul>
+                    </div>
+                </div>
+                <!-- //End -->
+            </div>
+            {% endif %}
+            <div class="app-main__outer" {% if user.is_super_admin %}style="padding-left: 0"{% endif %}>
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading" style="width: 100%; justify-content: flex-start;">
+                                <div class="page-title-icon easy-icon-body">
+                                    <i class="metismenu-icon pe-7s-timer fa-spin"></i>
+                                </div>
+                                <div>
+                                    {% trans "cloud_current_company" %}: <span>{{ user.get_current_company_name }}</span>
+                                </div>
+                            </div>
+                            {% if not user.is_super_admin %}
+                            <div class="page-title-heading" style="width: 100%; justify-content: flex-end;">
+                                <button class="btn-transition btn btn-outline-success" id="company_shift_btn"></button>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if user.is_super_admin or user.is_superuser_extra %}
+                    <div class="row">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content" style="border-left: 5px solid #f7b924;">
+                                <div class="widget-content-outer">
+                                    <a href="javascript:void(0);" class="text-warning" data-toggle="modal" data-target="#allCompany" class="details" value="all-company">
+                                        {# Added [ <!-- All Company - Modal Popup --> ] #}
+                                        <div class="widget-content-wrapper text-warning">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{% trans "all_companies" %}</div>
+                                                <!-- <div class="widget-subheading">Revenue streams</div> -->
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-warning" id="company_count">0</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <span style="margin-left:15px">
+                                    <a href="/cloud/api/v1/internal/companies/all/export/?export_type=xls" target="_blank">
+                                        <svg class="expand-icon" fill="#f7b924" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 23 23">
+                                        <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                        </svg>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content" style="border-left: 5px solid #3ac47d;">
+                                <div class="widget-content-outer">
+                                    <a href="javascript:void(0);" class="text-success" data-toggle="modal" data-target="#allLicense" class="details" value="all-license">
+                                        {# Added [ <!-- All Paid Company - Modal Popup --> ] #}
+                                        <div class="widget-content-wrapper text-success">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{% trans "paid_companies" %}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-success" id="license_count">0</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <span style="margin-left:15px">
+                                    <a href="/cloud/api/v1/internal/companies/paid/export/?export_type=xls" target="_blank">
+                                        <svg class="expand-icon" fill="#3ac47d" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 23 23">
+                                        <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                        </svg>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+{#                        <div class="col-md-6 col-xl-4">#}
+{#                            <div class="card mb-3 widget-content" style="border-left: 5px solid #3ac47d;">#}
+{#                                <div class="widget-content-outer">#}
+{#                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#allDevice" class="details" value="all-device">#}
+                                        {# Added [ <!-- All Device - Modal Popup --> ] #}
+{#                                        <div class="widget-content-wrapper">#}
+{#                                            <div class="widget-content-left">#}
+{#                                                <div class="widget-heading">Devices</div>#}
+{#                                            </div>#}
+{#                                            <div class="widget-content-right">#}
+{#                                                <div class="widget-numbers text-success" id="device_count"></div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content" style="border-left: 5px solid #d92550;">
+                                <div class="widget-content-outer">
+                                    <a href="javascript:void(0);" class="text-danger" data-toggle="modal" data-target="#allMobileApp" class="details" value="all-mobile-app">
+                                        {# Added [ <!-- All Mobile App - Modal Popup --> ] #}
+                                        <div class="widget-content-wrapper text-danger">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{% trans "mobile_app" %}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-danger" id="mobile_app_count">0</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <span style="margin-left:15px">
+                                    <a href="/cloud/api/v1/internal/applications/export/?export_type=xls" target="_blank">
+                                        <svg class="expand-icon" fill="#d92550" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 23 23">
+                                        <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                        </svg>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+{#                        <div class="col-md-6 col-xl-4">#}
+{#                            <div class="card mb-3 widget-content bg-grow-early">#}
+{#                                <div class="widget-content-outer">#}
+{#                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#allLicense" class="details" value="all-license">#}
+                                        {# Added [ <!-- All Paid Company - Modal Popup --> ] #}
+{#                                        <div class="widget-content-wrapper text-white">#}
+{##}
+{#                                            <div class="widget-content-left">#}
+{#                                                <div class="widget-heading">Paid Company</div>#}
+{#                                            </div>#}
+{#                                            <div class="widget-content-right">#}
+{#                                                <div class="widget-numbers text-white" id="license_count"></div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content bg-grow-early">
+                                <div class="widget-content-outer">
+                                    <a href="javascript:void(0);" class="text-white" data-toggle="modal" data-target="#allDevice" class="details" value="all-device">
+                                        {# Added [ <!-- All Device - Modal Popup --> ] #}
+                                        <div class="widget-content-wrapper text-white">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{% trans "Devices" %}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-white" id="device_count">0</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <span style="margin-left:15px">
+                                    <a href="/cloud/api/v1/internal/devices/export/?export_type=xls" target="_blank">
+                                        <svg class="expand-icon" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 23 23">
+                                        <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                        </svg>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content bg-arielle-smile">
+                                <div class="widget-content-outer">
+                                    <a href="javascript:void(0);" class="text-white" data-toggle="modal" data-target="#allUser" class="details" value="all-user">
+                                        {# Added [ <!-- All User - Modal Popup --> ] #}
+                                        <div class="widget-content-wrapper text-white">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{% trans "Users" %}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-white" id="user_count">0</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <span style="margin-left:15px">
+                                    <a href="/cloud/api/v1/internal/users/export/?export_type=xls" target="_blank">
+                                        <svg class="expand-icon" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 23 23">
+                                        <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                        </svg>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-3 widget-content bg-midnight-bloom">
+                                <div class="widget-content-outer">
+                                    <a href="javascript:void(0);" class="text-white" data-toggle="modal" data-target="#allEmployee" class="details" value="all-employee">
+                                        {# Added [ <!-- All Employee - Modal Popup --> ] #}
+                                        <div class="widget-content-wrapper text-white">
+
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{%  trans "Employees" %}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-white" id="employee_count">0</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <span style="margin-left:15px">
+                                    <a href="/cloud/api/v1/internal/companies/employees_detail/export/?export_type=xls&filename=Employee" target="_blank">
+                                        <svg class="expand-icon" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 23 23">
+                                        <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                        </svg>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Added -->
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title"> <!-- col-md-6 added -->
+                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                        {% trans "device_location" %}
+                                    </div>
+                                    <!-- Added -->
+{#                                    <div class="card-header-title">#}
+{#                                        <div class="ml-auto">#}
+{#                                            <span><i class="fa fa-square" style="color:#60a822;border-radius:20px;"></i> Online</span>#}
+{#                                            <span><i class="fa fa-square" style="color:red;border-radius:20px;"></i> Offline</span>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                    <div class="btn-actions-pane-right">
+                                        <div class="nav">
+                                            <span class="ml-1">
+{#                                                <i class="fa fa-square" style="color:#7ac143;"></i> Online#}
+                                                <i class="fa fa-circle" style="color:#7ac143;"></i> {% trans "cloud_online" %}
+                                            </span>
+                                            <span class="ml-1">
+                                                <i class="fa fa-circle" style="color:#ea4335;"></i> {% trans "cloud_offline" %}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- //End -->
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="tab-eg-55">
+                                        <div class="widget-chart p-3">
+                                            <div id="zkt_device_location" style="width: 100%; height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                        {% trans "company_location" %}
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="tab-eg-55">
+                                        <div class="widget-chart p-3">
+                                            <div id="zkt_company_location" style="width: 100%; height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //End -->
+
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header-tab-animation card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                                       {% trans "license_reports" %}
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="tabs-eg-77">
+                                            <div class="widget-chart widget-chart2 text-left w-100">
+                                                <div id="zkt_devices" style="width: 100%; height: 350px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                        {% trans "company_reports" %}
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="tab-eg-55">
+                                        <div class="widget-chart p-3">
+                                            <div id="zkt_company" style="width: 100%; height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Added -->
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header-tab-animation card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                                        {% trans "user_reports" %}
+                                    </div>
+                                    <div class="nav user-dropdown">
+                                        <form action="javascript:;" method="GET">
+                                            <label>{% trans "selcted_year" %}</label>
+                                            <select class="input-field" id="userReportDropdown">
+{#                                                <option value="" selected disabled>-- Select Year --</option>#}
+                                                <!--
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                -->
+                                            </select>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="tabs-eg-77">
+                                            <div class="widget-chart widget-chart2 text-left w-100">
+                                                <div class="widget-chat-wrapper-outer">
+                                                    <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
+                                                        <!-- <canvas id="canvas"></canvas> -->
+                                                        <div id="zkt_users" style="width: 100%; height: 350px;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="mb-3 card">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title">
+                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
+                                        {% trans "employee_reports" %}
+                                    </div>
+                                    <div class="nav employee-dropdown">
+                                        <form action="javascript:;" method="GET">
+                                            <label>{% trans "selcted_year" %}</label>
+                                            <select class="input-field" id="employeeReportDropdown">
+{#                                                <option value="" selected disabled>-- Select Year --</option>#}
+                                                <!--
+                                                <option value="1">2019</option>
+                                                <option value="2">2018</option>
+                                                <option value="3">2017</option>
+                                                <option value="4">2016</option>
+                                                -->
+                                            </select>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="tab-eg-55">
+                                        <div class="widget-chart p-3">
+                                            <div id="zkt_employee" style="width: 100%; height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //End -->
+                </div>
+                <div class="app-wrapper-footer">
+                    <div class="app-footer">
+                        <div class="app-footer__inner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{#<script type="text/javascript" src="{% static 'cloud/static/js/main.min.js' %}"></script>#}
+
+<!-- Modal Popup Starts here -->
+<div class="modal fade draggable" id='VendorInfo' tabindex="-1" role="dialog" aria-labelledby="VendorInfoSettingsModalLabel"
+     aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="box-shadow: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="VendorInfoSettingsModalLabel">Vendor Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row modalStyleInputs">
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">Vendor Name</span></div>
+                                <input type="text" class="form-control" id='vendor_name' disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative form-group ">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">Vendor CNR</span></div>
+                                <input type="text" class="form-control" id="vendor_cnr" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">Contact Phone</span></div>
+                                <input type="text" class="form-control" id="contact_phone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row modalStyleInputs">
+                    <div class="col-md-6">
+                        <div class="position-relative form-group ">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">Company Logo</span></div>
+                                <input type="file" class="form-control" id="vendor_company_logo">
+                            </div>
+                            <div class="layui-form-item" style="margin-bottom:-3px;">
+                                <div class="layui-input-block layui-form-mid layui-word-aux">Only Supports .jpg and .png format.</div>
+                            </div>
+                            <div class="text-danger" id="error-vendor_company_logo" style="font-size: x-small;"></div>
+                            <br>
+                            <div class="layui-form-item" style="margin-bottom:-3px;">
+                                {% if parent_vendor_company_logo %}
+                                <img src="{{ parent_vendor_company_logo }}" style="border: 1px solid #ddd; width: 200px; height: 150px">
+                                {% else %}
+                                <img src="{% static 'cloud/static/images/zkteco_logo.png' %}" style="border: 1px solid #ddd; width: 200px; height: 150px">
+                                {% endif %}
+                                <p style="margin-bottom: 0rem;">* Current Vendor's Company Logo:</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="position-relative form-group ">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">Software Logo</span></div>
+                                <input type="file" class="form-control" id="vendor_software_logo">
+                            </div>
+                            <div class="layui-form-item" style="margin-bottom:-3px;">
+                                <div class="layui-input-block layui-form-mid layui-word-aux">Only Supports .jpg and .png format.</div>
+                            </div>
+                            <div class="text-danger" id="error-vendor_software_logo" style="font-size: x-small;"></div>
+                            <br>
+                            <div class="layui-form-item" style="margin-bottom:-3px;">
+                                {% if parent_vendor_software_logo %}
+                                <img src="{{ parent_vendor_software_logo }}" style="border: 1px solid #ddd; width: 200px; height: 150px">
+                                {% else %}
+                                <img src="{% static 'cloud/static/images/intelligent-time-logo.png' %}" style="border: 1px solid #ddd; width: 200px; height: 150px">
+                                {% endif %}
+                                <p style="margin-bottom: 0rem;">* Current Vendor's Software Logo:</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <div class="app-main__inner pull-right">
+                        <button class="btn btn-sm btn-success view-company-btn" id="UpdateVendorInfo">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- All Company - Modal Popup -->
+<div class="modal fade draggable" id="allCompany" tabindex="-1" role="dialog" aria-labelledby="allCompanyModalLabel"
+     aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document" style="box-shadow: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="allCompanyModalLabel">{% trans "company_list" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" >
+                <div class="row modalStyleInputs">
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Company" %}</span></div>
+                                <input type="text" class="form-control" id="company">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Country" %}</span></div>
+                                <input type="text" class="form-control" id="country">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="position-relative form-group ">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "City" %}</span></div>
+                                <input type="text" class="form-control" id="city">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="position-relative form-group ">
+                            <div class="input-group">
+{#                                <div class="input-group-prepend"><span class="input-group-text">To the Left!</span></div>#}
+                                <button class="mb-2 mr-2 btn-transition btn btn-outline-success modalSubmitBtn serach-api-comp-data">
+                                    <i class="fa fa-search icon-gradient bg-warm-flame"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="mb-0 table table-hover table-striped table-bordered modalStyleTable" style="white-space: nowrap;">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Country</th>
+                                <th>Province</th>
+                                <th>City</th>
+                                <th>Company Phone</th>
+                                <th>Company Address</th>
+                                <th>Total User</th>
+                                <th>Total Employee</th>
+                                <th>Total Devices</th>
+                                <th>Total Mobile Applications</th>
+                                <th>Vendor Status</th>
+                                <th>Create Date</th>
+                                <th>Expiration Date</th>
+                                <th style="width:150px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-company-data">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-6">
+                    <div class="modalTotalCom pull-left">
+                        <a href="javascript:void(0);">
+                            {% trans "Total" %}
+                            <span class="badge" id="co_count"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="app-main__inner pull-right">
+                        <nav class="text-right" aria-label="Page navigation example">
+                            <ul class="pagination modalPagination" style="margin: 0;">
+                                <li class="page-item modalPageItem">
+                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-all-comp"
+                                       style="padding: 0; border: 0;">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //End -->
+
+<!-- All Device - Modal Popup -->
+<div class="modal fade draggable" id="allDevice" tabindex="-1" role="dialog" aria-labelledby="allDeviceModalLabel"
+     aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document" style="box-shadow: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="allDeviceModalLabel">{% trans "device_list" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row modalStyleInputs">
+                    <div class="col-md-5">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "SN_name" %}</span></div>
+                                <input type="text" class="form-control" id="sn_name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Company" %}</span></div>
+                                <input type="text" class="form-control" id="sn_company">
+                            </div>
+                        </div>
+                    </div>
+{#                    <div class="col-md-3">#}
+{#                        <div class="position-relative form-group">#}
+{#                            <div class="input-group">#}
+{#                                <div class="input-group-prepend"><span class="input-group-text">Country</span></div>#}
+{#                                <input type="text" class="form-control" id="sn_country">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="col-md-2">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+{#                                            <div class="input-group-prepend"><span class="input-group-text">To the Left!</span></div>#}
+                                <button class="mb-2 mr-2 btn-transition btn btn-outline-success modalSubmitBtn serach-api-device_data">
+                                    <i class="fa fa-search icon-gradient bg-warm-flame"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="mb-0 table table-hover table-striped table-bordered text-center modalStyleTable">
+                        <thead>
+                            <tr>
+                                <th>Device SN</th>
+                                <th>Device Name</th>
+                                <th>Ip Address</th>
+                                <th>Status</th>
+                                <th>Last Active Time</th>
+                                <th>Device Location</th>
+                                <th>Company</th>
+                                <th style="width:100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-device-data">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                   <div class="col-md-6">
+                    <div class="modalTotalCom pull-left">
+                        <a href="javascript:void(0);">
+                            {% trans "Total" %}
+                            <span class="badge" id="de_count"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="app-main__inner pull-right">
+                        <nav class="text-right" aria-label="Page navigation example">
+                            <ul class="pagination modalPagination" style="margin: 0;">
+                                <li class="page-item modalPageItem">
+                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-device"
+                                       style="padding: 0; border: 0;">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //End -->
+
+<!-- All Mobile App - Modal Popup -->
+<div class="modal fade draggable" id="allMobileApp" tabindex="-1" role="dialog" aria-labelledby="allMobileAppModalLabel"
+     aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="box-shadow: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="allMobileAppModalLabel">{% trans "mobile_application_list" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row modalStyleInputs">
+                    <div class="col-md-6">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Company"%}</span></div>
+                                <input type="text" class="form-control" id="mob_company">
+                            </div>
+                        </div>
+                    </div>
+{#                    <div class="col-md-4">#}
+{#                        <div class="position-relative form-group">#}
+{#                            <div class="input-group">#}
+{#                                <div class="input-group-prepend"><span class="input-group-text">Country</span></div>#}
+{#                                <input type="text" class="form-control" id="v_country">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-md-3">#}
+{#                        <div class="position-relative form-group">#}
+{#                            <div class="input-group">#}
+{#                                <div class="input-group-prepend"><span class="input-group-text">City</span></div>#}
+{#                                <input type="text" class="form-control" id="v_city">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="col-md-2">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+{#                                            <div class="input-group-prepend"><span class="input-group-text">To the Left!</span></div>#}
+                                <button class="mb-2 mr-2 btn-transition btn btn-outline-success modalSubmitBtn serach-api-mobile-app_data">
+                                    <i class="fa fa-search icon-gradient bg-warm-flame"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="mb-0 table table-hover table-striped table-bordered modalStyleTable" style="white-space: nowrap;">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>Enable</th>
+                                <th>Status</th>
+                                <th>Login Time</th>
+                                <th>Last Active Time</th>
+                                <th>Company</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-mobile-app-data">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-6">
+                    <div class="modalTotalCom pull-left">
+                        <a href="javascript:void(0);">
+                            Total
+                            <span class="badge" id="mob_count"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="app-main__inner pull-right">
+                        <nav class="text-right" aria-label="Page navigation example">
+                            <ul class="pagination modalPagination" style="margin: 0;">
+                                <li class="page-item modalPageItem">
+                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-mobile-app"
+                                       style="padding: 0; border: 0;">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //End -->
+
+<!-- All Paid Company - Modal Popup -->
+<div class="modal fade draggable" id="allLicense" tabindex="-1" role="dialog" aria-labelledby="allLicenseModalLabel"
+     aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="box-shadow: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="allLicenseModalLabel">{% trans "paid_company_list" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row modalStyleInputs">
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Company" %}</span></div>
+                                <input type="text" class="form-control" id="p_company">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Country" %}</span></div>
+                                <input type="text" class="form-control" id="p_country">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "City" %}</span></div>
+                                <input type="text" class="form-control" id="p_city">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+{#                                            <div class="input-group-prepend"><span class="input-group-text">To the Left!</span></div>#}
+                                <button class="mb-2 mr-2 btn-transition btn btn-outline-success modalSubmitBtn serach-api-paid_data">
+                                    <i class="fa fa-search icon-gradient bg-warm-flame"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="mb-0 table table-hover table-striped table-bordered modalStyleTable" style="white-space: nowrap;">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Country</th>
+                                <th>City</th>
+                                <th>Company Phone</th>
+                                <th>Company Address</th>
+                                <th>Total User</th>
+                                <th>Total Employee</th>
+                                <th>Total Devices</th>
+                                <th>Total Mobile Applications</th>
+                                <th>Vendor Status</th>
+                                <th>Create Date</th>
+                                <th>Expiration Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-paid-company-data">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-6">
+                    <div class="modalTotalCom pull-left">
+                        <a href="javascript:void(0);">
+                            {% trans "Total" %}
+                            <span class="badge" id="pa_count"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="app-main__inner pull-right">
+                        <nav class="text-right" aria-label="Page navigation example">
+                            <ul class="pagination modalPagination" style="margin: 0;">
+                                <li class="page-item modalPageItem">
+                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-paid-comp"
+                                       style="padding: 0; border: 0;">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //End -->
+
+<!-- All User - Modal Popup -->
+<div class="modal fade draggable" id="allUser" tabindex="-1" role="dialog" aria-labelledby="allUserModalLabel"
+     aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document" style="box-shadow: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="allUserModalLabel">{% trans "user_list" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                 <div class="row modalStyleInputs">
+                    <div class="col-md-4">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "user_name" %}</span></div>
+                                <input type="text" class="form-control" id="user_name">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "cloud_field_email" %}</span></div>
+                                <input type="text" class="form-control" id="user_email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Company" %}</span></div>
+                                <input type="text" class="form-control" id="user_company">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+{#                                            <div class="input-group-prepend"><span class="input-group-text">To the Left!</span></div>#}
+                                <button class="mb-2 mr-2 btn-transition btn btn-outline-success modalSubmitBtn serach-api-user-data">
+                                    <i class="fa fa-search icon-gradient bg-warm-flame"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="mb-0 table table-hover table-striped table-bordered modalStyleTable" style="white-space: nowrap;">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Status</th>
+                                <th>Last Active Time</th>
+                                <th>Joining Date</th>
+                                <th>Company</th>
+                                <th width="20">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-user-data">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-6">
+                    <div class="modalTotalCom pull-left">
+                        <a href="javascript:void(0);">
+                            {% trans "Total" %}
+                            <span class="badge" id="ur_count"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="app-main__inner pull-right">
+                        <nav class="text-right" aria-label="Page navigation example">
+                            <ul class="pagination modalPagination" style="margin: 0;">
+                                <li class="page-item modalPageItem">
+                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-user"
+                                       style="padding: 0; border: 0;">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //End -->
+
+<!-- All Employee - Modal Popup -->
+<div class="modal fade draggable" id="allEmployee" tabindex="-1" role="dialog" aria-labelledby="allEmployeeModalLabel"
+     aria-hidden="true" style="overflow-y: hidden;">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="box-shadow: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="allEmployeeModalLabel">{% trans "employee_list" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+{#                <ul class="list-group list-group-flush" id="employee_list_menu"></ul>#}
+                <div class="row modalStyleInputs">
+                    <div class="col-md-5">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Company" %}</span></div>
+                                <input type="text" class="form-control" id="emp_company">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="position-relative form-group">
+{#                          <label for="exampleCustomSelect" class="">Custom Select</label>#}
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">{% trans "Country" %}</span></div>
+                                <input type="text" class="form-control" id="emp_country">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="position-relative form-group">
+                            <div class="input-group">
+{#                              <div class="input-group-prepend"><span class="input-group-text">To the Left!</span></div>#}
+                                <button class="mb-2 mr-2 btn-transition btn btn-outline-success modalSubmitBtn serach-api-emp-data">
+                                    <i class="fa fa-search icon-gradient bg-warm-flame"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="mb-0 table table-hover table-striped table-bordered modalStyleTable" style="white-space: nowrap;">
+                        <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Total Employee</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-employee-data">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                   <div class="col-md-6">
+                    <div class="modalTotalCom pull-left">
+                        <a href="javascript:void(0);">
+                            {% trans "Total" %}
+                            <span class="badge" id="em_count"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="app-main__inner pull-right">
+                        <nav class="text-right" aria-label="Page navigation example">
+                            <ul class="pagination modalPagination" style="margin: 0;">
+                                <li class="page-item modalPageItem">
+                                    <a href="javascript:void(0);" class="page-link modalPageLink next-prev-employee"
+                                       style="padding: 0; border: 0;">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //End -->
+<!-- //Modal Popup Ends here -->
+
+<!--Delete Confirmation Modal Start Here-->
+<div class="modal fade" id="deleteConfirmation" tabindex="-1" role="dialog"  aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" style="box-shadow: none;">
+      <div class="modal-content">
+         <div class="modal-header p-3 bg-danger text-white">
+            <h5 class="modal-title">Delete Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="reloadCancel()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+            <div class="modal-body" style="padding-bottom: 0;">
+               <div class="p-1">
+                   <h6 id="deleteConfirmationMsg"></h6>
+               </div>
+            </div>
+          <div class="modal-footer  p-3">
+               <button type="button" class="btn btn-success btn-sm" id="confirmDeleteBtn">Confirm</button>
+                <button type="button" data-dismiss="modal" class="btn btn-secondary btn-sm" onclick="reloadCancel()">Cancel</button>
+          </div>
+      </div>
+   </div>
+</div>
+
+<!--Company details Modal Start Here-->
+<div class="modal fade draggable" id="companyDetailsModal" tabindex="-1" role="dialog"  aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-lg" style="box-shadow: none;">
+      <div class="modal-content">
+         <div class="modal-header bg-happy-green">
+            <h4 class="modal-title text-white">Company : <b id="companyName" class="text-capitalize"></b></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="reloadCancel()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+            <div class="modal-body" style="padding-bottom: 0;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-borderless">
+                            <tbody id="companyDetailsTable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+      </div>
+   </div>
+</div>
+<!--Company details Modal End-->
+<!-- Edit Company Details - Modal Popup -->
+    <div class="modal fade backend-dashboard__modal" id="editCompanyDetails" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" style="box-shadow: none;">
+            <div class="modal-content">
+                <div class="modal-header backend-dashboard-modal__header bg-night-sky">
+                    <h5 class="modal-title text-light">Edit Company :  <b id="companyName1" class="text-white text-uppercase"></b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"  onclick="reloadCancel()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form class="" action="" method="post" onsubmit="return false;" id="validateCompanyDetails">
+                    {% csrf_token %}
+                    <input type="hidden" class="form-control" id="companyID">
+                    <div class="modal-body backend-dashboard-modal__body">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="subsStartDate" class="">
+                                        Subscription Start Date</span>
+                                    </label>
+                                    <input type="date" disabled class="form-control" id="subsStartDate" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="subsEndDate" class="text-capitalize">
+                                        Subscription End Date<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="date" class="form-control" id="subsEndDate" required>
+                                    <div class="text-danger" id="errorSubsEndDate" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="maxEmpLimit" class="text-capitalize">
+                                        Max employees limit<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" min="0" id="maxEmpLimit" required>
+                                    <div class="text-danger" id="errorMaxEmpLimit"  style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="maxDeviceLimit" class="text-capitalize">
+                                        Max devices limit<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" min="0" id="maxDeviceLimit" required>
+                                    <div class="text-danger" id="errorMaxDeviceLimit"  style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="maxTrnsLimit" class="text-capitalize">
+                                       Max transactions limit<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" min="0" id="maxTrnsLimit" required>
+                                    <div class="text-danger" id="errorMaxTrnsLimit"  style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="maxMobileAppLimit" class="text-capitalize">
+                                        Max mobile applications limit<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" min="0" id="maxMobileAppLimit" required>
+                                    <div class="text-danger" id="errorMobileAppLimit"  style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="position-relative form-group">
+                                    <label for="maxWhatsappPushLimit" class="text-capitalize">
+                                        Max whatsapp push limit<span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" min="0" id="maxWhatsappPushLimit" required>
+                                    <div class="text-danger" id="errorWhatsappPushLimit"  style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="position-relative form-group">
+                                    <label for="companyFeatureList" class="text-capitalize">
+                                        Feature<span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" name="feature" id="companyFeatureList"
+                                            multiple="multiple" required style="min-height:145px;">
+
+                                    </select>
+                                    <div class="text-danger" id="errorCompanyFeatureList" style="font-size: x-small;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer backend-dashboard-modal__footer">
+                        <button type="submit" class="btn btn-success" id="updateCompanyDetails">
+                            <i class="fa fa-check fa-fw"></i>Confirm
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="reloadCancel()">
+                            <i class="fa fa-close fa-fw"></i>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- //End -->
+
+{#    <script>#}
+{#        // Company Location starts here#}
+{#        function initMap(){#}
+{#            $.ajax({#}
+{#                url: "{% url 'biotime:get_company_info' %}",#}
+{#                type: "GET",#}
+{#                success: function (res) {#}
+{#                    if(res.data) {#}
+{##}
+{#                        var options = {#}
+{#                            zoom: 2, // it will display zooming effect of map.#}
+{#                            center: new google.maps.LatLng(0, 0),#}
+{#                            //zoomControl: false#}
+{#                            //gestureHandling: 'none',#}
+{#                            gestureHandling: 'greedy'#}
+{#                        };#}
+{#                        // New map#}
+{#                        var map = new#}
+{#                        google.maps.Map(document.getElementById('zkt_company_location'), options);#}
+{#                        // Loop#}
+{#                        for(var i = 0; i < res.data.length; i++) {#}
+{#                            addMarker({#}
+{#                                coords: {lat: res.data[i].latitude, lng: res.data[i].longitude},#}
+{#                                iconImage: "{% static 'cloud/static/images/company_location.png' %}"#}
+{#                            });#}
+{#                        }#}
+{#                    }#}
+{#                    // Add marker function#}
+{#                    function addMarker(props) {#}
+{#                        var marker = new google.maps.Marker({#}
+{#                            position: props.coords,#}
+{#                            map: map,#}
+{#                            icon: props.iconImage#}
+{#                        });#}
+{#                        // Check for custom icon#}
+{#                        if (props.iconImage) {#}
+{#                            // Set icon image#}
+{#                            marker.setIcon(props.iconImage);#}
+{#                        }#}
+{#                    }#}
+{#                }#}
+{#            });#}
+{#        }#}
+{##}
+{#        // Device Location starts here#}
+{#        function myMap() {#}
+{#            $.ajax({#}
+{#                url: "{% url 'biotime:get_device_info' %}",#}
+{#                type: "GET",#}
+{#                success: function (res) {#}
+{#                    if(res.data) {#}
+{#                        var options = {#}
+{#                            zoom: 2, // it will display zooming effect of map.#}
+{#                            center: new google.maps.LatLng(0, 0),#}
+{#                            //zoomControl: false#}
+{#                            //gestureHandling: 'none',#}
+{#                            gestureHandling: 'greedy'#}
+{#                        };#}
+{#                        // New map#}
+{#                        var map = new#}
+{#                        google.maps.Map(document.getElementById('zkt_device_location'), options);#}
+{##}
+{#                        <!-- Popup -->#}
+{#                        var contentString = '<div id="content">'+#}
+{#                        '<div id="siteNotice">'+#}
+{#                        '</div>'+#}
+{#                        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+#}
+{#                        '<div id="bodyContent">'+#}
+{#                        '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +#}
+{#                        'sandstone rock formation in the southern part of the '+#}
+{#                        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+#}
+{#                        'south west of the nearest large town, Alice Springs; 450&#160;km '+#}
+{#                        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+#}
+{#                        'features of the Uluru - Kata Tjuta National Park. Uluru is '+#}
+{#                        'sacred to the Pitjantjatjara and Yankunytjatjara, the '+#}
+{#                        'Aboriginal people of the area. It has many springs, waterholes, '+#}
+{#                        'rock caves and ancient paintings. Uluru is listed as a World '+#}
+{#                        'Heritage Site.</p>'+#}
+{#                        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+#}
+{#                        'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+#}
+{#                        '(last visited June 22, 2009).</p>'+#}
+{#                        '</div>'+#}
+{#                        '</div>';#}
+{##}
+{#                        var infowindow = new google.maps.InfoWindow({#}
+{#                            content: contentString#}
+{#                        });#}
+{#                        <!-- /End -->#}
+{##}
+{#                        // Loop#}
+{#                        for(var i = 0; i < res.data.length; i++) {#}
+{#                            if(res.data[i].status == 0){#}
+{#                                addMarker({#}
+{#                                    coords: {lat: res.data[i].latitude, lng: res.data[i].longitude},#}
+{#                                    iconImage: "{% static 'cloud/static/images/offline_device.png' %}",#}
+{#                                    map: map#}
+{#                                });#}
+{#                            } else {#}
+{#                                addMarker({#}
+{#                                    coords: {lat: res.data[i].latitude, lng: res.data[i].longitude},#}
+{#                                    iconImage: "{% static 'cloud/static/images/online_device.png' %}",#}
+{#                                    map: map#}
+{#                                });#}
+{#                            }#}
+{#                        }#}
+{#                    }#}
+{#                    // Add marker function#}
+{#                    function addMarker(props) {#}
+{#                        var marker = new google.maps.Marker({#}
+{#                            position: props.coords,#}
+{#                            map: map,#}
+{#                            icon: props.iconImage#}
+{#                        });#}
+{#                        // Check for custom icon#}
+{#                        if (props.iconImage) {#}
+{#                            // Set icon image#}
+{#                            marker.setIcon(props.iconImage);#}
+{#                        }#}
+{#                        <!-- Popup -->#}
+{#                        marker.addListener('click', function() {#}
+{#                            infowindow.open(map, marker);#}
+{#                        });#}
+{#                        <!-- /End -->#}
+{#                    }#}
+{#                }#}
+{#            });#}
+{#            initMap(); // Company Location function called here#}
+{#        } // Device Location function end#}
+{#    </script>#}
+    <script>
+        function initMap() {
+            var mapOptions = {
+                zoom: 2, // it will display zooming effect of map.
+                center: new google.maps.LatLng(0, 0),
+                disableDefaultUI: true,
+                scrollwheel: false,
+                //zoomControl: false
+                //gestureHandling: 'none',
+                gestureHandling: 'greedy'
+            };
+            var map = new google.maps.Map(document.getElementById("zkt_company_location"), mapOptions);
+
+            //Create and open InfoWindow.
+            var infoWindow = new google.maps.InfoWindow();
+
+            $.ajax({
+                url: "{% url 'biotime:get_company_info' %}",
+                type: "GET",
+                success: function(res) {
+                    if(res.data) {
+                        if (res.admin){
+                            map.setOptions({disableDefaultUI: false, scrollwheel: true});
+                        }
+                        for (let i = 0; i < res.data.length; i++) {
+                            let data = res.data[i];
+                            var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                            var marker = new google.maps.Marker({
+                                position: myLatlng,
+                                map: map,
+                                icon: "{% static 'cloud/static/images/company_location.png' %}",
+                                //title: ""
+                                //content: data.alias
+                            });
+
+                            /*--
+                            //Attach click event to the marker.
+                            (function (marker, data) {
+                                google.maps.event.addListener(marker, "click", function (e) {
+                                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                                    infoWindow.setContent("<div style = 'width:150px;min-height:40px'>" +
+                                                            "<b>Company : </b>" + data.name +
+                                                            "<br>" +
+                                                            "<b>Payment type : </b>" + data.payment_type +
+                                                            "<br>" +
+                                                            "<b>Expiry date : </b>" + data.subscription_end_date +
+                                                            "</div>");
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, data);
+                            --*/
+
+                            var companyString = '';
+                            companyString = '<table class="mb-0 table table-hover table-striped table-bordered text-center" style="font-size:10px !important; white-space: nowrap">' +
+                            '<thead>' +
+                                '<tr>' +
+                                    '<th> Company </th>' +
+                                    '<th> Payment type </th>' +
+                                    '<th> Subscription End Date </th>' +
+                                    '<th> Country </th>' +
+                                    '<th> Province </th>' +
+                                    '<th> City </th>' +
+                                '</tr>' +
+                            '</thead> '+
+                            '<tbody>' +
+                                '<tr>' +
+                                    '<td>' + data.name + '</td>' +
+                                    '<td>' + data.payment_type + '</td>' +
+                                    '<td>' + data.subscription_end_date + '</td>' +
+                                    '<td>' + data.country + '</td>' +
+                                    '<td>' + data.province + '</td>' +
+                                    '<td>' + data.city + '</td>' +
+                                '</tr>' +
+                            '</tbody> '+
+                            '</table>';
+                            data.company_table = companyString;
+                            (function (marker, data) {
+                                google.maps.event.addListener(marker, "click", function (e) {
+                                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                                    infoWindow.setContent(data.company_table);
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, data);
+                        } // For loop
+                    } // If condition
+                } //Success
+            });
+        } // Company Location function end
+
+        // Device Location starts here
+        function myMap() {
+            var mapOptions = {
+                zoom: 2, // it will display zooming effect of map.
+                center: new google.maps.LatLng(0, 0),
+                disableDefaultUI: true,
+                scrollwheel: false,
+                //zoomControl: false
+                //gestureHandling: 'none',
+                gestureHandling: 'greedy' // Add zoom effect on scrolling
+            };
+            var map = new google.maps.Map(document.getElementById("zkt_device_location"), mapOptions);
+
+            //Create and open InfoWindow.
+            var infoWindow = new google.maps.InfoWindow();
+
+            $.ajax({
+                url: "{% url 'biotime:get_device_info' %}",
+                type: "GET",
+                success: function(res){
+                    if(res.data){
+                        if (res.admin){
+                            map.setOptions({disableDefaultUI: false, scrollwheel: true});
+                        }
+                        for(let i = 0; i < res.data.length; i++) {
+                            let data = res.data[i];
+                            // status=0 is for offline device
+                            if(res.data[i].status == 0){
+                                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                                var marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    icon: "{% static 'cloud/static/images/offline_device.png' %}",
+                                    //title: "Offline Device",
+                                    //content: data.alias
+                                });
+                            }
+                            // status=1 is for online device
+                            else if(res.data[i].status == 1) {
+                                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                                var marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    icon: "{% static 'cloud/static/images/online_device.png' %}",
+                                    //title: "Online Device",
+                                    //content: data.alias
+                                });
+                            }
+                            // This else part will run for status=-1 i.e. for new multi devices
+                            else{
+                                let alias = "";
+                                let sn = "";
+                                let device_status = "";
+                                let push_version = "";
+                                let user_count = "";
+                                let finger_print_count = "";
+                                let finger_vein_count = "";
+                                let face_count = "";
+                                let palm_count = "";
+
+                                data.alias.forEach(alias_element => {
+                                    alias += " " + alias_element + "<br>"
+                                })
+                                data.alias = alias;
+
+                                data.sn.forEach(sn_element => {
+                                    sn += " " + sn_element + "<br>"
+                                })
+                                data.sn = sn;
+
+                                data.device_status.forEach(device_status_element => {
+                                    device_status += " " + device_status_element + "<br>"
+                                })
+                                data.device_status = device_status;
+
+                                data.push_version.forEach(push_version_element => {
+                                    push_version += " " + push_version_element + "<br>"
+                                })
+                                data.push_version = push_version;
+
+                                data.user_count.forEach(user_count_element => {
+                                    user_count += " " + user_count_element + "<br>"
+                                })
+                                data.user_count = user_count;
+
+                                data.finger_print_count.forEach(finger_print_count_element => {
+                                    finger_print_count += " " + finger_print_count_element + "<br>"
+                                })
+                                data.finger_print_count = finger_print_count;
+
+                                data.finger_vein_count.forEach(finger_vein_count_element => {
+                                    finger_vein_count += " " + finger_vein_count_element + "<br>"
+                                })
+                                data.finger_vein_count = finger_vein_count;
+
+                                data.face_count.forEach(face_count_element => {
+                                    face_count += " " + face_count_element + "<br>"
+                                })
+                                data.face_count = face_count;
+
+                                data.palm_count.forEach(palm_count_element => {
+                                    palm_count += " " + palm_count_element + "<br>"
+                                })
+                                data.palm_count = palm_count;
+
+                                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                                var marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    icon: "{% static 'cloud/static/images/multiple_device.png' %}"
+                                    //title: "Multiple Devices",
+                                    //content: data.alias
+                                });
+                            }
+
+                            /*--
+                            (function (marker, data) {
+                                google.maps.event.addListener(marker, "click", function (e) {
+                                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                                    infoWindow.setContent("<div style='width: 300px; min-height: 50px'>" +
+                                                           "<b>Device: </b>" + data.alias +
+                                                           "<br>" +
+                                                           "<b>Serial No.: </b>" + data.sn +
+                                                           "<br>" +
+                                                           "<b>Push version: </b>" + data.push_version +
+                                                           "<br>" +
+                                                           "<b>User count: </b>" + data.user_count +
+                                                           "<br>" +
+                                                           "<b>Finger print count: </b>" + data.finger_print_count +
+                                                           "<br>" +
+                                                           "<b>Finger vein count: </b>" + data.finger_vein_count +
+                                                           "<br>" +
+                                                           "<b>Face count: </b>" + data.face_count +
+                                                           "<br>" +
+                                                           "<b>Palm count: </b>" + data.palm_count +
+                                                           "<br>" +
+                                                           "<b>Count: </b>" + data.count +
+                                                           "</div>");
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, data);
+                            --*/
+
+                            var deviceString = '';
+                            deviceString = '<table class="mb-0 table table-hover table-striped table-bordered text-center" style="font-size:10px !important; white-space: nowrap;">' +
+                            '<thead>' +
+                                '<tr>' +
+                                    '<th> Device </th>' +
+                                    '<th> Sn </th>' +
+                                    '<th> Status </th>' +
+                                    '<th> Push version </th>' +
+                                    '<th> User </th>' +
+                                    '<th> Finger print </th>' +
+                                    '<th> Finger vein </th>' +
+                                    '<th> Face </th>' +
+                                    '<th> Palm </th>' +
+                                '</tr>' +
+                            '</thead> '+
+                            '<tbody>' +
+                                '<tr>' +
+                                    '<td>' + data.alias + '</td>' +
+                                    '<td>' + data.sn + '</td>' +
+                                    '<td>' + data.device_status + '</td>' +
+                                    '<td>' + data.push_version + '</td>' +
+                                    '<td>' + data.user_count + '</td>' +
+                                    '<td>' + data.finger_print_count + '</td>' +
+                                    '<td>' + data.finger_vein_count + '</td>' +
+                                    '<td>' + data.face_count + '</td>' +
+                                    '<td>' + data.palm_count + '</td>' +
+                                '</tr>' +
+                            '</tbody> '+
+                            '</table>';
+                            data.device_table = deviceString;
+
+                            (function (marker, data) {
+                                google.maps.event.addListener(marker, "click", function (e) {
+                                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                                    infoWindow.setContent(data.device_table);
+
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, data);
+                        } // First for loop
+                    } // If condition
+                } //Success
+            });
+            initMap(); // Company Location function called here
+        } // Device Location function end
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={% MAPS_API_KEY %}&v=3.31&libraries=places&callback=myMap"></script>
+    <!-- //End -->
+
+    <!-- All Charts -->
+    <script src="{% static 'gstatic/charts/loader.js' %}" type="text/javascript"></script>
+    <script>
+        /*-- Pie Chart - Devices --*/
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart2);
+        function drawChart2() {
+            var request = new XMLHttpRequest();
+            request.open("GET", "{% url 'biotime:get_license_status' %}", true);
+            request.onload = function () {
+                var data = JSON.parse(this.response);
+                var device = [];
+                device[0] = [];
+                device[0][0] = "License Status";
+                device[0][1] = "Quantity";
+                for (var d in data['data']) {
+                    var device_rlt = [];
+                    device_rlt[0] = data['data'][d]['License Status'];
+                    device_rlt[1] = data['data'][d]['Quantity'];
+                    device.push(device_rlt);
+                }
+                var data = google.visualization.arrayToDataTable(device);
+                var options = {
+                    title: 'License Analysis',
+                    is3D: true,
+                    pieSliceTextStyle: {
+                        color: '#000000',
+                        // fontSize: 12,
+                    },
+                    pieSliceText: 'label',
+                    // pieHole: 0.1, // (pieHole will work only when is3D: false)
+                    // sliceVisibilityThreshold: .3,
+                    // legend: 'none',
+                    // pieStartAngle: 100,
+                    // tooltip: { trigger: 'none' },
+                    slices: {
+                        0: {color: '#7ac045'},
+                        1: {color: '#8da7ea'},
+                        2: {color: '#cdffa8'}
+                    },
+                };
+                var chart = new google.visualization.PieChart(document.getElementById('zkt_devices'));
+                chart.draw(data, options);
+            }
+            request.send();
+        }
+        /*-- //End --*/
+        /*-- Column Chart - Users --*/
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart3);
+        function drawChart3() {
+            $.ajax({
+               url: "/cloud/api/v1/internal/get_user_count/",
+               type: "GET",
+               success: function(res) {
+                  //console.log(res);
+                   /*-- User Reports Dropdown Options --*/
+                  var yearList = res.year_list;
+                  for (var i = 0; i < yearList.length; i++) {
+                      $('#userReportDropdown').append("<option value='"+ yearList[i].value +"'>" + yearList[i].year + "</option>");
+                  }
+
+                  var title = res.title;
+                  var test1 = [];
+                  test1[0] = [];
+                  test1[0][0] = "Months";
+                  test1[0][1] = "Total";
+                  test1[0][2] = {role: "style"};
+                  for (var i in res.data) {
+                      var test2 = [];
+                      test2[0] = res.data[i].month;
+                      test2[1] = res.data[i].count;
+                      test2[2] = "color:" + res.data[i].role.color;
+                      test1.push(test2);
+                  }
+
+                  var data = google.visualization.arrayToDataTable(test1);
+                  var view = new google.visualization.DataView(data);
+                  view.setColumns([0, 1,
+                      {
+                          calc: "stringify",
+                          sourceColumn: 1,
+                          type: "string",
+                          role: "annotation"
+                      },
+                      2]);
+                  var options = {
+                      title: title,
+                      // width: 600,
+                      // height: 400,
+                      bar: {groupWidth: "100%"},
+                      legend: {position: "none"},
+                      animation: {
+                          duration: 3000,
+                          easing: 'out',
+                          startup: true,
+                      }
+                  };
+                  var chart = new google.visualization.ColumnChart(document.getElementById("zkt_users"));
+                  chart.draw(view, options);
+               }
+            });
+        }
+        /*-- //End --*/
+        /*-- Line Chart - Company --*/
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart4);
+        function drawChart4() {
+            var request = new XMLHttpRequest();
+            request.open("GEt", "{% url 'biotime:get_company_count' %}", true);
+            request.onload = function () {
+                var data = JSON.parse(this.response);
+                var cmp = [];
+                cmp[0] = [];
+                cmp[0][0] = "Year";
+                cmp[0][1] = "Sales";
+                cmp[0][2] = "Expenses";
+                for (var k in data['data']) {
+                    var cmp_rlt = [];
+                    cmp_rlt[0] = [];
+                    cmp_rlt[0] = data['data'][k]['year'];
+                    cmp_rlt[1] = data['data'][k]['sale'];
+                    cmp_rlt[2] = data['data'][k]['expire'];
+                    cmp.push(cmp_rlt);
+                }
+                var data = google.visualization.arrayToDataTable(cmp);
+                var options = {
+                    title: 'Sales data for the last four years from 2016 to 2019',
+                    curveType: 'function',
+                    legend: {position: 'bottom'},
+                    animation: {
+                        duration: 3000,
+                        easing: 'out',
+                        startup: true,
+                    }
+                };
+                var chart = new google.visualization.LineChart(document.getElementById('zkt_company'));
+                chart.draw(data, options);
+            };
+            request.send();
+        }
+        /*-- //End --*/
+        /*-- Bar Chart - Employee --*/
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart5);
+        function drawChart5() {
+            $.ajax({
+                url: "/cloud/api/v1/internal/get_employee_count/",
+                type: "GET",
+                success: function (res) {
+                    //console.log(res);
+                    /*-- Employee Reports Dropdown Options --*/
+                    var yearList = res.year_list;
+                    for (var i = 0; i < yearList.length; i++) {
+                        $("#employeeReportDropdown").append("<option value='"+ yearList[i].value +"'>" + yearList[i].year + "</option>");
+                    }
+
+                    var title = res.title; // Display title
+                    var emp = [];
+                    emp[0] = [];
+                    emp[0][0] = "Months";
+                    emp[0][1] = "Total";
+                    emp[0][2] = {role: "style"};
+                    for (var k in res.data) {
+                        var emp_rlt = [];
+                        emp_rlt[0] = res.data[k].month;
+                        emp_rlt[1] = res.data[k].count;
+                        emp_rlt[2] = "color:" + res.data[k].role.color;
+                        emp.push(emp_rlt);
+                    }
+
+                    var data = google.visualization.arrayToDataTable(emp);
+                    var view = new google.visualization.DataView(data);
+                    view.setColumns([0, 1,
+                        {
+                            calc: "stringify",
+                            sourceColumn: 1,
+                            type: "string",
+                            role: "annotation"
+                        },
+                        2]);
+                    var options = {
+                        title: title,
+                        // width: 600,
+                        // height: 400,
+                        bar: {groupWidth: "100%"},
+                        legend: {position: "none"},
+                        bars: 'horizontal',
+                        animation: {
+                            duration: 3000,
+                            easing: 'out',
+                            startup: true,
+                        }
+                    };
+                    var chart = new google.visualization.BarChart(document.getElementById("zkt_employee"));
+                    chart.draw(view, options);
+                }
+            });
+        }
+        /*-- //End --*/
+    </script>
+    <!-- //End -- >
+
+    <! -- Fetching data from API and changing Html div element -->
+    <script>
+        $(document).ready(function () {
+            // add company to company_menu
+            $.ajax({
+                url: "{% url 'biotime:get_all_company' %}",
+                type: "GET",
+                dataType: "json",
+                success: function (result) {
+                    //console.log(result);
+                    var company_shift_btn = $('#company_shift_btn');
+                    var backend_dashboard_company_menu = $("#backend_dashboard_company_menu");
+                    backend_dashboard_company_menu.append("<li class='mb-4'>" +
+                        "<a onclick='" + "change_company(" + '"' + result.current_company + '"' + ")' href='javascript:;'" +
+                        "class='mm-active text-white' style='background:#428bca;'>" +
+                        "<i class='metismenu-icon fa fa-building' style='color:#474b4f;'></i>" +
+                        result.current_company + " (" + result.current_company_role + ")</a> </li>");
+                    if (result.display_current_company) {
+                      company_shift_btn.text('Current Company');
+                      company_shift_btn.attr("onclick", "change_company('" + result.current_company + "', 'current')")
+                    }else {
+                      company_shift_btn.text('All Companies');
+                      company_shift_btn.attr("onclick", "change_company('" + result.head_company + "', 'all')")
+                    }
+                    var other_company = result.other_company;
+                    var other_company_role = result.other_company_role;
+                    for (var company_name in result.other_company) {
+                        backend_dashboard_company_menu.append("<li class='mb-4'>" +
+                            "<a onclick='" + "change_company(" + '"' + other_company[company_name] + '"' + ")' href='javascript:;'" +
+                            "class='mm-active text-white' style='background: #7ac143;'>" +
+                            "<i class='metismenu-icon fa fa-building' style='color:#474b4f;'></i>" +
+                            other_company[company_name] + " (" +other_company_role[company_name] + ")</a> </li>");
+                    }
+                }
+            });
+
+        });
+    </script>
+    <!-- //End -->
+
+    <script>
+        // top side-bar menu
+        function change_company(company_name) {
+          var company_shift_type;  // all/current/normal
+          if(arguments[1]){
+            company_shift_type = arguments[1]
+          }else {
+            company_shift_type = 'normal'
+          }
+            $.ajax({
+                url: "{% url 'biotime:change_current_company' %}" + "?company_name=" + company_name + "&company_shift_type=" + company_shift_type,
+                type: "GET",
+                dataType: "json",
+                success: function (result) {
+                    if (result.ret === 0) {
+                        window.location.href = "{% url 'biotime:login' %}";
+                    } else {
+                        console.log(result.msg)
+                    }
+                }
+            })
+        }
+
+    </script>
+    <script src="{% static 'cloud/static/js/jquery/bootstrap-4.5.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'cloud/static/js/main.min.js' %}"></script>
+    <script src="{% static 'layui/layui.js' %}?v=2.4.5" type="text/javascript"></script>
+    <script src="{% static 'cloud/static/js/graph.js' %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        function reloadCancel () {
+            location.reload();
+        }
+    </script>
+</body>
+</html>

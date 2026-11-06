@@ -1,0 +1,18 @@
+{% extends 'virtual/export.html' %}
+{% load i18n %}
+{% block exportForm_item_extra %}
+    <div class="layui-form-item">
+      <label class="layui-form-label" for="id_export_style" style="width: 140px;">{% trans 'exportForm_itemLabel_exportStyle' %}</label>
+      <div class="layui-input-inline">
+        <select name="export_style" id="id_export_style">
+          <option value="">{% trans 'exportForm_exportStyle_optionDefault' %}</option>
+          <option value="1">{% trans 'exportForm_exportStyle_optionEmployeeWise' %}</option>
+          <option value="2" selected>{% trans 'exportForm_exportStyle_optionDepartmentWise' %}</option>
+          <option value="3">{% trans 'exportForm_exportStyle_optionDateWise' %}</option>
+        </select>
+      </div>
+      <div class="layui-input-block" style="margin-left: 325px">
+        <input type="checkbox" name="page_wise" lay-skin="primary" title="{% trans 'exportForm_itemTitle_pageWise' %}">
+      </div>
+    </div>
+{% endblock %}

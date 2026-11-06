@@ -1,0 +1,73 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+    <script type="text/javascript" src="{% static 'cloud/static/js/jquery/jquery-3.5.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'layui/layui.js' %}"></script>
+    <script src="{% static 'locale/i18n.js' %}?v=1.2"></script>
+    <script src="{{ STATIC_URL }}locale/i18n_{{ LANGUAGE_CODE|default:'en' }}.js?v=1.3"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'layui/css/layui.css' %}?v=2.4.5">
+    <title>{% trans 'menu_att_detailReport' %}</title>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15" style="margin-bottom: 1px">
+        <input type="hidden" id="id-emp" value="{{employee}}">
+        <input type="hidden" id="id-dept" value="{{department}}">
+        <input type="hidden" id="id-area" value="{{area}}">
+        <input type="hidden" id="id-start" value="{{start}}">
+        <input type="hidden" id="id-end" value="{{end}}">
+        <input type="hidden" id="id-company_id" value="{{company_id}}">
+        <input type="text" style="display: none" id="id-columns" value='{{columns}}'>
+        <div class="layui-card-body">
+            <table id="app-report" class="layui-table" lay-filter="appreport">
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getColumns(){
+        var dicts =$.parseJSON($('#id-columns').val());
+        var columns = dicts['columns'];
+        var cols = [];
+        for (var i = 0; i < columns.length; ++i) {
+                        var dic = {width: 110, field: columns[i].field, title: columns[i].title};
+                        cols.push(dic);
+                    }
+                    return cols;
+    }
+    $(function () {
+        var cols = getColumns();
+        var emp = $("#id-emp").val();
+        var dept = $("#id-dept").val();
+        var area = $("#id-area").val();
+        var start = $("#id-start").val();
+        var end = $("#id-end").val();
+        var company = $("#id-company_id").val();
+        var url = "/att/api/appReport/?";
+        url = url + "employees=" + emp + "&departments=" + dept + "&areas=" + area + "&start_date=" + start + "&end_date=" + end + "&company_id=" + company;
+        var opts = {
+            elem: "#app-report",
+            cols:[cols]
+            , page: {
+                layout: ['refresh', 'limit', 'prev', 'page', 'count', 'next', 'skip']
+                , curr: 1
+            }
+            , limits: [5, 10, 15, 20, 30, 50]
+            , text: {none: 'No data.'}
+            , request: {
+                pageName: 'page',
+                limitName: 'page_size'
+            }
+            ,url:url
+        };
+        layui.use(['table'], function () {
+            var table = layui.table;
+            table.render(opts);
+        });
+    });
+</script>
+</body>
+</html>

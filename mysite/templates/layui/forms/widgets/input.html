@@ -1,0 +1,2 @@
+<input type="{{ widget.type }}" name="{{ widget.name }}" autocomplete="off" {% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"
+{% endif %}{% if widget.name != None %} lay-verify="{% if widget.required %}required|{% endif %}{{ widget.name }}"{% endif %}{% include "layui/forms/widgets/attrs.html" %} />

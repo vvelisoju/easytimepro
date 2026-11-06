@@ -1,0 +1,84 @@
+{% load i18n static common %}
+{% autoescape off %}
+  <div id="{{ model_name }}_edit_form" style="padding: 10px; height: 500px;width: 1000px;">
+    <form class="layui-form data-form" action="" method="post">
+      {% csrf_token %}
+      {% with adminform.form as f %}
+        <div class="layui-colla-content layui-show">
+          <div class="layui-row">
+            <div class="layui-col-md9">
+              <div class="layui-form-item">
+                {% layui_inline f.category %}
+              </div>
+              <div class="layui-form-item" data-name="flexible">
+                {% layui_inline f.receiver %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.subject %}
+              </div>
+              <div class="layui-form-item" style="all: inherit;">
+                {% layui_inline f.content %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endwith %}
+    </form>
+    {% block from_button %}
+    {% endblock %}
+  </div>
+  <script>
+    layui.use('form', function () {
+      var form = layui.form;
+      console.log(">>>>the form is:" + form);
+      form.render();
+      form.on('submit(form-submit)', function (/*data*/) {
+        var action_url = $("current_url").val();
+        var formdata = form.field;
+        $.ajax({
+          type: "POST",
+          url: action_url,
+          data: formdata,
+          dataType: "html",
+          success: function (data) {
+            var msg, status;
+            if (typeof data == "string" && data.toLowerCase() === "ok") {
+              msg = gettext("save_successful");
+              status = 1;
+            } else {
+              msg = gettext("save_failed.");
+              status = 2;
+            }
+            layer.msg(msg, {
+              icon: status,
+              time: 2000,
+              title: gettext("info")
+            });
+          }
+        });
+      });
+    });
+    $(function () {
+      var form = layui.form,
+        form_selector_str = "{{ model_name }}_edit_form";
+      form.on('select', function (data) {
+        var elem = data.elem;
+        var select_value = data.value;
+        switch (elem.id) {
+          case 'id_category':
+            if (select_value === '1') {
+              $('div[data-name=flexible]').hide();
+              $("#id_reciver").val('');
+              form.render('select');
+            }
+            if (select_value === '2') {
+              $('div[data-name=flexible]').show();
+            }
+            break;
+          default:
+            break;
+        }
+      });
+    });
+  </script>
+{% endautoescape %}

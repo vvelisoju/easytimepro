@@ -1,0 +1,77 @@
+.header .layui-nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  background: none;
+}
+
+.layui-layout-admin .layui-header {
+  background-color: #7ac142;
+}
+
+.layui-layout-admin .layui-header .layui-user-profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.layui-layout-admin .layui-header .layui-nav-child {
+  left: auto;
+  right: 0;
+  top: 60px;
+}
+
+.layui-nav-tree .layui-nav-bar {
+  background-color: #7ac142;
+}
+
+.layui-fluid {
+  padding: 15px;
+}
+
+.layui-tabs-body-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.layui-layout-admin .layui-body {
+  bottom: 0px;
+}
+.layui-copyright {
+  text-align: center;
+}
+.layui-table-tool {
+  background-color: #dcdfe2;
+}
+.layui-table-tool .layui-inline[lay-event] {
+  width: auto;
+  height: 30px;
+}
+div.grid-toolbar {
+    height: 30px;
+    margin: 0;
+    padding: 0px;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    background: #dcdfe2;
+}
+div.grid-toolbar .layui-link-btn {
+    height: 30px;
+    line-height: 30px;
+    color: #000000;
+    background-color: #dcdfe2;
+}
+span.required {
+  color: red;
+}
+.layui-table-tool-panel {
+    width: auto;
+    height: 350px;
+    overflow-y: scroll;
+}

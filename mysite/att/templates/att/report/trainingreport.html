@@ -1,0 +1,20 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+$.extend(opts, {
+    cols: [[
+        {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+        ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+        ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+        ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'position_name',width:140, title: "{% trans 'report_column_positionName' %}"}
+        ,{field:'att_date', title: "{% trans 'report_column_attendanceDate' %}", width:100, sort:true}
+        ,{field:'start_time', title: "{% trans 'report_column_clockInTime' %}"}
+        ,{field:'end_time', title: "{% trans 'report_column_clockOutTime' %}"}
+        ,{field:'total_worked', title: "{% trans 'report_column_totalWorkedDuration' %}", width:100}
+        ,{field:'report_symbol', title: "{% trans 'report_column_trainingSymbol' %}"}
+    ]]
+    ,method: "get"
+    ,url: "/att/api/trainingReport/"
+});
+{% endblock %}

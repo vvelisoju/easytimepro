@@ -1,0 +1,22 @@
+{% load i18n static %}
+{% load common %}
+{#{% autoescape off %}#}
+{% block extend_js %}
+{% endblock %}
+<div style="padding: 10px;min-height: 350px;max-height: 550px;min-width: 550px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+    <input type="hidden" id="id_model_pk" name="pk" value="{{ object_id }}"/>
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui-form-item">
+        {{ f.emp }}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.subject %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.content %}
+      </div>
+    {% endwith %}
+  </form>
+</div>

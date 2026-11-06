@@ -1,0 +1,535 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "Оплата праці"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "Профіль працівника"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "Профіль працівника"
+
+msgid "menu_group_payroll_formula"
+msgstr "Формула"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "Формула вирахування"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "Формула винятку"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "Збільшити формулу"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "Залишити формулу"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "Формула понаднормового режиму"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "Додаткові кошти"
+
+msgid "menu_payroll_extraincrease"
+msgstr "Додаткове збільшення"
+
+msgid "menu_payroll_extradeduction"
+msgstr "Додатковий вилік"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "Структура оплати праці"
+
+msgid "menu_payroll_salarystructure"
+msgstr "Структура оплати праці"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "Позика"
+
+msgid "menu_payroll_empLoan"
+msgstr "Позика"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "Попередня оплата"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "Попередня оплата"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "Відшкодування"
+
+msgid "menu_payroll_reimbursement"
+msgstr "Відшкодування"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Розрахунок"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "Розрахунок заробітної плати"
+
+msgid "menu_group_payroll_report"
+msgstr "Звіт"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "Структура зарплати"
+
+msgid "menu_payroll_increase_report"
+msgstr "Збільшити елементи"
+
+msgid "menu_payroll_deduction_report"
+msgstr "Елементи відрахування"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "Деталі зарплати"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "Att Param"
+
+msgid "menu_payroll_setting"
+msgstr "Налаштування заробітної плати"
+
+msgid "paroll_mode_monthly"
+msgstr "Щомісяця"
+
+msgid "paroll_type_cash"
+msgstr "Готівка"
+
+msgid "paroll_type_check"
+msgstr "Перевірка"
+
+msgid "paroll_type_bank_transfer"
+msgstr "Банківський переказ"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "Профіль працівника"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "Період оплати"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "Тип платежу"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "Назва банку"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "Банківський рахунок"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "Ідентифікатор персоналу"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "Ім'я"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "Прізвище"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "Ідентифікатор агента"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "Обліковий запис агента"
+
+msgid "payroll_model_deductionFormula"
+msgstr "Формула вирахування"
+
+msgid "deductionFormula_field_name"
+msgstr "Ім'я"
+
+msgid "deductionFormula_field_formula"
+msgstr "Формула"
+
+msgid "deductionFormula_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "Формула винятку"
+
+msgid "exceptionFormula_field_name"
+msgstr "Ім'я"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "Тип винятку"
+
+msgid "exceptionFormula_field_formula"
+msgstr "Формула"
+
+msgid "exceptionFormula_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_increasementFormula"
+msgstr "Збільшити формулу"
+
+msgid "increasementFormula_field_name"
+msgstr "Ім'я"
+
+msgid "increasementFormula_field_formula"
+msgstr "Формула"
+
+msgid "increasementFormula_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_leaveFormula"
+msgstr "Залишити формулу"
+
+msgid "leaveFormula_field_name"
+msgstr "Ім'я"
+
+msgid "leaveFormula_field_category"
+msgstr "Тип залишення"
+
+msgid "leaveFormula_field_formula"
+msgstr "Формула"
+
+msgid "leaveFormula_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "Формула понаднормового режиму"
+
+msgid "overtimeFormula_field_name"
+msgstr "Ім'я"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "Рівень овертайму"
+
+msgid "overtimeFormula_field_formula"
+msgstr "Формула"
+
+msgid "overtimeFormula_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_extraIncrease"
+msgstr "Додаткове збільшення"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "Додати"
+
+msgid "extraIncrease_field_employee"
+msgstr "Співробітник"
+
+msgid "extraIncrease_field_amount"
+msgstr "Сума"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "Час випуску"
+
+msgid "extraIncrease_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_extraDeduction"
+msgstr "Додатковий вилік"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "Додати"
+
+msgid "extraDeduction_field_employee"
+msgstr "Співробітник"
+
+msgid "extraDeduction_field_amount"
+msgstr "Сума"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "Час випуску"
+
+msgid "extraDeduction_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_salarystructure"
+msgstr "Структура оплати праці"
+
+msgid "salaryStructure_field_amount"
+msgstr "Основна зарплата"
+
+msgid "salaryStructure_field_formula"
+msgstr "Формула зарплати"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "Дата набрання чинності"
+
+msgid "salaryStructure_field_remark"
+msgstr "Зауваження"
+
+msgid "salaryStructure_field_formulas"
+msgstr "Формули"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "Попередня оплата"
+
+msgid "salaryAdvance_field_amount"
+msgstr "Сума"
+
+msgid "salaryAdvance_field_time"
+msgstr "Час випуску"
+
+msgid "salaryAdvance_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_Reimbursement"
+msgstr "Відшкодування"
+
+msgid "Reimbursement_field_amount"
+msgstr "Сума"
+
+msgid "Reimbursement_field_time"
+msgstr "Час відшкодування"
+
+msgid "Reimbursement_field_file"
+msgstr "Квитанція про відшкодування"
+
+msgid "Reimbursement_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_model_empLoan"
+msgstr "Позика"
+
+msgid "empLoan_field_employee"
+msgstr "Ідентифікатор працівника"
+
+msgid "empLoan_field_loanAmount"
+msgstr "Сума позики"
+
+msgid "empLoan_field_loanTime"
+msgstr "Час позики"
+
+msgid "empLoan_field_refundCycle"
+msgstr "Цикл повернення"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "Сума повернення за період"
+
+msgid "empLoan_field_clean_time"
+msgstr "Чистий час"
+
+msgid "empLoan_field_remark"
+msgstr "Зауваження"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "Додати"
+
+msgid "payroll_action_addRmb"
+msgstr "Додати"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "Додати"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "Додати"
+
+msgid "reimbursement_file"
+msgstr "Квитанція про відшкодування"
+
+msgid "report_column_overtimeFormula1"
+msgstr "OT1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "OT2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "OT3"
+
+msgid "report_column_increaseFormula"
+msgstr "Збільшити формулу"
+
+msgid "report_column_deductionFormula"
+msgstr "Формула вирахування"
+
+msgid "report_column_lateFormula"
+msgstr "Пізня формула"
+
+msgid "report_column_absentFormula"
+msgstr "Відсутня формула"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "Формула дострокового виходу"
+
+msgid "payroll_model_monthlysalary"
+msgstr "Щомісячний дохід заробітної плати"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "Основна зарплата"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "Дата набрання чинності"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "Дата обчислення"
+
+msgid "monthlySalary_field_ot1"
+msgstr "OT1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "OT2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "OT3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "Пізно в"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "Достроковий вихід"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "Відсутній"
+
+msgid "monthlySalary_field_increase"
+msgstr "Збільшити"
+
+msgid "monthlySalary_field_deduction"
+msgstr "Відрахування"
+
+msgid "monthlySalary_field_leave"
+msgstr "Залишити"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "Додаткове збільшення"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "Додатковий вилік"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "Загальна сума позики"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "Сума повернення позики"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "Сума неповернення позики"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "Відрахування з позики"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "Збільшення позики"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "Попереднє збільшення"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "Попереднє вирахування"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "Відшкодування"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "Загальне збільшення"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "Загальна відрахування"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "Загальна заробітна плата"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "Основна зарплата не може бути меншою за нуль"
+
+msgid "payroll_attParamUnit"
+msgstr "Блок Att Param"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}: Співробітник {1} має ефективну структуру зарплат."
+
+msgid "receipt_file_format_constraints"
+msgstr "Підтримувати лише файл зображення jpg / jpeg / png / bmp."
+
+msgid "1_period"
+msgstr "1 період"
+
+msgid "2_periods"
+msgstr "2 періоди"
+
+msgid "3_periods"
+msgstr "3 періоди"
+
+msgid "4_periods"
+msgstr "4 періоди"
+
+msgid "5_periods"
+msgstr "5 періодів"
+
+msgid "6_periods"
+msgstr "6 періодів"
+
+msgid "7_periods"
+msgstr "7 періодів"
+
+msgid "8_periods"
+msgstr "8 періодів"
+
+msgid "9_periods"
+msgstr "9 періодів"
+
+msgid "10_periods"
+msgstr "10 періодів"
+
+msgid "11_periods"
+msgstr "11 періодів"
+
+msgid "12_periods"
+msgstr "12 періодів"
+
+msgid "deductionformula_addform_note"
+msgstr "Примітка. Ця відрахування діє щомісяця."
+
+msgid "increasementformula_addform_note"
+msgstr "Примітка. Це збільшення діє щомісяця."
+
+msgid "caleulator_title"
+msgstr "Калькулятор"
+
+msgid "caleulator_basicSalary"
+msgstr "Основна зарплата"
+
+msgid "caleulator_scheduleDays"
+msgstr "Дні розкладу"
+
+msgid "caleulator_schedulePeriod"
+msgstr "Період розкладу"
+
+msgid "caleulator_check"
+msgstr "Перевірка"
+
+msgid "report_column_total_increase_formula"
+msgstr "Формула загального збільшення"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "Загальне збільшення назви формули"
+
+msgid "report_column_total_increase_expression"
+msgstr "Загальне збільшення виразу"
+
+msgid "report_column_total_deduction_formula"
+msgstr "Формула загального вирахування"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "Назва формули загального вирахування"
+
+msgid "report_column_total_deduction_expression"
+msgstr "Загальний вираз вирахування"
+
+msgid "mula_field_formula"
+msgstr "Формула"
+
+msgid "basic_salary_need_lager_then_zero"
+msgstr "Основна зарплата може бути не меншою за нуль!"

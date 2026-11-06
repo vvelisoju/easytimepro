@@ -1,0 +1,101 @@
+{% load i18n static common %}
+{% autoescape off %}
+  <div class="layui-fluid" id="{{ model_name }}_fluid">
+    <div class="layui-card">
+      {% block search_bar %}
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto search-form">
+          {% block search_form %}
+            {% csrf_token %}
+            <div class="layui-form-item">
+              {% layui_inline form.employee %}
+              {% layui_inline form.start_date %}
+              {% layui_inline form.end_date %}
+              <div class="layui-inline">
+                <div class="button-3d" lay-submit="" lay-filter="{{ model_name }}-search">
+                  <i class="fa fa-fw fa-search"></i>
+                </div>
+              </div>
+            </div>
+          {% endblock search_form %}
+        </div>
+      {% endblock search_bar %}
+    </div>
+    <div class="layui-card-body module">
+      {% block main_body %}
+        <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+        <script type="text/html" id="{{ model|safe }}_toolbar">
+          <div class="layui-btn-container grid-toolbar" style="">
+            <ul class="layui-nav"></ul>
+          </div>
+        </script>
+      {% endblock %}
+    </div>
+  </div>
+{% endautoescape %}
+<script>
+  $(function () {
+    var fluid_container = "#{{ model_name }}_fluid",
+      tableId = "id_grid_{{ model_name }}",
+      tableElem = "#id_grid_{{ model_name }}",
+      toolbarID = "#{{ model|safe }}_toolbar",
+      actionUrl = '{{ actionUrl }}',
+      tableOpts = {};
+    {% block report_columns %}
+    {% endblock report_columns %}
+    {% block table_init %}
+      $.extend(true, tableOpts, {
+        tblId: "tbl",
+        id: tableId,
+        elem: tableElem,
+        toolbar: toolbarID,
+        defaultToolbar: [],
+        cellMinWidth: 80,
+        cols: cols,
+        height: 'full-140',
+        url: actionUrl,
+        method: "post",
+        loading: true,
+        page: {
+          layout: ['prev', 'page', 'next', 'limit', 'count', 'refresh', 'skip'],
+          curr: 1
+        },
+        done: function (res, curr, count) {
+          {#this.where={csrfmiddlewaretoken: "{{ csrf_token }}"};#}
+        },
+        limit: 50,
+        limits: [5, 10, 20, 30, 50, 60, 90],
+        where: {
+          csrfmiddlewaretoken: "{{ csrf_token }}"
+        }
+      });
+    {% endblock %}
+    layui.use(['table', 'form', 'element', 'laydate'], function () {
+      var form = layui.form;
+      form.render();
+      var laydate = layui.laydate;
+      $(fluid_container + " .search-form input.layui-date").each(function () {
+        laydate.render({elem: this, type: 'date', lang: 'en'});
+      });
+      var table = layui.table;
+      var report = table.render(tableOpts);
+      var element = layui.element;
+      {% block action_reder %}
+        $(fluid_container + " div.grid-toolbar").actions({
+          container: fluid_container,
+          actionContainer: fluid_container + " div.grid-toolbar",
+          model: "{{ model_name }}",
+          table: table,
+          form: form,
+          element: element,
+          curTable: report,
+          gridOpts: tableOpts,
+          actions: '',
+          export: "{{ export }}"
+        });
+      {% endblock %}
+    });
+  });
+</script>
+{% block init_script %}
+{% endblock init_script %}
+

@@ -1,0 +1,747 @@
+(function () {
+  var CONST_KEY_USED_LAYER_IDS = '__used_layer_ids__',
+    CONST_CONTROL_PANEL_TPL = [
+      '<span data-name="{name}" class="{class}">',
+      '<a href="javascript:void(0);" title="{title}">',
+      '<i class="fa fa-fw {icon}"></i></a></span>'
+    ].join('');
+  $.fn.zTreeSelect = function (options) {
+    var z_tree_obj, $this = $(this), cur_expand_node = null, is_single_expand = true,
+      cur_selected = [],
+      cur_show = {},
+      current_layer_id,
+      single_page_flag = false,
+      const_min_content_width = 160,
+      const_max_content_width = 300,
+      const_max_content_height = 300,
+      tree_content = null,
+      proper_width = null,
+      eliminate_percent_pattern = /\s*\(\d+\/\d+\)$/;
+
+    var opts = $.extend({
+        beforeExpand: before_expand,
+        onClick: on_click,
+        onClickExt: $.noop,
+        onCheck: on_check,
+        onCheckExt: $.noop,
+        onRightClick: on_right_click,
+        placeholder: "----------"
+      }, $.fn.zTreeSelect.defaults, options),
+      unique_id = opts.name + opts.stamp,
+      z_tree_id = unique_id + '_tree';
+
+    function init_select_tree(isMultiple, checkStyle, checkboxType) {
+      var html, target, input_field, layer_page;
+
+      var callback = {
+        beforeExpand: opts.beforeExpand,
+        onClick: opts.onClick,
+        onCheck: opts.onCheck,
+        onRightClick: opts.onRightClick
+      };
+
+      // if (isMultiple && checkStyle === 'checkbox') {
+      // }
+
+      var setting = {
+        view: {
+          nameIsHTML: true, // allow html in node name for highlight usage
+          dblClickExpand: false,
+          showLine: true
+        }, data: {
+          simpleData: {
+            enable: true
+          }
+        }, check: {
+          enable: false,
+          chkboxType: opts.children_checkbox_type,
+          radioType: "all"
+        }, edit: {
+          enable: false,
+          editNameSelectAll: false
+        }, callback: callback
+      };
+      if (isMultiple) {
+        setting.check.enable = isMultiple;
+      }
+      if (checkboxType !== undefined && checkboxType != null) {
+        setting.check.chkboxType = checkboxType;
+      }
+      setting.check.chkStyle = checkStyle;
+      html = '<div class = "layui-select-title" >' +
+             '<input id="' + unique_id + '_show"' + ' type = "text" placeholder = "'+ opts.placeholder + '" value = "" class = "layui-input" readonly>' +
+             '<i class= "layui-edge" ></i>' +
+             '<div style="display:none;" id="' + unique_id + '_hide"></div>' +
+             '</div>';
+      target = $('#' + unique_id);
+      target.append(html);
+      input_field = $('#' + unique_id + '_show').parent();
+
+      var checked_nodes = [],
+        flattened_tree_nodes = [],
+        this_record = $($.fn.adminSite.const.CONST_CURRENT_TAB_TITLE_AREA).data('this_record') || {},
+        widget_model = opts.model,
+        this_record_model = this_record.model || '',
+        this_record_id = this_record.id ? (function () {
+          var result = parseInt(this_record.id);
+          return isNaN(result) ? undefined : result;
+        })() : undefined;
+
+      layer_page = $this.closest('.layui-layer-page');
+      if (layer_page.length === 0) {
+        layer_page = $('.layui-tab-item.layui-show').children().first();
+      }
+
+    if (["department", "area", "position","location"].includes(widget_model)) {
+            var excludedNodeIds = [];
+            function collectAndExcludeDescendants(node) {
+                excludedNodeIds.push(node.id);
+
+                opts.data.forEach(o => {
+                    if (o.pId === node.id) {
+                        collectAndExcludeDescendants(o);
+                    }
+                });
+            }
+
+            opts.data.forEach(o => {
+                if ((typeof o.checked === 'boolean' && o.checked) ||
+                    (typeof o.checked === 'string' && o.checked.toLowerCase() === "true")) {
+                    checked_nodes.push(o);
+                }
+
+                // Only exclude descendants when the current node model matches the record model
+                // This prevents excluding nodes when this_record_id happens to match a node's id or pId
+                if (this_record_id !== undefined && this_record_model === widget_model &&
+                    (o.id === this_record_id || o.pId === this_record_id)) {
+                    flattened_tree_nodes.push(o);
+
+                    collectAndExcludeDescendants(o);
+                } else {
+                    if (this_record_model !== widget_model || this_record_id === undefined ||
+                        (!_.includes([o['id'], o['pId']], this_record_id))) {
+                        flattened_tree_nodes.push(o);
+                    }
+                }
+            });
+
+            // Filter out nodes under the clicked node
+            flattened_tree_nodes = flattened_tree_nodes.filter(node => !excludedNodeIds.includes(node.id));
+
+    }
+    else{
+      var node_pid = [0];
+      opts.data.forEach(function (o) {
+        // parallel conditions
+        if (type(o.checked) === 'boolean' && o.checked ||
+            type(o.checked) === 'string' && o.checked.toLowerCase() === "true") {
+          checked_nodes.push(o);
+        }
+        if (this_record_model !== widget_model ||
+            this_record_id === undefined ||
+            (!_.includes([o['id'], o['pId']], this_record_id) &&
+                (_.includes(node_pid, o['pId']))) ) {
+          flattened_tree_nodes.push(o);
+          node_pid.push(o['id']);
+        }
+      });
+    }
+      if (this_record_id === undefined) {
+        flattened_tree_nodes = opts.data;
+      }
+
+      first_time_pseudo_assignment(checked_nodes);
+
+      tree_content = $(
+        '<div class="tree-content">' +
+        '<div id="' + unique_id + '-tree-control">' + '</div><div class="tree-ul">' +
+        '<ul id="' + unique_id + '_tree" class="ztree scrollbar" style="margin-top:0;"></ul></div>' +
+        '</div>');
+
+      input_field.bind("click", function (event) {
+        var that = $(this)
+          , previous_layer_id = current_layer_id,
+          parent_layer = that.closest('.layui-layer.layui-layer-page');
+
+        if ($("#" + unique_id + "_show").attr("disabled") == "disabled") {
+          return;
+        }
+        if (parent_layer.length === 0) {
+          parent_layer = that.closest('.layui-tab-item');
+          single_page_flag = true;
+        }
+        that.closest('.layui-form-select').addClass("layui-form-selected");
+        var title_elem = $(this), dl_elem = tree_content,
+          title_rect = title_elem.get(0).getBoundingClientRect();
+        if (previous_layer_id === undefined || $('#layui-layer' + previous_layer_id).css('display') === 'none') {
+          layui.stope(event);
+          if (!title_elem.parent().hasClass('layui-form-selected')) {
+            return;
+          }
+
+          var dlPosition = getDlPosition(title_elem, dl_elem),
+            lay_offset_top = title_rect.top + title_elem.outerHeight(),
+            lay_offset_left = dlPosition.left;
+
+
+          title_elem.css({
+            backgroundColor: 'transparent'
+          });
+          if (current_layer_id === undefined) {
+            $('.tree-content').closest('.layui-layer.layui-layer-page').hide();
+            current_layer_id = layer.open({
+              type: 1,
+              title: false,
+              closeBtn: 0,
+              shade: 0,
+              anim: -1,
+              fixed: top !== window,
+              isOutAnim: false,
+              offset: [lay_offset_top + 'px', lay_offset_left + 'px'],
+              area: [dl_elem.outerWidth() + 'px', dl_elem.outerHeight() + 'px'],
+              content: '<div class="layui-unselect layui-form-select layui-form-selected layui-table-select"></div>',
+              success: function (layero/*, index*/) {
+                var original_layer = $('.layui-layer-content', layer_page);
+                if (original_layer.length && proper_width === null) {
+                  var layer_rect = original_layer.get(0).getBoundingClientRect();
+                  proper_width = Math.floor(layer_rect.right - that.get(0).getBoundingClientRect().left - 2);
+                }
+                layero.find('.layui-layer-content').addClass('layer-of-tree-content');
+                layero.find('.layui-form-selected').append(dl_elem.css({
+                  display: 'block'
+                }));
+
+                // -------------
+                // Control Panel
+                // -------------
+                if(unique_id.indexOf('auth_company') !== -1){
+                  var conf_for_general_propose = [{
+                    name: 'search',
+                    title: gettext('search_node'),
+                    class: '',
+                    icon: 'fa-search'
+                  }], conf_for_multiple_select = [{
+                    name: 'all',
+                    title: gettext('select_all'),
+                    class: '',
+                    icon: 'fa-check-square-o'
+                  }], conf_for_select_done = [{
+                    name: 'done',
+                    title: gettext('select_done'),
+                    class: 'selected float-right',
+                    icon: 'fa fa-fw fa-check'
+                  }];
+                }else {
+                    var conf_for_general_propose = [{
+                    name: 'single',
+                    title: gettext('expand_only_single_path'),
+                    class: 'selected',
+                    icon: 'fa-minus'
+                  }, {
+                    name: 'expand_all',
+                    title: gettext('expand_node'),
+                    class: '',
+                    icon: 'fa-chevron-up'
+                  }, {
+                    name: 'collapse_all',
+                    title: gettext('collapse_node'),
+                    class: '',
+                    icon: 'fa-chevron-down'
+                  }, {
+                    name: 'search',
+                    title: gettext('search_node'),
+                    class: '',
+                    icon: 'fa-search'
+                  }], conf_for_multiple_select = [{
+                    name: 'all',
+                    title: gettext('select_all'),
+                    class: '',
+                    icon: 'fa-check-square-o'
+                  }, {
+                    name: 'children',
+                    title: gettext('select_sub_department'),
+                    class: 'selected',
+                    icon: 'fa-sitemap'
+                  }], conf_for_select_done = [{
+                    name: 'done',
+                    title: gettext('select_done'),
+                    class: 'selected float-right',
+                    icon: 'fa fa-fw fa-check'
+                  }];
+                }
+
+                var control_panel_for_general_propose = $.fn.get_rendered_panel_html(
+                  conf_for_general_propose, CONST_CONTROL_PANEL_TPL, 'interject'
+                ), control_panel_for_multiple_select = $.fn.get_rendered_panel_html(
+                  conf_for_multiple_select, CONST_CONTROL_PANEL_TPL, 'interject'
+                ), control_panel_for_select_done = $.fn.get_rendered_panel_html(
+                  conf_for_select_done, CONST_CONTROL_PANEL_TPL, 'interject'
+                );
+
+                var $control_panel = $('#' + unique_id + '-tree-control'),
+                  search_field = $.fn.make_dom_element('input', {
+                    id: unique_id + '_search',
+                    style: 'width: auto;margin: 5px 15px 0 15px;display: none;'
+                  }), ztree_field = $('#' + z_tree_id);
+                $control_panel.after(search_field);
+
+                if (setting.check.chkStyle === 'checkbox') {
+                  $control_panel.append(control_panel_for_multiple_select);
+                }
+                $control_panel.append(control_panel_for_general_propose);
+                $control_panel.append(control_panel_for_select_done);
+
+                z_tree_obj = $.fn.zTree.init(ztree_field, setting, flattened_tree_nodes);
+                assignment(z_tree_obj.getCheckedNodes());
+
+                $.tree.nodeFuzzySearch(z_tree_id, search_field, {
+                  highlight: false, expand: true, percent: true, callback: get_show_nodes
+                });
+
+                $('#' + unique_id + '-tree-control span').on('click', function () {
+                  var that = $(this),
+                    name = that.data('name'),
+                    $search_field_str = '#' + unique_id + '_search';
+
+                  that.toggleClass('selected');
+                  // from disable to enable
+                  if (that.hasClass('selected')) {
+                    switch (name) {
+                      case 'all':
+                        if (z_tree_obj.setting.check.chkStyle === 'checkbox') {
+                          z_tree_obj.checkAllNodes(true);
+                          assignment(z_tree_obj.getCheckedNodes());
+                        }
+                        break;
+                      case 'expand_all':
+                        z_tree_obj.expandAll(true);
+                        that.toggleClass('selected');
+                        break;
+                      case 'collapse_all':
+                        z_tree_obj.expandAll(false);
+                        that.toggleClass('selected');
+                        break;
+                      case 'children':
+                        z_tree_obj.setting.check.chkboxType = opts.children_checkbox_type;
+                        break;
+                      case 'single':
+                        is_single_expand = true;
+                        break;
+                      case 'search':
+                        $($search_field_str).fadeIn('slow');
+                        break;
+                      default:
+                        console.log('undefined operation.');
+                    }
+                  } else { // from enable to disable
+                    switch (name) {
+                      case 'done':
+                        hide_menu();
+                        that.toggleClass('selected');
+                        break;
+                      case 'all':
+                        if (z_tree_obj.setting.check.chkStyle === 'checkbox') {
+                          z_tree_obj.checkAllNodes(false);
+                          cur_selected = [];
+                          assignment(z_tree_obj.getCheckedNodes());
+                        }
+                        break;
+                      case 'expand_all':
+                        break;
+                      case 'collapse_all':
+                        break;
+                      case 'children':
+                        z_tree_obj.setting.check.chkboxType = opts.non_children_checkbox_type;
+                        break;
+                      case 'single':
+                        is_single_expand = false;
+                        break;
+                      case 'search':
+                        $($search_field_str).val('').trigger('propertychange').fadeOut('fast');
+                        break;
+                      default:
+                        console.log('undefined operation.');
+                    }
+                  }
+                  z_tree_obj.refresh();
+                });
+                var lay_width = Math.min(that.outerWidth(), const_max_content_width),
+                  lay_height = Math.min(dl_elem.outerHeight(), const_max_content_height);
+                if (lay_offset_top + lay_height > window.screen.height) {
+                  layero.css({
+                    'top': dlPosition.top - lay_height
+                  });
+                }
+                tree_content.css({
+                  'width': Math.max(lay_width, const_min_content_width)
+                  // 'overflow': 'hidden'
+                });
+                // tree_content.find('>.tree-ul').css({
+                //   'max-height': const_max_content_height - 19, // 19px -- the height of control panel
+                //   'overflow': 'auto'
+                // });
+                layero.css({
+                  'width': lay_width,
+                  'height': 'fit-content',
+                  'box-shadow': 'none'
+                });
+              },
+              end: function () {
+                // dlElem.hide();
+              }
+            });
+            if (single_page_flag) {
+              var current_tab_title = $($.fn.adminSite.const.CONST_CURRENT_TAB_TITLE_AREA)
+                , used_layer_ids = current_tab_title.data(CONST_KEY_USED_LAYER_IDS);
+              if (!used_layer_ids) {
+                used_layer_ids = [current_layer_id];
+              } else {
+                if (type(used_layer_ids) !== 'array') {
+                  used_layer_ids = [];
+                }
+                used_layer_ids.push(current_layer_id);
+              }
+              current_tab_title.data(CONST_KEY_USED_LAYER_IDS, used_layer_ids);
+            } else {
+              var parent_dom_monitor = new MutationObserver(function (e) {
+                if (e[0].removedNodes.length) {
+                  layer.close(current_layer_id);
+                }
+              });
+              parent_dom_monitor.observe(parent_layer.get(0), {childList: true});
+              // parent_layer.data('dependants', (parent_layer.data('dependants') || []).concat(used_layer_id));
+            }
+          } else {
+            $('.tree-content').closest('.layui-layer.layui-layer-page').hide();
+            var rect = that.get(0).getBoundingClientRect(), layero = $('#layui-layer' + current_layer_id);
+            //   parent_offset = _.map([parent_layer.css('top'), parent_layer.css('left')], function (value, index) {
+            //     return parseFloat(value.replace(/px$/, '')) - (init_parent_offset[index] || 0);
+            //   }),
+            //   current_offset = _.map([layero.css('top'), layero.css('left')], function (value, index) {
+            //     return parseFloat(value.replace(/px$/, ''));
+            //   });
+            // dlPosition = titleElem.get(0).getBoundingClientRect();
+            lay_offset_top = rect.top + title_elem.outerHeight();
+            lay_offset_left = rect.left;
+            var lay_width = Math.min(that.outerWidth(), const_max_content_width),
+              lay_height = Math.min(tree_content.outerHeight(), const_max_content_height);
+            if (lay_offset_top + lay_height > window.screen.height) {
+              layero.css({
+                'top': rect.top - lay_height,
+                'left': lay_offset_left
+              });
+            } else {
+              layero.css({
+                'top': rect.bottom,
+                'left': rect.left
+              });
+            }
+            layero.css({
+              'width': lay_width,
+              'height': 'fit-content',
+              'box-shadow': 'none'
+            });
+            layero.show();
+            tree_content.show();
+          }
+        } else {
+          hide_menu();
+        }
+      });
+
+
+      // exclusive
+      layer_page.off('mousedown').on('mousedown', function () {
+        if ($(arguments[0].target).closest('.tree-content').length === 0
+            && $(arguments[0].target).closest('.layui-select-title').length === 0) {
+          hide_menu();
+        }
+      });
+      $('.layui-layer-shade').off('mousedown').on('mousedown', function () {
+        hide_menu();
+      });
+    }
+
+    function get_show_nodes(show_nodes) {
+      if (show_nodes) {
+        cur_show = {};
+        $.each(show_nodes, function (idx, elem) {
+          cur_show[elem.id] = $("<div/>").html(elem.name).text().replace(eliminate_percent_pattern, '');
+        });
+      }
+    }
+
+    function before_expand(treeId, treeNode) {
+      if (is_single_expand) {
+        var p_node_cur = cur_expand_node ? cur_expand_node.getParentNode() : null;
+        var p_node_new = treeNode.parentTId ? treeNode.getParentNode() : null;
+        for (var i = 0, l = !p_node_new ? 0 : p_node_new.children.length; i < l; i++) {
+          if (treeNode !== p_node_new.children[i]) {
+            z_tree_obj.expandNode(p_node_new.children[i], false);
+          }
+        }
+        while (p_node_cur) {
+          if (p_node_cur === treeNode) {
+            break;
+          }
+          p_node_cur = p_node_cur.getParentNode();
+        }
+        // if didn't have common parent
+        if (!p_node_cur) {
+          single_path(treeNode);
+        }
+      }
+    }
+
+    function single_path(new_node) {
+      if (new_node === cur_expand_node) {
+        return;
+      }
+
+      var root_new, root_new_id;
+
+      // first time to expand node
+      if (!cur_expand_node) {
+        // try to get the root node of new expand node
+        root_new = new_node;
+        while (root_new) {
+          root_new_id = root_new.tId;
+          root_new = root_new.getParentNode();
+        }
+        var root_nodes = z_tree_obj.getNodes();
+        for (var i = 0, n = root_nodes.length; i < n; i++) {
+          var node = root_nodes[i];
+          if (node.tId !== root_new_id) {
+            z_tree_obj.expandNode(node, false);
+          }
+        }
+      } else if (cur_expand_node && cur_expand_node.open) {
+        if (new_node.parentTId === cur_expand_node.parentTId) {
+          z_tree_obj.expandNode(cur_expand_node, false);
+        } else {
+          var newParents = [];
+          while (new_node) {
+            new_node = new_node.getParentNode();
+            if (new_node === cur_expand_node) {
+              newParents = null;
+              break;
+            } else if (new_node) {
+              newParents.push(new_node);
+            }
+          }
+          if (newParents != null) {
+            var oldNode = cur_expand_node;
+            var oldParents = [];
+            while (oldNode) {
+              oldNode = oldNode.getParentNode();
+              if (oldNode) {
+                oldParents.push(oldNode);
+              }
+            }
+            if (newParents.length > 0) {
+              z_tree_obj.expandNode(oldParents[Math.abs(oldParents.length - newParents.length) - 1], false);
+            } else {
+              z_tree_obj.expandNode(oldParents[oldParents.length - 1], false);
+            }
+          }
+        }
+      }
+      cur_expand_node = new_node;
+    }
+
+    // function filter_children(treeNode) {
+    //   return function (node) {
+    //     return node.level > treeNode.level;
+    //   };
+    // }
+
+    function on_right_click(event, treeId, treeNode) {
+      if (treeNode === null) {
+        var _tid = $(event.target).attr('id').replace(new RegExp(treeId + '_(\\d+)(_.+)?'), '$1');
+        if (_tid.length === 0 || !/\d+/.test(_tid)) {
+          error_prompt('Right click above node or checkbox.');
+        }
+        treeNode = z_tree_obj.getNodeByTId(_tid);
+      }
+
+      if (treeNode && treeNode.isParent) {
+        z_tree_obj.expandNode(treeNode, !treeNode.open, true);
+      }
+      // var allChildren = zTree.getNodesByFilter(filter_children(treeNode), false, treeNode);
+      // if (allChildren.length > 0) {
+      //   allChildren.forEach(function (tNode/*, i*/) {
+      //     zTree.expandNode(tNode, !tNode.open, false);
+      //   });
+      // }
+      // } else {
+      //   zTree.checkNode(treeNode, !treeNode.checked, false);
+      // }
+      // assignment(zTree.getCheckedNodes());
+    }
+
+    function on_click(event, treeId, treeNode) {
+      if (z_tree_obj.setting.check.enable === true) {
+        z_tree_obj.checkNode(treeNode, !treeNode.checked, false);
+        assignment(z_tree_obj.getCheckedNodes());
+        if (z_tree_obj.setting.check.chkStyle !== 'checkbox') {
+          hide_menu();
+        }
+      } else {
+        assignment(z_tree_obj.getSelectedNodes());
+        hide_menu();
+      }
+      opts.onClickExt();
+    }
+
+    function on_check(/*event, treeId, treeNode*/) {
+      assignment(z_tree_obj.getCheckedNodes());
+      if (z_tree_obj.setting.check.chkStyle !== 'checkbox') {
+        hide_menu();
+      }
+      opts.onCheckExt();
+    }
+
+    function hide_menu() {
+      $(".tree-select").removeClass("layui-form-selected");
+      var _tree_content = $(".tree-content");
+      _tree_content.fadeOut('fast');
+      _tree_content.closest('.layui-layer-page').hide();
+    }
+
+    function first_time_pseudo_assignment(nodes) {
+      var names = [], str_names,
+        $tree_to_show = $("#" + unique_id + "_show"),
+        $tree_to_hide = $("#" + unique_id + "_hide"),
+        selected = '';
+
+      cur_selected = [];
+
+      for (var i = 0, l = nodes.length; i < l; i++) {
+        var a_id = nodes[i].id;
+        if (cur_selected.indexOf(a_id) === -1) {
+          cur_selected.push(a_id);
+          names.push($("<div/>").html(nodes[i].name).text().replace(eliminate_percent_pattern, ''));
+          selected += interpolate(opts.selected_template, [opts.name, a_id]);
+        }
+      }
+      str_names = names.join(',');
+      $tree_to_show.attr("value", str_names);
+      $tree_to_show.attr("title", str_names);
+      $tree_to_hide.html(selected);
+    }
+
+    function assignment(nodes) {
+      var names = [],
+        selected = '',
+        search_field = '#' + unique_id + '_search',
+        is_accumulate = $(search_field).val().length !== 0,
+        cur_show_clone = JSON.parse(JSON.stringify(cur_show));
+      if (z_tree_obj.setting.check.chkStyle !== 'checkbox') {
+        is_accumulate = false;
+      }
+      if (!is_accumulate && nodes.length > 0) {
+        cur_selected = [];
+      }
+
+      for (var i = 0, l = nodes.length; i < l; i++) {
+        var a_id = nodes[i].id;
+        if (cur_show_clone[a_id]) {
+          delete cur_show_clone[a_id];
+        }
+
+        if (cur_selected.indexOf(a_id) === -1) {
+          cur_selected.push(a_id);
+          names.push($("<div/>").html(nodes[i].name).text().replace(eliminate_percent_pattern, ''));
+          selected += interpolate(opts.selected_template, [opts.name, a_id]);
+        }
+      }
+      // remove the treeId argument
+      // treeId = treeId.substring(0, treeId.lastIndexOf('_'));
+      var $tree_to_show = $("#" + unique_id + "_show"),
+        $tree_to_hide = $("#" + unique_id + "_hide"),
+        str_names = names.join(',');
+
+      if (is_accumulate) {
+        var origin_html = $tree_to_hide.html(),
+          origin_value = $tree_to_show.attr('value'),
+          origin_title = $tree_to_show.attr('title');
+        if (names.length > 0) {
+          $tree_to_show.attr("value", origin_value + (origin_value.length > 0 ? ',' : '') + str_names);
+          $tree_to_show.attr("title", origin_title + (origin_value.length > 0 ? ',' : '') + str_names);
+          $tree_to_hide.html(origin_html + selected);
+        } else {
+          var value_list = origin_value.split(',');
+
+          $.each(cur_show_clone, function (elem_id, elem_name) {
+            var loc = value_list.indexOf(elem_name);
+            if (loc !== -1) {
+              value_list.splice(loc, 1);
+            }
+            loc = cur_selected.indexOf(parseInt(elem_id));
+            if (loc !== -1) {
+              cur_selected.splice(loc, 1);
+            }
+          });
+          str_names = value_list.join(',');
+          $tree_to_show.attr("value", str_names);
+          $tree_to_show.attr("title", str_names);
+
+          selected = '';
+          $.each(cur_selected, function (idx, elem) {
+            selected += interpolate(opts.selected_template, [opts.name, elem]);
+          });
+          $tree_to_hide.html(selected);
+        }
+      } else {
+        $tree_to_show.attr("value", str_names);
+        $tree_to_show.attr("title", str_names);
+        $tree_to_hide.html(selected);
+      }
+      // $tree_to_hide.attr("value", ids);
+      $.tree.fixCheckState(z_tree_id, {
+        all: function () {
+          return true;
+        }, checked: function (node) {
+          return node.checked;
+        }, include_parent: true
+      });
+    }
+
+    // function onMouseDown(event) {
+    //   if ($(event.target).parents(".tree-content").html() == null) {
+    //     hide_menu();
+    //   }
+    // }
+
+    var input_type = opts.input_type, is_multiple = true; //!(input_type === 'radio');
+    // initSelectTree($(this).attr('id'), is_multiple, input_type);
+    init_select_tree(is_multiple, input_type);
+  };
+
+  function getDlPosition(titleElem, dlElem) {
+    var titleElemPosition = get_position(titleElem),
+      topTemp = titleElemPosition.top,
+      leftTemp = titleElemPosition.left;
+    if (titleElem.parent().hasClass('layui-form-selectup')) {
+      topTemp = topTemp - dlElem.outerHeight() + titleElem.outerHeight() - parseFloat(dlElem.css('bottom'));
+    } else {
+      topTemp += parseFloat(dlElem.css('top')) || 0;
+    }
+    // console.log(topTemp, leftTemp);
+    return {
+      top: topTemp,
+      left: leftTemp
+    };
+  }
+
+  // used to save constant data(as default value)
+  $.fn.zTreeSelect.const = {
+    'CONST_KEY_USED_LAYER_IDS': CONST_KEY_USED_LAYER_IDS,
+    'CONST_CONTROL_PANEL_TPL': CONST_CONTROL_PANEL_TPL
+  };
+  $.fn.zTreeSelect.defaults = {
+    selected_template: '<input name="%s" value="%s"/>',
+    children_checkbox_type: {"Y": "s", "N": "s"},
+    non_children_checkbox_type: {"Y": "", "N": ""}
+  };
+})(jQuery);

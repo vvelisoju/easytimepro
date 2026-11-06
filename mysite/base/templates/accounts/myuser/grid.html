@@ -1,0 +1,19 @@
+{% extends "data_grid.html" %}
+{% load i18n %}
+{% load iclock_tags %}
+
+{% block dimension_info %}
+  {{ block.super }}
+  dimension.height = '600px'
+  dimension.width = '768px'
+{% endblock dimension_info  %}
+
+{% block grid_opt_update %}
+  {{ block.super }}
+  data_grid_opts.disabled_action_panel_east = ['exports'];
+  $.extend(true, dimension, {
+    actions: {
+      ChangePassword: [410,315]
+    }
+  });
+{% endblock grid_opt_update %}

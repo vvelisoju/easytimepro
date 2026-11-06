@@ -1,0 +1,63 @@
+{% load i18n %}
+<style>
+
+  .arrow{
+    padding-left:2px;
+    position: absolute;
+    display:block;
+    top: 15%;
+    left: -12px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+    border-color: transparent rgb(190,190,190) transparent;
+}
+</style>
+<li class="dropdown-submenu filter-char">
+  <a>{% include "xadmin/filters/filter_or_exclude.html" %}<i
+    class="fa fa-fw fa-filter {% if spec.is_used %}text-success{% else %}text-muted{% endif %}"></i> {{ title }}</a>
+  <div class="dropdown-menu {% if is_bidi_language %}left{% else %}right{% endif %}">
+    <div class="arrow"></div>
+    <h3 class="popover-title">
+      {{ title }}
+    </h3>
+    <div class="popover-content" style="padding: 9px 14px">
+      <form method="get" action="">
+        {{ form_params|safe }}
+        <div class="input-group">
+            <select name="_f_{{ spec.field_path }}_type" title="Type">
+              {% if lookup %}
+                {% for opt in lookup %}
+                  <option value="{{ opt.1 }}">{{ opt.0|capfirst }}</option>
+                {% endfor %}
+              {% endif %}
+            </select>
+        </div>
+        <div class="input-group" style="padding-top:5px">
+          <div class="zk-type-helper">
+            <input name="_f_{{ spec.field_path }}_str" type="text" data-role="zk-type-helper-input"
+                   class="zk-type-helper-input"
+                   placeholder="{% trans "Enter Keyword" %}" style="width: 20em;">
+          </div>
+          <span class="input-group-btn">
+              <button class="btn btn-success" type="submit"><i class="fa fa-check"></i></button>
+            </span>
+        </div>
+        {#        <div class="input-group">#}
+        {#          <input name="_f_{{ spec.field_path }}_str" class="input-char form-control" type="text" value=""#}
+        {#                 placeholder="{% trans "Enter" %} {{ title }}…"/>#}
+        {#          <span class="input-group-btn">#}
+        {#          {% if search_val %}#}
+        {#            <a class="btn btn-default" href="{{ remove_url }}">x</a>#}
+        {#          {% endif %}#}
+        {#            <button class="btn btn-success" type="submit"><i class="fa fa-check"></i></button>#}
+        {#          </span>#}
+        {#        </div>#}
+      </form>
+    </div>
+  </div>
+</li>
+

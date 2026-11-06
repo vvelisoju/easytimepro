@@ -1,0 +1,148 @@
+{% load i18n iclock_tags static common %}
+{% autoescape off %}
+<div id="{{ model_name }}_edit_form" style="padding: 10px;min-width:720px">
+  <form class="layui-form data-form" action="" method="post">
+    {% csrf_token %}
+    {% with adminform.form as f %}
+      {% if software_type != 9 %}
+        <div class="layui-form-item">
+          <div class="layui-inline">
+            <label class="layui-form-label"
+                   for="id_company">{% trans 'Company' %}<span class="required">*</span></label>
+            <div class="layui-input-inline" id="company_div">
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      <div class="layui-form-item">
+        {% layui_inline f.alias %}
+        {% layui_inline f.sn %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.area %}
+        {% layui_inline f.ip_address %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.transfer_mode %}
+        {% layui_inline f.terminal_tz %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.is_registration %}
+        {% layui_inline f.is_attendance %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.heartbeat %}
+        {% layui_inline f.is_access %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.transfer_interval %}
+        {% layui_inline f.transfer_time %}
+      </div>
+      <div class="layui-hidden">
+          {% layui_inline f.lock_func %}
+      </div>
+      <div class="layui-form-item">
+          {% layui_inline f.device_direction %}
+      </div>
+    {% endwith %}
+  </form>
+</div>
+<script>
+  $(document).ready(function () {
+      var support_acc = $('#id_lock_func').val();
+      var software_type = {{ software_type }};
+      if (support_acc === '0'){
+          $('.field-is_access').addClass('layui-hidden');
+      }
+    {% if software_type != 9 %}
+      var t = new Date();
+      data_stamp = t.getTime();
+      $("#company_div").append("<div id=" + "company" + data_stamp + " class='layui-form-select tree-select'></div>");
+
+      function areaHandler() {
+          var selected = $("#company" + data_stamp + "_hide").find("input[name='company']")[0];
+          var selected_company = selected ? selected.value : null;
+          var partenr_element = $(".field-area .layui-input-inline");
+          if (partenr_element.length === 0) {
+              return;
+          }
+          partenr_element.find(".tree-select").remove();
+          var timestamp = Date.now();
+          partenr_element.append("<div id='area" + timestamp + "' class='layui-form-select tree-select'></div>");
+          if (selected_company) {
+              var sn = $("#id_sn").val();
+              var data = {"sn": sn};
+              var url = "/iclock/area_tree/?company=" + selected_company;
+              $.ajax({
+                  url: url,
+                  type: 'GET',
+                  dataType: 'json',
+                  data: data,
+                  success: function (response) {
+                      $('#area' + timestamp).zTreeSelect({
+                          name: 'area',
+                          stamp: timestamp,
+                          input_type: 'radio',
+                          data: response,
+                      });
+                   },
+                  error: function (xhr, status, error) {
+                  }
+             });
+        }
+    }
+      function loadTreeData() {
+        var company_name = 'company', company_stamp = data_stamp;
+        var urlCompany = "/base/terminal_assign_company_tree_data/?obj_id=" + {{ obj_id }};
+        $.ajax({
+          url: urlCompany
+          , type: "GET"
+          , dataType: "json"
+          , async: false
+          , success: function (response, xhr) {
+            var company_data = response;
+            $('#terminal' + data_stamp).zTreeSelect({
+              model: company_name,
+              name: company_name,
+              stamp: company_stamp,
+              input_type: "radio",
+              data: company_data,
+              onClickExt: areaHandler,
+            });
+          }
+          , error: function (xhr, error, e) {
+          }
+        });
+      }
+    {% endif %}
+    layui.use('form', function () {
+        var form = layui.form;
+        function switchDisplay(val){
+          switch (val) {
+            case 0:
+              $("div.field-transfer_interval").removeClass("layui-hidden");
+              $("div.field-transfer_time").removeClass("layui-hidden");
+              break;
+            case 1:
+              $("div.field-transfer_interval").addClass("layui-hidden");
+              $("div.field-transfer_time").addClass("layui-hidden");
+              $("#id_transfer_time").val('00:00;14:05');
+              break;
+            default:
+              break;
+          }
+        }
+        form.on('select(transfer_mode)', function(data){
+          switchDisplay(parseInt(data.value));
+        });
+        switchDisplay(parseInt($("#id_transfer_mode").val()));
+        {% if software_type != 9 %}
+          loadTreeData();
+          if ($("#id_sn").val()) {
+              areaHandler();
+          }
+        {% endif %}
+    });
+  });
+</script>
+{% endautoescape %}

@@ -1,0 +1,23 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+            {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+            ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+            ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+            ,{field:'gender', width:80, title: "{% trans 'report_column_gender' %}"}
+            ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+            ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+            ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+            ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+            ,{field:'timetable', title: "{% trans 'report_column_timeIntervalName' %}"}
+            ,{field:'att_date', width:100, title: "{% trans 'report_column_attendanceDate' %}", width:120, sort: true}
+            ,{field:'description', title: "{% trans 'report_column_exceptionDescription' %}"}
+        ]]
+        //,url: "/att/api/report/exception_report/"
+        ,method: "get"
+        ,url: "/att/api/exceptionReport/"
+    });
+{% endblock %}

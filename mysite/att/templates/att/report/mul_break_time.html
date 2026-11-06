@@ -1,0 +1,75 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  var baseCols = [
+    {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+    ,{field:'first_name', title: "{% trans 'report_column_firstName' %}", width:120}
+    ,{field:'last_name', title: "{% trans 'report_column_lastName' %}", width:120}
+    ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}", width:120}
+    ,{field:'gender', width:80, title: "{% trans 'report_column_gender' %}", width:60}
+    ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}", width:60}
+    ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}", width:120}
+    ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}", width:60}
+    ,{field:'position_name', title: "{% trans 'report_column_positionName' %}", width:120}
+    ,{field:'att_date', width:100, title: "{% trans 'report_column_attendanceDate' %}", sort: true}
+    ,{field:'timetable', title: "{% trans 'report_column_timetable' %}", width: 200}
+    ,{field:'total_time', title: "{% trans 'report_column_summaryTotalTimeDuration' %}", width:100}
+  ];
+  var _cols = $.extend(true, [], baseCols);
+  var periodCount = 1;
+    $.ajax({
+        type: "GET",
+        url: '/att/api/mulBreakTimeReport/period_count/',
+        cache:false,
+        async:false,
+        dataType: "json",
+        success: function(response, xhr){
+            periodCount = response.data;
+        }
+    });
+    for(var i=0; i < periodCount; i ++){
+      _cols.push({field:'break_out'+i, title: "{% trans 'report_column_breakOutTime' %}", width:100});
+      _cols.push({field:'break_in'+i, title: "{% trans 'report_column_breakInTime' %}", width:100});
+      _cols.push({field:'total_time'+i, title: "{% trans 'report_column_totalTimeDuration' %}", width:80});
+    }
+  $.extend(opts, {
+      cols: [_cols]
+      ,method: "get"
+      ,url: "/att/api/mulBreakTimeReport/"
+  });
+{% endblock %}
+{% block columns_modify %}
+    var periodCount = 1;
+    $.ajax({
+        type: "GET",
+        url: '/att/api/mulBreakTimeReport/period_count/',
+        data: c,
+        cache:false,
+        async:false,
+        dataType: "json",
+        success: function(response, xhr){
+            periodCount = response.data;
+        }
+    });
+    _cols = $.extend(true, [], baseCols);
+    for(var i=0; i < periodCount; i ++){
+      _cols.push({field:'break_out'+i, title: "{% trans 'report_column_breakOutTime' %}", width:100});
+      _cols.push({field:'break_in'+i, title: "{% trans 'report_column_breakInTime' %}", width:100});
+      _cols.push({field:'total_time'+i, title: "{% trans 'report_column_totalTimeDuration' %}", width:80});
+    }
+    $.extend(opts, {
+        cols: [_cols]
+        ,method: "get"
+        ,url: "/att/api/mulBreakTimeReport/"
+        ,where: c
+        ,page: {curr: 1}
+    });
+
+    tb = table.reload(tb.config.id, opts)
+
+    $.extend(action_opts, {
+        curTable: tb
+    });
+    $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+
+{% endblock %}

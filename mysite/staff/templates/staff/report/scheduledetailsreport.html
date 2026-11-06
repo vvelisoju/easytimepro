@@ -1,0 +1,21 @@
+{% extends 'staff/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  $.extend(opts, {
+    cols: [[
+      {field:'schedule_name', title: "{% trans 'SchedulePlanner_field_scheduleName' %}"}
+      ,{field:'start_date', title: "{% trans 'scheduleEmp_field_startTime' %}"}
+      ,{field:'end_date', title: "{% trans 'scheduleEmp_field_endTime' %}"}
+      ,{field:'', title: "{% trans 'outdoor_map_view' %}", templet: function(obj){
+            return '<i class="fa fa-map-marker" aria-hidden="true" style="color:red; font-size: 1.5em;"onclick="MapViewFuntion('+obj.schedule_planner+',2)"></i>'
+      }}
+      ,{field:'', title: "{% trans 'outdoor_text_view' %}", templet: function(obj){
+            return '<i class="fa fa-file-text" aria-hidden="true" style="color:red; font-size: 1.5em;"onclick="TextViewFuntion('+obj.schedule_planner+',2)"></i>'
+      }}
+
+    ]]
+    ,method: "get"
+    ,url: "/att/api/scheduledetailsReport/"
+
+  });
+{% endblock %}

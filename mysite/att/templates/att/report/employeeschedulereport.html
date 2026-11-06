@@ -1,0 +1,88 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block search_form_init %}
+  var cur = moment(new Date());
+  var startDate = laydate.render({
+    elem: '#{{ model_name }}-start-date',
+    type: 'date',
+    value: cur.startOf('month').format('YYYY-MM-DD'),
+    done: function (value, date) {
+      endDate.config.min = {
+        year: date.year,
+        month: date.month - 1,
+        date: date.date
+      };
+    }
+  });
+  var endDate = laydate.render({
+    elem: '#{{ model_name }}-end-date',
+    type: 'date',
+    value: cur.endOf('month').format('YYYY-MM-DD'),
+    /*done: function (value, date) {
+      startDate.config.max = {
+        year: date.year,
+        month: date.month - 1,
+        date: date.date
+      };
+    }*/
+  });
+  $.extend(opts, {where: {start_date: cur.startOf('month').format('YYYY-MM-DD'), end_date: cur.endOf('month').format('YYYY-MM-DD')}});
+{% endblock %}
+{% block opts_modify %}
+    var userCols = [
+        {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+        ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+        ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+        ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+        ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+        ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+        ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+        ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+        ,{field:'total_workday', title: "{% trans 'report_column_workDay' %}", width: 100}
+        ,{field:'total_duration', title: "{% trans 'report_column_totalDurationHrs' %}", width: 100}
+        ,{field:'total_break', title: "{% trans 'report_column_breakDurationHrs' %}", width: 100}
+        ,{field:'total_leave', title: "{% trans 'report_column_leaveDuration' %}", width: 100}
+        ,{field:'total_dayoff', title: "{% trans 'report_column_totalDayOff' %}", width: 100}
+        ,{field:'total_weekend', title: "{% trans 'report_column_totalWeekend' %}", width: 100}
+        ,{field:'total_holiday', title: "{% trans 'report_column_totalHoliday' %}", width: 100}
+    ];
+    var _cols = [];
+    var _start = cur.startOf('month').format('YYYY-MM-DD');
+    var month_day = cur.endOf('month').get('date')
+    var month = cur.endOf('month').get('month')
+    var year = cur.endOf('month').get('year')
+    var m = cur.startOf('month')
+
+    for(var day=1; day <= month_day; day ++){
+      _cols.push({field:m.format('YYYYMMDD'), title: day + '/' + (parseInt(month) + 1) + '/' + year});
+      m.add(1, 'day');
+    }
+    $.extend(opts, {
+        cols: [userCols.concat(_cols)]
+        ,method: "get"
+        ,url: "/att/api/empScheduleReport/"
+    });
+{% endblock %}
+{% block columns_modify %}
+    var start = moment(startDate, "YYYY-MM-DD")
+    var end = moment(endDate, "YYYY-MM-DD")
+    var dateCols = [];
+    while(start <= end){
+        dateCols.push({field:start.format('YYYYMMDD'), title:start.get('date') + '/' + (parseInt(start.get('month')) + 1) + '/' + start.get('year')})
+        start = start.add(1, 'day');
+    }
+    _cols = userCols.concat(dateCols);
+    $.extend(opts, {where: c, cols: [_cols]})
+    // tb = table.reload(tb.config.id, opts)
+    tb = table.render(opts);
+
+    $.extend(action_opts, {
+        curTable: tb
+    });
+    $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+
+    form.on("submit({{ model_name }}-search)", function (data) {
+        refreshReport('');
+    });
+{% endblock %}

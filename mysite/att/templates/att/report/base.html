@@ -1,0 +1,699 @@
+{% load i18n static %}
+{% load common %}
+{% block extend_js %}
+  <link rel="stylesheet" type="text/css" href="{% static "css/fullcalendar.min.css" %}"/>
+{% endblock %}
+<div id="{{ model_name }}_fluid" class="layui-fluid">
+  <div class="layui-row layui-col-space15" style="margin-bottom: 0px">
+    <div class="layui-col-md2" style='padding-left:0;padding-right:0;'>
+      <div class="layui-tab" style="padding-top: 13px;">
+        <ul class="layui-tab-title">
+          <li class="layui-this">{% trans 'employee_department_filter' %}</li>
+          <li>{% trans 'employee_area_filter' %}</li>
+          <li>{% trans 'employee_position_filter' %}</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show">
+            <div id="{{ model_name }}-tree-container" class="layui-card">
+            <div  id="{{ model_name }}-dept-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+            <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                class="fa fa-fw fa-check-square-o"></i></a></span>
+            <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                class="fa fa-fw fa-list"></i></a></span>
+            <span name="sub"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                class="fa fa-fw fa-sitemap"></i></a></span>
+            <span name="sort"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                class="fa fa-fw fa-sort"></i></a></span>
+            </div>
+            <div class="layui-card-body">
+                <ul id="{{ model_name }}-tree" class="ztree ztree-pure" style="overflow-y: auto"></ul>
+            </div>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div id="{{ model_name }}-tree-container" class="layui-card">
+              <div  id="{{ model_name }}-area-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+                <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                    class="fa fa-fw fa-check-square-o"></i></a></span>
+                <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                    class="fa fa-fw fa-list"></i></a></span>
+                <span name="sub"><a href="javascript:void(0);" title="{% trans 'area_tree_selectSubDepartment' %}"><i
+                    class="fa fa-fw fa-sitemap"></i></a></span>
+                <span name="sort"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                    class="fa fa-fw fa-sort"></i></a></span>
+              </div>
+              <div class="layui-card-body">
+                <ul id="{{ model_name }}-tree-area" class="ztree ztree-pure" style="overflow-y: auto"></ul>
+              </div>
+            </div>
+          </div>
+
+            <div class="layui-tab-item">
+            <div id="{{ model_name }}-tree-container" class="layui-card">
+              <div  id="{{ model_name }}-position-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+                <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                    class="fa fa-fw fa-check-square-o"></i></a></span>
+                <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                    class="fa fa-fw fa-list"></i></a></span>
+                <span name="sub"><a href="javascript:void(0);" title="{% trans 'position_tree_selectSubPosition' %}"><i
+                    class="fa fa-fw fa-sitemap"></i></a></span>
+                <span name="sort"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                    class="fa fa-fw fa-sort"></i></a></span>
+              </div>
+              <div class="layui-card-body">
+                <ul id="{{ model_name }}-tree-position" class="ztree ztree-pure" style="overflow-y: auto"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="layui-col-md10">
+      <div class="layui-card">
+        <div class="layui-card-header" style="background-color: #ffffff;">
+          <form id="{{ model_name }}-search-form" action="" class="layui-form fixed-search-form att-report-search-form">
+            {% csrf_token %}
+            <div class="layui-form-item">
+              {% block search_form_startdate %}  <!-- startdata block  -->
+                <div class="layui-inline">
+                  <label for="" class="layui-form-label">{% trans 'report_searchField_startDate' %}</label>
+                  <div class="layui-input-inline">
+                    <input id="{{ model_name }}-start-date" type="text" name="start_date"
+                           lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+              {% endblock search_form_startdate %}
+              {% block search_form_enddate %}
+
+              <div class="layui-inline">
+                <label for="" class="layui-form-label">{% trans 'report_searchField_endDate' %}</label>
+                <div class="layui-input-inline">
+                  <input id="{{ model_name }}-end-date" type="text" name="end_date"
+                         lay-verify="required"
+                         autocomplete="off" class="layui-input">
+                </div>
+              </div>
+                {% endblock %}
+              <div class="layui-inline" id="{{ model_name }}_search_employee">
+                <label for="" class="layui-form-label">{% trans 'report_searchField_employee' %}</label>
+                <div class="layui-input-inline">
+                  <div class="layui-form-select">
+                    <div class="layui-select-title">
+                      <input id="{{ model_name }}-employee" type="text" autocomplete="off" class="layui-input" readonly>
+                      <i id="{{ model_name }}-employee-select" class="layui-edge"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-inline">
+                <div class="button-3d {{ model_name }}-search" lay-submit=""
+                     lay-filter="{{ model_name }}-search">
+                  <i class="fa fa-fw fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <div class="layui-hide"><input id="{{ model_name }}-selected-emp-container" type="hidden"></div>
+            <div class="layui-hide"><input id="{{ model_name }}SelectedEmployeeDetail" type="hidden"></div>
+          </form>
+        </div>
+        {% block tabledata %}
+        <input type="hidden" id="id_{{ model_name }}SelectedShift" value=""/>
+        <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+        <script type="text/html" id="{{ model_name }}_toolbar">
+          <div class="layui-btn-container grid-toolbar" style="">
+            <ul class="layui-nav"></ul>
+          </div>
+        </script>
+        {% endblock tabledata %}
+        <!--calendar html code-->
+        {% block calendarhtml %}
+        {% endblock calendarhtml %}
+      </div>
+    </div>
+    {% block disclaimer %}{% endblock %}
+  </div>
+</div>
+<script>
+{% block fullcalendarJs_events %}
+{% endblock fullcalendarJs_events %}
+{% block extra_function %}
+{% endblock extra_function %}
+  $(function () {
+    var opts = {
+      id: "id_grid_{{ model_name }}"
+      , elem: "#id_grid_{{ model_name }}"
+      , cellMinWidth: 80
+      , height: 'full-180'
+      , page: {
+        layout: ['refresh', 'limit', 'prev', 'page', 'next', 'count', 'skip']
+        , curr: 1
+        , limits: [20, 50, 80, 100, 200]
+        , limit: 50
+      }
+      , method: 'post'
+      , toolbar: '#{{ model_name }}_toolbar'
+      , defaultToolbar: []
+      , smartReloadModel: true
+      , request: {
+        pageName: 'page',
+        limitName: 'page_size'
+      }
+      , text: {
+        none: gettext("none_data")
+      }
+      , done: function (res, curr, count) {
+        //this.where = {page:{curr:curr}};
+        setTimeout(function () {
+          $.fn.trigger_action_auto(opts.model, 'fit');
+        }, 10);
+        var height = $("#{{ model_name }}_fluid div.layui-table-view").height();
+        $("#{{ model_name }}-tree-container").height(height);
+        $("#{{ model_name }}-tree").height(height -10- $('#{{ model_name }}-dept-tree-control').height());
+        $("#{{ model_name }}-tree-area").height(height -10- $('#{{ model_name }}-dept-tree-control').height());
+        $("#{{ model_name }}-tree-position").height(height -10- $('#{{ model_name }}-dept-tree-control').height());
+      }
+    };
+    layui.use(['table', 'form', 'element', 'laydate', 'tablePlug'], function () {
+      var table = layui.table, form = layui.form, laydate = layui.laydate, tablePlug = layui.tablePlug,
+        element = layui.element;
+      tablePlug.smartReload.enable(true);
+      form.render();
+      {% block search_form_init %}
+      var date = new Date();
+      var _start = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01';
+      var _end = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-' + leftInsertZero(date.getDate());
+      var startDate = laydate.render({
+        elem: '#{{ model_name }}-start-date',
+        type: 'date',
+        value: _start,
+        max: _end,
+        done: function (value, date) {
+          if (Object.keys(date).length !== 0) {
+            endDate.config.min = {
+              year: date.year,
+              month: date.month - 1,
+              date: date.date
+            };
+          }
+          else {
+            endDate.config.min = {
+                year: 1900,
+                month: 01,
+                date: 01
+            };
+            endDate.config.max = {
+                year: 2099,
+                month: 12,
+                date: 31
+            };
+          }
+        }
+      });
+      var endDate = laydate.render({
+        elem: '#{{ model_name }}-end-date',
+        type: 'date',
+        value: _end,
+        min: _start,
+        done: function (value, date) {
+          if (Object.keys(date).length !== 0) {
+            startDate.config.max = {
+              year: date.year,
+              month: date.month - 1,
+              date: date.date
+            };
+          }
+          else {
+            startDate.config.min = {
+                year: 1900,
+                month: 01,
+                date: 01
+            };
+            startDate.config.max = {
+                year: 2099,
+                month: 12,
+                date: 31
+            };
+          }
+        }
+      });
+      $.extend(opts, {where: {start_date: _start, end_date: _end}});
+      {% endblock %}
+      {% block opts_modify %}
+        $.extend(opts, {});
+      {% endblock %}
+
+
+
+<!-- checkbox js code -->
+{%block checkbox %}
+{% endblock checkbox %}
+
+
+{% autoescape off %}
+      var colIndex = {};
+      opts.cols[0].forEach(function(col, index){
+        $(document).on("mouseover", `.layui-table-header [data-field='${col.field}']`, function() {
+            var catalogKey = col.field;
+            if (catalog && catalog[catalogKey]) {
+                var titleText = gettext(catalogKey);
+                $(this).attr("title", titleText);
+            } else {
+                var headerText = $(this).text();
+                $(this).attr("title", headerText);
+            }
+        }).on("mousemove", function(e) {
+            $(".layui-table-tips").css("background-color", "black");
+            });
+        colIndex[col.field] = index;
+      });
+      var hidden_fields = {{ hidden_fields }};
+      var ordered_fields = {{ ordered_fields }};
+      hidden_fields.forEach(function(col){
+        var index = colIndex[col];
+        if (opts.cols[0][index] != undefined) {
+            opts.cols[0][index].hide = true;
+        }
+      });
+      if(ordered_fields.length > 0){
+        var cols = [];
+        ordered_fields.forEach(function(col){
+          cols.push(opts.cols[0][colIndex[col]]);
+        });
+        opts.cols[0] = cols
+      }
+      var tb = table.render(opts);
+      var zTree = null;
+      var zTree_area = null;
+      var zTree_position = null;
+      {% block report_export_url %}
+      var url = '/att/api/{{ model_name }}/export/';
+      {% endblock %}
+      var action_opts = {
+        container: "#{{model_name}}_fluid",
+        actionContainer: "#{{model_name}}_fluid" + " div.grid-toolbar",
+        model: "{{model_name}}",
+        table: table,
+        tableId: "id_grid_{{model_name}}",
+        form: form,
+        element: element,
+        curTable: tb,
+        grid_opts: opts,
+        actions: "",
+        export_url: url,
+        column_order_url:'/column_order/',
+        disabled_fields_url: "/disabled_fields/",
+        init_disabled_fields: hidden_fields,
+        dimension: {height: "auto", width: "auto"},
+        disabled_action_panel_east: ["history"],
+        prefer_best_fit_op: 'best_fit',
+        callback: {}
+        , csrf_token: "{{ csrf_token }}"
+      };
+      if ("{{model_name}}" === "empCalendarReport"){
+        action_opts.disabled_action_panel_east = ['fit', 'expand', 'history', 'exports'];
+      }
+      $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+      {% endautoescape %}
+
+      function refreshReport(searchType) {
+        //opts.page.curr = 1;
+        //table.render(opts);
+        {% block search_report_date %}
+            var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+            var endDate = $("#{{ model_name }}-search-form input[name='end_date']").val();
+        {% endblock %}
+        const regex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!regex.test(startDate) || !regex.test(endDate)) {
+          layer.alert(gettext('layui_form_incorrectDate'), {
+            title: gettext('system_exception'),
+            icon: 5,
+            btn: gettext('btn_confirm')
+          });
+          return false;
+        }
+        if (new Date(startDate) > new Date(endDate)) {
+            layer.alert(gettext('end_date_can_not_greater_than_start_date'), {
+                title: gettext('system_exception')
+                , icon: 5
+                , btn: gettext('btn_confirm')
+            })
+            return false;
+        }
+        if (startDate === "") {
+          layer.msg(gettext("start_date_is_empty"));
+          return false;
+        }
+        if (endDate === "") {
+          layer.msg(gettext("end_date_is_empty"));
+          return false;
+        }
+        var c = {start_date: startDate, end_date: endDate};
+        var date_change = new Date(c['end_date']);
+        c['end_date'] = new Date(date_change).format("yyyy-MM-dd");
+        if (searchType === 'd') {
+          $("#{{ model_name }}-selected-emp-container").val('-1');
+          $("#{{ model_name }}-employee").val("");
+        }
+
+        // selected employees
+        var emps = $("#{{ model_name }}-selected-emp-container").val();
+        c["employees"] = emps;
+
+        // selected departments
+        var nodes = zTree.getCheckedNodes(true);
+        var deptID = [];
+        nodes.forEach(function (item) {
+          deptID.push(item.id);
+        });
+        if (deptID.length === 0) {
+          deptID.push(-1);
+        }
+        c["departments"] = deptID.join(',');
+
+        // selected areas
+        var areaNodes = zTree_area.getCheckedNodes(true);
+        var areaIDs = [];
+        areaNodes.forEach(function (item) {
+            areaIDs.push(item.id);
+        });
+        if (areaIDs.length === 0) {
+            areaIDs.push(-1);
+        }
+        c["areas"] = areaIDs.join(',');
+
+        // selected positions
+        var positionNodes = zTree_position.getCheckedNodes(true);
+        var positionIDs = [];
+        positionNodes.forEach(function (item) {
+            positionIDs.push(item.id);
+        });
+        if (positionIDs.length === 0) {
+            positionIDs.push(-1);
+        }
+        c["positions"] = positionIDs.join(',');
+
+
+        {% block columns_modify %}
+          tb = table.reload(tb.config.id, {where: c, page: {curr: 1}});
+          $.extend(action_opts, {
+              curTable: tb
+          });
+          $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+        {% endblock %}
+        form.on("submit({{ model_name }}-search)", function (data) {
+            refreshReport('');
+        });
+    }
+      function onClick(event, treeId, treeNode) {
+          if(treeId == "{{ model_name }}-tree") {
+              zTree.checkNode(treeNode, !treeNode.checked, false, false);
+          }
+          else if(treeId == "{{ model_name }}-tree-area"){
+              zTree_area.checkNode(treeNode, !treeNode.checked, false, false);
+          }
+          else{
+              zTree_position.checkNode(treeNode, !treeNode.checked, false, false);
+          }
+          refreshReport('d');
+      }
+
+      function onCheck(event, treeId, treeNode) {
+          refreshReport('d');
+      }
+
+      function department_tree() {
+        var setting = {
+          view: {
+            dblClickExpand: false,
+            showIcon: false,
+            showLine: true
+          },
+          data: {
+            simpleData: {
+              enable: true
+            }
+          },
+          check: {
+            enable: true,
+            chkboxType: {"Y": "", "N": ""},
+            chkStyle: 'checkbox',
+            radioType: "all"
+          },
+          callback: {
+            onClick: onClick
+            , onCheck: onCheck
+          }
+        };
+        $.ajax({
+          url: "{% url 'biotime:personnel_department_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree = $.fn.zTree.init($("#{{ model_name }}-tree"), setting, nodes);
+          }
+        });
+        $.ajax({
+          url: "{% url 'biotime:personnel_area_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree_area = $.fn.zTree.init($("#{{ model_name }}-tree-area"), setting, nodes);
+          }
+        });
+        $.ajax({
+          url: "{% url 'biotime:personnel_position_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree_position = $.fn.zTree.init($("#{{ model_name }}-tree-position"), setting, nodes);
+          }
+        });
+      }
+
+      department_tree();
+
+      $("#{{ model_name }}_search_employee").click(function () {
+        $.ajax({
+          url: "/personnel/filter_resign_employee/"
+          , type: "GET"
+          , dataType: "html"
+          , success: function (response) {
+            layer.open({
+              title: gettext("employee_frame_title")
+              , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+              , area: ['auto', 'auto']
+              , content: response
+              , yes: function (index, layero) {
+                var selectedEmp = $(layero).find("#employee-frame-selected-container").val();
+                var selectedEmpDetail = $(layero).find("#employeeFrameSelectedDetailContainer").val();
+                $("#{{ model_name }}-selected-emp-container").val(selectedEmp);
+                $("#{{ model_name }}-employee").val(selectedEmpDetail);
+                if (selectedEmp == ""){
+                  refreshReport('d');
+                }
+                else {
+                  refreshReport('e');
+                }
+                layer.close(index);
+              }
+            });
+          }
+        });
+      });
+
+
+    // function for sorting an Alphabet in ascending and descending order-->
+
+    function sortNodes(nodes, sortOrder) {
+          nodes.forEach(node => {
+              if (node.children && node.children.length > 0) {
+                  node.children.sort((child1, child2) => {
+                      if (sortOrder === 'asc') {
+                          return child1.name.localeCompare(child2.name);
+                      } else {
+                          return child2.name.localeCompare(child1.name);
+                      }
+                  });
+                  sortNodes(node.children, sortOrder);
+              }
+          });
+          if (sortOrder === 'asc') {
+              nodes.sort((node1, node2) => node1.name.localeCompare(node2.name));
+          } else {
+              nodes.sort((node1, node2) => node2.name.localeCompare(node1.name));
+          }
+      }
+      function Select_SubNode(nodes, tree){
+        nodes.forEach(node => {
+           if (node.checked) {
+              if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                  tree.checkNode(child, true, false);
+                });
+                tree.expandNode(node, true, false, true);
+              }
+           }else{
+             if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                  tree.checkNode(child, false, false);
+                });
+             }
+            }
+        });
+      }
+      $("#{{ model_name }}-dept-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        var sortOrder = 'asc';
+        if ($(this).hasClass('selected')) {
+       sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree.setting.check.chkStyle === 'checkbox') {
+              zTree.checkAllNodes(false);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree.getCheckedNodes(true);
+            zTree.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree.checkNode(nodes[0], true, false, true);
+            }
+            zTree.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+             zTree.setting.check.chkboxType = {"Y": "", "N": ""};
+             zTree.expandAll(false);
+          } else if (name === 'sort') {
+            var nodes = zTree.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree.refresh();
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree.setting.check.chkStyle === 'checkbox') {
+              zTree.checkAllNodes(true);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            zTree.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+             zTree.setting.check.chkboxType = {"Y": "s", "N": "s"};
+             var nodes = zTree.getNodes();
+             Select_SubNode(nodes, zTree);
+          } else if (name === 'sort') {
+            var nodes = zTree.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree.refresh();
+          }
+        }
+        zTree.refresh();
+      });
+      $("#{{ model_name }}-area-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        var sortOrder = 'asc';
+        if ($(this).hasClass('selected')) {
+           sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree_area.setting.check.chkStyle === 'checkbox') {
+              zTree_area.checkAllNodes(false);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree_area.getCheckedNodes(true);
+            zTree_area.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree_area.checkNode(nodes[0], true, false, true);
+            }
+            zTree_area.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+            zTree_area.setting.check.chkboxType = {"Y": "", "N": ""};
+            zTree_area.expandAll(false);
+          } else if (name === 'sort') {
+            var nodes = zTree_area.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_area.refresh();
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree_area.setting.check.chkStyle === 'checkbox') {
+              zTree_area.checkAllNodes(true);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            zTree_area.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+            zTree_area.setting.check.chkboxType = {"Y": "s", "N": "s"};
+            var nodes = zTree_area.getNodes();
+            Select_SubNode(nodes, zTree_area);
+          } else if (name === 'sort') {
+            var nodes = zTree_area.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_area.refresh();
+          }
+        }
+        zTree_area.refresh();
+      });
+      $("#{{ model_name }}-position-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        var sortOrder = 'asc';
+        if ($(this).hasClass('selected')) {
+            sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree_position.setting.check.chkStyle === 'checkbox') {
+              zTree_position.checkAllNodes(false);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree_position.getCheckedNodes(true);
+            zTree_position.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree_position.checkNode(nodes[0], true, false, true);
+            }
+            zTree_position.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+            zTree_position.setting.check.chkboxType = {"Y": "", "N": ""};
+            zTree_position.expandAll(false);
+          } else if (name === 'sort') {
+            var nodes = zTree_position.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_position.refresh();
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree_position.setting.check.chkStyle === 'checkbox') {
+              zTree_position.checkAllNodes(true);
+              refreshReport('d');
+            }
+          } else if (name === 'mul') {
+            zTree_position.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+            zTree_position.setting.check.chkboxType = {"Y": "s", "N": "s"};
+            var nodes = zTree_position.getNodes();
+            Select_SubNode(nodes, zTree_position);
+          } else if (name === 'sort') {
+            var nodes = zTree_position.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_position.refresh();
+          }
+        }
+        zTree_position.refresh();
+      });
+      $("#calculation_show_all").click(function () {
+        table.reload(tb.config.id, {where: {}});
+        department_tree();
+      });
+      form.on("submit({{ model_name }}-search)", function (data) {
+        refreshReport('');
+      });
+    });
+
+    <!-- calendar js code-->
+{% block calendar_display %}
+{% endblock calendar_display %}
+});
+</script>

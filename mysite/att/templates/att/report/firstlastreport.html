@@ -1,0 +1,61 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+                {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+                ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+                ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+                ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+                ,{field:'gender', width:80, title: "{% trans 'report_column_gender' %}"}
+                ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+                ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+                ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+                ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+                ,{field:'att_date', title: "{% trans 'report_column_attendanceDate' %}", sort: true}
+                ,{field:'weekday', width:80, title: "{% trans 'report_column_attendanceWeekday' %}", width:100}
+                ,{field:'first_punch', title: "{% trans 'report_column_firstPunch' %}"}
+                ,{field:'last_punch', title: "{% trans 'report_column_lastPunch' %}"}
+                ,{field:'total_time', title: "{% trans 'report_column_totalDuration' %}"}
+                {% if mask_enable %}
+                ,{field:'displayed_mask', title: "{% trans 'report_column_displayed_mask' %}", templet: function(obj){
+                  if(obj.displayed_mask){
+                    mask_flag = obj.displayed_mask
+                    if(mask_flag=='Yes'){
+                      return '<span style="color: #00CD66;">Yes</span>'
+                    }else if(mask_flag=='No'){
+                      return '<span style="color: #ff0000;">No</span>'
+                    }else{
+                      return ''
+                    }
+                  }else{
+                    return ''
+                  }
+                }}
+                {% endif %}
+                ,{field:'in_temp', title: "{% trans 'report_column_in_temp' %}", templet: function(obj){
+                  result = '';
+                  if(obj.in_temp>0){
+                    result = obj.in_temp
+                    if(obj.in_temp_color){
+                      result = '<' + 'span style="color:' + obj.in_temp_color + ';">' + obj.in_temp + '<' + '/span>'
+                    }
+                  }
+                  return result
+                }}
+                ,{field:'out_temp', title: "{% trans 'report_column_out_temp' %}", templet: function(obj){
+                  result = '';
+                  if(obj.out_temp>0){
+                    result = obj.out_temp
+                    if(obj.out_temp_color){
+                      result = '<' + 'span style="color:' + obj.out_temp_color + ';">' + obj.out_temp + '<' + '/span>'
+                    }
+                  }
+                  return result
+                }}
+            ]]
+        ,method: "get"
+        ,url: "/att/api/firstLastReport/"
+        //,url: "/att/api/report/firstlast_report/"
+    });
+{% endblock %}

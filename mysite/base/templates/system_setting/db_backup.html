@@ -1,0 +1,223 @@
+{% load i18n %}
+<div class="db-backup-form">
+    <form id="id_dbBackupForm" action="" class="layui-form" lay-filter="dbBackupForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"></div>
+          <div class="layui-card-body">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_backup_database" class="layui-form-label">{% trans 'backup_database' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                    <select name="backup_database" id="id_backup_database" class="layui-input" lay-filter="backupDatabase" disabled>
+                        <option value="sql_server">{% trans 'db_sqlserver' %}</option>
+                        <option value="mysql">{% trans 'db_mysql' %}</option>
+                        <option value="oracle">{% trans 'db_oracle' %}</option>
+                        <option value="postgresql">{% trans 'db_postgresql' %}</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_backup_database_name" class="layui-form-label">{% trans 'backup_database_name' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_backup_database_name" name="backup_database_name" value="" autocomplete="off"
+                         placeholder="" lay-verify="required" class="layui-input" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_backup_store_path" class="layui-form-label">{% trans 'backup_store_path' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_backup_store_path" name="backup_store_path" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label for="id_backup_frequency" class="layui-form-label">{% trans 'backup_frequency' %}<span class="required">*</span></label>
+                    <div class="layui-input-inline">
+                        <select name="backup_frequency" id="id_backup_frequency" class="layui-input" lay-filter="backupFrequency">
+                            <option value="1">{% trans 'frequency_option_monthly' %}</option>
+                            <option value="2">{% trans 'frequency_option_weekly' %}</option>
+                            <option value="3">{% trans 'frequency_option_daily' %}</option>
+                            <option value="4">{% trans 'frequency_option_oneTimeOnly' %}</option>
+                        </select>
+                    </div>
+                    <label for="id_backup_day" class="layui-form-label">{% trans 'backup_day' %}<span class="required">*</span></label>
+                    <div class="layui-input-inline">
+                        <select name="backup_day" id="id_backup_day" class="layui-input">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <label for="id_backup_time" class="layui-form-label">{% trans 'backup_time' %}<span class="required">*</span></label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="id_backup_time" name="backup_time" autocomplete="off" placeholder="" lay-verify="required" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_backup_last_backup" class="layui-form-label">{% trans 'backup_last_backup' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_backup_last_backup" name="backup_last_backup" value="" autocomplete="off"
+                         placeholder="" lay-verify="" class="layui-input" disabled>
+                </div>
+                <label for="id_backup_file" class="layui-form-label">{% trans 'backup_file' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_backup_file" name="backup_file" value="" autocomplete="off"
+                         placeholder="" lay-verify="" class="layui-input" readonly>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit="" lay-filter="backupSave">{% trans 'btn_save' %}</button>
+        <button class="layui-btn" lay-submit="" lay-filter="backupBackup">{% trans 'btn_backup' %}</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+    layui.use(['form', 'layer', 'laydate'], function(){
+        var form = layui.form, layer=layui.layer, laydate=layui.laydate;
+        laydate.render({
+          elem: '#id_backup_time'
+          ,type: 'time'
+          ,value: '00:00:00'
+        });
+        form.render();
+        form.val('dbBackupForm', {backup_database: '{{ database }}', backup_database_name: '{{ database_name }}'});
+        function dayChange(f, d){
+            switch(f){
+                case '1':   //Monthly
+                    var options = '';
+                    for(var i=1; i < 32; i ++){
+                        options += '<option value="'+i+'">'+i+'</option>';
+                    }
+                    $("#id_backup_day").html(options);
+                    $("#id_backup_day").val(d);
+                    form.render('select');
+                    break;
+                case '2':   //Weekly
+                    var options = ''
+                        + '<option value="'+0+'">'+gettext('monday')+'</option>'
+                        + '<option value="'+1+'">'+gettext('tuesday')+'</option>'
+                        + '<option value="'+2+'">'+gettext('wednesday')+'</option>'
+                        + '<option value="'+3+'">'+gettext('thursday')+'</option>'
+                        + '<option value="'+4+'">'+gettext('friday')+'</option>'
+                        + '<option value="'+5+'">'+gettext('saturday')+'</option>'
+                        + '<option value="'+6+'">'+gettext('sunday')+'</option>';
+                    $("#id_backup_day").html(options);
+                    $("#id_backup_day").val(d);
+                    form.render('select');
+                    break;
+                case '3':   //Daily
+                    var options = '<option value="'+1+'">'+1+'</option>';
+                    $("#id_backup_day").html(options);
+                    $("#id_backup_day").val(1);
+                    form.render('select');
+                    break;
+                case '4':   //One time only
+                    var options = '<option value="'+1+'">'+1+'</option>';
+                    $("#id_backup_day").html(options);
+                    $("#id_backup_day").val(1);
+                    form.render('select');
+                    break;
+                default: break;
+            }
+        }
+        form.on('select(backupFrequency)', function(data){
+            dayChange(data.value, 1);
+        });
+        $.ajax({
+            url: "/base/api/systemSetting/?name=db_backup"
+            ,type: "GET"
+            ,dataType: "json"
+            ,success: function(response, xhr){
+                console.log(response.data);
+                if(response.data.length > 0){
+                    var val = response.data[0];
+                    if(val){
+                        var formVal = JSON.parse(val.value);
+                        dayChange(formVal.backup_frequency, formVal.backup_day);
+                        form.val('dbBackupForm', formVal);
+                    }else{
+                        dayChange('1', 1);
+                    }
+                }else {
+                  dayChange('1', 1);
+                }
+            }
+            ,error: function(xhr, error, e){
+
+            }
+        });
+        form.on('submit(backupSave)', function(data){
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                backup_store_path: data.field['backup_store_path']
+                ,backup_frequency: data.field['backup_frequency']
+                ,backup_day: data.field['backup_day']
+                ,backup_time: data.field['backup_time']
+            };
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/api/systemSetting/"
+                ,type: "POST"
+                ,data: {'name': 'db_backup', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+                ,dataType: "json"
+                ,success: function(response, xhr){
+                    layer.close(loadIndex);
+                    layer.msg(gettext('save_successful'), {icon: 6});
+                }
+                ,error: function(xhr, error, e){
+                    layer.close(loadIndex);
+                    if(xhr.responseJSON.value){
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    }else{
+                        layer.msg(gettext('save_filed'), {icon: 5});
+                    }
+                }
+            });
+            return false
+        });
+        form.on('submit(backupBackup)', function(data){
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/dbBackup/"
+                ,data: $("#id_dbBackupForm").serialize()
+                ,type: "POST"
+                ,dataType: "json"
+                ,success: function(response){
+                    var ret = response.ret;
+                    if(ret == 0){
+                        var formVal = response.val;
+                        dayChange(formVal.backup_frequency, formVal.backup_day);
+                        form.val('dbBackupForm', formVal);
+                        layer.msg(gettext('backup_successful'), {icon: 6});
+                    }else{
+                        layer.msg(response.message, {icon: 5});
+                    }
+                    layer.close(loadIndex);
+                }
+                ,error: function(xhr, error, e){
+                    layer.close(loadIndex);
+                    layer.msg(gettext('system_error_please_try_again'), {icon: 5});
+                }
+            });
+            return false
+        });
+    })
+</script>

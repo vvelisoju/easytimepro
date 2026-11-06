@@ -1,0 +1,27 @@
+{% load i18n static common %}
+<style>
+  .layui-layer-content{
+    width: 360px;
+  }
+</style>
+<div style="padding: 10px;min-height: 120px;min-width: 120px">
+  <form class="layui-form action-form" action="" method="post" onsubmit="return false"; id="{{ model_name }}_{{ action_repr }}">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div class="layui_form_item">
+        {% layui_inline f.file_path %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.is_backup_photo %}
+      </div>
+    {% endwith %}
+    <div>
+      <strong style="font-size: 13px;">
+        <span style="color: red;">*Note:  </span>
+        <div style="margin-left: 40px;">
+          <p>{% trans 'application_database_should_be_installed_in_same_server' %}</p>
+        </div>
+      </strong>
+    </div>
+  </form>
+</div>

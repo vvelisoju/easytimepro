@@ -1,0 +1,49 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 490px;width: 1100px">
+    <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        {% with form.form as f %}
+            <div style="padding-bottom: 20px">{{ f.emp }}</div>
+            <div style="max-height: 80px;">
+            <div class="layui_form_item">
+                {% layui_inline f.allotment_type %}
+                 {% layui_inline f.effective_date %}
+            </div>
+            <div class="layui_form_item">
+                {% layui_inline f.days %}
+                {% layui_inline f.max_leave_per_month %}
+            </div>
+            <div class="layui_form_item">
+                {% layui_inline f.auto_deduct %}
+                {% layui_inline f.carry_forward_limit %}
+            </div>
+            </div>
+        {% endwith %}
+    </form>
+</div>
+<script>
+    layui.use(['form', 'laydate'], function () {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        $("form.layui-form input.layui-datetime").each(function () {
+            laydate.render({elem: this, type: 'datetime'});
+        });
+        $("form.layui-form input.layui-date").each(function () {
+            laydate.render({elem: this, type: 'date'});
+        });
+        $("form.layui-form input.layui-time").each(function () {
+            laydate.render({elem: this, type: 'time'});
+        });
+        form.on('select(auto_deduct)', function (data) {
+         if(data.value == "0"){
+             $('.field-carry_forward_limit').css('display','block');
+         }else{
+            $('.field-carry_forward_limit').css('display','none');
+         }
+        });
+        {% block form_verify %}
+            form.verify({});
+        {% endblock %}
+        form.render();
+    });
+</script>

@@ -1,0 +1,13 @@
+%left-arrow-shared
+  content: "\f053"
+
+[dir=rtl]
+
+  .ztree li
+    span.button
+      &.bottom_close::before, &.roots_close::before, &.center_close::before
+        @extend %left-arrow-shared
+      text-align: right
+    text-align: right
+    ul
+      padding: 0 18px 0 0

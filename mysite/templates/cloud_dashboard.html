@@ -1,0 +1,1586 @@
+{% extends "admin_site.html" %}
+{% load i18n static common iclock_tags compress %}
+
+{% block center %}
+    <div class="container-fluid first-container">
+        {% csrf_token %}
+        <!-- Cards -->
+        <div class="row mt-3">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <p class="current-company">{% trans "cloud_current_company" %}: <span>{{ user.get_current_company_name }}</span></p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <p class="ta-pandemic">
+                  <span class="switch-ap">
+                  <label for="switch-id" class="attendance">{% trans "cloud_attendance" %}<br>{% trans "cloud_dashboard" %}</label>
+                  <input type="checkbox" class="switch-ap" id="switch-id">
+                  <label for="switch-id"></label>
+                  <label for="switch-id" class="pandemic">{% trans "cloud_pandemic" %}<br>{% trans "cloud_dashboard" %}</label>
+                  </span>
+                </p>
+                {#                <div class="onoffswitch ta-pandemic">#}
+                {#                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-id" tabindex="0"#}
+                {#                           checked>#}
+                {#                    <label class="onoffswitch-label" for="switch-id">#}
+                {#                        <span class="onoffswitch-inner"></span>#}
+                {#                        <span class="onoffswitch-switch"></span>#}
+                {#                    </label>#}
+                {#                </div>#}
+            </div>
+        </div>
+        <div class="zk-ta-dashboard" id="timeattendance">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <div class="mb-5 card text-white bg-primary card-bg">
+                        <div class="card-header text-center">{% trans "cloud_overall_statistics" %}&nbsp; <i
+                                class="fa fa-database fa-lg"></i>
+                        </div>
+                        <div class="card-body overall-statistics">
+                            <div class="d-flex flex-wrap align-content-center justify-content-center">
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{% trans "cloud_total_employees" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="empcount"></strong></div>
+                                    <strong id="totalEmployee" style="display: none;">
+                                        <a id="totalEmployees" href="javascript:void(0);" onclick="downloadFiles('totalEmployees')" aria-label="Total Employees" style="position: relative; bottom: -10px; left: 0px;">
+                                            <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                                <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                            </svg>
+                                        </a>
+                                    </strong>
+                                </div>
+
+                                <div class="p-2 circle">
+{#                                  <span>{% trans "cloud_new_joinee" %}{% if software_type != 9 %}<sup style="font-size: 5px; color: #ddd;">{% trans "last_7_days" %}</sup>{% endif %}</span>#}
+                                    <span><p style="position: relative; bottom: -9px; left: 0px;">{% trans "cloud_new_joinee" %}<br><small>({% trans "last_7_days" %})</small></p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="newjoinercount"></strong></div>
+                                    <strong id="newJoinee" style="display: none;">
+                                      <a id="newJoinees" href="javascript:void(0);" onclick="downloadFiles('newJoinees')" aria-label="New Joiners" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                      </a>
+                                    </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{% trans "cloud_resign" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="resigncount"></strong></div>
+                                    <strong id="resignedEmployee" style="display: none;">
+                                       <a id="resignedEmployees" href="javascript:void(0);" onclick="downloadFiles('resignedEmployees')" aria-label="New Joiners" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                       </a>
+                                    </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{% trans "cloud_total_devices" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="devicecount"></strong></div>
+                                    <strong id="totalDevice" style="display: none;">
+                                      <a id="totalDevices" href="javascript:void(0);" onclick="downloadFiles('totalDevices')" aria-label="Total Device" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                      </a>
+                                    </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{% trans "cloud_verification" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="punchcount"></strong></div>
+                                    <strong id="verification" style="display: none;">
+                                      <a id="verifications" href="javascript:void(0);" onclick="downloadFiles('verifications')" aria-label="Verifications" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                      </a>
+                                    </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{%  trans "cloud_Present" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="inofficecount"></strong></div>
+                                    <strong id="presentEmployee" style="display: none;">
+                                       <a id="presentEmployees" href="javascript:void(0);" onclick="downloadFiles('presentEmployees')" aria-label="Present Employees" style="position: relative; bottom: -10px; left: 0px;">
+                                         <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                         </svg>
+                                       </a>
+                                    </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{% trans "cloud_absent" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="absentcount"></strong></div>
+                                    <strong id="absentEmployee" style="display: none;">
+                                      <a id="absentEmployees" href="javascript:void(0);" onclick="downloadFiles('absentEmployees')" aria-label="Absent Employees" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                      </a>
+                                    </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{% trans "late_arrival" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="latearrival"></strong></div>
+                                    <strong id="lateEmployee" style="display: none;">
+                                      <a id="lateEmployees" href="javascript:void(0);" onclick="downloadFiles('lateEmployees')" aria-label="late Employees" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                      </a>
+                                    </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{% trans "cloud_early_leave" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="earlycount"></strong></div>
+                                     <strong id="earlyEmployee" style="display: none;">
+                                        <a id="earlyEmployees" href="javascript:void(0);" onclick="downloadFiles('earlyEmployees')" aria-label="Early Employees" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height:14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                        </a>
+                                     </strong>
+                                </div>
+                                <div class="p-2 circle">
+                                    <span><p style="position: relative; bottom: -14px; left: 0px;">{%  trans "cloud_on_leave" %}</p></span>
+                                    <div style="position: relative; bottom: 45px; left: -4px;"><strong id="leavecount"></strong></div>
+                                    <strong id="leaveEmployee" style="display: none;">
+                                      <a id="leaveEmployees" href="javascript:void(0);" onclick="downloadFiles('leaveEmployees')" aria-label="leave Employees" style="position: relative; bottom: -10px; left: 0px;">
+                                          <svg class="expand-iconss"  fill="#171412" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="height: 14px;">
+                                            <path id="Download_1" data-name="Download 1" d="M21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Zm-9.71,1.71a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l4-4a1,1,0,0,0-1.42-1.42L13,12.59V3a1,1,0,0,0-2,0v9.59l-2.29-2.3a1,1,0,0,0-1.42,1.42Z" transform="translate(-2 -2)"/>
+                                          </svg>
+                                      </a>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="mb-5 card text-white bg-primary card-bg device-location-status">
+                        <div class="card-header text-center">
+                            {% trans "device_status" %}&nbsp;<i class="fa fa-map-marker fa-lg"></i>
+                            <div class="total-device">
+                                <div>
+                                    <p class="p-0 m-0">{% trans "device_status" %}<b id="all-count">(0)</b></p>
+                                    <label class="switch-location online" for="online">
+                                        <input type="checkbox" id="online">
+                                        <span class="slider-on round">{% trans "cloud_online" %}<b id="online-count"></b></span>
+                                    </label>
+                                    <label class="switch-location offline" for="offline">
+                                        <input type="checkbox" id="offline">
+                                        <span class="slider-off round">{% trans "cloud_offline" %}<b id="offline-count"></b></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body device-status">
+                            <div id="ta_device_location" style="width: 100%; height: 350px;"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <div class="card text-white bg-primary card-bg rt-container">
+                        <div class="card-header text-center">
+                            {% trans "real_time_data" %}
+                            <i class="fa fa-users fa-lg"></i>
+                            <a href="#">
+                                <img src="/static/cloud/static/images/expand.png" alt="expand"
+                                     class="expand-icon hidden">
+                            </a>
+                        </div>
+                        <div class="card-body realtime-data">
+                            <div class="scroll-area-md">
+                                <div class="scrollbar-container">
+                                    <div class="table-responsive">
+                                        <table class="align-middle mb-0 table table-borderless zk-tbl">
+                                            <tbody id="real-time-data">
+                                            <tr id="sample-data">
+                                                <td>
+                                                    <div class="widget-content p-0 seperator-right">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img class="img-circle emp-img"
+                                                                         src="/static/cloud/static/images/sample/2.jpg"
+                                                                         alt="employee image">
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="emp-name">{% trans "sample_data" %}</div>
+                                                                <div class="emp-id">{% trans "Emp. Id: Sample Data" %}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="location-txt">{% trans "sample_data" %}</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="widget-content p-0 seperator-left seperator-right">
+                                                        <h6 class="title">{% trans "cloud_date" %}</h6>
+                                                        <p>{% now "jS F Y" %}</p>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="row checkin-out">
+                                                        <div class="col-md-6 col-sm-6 col-xs-5">
+                                                            <h6 class="title">{% trans "punch_state" %}</h6>
+                                                            <p class="time">{% now "f" %}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="widget-content p-0 seperator-left">
+                                                        <img src="/static/cloud/static/images/camera.png"
+                                                             class="camera-img"
+                                                             alt="Camera Ban"/>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5 card text-white bg-primary card-bg rg-container">
+                        <div class="card-header text-center">
+                            {% trans "realtime_graph" %}
+                            <i class="fa fa-line-chart fa-lg"></i>
+                            <a href="#">
+                                <img src="/static/cloud/static/images/expand.png" alt="expand"
+                                     class="expand-icon hidden">
+                            </a>
+                        </div>
+                        <div class="card-body realtime-graph">
+                            <div id="realtime-graph-test" style="width: 100%; height:295px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="mb-5 card text-white bg-primary card-bg">
+                        <div class="card-header  text-center">
+                            {% trans "today_birthday" %}
+                            <i class="fa fa-birthday-cake fa-lg"></i>
+                            <a href="#">
+                                <img src="/static/cloud/static/images/expand.png" alt="expand"
+                                     class="expand-icon hidden">
+                            </a>
+                        </div>
+                        <div class="card-body birthday-card">
+                            <div class="scroll-area-md">
+                                <div class="scrollbar-container">
+                                    <div class="table-responsive">
+                                        <table class="align-middle mb-0 table table-borderless zk-tbl">
+                                            <tbody id="real-time-birthday-data">
+                                            <tr>
+                                                <td>
+                                                    <div class="widget-content p-0 seperator-right">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img class="img-circle emp-img"
+                                                                         src="/static/cloud/static/images/sample/2.jpg"
+                                                                         alt="employee image">
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2 mr-3 ">
+                                                                <div class="emp-name">{% trans "sample_data" %}</div>
+                                                                <div class="emp-id">
+                                                                    {% trans "Emp. Id: Sample Data" %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="dept">{% trans "cloud_department" %}</div>
+                                                                <div class="dept-name">
+                                                                    {% trans "sample_data" %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5 card text-white bg-primary card-bg">
+                        <div class="card-header  text-center">{% trans "cloud_events" %}&nbsp; <i class="fa fa-calendar-check-o fa-lg"></i>
+                            <a href="#">
+                                <img src="/static/cloud/static/images/expand.png" alt="expand"
+                                     class="expand-icon hidden">
+                            </a>
+                        </div>
+                        <div class="card-body events">
+                            <div class="scroll-area-md">
+                                <div class="scrollbar-container">
+                                    <div class="table-responsive">
+                                        <table class="align-middle mb-0 table table-borderless zk-tbl">
+                                            <tbody id="real-time-event-data">
+                                            <tr>
+                                          <td>
+                                             <div class="widget-content p-0  seperator-right">
+                                                <div class="widget-content-wrapper">
+                                                   <div class="widget-content-left flex2">
+                                                      <div class="organiser">{% trans "Organiser : Javed" %}</div>
+                                                      <div class="venue">
+                                                         {% trans "Location : 2nd floor, HO" %}
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </td>
+                                          <td class="day-month">
+                                             <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                   <div class="widget-content-left flex2">
+                                                      <div class="event-day-month">{%  trans "11" %}<br>{%  trans "Jun" %}</div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="widget-content p-0  seperator-left">
+                                                <div class="widget-content-wrapper">
+                                                   <div class="widget-content-left flex2">
+                                                      <div class="event-name">{%  trans "Event: Celebration" %}</div>
+                                                      <div class="event-time">
+                                                         {% trans "Time: 14:30" %}
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {#            <div class="row">#}
+            {#                <div class="col-sm-12">#}
+            {#                    <div class="mb-5 card text-white bg-primary card-bg">#}
+            {#                        <div class="card-header text-center">#}
+            {#                            Overall Attendance&nbsp;#}
+            {#                            <i class="fa fa-bar-chart fa-lg"></i>#}
+            {#                        </div>#}
+            {#                        <div class="card-body overall-attendance">#}
+            {#                            <div id="overallAttendance" style="width: 100%; height: 350px;"></div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+        </div>
+        <div class="zk-pandemic-dashboard hidden" id="pandemic">
+            <div class="row">
+                <div class="col-md-12 col-md-12 col-sm-12">
+                    <div class="mb-5 card text-white pandemic-overall-statistics card-bg">
+                        <div class="card-header text-center">
+                            {% trans "overall_statistics" %}&nbsp;
+                            <i class="fa fa-database fa-lg"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex align-items-center justify-content-center section-1">
+                                    <ul class="list-group mr-5 mb-0">
+                                        <li class="justify-content-between list-group-item border-0 text-white bg-transparent font-weight-bold">
+                                    <span>
+                                    <img src="/static/cloud/static/images/high-temp.png" class="bg-img-icon-1 p-2">
+                                    </span>
+                                            {% trans "cloud_dashborad_high_temperature" %}
+                                            <span class="badge badge-secondary badge-pill" id="high_temp_count"></span>
+                                        </li>
+                                        <li class="justify-content-between list-group-item border-0 text-white bg-transparent font-weight-bold">
+                                    <span>
+                                    <img src="/static/cloud/static/images/warning.png" class="bg-img-icon-2 p-2">
+                                    </span>
+                                            {% trans "dashboard_warning" %}
+                                            <span class="badge badge-secondary badge-pill" id="warning_count"></span>
+                                        </li>
+                                        <li class="justify-content-between list-group-item border-0 text-white bg-transparent font-weight-bold">
+                                    <span>
+                                    <img src="/static/cloud/static/images/normal-temp.png" class="bg-img-icon-3 p-2">
+                                    </span>
+                                            {% trans "dashboard_normal" %}
+                                            <span class="badge badge-secondary badge-pill" id="normal_count"></span>
+                                        </li>
+                                        <li class="justify-content-between list-group-item border-0 text-white bg-transparent font-weight-bold">
+                                    <span>
+                                    <img src="/static/cloud/static/images/no-mask.png" class="bg-img-icon-4 p-2">
+                                    </span>
+                                            {% trans "dashboard_no_mask" %}
+                                            <span class="badge badge-secondary badge-pill" id="no_mask_count"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex align-items-center justify-content-center section-2">
+                                    <div class="text-center text-white font-weight-bold mt-5 pt-5 total-emp">
+                                        <div class="emp-circle text-center p-4 d-flex justify-content-center align-items-center">
+                                            <i class="fa fa-users fa-5x"> </i>
+                                        </div>
+                                        <p class="m-0">{% trans "dashboard_total_emps" %}</p>
+                                        <span id="td_md_empcount"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex align-items-center justify-content-center section-3">
+                                    <div class="statistics-legend">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-circle high"></i>&nbsp; {% trans "cloud_dashborad_high_temperature" %}
+                                            </li>
+                                            <li class="list-inline-item"><i class="fa fa-circle warning"></i>&nbsp;
+                                                {% trans "dashboard_warning" %}
+                                            </li>
+                                            <li class="list-inline-item"><i class="fa fa-circle normal"></i>&nbsp;
+                                                {% trans "dashboard_normal" %}
+                                            </li>
+                                            <li class="list-inline-item"><i class="fa fa-circle no-mask"></i>&nbsp; {% trans 'no_mask' %}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div style="height:230px; overflow:hidden;">
+                                        <div id="overall-statistics-pandemic"
+                                             style="width: 100%; height: 250px; margin-top: 5em;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {#                        <div class="card-footer search-area-date">#}
+                        {#                            <div class="row">#}
+                        {#                                <div class="col-md-4 col-sm-4 col-sm-push-8 col-md-push-8 d-flex justify-content-center">#}
+                        {#                                    <button type="button" class="btn btn-viewmore1 btn-sm-block">View More</button>#}
+                        {#                                </div>#}
+                        {#                                <div class="col-md-8 col-sm-8 col-sm-pull-4 col-md-pull-4">#}
+                        {#                                    <div class="filter-date">#}
+                        {#                                        <form class="form-inline">#}
+                        {#                                            <div class="mb-2 mr-sm-2 mb-sm-0 position-relative form-group shadow-sm">#}
+                        {#                                                <label for="searchByDate" class="mr-sm-2 search-txt-date">Search By Date#}
+                        {#                                                    - </label>#}
+                        {#                                                <input type="date" id="searchByDate" class="form-control text-center"/>#}
+                        {#                                            </div>#}
+                        {#                                            <button type="button" class="btn btn-success zk-btn-go mb-2">Go</button>#}
+                        {#                                        </form>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="mb-5 card text-white bg-primary card-bg">
+                        <div class="card-header text-center">
+                            {% trans "real_time_data" %}
+                            <i class="fa fa-database  fa-lg"></i>
+                            <a href="#">
+                                <img src="/static/cloud/static/images/expand.png" alt="expand"
+                                     class="expand-icon hidden">
+                            </a>
+                        </div>
+                        <div class="card-body realtime-data pandemic-realtime-data">
+                            <!-- <div class="scroll-area-md">--> <!-- small scroll bar for real time data in Pandemic Dashboard-->
+                            <div style="overflow: hidden auto; height: 290px;">
+                                <div class="scrollbar-container">
+                                    <div class="table-responsive">
+                                        <table class="align-middle mb-0 table table-borderless zk-tbl">
+                                            <tbody id="real-time-pandemic-data">
+                                            <tr class="normal-bg" id="sample-data-pandemic">
+                                                <td class="seperator-right">
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <div class="widget-content-left">
+                                                                    <img class="img-circle emp-img"
+                                                                         src="/static/cloud/static/images/sample/2.jpg"
+                                                                         alt="employee image">
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="emp-name">Justin</div>
+                                                                <div class="emp-id">123456</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="location-txt">Bangalore HO, Mahadevpura</span>
+                                                </td>
+                                                <td class="text-center seperator-left">
+                                                    <div class="row pandemic-temp">
+                                                        <div class="col-md-6 col-sm-6 col-xs-5">
+                                                            <h6 class="title">{% trans "body_temp" %}</h6>
+                                                            <p class="body-temp">35 &#8451;</p>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6 col-xs-7">
+                                                            <h6 class="title">Masked Face</h6>
+                                                            <p class="temp-var">Yes</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center seperator-left">
+                                                    <div class="widget-content p-0">
+                                                        <img src="/static/cloud/static/images/camera.png"
+                                                             class="camera-img" alt="Camera Ban"/>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="mb-5 card text-white bg-primary card-bg">
+                        <div class="card-header text-center">
+                            {% trans "department_statistics" %}&nbsp;
+                            <i class="fa fa-circle-o-notch fa-lg"></i>
+                            <a href="#">
+                                <img src="/static/cloud/static/images/expand.png" alt="expand"
+                                     class="expand-icon hidden">
+                            </a>
+                        </div>
+                        <div class="card-body department-statistics">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6 col-xs-6  mb-4">
+                                    <div class="circular-progress-bar high">
+                                        <h6 class="dept-stats-title">{% trans "cloud_dashborad_high_temperature" %}</h6>
+                                        <!-- Progress bar High -->
+                                        <div class="progress mx-auto" id="high-temp-per" data-value='0'>
+                                    <span class="progress-left">
+                                    <span class="progress-bar "></span>
+                                    </span>
+                                            <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                    </span>
+                                            <div class="progress-value w-100 height-100 img-circle d-flex  justify-content-center align-items-center">
+                                                <div class="pb-value">
+                                                    <small id="high-temp-per1">{% trans "0%" %}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END -->
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-6 mb-4">
+                                    <div class="circular-progress-bar warning">
+                                        <h6 class="dept-stats-title">{% trans "dashboard_warning" %}</h6>
+                                        <!-- Progress bar Warning -->
+                                        <div class="progress mx-auto" id="warning-per" data-value='0'>
+                                    <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                    </span>
+                                            <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                    </span>
+                                            <div class="progress-value w-100 height-100 img-circle d-flex  justify-content-center align-items-center">
+                                                <div class="pb-value">
+                                                    <small id="warning-per1">{% trans "0%" %}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END -->
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-6  mb-4">
+                                    <div class="circular-progress-bar normal">
+                                        <h6 class="dept-stats-title">{% trans "dashboard_normal" %}</h6>
+                                        <!-- Progress bar Normal -->
+                                        <div class="progress mx-auto" id="normal-per" data-value='0'>
+                                    <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                    </span>
+                                            <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                    </span>
+                                            <div class="progress-value w-100 height-100 img-circle d-flex  justify-content-center align-items-center">
+                                                <div class="pb-value">
+                                                    <small id="normal-per1">{% trans "0%" %}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END -->
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-6  mb-4">
+                                    <div class="circular-progress-bar no-mask">
+                                        <h6 class="dept-stats-title">{% trans "dashboard_no_mask" %}</h6>
+                                        <!-- Progress bar No Mask -->
+                                        <div class="progress mx-auto" id="no-mask-per" data-value='0'>
+                                    <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                    </span>
+                                            <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                    </span>
+                                            <div class="progress-value w-100 height-100 img-circle d-flex  justify-content-center align-items-center">
+                                                <div class="pb-value">
+                                                    <small id="no-mask-per1">{% trans "0%" %}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer search-area invisible">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-4 col-sm-push-8 col-md-push-9">
+                                    <button class="btn btn-block btn-viewmore">{% trans "view_more" %}</button>
+                                </div>
+                                <div class="col-md-9 col-sm-8 col-sm-pull-4 col-md-pull-3">
+                                    <div class="filter-form">
+                                        <form class="form-inline">
+                                            <div class="position-relative form-group">
+                                                <label for="searchByDept" class="search-txt">{% trans "search_by_department" %}
+                                                    - </label>&nbsp;&nbsp;
+                                                <select type="select" id="searchByDept" class="form-control zk-select">
+                                                    <option selected disabled>{% trans "---select_department--" %}</option>
+                                                    <option>{% trans "res & dep" %}</option>
+                                                    <option>{% trans "hr_depart" %}</option>
+                                                    <option>{% trans "sales & marketing" %}</option>
+                                                </select>
+                                            </div>
+                                            <button type="button" class="btn btn-success zk-btn-go mb-2">{%  trans "Go" %}</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extension_js %}
+    {{ block.super }}
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/cloud/static/js-new/charts/loader.js' %}"></script>
+    <script type="text/javascript" src="{% static '/cloud/static/js-new/it-script.js' %}"></script>
+    <script>
+        var isSuperuser = {% if user.is_superuser %}true{% else %}false{% endif %};
+        if (isSuperuser) {
+            document.getElementById('totalEmployee').style.display = 'block';
+            document.getElementById('newJoinee').style.display = 'block';
+            document.getElementById('resignedEmployee').style.display = 'block';
+            document.getElementById('totalDevice').style.display = 'block';
+            document.getElementById('verification').style.display = 'block';
+            document.getElementById('presentEmployee').style.display = 'block';
+            document.getElementById('absentEmployee').style.display = 'block';
+            document.getElementById('lateEmployee').style.display = 'block';
+            document.getElementById('earlyEmployee').style.display = 'block';
+            document.getElementById('leaveEmployee').style.display = 'block';
+        }
+        pandemic_graph_data = [];
+        $(function () {
+
+            $(".ta-pandemic").click(function () {
+                if ($("#pandemic").hasClass("hidden")) {
+                    $("#pandemic").removeClass("hidden");
+                    $("#timeattendance").addClass("hidden");
+                    $("#switch-id").prop("checked", true);
+
+
+                } else {
+                    $("#timeattendance").removeClass("hidden");
+                    $("#pandemic").addClass("hidden");
+                    $("#switch-id").prop("checked", false);
+
+
+                }
+                return false;
+                });
+            });
+
+            $(function () {
+
+            var pDepartments = [];
+            var pAreas = [];
+            $.fn.dashboard_timer = {
+                'refreshTemp': null,
+                'dashboardRefresh': null,
+                'eventsRefresh': null,
+                'refreshMonitor': null,
+                'refreshPie': null,
+            };
+            var timer_map = $.fn.dashboard_timer;
+
+            function refreshTemp() {
+                if ($("#dashboard").hasClass('layui-hide')) {
+                  return false;
+                }
+                var url = '/iclock/dashboard_card/';
+                var csrf = $("input[name=csrfmiddlewaretoken]", "#dashboard").val();
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    traditional: true,
+                    data: {csrfmiddlewaretoken: csrf},
+                    dataType: 'json',
+                    success: function (datas) {
+                        var card_datas = datas.card_datas;
+                        var other_datas = datas.other_datas;
+                        pandemic_graph_data = [['Temprature', 'value'],
+                            ['High Temprature', card_datas['high_temp_count']],
+                            ['Warning', card_datas['warning_count']],
+                            ['Normal', card_datas['normal_count']],
+                            ['No Mask', card_datas['no_mask_count']],
+                            [null, (card_datas['high_temp_count'] + card_datas['warning_count'] + card_datas['normal_count'] + card_datas['no_mask_count'])]];
+
+                        $('#high-temp-per').attr('data-value', percentage(card_datas['high_temp_count'], card_datas['td_md_empcount']));
+                        $('#warning-per').attr('data-value', percentage(card_datas['warning_count'], card_datas['td_md_empcount']));
+                        $('#normal-per').attr('data-value', percentage(card_datas['normal_count'], card_datas['td_md_empcount']));
+                        $('#no-mask-per').attr('data-value', percentage(card_datas['no_mask_count'], card_datas['td_md_empcount']));
+                        $('#high-temp-per1').text(percentage(card_datas['high_temp_count'], card_datas['td_md_empcount']) + '%');
+                        $('#warning-per1').text(percentage(card_datas['warning_count'], card_datas['td_md_empcount']) + '%');
+                        $('#normal-per1').text(percentage(card_datas['normal_count'], card_datas['td_md_empcount']) + '%');
+                        $('#no-mask-per1').text(percentage(card_datas['no_mask_count'], card_datas['td_md_empcount']) + '%');
+                        $(".progress").each(function () {
+                            var value = $(this).attr('data-value');
+                            var left = $(this).find('.progress-left .progress-bar');
+                            var right = $(this).find('.progress-right .progress-bar');
+                            if (value > 0) {
+                                if (value <= 50) {
+                                    right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)');
+                                    right.css('transition', 'all 3s');
+
+                                } else {
+                                    right.css('transform', 'rotate(180deg)');
+                                    left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)');
+                                    left.css('transition', 'all 3s');
+                                }
+                                }
+
+                            })
+
+                        function percentageToDegrees(percentage) {
+                            return percentage / 100 * 360
+                        }
+
+                        function percentage(percent, total) {
+                          var percentageValue;
+                            if(percent > 0 && total >0) {
+                              if(((percent * 100) / total) < 1){
+                                percentageValue = ((percent * 100) / total).toFixed(2);
+                              }
+                              else {
+                                percentageValue = ((percent * 100) / total).toFixed(0);
+                              }
+                            }else{
+                                percentageValue = 0;
+                            }
+                            return percentageValue
+                        }
+
+                        for (var detail in card_datas) {
+                            $('#' + detail).text(card_datas[detail]);
+                        }
+                        timer_map['refreshTemp'] = window.setTimeout(refreshTemp, 15000);
+                    },
+                    error: function () {
+                        timer_map['refreshTemp'] = window.setTimeout(refreshTemp, 15000);
+                    },
+                    complete: function (XHR, TS) {
+                        if (TS === 'timeout') {
+                            refreshTemp()
+                        }
+                        XHR = null;
+                    }
+                });
+            }
+
+                function FillOutData(data) {
+                    var content = "";
+                    var content_temp = "";
+                    if (data.length > 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            var employee_label = 'Emp. Id:';
+                            var color_class = "";
+                            var masked_face = "";
+                            var r = data[i];
+                            if (r[7] == null) {
+                                r[7] = '';
+                            }
+                            if (!r[1]) {
+                                r[1] = 'Unknown';
+                                employee_label = ''
+                            }
+                            if (!r[2]) {
+                                r[2] = '';
+                            }
+                            if (r[12] == 0) {
+                                masked_face = 'NO';
+                                color_class = 'high';
+                            } else if (r[12] == 1) {
+                                masked_face = 'YES';
+                                color_class = r[10].toLowerCase()
+                            } else if (r[12] == "None") {
+                                masked_face = 'Not Recognized';
+                                color_class = r[10].toLowerCase();
+                            } else {
+                                color_class = r[10].toLowerCase();
+                            }
+
+                            var device_class;
+                            device_class =  r[11].toString().includes('device');
+                            if(device_class){
+                                device_class = 'device-txt device1-txt';
+                            }else {
+                                device_class = 'location-txt location1-txt';
+                            }
+                            content += ''
+                                + '<tr>'
+                                + '<td>'
+                                + '<div class="widget-content p-0 seperator-right">'
+                                + '<div class="widget-content-wrapper">'
+                                + '<div class="widget-content-left mr-3">'
+                                + '<div class="widget-content-left">'
+                                + '<img class="img-circle emp-img" onerror="this.src=\'/media/images/userImage.gif\'" source="' + r[6] + '" src="' + r[6] + '" alt="employee image">'
+                                + '</div>'
+                                + '</div>'
+                                + '<div class="widget-content-left flex2">'
+                                + '<div class="emp-name">' + r[2] + '</div>'
+                                + '<div class="emp-id">'+ employee_label + r[1] + '</div>'
+                                + '</div>'
+                                + '</div>'
+                                + '</div>'
+                                + '</td>'
+                                + '<td>'
+                                + '<span class="'+ device_class +'" style="text-overflow: ellipsis;white-space: nowrap;overflow:hidden;" title="' + r[7] + '">&nbsp; ' + r[7] + '</span>'
+                                + '</td>'
+                                + '<td class="text-center">'
+                                + '<div class="widget-content p-0 seperator-left seperator-right">'
+                                + '<h6 class="title">Date</h6>'
+                                + '<p>{% now "jS F Y" %}</p>'
+                                + '</div>'
+                                + '</td>'
+                                + '<td class="text-center">'
+                                + '<div class="row checkin-out">'
+                                + '<div class="col-md-12">'
+                                + '<h6 class="title">' + r[4] + '</h6>'
+                                + '<p class="time">' + r[3] + '</p>'
+                                + '</div>'
+                                + '</div>'
+                                + '</td>'
+                                + '<td class="text-center">'
+                                + '<div class="widget-content p-0 seperator-left">'
+                                + '<img onerror="this.src=\'/static/cloud/static/images/camera.png\'" source="' + r[5] + '" src="' + r[5] + '" class="camera-img" alt="Camera Ban"/>'
+                                + '</div>'
+                                + '</td>'
+                                + '</tr>';
+
+                            content_temp += ''
+                                + '<tr class="' + color_class + '-bg">'
+                                + '<td class="seperator-right">'
+                                + '<div class="widget-content p-0">'
+                                + '<div class="widget-content-wrapper">'
+                                + '<div class="widget-content-left mr-3">'
+                                + '<div class="widget-content-left">'
+                                + '<img class="img-circle emp-img" onerror="this.src=\'/media/images/userImage.gif\'" source="' + r[6] + '" src="' + r[6] + '" alt="employee image">'
+                                + '</div>'
+                                + '</div>'
+                                + '<div class="widget-content-left flex2">'
+                                + '<div class="emp-name">' + r[2] + '</div>'
+                                + '<div class="emp-id">'+ employee_label + r[1] + '</div>'
+                                + '</div>'
+                                + '</div>'
+                                + '</div>'
+                                + '</td>'
+                                + '<td>'
+                                + '<span class="' + device_class + '" style="text-overflow: ellipsis;white-space: nowrap;overflow:hidden;" title="' + r[7] + '">&nbsp; ' + r[7] + '</span>'
+                                + '</td>'
+                                + '<td class="text-center seperator-left">'
+                                + '<div class="row pandemic-temp">'
+                                + '<div class="col-md-6 col-sm-6 col-xs-5">'
+                                + '<h6 class="title">Body Temp.</h6>'
+                                + '<p class="body-temp">' + r[9] + '</p>'
+                                + '</div>'
+                                + '<div class="col-md-6 col-sm-6 col-xs-7">'
+                                + '<h6 class="title">Masked Face</h6>'
+                                + '<p class="temp-var">' + masked_face + '</p>'
+                                + '</div>'
+                                + '</div>'
+                                + '</td>'
+                                + '<td class="text-center">'
+                                + '<div class="widget-content p-0 seperator-left">'
+                                + '<img onerror="this.src=\'/static/cloud/static/images/camera.png\'" source="' + r[5] + '" src="' + r[5] + '" class="camera-img" alt="Camera Ban"/>'
+                                + '</div>'
+                                + '</td>'
+                                + '</tr>';
+                        }
+
+                    $("#sample-data").css('display','none');
+                    $("#real-time-data").after(content);
+                    $("#sample-data-pandemic").css('display','none');
+                    $("#real-time-pandemic-data").after(content_temp);
+
+                    }
+                }
+
+            var score = 0;
+
+            function dashboardRefresh() {
+                if ($("#dashboard").hasClass('layui-hide')) {
+                  return false;
+                }
+                var url = '/iclock/dashboard_transaction/';
+                var csrf = $("input[name=csrfmiddlewaretoken]").val();
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    traditional: true,
+                    timeout: 20000,
+                    data: {
+                        csrfmiddlewaretoken: csrf,
+                        dashboard: 'r',
+                        bp: score
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        FillOutData(data['data']);
+                        score = data['score'];
+                        timer_map['refreshFull'] = window.setTimeout(dashboardRefresh, 15000);
+                    },
+                    error: function () {
+                        timer_map['refreshFull'] = window.setTimeout(dashboardRefresh, 15000);
+                    },
+                    complete: function (XHR, TS) {
+                        if (TS === 'timeout') {
+                            dashboardRefresh()
+                        }
+                        XHR = null;
+                    }
+                });
+            }
+
+            function birthdayRefresh() {
+                if ($("#dashboard").hasClass('layui-hide')) {
+                  return false;
+                }
+                var url = '/personnel/birthday_data/';
+                var csrf = $("input[name=csrfmiddlewaretoken]", "#dashboard").val();
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    traditional: true,
+                    data: {csrfmiddlewaretoken: csrf},
+                    dataType: 'json',
+                    success: function (datas) {
+                        var birthday_content = '';
+                        if (datas.length > 0) {
+                            for (var i = 0; i < datas.length; i++) {
+                                birthday_content += '<tr>'
+                                    + '<td>'
+                                    + '<div class="widget-content p-0 seperator-right">'
+                                    + '<div class="widget-content-wrapper">'
+                                    + '<div class="widget-content-left mr-3">'
+                                    + '<div class="widget-content-left">'
+                                    + '<img class="img-circle emp-img" onerror="this.src=\'/media/images/userImage.gif\'" source="' + datas[i]['photo'] + '" src="' + datas[i]['photo'] + '" alt="employee image">'
+                                    + '</div>'
+                                    + '</div>'
+                                    + '<div class="widget-content-left flex2 mr-3 " >'
+                                    + '<div class="emp-name">' + datas[i]['emp_first_name'] + '</div>'
+                                    + '<div class="emp-id">Emp. Id:&nbsp;' + datas[i]['emp_code'] + '</div>'
+                                    + '</div>'
+                                    + '</div>'
+                                    + '</div>'
+                                    + '</td>'
+                                    + '<td >'
+                                    + '<div class="widget-content p-0">'
+                                    + '<div class="widget-content-wrapper">'
+                                    + '<div class="widget-content-left flex2">'
+                                    + '<div class="dept">Department</div>'
+                                    + '<div class="dept-name">' + datas[i]['emp_department'] + '</div>'
+                                    + '</div>'
+                                    + '</div>'
+                                    + '</div>'
+                                    + '</td>'
+                                    + '</tr>';
+                            }
+                            $('#real-time-birthday-data').html('');
+                            $('#real-time-birthday-data').append(birthday_content);
+                        }
+                    }
+                });
+            }
+
+                function eventsRefresh() {
+                    if ($("#dashboard").hasClass('layui-hide')) {
+                      return false;
+                    }
+                    var url = '/iclock/dashboard_events/';
+                    var csrf = $("input[name=csrfmiddlewaretoken]", "#dashboard").val();
+                    $.ajax({
+                            url: url,
+                            type: 'POST',
+                            traditional: true,
+                            data: {csrfmiddlewaretoken: csrf},
+                            dataType: 'json',
+                            success: function (datas) {
+                                var event_content = '';
+                                if (datas.length > 0) {
+                                    for (var i = 0; i < datas.length; i++) {
+                                        var date = new Date(datas[i]['event_time']);
+                                        var month = date.toLocaleString('default', { month: 'long' }).slice(0, 3);
+                                        var day = date.getDate();
+                                        var today = new Date();
+                                        var isToday = (today.toDateString() == date.toDateString());
+
+                                        if (isToday){
+                                            day = 'Today';
+                                            month = '';
+                                        }
+                                        event_content += '<tr>'
+                                             + '<td>'
+                                             + '<div class="widget-content p-0  seperator-right">'
+                                             + '<div class="widget-content-wrapper">'
+                                             + '<div class="widget-content-left flex2">'
+                                             + '<div class="organiser">Organizer:&nbsp;' + datas[i]['organizer'] + '</div>'
+                                             + '<div class="venue">Location:&nbsp;' + datas[i]['location'] + '</div>'
+                                             + '</div>'
+                                             + '</div>'
+                                             + '</div>'
+                                             + '</td>'
+                                             + '<td class="day-month">'
+                                             + '<div class="widget-content p-0">'
+                                             + '<div class="widget-content-wrapper">'
+                                             + '<div class="widget-content-left flex2">'
+                                             + '<div class="event-day-month">' + day + '<br>' + month + '</div>'
+                                             + '</div>'
+                                             + '</div>'
+                                             + '</div>'
+                                             + '</td>'
+                                             + '<td>'
+                                             + '<div class="widget-content p-0  seperator-left">'
+                                             + ' <div class="widget-content-wrapper">'
+                                             + '<div class="widget-content-left flex2">'
+                                             +  '<div class="event-name">Event:&nbsp;' + datas[i]['event'] + '</div>'
+                                             + '<div  class="event-time" >Time:&nbsp;' + datas[i]['event_time'] + '</div>'
+                                             + '</div>'
+                                             + '</div>'
+                                             + '</div>'
+                                             + '</td>'
+                                            + '</tr>';
+                                    };
+
+                                    $('#real-time-event-data').html('');
+                                    $('#real-time-event-data').append(event_content);
+                                }
+                                timer_map['eventsRefresh'] = window.setTimeout(eventsRefresh, 15000);
+
+                            },
+                            error:
+
+                                function () {
+                                    timer_map['eventsRefresh'] = window.setTimeout(eventsRefresh, 15000);
+                                }
+
+                            ,
+                            complete: function (XHR, TS) {
+                                if (TS === 'timeout') {
+                                    eventsRefresh()
+                                }
+                                XHR = null;
+                            }
+                        }
+                    );
+                }
+
+
+            var acChart = echarts.init(document.getElementById('realtime-graph-test'));
+            var mDepartments = [];
+            var mAreas = [];
+            var now = new Date();
+            var timeArr = [];
+            var dataArr = [];
+            var rdataHeads = [];
+            var rdataArr = [];
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            for (var i = 0; i < now.getDate(); i++) {
+                var d = i + 1;
+                timeArr.push(year + "-" + month + "-" + d);
+                dataArr.push(0);
+            }
+            var total_mins = now.getHours() * 60 + now.getMinutes();
+            for (var j = 0; j < total_mins; j++) {
+                rdataHeads.push((('00' + parseInt(j / 60)).slice(-2) + ':' + ('00' + parseInt(j % 60)).slice(-2)));
+                rdataArr.push(0)
+            }
+            var real_option = {
+                title: {
+                    text: gettext('dashboard_real_time_monitor'),
+                    //subtext: gettext('今天'),
+                    textStyle: {
+                        color: '#fff'
+                    },
+                    left: 0
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'line'
+                    }
+                },
+                toolbox: {
+                    showTitle: false,
+                    feature: {
+                        myRefresh: {
+                            show: true,
+                            icon: 'M3.8,33.4 M47,18.9h9.8V8.7 M56.3,20.1 C52.1,9,40.5,0.6,26.8,2.1C12.6,3.7,1.6,16.2,2.1,30.6 M13,41.1H3.1v10.2 M3.7,39.9c4.2,11.1,15.8,19.5,29.5,18 c14.2-1.6,25.2-14.1,24.7-28.5',
+                            onclick: function () {
+                                // refresh('m');
+                                refreshMonitor();
+                            }
+                        },
+                        magicType: {type: ['line', 'bar']},
+                        saveAsImage: {
+                            show: true
+                        }
+                    },
+                    iconStyle: {
+                        borderColor: '#fff'
+                    }
+                },
+                legend: {
+                    data: [gettext('P')],
+                    textStyle: {
+                        fontSize: '20',
+                        color: 'White',
+                    },
+                },
+                grid: {
+                    left: '10%',
+                    right: '5%',
+                    bottom: '20%'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: rdataHeads,
+                    scale: true,
+                    boundaryGap: false,
+                    axisLine: {onZero: false},
+                    splitLine: {show: false},
+                    splitNumber: 30,
+                    min: 'dataMin',
+                    max: 'dataMax',
+                    axisLabel: {textStyle: {color: "#fff"}}
+                },
+                yAxis: {
+                    scale: true,
+                    splitArea: {
+                        show: true
+                    },
+                    axisLabel: {textStyle: {color: "#fff"}},
+                    lineStyle: {
+                        normal: {opacity: 0.5}
+                    }
+                },
+                dataZoom: [
+                    {
+                        type: 'inside',
+                        start: 0,
+                        end: 100
+                    },
+                    {
+                        show: true,
+                        type: 'slider',
+                        y: '90%',
+                        start: 0,
+                        end: 100
+                    }
+                ],
+                series: [
+                    {
+                        itemStyle: {color: '#fff'},
+                        name: gettext('P'),
+                        type: 'line',
+                        data: rdataArr,
+                        smooth: true,
+                        lineStyle: {
+                            normal: {opacity: 0.5}
+                        }
+
+                    }
+
+                ],
+
+
+            };
+            //acChart.showLoading({
+            //    text: gettext('loading...')
+            //});
+            acChart.setOption(real_option);
+
+            function refreshMonitor() {
+                if ($("#dashboard").hasClass('layui-hide')) {
+                    return false;
+                }
+                var url = '/iclock/dashboard_monitor/';
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    traditional: true,
+                    data: {Department: pDepartments, Area: pAreas, dashboard: 'p'},
+                    dataType: 'json',
+                    success: function (data) {
+                        var pOpt = $.extend(true, {}, real_option);
+                        $.extend(pOpt, data);
+                        acChart.setOption(pOpt);
+                        timer_map['refreshMonitor'] = window.setTimeout(refreshMonitor, 15000);
+                    },
+                    error: function () {
+                        timer_map['refreshMonitor'] = window.setTimeout(refreshMonitor, 15000);
+                    },
+                    complete: function (XHR, TS) {
+                        XHR = null;
+                    }
+                });
+            }
+
+            function refreshPie() {
+                if ($("#dashboard").hasClass('layui-hide')) {
+                    return false;
+                }
+                var url = '/iclock/dashboard_device_location/';
+                var csrf = $("input[name=csrfmiddlewaretoken]").val();
+                var online = $('#online').is(":checked");
+                var offline = $('#offline').is(":checked");
+                var device_type = 0;
+                if (online == false && offline == false) {
+                    device_type = 0;
+                } else if (online == true && offline == false) {
+                    device_type = 1;
+                } else if (online == false && offline == true) {
+                    device_type = 2;
+                } else {
+                    device_type = 0;
+                }
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    traditional: true,
+                    data: {csrfmiddlewaretoken: csrf, device_type_required: device_type},
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#all-count').html('(' + data.count_data[2] + ')');
+                        $('#online-count').html('(' + data.count_data[0] + ')');
+                        $('#offline-count').html('(' + data.count_data[1] + ')');
+                        if (data.device_info.length > 0) {
+                            myMap(location_data = data);
+                        }
+                       // timer_map['refreshPie'] = window.setTimeout(refreshPie, 15000);
+                    },
+                    error: function () {
+                      //  timer_map['refreshPie'] = window.setTimeout(refreshPie, 15000);
+                    },
+                    complete: function (XHR, TS) {
+                        XHR = null;
+                    }
+                });
+            }
+
+            function Refresh() {
+                refreshTemp();
+                dashboardRefresh();
+                birthdayRefresh();
+                eventsRefresh();
+                refreshMonitor();
+                refreshPie();
+            }
+
+            Refresh();
+
+        })
+        ;
+
+        function myMap(location_data = []) {
+            // Map options
+            let latitude, longitude;
+            if (location_data.device_info.length > 0) {
+                latitude = parseFloat(location_data.device_info[0]['latitude']);
+                longitude = parseFloat(location_data.device_info[0]['longitude']);
+            } else {
+                latitude = 12.982983299999999;
+                longitude = 77.687958;
+            }
+            var options = {
+                zoom: 10, // it will display zooming effect of map.
+                center: {lat:  latitude, lng: longitude},
+                disableDefaultUI: true,
+                scrollwheel: false,
+            };
+            // New map
+            let device_location = document.getElementById('ta_device_location');
+            var map = new google.maps.Map(device_location, options);
+            if (location_data.device_info.length > 0) {
+                {# let iconImageType = ''; #}
+                {#for (var i = 1; i < location_data.length; i++) {#}
+                {#    if (location_data[i][2] === 3) {#}
+                {#        iconImageType = "{% static 'cloud/static/images/offline_device.png' %}";#}
+                {#    } else {#}
+                {#        iconImageType = "{% static 'cloud/static/images/online_device.png' %}";#}
+                {#    }#}
+                {#    iconImageType#}
+                {#    addMarker({#}
+                {#        coords: {lat: location_data[0][0], lng: location_data[0][1]},#}
+                {#        iconImage: iconImageType#}
+                {#    });#}
+                addMarker(location_data);
+                {# }#}
+            }
+            // Add marker function
+            function addMarker(location_data) {
+                {#var marker = new google.maps.Marker({#}
+                {#    position: props.coords,#}
+                {#    map: map,#}
+                {#    // icon: props.iconImage#}
+                {# });#}
+                let device_info = location_data.device_info
+                let infoWindow = new google.maps.InfoWindow();
+                    if(device_info){
+                        for(let i = 0; i < device_info.length; i++) {
+                            let data = device_info[i];
+                            if(device_info[i].status == 0){
+                                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                                var marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    icon: "{% static 'cloud/static/images/offline_device.png' %}",
+                                });
+                            }
+                            else if(device_info[i].status == 1) {
+                                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                                var marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    icon: "{% static 'cloud/static/images/online_device.png' %}",
+                                });
+                            }
+                            else{
+                                let alias = "";
+                                let sn = "";
+                                let device_status = "";
+                                let push_version = "";
+                                let user_count = "";
+                                let finger_print_count = "";
+                                let finger_vein_count = "";
+                                let face_count = "";
+                                let palm_count = "";
+
+                                data.alias.forEach(alias_element => {
+                                    alias += " " + alias_element + "<br>"
+                                })
+                                data.alias = alias;
+
+                                data.sn.forEach(sn_element => {
+                                    sn += " " + sn_element + "<br>"
+                                })
+                                data.sn = sn;
+
+                                data.device_status.forEach(device_status_element => {
+                                    device_status += " " + device_status_element + "<br>"
+                                })
+                                data.device_status = device_status;
+
+                                data.push_version.forEach(push_version_element => {
+                                    push_version += " " + push_version_element + "<br>"
+                                })
+                                data.push_version = push_version;
+
+                                data.user_count.forEach(user_count_element => {
+                                    user_count += " " + user_count_element + "<br>"
+                                })
+                                data.user_count = user_count;
+
+                                data.finger_print_count.forEach(finger_print_count_element => {
+                                    finger_print_count += " " + finger_print_count_element + "<br>"
+                                })
+                                data.finger_print_count = finger_print_count;
+
+                                data.finger_vein_count.forEach(finger_vein_count_element => {
+                                    finger_vein_count += " " + finger_vein_count_element + "<br>"
+                                })
+                                data.finger_vein_count = finger_vein_count;
+
+                                data.face_count.forEach(face_count_element => {
+                                    face_count += " " + face_count_element + "<br>"
+                                })
+                                data.face_count = face_count;
+
+                                data.palm_count.forEach(palm_count_element => {
+                                    palm_count += " " + palm_count_element + "<br>"
+                                })
+                                data.palm_count = palm_count;
+
+                                var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
+                                var marker = new google.maps.Marker({
+                                    position: myLatlng,
+                                    map: map,
+                                    icon: "{% static 'cloud/static/images/multiple_device.png' %}"
+                                });
+                            }
+                            var deviceString = '';
+                            deviceString = '<table class="mb-0 table table-hover table-striped table-bordered text-center" style="font-size:10px !important; white-space: nowrap; background-image: linear-gradient(to right, rgba(0,161,212,0.9), rgba(39,42,61,0.9));">' +
+                            '<thead>' +
+                                '<tr>' +
+                                    '<th> Device </th>' +
+                                    '<th> Sn </th>' +
+                                    '<th> Status </th>' +
+                                    '<th> Push version </th>' +
+                                    '<th> User </th>' +
+                                    '<th> Finger print </th>' +
+                                    '<th> Finger vein </th>' +
+                                    '<th> Face </th>' +
+                                    '<th> Palm </th>' +
+                                '</tr>' +
+                            '</thead> '+
+                            '<tbody>' +
+                                '<tr style="background-image: linear-gradient(to right, rgba(0,161,212,0.9), rgba(39,42,61,0.9)) !important;">' +
+                                    '<td>' + data.alias + '</td>' +
+                                    '<td>' + data.sn + '</td>' +
+                                    '<td>' + data.device_status + '</td>' +
+                                    '<td>' + data.push_version + '</td>' +
+                                    '<td>' + data.user_count + '</td>' +
+                                    '<td>' + data.finger_print_count + '</td>' +
+                                    '<td>' + data.finger_vein_count + '</td>' +
+                                    '<td>' + data.face_count + '</td>' +
+                                    '<td>' + data.palm_count + '</td>' +
+                                '</tr>' +
+                            '</tbody> '+
+                            '</table>';
+                            data.device_table = deviceString;
+                            (function (marker, data) {
+                                google.maps.event.addListener(marker, "click", function (e) {
+                                    infoWindow.setContent(data.device_table);
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, data);
+                        }
+                    }
+                // Check for custom icon
+                {#if (props.iconImage) {#}
+                {#    // Set icon image#}
+                {#    marker.setIcon(props.iconImage);#}
+                {# }#}
+            }
+        }
+        </script>
+        <script>
+            if (typeof $.fn.dashboard_timer === 'undefined') {
+                $.fn.dashboard_timer = {};
+            }
+            var timer_map = $.fn.dashboard_timer;
+            let dashboardCardURLData;
+                const downloadIDs = [
+                    'totalEmployees',
+                    'newJoinees',
+                    'resignedEmployees',
+                    'totalDevices',
+                    'verifications',
+                    'presentEmployees',
+                    'absentEmployees',
+                    'lateEmployees',
+                    'earlyEmployees',
+                    'leaveEmployees'
+                ]
+            let setDownloadEventListeners = () => {
+                downloadIDs.forEach(id => {
+                    let downloadElement = document.getElementById(id)
+                    downloadElement.addEventListener('click', () => {
+                        window.open(dashboardCardURLData[id], "_blank");
+                    })
+                })
+            }
+
+            function refreshBaseCrard() {
+                if ($("#dashboard").hasClass('layui-hide')) {
+                    return false;
+                }
+                if (!$("#pandemic").hasClass("hidden")) {
+                    return false;
+                }
+                var url = '/iclock/dashboard_card_base/';
+                var csrf = $("input[name=csrfmiddlewaretoken]", "#dashboard").val();
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    traditional: true,
+                    data: {csrfmiddlewaretoken: csrf},
+                    dataType: 'json',
+                    success: function (datas) {
+                        var card_datas = datas.card_datas;
+                        for (var detail in card_datas) {
+                            $('#' + detail).text(card_datas[detail])
+                        }
+                        dashboardCardURLData = datas.card_data_download_url;
+                        setDownloadEventListeners();
+                        timer_map['refreshBaseCrardID'] = window.setTimeout(refreshBaseCrard, 20000);
+                    },
+                    error: function () {
+                         window.setTimeout(refreshBaseCrard, 30000);
+                    },
+                    complete: function (XHR, TS) {
+                        XHR = null;
+                    }
+                });
+            }
+
+            function refreshTempCrard() {
+                if ($("#dashboard").hasClass('layui-hide')) {
+                    return false;
+                }
+                if ($("#pandemic").hasClass("hidden")) {
+                    return false;
+                }
+                var url = '/iclock/dashboard_card_temp/';
+                var csrf = $("input[name=csrfmiddlewaretoken]", "#dashboard").val();
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    traditional: true,
+                    data: {csrfmiddlewaretoken: csrf},
+                    dataType: 'json',
+                    success: function (datas) {
+                        var card_datas = datas.card_datas;
+                        var other_datas = datas.other_datas;
+
+
+                        // maskChart.setOption(mask_opt);
+                        // refresh again after 15s
+                        timer_map['refreshCrard'] = window.setTimeout(refreshTempCrard, 60000);
+                    },
+                    error: function () {
+                        timer_map['refreshCrard'] = window.setTimeout(refreshTempCrard, 2000000);
+                    },
+                    complete: function (XHR, TS) {
+                        XHR = null;
+                    }
+                });
+            }
+            window.setTimeout(refreshBaseCrard, 1000);
+        </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={% MAPS_API_KEY %}&v=3.31&libraries=places"></script>
+{% endblock %}
+

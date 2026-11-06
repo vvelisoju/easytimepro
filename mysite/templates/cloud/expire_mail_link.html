@@ -1,0 +1,17 @@
+{% extends "cloud/base_login.html" %}
+{% load i18n %}
+{% block main %}
+    <div class="zk-login-col">
+        <div class="col-md-9 col-md-offset-3">
+            {% block logo_box %}
+                {{ block.super }}
+            {% endblock %}
+            <div class="mb-3 card zk-login-card  text-white">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}" alt="login">
+                </div>
+                <div style="color: #2b2929; font-weight: bold; text-align: center; font-size: 30px;">{% trans 'activation_link_expired' %}</div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

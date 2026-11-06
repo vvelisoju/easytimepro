@@ -1,0 +1,431 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	easy TimePro(Standard Version)
+	(Support  postgresql12 and above, MySql/MariaDB,sqlserver2016/2017/2019/2022, oracle19 and above)
+	Not recommended: SQLServer Express and SQLServer Developer edition
+	
+	Ubuntu(22 and above),Fedora and Debian(10 and above),Tested on Ubuntu 24
+
+
+**Note** 
+	about Https configration,please refer to README.md
+	If an upgrade is needed, simply update the mysite directory. Do not uninstall and reinstall the application, as this may result in database data loss
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.2.6 Aug 10,2026
+
+1.Fixed device continuous sync issue(when reupload transaction logs if there are resigned emp punch log in device)
+2.Fixed the issue where overtime levels were not displayed when Approval & Approval Priority were selected in the Overtime Rule
+3.Fixed the Area, Department, Position, Location Import API: Imported datas are not displayed in the application when using JWT Authentication
+4.Fixed issues related to employee resignation
+5.Optimized employee ID generation to guarantee sequential uniqueness
+6.Added the employee photo id and file format to the validation error message.
+7.Update:When a device connects to the system for the first time, it will no longer automatically upload attendance records stored on the device. 
+       Customers may manually upload the attendance records at their discretion
+8.add filter by Area Code in BioPhoto Page
+9.add SAVE_LAST_ACTIVITY in attsite.ini [SYS],it will save state\last_activity\transaction_count to iclock_terminal every 10 second when SAVE_LAST_ACTIVITY=1
+
+
+10.2.5 Jun 29,2026
+
+Enhancements
+1.Added command to config port for setup.sh,bash setup.sh install --port 8090  or bash setup.sh set-port --port 8090,Detailed information can be found in README.md   
+
+2. Added support for the parameter **ADV_SAVE_CMD**. recommand to Set `ADV_SAVE_CMD=1` under the `[SYS]` section in `attsite.ini` 
+   when there are more than 500 devices or 10,000 employees. The system caches device commands in advance, and devices retrieve commands from the cache, 
+   greatly lowering database load and accelerating data synchronization.
+3. Refactored the calculation logic for statistical columns (Employee Count, Face Count, etc.) on the Area Page, significantly improving page loading speed for large datasets.
+4. Added default query filtering (1 month) on the Transaction Page to resolve slow loading issues caused by excessive data volume.
+5. Optimized several background tasks for better operational efficiency.
+6. Improved the frontend UI of Remote Enrollment and streamlined operating procedures.
+
+Bug Fixes
+1. Fixed the error prompt when attempting to add duplicate employee entries.
+2. Fixed the issue where PostgreSQL backups failed if the file path or name contained spaces.
+3. Fixed the problem that face templates could not be extracted when importing oversized face photos to devices.
+4. Fixed error: `popper__namespace.createPopper is not a function` in Browser.
+5. Fixed the code while syncing data from adserver to application
+6. Fixed other known issues.
+
+
+10.2.4 Apr 20,2026
+
+1. Add: A separate port configuration for devices has been added to the service console (bioCat.exe). If not configured, the Web Port will be used by default.
+
+2. Add: New parameters `SYNC_WITH_PHOTO` have been added under the `[SYS]` section in *attsite.ini*:
+   - When `SYNC_WITH_PHOTO=0`, template data is used preferentially during data synchronization.
+   - When `SYNC_WITH_PHOTO=1`, Face Photo is used for data synchronization.
+   Note: Using Face Photo for data synchronization offers better compatibility but slightly slower speed. 
+	In addition, the VL Face values on the Area Page and Employee Page are calculated based on BioPhoto data.
+
+  Added an option Sync data to the register device in Device Configuration.
+  It is Disabled by default, meaning registered devices do not participate in data synchronization by default.
+
+3. Fixed: An issue where Parallel Database failed to connect to SQL Server.
+
+4. Fixed: An issue where the software redirected to the Login Page when clicking the browser refresh button under certain network environments.
+
+5. Fixed: An issue of duplicate data with Pending status on the BioPhoto Page (caused only by version 10.2.3).
+
+6. Fixed: Data inconsistency issues related to data synchronization.
+
+7. Optimized the performance of statistical fields on the area page.
+
+10.2.3 Mar 23,2026
+
+Platform Upgrades
+  Added support for Microsoft SQL Server 2025
+  Upgraded Python to 3.11.14
+  Upgraded PostgreSQL to 17.2.1
+  Upgraded Redis to 8.6.1
+
+Enhancements
+  1.Reduced package size by moving the User Manual and Photo Verification SDK to the public server.
+  2.Added Transaction Correction (Action) under Data Transfer and a new menu Verify Transaction Log under Logs.
+  3.When the transaction count differs from the device side, the system sends a VERIFY SUM command to the device.
+  4.If the count mismatch persists, the software automatically sends a Query Data from Device command to ensure the attendance logs are accurate.
+  5.Improved overall system performance.
+  6.Added support for generating self-signed SSL certificates within the internal network to enable HTTPS usage.
+  7.Updated Face Verification SDK to perform validation checks during facial photo imports, ensuring improved photo quality.
+
+Bug Fixes
+  1.Fixed issue where Daily Details Report was not downloading. [CS-1689]
+  2.Fixed issue where Week Off Present was not displaying in reports and added Holiday Present and Week Off Present counts to the Total Present count.
+  3.Fixed Running Exception error when uploading more than one receipt while creating reimbursements. [TAA-2602]
+  4.Fixed Resigned employee synchronization issue.
+  5.Fixed issue where logs were not generated when employee IDs contained alphanumeric values.
+  6.Fixed slow performance when querying Transaction Logs for normal users.
+  7.Fixed report-related issues on Oracle database.
+
+
+10.2.2 Jan 07,2026
+
+1. Resolved issues with fingerprint synchronization between devices and incorrect fingerprint count display.
+2. Fixed an issue where deleted face data was restored after uploading user data from devices.
+3. Fixed issues with Area and Department filters not functioning correctly in calculations and report pages.
+4. Resolved an issue where the terminal state field was not updating in the terminal API.
+5. Implemented various bug fixes and performance improvements.
+
+10.2.1 Nov 25,2025
+
+1. Added the IP and Port Update API to change the device’s Cloud Server IP and Port number through a command.
+2. Added the Unlock Door API to unlock the door using a command.
+3. Added the Employee Photo Update API to update the employee’s photo.
+4. Added the Enrolled Employee API to retrieve enrolled employee details by passing the device serial number.
+5. Added support for the new Speed V5L device for palm registration.
+6. Updated all API GET, POST, PUT, PATCH, and DELETE methods to use Code instead of Unique IDs.
+7. Overall performance of the application has been significantly improved.
+8. Fixed various security bugs and vulnerabilities.
+9. Various bug fixes and performance improvements.
+
+10.1.0 Aug 29,2025
+
+1. Upgraded Apache Server from 2.4.58 to 2.4.62.
+2. Added Swagger API Documentation.
+3. Fixed Auto Shift issue.
+4. Fixed Report loading and export issue.
+5. Added automatic creation of parallel database tables and columns.
+6. Added validity start date and validity end date to restrict employee access to the device.
+7. Added tool-tip for Edit and Delete Icons.
+8. Added CSV file format support to Auto Mail Report setting for sending reports via email based on the selected time frequency.
+9. Added a Resign & Rehire API to manage the employee resignation and rejoining process within the application.
+10. The Remote Enrollment (Fingerprint & Face) API has been added to enable user registration using fingerprint and facial recognition.
+11. Timetable selection is added when user is requesting for leave.
+12. In Normal Timetable and Flexible Timetable, the half-day duration has been added.
+13. Overall performance of the application has been significantly improved.
+14. Fixed various security bugs and vulnerabilities.
+15. Various bug fixes and performance improvements.
+
+10.0.0 Aug 28,2024
+ 
+1. Upgraded default PostgreSQL to 16.1.
+2. Python, Django and other libraries are Upgraded.
+3. Add Auto Upgradation functionality.
+4. Fixed various security bugs and vulnerabilities.
+5. Overall performance of the application has been significantly improved.
+6. Various bug fixes and performance improvements.
+
+9.0.8 Jun 14,2024
+ 
+1. Upgraded Apache Server from 2.4.55 to 2.4.58
+2. Added Import option in Manual Log page.
+3. Added Import option in Leave Setting page.
+4. Added Monthly attendance status and summary reports in the employee login.
+5. Added check-in, check-out and distance functionality in Outdoor Management
+6. Added functionality to push transactions to 3rd party application API.
+7. Added an Employee Calendar menu which displays Overall schedule for specific employees.
+8. Added Import option in Holiday location page.
+9. Upload USB Transaction has been optimized to improve performance significantly.
+10. Updated proper OT Levels calculation for Overtime report.
+11. Improved Break Time calculation for Require Punch Settings.
+12. Improved performance on all reports loading time.
+13. Added support for Fingerprint template Ver-12.
+14. The Workflow Engine has been optimized to enhance performance in Mobile Applications.
+15. Fixed start date and end date conflict in Employee and Department schedules import.
+16. Overall performance of the application has been significantly improved.
+17. Various bug fixes and performance improvements.
+
+9.0.7 Apr 4,2023
+
+1. Updated Workflow Engine for better performance.
+2. Changed Leave Symbol(LE) to respective Leave Type Symbols in all the reports.
+3. Added Default Weekoff shift for importing and assigning weekoffs on any day.
+4. Added functionality in Device module to activate Registering Face in Device remotely.
+5. Added AD server integration functionality to sync Employee data to the Application Database.
+6. Added functionality to send several Attendance Reports automatically through Email.
+7. Parallel Database functionality's performance improvements.
+8. Fixed FingerPrint USB enroll issue in Employee edit option.
+9. Added action for copying new Area to the employee without removing existing area.
+10. Added feature to split the copy pasted data in Filter option based on comma or semi-colon for multiple choice filter.
+11. Added support for Latitude & Longitude location data from supported devices.
+12. Fixed Report Symbol Color display issue for the Application and PDF export.
+13. Added support for Nepal timezone in Device.
+14. Upgraded Apache Server from 2.4.54 to 2.4.55
+15. Other bug fixes and performance improvements.
+
+
+9.0.6 Aug 3,2022
+
+1.Added feature to Upload and Download Employee document file.
+2.Added Parallel database for synchronizing transaction logs to third party db
+3.added download option for dashboard elements
+4.auto logout of idle session,edit attsite.ini and change FORCE_QUIT_IDLE_TIME,default is 0 seconds(Do not log out automatically)
+5.schedule view is changed to calendar format
+6.changes in workflow fixed the bugs and added eye option for requestor and admin as well
+7.disable employee feature
+8.enble/disable push notification option  for employee punches in device
+9.Fixed the issue in tdmd report
+10.Fixed report issues related to oracle db
+11.Fixed Attendance Summary issue
+12.Fixed Expand and History issue
+13.Fixed mobile notification issue
+14.Fixed mobile check on mysql\oracle database
+15.changed apache to latest version
+16.Improved performance
+
+
+9.0.5 Oct 13,2021
+
+1.Added user guide
+2.Seperate column for reports in att module and all the reports in single page
+3.Fix employee schedule imported issue
+4.Fix system->logs employee id issue
+5.Fix some api issue
+6.Fix mobile bugs
+7.Fix acc module bugs
+8.Add holiday menu for Acc module
+9.Remove update license button
+10.Apache update to 2.4.51
+11.Fixed workflow select issue 
+
+9.0.4 May 15,2021
+
+1.Fix TimeZone of ACC moudle bug,there is issue when code>9
+2.Fix issue in outdoor unschedule report of mobile app
+3.Fix reset password issue
+4.upgrade server migrae to www.zklicense.com
+5.change default Multi_company=0, in attsite.ini [SYS]
+
+
+9.0.3 Apr 05,2021
+
+1.Deal with the problem of mistaken deleted by anti-virus software
+2.Optimize memory  and reduce memory usage
+3.Fix email issue when different network
+4.Fix firmware upgrade issue
+
+9.0.2 Mar 10,2021
+
+Fix offline issue
+
+9.0.1 Mar 4,2021
+
+Fix communication bug(critical,Only affects version 9.0.0)
+
+
+9.0.0 Feb 1,2021
+
+1. Support upgrade from 8.2.0,the database is fully compatible.
+2.Support multi-company,this function can be closed by the following method:
+   attsite.ini
+    [SYS]
+    Multi_company=0
+
+   when multi-company is on,employee  or mobile login must use Email ID or moble no.
+   when multi-company is off,employee  or mobile login can use Employee ID or Email ID or moble no.
+
+ If you don't need this feature, it is strongly recommended to turn it off.
+
+3.Payroll module is closed,this function can be opened by the following method:
+   attsite.ini
+    [SYS]
+    Payroll=1
+4.Login ui changed
+5.Add some params for Global rule in attendance module
+6.Fix finger template no sync for less old device
+7.Fix some reports issue
+8.Fix 'The operation you selected is not working properly or the service is not available' issue
+9.Further improvements to performance
+
+
+
+8.5.4 Oct 12,2020
+
+1 Add Card Count,User Photo Count,AttPhotoCount column in device list (need to upgrade push library)
+2 Fix some filter issues
+3 Adjust some form size when adding data for display resolution
+4 apache update to 2.4.46
+5 Add online upgrade function.in easyTimePro/WDMS platform Service Console,'upgrade' button is added.
+
+
+8.5.3 Jul 27,2020
+
+1 Fix sync not happening issue after employee imported again(second import)
+2 Fix sync not happening issue after editing user photo in device
+3 Fix Face sync wrong sometimes after editing face in device because  cache not update  
+4 Fix Face cant sync to device sometimes(for ex.UFace402,because some parameters None)
+5 Fix Device State display issue
+6 Fix message not sent issue after punch via sms,whatsapp and so on
+
+
+8.5.2 Jul 14,2020
+
+1 jquery upgraded from 2.2.4 to 3.5.1 for some security issue
+2 Fixed the problem of automatic synchronization after importing employee
+3 Fixed other  automatic synchronization
+4 Fixed dashboard display issue
+5 Optimized device communication, speed increased by 4 times
+6 Functions added to support palm device
+7 Changed some transalations
+8 Add whatsapp address in attsite.ini (WHATSAPP_API_URL=https://panel.rapiwha.com/send_message.php)
+
+
+8.5.1 Jun 24,2020
+
+1   django from 1.11.20 to 1.11.29
+2   apache from 2.4.39 to 2.4.43
+3   Support more access devices(Ex. V5L)
+4   Fix Area Code displaying wrong in System Log for the device MB360
+5   Fix Only first Public message is getting displayed on the Home screen while user sending multiple Public messages Error
+6   Fix Unsupported format is displayed when user uploaded the Company logo in Company Settings.
+7   Fix Successful Message is getting displayed when the user Import the TXT Export File for "Resign and Employee Document"
+8   Fix User is unable to clear one employee photo after uploading multiple bio-photos 
+9   Fix Employee names are not getting displayed when the user selects any employees in Report 
+10 Fix Company Logo is getting overlapped with company name when the user does Excel export
+11 Fix Map is not displaying in the exact location when the user clicks on the Map View 
+12 Fix Area filter is not generating report when user clicks on particular Area check box. 
+13 Fix Country, State and City is not getting updated after we set the map in Company Information
+14 Fix Bio-Photo is getting Approved automatically when user uploaded the photo in Employee details.
+15 Fix Excel & PDF Export Reports are not getting generated in Birthday for Employee wise and Date wise export style
+
+
+8.5.0 May 29,2020
+
+1.  Add Access Module
+2.  Add Masked Face/Fever  Detection
+3.  Add TD/MD Reports
+4.  Add Dashboard for Pandemic
+5.  Add Reimbusrement
+6.  Fix workflow role tree display issue
+7.  Fix area tree display issue
+8.  Fix dashboard display issue when using oracle
+9. Fix keyError when exporting excel if no data is there
+10. Fix keyError when selecting employee wise or department wise
+11. Redis update to 5.0.9 64bit
+
+
+8.4.1 Apr 20,2020
+
+1.Fix communication issue
+2.Fix Mutiple transaction report issue
+3.Fix Attendance Summary report issue
+4.Fix Attendance Status report issue
+5.Fix payroll  salary structure
+
+
+8.4.0 Apr 07,2020
+
+1.Add Reports:
+   Daily Attendance Report
+   Daily Details Report
+   Daily Summary Report
+   Daily Status Report
+   Monthly Basic Status Report
+   Monthly Status Summary Report
+   Monthly OT Summary Report
+   Monthly Work Duration Report
+   Monthly Work Detailed Report
+   Monthly Att Sheet Summary Report
+   Yearly Summary Report
+   Continuous Abnormal Report
+
+2.Support shift weekend
+3.Update location tree display
+4.Optimize SQL statements
+5.Update report export format
+6.Add company_id field and unique index  for personnel_employee and iclock_transaction to void duplicate data
+  (If duplicate data exists in the old database,you can run the following command under software folder.
+   python manage.py update_repeate_emp_code  )
+7.Fixed 10+bugs
+
+
+8.3.1 Feb 24,2020
+
+1.Fixed Attendance->Configration menu not display issue when resolution is much smaller
+2.Fixed restore issue
+3.Adjust manual log  leave overtime form display much better
+4.Fixed 10+bugs
+
+8.3.0 Feb 12,2020
+
+1.Fixed caculation issue
+2.Fixed report bugs
+3.Fixed New Users are unable to edit to change Enable
+4.dashboard changed
+
+
+8.2.1 Jan 28,2020
+
+Fixed Schedule View issue
+Fixed attdence report issue
+
+
+8.2.0 Jan 07,2020
+
+New Functions:- 
+
+1. OutDoor Management
+2. Leave Management 
+3. Half Day Settings
+4. Location
+5. Admin password Change Email Alert
+6. Birthday Report
+
+Major Bugs Fixed:-
+1. GlobalRule issue
+2. FingerPrint Registered issue with device
+3. Transaction Report & Schedule Report Issue
+4. "500 Internal Server Error" issue after installing the new package
+5. User Modified Old Password To New Password
+6. Importing .xlsx format
+7. Bio photo is not getting dispalyed in Transaction
+8. Alert settings issues are working according to Frequency
+9. Backup Automatically/Manually in Database
+10.device communication
+11.fixed usb data upload
+12.fixed tranaction Report show error
+
+8.0.2 Oct 26, 2019
+
+1.Fixed dashboard display error
+2.Fixed workflow form error
+3.Fixed device communcation with sql server
+4.Fixed Scheduled tasks do not run
+
+8.0.1 Sep 1,2019
+
+
+
+
+
+

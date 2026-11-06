@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlgroup>
+	<sql id = "select_emp_sql">
+		<content engine = "default">
+			<![CDATA[
+                select u.userid, u.badgenumber,p.code 
+                from userinfo u 
+                 %(where)s
+			]]>
+			<part id = "join_dept">
+				<![CDATA[
+					left join departments d on u.defaultdeptid = d.deptid 
+	                left join personnel_positions p  on p.id = u.position_id
+				]]>
+			</part>
+			<part id = "where_dept">
+				<![CDATA[
+					where d.deptid in (%(depts)s)
+				]]>
+			</part>
+			<part id = "join_position">
+				<![CDATA[
+					left join personnel_positions p on p.id = u.position_id
+				]]>
+			</part>
+			<part id = "where_user">
+				<![CDATA[
+					where u.userid in (%(users)s)
+				]]>
+			</part>
+		</content>	
+	</sql>
+	<sql id = "update_emp_sql">
+		<content engine = "default">
+			<![CDATA[
+                update userinfo set defaultdeptid = %(deptid)s %(where)s
+			]]>
+			<part id = "null_position">
+				<![CDATA[
+					,position_id=null
+				]]>
+			</part>
+			<part id = "has_position">
+				<![CDATA[
+					,position_id=%(positionid)s
+				]]>
+			</part>
+			<part id = "where_dept">
+				<![CDATA[
+					where defaultdeptid in (%(depts)s)
+				]]>
+			</part>
+			<part id = "where_user">
+				<![CDATA[
+					where userid in (%(users)s)
+				]]>
+			</part>
+		</content>	
+	</sql>
+	<sql id = "dept_import_insert">
+		<content engine = "default">
+			<![CDATA[
+                insert into personnel_department(dept_code,dept_name,parent_dept_id,is_default)
+                select '%(dept_code)s', '%(dept_name)s', %(parent_dept_id)s,0
+                from dual where not exists
+                    (
+                       select id from personnel_department where dept_code = '%(dept_code)s'
+                    )
+			]]>
+		</content>	
+		<content engine = "sqlserver">
+			<![CDATA[
+                if not exists(select id from personnel_department where dept_code = '%(dept_code)s')
+                    insert into personnel_department (dept_code,dept_name,parent_dept_id,is_default) values('%(dept_code)s', '%(dept_name)s', %(parent_dept_id)s,0)
+			]]>
+		</content>	
+		<content engine = "postgresql">
+			<![CDATA[
+		              insert into personnel_department(dept_code,dept_name,parent_dept_id,is_default)
+		              select '%(dept_code)s', '%(dept_name)s', %(parent_dept_id)s,FALSE
+		              where not exists
+		                  (
+		                     select id from personnel_department where dept_code = '%(dept_code)s'
+		                  )
+			]]>
+		</content>	
+		
+	</sql>
+	<sql id = "dept_import_insert_id">
+		<content engine = "default">
+			<![CDATA[
+                insert into departments(deptid,code,deptname,supdeptid,type,status)
+                select %(deptid)s,'%(code)s', '%(deptname)s', %(supdeptid)s, 'dept',0
+                from dual where not exists
+                    (
+                       select deptid from departments where code = '%(code)s'
+                    )
+			]]>
+		</content>	
+		<content engine = "sqlserver">
+			<![CDATA[
+				set identity_insert departments on;
+                if not exists(select deptid from departments where code = '%(code)s')
+                    insert into departments (deptid,code,deptname,supdeptid,type,status) values(%(deptid)s,'%(code)s', '%(deptname)s', %(supdeptid)s, 'dept',0)
+                set identity_insert departments off;
+			]]>
+		</content>	
+	</sql>
+	<sql id = "dept_import_update">
+		<content engine = "default">
+			<![CDATA[
+                update personnel_department set parent_dept_id = %(parent_dept_id)s ,dept_name = '%(dept_name)s'
+                where dept_code = '%(dept_code)s'
+			]]>
+		</content>	
+	</sql>
+	<sql id = "position_import_insert">
+		<content engine = "default">
+			<![CDATA[
+                insert into personnel_position(position_code,position_name,parent_position_id,is_default)
+                select '%(position_code)s', '%(position_name)s', %(parent_position_id)s,0
+                from dual where not exists
+                    (
+                         select id from personnel_position where position_code = '%(position_code)s'
+                    )
+			]]>
+		</content>	
+		<content engine = "sqlserver">
+			<![CDATA[
+                if not exists(select id from personnel_position where position_code = '%(position_code)s')
+                    insert into personnel_position (position_name,position_code,parent_position_id,is_default) values('%(position_name)s', '%(position_code)s', %(parent_position_id)s,0)
+			]]>
+		</content>	
+		<content engine = "postgresql">
+			<![CDATA[
+		              insert into personnel_position(position_name,position_code,parent_position_id,is_default)
+		              select '%(position_name)s', '%(position_code)s', %(parent_position_id)s,FALSE
+		              where not exists
+		                  (
+		                       select id from personnel_position where position_code = '%(position_code)s'
+		                  )
+			]]>
+		</content>
+		
+	</sql>
+	<sql id = "position_import_update">
+		<content engine = "default">
+			<![CDATA[
+                update personnel_position set parent_position_id = %(parent_position_id)s ,position_name = '%(position_name)s',position_code = '%(position_code)s'
+                where position_code = '%(position_code)s'
+			]]>
+		</content>
+		<content engine = "postgresql">
+			<![CDATA[
+				update personnel_position set parent_position_id = %(parent_position_id)s ,position_name = '%(position_name)s',position_code = '%(position_code)s'
+				where position_code = '%(position_code)s'
+			]]>
+		</content>
+	</sql>
+	<sql id = "emp_import_insert">
+		<content engine = "default">
+			<![CDATA[
+                select u.userid,u.badgenumber as pin,u.name,u.accgroup,u.dev_privilege,u.timezones,u.password,c.cardno,c.cardstatus,p.code 
+                from userinfo u 
+                left join personnel_issuecard c on c.userid_id = u.userid and c.cardstatus in (1,4) 
+                left join personnel_positions p on p.id = u.position_id 
+                where u.badgenumber in (%(pins)s) 
+			]]>
+		</content>	
+		<content engine = "postgresql">
+			<![CDATA[
+		              select u.userid,u.badgenumber as pin,u.name,u.accgroup,u.dev_privilege,u.timezones,u.password,c.cardno,c.cardstatus,p.code 
+		              from userinfo u 
+		              left join personnel_issuecard c on c.userid_id = u.userid and c.cardstatus in ('1','4') 
+		              left join personnel_positions p on p.id = u.position_id 
+		              where u.badgenumber in (%(pins)s) 
+			]]>
+		</content>	
+		
+	</sql>
+	<sql id = "area_import_insert">
+			<content engine = "default">
+				<![CDATA[
+					insert into personnel_area (area_code,area_name,parent_area_id,is_default)
+					select '%(area_code)s', '%(area_name)s', %(parent_area_id)s,0
+                    from dual where not exists
+                        (
+                             select id from personnel_area where area_code = '%(area_code)s'
+                        )
+				]]>
+				<part id = " ">
+					<![CDATA[
+					]]>
+				</part>
+			</content>
+			<content engine = "sqlserver">
+				<![CDATA[
+				  if not exists(select id from personnel_area where area_code = '%(area_code)s')
+                    insert into personnel_area (area_name,area_code,parent_area_id,is_default) values('%(area_name)s', '%(area_code)s', %(parent_area_id)s,0)
+				]]>
+				<part id = "">
+					<![CDATA[
+					]]>
+				</part>
+			</content>	
+			<content engine = "postgresql">
+				<![CDATA[
+				     insert into personnel_area(area_name,area_code,parent_area_id,is_default)
+		              select '%(area_name)s', '%(area_code)s', %(parent_area_id)s,FALSE
+		              where not exists
+		                  (
+		                       select id from personnel_area where area_code = '%(area_code)s'
+		                  )
+				]]>
+				<part id = " ">
+					<![CDATA[
+					]]>
+				</part>
+			</content>
+		</sql>
+    <sql id = "area_import_update">
+		<content engine = "default">
+			<![CDATA[
+                update personnel_area set parent_area_id = %(parent_area_id)s ,area_name = '%(area_name)s',area_code = '%(area_code)s'
+                where area_code = '%(area_code)s'
+			]]>
+		</content>
+		<content engine = "postgresql">
+			<![CDATA[
+				update personnel_area set parent_area_id = %(parent_area_id)s ,area_name = '%(area_name)s',area_code = '%(area_code)s'
+				where area_code = '%(area_code)s'
+			]]>
+		</content>
+	</sql>
+    <sql id = "employee_export_data">
+		<content engine = "default">
+			<![CDATA[
+                SELECT e.id, e.emp_code, e.first_name, e.last_name,e.card_no, e.department_id,
+                    e.position_id, e.gender, e.email, e.dev_privilege, e.app_status, e.hire_date,
+                    d.dept_name, p.position_name
+                FROM personnel_employee e
+                     left join personnel_department d on d.id = e.department_id
+			         left join personnel_position p on p.id = e.position_id
+
+                ORDER BY e.id ASC;
+			]]>
+		</content>
+	</sql>
+</sqlgroup>

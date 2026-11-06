@@ -1,0 +1,27 @@
+{% extends "data_grid.html" %}
+{% load i18n %}
+{% load iclock_tags %}
+
+{% block dimension_info %}
+  {{ block.super }}
+ // dimension.width = '1240';
+ if (window.innerHeight<650)
+    dimension.height = (window.innerHeight - 30) + 'px';
+{% endblock dimension_info %}
+
+{% block valid_form %}
+{#    window['before_submit_' + "id_grid_{{ model_name }}" ] = function () {#}
+{#      alert('always false');#}
+{#      return false;#}
+{#    }#}
+{% endblock valid_form %}
+ {% block grid_opt_update %}
+ if (window.innerHeight<650)
+    {
+    $.extend(true, dimension, {
+        actions: {
+         GeneralActionNew: [1100,  window.innerHeight - 30],
+        }
+    });
+    }
+{% endblock %}

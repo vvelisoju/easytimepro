@@ -1,0 +1,172 @@
+{% load i18n %}
+<div class="ad-field-setting-form">
+  <form action="" class="layui-form" lay-filter="adFieldSettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" style=" height: 350px">
+          <div class="layui-card-header"><i class="fa fa-database"></i><span style="padding-left: 5px">{% trans 'menu_sys_adFieldSetting' %}</span></div>
+          <div class="layui-card-body"  style="margin-top: 10px">
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_emp_code" class="layui-form-label">{% trans 'ad_field_employeeID' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input readonly="readonly" type="text" id="id_emp_code" name="emp_code" autocomplete="off" placeholder="" value="employeeID"
+                         lay-verify="required" class="layui-input" style="background-color: #F3F3F3;">
+                </div>
+                <label for="id_first_name" class="layui-form-label">{% trans 'ad_field_firstName' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input readonly="readonly" type="text" id="id_first_name" name="first_name" autocomplete="off" placeholder="" value="givenName"
+                         lay-verify="required" class="layui-input" style="background-color: #F3F3F3;">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_dept_code" class="layui-form-label">{% trans 'ad_field_departmentCode' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input readonly="readonly" type="text" id="id_dept_code" name="dept_code"  autocomplete="off"
+                         placeholder="" value="departmentNumber" lay-verify="required" class="layui-input" style="background-color: #F3F3F3;">
+                </div>
+                <label for="id_dept_name" class="layui-form-label">{% trans 'ad_field_departmentName' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_dept_name" name="dept_name" autocomplete="off" placeholder="" value="department"
+                         lay-verify="required" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline ad_field_label">
+                <label for="id_email_address" class="layui-form-label">{% trans 'ad_field_email' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_email_address" name="email_address"  autocomplete="off"
+                         placeholder="" value="mail" class="layui-input">
+                </div>
+                <label for="id_mobile_number" class="layui-form-label">{% trans 'ad_field_mobile' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_mobile_number" name="mobile_number" autocomplete="off"
+                         placeholder="" value="telephoneNumber" class="layui-input">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layui-card-header"><i class="fa fa-database"></i><span style="padding-left: 5px">{% trans 'adFieldAutoSync_otherSetting' %}</span></div>
+              <div class="layui-inline ad_field_label" style="padding-left: 47px; position: relative; top: 11px">
+                <div class="layui-input-inline">
+                  <input type="checkbox" name="enable_sync" lay-skin="primary" title="{% trans 'adFieldSettingPage_label_enablesync' %}">
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item" id="adFieldFormBtn">
+      <div class="layui-input-block">
+          <button class="layui-btn" lay-submit="" lay-filter="adFieldSubmit" id="adFieldSubmit">{% trans 'adSettingPage_btn_submit' %}</button>
+          <button class="layui-btn" lay-submit="" lay-filter="adSyncSubmit" id="adSyncSubmit">{% trans 'adManualSyn_btn_submit' %}</button>
+      </div>
+    </div>
+  </form>
+</div>
+<style>
+    .ad_field_label > label {
+        width: 150px;
+    }
+    #adFieldFormBtn {
+    float: left;
+    position: absolute !important;
+    }
+    #adFieldSubmit{
+    margin-bottom: 10px;
+    }
+</style>
+<script>
+  layui.use(['form'], function () {
+    var form = layui.form, layer = layui.layer;
+    form.render();
+    $.ajax({
+      url: "/base/api/systemSetting/?name=ad_field_setting"
+      , type: "GET"
+      , dataType: "json"
+      , success: function (response, xhr) {
+        var val = response.data[0];
+        if (val) {
+          form.val('adFieldSettingForm', JSON.parse(val.value));
+        }
+      }
+      , error: function (xhr, error, e) {
+
+      }
+    });
+    form.on('submit(adFieldSubmit)', function (data) {
+      let csrf = data.field['csrfmiddlewaretoken'],
+      value = {
+        emp_code: data.field['emp_code']
+        ,first_name: data.field['first_name']
+        ,email_address: data.field['email_address']
+        ,dept_code: data.field['dept_code']
+        ,dept_name: data.field['dept_name']
+        ,mobile_number: data.field['mobile_number']
+        ,enable_sync: Boolean(data.field['enable_sync'])
+      };
+
+      var loadIndex = layer.load();
+      $.ajax({
+        url: "/base/api/systemSetting/"
+        , type: "POST"
+        , data: {'name': 'ad_field_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.close(loadIndex);
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+        }
+        , error: function (xhr, error, e) {
+          layer.close(loadIndex);
+          if (xhr.responseJSON.value && xhr.responseJSON.value[0] != '' ) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('action_notification_failed'), {icon: 5});
+          }
+        }
+      });
+      return false;
+    });
+    form.on('submit(adSyncSubmit)', function (data) {
+      let csrf = data.field['csrfmiddlewaretoken'],
+      manual_sync = 1;
+      let value = {
+        emp_code: data.field['emp_code']
+        ,first_name: data.field['first_name']
+        ,email_address: data.field['email_address']
+        ,dept_code: data.field['dept_code']
+        ,dept_name: data.field['dept_name']
+        ,mobile_number: data.field['mobile_number']
+        ,enable_sync: Boolean(data.field['enable_sync'])
+        , manual_sync: manual_sync
+      };
+      var loadIndex = layer.load();
+      $.ajax({
+        url: "/base/api/systemSetting/"
+        , type: "POST"
+        , data: {'name': 'ad_field_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.close(loadIndex);
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+        }
+        , error: function (xhr, error, e) {
+          layer.close(loadIndex);
+          if (xhr.responseJSON.value && xhr.responseJSON.value[0] != '' ) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('action_notification_failed'), {icon: 5});
+          }
+        }
+      });
+      return false;
+    });
+  });
+</script>

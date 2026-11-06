@@ -1,0 +1,81 @@
+{% load i18n %}
+{% load iclock_tags %}
+
+<div id="attendance_display_container" class="layui-fluid">
+  {% csrf_token %}
+  <div class="layui-row layui-col-space15" style="top: 30px">
+    {% for t in data_list %}
+      <div class="layui-card layui-col-md{{ column }}">
+        <div class="layui-card-header grid-demo grid-demo-bg1" style="text-align:center;background: #bfbfc6">{{ t.dept_name }}</div>
+        <div class="layui-card-body">
+          <table class="layui-table" lay-skin="nob">
+            <tbody>
+              <tr>
+                <td>
+                  {% trans "Quantity" %}
+                </td>
+                <td id="id_quantity_{{ t.dept_code }}"></td>
+              </tr>
+              <tr>
+                <td>
+                  {% trans "Present" %}
+                </td>
+                <td id="id_present_{{ t.dept_code }}"></td>
+              </tr>
+              <tr>
+                <td>
+                  {% trans "Absence" %}
+                </td>
+                <td id="id_absence_{{ t.dept_code }}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <script>
+    $(function () {
+      var timeroutid = null;
+
+      layui.use('element', function(){
+        var element = layui.element;
+        element.on("tabDelete(zkTab)", function(data){
+          if (timeroutid !== null && !$("#attendance_display_container",data.elem).length > 0){
+            window.clearTimeout(timeroutid);
+            timeroutid = null;
+          }
+        });
+      });
+
+      function refresh_table() {
+        $.ajax({
+          url: "/att/attendance_display_view/",
+          type: "POST",
+          data: {csrfmiddlewaretoken:$("input[name=csrfmiddlewaretoken]").val()},
+          dataType: "json",
+          success: function(datas){
+            set_text(datas);
+            timeroutid = window.setTimeout(refresh_table, 10000);
+          },
+          error: function () {
+            timeroutid = window.setTimeout(refresh_table, 10000);
+          }
+        });
+      };
+
+      function set_text(datas) {
+        if (datas.ret == 0){
+          date_content = datas.data_list
+          for (var i = 0; i < date_content.length; i++){
+            $("#id_quantity_" + date_content[i].dept_code).html(date_content[i].quantity);
+            $("#id_present_" + date_content[i].dept_code).html(date_content[i].present);
+            $("#id_absence_" + date_content[i].dept_code).html(date_content[i].absence);
+          }
+        }
+      };
+
+      refresh_table();
+    });
+  </script>
+</div>

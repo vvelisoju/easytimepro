@@ -1,0 +1,35 @@
+{% block content %}
+  <input type="hidden" id="id-imgs" value="{{ re_images }}">
+  <div id="mydiv" style="text-align:center;"></div>
+{% endblock %}
+{% block extrajs %}
+  <script type="text/javascript">
+    $(function () {
+      var img_src = $('#id-imgs').val();
+      if (img_src) {
+        $("#mydiv").append("<div class=\"layui-carousel\" id=\"id_carousel\" style=\"text-align:center\" >" + "<div carousel-item id=\"id_info\">" + "</div>" + "</div>");
+        layui.use('carousel', function () {
+          var carousel = layui.carousel, img_srcs = img_src.split(',');
+          var array_len = img_srcs.length;
+          for (var i = 0; i < array_len; i++) {
+            $("#id_info").append(
+                "<div>" + "<img src=" + img_srcs[i] + "\>" + "</div>"
+            )
+          }
+          carousel.render({
+            elem: '#id_carousel'
+            , width: '100%'
+            , height: '340px'
+            , arrow: 'hover'
+            , index: 2
+            , indicator: 'inside'
+          })
+        });
+      } else {
+        $("#mydiv").append(
+            "<div style=\"align-content: center;font-size: small;color: #1d1d1d\">" + "<p >" + gettext('No photo for this record, please make sure the device enable to send attendance photo.') + "</p>" + "</div>"
+        );
+      }
+    })
+  </script>
+{% endblock %}

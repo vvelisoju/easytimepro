@@ -1,0 +1,39 @@
+{% load i18n common %}
+<div>
+  <table id="id_area_emps" class="layui-hide" lay-filter="terminalAreaEmployee"></table>
+</div>
+<script>
+  layui.use('table', function () {
+    var table = layui.table;
+    var cmdOpts = {
+      id: 'id_area_emps'
+      , elem: "#id_area_emps"
+      , height: 375
+      , text: {none: gettext('none_data')}
+      , request: {
+        pageName: 'page',
+        limitName: 'page_size'
+      }
+      , page: {
+        layout: ['count', 'prev', 'page', 'next', 'limit']
+        , limit: 50
+        , limits: [20, 50, 80, 100, 200]
+        , groups: 1
+      }
+      , cols: [[
+        {field: 'emp_code', title: "{% trans 'emp_field_employeeCode' %}", width: "120"}
+        ,{field: 'first_name', title: "{% trans 'emp_field_firstName' %}", width: "120"}
+        ,{field: 'last_name', title: "{% trans 'emp_field_lastName' %}", width: "100"}
+        ,{field: 'fingerprint', title: "{% trans 'emp_field_fingerprint' %}", width: "85"}
+        ,{field: 'face', title: "{% trans 'emp_field_face' %}", width: "60"}
+        ,{field: 'palm', title: "{% trans 'emp_field_palm' %}", width: "60"}
+        ,{field: 'vl_face', title: "{% trans 'emp_field_vlFace' %}", width: "60"}
+        ,{field: 'enroll_sn', title: "{% trans 'emp_field_enrollSN' %}", width: "120"}
+        ,{field: 'update_time', title: "{% trans 'emp_field_updateTime' %}", width: "140"}
+      ]]
+      , url: '/personnel/api/terminal_employees/'
+      , where: {areas:{{ obj }}, return_value__exact: ""}
+    };
+    table.render(cmdOpts);
+  })
+</script>

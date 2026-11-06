@@ -1,0 +1,86 @@
+{% load i18n static %}
+{% load common %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+  table{
+      width: 100%;
+      border-collapse: collapse;
+  }
+  table, th, td {
+      border: 1px solid black;
+      padding: 2px 5px;
+      font-weight: normal;
+      font-size: 16px;
+  }
+  table, tr, td, th, tbody, thead, tfoot {
+      page-break-inside: avoid !important;
+      /*word-break: keep-all !important;*/
+      /*white-space: nowrap !important;*/
+  }
+  h2 {
+      text-align: center;
+  }
+  th{
+      height:25px;
+  }
+
+  div {
+    margin: auto;
+    {% if page_wise %}
+    page-break-before:left;
+    {% endif %}
+  }
+
+  p {
+    page-break-before: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  </style>
+</head>
+
+<body>
+  {% autoescape off %}
+    {% for group_datas in datas %}
+    <div>
+      {% if forloop.first %}
+      <h2>{{ title }}</h2>
+      <p>From {{ start }} To {{ end }}</p>
+      <p>{{ group_titles|get_list_value:forloop.counter0}}</p>
+      {% elif page_wise %}
+      <h2>{{ title }}</h2>
+      <p>From {{ start }} To {{ end }}</p>
+      <p>{{ group_titles|get_list_value:forloop.counter0}}</p>
+      {% else %}
+      <p>{{ group_titles|get_list_value:forloop.counter0}}</p>
+      {% endif %}
+      <table>
+        <tr>
+          {% for header in headers %}
+          <th>{{ header }}</th>
+          {% endfor %}
+        </tr>
+        {% for row in group_datas %}
+        <tr>
+          {% for coloum in row %}
+          <th>{{ coloum }}</th>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+      {% if not page_wise %}
+      {% if not forloop.last %}
+      <br />
+      <br />
+      {% endif%}
+      {% endif%}
+    </div>
+    {% endfor %}
+  {% endautoescape %}
+</body>
+
+</html>

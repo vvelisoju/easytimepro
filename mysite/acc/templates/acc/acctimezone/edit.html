@@ -1,0 +1,171 @@
+{% load i18n iclock_tags static common %}
+{% autoescape off %}
+    <div id="{{ model_name }}_edit_form" style="padding: 10px; width: 700px;">
+        <form class="layui-form data-form" action="" method="post">
+            {% csrf_token %}
+            {% with adminform.form as f %}
+                <div class="layui-form-item">
+                    {% layui_inline f.area %}
+                    {% layui_inline f.timezone_no %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.timezone_name %}
+                    {% layui_inline f.remark %}
+                </div>
+                <div class="layui-form-item">
+                    <table cellspacing="0" cellpadding="0" border="0" class="layui-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>{% trans 'accTimezone_field_start' %}</th>
+                                <th>{% trans 'accTimezone_field_end' %}</th>
+                                <th>{% trans 'actionLog_field_status' %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{% trans 'weekday_option_sunday' %}</td>
+                                <td>{% layui_inline_without_label f.sun_start %}</td>
+                                <td>{% layui_inline_without_label f.sun_end %}</td>
+                                <td>
+                                    {% layui_inline_hidden f.sun_on %}
+                                    <input type="checkbox" name="sun_on_1" id="id_sun_on_1" lay-skin="switch"
+                                           lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="status_onoff" value="1" checked></td>
+                            </tr>
+                            <tr>
+                                <td>{% trans 'weekday_option_monday' %}</td>
+                                <td>{% layui_inline_without_label f.mon_start %}</td>
+                                <td>{% layui_inline_without_label f.mon_end %}</td>
+                                <td>
+                                    {% layui_inline_hidden f.mon_on %}
+                                    <input type="checkbox" name="mon_on_1" id="id_mon_on_1" lay-skin="switch"
+                                           lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="status_onoff" value="1" checked></td>
+                            </tr>
+                            <tr>
+                                <td>{% trans 'weekday_option_tuesday' %}</td>
+                                <td>{% layui_inline_without_label f.tue_start %}</td>
+                                <td>{% layui_inline_without_label f.tue_end %}</td>
+                                <td>
+                                    {% layui_inline_hidden f.tue_on %}
+                                    <input type="checkbox" name="tue_on_1" id="id_tue_on_1" lay-skin="switch"
+                                           lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="status_onoff" value="1" checked></td>
+                            </tr>
+                            <tr>
+                                <td>{% trans 'weekday_option_wednesday' %}</td>
+                                <td>{% layui_inline_without_label f.wed_start %}</td>
+                                <td>{% layui_inline_without_label f.wed_end %}</td>
+                                <td>
+                                    {% layui_inline_hidden f.wed_on %}
+                                    <input type="checkbox" name="wed_on_1" id="id_wed_on_1" lay-skin="switch"
+                                           lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="status_onoff" value="1" checked></td>
+                            </tr>
+                            <tr>
+                                <td>{% trans 'weekday_option_thursday' %}</td>
+                                <td>{% layui_inline_without_label f.thu_start %}</td>
+                                <td>{% layui_inline_without_label f.thu_end %}</td>
+                                <td>
+                                    {% layui_inline_hidden f.thu_on %}
+                                    <input type="checkbox" name="thu_on_1" id="id_thu_on_1" lay-skin="switch"
+                                           lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="status_onoff" value="1" checked></td>
+                            </tr>
+                            <tr>
+                                <td>{% trans 'weekday_option_friday' %}</td>
+                                <td>{% layui_inline_without_label f.fri_start %}</td>
+                                <td>{% layui_inline_without_label f.fri_end %}</td>
+                                <td>
+                                    {% layui_inline_hidden f.fri_on %}
+                                    <input type="checkbox" name="fri_on_1" id="id_fri_on_1" lay-skin="switch"
+                                           lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="status_onoff" value="1" checked></td>
+                            </tr>
+                            <tr>
+                                <td>{% trans 'weekday_option_saturday' %}</td>
+                                <td>{% layui_inline_without_label f.sat_start %}</td>
+                                <td>{% layui_inline_without_label f.sat_end %}</td>
+                                <td>
+                                    {% layui_inline_hidden f.sat_on %}
+                                    <input type="checkbox" name="sat_on_1" id="id_sat_on_1" lay-skin="switch"
+                                           lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="status_onoff" value="1" checked></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endwith %}
+        </form>
+    </div>
+    <script>
+        layui.use(['element', 'layer', 'laydate', 'form'], function () {
+            var element = layui.element,
+            laydate = layui.laydate,
+            form = layui.form;
+            $("form.layui-form input.layui-time").each(function () {
+                laydate.render({
+                    elem: this,
+                    type: 'time',
+                    done: function (value, date) {
+                        var name = this.elem[0].name;
+                        var start_value;
+                        var end_value;
+                        if(name.indexOf('_start')>0)
+                        {
+                            start_value = value;
+                            end_value = $("#id_"+name.replace('_start','_end')).val();
+                        }
+                        else if(name.indexOf('_end')>0)
+                        {
+                            start_value =  $("#id_"+name.replace('_end','_start')).val();
+                            end_value = value;
+                        }
+                        console.log("start_value:"+start_value);
+                        if(start_value > end_value)
+                        {
+                            layer.confirm(gettext("timezone_disabled"),
+                                {
+                                    title: gettext("btn_confirm")
+                                    , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+                                }
+                                , function (index) {
+                                    var on_name = name.replace("_start","").replace("_end","");
+                                    $("#id_"+on_name+"_on").val(0);
+                                    $("#id_"+on_name+"_on_1").val(0).removeAttr('checked');
+                                    form.render();
+                                    layer.close(index);
+                            });
+                        }
+                    }
+                });
+            });
+            form.on('switch(status_onoff)', function(data){
+                if(data.elem.checked)
+                {
+                    data.value = 1
+                }
+                else {
+                    data.value = 0
+                }
+                $("#"+data.elem.id.replace("_1","")).val(data.value);
+            });
+
+            var items = ["sun_on", "mon_on", "tue_on", "wed_on", "thu_on", "fri_on", "sat_on"];
+
+            function initial_switch(){
+                items.forEach(function(item){
+                    var value = $("#id_"+item).val();
+                    if(value==1)
+                    {
+                         $("#id_"+item+"_1").val(1).attr('checked','checked');
+                    }
+                    else{
+                        $("#id_"+item+"_1").val(0).removeAttr('checked');
+                    }
+                });
+            }
+
+            initial_switch();
+
+            element.render();
+            form.render();
+
+        });
+
+    </script>
+{% endautoescape %}

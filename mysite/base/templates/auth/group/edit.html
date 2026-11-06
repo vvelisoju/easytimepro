@@ -1,0 +1,1042 @@
+{% load i18n static %}
+{% load iclock_tags %}
+{% load common %}
+
+{% comment %}
+ % @Author: Boyce Gao
+ % @Date: 2018-08-30 18:24:47
+ % @Last Modified by:  Boyce Gao
+ % @Last Modified time: 2018-09-04 17:02:28
+{% endcomment %}
+
+<!--suppress ALL -->
+<div id="original_form">
+  <form class="layui-form data-form" onsubmit="return false;" style="padding: 10px;">
+    {% csrf_token %}
+    <div class="layui-form-item">
+      {% autoescape off %}
+        {% with adminform.form as f %}
+          {{ f.name|layui_item_field }}
+          {{ f.permissions|layui_item_field_ignore:'select' }}
+        {% endwith %}
+      {% endautoescape %}
+    </div>
+  </form>
+</div>
+
+<div class="layui-tab layui-tab-brief" lay-filter="auth_tree_tabs">
+  <ul class="layui-tab-title"></ul>
+  <div class="layui-tab-content" style="width: 600px;height: 400px;">
+  </div>
+</div>
+
+<script>
+  //# sourceURL=auth_group_edit.js
+  $(function () {
+    /**
+     * @author Boyce
+     * @summary layui-tab 的动态追加
+     * @description
+     *   1. 定位 tab 的 DOM
+     *   2. 定位 layui 的 tab 下标题域
+     *   3. 构造 li 元素
+     *   4. 依据 tab-bar 存在与否，来决定 li 的**相对**插入位置
+     *   5. 插入 li 对应的 div 内容域到 tab-content 下
+     * @param filter -> 过滤器: 用于选取对应的 layui-tab 容器
+     * @param options -> 选项: 设定可选值的对象，目前支持的选项如下述示例：
+     * ``` javascript
+     * tab_add('demo', {
+     *   id: '选项卡标题的lay-id属性值',
+     *   attr: '选项卡的属性值'
+     *   title: '选项卡的标题',
+     *   class: '选项卡的 li 元素的 css 类',
+     *   content: '选项卡的内容', // 支持传入html
+     * });
+     * ```
+     * @returns {null}
+     */
+    function tab_add(filter, options) {
+      var _title = '.layui-tab-title',
+        tabElem = $('.layui-tab[lay-filter=' + filter + ']'),
+        titElem = tabElem.children(_title),
+        barElem = titElem.children('.layui-tab-bar'),
+        contElem = tabElem.children('.layui-tab-content'),
+        li_fmt = '<li lay-id="%(id)s"%(class)s%(attr)s>%(title)s</li>',
+        li_str = interpolate(li_fmt, {
+          'id': (options.id || ''),
+          'attr': (options.attr ? ' lay-attr="' + options.attr + '"' : ''),
+          'title': (gettext(options.title) || 'unnaming'),
+          'class': (options.class ? interject('class="{}"', [options.class]) : '')
+        }, true);
+
+      barElem[0] ? barElem.before(li_str) : titElem.append(li_str);
+      contElem.append(interpolate(
+        '<div id="tabs-%(id)s" data-model-name="%(id)s" class="layui-tab-item%(show)s">%(content)s</div>', {
+          'id': options.id,
+          'content': (options.content || ''),
+          'show': (options.show ? ' layui-show' : '')
+        }, true));
+    }
+
+
+    // 内置的权限
+    var buildin_perm = {
+      "add_": "{% trans 'permission_verboseName_add' %}",
+      "view_": "{% trans 'permission_verboseName_view' %}",
+      "change_": "{% trans 'permission_verboseName_change' %}",
+      "delete_": "{% trans 'permission_verboseName_delete' %}"
+    };
+
+        // // 扩展的权限, 根据权限名的一个字典
+    var extended_perm_dict = {}
+    $.ajax({
+      url: '/base/get_action_permission_translation/',
+      type: "GET",
+      async: false,
+      dataType: "json",
+      success: function success(res) {
+        extended_perm_dict = res
+      }
+    });
+
+    var extended_perm_other_dict = {
+      "view_att_rule_page": "{% trans 'menu_att_globalRule' %}",
+      "view_report_setting_page": "{% trans 'menu_att_reportSetting' %}",
+      "view_transaction_report": "{% trans 'menu_att_transactionReport' %}",
+      "view_scheduled_log_report": "{% trans 'menu_att_scheduledLogReport' %}",
+      "view_daily_status_report": "{% trans 'menu_att_dailyStatusReport' %}",
+      "view_total_time_card_report": "{% trans 'menu_att_detailReport' %}",
+      "view_emp_summary_report": "{% trans 'menu_att_employeeSummaryReport' %}",
+      "view_leave_summary_report": "{% trans 'menu_att_leaveSummaryReport' %}",
+      "view_first_last_report": "{% trans 'menu_att_firstLastReport' %}",
+      "view_first_in_last_out_report": "{% trans 'menu_att_firstInLastOutReport' %}",
+      "view_exception_report": "{% trans 'menu_att_exceptionReport' %}",
+      "view_dept_summary_report": "{% trans 'menu_att_departmentSummaryReport' %}",
+      "view_time_card_report": "{% trans 'menu_att_timeCardReport' %}",
+      "view_late_report": "{% trans 'menu_att_lateReport' %}",
+      "view_early_leave_report": "{% trans 'menu_att_leaveEarlyReport' %}",
+      "view_overtime_report": "{% trans 'menu_att_overtimeReport' %}",
+      "view_absent_report": "{% trans 'menu_att_absentReport' %}",
+      "view_mul_transaction_report": "{% trans 'menu_att_multipleTransactionReport' %}",
+      "view_mul_break_time_report": "{% trans 'menu_att_breakTimeReport' %}",
+      "view_employeeschedule_report": "{% trans 'menu_att_scheduleView' %}",
+      "view_staff_scheduledlog": "{% trans 'model_employee' %} " + "{% trans 'menu_staff_scheduledLogReport' %}",
+      "view_staff_attdetail": "{% trans 'model_employee' %} " + "{% trans 'menu_staff_detailReport' %}",
+      "view_staff_summary": "{% trans 'model_employee' %} " + "{% trans 'menu_staff_employeeSummaryReport' %}",
+      "view_staff_multipletransaction": "{% trans 'model_employee' %} " + "{% trans 'menu_staff_multipleTransactionReport' %}",
+      "view_staff_breaktime": "{% trans 'model_employee' %} " + "{% trans 'menu_staff_breakTimeReport' %}",
+      "view_email_setting": "{% trans 'menu_sys_emailSetting' %}",
+      "view_auxiliary_setting": "{% trans 'menu_sys_auxiliarySetting' %}",
+      "view_alert_setting": "{% trans 'menu_sys_alertSetting' %}",
+      "view_pdf_report_setting": "{% trans 'menu_sys_pdfReportSetting' %}",
+      "view_company_setting": "{% trans 'menu_sys_companySetting' %}",
+      "view_personalized_custom_setting": "{% trans 'menu_sys_auxiliarySetting' %}",
+      "view_db_migrate": "{% trans 'menu_sys_databaseMigrate' %}",
+      "view_calculation_view": "{% trans 'menu_att_reportCalculate' %}",
+      "view_payroll_reportcalculator": "{% trans 'menu_payroll_salary_report_calculator' %}",
+      "view_payroll_salarystructure_report": "{% trans 'menu_payroll_salarystructure' %}",
+      "view_payroll_increase_report": "{% trans 'menu_payroll_increase_report' %}",
+      "view_payroll_deduction_report": "{% trans 'menu_payroll_deduction_report' %}",
+      "view_payroll_monthlysalarydetail_report": "{% trans 'menu_payroll_monthly_salary_report' %}",
+      "view_payroll_calcparam_report": "{% trans 'menu_payroll_clac_param_report' %}",
+      "view_payroll_calculate_setting": "{% trans 'menu_payroll_setting' %}",
+      "view_db_backup": "{% trans 'menu_sys_databaseBackup' %}",
+      "view_temp_mask_setting": "{% trans 'menu_sys_temp_maskSetting' %}",
+      "view_report_setting": "{% trans 'menu_report_settings' %}",
+      "view_whatsapp_setting": "{% trans 'menu_whatsApp_settings' %}",
+      "view_sms_setting": "{% trans 'menu_sms_settings' %}",
+      "view_map_setting": "{% trans 'menu_map_sysSetting' %}",
+      "view_domain_setting": "{% trans 'menu_domain_sysSetting' %}",
+      "view_refresh_migrate_status": "{% trans 'dataMigrate_front_migrateStatus' %}",
+      "view_all_reports": "{% trans 'menu_att_report' %}",
+      "view_mobiletransaction_report": "{% trans 'menu_att_mobiletransactionReport' %}",
+      "view_emp_birthday_report": "{% trans 'menu_att_employeeBirthdayReport' %}",
+      "view_scheduleTrack_report": "{% trans 'menu_att_scheduleTrackReport' %}",
+      "view_unscheduleTrack_report": "{% trans 'menu_att_unscheduleTrackReport' %}",
+      "view_half_day_time_report": "{% trans 'menu_att_halfDayReport' %}",
+      "view_adminleavedetails_report": "{% trans 'menu_staff_leavedetailsReport' %}",
+      "view_daily_attendance_report": "{% trans 'menu_att_es_DailyAttendance' %}",
+      "view_daily_details_report": "{% trans 'menu_att_es_DailyDetails' %}",
+      "view_daily_summary_report": "{% trans 'menu_att_es_DailySummary' %}",
+      "view_monthly_basic_status_report": "{% trans 'menu_att_es_monthlyBasicStatusReport' %}",
+      "view_monthly_status_summary_report": "{% trans 'menu_att_es_monthlyStatusSummaryReport' %}",
+      "view_monthly_ot_summary_report": "{% trans 'menu_att_es_monthlyOTSummaryReport' %}",
+      "view_monthly_duration_summary_report": "{% trans 'menu_att_es_monthlyDurationSummaryReport' %}",
+      "view_monthly_detailed_summary_report": "{% trans 'menu_att_es_monthlyDetailedSummaryReport' %}",
+      "view_monthly_att_sheet_summary_report": "{% trans 'menu_att_es_monthlyAttSheepSummaryReport' %}",
+      "view_yearly_summary_report": "{% trans 'menu_att_es_yearlySummaryReport' %}",
+      "view_abnormal_report": "{% trans 'menu_att_abnormalReport' %}",
+      "view_daily_attendance_status_report": "{% trans 'menu_att_dailyAttendanceStatusReport' %}",
+      "view_daily_attendance_summary_report": "{% trans 'menu_att_dailyAttendanceSummaryReport' %}",
+      "view_body_temperature_report": "{% trans 'menu_att_body_temperatureReport' %}",
+      "view_face_mask_report": "{% trans 'menu_att_face_maskReport' %}",
+      "view_total_temp_detection_report": "{% trans 'menu_att_total_temp_detectionReport' %}",
+      "view_verification_photo_report": "{% trans 'menu_att_verification_photoReport' %}",
+      "view_dept_wise_report": "{% trans 'menu_att_dept_wiseReport' %}",
+      "view_unregistered_user_report": "{% trans 'menu_att_unregistered_user_report' %}",
+      "view_paralleldb": "{% trans 'menu_sys_parallelDb' %}",
+      "view_paralleldbexport": "{% trans 'menu_sys_ParallelDBExport' %}",
+      "view_ad_server_setting": "{% trans 'menu_sys_adServerSetting' %}",
+      "view_ad_field_setting": "{% trans 'menu_sys_adFieldSetting' %}",
+      "view_sys_setting": "{% trans 'menu_sys_setting' %}",
+    };
+
+    // 扩展的权限
+    var extended_perm = {
+      "employee": {},
+      "iclock": {},
+      "transactions": {},
+      "user_of_run": {},
+      "user_speday": {},
+      "checkexact": {},
+      "user_overtime": {},
+      "num_run": {},
+      "user_temp_sch": {},
+      "iclockdept": {},
+      "level": {},
+      "firstopen": {},
+      "combopen": {},
+      "UserACPrivilege-table": {},
+      "mapmanage": {},
+      "records": {},
+      "iaccdevitemdefine": {},
+      "iaccempitemdefine": {},
+      "visitionlogs": {},
+      "issuecard": {},
+      "allowance": {},
+      "iclockdininghall": {},
+      "meet_order": {},
+      "meet": {},
+      "meetmessage": {},
+      "attcalclog": {},
+      "myuser": {
+        'user_delete_myuser': "Delete",
+        'change_password_myuser': "{% trans 'permission_verboseName_changePassword' %}"
+      }
+    };
+
+    var TAB_FILTER = 'auth_tree_tabs',
+      GLOBAL_ACL_MAPPING = {
+        enter_system_module: 'system',
+        enter_personnel_module: 'personnel',
+        enter_terminal_module: 'device',
+        enter_attendance_module: 'att',
+        enter_payroll_module: 'payroll',
+        enter_access_module: 'acc',
+      },
+      $permission = $('select#id_permissions'),
+      perm_triple = [],  // 存放权限三元组 (mod, perm, detail)
+      perm_dual_dict = {},  // 存放权限三元组 (mod, perm, detail) 字典
+      perm_acl_dict = {},
+      // var perm_values = [],  // permission value
+      perm_value_dict = {}, // permission value
+      selected_perm = [],  // 存放已选中的权限条目的 id
+      select_field_perm = {};
+   {% if software_type != 11 %}
+    var allowed_perm_dict = {
+      'personnel': [/* 基本权限 ALL_UPDATED 20181018 Boyce */
+        {id: "company", name: "{% trans 'permission_verboseName_psnlCompany' %}"},
+        {id: "employee", name: "{% trans 'permission_verboseName_psnlEmployee' %}"},
+        {id: "department", name: "{% trans 'permission_verboseName_psnlDepartment' %}"},
+        {id: "position", name: "{% trans 'permission_verboseName_psnlPosition' %}"},
+        {id: "area", name: "{% trans 'permission_verboseName_psnlArea' %}"},
+        {id: "location", name: "{% trans 'permission_verboseName_psnlLocation' %}"},
+        {id: "resign", name: "{% trans 'permission_verboseName_psnlResign' %}"},
+        {id: "certification", name: "{% trans 'permission_verboseName_psnlCertification' %}"},
+        {#{id: "employeecertification", name: "{% trans 'permission_verboseName_psnlEmployeeCertification' %}"},#}
+        {id: "workflownode", name: "{% trans 'permission_verboseName_psnlWorkflowNode' %}"},
+        {id: "workflowengine", name: "{% trans 'permission_verboseName_psnlWorkflowEngine' %}"},
+        {id: "workflowrole", name: "{% trans 'permission_verboseName_psnlWorkflowRole' %}"}
+        /* 消息公告, 隶属基本权限 */
+      ], 'att': [/* Attendance 考勤模块 SOME_PERM_UPDATED 20181018 Boyce */
+        {#{'id': 'attrule', 'name': "{% trans 'permission_verboseName_attRule' %}"},#}
+        {'id': 'att_setting_permission', 'name': "{% trans 'permission_verboseName_attSetting' %}"},
+        {'id': 'deptattrule', 'name': "{% trans 'permission_verboseName_attDeptAttrule' %}"},
+        {#{'id': 'reportsetting', 'name': "{% trans 'permission_verboseName_attReportSetting' %}"},#}
+        {'id': 'timeinterval', 'name': "{% trans 'permission_verboseName_attTimeInterval' %}"},
+        {'id': 'attshift', 'name': "{% trans 'permission_verboseName_attShift' %}"},
+        {#{'id': 'attschedule', 'name': "{% trans 'permission_verboseName_attSchedule' %}"},#}
+        {'id': 'manuallog', 'name': "{% trans 'permission_verboseName_attManualLog' %}"},
+        {'id': 'leave', 'name': "{% trans 'permission_verboseName_attLeave' %}"},
+        {'id': 'overtime', 'name': "{% trans 'permission_verboseName_attOvertime' %}"},
+        {'id': 'leavecategory', 'name': "{% trans 'permission_verboseName_attLeaveCategory' %}"},
+        {'id': 'holiday', 'name': "{% trans 'permission_verboseName_attHoliday' %}"},
+        {'id': 'leaveschedule', 'name': "{% trans 'permission_verboseName_attLeaveSchedule' %}"},
+        {'id': 'clientdetails', 'name': "{% trans 'permission_verboseName_attclientdetails' %}"},
+        {'id': 'outdoorscheduleplanner', 'name': "{% trans 'permission_verboseName_attoutdoorscheduleplanner' %}"},
+        {'id': 'outdooremployeeschedule', 'name': "{% trans 'permission_verboseName_attoutdooremployeeschedule' %}"},
+        {'id': 'adminleavedetails_report', 'name': "{% trans 'permission_verboseName_attLeaveDetailsReport' %}"},
+        {'id': 'scheduleTrack_report', 'name': "{% trans 'permission_verboseName_attoutDoorTrack' %}"},
+        {'id': 'unscheduleTrack_report', 'name': "{% trans 'permission_verboseName_attoutDoorTrack1' %}"},
+		{'id': 'leavesettings', 'name': "{% trans 'permission_verboseName_attleavesettings' %}"},
+        {#{'id': 'transaction', 'name': "{% trans 'permission_verboseName_attTransactionReport' %}"},#}
+        {'id': 'dailyattendance', 'name': "{% trans 'permission_verboseName_dailyAttendanceReport' %}"},/* NOT LOAD */
+        {'id': 'employeesummary', 'name': "{% trans 'permission_verboseName_employeeSummaryReport' %}"},/* NOT LOAD */
+        {'id': 'leavesummary', 'name': "{% trans 'permission_verboseName_leaveSummaryReport' %}"},/* NOT LOAD */
+        {'id': 'attdetail', 'name': "{% trans 'permission_verboseName_attDetailReport' %}"},/* NOT LOAD */
+        {'id': 'firstlast', 'name': "{% trans 'permission_verboseName_firstLastReport' %}"},/* NOT LOAD */
+        {'id': 'exception', 'name': "{% trans 'permission_verboseName_exceptionReport' %}"},/* NOT LOAD */
+        {'id': 'departmentsummary', 'name': "{% trans 'permission_verboseName_departmentSummaryReport' %}"},/* NOT LOAD */
+        {'id': 'timecard', 'name': "{% trans 'permission_verboseName_attTimeCardReport' %}"},/* NOT LOAD */
+        {'id': 'late', 'name': "{% trans 'permission_verboseName_attLateReport' %}"},/* NOT LOAD */
+        {'id': 'leaveearly', 'name': "{% trans 'permission_verboseName_attEarlyLeaveReport' %}"}, /* NOT LOAD */
+        {'id': 'absent', 'name': "{% trans 'permission_verboseName_attAbsentReport' %}"}, /* NOT LOAD */
+        {#{'id': 'multipletransaction', 'name': "{% trans 'permission_verboseName_attMultipleTransactionReport' %}"},#}
+        {#{'id': 'transaction', 'name':"{% trans 'permission_verboseName_attTransaction' %}"},#}
+        {'id': 'training', 'name': "{% trans 'permission_verboseName_attTraining' %}"},
+        {'id': 'breaktime', 'name': "{% trans 'permission_verboseName_attBreakTime' %}"},
+        {'id': 'departmentschedule', 'name': "{% trans 'permission_verboseName_deptSchedule' %}"},
+        {'id': 'attschedule', 'name': "{% trans 'permission_verboseName_attSchedule' %}"},
+        {'id': 'tempschedule', 'name': "{% trans 'permission_verboseName_attTempSchedule' %}"},
+        {'id': 'trainingcategory', 'name': "{% trans 'permission_verboseName_attTrainingType' %}"},
+        {'id': 'changeschedule', name: "{% trans 'permission_verboseName_attChangeSchedule' %}"},
+        {#{'id': 'attcalclog', 'name': "{% trans 'permission_verboseName_attCalculateReport' %}"},#}
+        {'id': 'report_permission', 'name': "{% trans 'permission_verboseName_ReportPermission' %}"}
+      ], 'device': [/* Device 设备 ALL_PERM_UPDATED 20181018 Boyce */
+        {id: "terminal", name: "{% trans 'permission_verboseName_iclockTerminal' %}"},
+        {id: "terminallog", name: "{% trans 'permission_verboseName_iclockTerminalLog ' %}"},
+        {id: "terminalcommand", name: "{% trans 'permission_verboseName_iclockCommand' %}"},
+        {id: "terminaluploadlog", name: "{% trans "permission_verboseName_iclockUploadLog" %}"},
+        {id: "biodata", name: "{% trans 'permission_verboseName_iclockBiometricTemplate' %}"},
+        {id: "biophoto", name: "{% trans 'permission_verboseName_psnlBioPhoto' %}"},
+        {id: "publicmessage", name: "{% trans 'permission_verboseName_iclockPublicMessage' %}"},
+        {id: "privatemessage", name: "{% trans 'permission_verboseName_iclockPrivateMessage' %}"},
+        {id: "terminalworkcode", name: "{% trans 'permission_verboseName_iclockTerminalWorkCode' %}"},
+        {id: "transaction", name: "{% trans 'permission_verboseName_iclockTransaction' %}"},
+		{id: "unregister", name: "{% trans 'permission_verboseName_iclockUnregistered' %}"},
+        {id: "errorcommandlog", name: "{% trans 'permission_verboseName_iclockerrorCommandLog' %}"},
+        {id: "gpsforemployee", name: "{% trans 'permission_verboseName_iclockEmployeeGps' %}"},
+        {id: "gpsfordepartment", name: "{% trans 'permission_verboseName_iclockDepartmentGps' %}"},
+        {id: "applist", name: "{% trans 'permission_verboseName_iclockAppList' %}"},
+        {id: "announcement", name: "{% trans 'permission_verboseName_iclockAnnouncement' %}"},
+        {id: "appnotification", name: "{% trans 'permission_verboseName_iclockAppNotification' %}"},
+        {id: "appactionlog", name: "{% trans 'permission_verboseName_iclockAppActionLog' %}"},
+        {id: "deviceconfig", name: "{% trans 'permission_verboseName_iclockDeviceConfig' %}"},
+      ], 'system': [/* SYSTEM 系统模块 ALL_PERM_UPDATED 20181018 Boyce */
+        {id: "myuser", name: "{% trans 'permission_verboseName_sysUser' %}"},
+        {id: "group", name: "{% trans 'permission_verboseName_sysGroup' %}"},
+        {id: "dbbackuplog", name: "{% trans 'menu_sys_databaseBackup' %}"},
+        {id: "autoexporttask", name: "{% trans 'permission_verboseName_sysAutoExportTask' %}"},
+        {id: "syncemployee", name: "{% trans 'permission_verboseName_SyncEmployee' %}"},
+        {id: "syncjob", name: "{% trans 'permission_verboseName_SyncJob' %}"},
+        {id: "syncdepartment", name: "{% trans 'permission_verboseName_SyncDepartment' %}"},
+        {id: "syncarea", name: "{% trans 'permission_verboseName_SyncArea' %}"},
+        {#{id: "sendemail", name: "{% trans 'permission_verboseName_sysSendEmail' %}"},#}
+        {#{id: "emailsetting", name: "{% trans 'permission_verboseName_sysEmailSettings' %}"},#}
+        {id: "adminlog", name: "{% trans 'permission_verboseName_sysAdministrationLog ' %}"},
+        {id: "bookmark", name: "{% trans 'permission_verboseName_sysFilterBookmark' %}"},
+        {id: "sftpsetting", name: "{% trans 'permission_verboseName_sysSFTPSettings' %}"},
+        {id: "system_setting_permission", name: "{% trans 'permission_verboseName_sysSettingPermission' %}"}
+      ],
+      'payroll': [
+        {id: "emppayrollprofile", name: "{% trans 'payroll_model_empPayrollProfile' %}"},
+        {id: "overtimeformula", name: "{% trans 'payroll_model_overtimeFormula' %}"},
+        {id: "exceptionformula", name: "{% trans 'payroll_model_exceptionFormula' %}"},
+        {id: "leaveformula", name: "{% trans 'payroll_model_leaveFormula' %}"},
+        {id: "increasementformula", name: "{% trans 'menu_payroll_increasementFormula' %}"},
+        {id: "deductionformula", name: "{% trans 'payroll_model_deductionFormula' %}"},
+        {id: "extraincrease", name: "{% trans 'payroll_model_extraIncrease' %}"},
+        {id: "extradeduction", name: "{% trans 'payroll_model_extraDeduction' %}"},
+        {id: "salarystructure", name: "{% trans 'payroll_model_salarystructure' %}"},
+        {id: "emploan", name: "{% trans 'payroll_model_empLoan' %}"},
+        {id: "salaryadvance", name: "{% trans 'payroll_model_SalaryAdvance' %}"},
+        {id: "allowancetype", name: "{% trans 'payroll_model_AllowanceType' %}"},
+        {id: "purposetype", name: "{% trans 'payroll_model_PurposeType' %}"},
+        {id: "reimbursement", name: "{% trans 'payroll_model_Reimbursement' %}"},
+        {id: "payroll_report_permission", name: "{% trans 'permission_verboseName_payrollReportPermission' %}"},
+      ]
+        ,'acc':[
+            {id: "accterminal", name: "{% trans 'permission_verboseName_iclockTerminal' %}"},
+            {id: "terminalcommand", name: "{% trans 'permission_verboseName_iclockCommand' %}"},
+            {id:"acctimezone", name:"{% trans 'permission_verboseName_accTimezone' %}"},
+            {id:"accholiday", name:"{% trans 'permission_verboseName_accHoliday' %}"},
+            {id:"accgroups", name:"{% trans 'permission_verboseName_accGroups' %}"},
+            {id:"acccombination", name:"{% trans 'permission_verboseName_accCombination' %}"},
+            {id:"accprivilege", name:"{% trans 'permission_verboseName_accPrivilege' %}"},
+        ]
+    };
+    {% else %}
+        var allowed_perm_dict = {
+      'personnel': [/* 基本权限 ALL_UPDATED 20181018 Boyce */
+        {id: "company", name: "{% trans 'permission_verboseName_psnlCompany' %}"},
+        {id: "employee", name: "{% trans 'permission_verboseName_psnlEmployee' %}"},
+        {id: "department", name: "{% trans 'permission_verboseName_psnlDepartment' %}"},
+        {id: "position", name: "{% trans 'permission_verboseName_psnlPosition' %}"},
+        {id: "area", name: "{% trans 'permission_verboseName_psnlArea' %}"},
+        {id: "resign", name: "{% trans 'permission_verboseName_psnlResign' %}"}
+         ],
+        /* 消息公告, 隶属基本权限 */
+            'device': [/* Device 设备 ALL_PERM_UPDATED 20181018 Boyce */
+        {id: "terminal", name: "{% trans 'permission_verboseName_iclockTerminal' %}"},
+        {id: "terminallog", name: "{% trans 'permission_verboseName_iclockTerminalLog ' %}"},
+        {id: "terminalcommand", name: "{% trans 'permission_verboseName_iclockCommand' %}"},
+        {id: "terminaluploadlog", name: "{% trans "permission_verboseName_iclockUploadLog" %}"},
+        {id: "biodata", name: "{% trans 'permission_verboseName_iclockBiometricTemplate' %}"},
+        {id: "biophoto", name: "{% trans 'permission_verboseName_psnlBioPhoto' %}"},
+        {id: "publicmessage", name: "{% trans 'permission_verboseName_iclockPublicMessage' %}"},
+        {id: "privatemessage", name: "{% trans 'permission_verboseName_iclockPrivateMessage' %}"},
+        {id: "terminalworkcode", name: "{% trans 'permission_verboseName_iclockTerminalWorkCode' %}"},
+        {id: "transaction", name: "{% trans 'permission_verboseName_iclockTransaction' %}"},
+		{id: "unregister", name: "{% trans 'permission_verboseName_iclockUnregistered' %}"},
+        {id: "errorcommandlog", name: "{% trans 'permission_verboseName_iclockerrorCommandLog' %}"},
+        {id: "deviceconfig", name: "{% trans 'permission_verboseName_iclockDeviceConfig' %}"},
+      ], 'system': [/* SYSTEM 系统模块 ALL_PERM_UPDATED 20181018 Boyce */
+        {id: "myuser", name: "{% trans 'permission_verboseName_sysUser' %}"},
+        {id: "group", name: "{% trans 'permission_verboseName_sysGroup' %}"},
+        {id: "dbbackuplog", name: "{% trans 'menu_sys_databaseBackup' %}"},
+        {id: "autoexporttask", name: "{% trans 'permission_verboseName_sysAutoExportTask' %}"},
+        {id: "syncemployee", name: "{% trans 'permission_verboseName_SyncEmployee' %}"},
+        {id: "syncjob", name: "{% trans 'permission_verboseName_SyncJob' %}"},
+        {id: "syncdepartment", name: "{% trans 'permission_verboseName_SyncDepartment' %}"},
+        {id: "syncarea", name: "{% trans 'permission_verboseName_SyncArea' %}"},
+        {#{id: "sendemail", name: "{% trans 'permission_verboseName_sysSendEmail' %}"},#}
+        {#{id: "emailsetting", name: "{% trans 'permission_verboseName_sysEmailSettings' %}"},#}
+        {id: "adminlog", name: "{% trans 'permission_verboseName_sysAdministrationLog ' %}"},
+        {id: "bookmark", name: "{% trans 'permission_verboseName_sysFilterBookmark' %}"},
+        {id: "sftpsetting", name: "{% trans 'permission_verboseName_sysSFTPSettings' %}"},
+        {id: "system_setting_permission", name: "{% trans 'permission_verboseName_sysSettingPermission' %}"}
+      ],
+        'acc':[
+            {id: "accterminal", name: "{% trans 'permission_verboseName_iclockTerminal' %}"},
+            {id: "terminalcommand", name: "{% trans 'permission_verboseName_iclockCommand' %}"},
+            {id:"acctimezone", name:"{% trans 'permission_verboseName_accTimezone' %}"},
+            {id:"accholiday", name:"{% trans 'permission_verboseName_accHoliday' %}"},
+            {id:"accgroups", name:"{% trans 'permission_verboseName_accGroups' %}"},
+            {id:"acccombination", name:"{% trans 'permission_verboseName_accCombination' %}"},
+            {id:"accprivilege", name:"{% trans 'permission_verboseName_accPrivilege' %}"},
+            {'id': 'holiday', 'name': "{% trans 'permission_verboseName_attHoliday' %}"},
+        ]
+    };
+    {% endif %}
+    if('{{ software_type }}' == 9){
+      allowed_perm_dict['system'].splice(2, 6)  //sync, autoexport
+      allowed_perm_dict['system'].splice(4, 1)  //ftp
+      allowed_perm_dict['personnel'].splice(0, 1)  //company
+    }
+
+    // init i18n dict
+    var i18n_dict = {
+      'personnel': "{% trans 'permission_verboseName_psnl' %}",
+      'device': "{% trans 'permission_verboseName_iclock' %}",
+      'att': "{% trans 'permission_verboseName_att' %}",
+      'payroll': "{% trans 'permission_verboseName_payroll' %}",
+      'acc': "{% trans 'permission_verboseName_acc' %}",
+      'system': "{% trans 'permission_verboseName_sys' %}"
+    };
+
+    function clear_prop(obj) {
+      for (var key in obj) {
+        delete obj[key];
+      }
+    }
+
+    // clear container
+    perm_triple.splice(0, perm_triple.length);
+    clear_prop(perm_dual_dict);
+    // perm_values.splice(0, perm_values.length);
+    clear_prop(perm_value_dict);
+    selected_perm.splice(0, selected_perm.length);
+
+    var $original_form = $('#original_form');
+    prepare_perm_data($original_form);
+
+    /**
+     * @summary 生成权限树的外部包裹容器
+     */
+    function generate_auth_wrapper(id) {
+      var conf_for_general_propose = [{
+        name: 'expand_all',
+        title: gettext('expand_node'),
+        class: '',
+        icon: 'fa-chevron-up'
+      }, {
+        name: 'collapse_all',
+        title: gettext('collapse_node'),
+        class: '',
+        icon: 'fa-chevron-down'
+      }], conf_for_multiple_select = [{
+        name: 'all',
+        title: gettext('select_all'),
+        class: '',
+        icon: 'fa-check-square-o'
+      }];
+
+      var control_panel_for_general_propose = $.fn.get_rendered_panel_html(
+        conf_for_general_propose, $.fn.zTreeSelect.const.CONST_CONTROL_PANEL_TPL, 'interject'
+      ), control_panel_for_multiple_select = $.fn.get_rendered_panel_html(
+        conf_for_multiple_select, $.fn.zTreeSelect.const.CONST_CONTROL_PANEL_TPL, 'interject'
+      );
+
+      return [
+        '<form class="layui-form">',
+        '<div class="layui-form-item">',
+        '<div class="auth-tree-control">',
+        control_panel_for_multiple_select,
+        control_panel_for_general_propose,
+        '</div>',
+        '<div class="auth-tree-content">',
+        interpolate('<ul id="LAY-auth-tree-%s" class="ztree"></ul>', [id]),
+        '</div></div>',
+        '</form>'].join('');
+    }
+
+
+    /**
+     * @summary 自执行函数用于 tab 的动态生成
+     */
+    (function () {
+      $('.layui-layer-content', '.layui-layer').css('overflow', 'hidden');
+      // optional_module, a.k.a. opt_mod
+      var opt_mod = {
+        'att': {% if 'att'|is_enabled_module %}true{% else %}false{% endif %},
+        'acc': {% if 'acc'|is_enabled_module %}true{% else %}false{% endif %}
+      };
+
+      // 开启 `考勤` 和 `门禁` 任一个，则附带开启`设备`
+      opt_mod['device'] = !!(opt_mod['att'] || opt_mod['acc']);
+      //console.log('opt_mod', opt_mod);
+
+      var _all_tab = ['personnel', 'device', 'att', 'payroll', 'acc', 'system'];
+
+      var ENABLE_ACC = "{{ 'ENABLE_ACC'|get_sale_param }}"
+      if(ENABLE_ACC=='False')
+      {
+          _all_tab.splice(4, 1);
+      }
+
+      var ENABLE_PAYROLL = "{{ 'ENABLE_PAYROLL'|get_sale_param }}"
+      if(ENABLE_PAYROLL=='False')
+      {
+          _all_tab.splice(3, 1);
+      }
+
+      var ENABLE_WDMS = "{{ 'ENABLE_WDMS'|get_sale_param }}"
+      if(ENABLE_WDMS=='True')
+      {
+          _all_tab = ['personnel', 'device','acc','system'];
+      }
+
+      _all_tab = _all_tab.filter(function (item) {
+        var _value = opt_mod[item];
+        if (_value === undefined) { // 未定义项默认为 true
+          return true;
+        } else {
+          return _value;
+        }
+      });
+
+      {#console.log('## _all_tab', _all_tab);#}
+      _all_tab.forEach(function (_tab_id, index) {
+        var title = i18n_dict[_tab_id],
+          _options = {
+            title: title.substring(0, title.indexOf(' ') !== -1 ? title.indexOf(' ') : title.length),
+            id: _tab_id,
+            content: generate_auth_wrapper(_tab_id)
+          };
+        // first tab handle first
+        if (index === 0) {
+          _options['class'] = 'layui-this';
+          _options['show'] = true;
+        }
+        tab_add(TAB_FILTER, _options);
+      });
+    })();
+
+
+    var group_perm_values = [];
+
+    /* 开始结合 layui 作前端的交互 */
+    layui.use(['jquery', 'form', 'element'], function () {
+      var $ = layui.$,
+        authtree = layui.authtree,
+        form = layui.form,
+        element = layui.element;  // Tab的切换功能，切换事件监听等，需要依赖element模块
+
+      var tab_dict = {};  // init `index -> tab` mapping
+      $('.layui-tab-content', '.layui-tab[lay-filter=' + TAB_FILTER + ']').children('.layui-tab-item').each(function (index, elem) {
+        tab_dict[index] = elem.id;
+      });
+
+      function add_to_selected(select_id) {
+        $permission.get(0).options[select_field_perm[select_id]].selected = true;
+      }
+
+      function remove_from_selected(select_id) {
+        {#console.log('remove_from_selected', select_id);#}
+        $permission.get(0).options[select_field_perm[select_id]].selected = false;
+      }
+
+
+      /**
+       * @desc local version of sync to select_field
+       */
+      function sync_to_select_field(zTree, treeNode) {
+        var select_handler = treeNode.checked ? add_to_selected : remove_from_selected;
+
+        if (!treeNode.isParent) {
+          select_handler(treeNode.id);
+        } else {
+          /**
+           * @desc 获取当前选中的虚拟结点的下属子结点
+           * @param filter -> children_filter search all children node
+           * @param isSingle -> false means: search the array of the nodes
+           * @param Specific the search range, you can search node from a parent node's child nodes.
+           */
+          var allChildren = zTree.getNodesByFilter($.tree.all_leaf_nodes_filter_generator(), false, treeNode);
+          /**
+           * 针对选择system后 其他的enter也会被选定进行处理
+           */
+          if(treeNode.srcName=='System'){
+            allChildren.forEach(function (tNode, index) {
+            if(tNode.name=='Enter Personnel Module' || tNode.name=='Enter Terminal Module' || tNode.name=='Enter Attendance Module'
+            || tNode.name=='Enter Payroll Module' || tNode.name=='Enter Access Module'){
+            allChildren.splice(index, 5) //连续五个都是不需要的enter权限
+              {#index-=1#}
+            }
+          });
+          }
+          //处理结束
+          allChildren.forEach(function (tNode/*, i*/) {
+            select_handler(tNode.id);
+          });
+        }
+      }
+
+      function update_entrance_permission(zTree) {
+        var all_checked_nodes = zTree.getCheckedNodes(true),
+          num_of_checked = all_checked_nodes.length,
+          tab_id = $(interpolate('.layui-tab[lay-filter=%s] > ul > li.layui-this', [TAB_FILTER])).attr('lay-id'),
+          perm_id = perm_acl_dict[tab_id];
+
+        if (num_of_checked > 0) {
+          console.debug(interpolate('[info] insert %s entrance permission', [tab_id]));
+          $permission.get(0).options[select_field_perm[perm_id]].selected = true;
+        } else {
+          console.debug(interpolate('[info] remove %s entrance permission', [tab_id]));
+          $permission.get(0).options[select_field_perm[perm_id]].selected = false;
+        }
+      }
+
+
+      function bind_event_for_panel(event) {
+        var that = $(event.target),
+          control_panel = $(this);
+        if (!that.is('span')) {
+          that = that.closest('span[data-name]');
+        }
+
+        var unique_id = control_panel.data('tree'),
+          name = that.data('name'),
+          z_tree_obj = $.fn.zTree.getZTreeObj(unique_id),
+          $search_field_str = '#' + unique_id + '_search';
+
+
+        that.toggleClass('selected');
+        // from disable to enable
+        if (that.hasClass('selected')) {
+          switch (name) {
+            case 'all':
+              if (z_tree_obj.setting.check.chkStyle === 'checkbox') {
+                z_tree_obj.checkAllNodes(true);
+                all_children = z_tree_obj.getNodesByFilter($.tree.all_leaf_nodes_filter_generator(), false);
+                all_children.forEach(function (tNode/*, i*/) {
+                  sync_to_select_field(z_tree_obj, tNode);
+                });
+              }
+              $.tree.fixCheckState(z_tree_obj);
+              update_entrance_permission(z_tree_obj);
+              break;
+            case 'expand_all':
+              z_tree_obj.expandAll(true);
+              that.toggleClass('selected');
+              break;
+            case 'collapse_all':
+              z_tree_obj.expandAll(false);
+              that.toggleClass('selected');
+              break;
+            case 'search':
+              $($search_field_str).fadeIn('slow');
+              break;
+            default:
+              console.log('undefined operation.');
+          }
+        } else { // from enable to disable
+          switch (name) {
+            case 'done':
+              hide_menu();
+              that.toggleClass('selected');
+              break;
+            case 'all':
+              if (z_tree_obj.setting.check.chkStyle === 'checkbox') {
+                z_tree_obj.checkAllNodes(false);
+                all_children = z_tree_obj.getNodesByFilter($.tree.all_leaf_nodes_filter_generator(), false);
+                all_children.forEach(function (tNode/*, i*/) {
+                  sync_to_select_field(z_tree_obj, tNode);
+                });
+              }
+
+              $.tree.fixCheckState(z_tree_obj);
+              update_entrance_permission(z_tree_obj);
+              break;
+            case 'expand_all':
+              break;
+            case 'collapse_all':
+              break;
+            case 'search':
+              $($search_field_str).val('').trigger('propertychange').fadeOut('fast');
+              break;
+            default:
+              console.log('undefined operation.');
+          }
+        }
+        z_tree_obj.refresh();
+      }
+
+      function clickHandler(event, treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj(treeId);
+        if (zTree.setting.check.enable == true) {
+          // 若当前树结点未选中的话，将其选中；否则取消选中
+          // 第三个参数表示联动处理父结点
+          zTree.checkNode(treeNode, !treeNode.checked, true);
+          sync_to_select_field(zTree, treeNode);
+        }
+        $.tree.fixCheckState(zTree);
+        update_entrance_permission(zTree);
+      }
+
+      function checkHandler(event, treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj(treeId);
+        {#console.log(zTree.getCheckedNodes());#}
+        sync_to_select_field(zTree, treeNode);
+        $.tree.fixCheckState(zTree);
+        update_entrance_permission(zTree);
+      }
+
+      function on_right_click(event, treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj(treeId);
+        if (treeNode === null) {
+          var _tid = $(event.target).attr('id').replace(new RegExp(treeId + '_(\\d+)(_.+)?'), '$1');
+          if (_tid.length === 0 || !/\d+/.test(_tid)) {
+            error_prompt('Right click above node or checkbox.');
+          }
+          treeNode = zTree.getNodeByTId(_tid);
+        }
+        if (treeNode && treeNode.isParent) {
+          zTree.expandNode(treeNode, !treeNode.open, true);
+        }
+      }
+
+
+      /**
+       * @author boyce
+       * @summary 渲染权限树(本质是操作 DOM 和 Event listening & handling)到指定的 tab
+       * @param index 指明要渲染内容到 `哪一个` tab
+       * @return {null}
+       */
+
+      function render_authtree_to_tab(index) {
+        var $this_div = $('#' + tab_dict[index]),
+          model_name = $this_div.data('modelName'),
+          tree_selector = '#LAY-auth-tree-' + model_name,
+          $tree = $(tree_selector),
+          zTreeSetting = {
+            view: {
+              showLine: true
+            },
+            check: {
+              enable: true,
+              chkStyle: "checkbox",
+              chkboxType: {"Y": "ps", "N": "ps"}
+            },
+            data: {
+              simpleData: {
+                enable: true, idKey: "id", pIdKey: "pid", rootPId: 0
+              }
+            },
+            callback: {
+              onClick: clickHandler,
+              onCheck: checkHandler,
+              onRightClick: on_right_click
+            }
+          };
+        {#console.log('this_div', $this_div);#}
+
+        // [check]: the auth-tree is initialized or not
+        if ($tree.children().length === 0) {
+          var auth_tree_content = $tree.closest('.auth-tree-content')
+            , auth_tree_control = auth_tree_content.siblings('.auth-tree-control')
+            , tree_nodes = get_perm_tree(model_name, i18n_dict[model_name]);
+          auth_tree_control.data('tree', $tree.attr('id'));
+          auth_tree_control.on('click', bind_event_for_panel);
+
+          // 渲染时传入渲染目标ID，树形结构数据（具体结构看样例，checked表示默认选中），以及input表单的名字
+          var zTreeObj = $.fn.zTree.init($tree, zTreeSetting, tree_nodes);
+          $.tree.fixCheckState(zTreeObj);
+          update_entrance_permission(zTreeObj);
+
+          /*
+           authtree.render('#LAY-auth-tree-' + model_name, trees, {
+           inputname: 'authids[]',
+           layfilter: 'lay-check-auth',
+           openall: false,
+           });
+           */
+          {#console.log('auth-tree', interpolate('`%s`', [model_name]), 'inited');#}
+        }
+      }
+
+      // Firstly, add the ignore class which will dictate layui render engine
+      //  not to render and beautify build-in DOM
+      $permission.prop('lay-ignore', true);
+      form.render();
+      $permission.hide();
+      $permission.siblings('.layui-form-select').hide();
+      $('.field-permissions.layui-form-item').hide();
+      // simulate: click the first tab
+      render_authtree_to_tab(0);
+
+      /*
+       * 监听切换 tab 的动作，经由此来实现 tab 的惰性加载
+       */
+      element.on('tab(auth_tree_tabs)', function (data) {
+        // console.log('### element',this);  // 当前 Tab 标题所在的原始 DOM 元素
+        // console.log('### tab', data);  // .index 得到当前 Tab 的所在下标, .elem 得到当前的 Tab 大容器
+        if (data.index > 0) {
+          render_authtree_to_tab(data.index);
+        }
+      });
+
+      // 监听自定义lay-filter选中状态，
+      // Tips:layui现在不支持多次监听，所以扩展里边只能改变触发逻辑，然后引起了事件冒泡延迟的BUG
+      var all_authtree_selector = [],
+        all_leaf = [];
+      for (var key in tab_dict) {
+        all_authtree_selector.push(interject('#LAY-auth-tree-{key}', {'key': tab_dict[key].replace(/tabs-/, '')}));
+      }
+      {#console.log('all_auth_tree_selector', all_authtree_selector);#}
+
+      form.on('checkbox(lay-check-auth)', function (/*_data*/) {
+        // 获取所有节点
+        // var all = authtree.getAll('#LAY-auth-tree-personnel');
+        // console.log('all', all);
+        // 获取所有已选中节点
+        // var checked = authtree.getChecked(all_authtree_selector);
+        // console.log('checked', checked);
+        // 获取所有未选中节点
+        // var notchecked = authtree.getNotChecked('#LAY-auth-tree-personnel');
+        // console.log('notchecked', notchecked);
+        // 注意这里：需要等待事件冒泡完成，不然获取叶子节点不准确。
+        /*
+         setTimeout(function () {
+         // 获取选中的叶子节点
+         all_leaf = authtree.getLeaf(all_authtree_selector);
+         //console.log('# leaf', all_leaf);
+         $('option', $permission).each(function () {
+         $(this).removeAttr('selected');
+         });
+         all_leaf.forEach(function (elem, index) {
+         //var perm_opts = $permission.get(0).options;
+         $(interject('option[value={}]', [elem]), $permission).prop('selected');
+         });
+         }, 100);
+         */
+      });
+    });
+
+    /**
+     * @summary 为 mod 获取权限树
+     */
+    function get_perm_tree(mod_name, text) {
+      var pseudo_id = -1048576,
+        tree = [{
+          id: pseudo_id,
+          name: text,
+          open: true
+        }];
+
+      var selected_flag = true
+
+      if (allowed_perm_dict.hasOwnProperty(mod_name)) {
+        var _allowed_perm_of_mod = allowed_perm_dict[mod_name];
+
+        _allowed_perm_of_mod.forEach(function (elem, index) {
+          var sub_tree = get_subtree_json(elem, index, pseudo_id, false);
+          if (sub_tree.length > 1) { // DONE: exclude the pre-defined pseudo node
+            tree = $.merge(tree, sub_tree);
+            {#tree[0].subtree.push(sub_tree);#}
+
+            if (sub_tree[0].checked == false) {
+              selected_flag = false
+            }
+          }
+        });
+      }
+      // 如果子节点都被选上则将父节点选上
+      tree[0].checked = selected_flag
+      console.log(selected_flag)
+      {#console.log('_tree', mod_name, text, tree);#}
+      return tree;
+    }
+
+    /**
+     * @summary 获取 sub-tree 的 json 表示
+     */
+    function get_subtree_json(_perm, _index, pid, open_subtree) {
+      // console.log('get_subtree_json', arguments);  //Array.prototype.join.call(arguments, ', '));
+      // console.log('perm_dual_dcit', perm_dual_dict[_mod]);
+      var selected_flag = true
+      var _open = open_subtree === undefined ? false : Boolean(open_subtree),
+        _tree_id = -(_index),
+        sub_tree = [{
+          id: _tree_id,
+          name: _perm.name,
+          pid: pid,
+          open: _open
+        }];
+
+      var match_record = perm_triple.filter(function (item) {
+        // 说明是 _pseudo_node 是非叶子节点, 将 _pseudo === _perm.id 的叶子节点作为 perm 的子结点
+        return $.trim(item[1]) === _perm.id;  // _pseudo_node
+      });
+
+      match_record.forEach(function (elem/*, index*/) {
+        var _db_mod = $.trim(elem[0]),
+          _pseudo_node = $.trim(elem[1]),
+          _perm_name = $.trim(elem[2]),
+          _query_key = [_db_mod, _pseudo_node, _perm_name].join('_'),
+          _value = parseInt(perm_value_dict[_query_key]),
+          _perm_name = $.trim(elem[2]);
+        trans_text = get_trans_text(_pseudo_node, _perm_name);
+
+        if (exist_perm(_value) && trans_text !== "") {
+          var _sub_tree = {
+            pid: _tree_id,
+            id: _value,
+            name: trans_text,
+            checked: is_selected(_value)
+          };
+          if (_sub_tree.checked == false) {
+            selected_flag = false
+          }
+          sub_tree.push(_sub_tree);
+        }
+      });
+      // 如果子节点都被选上则将父节点选上
+      sub_tree[0].checked = selected_flag
+      return sub_tree;
+    }
+
+    /**
+     * @summary 准备权限数据
+     * @param parent_obj
+     */
+    function prepare_perm_data(parent_obj) {
+      var perm_opts = $("#id_permissions", parent_obj).get(0).options;
+      var i;
+      for (i = 0; i < perm_opts.length; i++) {
+        _value = perm_opts[i].value;
+        select_field_perm[_value] = i;
+        if (perm_opts[i].selected) {
+          selected_perm.push(parseInt(_value));
+        }
+      }
+
+      var allowed_perm_arr = [];
+      for (var mod in allowed_perm_dict) {
+        allowed_perm_dict[mod].forEach(function (elem/*, index*/) {
+          allowed_perm_arr.push(elem.id);
+        });
+      }
+
+      // var _all_mod = []
+      // "acc,access,accounts,admin,att,auth,base,contenttypes,iclock,ipos,meeting,personnel,sessions,visitors"
+      var visible_mod = "accounts,mobile,admin,att,payroll,acc,auth,base,iclock,personnel,workflow".split(','),
+        global_acl_node = ['myuser'];
+      for (i = 0; i < perm_opts.length; i++) {
+        var triple = (perm_opts[i].innerHTML).split("|");
+        var _mod = $.trim(triple[0]),
+          _pseudo_node = $.trim(triple[1]),
+          _perm = $.trim(triple[2]);
+        // if (_all_mod.includes(_mod)) {
+        //   _all_mod.push(_mod);
+        // }
+        if (visible_mod.includes(_mod)) {
+          if (allowed_perm_arr.includes(_pseudo_node)) {
+            perm_triple.push(triple);
+            // var dual = [_pseudo_node, _perm];//triple.splice(1);
+            // if (perm_dual_dict[_mod] === undefined) {
+            //   perm_dual_dict[_mod] = [];
+            // }
+            // perm_dual_dict[_mod].push(dual);
+            // perm_values.push(perm_opts[i].value);
+            perm_value_dict[triple.join('_')] = perm_opts[i].value;
+          }
+          if (global_acl_node.includes(_pseudo_node)) {
+            perm_acl_dict[GLOBAL_ACL_MAPPING[_perm]] = perm_opts[i].value;
+          }
+        }
+      }
+      console.log({
+        perm_acl_dict: perm_acl_dict
+      });
+      var _all_mod = new Set();
+      $.each(perm_opts, function (i, elem) {
+        {#console.log('perm_opts: ', elem.innerText);#}
+        var triple = (elem.innerText).split("|");
+        _all_mod.add(triple[0]);
+      });
+      // console.log('_all_mod', _all_mod);
+      // console.log('selected_perm', selected_perm);
+      // console.log('allowed_perm_str', allowed_perm_arr);
+      // console.log('perm_triple', perm_triple);
+      // console.log('perm_dual_dict', perm_dual_dict);
+      // console.log('perm_values', perm_values);
+    }
+
+    function get_trans_text(mod, perm_name) {
+    var old_report_views = {"view_daily_basic_report" : "view_daily_basic_report"};
+    if (perm_name in old_report_views)
+    {
+        perm_name = ''
+     }
+      // 处理内置权限： add, view, modify, delete
+      for (n in buildin_perm) { // traverse dict
+        if (perm_name.indexOf(n) == 0) {  // match from start
+          if (perm_name.substring(n.length + 1).indexOf('_') === -1) {
+            return buildin_perm[n];
+          }
+        }
+      }
+      {#console.log(perm_name);#}
+
+      // 非内置的权限
+      if (mod in extended_perm) {
+        var perm_of_mod = extended_perm[mod];
+        if (perm_of_mod.hasOwnProperty(perm_name)) {
+          return perm_of_mod[perm_name];
+        }
+      }
+      if(perm_name in extended_perm_dict) {
+        return extended_perm_dict[perm_name]
+      }
+      if(perm_name in extended_perm_other_dict) {
+        return extended_perm_other_dict[perm_name]
+      }
+      console.log(perm_name)
+      return titleCase(perm_name, '_'); // sentry for perm_name missed
+    }
+
+    function is_selected(selected_id) {
+      return selected_perm.includes(selected_id);
+      // return selected_perm.includes(selected_id)  // for modern browser
+    }
+
+    function exist_perm(value) {
+      if (group_perm_values.length === 0) {
+        return true;
+      } else {
+        return group_perm_values.includes(value) !== -1;
+      }
+    }
+  });
+</script>

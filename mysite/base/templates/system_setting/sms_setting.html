@@ -1,0 +1,140 @@
+{% load i18n %}
+<div class="whatsapp-setting-form">
+  <form action="" id="id_smsSettingForm" class="layui-form" lay-filter="smsSettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" style="height: 220px">
+          <div class="layui-card-header"><i class="fa fa-comment"></i><span style="padding-left: 5px">{% trans 'smsSetting_otherSetting' %}</span></div>
+          <div class="layui-card-body" style="padding: 10px 0 0 60px">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="sms_id_apikey" class="layui-form-label" style="width: 70px;margin-right: 10px;">{% trans 'smsSetting_api_key' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="sms_id_apikey" name="sms_apikey" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_sender" class="layui-form-label" style="width: 70px;margin-right: 10px;">{% trans 'smsSetting_Sender' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_sender" name="sender" autocomplete="off" placeholder="" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label" for="id_provider" style="width: 70px;margin-right: 10px;">{% trans 'smsSetting_Provider' %}</label>
+                <div class="layui-input-inline" style="margin-right: 0;">
+                  <select name="provider" id="id_provider">
+                    <option value="2" >{% trans 'smsSetting_text_local' %}</option>
+                    <option value="1" >{% trans 'smsSetting_Springedge' %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block layui-inline">
+          <button class="layui-btn" id="whatsappSubmit" lay-submit="" lay-filter="smsSubmit">{% trans 'smsSetting_submit' %}</button>
+        </div>
+        <div class="layui-inline" id="smsClearDiv">
+
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+    layui.use('form', function () {
+        var form = layui.form, $ = layui.jquery ;
+        form.render();
+        form.on('submit(smsSubmit)', function (data) {
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                sms_apikey: data.field['sms_apikey']
+                , sender: data.field['sender']
+                , provider: data.field['provider']
+            };
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/api/systemSetting/"
+                , type: "POST"
+                , data: {'name': 'sms_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+                , dataType: "json"
+                , success: function (response, xhr) {
+                    layer.close(loadIndex);
+                    layer.msg(gettext('action_notification_successful'), {icon: 6});
+                    document.getElementById('smsClearDiv').innerHTML= "<button class='layui-btn' id='smsClear' lay-submit='' lay-filter='smsClear'>{% trans 'clear_system_settings' %}</button>"
+                }
+                , error: function (xhr, error, e) {
+                    layer.close(loadIndex);
+                    if (xhr.responseJSON.value) {
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    } else {
+                        layer.msg(gettext('action_notification_failed'), {icon: 5});
+                    }
+                }
+            });
+            return false
+        });
+
+        form.on('submit(smsClear)', function (data) {
+            var csrf = data.field['csrfmiddlewaretoken'];
+
+             layer.confirm(gettext("confirm_be_sure"),
+            {
+                title: gettext("btn_confirm")
+                , icon: 3
+                , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+            },
+            function (index) {
+                var loadIndex = layer.load();
+                $.ajax({
+                    url: "/base/clear_system_settings/"
+                    , type: "POST"
+                    , data: {'name': 'sms_setting', csrfmiddlewaretoken: csrf}
+                    , dataType: "json"
+                    , success: function (response, xhr) {
+                        document.getElementById("id_smsSettingForm").reset();
+                        layer.close(loadIndex);
+                        layer.msg(gettext('action_notification_successful'), {icon: 6});
+                        document.getElementById('smsClearDiv').innerHTML= ""
+                    }
+                    , error: function (xhr, error, e) {
+                        layer.close(loadIndex);
+                        if (xhr.responseJSON.value) {
+                            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                        } else {
+                            layer.msg(gettext('action_notification_failed'), {icon: 5});
+                        }
+                    }
+                });
+                layer.close(index);
+            });
+            return false
+        });
+
+        $.ajax({
+            url: "/base/api/systemSetting/?name=sms_setting"
+            , type: "GET"
+            , dataType: "json"
+            , success: function (response, xhr) {
+                var val = response.data[0];
+                if (val) {
+                    var val_dict = JSON.parse(val.value);
+                    form.val('smsSettingForm', val_dict);
+                    document.getElementById('smsClearDiv').innerHTML= "<button class='layui-btn' id='smsClear' lay-submit='' lay-filter='smsClear'>{% trans 'clear_system_settings' %}</button>"
+                }
+            }
+            , error: function (xhr, error, e) {
+
+            }
+        });
+    })
+</script>

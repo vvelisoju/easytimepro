@@ -1,0 +1,148 @@
+{% load i18n %}
+<div id="pdf_report_setting">
+    <form class="layui-form" action="" lay-filter="pdf_report_setting_form">
+        {% csrf_token %}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card-header"><i class="fa fa-list-alt"></i><span style="padding-left: 5px">{% trans 'pdf_report_export_style_settings' %}</span>
+                </div>
+                <div class="layui-card" style=" height: 300px; padding: 20px;">
+                    <div class="layui-form-item" style="width: 300px;">
+                        <label class="layui-form-label">{% trans 'pdfExport_pageSize' %}</label>
+                        <div class="layui-input-block">
+                            <select name="page-size">
+                                <option value="Auto">{% trans 'pdfExport_auto' %}</option>
+                                <option value="A0">A0</option>
+                                <option value="A1">A1</option>
+                                <option value="A2">A2</option>
+                                <option value="A3">A3</option>
+                                <option value="A4">A4</option>
+                                <option value="A5">A5</option>
+                                <option value="B0">B0</option>
+                                <option value="B1">B1</option>
+                                <option value="B2">B2</option>
+                                <option value="B3">B3</option>
+                                <option value="B4">B4</option>
+                                <option value="B5">B5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="width: 300px;">
+                        <label class="layui-form-label">{% trans 'pdfExport_orientation' %}</label>
+                        <div class="layui-input-block">
+                            <select name="orientation">
+                                <option value="Portrait">{% trans 'pdfExport_orientation_portrait' %}</option>
+                                <option value="Landscape">{% trans 'pdfExport_orientation_landscape' %}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="width: 300px;">
+                        <label class="layui-form-label">{% trans 'pdfExport_footerLeft' %}</label>
+                        <div class="layui-input-block">
+                            <select name="footer-left">
+                                <option value="">{% trans 'pdfExport_blank' %}</option>
+                                <option value="[page]/[toPage]">{% trans 'pdfExport_pageToPage' %}</option>
+                                <option value="Author">{% trans 'pdfExport_author' %}</option>
+                                <option value="Time">{% trans 'pdfExport_time' %}</option>
+                                <option value="Author+Time">{% trans 'pdfExport_author' %}+{% trans 'pdfExport_time' %}</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="width: 300px;">
+                        <label class="layui-form-label">{% trans 'pdfExport_footerRight' %}</label>
+                        <div class="layui-input-block">
+                            <select name="footer-right">
+                                <option value="">{% trans 'pdfExport_blank' %}</option>
+                                <option value="[page]/[toPage]">{% trans 'pdfExport_pageToPage' %}</option>
+                                <option value="Author">{% trans 'pdfExport_author' %}</option>
+                                <option value="Time">{% trans 'pdfExport_time' %}</option>
+                                <option value="Author+Time">{% trans 'pdfExport_author' %}+{% trans 'pdfExport_time' %}</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="width: 300px;">
+                        <label class="layui-form-label">{% trans 'pdf_export_report_style' %}</label>
+                        <div class="layui-input-block">
+                            <select name="report-style">
+                                <option value="">{% trans 'pdfExport_blank' %}</option>
+                                <option value="Classic">{% trans 'pdf_export_classic' %}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" id="pdf_submit" lay-filter="save">{% trans 'btn_submit' %}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            layedit = layui.layedit;
+
+        form.render();
+
+        $.ajax({
+            url: "/base/api/systemSetting/?name=pdf_report_setting",
+            type: "GET",
+            dataType: "json",
+            success: function (response, xhr) {
+                var val = response.data[0];
+                if (val) {
+                    var formVal = JSON.parse(val.value);
+                    form.val('pdf_report_setting_form', formVal);
+                } else {
+                    form.val('pdf_report_setting_form', {
+                        'page-size': 'A4',
+                        'orientation': 'Portrait',
+                        'footer-left': "[page]/[toPage]",
+                        'footer-right': '',
+                        'report-style': 'Classic'
+                    });
+                }
+            },
+            error: function (xhr, error, e) {
+
+            }
+        });
+
+        form.on('submit(save)', function (data) {
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                'page-size': data.field['page-size'],
+                'footer-left': data.field['footer-left'],
+                'footer-right': data.field['footer-right'],
+                'orientation': data.field['orientation'],
+                'report-style': data.field['report-style']
+            };
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/api/systemSetting/",
+                type: "POST",
+                data: {'name': 'pdf_report_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf},
+                dataType: "json",
+                success: function (response, xhr) {
+                    layer.close(loadIndex);
+                    layer.msg(gettext('save_successful'), {icon: 6});
+                },
+                error: function (xhr, error, e) {
+                    layer.close(loadIndex);
+                    if (xhr.responseJSON.value) {
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    } else {
+                        layer.msg('Save Error', {icon: 5});
+                    }
+                }
+            });
+            return false
+        });
+
+    });
+</script>

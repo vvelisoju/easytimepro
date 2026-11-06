@@ -1,0 +1,40 @@
+.filters
+  margin: 6px 0
+
+.filters__item
+  background: #d8dce1
+  color: #777
+  text-decoration: none
+
+  &:visited, &:hover
+    background: #d8dce1
+    color: #777
+    text-decoration: none
+  display: inline
+  height: 30px
+  line-height: 30px
+  border-radius: 3px
+  font-size: 11px
+  font-weight: 400
+  padding: 0 5px 0 5px
+  margin-right: 10px
+  margin-bottom: 5px
+
+a.filters__item
+  touch-action: none
+  user-select: none
+  -webkit-user-drag: none
+  -webkit-tap-highlight-color: #0000
+  cursor: pointer
+  height: fit-content
+
+.filters__item
+  > span
+    touch-action: none
+    user-select: text
+    -webkit-user-drag: none
+    -webkit-tap-highlight-color: #0000
+    cursor: text
+
+  > .layui-close
+    cursor: pointer

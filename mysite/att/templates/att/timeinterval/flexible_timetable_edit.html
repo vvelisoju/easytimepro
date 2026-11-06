@@ -1,0 +1,237 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div id="{{ model_name }}_edit_form" style="padding: 10px;height: 340px;width: 850px;">
+    <form class="layui-form data-form time-interval-form" action="" method="post" lay-filter="flexibleTimetableForm">
+      <input type="hidden" id="id_model_pk" data-name="pk" value="{{ object_id }}"/>
+      {% csrf_token %}
+      {% with adminform.form as f %}
+        <div class="base-setting base-setting-large1">
+          <div class="layui-form-item">
+            {% layui_inline f.alias %}
+          </div>
+          <div class="layui-tab">
+            <ul class="layui-tab-title">
+              <li class="layui-this">{% trans 'timeInterval_tab_basicSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_unscheduledTimeSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_overtimeLevelSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_ruleSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_halfDatSetting' %}</li>
+            </ul>
+            <div class="layui-tab-content">
+              <div class="layui-tab-item layui-show">
+                <div class="layui-form-item cross-setup" style="padding-top: 20px">
+                  {% layui_inline f.in_time %}
+                  <div class="layui-inline">
+                    <label class="layui-form-label" for="{{ f.out_time.id_for_label }}">
+                      {{ f.out_time.label }}{% if f.out_time.field.required %}<span class="required">*</span>{% endif %}
+                    </label>
+                    <div class="time-table-input-time layui-input-inline">
+                      {{ f.out_time }}
+                    </div>
+                    <div class="layui-form-mid">{% trans 'timeInterval_field_crossDay' %}</div>
+                    <div class="time-table-input-cross-day layui-input-inline" style="margin-right: 5px">
+                      {{ f.out_time_cross_days }}
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-form-item cross-setup">
+                  {% layui_mid f.work_time_duration %}
+                  {% layui_mid f.work_day %}
+                </div>
+                 <div class="layui-form-item cross-setup">
+                  {% layui_inline f.work_type %}
+                </div>
+                <div class="layui-form-item layui-hide">
+                  {% layui_inline f.in_above_margin %}
+                  {% layui_inline f.out_ahead_margin %}
+                  {% layui_inline f.duration %}
+                </div>
+                <div class="layui-card"><div class="layui-card-body">
+                  <div><span style="color: red">*</span><span>{% trans 'form_helpText_title' %}</span></div>
+                  <div style="padding: 0 20px;">
+                    <p>{% trans 'timeTable_helpText_tip1' %}</p>
+                  </div>
+                </div></div>
+              </div>
+              <div class="layui-tab-item">
+                <div class="layui-form-item non-cross-setup" style="padding-top: 20px">
+                  {% layui_mid f.late_out %}
+                  {% layui_mid f.min_late_out %}
+                </div>
+              </div>
+              <div class="layui-tab-item">
+                <div class="layui-form-item non-cross-setup" style="padding-top: 20px">
+                  {% layui_mid f.overtime_lv %}
+                  {% layui_mid f.overtime_lv1 %}
+                </div>
+                <div class="layui-form-item non-cross-setup">
+                  {% layui_mid f.overtime_lv2 %}
+                  {% layui_mid f.overtime_lv3 %}
+                </div>
+              </div>
+              <div class="layui-tab-item">
+                <div class="layui-form-item non-cross-setup" style="padding-top: 20px">
+                  {% layui_mid f.in_required %}
+                  {% layui_mid f.out_required %}
+                </div>
+                <div class="layui-form-item non-cross-setup">
+                  {% layui_mid f.available_interval_type %}
+                  {% layui_mid f.available_interval %}
+                </div>
+                <div class="layui-form-item non-cross-setup">
+                  {% layui_mid f.func_key %}
+                  {% layui_mid f.multiple_punch %}
+                </div>
+                <div class="layui-form-item non-cross-setup">
+                  {% layui_mid f.day_change %}
+                </div>
+              </div>
+              <div class="layui-tab-item non-cross-setup">
+                <div class="layui-form-item" style="padding-top: 20px">
+                    <div class="layui-inline field-first_half_in_time" title="">
+                         <label class="layui-form-label" style="width: 122px; min-width: 185px; max-width: 122px;">
+                             {% trans 'timeInterval_field_firstHalfInTime' %}
+                             <span class="required">*</span>
+                         </label>
+                    <div class="layui-input-inline ">
+                        <input type="text" name="first_half_in_time" class="layui-input layui-time" autocomplete="off"
+                               required="" lay-key="59" disabled="disabled" id="id_first_half_in_time">
+                    </div>
+                    </div>
+                  {% layui_inline f.second_half_in_time %}
+                </div>
+                <div class="layui-form-item" style="margin-right: 5px; padding: 3px 0px;">
+                  {% layui_inline f.first_half_out_time %}
+                    <div class="layui-inline field-second_half_out_time" title="">
+                         <label class="layui-form-label" style="width: 122px; min-width: 185px; max-width: 122px; margin-right: 3px; padding: 3px 0px;">
+                             {% trans 'timeInterval_field_secondHalfOutTime' %}
+                             <span class="required">*</span>
+                         </label>
+                    <div class="layui-input-inline ">
+                        <input type="text" name="second_half_out_time" class="layui-input layui-time" autocomplete="off"
+                               required="" lay-key="59" disabled="disabled" id="id_second_half_out_time">
+                    </div>
+                    </div>
+                  <div class="layui-form-item">
+                    {% layui_mid f.half_day_work_time_duration %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endwith %}
+    </form>
+  </div>
+  <script>
+    layui.use(['element', 'form', 'laydate'], function () {
+        var form = layui.form, element = layui.element, laydate = layui.laydate;
+
+        function set_in_out_time() {
+            var in_time_value = $('#id_in_time').val();
+            var out_time_value = $('#id_out_time').val();
+            $('#id_first_half_in_time').val(in_time_value);
+            $('#id_second_half_out_time').val(out_time_value);
+        }
+        set_in_out_time();
+
+        $("#id_work_day").attr("min", "0.0");
+        $("#id_work_time_duration").attr("min", "0");
+        $("#id_min_late_out").attr("min", "0");
+        $("#id_overtime_lv1").attr("min", "0");
+        $("#id_overtime_lv2").attr("min", "0");
+        $("#id_overtime_lv3").attr("min", "0");
+        $("#id_available_interval").attr("min", "0");
+
+        form.render();
+        element.render();
+
+        laydate.render({
+          elem: '#id_in_time',
+          type: 'time',
+          format: 'HH:mm:ss',
+          done: function (value, date) {
+              console.log(value);
+              $('#id_first_half_in_time').val(value);
+          }
+        });
+        laydate.render({
+          elem: '#id_out_time',
+          type: 'time',
+          format: 'HH:mm:ss',
+          done: function (value, date) {
+              console.log(value);
+              $('#id_second_half_out_time').val(value);
+          }
+        });
+        laydate.render({elem: "#id_first_half_out_time", type: 'time'});
+        laydate.render({elem: "#id_second_half_in_time", type: 'time'});
+        laydate.render({elem: "#id_day_change", type: 'time'});
+
+        function init_input(){
+            if ($("#id_available_interval_type").val() === '0') {
+                $("#id_available_interval").attr("disabled", "disabled");
+            }
+            if ($("#id_late_out").val() === '0') {
+                $("#id_min_late_out").attr("disabled", "disabled");
+            }
+            if ($("#id_overtime_lv").val() === '0') {
+                $("#id_overtime_lv1").attr("disabled", "disabled");
+                $("#id_overtime_lv2").attr("disabled", "disabled");
+                $("#id_overtime_lv3").attr("disabled", "disabled");
+            }
+        }
+
+        init_input();
+        form.on('select', function (data) {
+            var elem = data.elem;
+            var selectValue = data.value;
+            switch (elem.id) {
+                case 'id_available_interval_type':
+                    if (selectValue === '0') {
+                      $("#id_available_interval").attr("disabled", "disabled");
+                    }
+                    else{
+                      $("#id_available_interval").removeAttr("disabled");
+                    }
+                    break;
+                case 'id_late_out':
+                    if (selectValue === '0') {
+                      $("#id_min_late_out").attr("disabled", "disabled");
+                    }
+                    else{
+                      $("#id_min_late_out").removeAttr("disabled");
+                    }
+                    break;
+                case 'id_overtime_lv':
+                    if (selectValue === '0') {
+                        $("#id_overtime_lv1").attr("disabled", "disabled");
+                        $("#id_overtime_lv2").attr("disabled", "disabled");
+                        $("#id_overtime_lv3").attr("disabled", "disabled");
+                    }
+                    else{
+                        $("#id_overtime_lv1").removeAttr("disabled");
+                        $("#id_overtime_lv2").removeAttr("disabled");
+                        $("#id_overtime_lv3").removeAttr("disabled");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
+        $(function () {
+            $('#id_work_time_duration').change(function () {
+                var work_time = $('#id_work_time_duration').val();
+                if (work_time < 0 || work_time > 1440){
+                    layer.alert(gettext('timeInterval_error_flexibleWorkTime'), {
+                        title: gettext('system_exception')
+                        , icon: 5
+                        , btn: gettext('btn_confirm')
+                    })
+                }
+            })
+        })
+    })
+  </script>
+{% endautoescape %}

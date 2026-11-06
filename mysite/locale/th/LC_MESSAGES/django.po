@@ -1,0 +1,8524 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "ป้อนอีเมล์ที่ถูกต้อง"
+
+msgid "user_field_username"
+msgstr "ผู้ใช้"
+
+msgid "user_field_usernameHelpTxt"
+msgstr "จำเป็นต้องใช้ 30 ตัวอักษรหรือน้อยกว่า โดยใช้ตัวอักษรและตัวเลขรวมถึง @ /. / + / - / _ เท่านั้น"
+
+msgid "user_field_usernameValidator"
+msgstr "ป้อนผู้ใช้ให้ถูกต้อง"
+
+msgid "user_field_password"
+msgstr "รหัสผ่าน"
+
+msgid "user_field_firstName"
+msgstr "ชื่อ"
+
+msgid "user_field_lastName"
+msgstr "นามสกุล"
+
+msgid "user_field_email"
+msgstr "อีเมล์"
+
+msgid "user_field_authorizedDepartment"
+msgstr "แผนกที่ได้รับอนุญาต"
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "ประมวลผลพื้นที่ทั้งหมดโดยไม่เลือก"
+
+msgid "user_field_authorizedArea"
+msgstr "พื้นที่ที่ได้รับอนุญาต"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "ประมวลผลทุกแผนกโดยไม่ต้องเลือก"
+
+msgid "user_field_loginTimes"
+msgstr "เวลาล็อกอิน"
+
+msgid "user_field_staff"
+msgstr "พนักงาน"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_active"
+msgstr "ทำงาน"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_superuser"
+msgstr "ผู้ดูแลระบบ"
+
+msgid "user_field_dateJoined"
+msgstr "วันที่เข้าร่วม"
+
+msgid "user_field_lastLogin"
+msgstr "ล็อดอินล่าสุด"
+
+msgid "base_model_user"
+msgstr "ผู้ใช้"
+
+msgid "userProfile_field_username"
+msgstr "ชื่อผู้ใช้"
+
+msgid "userProfile_field_pinTabs"
+msgstr "พินแท็บ"
+
+msgid "userProfile_field_hideColumns"
+msgstr "ซ่อนคอลัมน์"
+
+msgid "userProfile_field_order"
+msgstr "สั่งซื้อคอลัมน์"
+
+msgid "userProfile_field_preferences"
+msgstr "ซ่อนคอลัมน์"
+
+msgid "base_model_userProfile"
+msgstr "โปรไฟล์ผู้ใช้"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "ลบ"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "ลบบันทึกที่เลือก"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "ลบบันทึกที่เลือก"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "แน่ใจหรือไม่ว่าต้องการลบที่เลือก {0} {1} ไว้ "
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "คุณแน่ใจที่จะลบที่เลือก"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "คุณแน่ใจที่จะลบเอกสารที่เลือก"
+
+msgid "common_action_new"
+msgstr "เพิ่ม"
+
+msgid "common_action_newDescription"
+msgstr "เพิ่ม"
+
+msgid "common_action_newHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "การดำเนินการ :"
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "เพิ่มอันอื่น %(verbose_name)s"
+
+msgid "helpers_deleteText_remove"
+msgstr "นำออก"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr "บุ๊กมาร์กไม่มีพารามิเตอร์ที่ถูกต้อง"
+
+msgid "bookmark_duplication_echo"
+msgstr "บุ๊กมาร์กที่มีชื่อเดียวกันถูกครอบครองคุณสามารถเปลี่ยนชื่อหรือแทนที่ระเบียนก่อนหน้า"
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "ถูกต้อง"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "ไม่ถูกต้อง"
+
+msgid "baseModel_field_createTime"
+msgstr "สร้างเวลา"
+
+msgid "baseModel_field_createUser"
+msgstr "สร้างผู้ใช้งาน"
+
+msgid "baseModel_field_changeTime"
+msgstr "เปลี่ยนเวลา"
+
+msgid "baseModel_field_changeUser"
+msgstr "เปลี่ยนผู้ใช้งาน"
+
+msgid "baseModel_field_dataStatus"
+msgstr "สถานะข้อมูล"
+
+msgid "userProfile_languageChange_successful"
+msgstr "เรียบร้อย"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "เข้าสู่ระบบไม่ถูกต้อง"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "จำเป็นต้องมีผู้ดูแลระบบ"
+
+msgid "action_not_available"
+msgstr "ไม่สามารถดำเนินการได้"
+
+msgid "hiddenField_save_successful"
+msgstr "เรียบร้อย"
+
+msgid "hiddenField_reset_successful"
+msgstr "เรียบร้อย"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "ไม่ได้รับอนุญาต"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "พารามิเตอร์ผิดพลาด"
+
+msgid "columnOrder_save_successful"
+msgstr "เรียบร้อย"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "พารามิเตอร์ผิดพลาด"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "ไม่อนุญาตให้ใช้แท็บมากกว่า {num} แท็บ"
+
+msgid "pinTab_saveError_duplicate"
+msgstr "ซ้ำ"
+
+msgid "duplicate"
+msgstr "ซ้ำ"
+
+msgid "pinTab_remove_successful"
+msgstr "เรียบร้อย"
+
+msgid "pinTab_action_parameterError"
+msgstr "พารามิเตอร์ผิดพลาด"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "ซึ่งไม่ได้รับอนุญาต"
+
+msgid "login_authorize_license_expired"
+msgstr "ลายเส้นหมดอายุแล้ว"
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "ลายเส้นจะหมดอายุหลังจาก %(day)s วัน(s)"
+
+msgid "booleanFieldFilter_option_all"
+msgstr "ทั้งหมด"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "ใช่"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "ไม่ใช่"
+
+msgid "fieldFilter_option_all"
+msgstr "ทั้งหมด"
+
+msgid "textFieldFilter_option_contain"
+msgstr "บรรจุ"
+
+msgid "textFieldFilter_option_exact"
+msgstr "แน่นอน"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "เริ่มกับ"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "สิ้นสุดด้วย"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "หนึ่งใน"
+
+msgid "textFieldFilter_option_regex"
+msgstr "แสดงออกปกติ"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "วันใดก็ได้"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "มีวันที่"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "ไม่มีวันที่"
+
+msgid "dateFieldFilter_option_today"
+msgstr "วันนี้"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "เมื่อวาน"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "7 วันล่าสุด"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "ในสัปดาห์นี้"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "ในเดือนนี้"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "ในปีนี้"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "ทุกที่ทุกเวลา"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "มีเวลา"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "ไม่มีเวลา"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "เข้า"
+
+msgid "base_model_bookmarks"
+msgstr "บุคมาร์ค"
+
+msgid "report_column_empCode"
+msgstr "หมายเลขพนักงาน"
+
+msgid "report_column_firstName"
+msgstr "ชื่อ"
+
+msgid "report_column_lastName"
+msgstr "นามสกุล"
+
+msgid "report_column_nickName"
+msgstr "ชื่อเล่น"
+
+msgid "report_column_gender"
+msgstr "เพศ"
+
+msgid "report_column_departmentCode"
+msgstr "รหัสแผนก"
+
+msgid "report_column_departmentName"
+msgstr "แผนก"
+
+msgid "report_column_positionCode"
+msgstr "รหัสตำแหน่ง"
+
+msgid "report_column_positionName"
+msgstr "ตำแหน่ง"
+
+msgid "report_column_workCode"
+msgstr "รหัสงาน"
+
+msgid "report_column_dataSources"
+msgstr "แหล่งข้อมูล"
+
+msgid "report_column_punchDate"
+msgstr "วันที่"
+
+msgid "report_column_punchTime"
+msgstr "เวลา"
+
+msgid "report_column_punchState"
+msgstr "สถานะการลงเวลา"
+
+msgid "report_column_correctState"
+msgstr "สถานะที่ถูกต้อง"
+
+msgid "report_column_lateDuration"
+msgstr "สาย"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "ออกก่อน"
+
+msgid "report_column_absentDuration"
+msgstr "ขาด"
+
+msgid "report_column_actualWorkDuration"
+msgstr "งานตามจริง"
+
+msgid "report_column_shortDuration"
+msgstr "สั้น"
+
+msgid "report_column_overtimeDuration"
+msgstr "งานล่วงเวลา"
+
+msgid "report_column_normalWorkTime"
+msgstr "ทำงานปกติ"
+
+msgid "report_column_normalOvertime"
+msgstr "งานล่วงเวลาปกติ"
+
+msgid "report_column_weekendOvertime"
+msgstr "งานล่วงเวลาสุดสัปดาห์"
+
+msgid "report_column_holidayOvertime"
+msgstr "งานล่วงเวลาวันหยุดนักขัตฤกษ์"
+
+msgid "report_column_overtimeLevel1"
+msgstr "โอทีระดับที่ 1"
+
+msgid "report_column_overtimeLevel2"
+msgstr "โอทีระดับที่ 2"
+
+msgid "report_column_overtimeLevel3"
+msgstr "โอทีระดับที่ 3"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "ลาป่วย"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "ลาอิสระ"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "ลาคลอด"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "ลาหยุดกรณีญาติเสียชีวิต"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "ลาพักร้อน"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "เดินทางไปดูงาน"
+
+msgid "report_column_attendanceDate"
+msgstr "วันที่"
+
+msgid "report_column_attendanceWeekday"
+msgstr "วันทำงาน"
+
+msgid "report_column_exception"
+msgstr "ยกเว้น"
+
+msgid "report_column_timeIntervalName"
+msgstr "ตารางเวลา"
+
+msgid "report_column_checkInTime"
+msgstr "เช็คอิน"
+
+msgid "report_column_checkOutTime"
+msgstr "เช็คเอาต์"
+
+msgid "report_column_deviceTn"
+msgstr "อุปกรณ์[เข้า]"
+
+msgid "report_column_deviceOut"
+msgstr "อุปกรณ์[ออก]"
+
+msgid "report_column_workCodeIn"
+msgstr "รหัสงาน[เข้า]"
+
+msgid "report_column_workCodeOut"
+msgstr "รหัสงาน[ออก]"
+
+msgid "report_column_clockInTime"
+msgstr "เวลาเข้า"
+
+msgid "report_column_clockOutTime"
+msgstr "เวลาออก"
+
+msgid "report_column_totalTimeDuration"
+msgstr "เวลาทั้งหมด"
+
+msgid "report_column_dutyWorkedTime"
+msgstr "ภาษีหัก ณ ที่จ่าย"
+
+msgid "report_column_actualWorkedTime"
+msgstr "จริง WT"
+
+msgid "report_column_unscheduled"
+msgstr "ไม่ได้หมายกำหนดการ"
+
+msgid "report_column_remaining"
+msgstr "ที่เหลืออยู่"
+
+msgid "report_column_breakOutTime"
+msgstr "ออกไปพัก"
+
+msgid "report_column_breakInTime"
+msgstr "กลับจากพัก"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "เวลาพักจริง"
+
+msgid "report_column_breakTime"
+msgstr "เวลาพัก"
+
+msgid "report_column_breakLateDuration"
+msgstr "สาย[เวลาพัก]"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "ออกก่อน[เวลาพัก]"
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "ขาด[เวลาพัก]"
+
+msgid "report_column_totalWorkedDuration"
+msgstr "ทำงานไปแล้วทั้งหมด"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "ทำงานไปแล้วตามจริง"
+
+msgid "report_column_leaveDuration"
+msgstr "ลาหยุด"
+
+msgid "report_column_overtime"
+msgstr "ล่วงเวลา"
+
+msgid "report_column_missIn"
+msgstr "เข้า"
+
+msgid "report_column_missOut"
+msgstr "ออก"
+
+msgid "report_column_present"
+msgstr "ปัจจุบัน"
+
+msgid "report_column_dayOff"
+msgstr "วันหยุด"
+
+msgid "report_column_weekend"
+msgstr "สุดสัปดาห์"
+
+msgid "report_column_holiday"
+msgstr "วันนักขัตฤกษ์"
+
+msgid "report_column_trainingDuration"
+msgstr "ฝึกอบรม"
+
+msgid "report_column_timetableDuration"
+msgstr "ระยะเวลาตารางเวลา"
+
+msgid "report_column_scheduledBreakTime"
+msgstr "เวลาพักเที่ยง"
+
+msgid "report_column_attendanceDuration"
+msgstr "ระยะเวลาการปฏิบัติหน้าที่"
+
+msgid "report_column_breakTimeDuration"
+msgstr "ระยะเวลาการพัก"
+
+msgid "report_column_approvalOvertime"
+msgstr "อนุมัติงานล่วงเวลา"
+
+msgid "report_column_timetableDays"
+msgstr "วันทำงาน"
+
+msgid "report_column_cardNumber"
+msgstr "หมายเลขบัตร"
+
+msgid "report_column_firstPunch"
+msgstr "ลงเวลาครั้งแรก"
+
+msgid "report_column_lastPunch"
+msgstr "ลงเวลาครั้งล่าสุุด"
+
+msgid "report_column_totalDuration"
+msgstr "เวลาทั้งหมด"
+
+msgid "report_column_firstIn"
+msgstr "เช็คอินครั้งแรก"
+
+msgid "report_column_lastOut"
+msgstr "เช็คเอาต์ครั้งสุดท้าย"
+
+msgid "report_column_exceptionDescription"
+msgstr "รายละเอียด"
+
+msgid "report_column_employeeCount"
+msgstr "จำนวนพนักงาน"
+
+msgid "report_column_lateTimes"
+msgstr "สาย(นาที)"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "ออกก่อนเวลา(ครั้ง)นาที"
+
+msgid "report_column_absentTimes"
+msgstr "ขาด(ครั้ง)"
+
+msgid "report_column_punchTimes"
+msgstr "ครั้ง"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "สรุปเวลาทั้งหมด"
+
+msgid "report_column_timetable"
+msgstr "ตารางเวลา"
+
+msgid "fixed_time"
+msgstr "ตารางเวลาคงที่"
+
+msgid "report_column_gpsLocation"
+msgstr "ตำแหน่ง GPS"
+
+msgid "report_column_longitude"
+msgstr "ลองจิจูด"
+
+msgid "report_column_latitude"
+msgstr "ละติจูด"
+
+msgid "report_column_areaAlias"
+msgstr "โซน"
+
+msgid "report_column_terminalAlias"
+msgstr "อุปกรณ์"
+
+msgid "report_column_terminalSN"
+msgstr "หมายเลขซีเรียล"
+
+msgid "menu_att_transactionReport"
+msgstr "รายงานบันทึกข้อมูล"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "รายงานบันทึกข้อมูลทั้งหมด"
+
+msgid "menu_att_dailyStatusReport"
+msgstr "สถานะรายวัน"
+
+msgid "menu_att_detailReport"
+msgstr "รายงานสรุปบันทึกเวลาทั้งหมด"
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "รายงานสรุปเข้างาน"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "รายงานสรุปลางาน"
+
+msgid "menu_att_FILOReport"
+msgstr "รายงานสรุปเข้าก่อนออกก่อน"
+
+msgid "menu_att_firstLastReport"
+msgstr "รายงานสรุปเข้าและออกเท่านั้น"
+
+msgid "menu_att_firstInLastOutReport"
+msgstr "รายงานสรุปเข้าก่อนออกก่อน"
+
+msgid "menu_att_exceptionReport"
+msgstr "รายงานข้อยกเว้น"
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "รายงานสรุปแผนก"
+
+msgid "menu_att_timeCardReport"
+msgstr "รายงานบัตรลงเวลา"
+
+msgid "menu_att_lateReport"
+msgstr "รายงานสาย"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "รายงานออกก่อนเวลา"
+
+msgid "menu_att_overtimeReport"
+msgstr "รายงานงานล่วงเวลา"
+
+msgid "menu_att_absentReport"
+msgstr "รายงานขาด"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "รายงานบันทึกเวลาหลายรายการ"
+
+msgid "menu_att_breakTimeReport"
+msgstr "รางานพักเที่ยง"
+
+msgid "menu_group_att_configuration"
+msgstr "การกำหนดค่า"
+
+msgid "menu_staff_transactionReport"
+msgstr "รายงานบันทึกเวลา"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "เลื่อนกะทำงาน"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "ไม่สามารถแก้ไขเรคคอร์ดของกำหนดการโดยการตรวจสอบ"
+
+msgid "att_model_leave"
+msgstr "ออกจาก"
+
+msgid "leave_field_employee"
+msgstr "พนักงาน"
+
+msgid "leave_field_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "leave_field_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "leave_field_leaveCategory"
+msgstr "หมวดหมู่"
+
+msgid "leave_field_reason"
+msgstr "ใช้เหตุผล"
+
+msgid "leave_field_approvalState"
+msgstr "สถานะ"
+
+msgid "leave_field_approvalReason"
+msgstr "หมายเหตุ"
+
+msgid "leave_action_new"
+msgstr "เพิ่ม"
+
+msgid "leave_action_newDescription"
+msgstr "เพิ่มการลาหยุดใหม่"
+
+msgid "leave_action_newHelpTxt"
+msgstr "เพิ่มการลาหยุดใหม่"
+
+msgid "leave_time_invalid_range"
+msgstr "เวลาออกไม่ถูกต้อง เวลาสิ้นสุดจะต้องภายหลังจากเวลาเริ่ม"
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "เวลาไม่ถูกต้อง เวลาเริ่มต้องภายหลังจากวันที่จ้างพนักงาน [%s]"
+
+msgid "leave_time_overlap"
+msgstr "%s เวลาออกของบุคลากรทับซ้อนกัน"
+
+msgid "select_employee"
+msgstr "โปรดเลือกพนักงาน"
+
+msgid "manualLog_field_employee"
+msgstr "พนักงาน"
+
+msgid "manualLog_field_punchTime"
+msgstr "เวลาที่ลงเวลา"
+
+msgid "manualLog_field_punchState"
+msgstr "สถานะการลงเวลา"
+
+msgid "manualLog_field_workCode"
+msgstr "รหัสงาน"
+
+msgid "manualLog_field_applyReason"
+msgstr "สาเหตุที่นำมาใช้"
+
+msgid "manualLog_field_approvalState"
+msgstr "สถานะ"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "หมายเหตุการอนุมัติ"
+
+msgid "manualLog_Action_new"
+msgstr "เพิ่ม"
+
+msgid "manualLog_Action_newDescription"
+msgstr "เพิ่ม log แบบกำหนดเองใหม่"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "เพิ่ม log แบบกำหนดเองใหม่"
+
+msgid "manual_log_time_greater_now"
+msgstr "เวลาที่ลงเวลาจะต้องไม่มากกว่าตอนนี้"
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "เวลาไม่ถูกต้อง  เวลาเริ่มต้องภายหลังจากวันที่จ้างพนักงาน [%s]"
+
+msgid "manual_log_repeat"
+msgstr "%s ลงเวลาซ้ำ"
+
+msgid "overtime_field_employee"
+msgstr "พนักงาน"
+
+msgid "overtime_field_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "overtime_field_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "overtime_field_overtimeType"
+msgstr "ประเภทงานล่วงเวลา"
+
+msgid "overtime_field_applyReason"
+msgstr "สาเหตุที่นำมาใช้"
+
+msgid "overtime_field_approvalState"
+msgstr "สถานะ"
+
+msgid "overtime_field_approvalRemark"
+msgstr "หมายเหตุ"
+
+msgid "overtime_action_new"
+msgstr "เพิ่ม"
+
+msgid "overtime_action_newDescription"
+msgstr "เพิ่มล่วงเวลาใหม่"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "เพิ่มล่วงเวลาใหม่"
+
+msgid "overtime_time_overlap"
+msgstr "%s การทำงานล่วงเวลาของบุคลากรทับซ้อนกัน"
+
+msgid "schedule_action_addSchedule"
+msgstr "เพิ่มตารางเวลา"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "เพิ่มตารางเวลา"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "เพิ่มตารางเวลา"
+
+msgid "scheduledAssign_error_datePeriodError"
+msgstr "ช่วงวันที่ไม่ถูกต้อง"
+
+msgid "scheduledAssign_error_shiftNotFound"
+msgstr "กะไม่ถูกต้อง"
+
+msgid "scheduledAssign_error_empNotFound"
+msgstr "ไม่พบพนักงาน"
+
+msgid "scheduledAssign_error_deptNotFound"
+msgstr "ไม่พบแผนก"
+
+msgid "scheduledAssign_error_schdOverlap_%(obj)s_%(start_date)s_%(end_date)s"
+msgstr "ตารางเวลาของ%(obj)s ทับซ้อนกับ%(start_date)s -%(end_date)s"
+
+msgid "please_select_time_intervals"
+msgstr "โปรดเลือกช่วงเวลา"
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s(%(name)s) ทำซ้ำกำหนดการจาก %(start)s ถึง %(end)s"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "ทำซ้ำช่วงเวลาการลงเวลาเกิดข้อผิดพลาด"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "%(t)s และ%(ss)s ทับซ้อนกันในวัน%(d)s"
+
+msgid "shift_not_found"
+msgstr "ไม่พบอุปกรณ์"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "กะงาน(%(shift)s) กำลังใช้งานอยู่ ไม่สามารถแก้ไขได้"
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "ไม่พบนามแฝงกะงาน %(alias)s"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "เพิ่มกำหนดการชั่วคราว"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "เพิ่มกำหนดการชั่วคราวใหม่"
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "เพิ่มกำหนดการชั่วคราวใหม่"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "โปรดเลือกพนักงาน"
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "โปรดเลือกแผนก"
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "โปรดเลือกตารางงาน"
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(timetableA)s and %(timetableB)s ทับซ้อนกับ %(date)s"
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "การประมวลผลล้มเหลว"
+
+msgid "training_field_employee"
+msgstr "พนักงาน"
+
+msgid "training_field_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "training_field_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "training_field_trainingCategory"
+msgstr "ประเภทการฝึกอบรม"
+
+msgid "training_field_applyReason"
+msgstr "ใช้เหตุผล"
+
+msgid "training_field_approvalState"
+msgstr "สถานะ"
+
+msgid "training_field_approvalRemark"
+msgstr "หมายเหตุ"
+
+msgid "training_action_new"
+msgstr "เพิ่ม"
+
+msgid "training_action_newDescription"
+msgstr "เพิ่มการอบรมใหม่"
+
+msgid "training_action_newHelpTxt"
+msgstr "เพิ่มการอบรมใหม่"
+
+msgid "training_time_overlap"
+msgstr "%s เวลาการฝึกอบรมบุคลากรทับซ้อนกัน"
+
+msgid "shift_field_timeInterval"
+msgstr "ตารางเวลา"
+
+msgid "deptAttRule_field_alias"
+msgstr "ชื่อ"
+
+msgid "departmentRule_action_batchAdd"
+msgstr "เพิ่ม"
+
+msgid "departmentRule_action_batchAddDescription"
+msgstr "เพิ่มกฎสำหรับหลายแผนก"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "เพิ่มกฎสำหรับหลายแผนก"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s ตั้งค่ากฎเรียบร้อยแล้ว"
+
+msgid "holiday_field_alias"
+msgstr "ชื่อ"
+
+msgid "holiday_field_startDate"
+msgstr "วันที่เริ่ม"
+
+msgid "holiday_field_duration"
+msgstr "ระยะเวลา(วัน)"
+
+msgid "holiday_field_workType"
+msgstr "ประเภทงาน"
+
+msgid "holiday_field_overtimeLevel"
+msgstr "โอทีระดับ"
+
+msgid "holiday_field_overtimeLevel1"
+msgstr "โอทีระดับ 1"
+
+msgid "holiday_field_overtimeLevel2"
+msgstr "โอทีระดับ 2"
+
+msgid "holiday_field_overtimeLevel3"
+msgstr "โอทีระดับ 3"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "เพิ่ม"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "เพิ่มวันหยุดนักขัตฤกษ์"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "เพิ่มวันหยุดนักขัตฤกษ์"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr "มีการใช้การตั้งค่าสุดสัปดาห์แล้ว ไม่สามารถแก้ไขได้"
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr "ไม่สามารถใช้ค่าเดียวกันสำหรับฟังก์ชัน Key ในการตั้งค่าคำนวณได้"
+
+msgid "calculation_item_actualPresent"
+msgstr "ตามจริง"
+
+msgid "calculation_item_durationOrShort"
+msgstr "ระยะเวลา/สั้น"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "เวลาทั้งหมด/เวลาที่ทำงานไปทั้งหมด"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "เวลาพัก/เวลาพักจริง"
+
+msgid "calculation_item_timetableDuration"
+msgstr "ระยะเวลาตารางเวลา"
+
+msgid "calculation_item_late"
+msgstr "สาย"
+
+msgid "calculation_item_earlyLeave"
+msgstr "ออกก่อนเวลา"
+
+msgid "calculation_item_leave"
+msgstr "ลาหยุด"
+
+msgid "calculation_item_absent"
+msgstr "ขาด"
+
+msgid "calculation_item_overtime"
+msgstr "งานล่วงเวลา"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "ไม่มีเวลาเข้า"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "ไม่มีเวลาออก"
+
+msgid "calculation_item_present"
+msgstr "ปัจจุบัน"
+
+msgid "calculation_item_dayOff"
+msgstr "วันหยุด"
+
+msgid "calculation_item_weekend"
+msgstr "สุดสัปดาห์"
+
+msgid "calculation_item_holiday"
+msgstr "วันหยุดนักขัตฤกษ์"
+
+msgid "replace_existing_shift_even_using"
+msgstr "แทนที่กะเดิมที่มีแม้ใช้อยู่"
+
+msgid "remove_overlap_schedule"
+msgstr "นำกำหนดการทับซ้อนออก"
+
+msgid "enable_work_on_weekend_as"
+msgstr "เปิดการใช้งานการทำงานในช่วงสุดสัปดาห์เป็น"
+
+msgid "work_type"
+msgstr "ทำงานเป็น"
+
+msgid "enable_work_on_day_off_as"
+msgstr "เปิดการใช้งานการทำงานในช่วงวันหยุดเป็น"
+
+msgid "auto_shift"
+msgstr "เปลี่ยนกะทำงานอัตโนมัติ"
+
+msgid "select_date"
+msgstr "กรุณาเลือกวันที่"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr "%(t)s และ%(ss)s ทับซ้อนกันในวัน%(d)s"
+
+msgid "breakTime_validationError_earlyGreatThanDuration"
+msgstr "ความยาวเริ่มแรกไม่เกินเวลาพัก"
+
+msgid "breakTime_validationError_overGreatThanRangeDuration"
+msgstr "พักเที่ยงเกินเวลาที่กำหนด"
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr "เวลาการพักใช้ตามตารางเวลา ไม่สามารถแก้ไขได้"
+
+msgid "breakTime_validationError_invalidNumber"
+msgstr "จำนวนต้องมากกว่า 0"
+
+msgid "please_select_time_table"
+msgstr "โปรดเลือกตารางเวลา"
+
+msgid "%s error_of_sql statement_adding_failed."
+msgstr "ผิดพลาด %s ของการเพิ่มคำสั่ง sql ล้มเหลว"
+
+msgid "menu_group_att_rule"
+msgstr "กฎ"
+
+msgid "menu_att_globalRule"
+msgstr "กฎ"
+
+msgid "menu_att_departmentRule"
+msgstr "กฎแผนก"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "กำหนดตารางทำงาน"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "กำหนดตารางเวลา"
+
+msgid "menu_att_breakTime"
+msgstr "พักเที่ยง"
+
+msgid "menu_att_timeInterval"
+msgstr "ตารางเวลา"
+
+msgid "menu_att_shift"
+msgstr "กะทำงาน"
+
+msgid "menu_att_departmentSchedule"
+msgstr "ตารางทำงานแบบแผนก"
+
+msgid "menu_att_employeeSchedule"
+msgstr "ตารางทำงานแบบพนักงาน"
+
+msgid "menu_att_temporarySchedule"
+msgstr "ตารางทำงานแบบชั่งคราว"
+
+msgid "menu_att_scheduleView"
+msgstr "ตรวจสอบตารางทำงาน"
+
+msgid "menu_group_approvalManagement"
+msgstr "อนุมัติ"
+
+msgid "menu_att_manualLog"
+msgstr "ลงเวลาทำงานเอง"
+
+msgid "menu_att_leave"
+msgstr "ลาหยุด"
+
+msgid "menu_att_overtime"
+msgstr "ทำงานล่วงเวลา"
+
+msgid "menu_att_training"
+msgstr "อบรม"
+
+msgid "menu_att_adjustSchedule"
+msgstr "ปรับตารางทำงาน"
+
+msgid "menu_group_att_holiday"
+msgstr "วันหยุดนักขัตฤกษ์"
+
+msgid "menu_att_holiday"
+msgstr "วันหยุดนักขัตฤกษ์"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "ประเภท"
+
+msgid "menu_att_leaveType"
+msgstr "ประเภทลาหยุด"
+
+msgid "menu_att_trainingType"
+msgstr "ประเภทอบรม"
+
+msgid "menu_group_att_reportSetting"
+msgstr "ตั้งค่ารายงาน"
+
+msgid "menu_att_reportSetting"
+msgstr "ตั้งค่ารายงาน"
+
+msgid "menu_group_att_transaction"
+msgstr "รายงานบันทึกเวลาทั้งหมด"
+
+msgid "menu_att_transaction"
+msgstr "รายงานบันทึกเวลาทั้งหมด"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "คำนวณ"
+
+msgid "menu_att_reportCalculate"
+msgstr "คำนวณ"
+
+msgid "menu_group_att_nonSchedulingReport"
+msgstr "รายงานบันทึกเวลาทั้งหมด"
+
+msgid "menu_group_att_report"
+msgstr "รายงานตารางเวลา"
+
+msgid "menu_group_att_summaryReport"
+msgstr "รายงานสรุป"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "มอนิเตอร์"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "เข้างานของแผนก"
+
+msgid "att_model_attendanceDetail"
+msgstr "รายละเอียดบันทึกเวลา"
+
+msgid "att_model_attendanceException"
+msgstr "ยกเว้นบันทึกเวลา"
+
+msgid "att_calc_log"
+msgstr "คำนวณบันทึกเวลาทำงาน"
+
+msgid "attRule_field_paramName"
+msgstr "ชื่อ"
+
+msgid "attRule_field_paramValue"
+msgstr "ค่า"
+
+msgid "att_model_attRule"
+msgstr "กฏบันทึกเวลา"
+
+msgid "schedule_field_employee"
+msgstr "พนักงาน"
+
+msgid "schedule_field_startDate"
+msgstr "วันที่เริ่ม"
+
+msgid "schedule_field_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "schedule_field_shift"
+msgstr "กะทำงาน"
+
+msgid "att_model_schedule"
+msgstr "ตารางเวลา"
+
+msgid "deptSchedule_field_department"
+msgstr "แผนก"
+
+msgid "deptSchedule_field_startDate"
+msgstr "วันที่เริ่ม"
+
+msgid "deptSchedule_field_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "deptSchedule_field_shift"
+msgstr "กะทำงาน"
+
+msgid "att_model_deptSchedule"
+msgstr "แผนกของตารางเวลา"
+
+msgid "deptSchedule_action_add"
+msgstr "เพิ่ม"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "เพิ่มตารางเวลาแผนก"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "เพิ่มตารางเวลาแผนก"
+
+msgid "attShift_field_code"
+msgstr "ลำดับกะทำงาน"
+
+msgid "attShift_field_alias"
+msgstr "ชื่อกะทำงาน"
+
+msgid "attShift_field_cycleUnit"
+msgstr "หน่วย"
+
+msgid "attShift_field_cycle"
+msgstr "รอบ"
+
+msgid "work_on_weekend_as"
+msgstr "สุดสัปดาห์เป็นทำงาน"
+
+msgid "work_on_day_off_as"
+msgstr "วันหยุดเป็นวันทำงาน"
+
+msgid "attShift_field_autoShift"
+msgstr "เปลี่ยนกะทำงานอัตโนมัติ"
+
+msgid "shift_name_repeat"
+msgstr "ชื่อกะงาน (%s) มีอยู่แล้ว"
+
+msgid "att_model_shift"
+msgstr "กะทำงาน"
+
+msgid "breakTime_field_alias"
+msgstr "ชื่อ"
+
+msgid "breakTime_field_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "breakTime_field_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "breakTime_field_duration"
+msgstr "ระยะเวลา"
+
+msgid "breakTime_field_durationHelpTxt"
+msgstr "ระยะเวลาของพักเที่ยงหน่วยคือนาที"
+
+msgid "breakTime_field_startMargin"
+msgstr "ขอบเขตออกพักเที่ยง"
+
+msgid "breakTime_field_endMargin"
+msgstr "ขอบเขตสิ้นสุด"
+
+msgid "breakTime_field_endMarginHelpTxt"
+msgstr "เวลาสิ้นสุด = เวลาเริ่ม + ระยะเวลา + ระยะเวลาสิ้นสุดระยะเวลาหน่วยของระยะเวลาเป็นนาที"
+
+msgid "breakTime_field_allowDuration"
+msgstr "อนุญาตให้พักเที่ยง"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "ขึ้นอยู่กับสถานะ"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "ทำซ้ำช่วงเวลาลงเวลา"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "ทำซ้ำช่วงเวลาลงเวลา(m)"
+
+msgid "breakTime_field_useMultiplePunch"
+msgstr "ใช้หลายเข้า / ออก"
+
+msgid "breakTime_field_calculateType"
+msgstr "ประเภทคำนวณ"
+
+msgid "breakTime_field_minimumBreakTime"
+msgstr "พักเที่ยงขั้นต่ำ (นาที)"
+
+msgid "breakTime_field_earlyIn"
+msgstr "ในช่วงต้น"
+
+msgid "breakTime_field_minEarlyIn"
+msgstr "ขั้นต่ำในช่วงต้น"
+
+msgid "breakTime_field_lateIn"
+msgstr "มาสาย"
+
+msgid "breakTime_field_minLateIn"
+msgstr "ขั้นต่ำสุดใน"
+
+msgid "breakTime_field_considerBreakInEarly"
+msgstr "พิจารณากลับก่อน"
+
+msgid "breakTime_field_breakInEarlyAs"
+msgstr "กลับก่อน"
+
+msgid "breakTime_field_considerBreakInLate"
+msgstr "พิจารณากลับมาช้า"
+
+msgid "breakTime_field_breakInLateAs"
+msgstr "กลับสาย"
+
+msgid "att_model_breakTime"
+msgstr "พักเที่ยง"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "ตั้งค่าพื้นฐาน"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "ตั้งค่าต้องใช้สถานะ"
+
+msgid "changeSchedule_field_employee"
+msgstr "พนักงาน"
+
+msgid "changeSchedule_field_attDate"
+msgstr "วันที่"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "ตารางเวลาก่อน"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "ตารางเวลาใหม่"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "ใช้เวลา"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "ใช้เหตุผล"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "หมายเหตุ"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "สถานะ"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "เวลาอนุมัติ"
+
+msgid "changeSchedule_field_approver"
+msgstr "อนุมัติ"
+
+msgid "att_model_changeSchedule"
+msgstr "เปลี่ยนตารางเวลา"
+
+msgid "change_schedule"
+msgstr "เปลี่ยนตารางเวลา"
+
+msgid "emp_field_employeeCode"
+msgstr "รหัสพนักงาน"
+
+msgid "emp_field_firstName"
+msgstr "ชื่อ"
+
+msgid "emp_field_lastName"
+msgstr "นามสกุล"
+
+msgid "employee_field_position"
+msgstr "ตำแหน่ง"
+
+msgid "employee_field_department"
+msgstr "แผนก"
+
+msgid "deptAttRule_field_department"
+msgstr "แผนก"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "กฎ"
+
+msgid "att_model_deptAttRule"
+msgstr "กฎแผนก"
+
+msgid "departmentRule_tab_calculationRule"
+msgstr "กฎการคำนวณ"
+
+msgid "departmentRule_tab_overtimeSetting"
+msgstr "ตั้งค่าล่วงเวลา"
+
+msgid "holiday_field_department"
+msgstr "แผนก"
+
+msgid "att_model_holiday"
+msgstr "วันหยุดนักขัตฤกษ์"
+
+msgid "leaveCategory"
+msgstr "หมวดหมู่ลาหยุด"
+
+msgid "leave_field_applyReason"
+msgstr "สาเหตุที่นำมาใช้"
+
+msgid "leave_field_applyTime"
+msgstr "เวลาที่นำมาใช้"
+
+msgid "leave_field_approvalRemark"
+msgstr "หมายเหตุการอนุมัติ"
+
+msgid "leave_field_approvalTime"
+msgstr "เวลาอนุมัติ"
+
+msgid "leave_field_approvalLevel"
+msgstr "ระดับอนุมัติ"
+
+msgid "leave_field_approver"
+msgstr "ผู้อนุมัติ"
+
+msgid "leave_approve_audit"
+msgstr "ระเบียนลาไม่สามารถแก้ไข โดยตรวจสอบได้"
+
+msgid "leaveCategory_field_name"
+msgstr "ชื่อ"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "หน่วยที่ต่ำสุด"
+
+msgid "leaveCategory_field_unit"
+msgstr "หน่วย"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "ตัวเลขเป็นจำนวนเต็ม"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "สัญลักษณ์รายงาน"
+
+msgid "this_category_name_already_exists."
+msgstr "ชื่อประเภทนี้มีอยู่แล้ว"
+
+msgid "this_report_symbol_already_exists."
+msgstr "สัญลักษณ์รายงานใช้ไปแล้ว"
+
+msgid "the_default_category_name_cannot_be_modified"
+msgstr "ชื่อหมวดหมู่ตามค่าเริ่มต้นไม่สามาร"
+
+msgid "att_model_leaveCategory"
+msgstr "ประเภทลาหยุด"
+
+msgid "manualLog_field_applyTime"
+msgstr "เวลาที่นำมาใช้"
+
+msgid "manualLog_field_approvalTime"
+msgstr "เวลาอนุมัติ"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "ระดับอนุมัติ"
+
+msgid "manualLog_field_approver"
+msgstr "อนุมัติ"
+
+msgid "manuallog_approve_audit"
+msgstr "ตรวจสอบบันทึกด้วยตนเอง ไม่สามารถแก้ไขได้"
+
+msgid "att_model_manualLog"
+msgstr "ลงเวลาเอง"
+
+msgid "overtime_field_applyTime"
+msgstr "เวลาที่นำมาใช้"
+
+msgid "overtime_field_approvalReason"
+msgstr "สาเหตุอนุมัติ"
+
+msgid "overtime_field_approvalTime"
+msgstr "เวลาอนุมัติ"
+
+msgid "overtime_field_approvalLevel"
+msgstr "ระดับอนุมัติ"
+
+msgid "overtime_field_approver"
+msgstr "ผู้อนุมัติ"
+
+msgid "overtime_approve_audit"
+msgstr "ระเบียนการทำงานล่วงเวลาไม่สามารถแก้ไขโดยการตรวจสอบได้"
+
+msgid "att_model_overtime"
+msgstr "ทำงานล่วงเวลา"
+
+msgid "reportParam_field_name"
+msgstr "ชื่อ"
+
+msgid "reportParam_field_value"
+msgstr "ค่า"
+
+msgid "att_model_reportParameter"
+msgstr "พารามิเตอร์รายงาน"
+
+msgid "calculation_item_actualAttendance"
+msgstr "ทำงานจริง"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "ระยะเวลาการปฏิบัติหน้าที่/สั้น"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "เวลาทั้งหมด/เวลาทำงานทั้งหมด"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "เวลาพักเที่ยง/เวลาพักเที่ยงจริง"
+
+msgid "calculation_item_noCheckIn"
+msgstr "ไม่มีเช็คอิน"
+
+msgid "calculation_item_noCheckOut"
+msgstr "ไม่มีเช็คเอาต์"
+
+msgid "calculation_item_training"
+msgstr "อบรม"
+
+msgid "report_display_checkIn"
+msgstr "เช็คอิน"
+
+msgid "report_display_checkOut"
+msgstr "เช็คเอาต์"
+
+msgid "report_display_breakOut"
+msgstr "ออกไปพักเที่ยง"
+
+msgid "report_display_breakIn"
+msgstr "เข้าจากพักเที่ยง"
+
+msgid "report_display_overtimeIn"
+msgstr "เข้าทำงานล่วงเวลา"
+
+msgid "report_display_overtimeOut"
+msgstr "ออกทำงานล่วงเวลา"
+
+msgid "report_display_unknown"
+msgstr "ไม่ทราบ"
+
+msgid "shiftDetail_field_shift"
+msgstr "กะทำงาน"
+
+msgid "shiftDetail_field_inTime"
+msgstr "เวลาเช็คอิน"
+
+msgid "shiftDetail_field_outTime"
+msgstr "เวลาเช็คเอาต์"
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "ดัชนีรายวัน"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "ตารางเวลา"
+
+msgid "att_model_shiftDetail"
+msgstr "รายละเอียดกะทำงาน"
+
+msgid "tempSchedule_field_employee"
+msgstr "พนักงาน"
+
+msgid "tempSchedule_field_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "tempSchedule_field_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "tempSchedule_field_rule"
+msgstr "กฎตารางเวลาแบบชั่วคราว"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "รหัสตารางเวลา"
+
+msgid "tempSchedule_field_workType"
+msgstr "ประเภทงาน"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "ตารางเวลา"
+
+msgid "att_model_tempSchedule"
+msgstr "ตารางเวลาแบบชั่วคราว"
+
+msgid "timeInterval_field_alias"
+msgstr "ชื่อ"
+
+msgid "timeInterval_field_type"
+msgstr "ประเภท"
+
+msgid "timeInterval_field_checkIn"
+msgstr "เช็คอิน"
+
+msgid "timeInterval_field_checkOut"
+msgstr "เช็คเอาต์"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "เริ่มเช็คอิน"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "เช็คอินสิ้นสุด"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "เริ่มเช็คเอาต์"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "เช็คเอาต์สิ้นสุด"
+
+msgid "timeInterval_field_crossDay"
+msgstr "ข้ามวัน"
+
+msgid "timeTable_helpText_tip1"
+msgstr "1. ตั้งค่าข้ามวันทั้งหมดจะขึ้นอยู่กับเช็คอิน"
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "(เข้า) อัตราทำงานล่วงหน้า"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "(เข้า) เหนือขอบ"
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "(ออก) อัตราทำงานล่วงหน้า"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "(ออก) เหนือขอบ"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "ระยะเวลาบันทึกเวลา"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "คลิกเพื่อกำหนดระยะเวลาบันทึกเวลาโดยเลือกเช็คเอาท์"
+
+msgid "timeInterval_label_checkOut"
+msgstr "เช็คเอาท์"
+
+msgid "timeInterval_txt_days"
+msgstr "วัน"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "สูงสุด 3 วัน"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "เช็คเอ้าท์น้อยกว่าเช็คอิน"
+
+msgid "timeInterval_checkOut_title"
+msgstr "การตั้งค่าเช็คเอาท์"
+
+msgid "timeInterval_field_inRequired"
+msgstr "เวลาเข้าที่จำเป็น"
+
+msgid "timeInterval_field_outRequired"
+msgstr "เวลาออกที่จำเป็น"
+
+msgid "timeInterval_field_allowLate"
+msgstr "อนุญาตให้เข้าช้ากว่าเวลา"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "อนุญาตให้ออกก่อนเวลา"
+
+msgid "timeInterval_field_paidDay"
+msgstr "วันทำงาน"
+
+msgid "timeInterval_field_earlyIn"
+msgstr "ในช่วงต้น"
+
+msgid "timeInterval_field_minEarlyIn"
+msgstr "ขั้นต่ำในช่วงต้น"
+
+msgid "timeInterval_field_lateOut"
+msgstr "สายออก"
+
+msgid "timeInterval_field_minLateOut"
+msgstr "ต่ำสุดขั้นต่ำ"
+
+msgid "timeInterval_field_overtimeLevel"
+msgstr "ระดับโอที"
+
+msgid "timeInterval_field_overtimeLevel1"
+msgstr "ระดับโอที 1"
+
+msgid "timeInterval_field_overtimeLevel2"
+msgstr "ระดับโอที 2"
+
+msgid "timeInterval_field_overtimeLevel3"
+msgstr "ระดับโอที 3"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "เข้างานล่วงหน้าก่อนเวลา"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "งานล่วงเวลาขั้นต่ำ(เข้าก่อนเวลา)"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "ออกงานล่วงหน้าช้ากว่าเวลา"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "งานล่วงเวลาขั้นต่ำ(ออกช้ากว่าเวลา)"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "เปลี่ยนที่"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "เข้า/ออกหลายครั้ง"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "ประเภทระยะห่างการลงเวลา"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "ระยะเวลาลงเวลาซ้ำ"
+
+msgid "timeInterval_field_workTimeType"
+msgstr "ประเภทเวลางาน"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "เวลางาน"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "นาที"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "ขึ้นอยู่กับสถานะการลงเวลา"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "เปิดการทำงานล่วงเวลา"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "การทำงานล่วงเวลาเป็นนาทีขั้นต่ำ"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "นาที"
+
+msgid "timeInterval_field_workType"
+msgstr "ประเภทงาน"
+
+msgid "timeInterval_field_breakTime"
+msgstr "เวลาพัก"
+
+msgid "timeInterval_error_invalidWorkDay"
+msgstr "จำนวนวันทำงานไม่ถูกต้องค่าต้องอยู่ระหว่าง 0.1-9.9"
+
+msgid "time_duration_greater_user_defined"
+msgstr "ช่วงเวลามากกว่าผู้ใช้กำหนด"
+
+msgid "att_model_timeInterval"
+msgstr "ตารางเวลา"
+
+msgid "timeInterval_action_addNormalTimetable"
+msgstr "เพิ่มตารางเวลาปกติ"
+
+msgid "timeInterval_action_addNormalTimetable_description"
+msgstr "เพิ่มตารางเวลาปกติ"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "เพิ่มตารางเวลาปกติ"
+
+msgid "timeInterval_filed_crossDayUnit"
+msgstr "วัน(ว)"
+
+msgid "timeInterval_error_invalidOvertimeValue"
+msgstr "ค่าทำงานล่วงเวลาไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidFieldValue"
+msgstr "ค่าของ{field}ไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidCheckOvertimeLevel"
+msgstr "ค่าระดับทำงานล่วงเวลาต้องการ L3>= L2>= L1"
+
+msgid "timeInterval_error_flexibleWorkTime"
+msgstr "ความต้องการเวลาทำงานอยู่ในช่วง 0-1440"
+
+msgid "timeInterval_error_invalidCheckInStart"
+msgstr "เริ่มการเช็คอินไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidCheckInEnd"
+msgstr "สิ้นสุดการเช็คอินไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidCheckOutStart"
+msgstr "เริ่มต้นการเช็คเอาต์ไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidCheckOutEnd"
+msgstr "สิ้นสุดการเช็คเอาต์ไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidCheckOut"
+msgstr "เช็คเอาต์ไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidEarlyIn"
+msgstr "ตั้งค่าเริ่มต้นไม่ถูกต้อง"
+
+msgid "timeInterval_error_invalidLateOut"
+msgstr "ตั้งค่าล่าช้าออกไม่ถูกต้อง"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "ตั้งค่าพื้นฐาน"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "ตั้งค่าพักเที่ยง"
+
+msgid "timeInterval_tab_unscheduledTimeSetting"
+msgstr "ตั้งค่าเวลาที่ไม่ได้กำหนด"
+
+msgid "timeInterval_tab_overtimeLevelSetting"
+msgstr "ตั้งค่าระดับโอที"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "ตั้งค่ากฎ"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "เพิ่มตารางเวลาที่ปกติ"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "เพิ่มตารางเวลาที่ปกติ"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "เพิ่มตารางเวลาที่ปกติ"
+
+msgid "training_field_applyTime"
+msgstr "ใช้เวลา"
+
+msgid "training_field_approvalTime"
+msgstr "เวลาการอนุมัติ"
+
+msgid "training_field_approvalLevel"
+msgstr "ระดับการอนุมัติ"
+
+msgid "training_field_approver"
+msgstr "ผู้อนุมัติ"
+
+msgid "training_approve_audit"
+msgstr "ระเบียนการฝึกอบรมไม่สามารถแก้ไขได้โดยการตรวจสอบ"
+
+msgid "att_model_training"
+msgstr "ฝึกอบรม"
+
+msgid "mulTransaction_field_employee"
+msgstr "หมายเลขพนักงาน"
+
+msgid "mulTransaction_field_dataType"
+msgstr "ประเภทข้อมูล"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "ลงเวลาปกติ"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "เวลาพัก"
+
+msgid "mulTransaction_field_date"
+msgstr "วันที่"
+
+msgid "mulTransaction_field_timetable"
+msgstr "ตารางเวลา"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "ดัชนีข้อมูล"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "เวลาเข้า"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "รหัสเวลาเข้า"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "เวลาออก"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "รหัสเวลาออก"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "เวลาทั้งหมด"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "เวลาที่ทำงานไป"
+
+msgid "att_model_multipleTransaction"
+msgstr "รายการบันทึกหลายรายการ"
+
+msgid "att_model_scheduledTransaction"
+msgstr "รายการบันทึกตามกำหนดเวลา"
+
+msgid "based_on_schedule"
+msgstr "เกี่ยวข้องกับตารางทำงาน"
+
+msgid "first_check_in"
+msgstr "เช็คอินแรก"
+
+msgid "last_check_out"
+msgstr "เช็คเอาต์สุดท้าย"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "ปิดทำงานล่วงเวลา"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "คำนวณล่วงเวลา"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "อนุมัติงานล่วงเวลา"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "เรียงลำดับการอนุมัติทำงานล่วงเวลา"
+
+msgid "attRule_missIn_late"
+msgstr "สาย"
+
+msgid "attRule_missIn_absent"
+msgstr "ขาด"
+
+msgid "attRule_missIn_noComplete"
+msgstr "ไม่สมบูรณ์"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "ออกก่อน"
+
+msgid "attRule_missOut_absent"
+msgstr "ขาด"
+
+msgid "attRule_missOut_noComplete"
+msgstr "ไม่สมบูรณ์"
+
+msgid "must_check_in"
+msgstr "ต้องเช็คอิน"
+
+msgid "using_leave_end_time"
+msgstr "ใช้เวลาสิ้นสุดการลา"
+
+msgid "must_check_out"
+msgstr "ต้องเช็คเอาต์"
+
+msgid "using_leave_start_time"
+msgstr "ใช้เวลาเริ่มการลา"
+
+msgid "using_training_end_time"
+msgstr "ใช้เวลาสิ้นสุดการฝึกอบรม"
+
+msgid "using_training_start_time"
+msgstr "ใช้เวลาเริ่มการฝึกอบรม"
+
+msgid "overtimeLevel_ignore"
+msgstr "ไม่สนใจ"
+
+msgid "overtimeLevel_dependsOnWorkTime"
+msgstr "ขึ้นอยู่กับเวลาทำงาน"
+
+msgid "overtimeLevel_dependsOnOvertime"
+msgstr "ขึ้นอยู่กับโอที"
+
+msgid "unscheduled_ignore"
+msgstr "ไม่สนใจ"
+
+msgid "unscheduled_move2normalWork"
+msgstr "ย้ายไปทำงานปกติ"
+
+msgid "unscheduled_move2overtime"
+msgstr "ย้ายไปทำงานล่วงเวลา"
+
+msgid "unscheduled_move2normalOvertime"
+msgstr "ย้ายไปทำงานล่วงเวลาปกติ"
+
+msgid "unscheduled_move2weekendOvertime"
+msgstr "ย้ายไปทำงานล่วงเวลาวันหยุดสุดสัปดาห์"
+
+msgid "unscheduled_move2holidayOvertime"
+msgstr "ย้ายไปทำงานล่วงเวลาวันหยุดนักขัตฤกษ์"
+
+msgid "boolean_option_no"
+msgstr "ไม่"
+
+msgid "boolean_option_yes"
+msgstr "ใช่"
+
+msgid "boolean_option_enable"
+msgstr "เปิดใช้งาน"
+
+msgid "boolean_option_disable"
+msgstr "ปิดใช้งาน"
+
+msgid "breakTime_calculateMode_autoDeduct"
+msgstr "หักอัตโนมัติ"
+
+msgid "breakTime_calculateMode_requiredPunch"
+msgstr "Punch ที่จำเป็น"
+
+msgid "breakTime_earlyInMode_normalWork"
+msgstr "ทำงานปกติ"
+
+msgid "breakTime_earlyInMode_normalOvertime"
+msgstr "ทำงานล่วงเวลาปกติ"
+
+msgid "breakTime_lateInMode_ignore"
+msgstr "ไม่สนใจ"
+
+msgid "breakTime_lateInMode_move2Late"
+msgstr "ย้ายไปสาย"
+
+msgid "breakTime_lateInMode_move2EarlyOut"
+msgstr "ย้ายไปออกก่อน"
+
+msgid "breakTime_lateInMode_move2Absence"
+msgstr "ย้ายไปขาดงาน"
+
+msgid "breakTime_lateInMode_late"
+msgstr "สาย"
+
+msgid "breakTime_lateInMode_earlyLeave"
+msgstr "ออกก่อน "
+
+msgid "breakTime_lateInMode_absent"
+msgstr "ขาดงาน"
+
+msgid "timeInterval_typeOption_normal"
+msgstr "ปกติ"
+
+msgid "timeInterval_typeOption_flexible"
+msgstr "ปกติ"
+
+msgid "timeInterval_typeOption_basedOnRule"
+msgstr "ตามกฏ"
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "ผู้ใช้กำหนด"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "ทำงานปกติ"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "วันหยุด"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "สุดสัปดาห์"
+
+msgid "shift_OTOption_normalWork"
+msgstr "งานปกติ"
+
+msgid "shift_OTOption_normalOT"
+msgstr "งานล่วงเวลาปกติ"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "งานล่วงเวลาสุดสัปดาห์"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "วัน"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "สัปดาห์"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "เดือน"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "ใช้งานกำหนดการชั่วคราว"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "เพิ่มกำหนดการเพิ่มเติม"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "งานปกติ"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "งานล่วงเวลาปกติ"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "งานล่วงเวลาสุดสัปดาห์"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "งานล่วงเวลาวันหยุดนักขัตฤกษ์"
+
+msgid "approvalStatus_option_pending"
+msgstr "รอดำเนินการ"
+
+msgid "approvalStatus_option_reApply"
+msgstr "ใช้ซ้ำอีก"
+
+msgid "approvalStatus_option_revoke"
+msgstr "เพิกถอน"
+
+msgid "approvalStatus_option_auditing"
+msgstr "กำลังทำการตรวจสอบ"
+
+msgid "approvalStatus_option_approved"
+msgstr "อนุมัติแล้ว"
+
+msgid "approvalStatus_option_reject"
+msgstr "ปฏิเสธแล้ว"
+
+msgid "punchState_option_checkIn"
+msgstr "เช็คอิน"
+
+msgid "punchState_option_checkOut"
+msgstr "เช็คเอาต์"
+
+msgid "punchState_option_breakOut"
+msgstr "ออกไปพัก"
+
+msgid "punchState_option_breakIn"
+msgstr "กลับจากพัก"
+
+msgid "punchState_option_overtimeIn"
+msgstr "เข้างานล่วงเวลา"
+
+msgid "punchState_option_overtimeOut"
+msgstr "ออกงานล่วงเวลา"
+
+msgid "punchState_option_noStatus"
+msgstr "ไม่มีสถานะ"
+
+msgid "overtime_option_normalOvertime"
+msgstr "งานล่วงเวลาปกติ"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "งานล่วงเวลาสุดสัปดาห์"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "งานล่วงเวลาวันหยุดนักขัตฤกษ์"
+
+msgid "calculationUnit_option_hour"
+msgstr "ชั่วโมง"
+
+msgid "calculationUnit_option_minute"
+msgstr "นาที"
+
+msgid "calculationUnit_option_workday"
+msgstr "วันทำงาน"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "ชช:นน"
+
+msgid "overtime_option_normalWork"
+msgstr "งานปกติ"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "วันหยุดนักขัตฤกษ์(%(holiday)s)"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "สุดสัปดาห์"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "วันหยุด"
+
+msgid "report_exceptionDisplay_Holiday"
+msgstr "วันนักขัตฤกษ์"
+
+msgid "absent_report"
+msgstr "รายงานขาดงาน"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "ไม่ได้เช็คอิน"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "ไม่ได้เช็คเอาต์"
+
+msgid "weekday_option_monday"
+msgstr "วันจันทร์"
+
+msgid "weekday_option_tuesday"
+msgstr "วันอังคาร"
+
+msgid "weekday_option_wednesday"
+msgstr "วันพุธ"
+
+msgid "weekday_option_thursday"
+msgstr "วันพฤหัสบดี"
+
+msgid "weekday_option_friday"
+msgstr "วันศุกร์"
+
+msgid "weekday_option_saturday"
+msgstr "วันเสาร์"
+
+msgid "weekday_option_sunday"
+msgstr "วันอาทิตย์"
+
+msgid "attRule_globalRule_basicSetting"
+msgstr "ตั้งค่าพื้นฐาน"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "ตั้งค่าสุดสัปดาห์"
+
+msgid "attRule_globalRule_overtimeSetting"
+msgstr "ตั้งค่าลาวงเวลา"
+
+msgid "attRule_globalRule_calculationSetting"
+msgstr "ตั้งค่าคำนวณ"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "ตั้งค่า APP"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "กฎการเช็คอิน"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "ขึ้นกับกำหนดการ"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "เข้าก่อน"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "กฎการเช็คเอาต์"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "ออกหลังสุด"
+
+msgid "attRule_globalRule_monday"
+msgstr "วันจันทร์"
+
+msgid "attRule_globalRule_workingOnMonday"
+msgstr "ทำงานในวันจันทร์"
+
+msgid "attRule_globalRule_tuesday"
+msgstr "วันอังคาร"
+
+msgid "attRule_globalRule_workingOnTuesday"
+msgstr "ทำงานในวันอังคาร"
+
+msgid "attRule_globalRule_wednesday"
+msgstr "วันพุธ"
+
+msgid "attRule_globalRule_workingOnWednesday"
+msgstr "ทำงานในวันพุธ"
+
+msgid "attRule_globalRule_thursday"
+msgstr "วันพฤหัสบดี"
+
+msgid "attRule_globalRule_workingOnThursday"
+msgstr "ทำงานในวันพฤหัสบดี"
+
+msgid "attRule_globalRule_friday"
+msgstr "วันศุกร์"
+
+msgid "attRule_globalRule_workingOnFriday"
+msgstr "ทำงานในวันศุกร์"
+
+msgid "attRule_globalRule_saturday"
+msgstr "วันเสาร์"
+
+msgid "attRule_globalRule_workingOnSaturday"
+msgstr "ทำงานในวันเสาร์"
+
+msgid "attRule_globalRule_sunday"
+msgstr "วันอาทิตย์"
+
+msgid "attRule_globalRule_workingOnSunday"
+msgstr "ทำงานในวันอาทิตย์"
+
+msgid "attRule_globalRule_OTLevel1"
+msgstr "โอทีระดับ 1"
+
+msgid "attRule_globalRule_OTLevel2"
+msgstr "โอทีระดับ 2"
+
+msgid "attRule_globalRule_OTLevel3"
+msgstr "โอทีระดับ 3"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "กฎทำงานล่วงเวลา"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "ระยะเวลาลงเวลาซ้ำ"
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "วันจันทร์"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "วันอังคาร"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "วันพุธ"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "วันพฤหัสบดี"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "วันศุกร์"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "วันเสาร์"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "วันอาทิตย์"
+
+msgid "attRule_weekendSetting_titleWeekend"
+msgstr "สุดสัปดาห์"
+
+msgid "attRule_weekendSetting_workingOnDay"
+msgstr "ทำงานในวันที่"
+
+msgid "attRule_weekendSetting_OTLV1"
+msgstr "โอทีระดับ 1 (ชั่วโมง)"
+
+msgid "attRule_weekendSetting_OTLV2"
+msgstr "โอทีระดับ 2 (ชั่วโมง)"
+
+msgid "attRule_weekendSetting_OTLV3"
+msgstr "โอทีระดับ 3 (ชั่วโมง)"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "กฎการคำนวณ"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "เมื่อสายเกิน"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "นาที  นับเป็นขาด"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "เมื่อออกก่อนเวลาเกิน"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "นาที นับเป็นขาด"
+
+msgid "attRule_globalRule_missIn"
+msgstr "ไม่ได้เช็คอินเป็น"
+
+msgid "attRule_globalRule_missOut"
+msgstr "ไม่ได้เช็คเอาต์เป็น"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "รายการการคำนวณ"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "เช็คอิน"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "กฎการเช็คเอาต์"
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "ออกไปพัก"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "กลับจากพัก"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "เข้างานล่วงเวลา"
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "ออกงานล่วงเวลา"
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "ถ่ายรูป"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "ไม่ต้องการ"
+
+msgid "attRule_globalRule_required"
+msgstr "ต้องการ"
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "รหัสงาน"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "เลือกสถานะ"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "บันทึก"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "พนักงาน"
+
+msgid "schedule_empFrameOption_department"
+msgstr "แผนก"
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "พนักงาน"
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "แผนก"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "เลือกพนักงานทั้งหมด"
+
+msgid "schedule_action_shiftCover"
+msgstr "เขียนทับกะงาน"
+
+msgid "schedule_action_scheduleCover"
+msgstr "เขียนทับกำหนดการ"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "ตารางเวลา"
+
+msgid "form_helpText_title"
+msgstr "แจ้งให้ทราบ"
+
+msgid "shift_helpText_tip1"
+msgstr "1. กรอกกะด้านขวาโดยเลือกตารางเวลาจากด้านซ้าย"
+
+msgid "shift_helpText_tip2"
+msgstr "2. 1ปีไม่เกิน 366 เมื่อหน่วยเป็นวัน"
+
+msgid "shift_helpText_tip3"
+msgstr "3. 1ปีไม่เกิน 52 เมื่อหน่วยเป็นสัปดาห์"
+
+msgid "shift_helpText_tip4"
+msgstr "4. 1ปีไม่เกิน 12 เมื่อหน่วยเป็นเดือน"
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "รายละเอียด"
+
+msgid "shiftList_search_shift"
+msgstr "กะงาน"
+
+msgid "department_tree_selectAll"
+msgstr "เลือกทั้งหมด"
+
+msgid "department_tree_multipleSelect"
+msgstr "เลือกหลายรายการ"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "เลือกแผนกย่อย"
+
+msgid "calculation_page_empSearch"
+msgstr "ค้นหาพนักงาน"
+
+msgid "calculation_page_startDate"
+msgstr "วันที่เริ่ม"
+
+msgid "calculation_page_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "calculation_page_attCalculate"
+msgstr "คำนวณบันทึกเวลา"
+
+msgid "emp_field_hireDate"
+msgstr "วันที่จ้าง"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "กฎงานล่วงเวลา"
+
+msgid "report_searchField_startDate"
+msgstr "วันที่เริ่ม"
+
+msgid "report_searchField_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "report_searchField_employee"
+msgstr "พนักงาน"
+
+msgid "report_column_workDay"
+msgstr "วันทำงาน"
+
+msgid "report_column_breakDuration"
+msgstr "เวลาพัก"
+
+msgid "report_column_totalDurationHrs"
+msgstr "เวลาทั้งหมด (ชั่วโมง)"
+
+msgid "report_column_breakDurationHrs"
+msgstr "เวลาพักเที่ยง (ชั่วโมง)"
+
+msgid "report_column_totalDayOff"
+msgstr "วันหยุด (วัน)"
+
+msgid "report_column_totalWeekend"
+msgstr "สุดสัปดาห์ (วัน)"
+
+msgid "report_column_totalHoliday"
+msgstr "วันนักขัตฤกษ์ (วัน)"
+
+msgid "report_display_setting"
+msgstr "รายงานการตั้งค่าการแสดงผล"
+
+msgid "short_date_format"
+msgstr "รูปแบบวันที่แบบย่อ"
+
+msgid "short_time_format"
+msgstr "รูปแบบเวลาสั้น ๆ"
+
+msgid "resignEmployee_display"
+msgstr "แสดงผลลาออกของพนักงาน"
+
+msgid "multiple_dept"
+msgstr "แสดงแผนภาพแผนก"
+
+msgid "reportSetting_tab_basicDisplaySetting"
+msgstr "จอแสดงผลพื้นฐาน"
+
+msgid "reportSetting_tab_functionKeyDisplay"
+msgstr "ฟังก์ชั่นแสดงผล"
+
+msgid "reportSetting_tab_reportItemsDisplay"
+msgstr "แสดงรายการรายงาน"
+
+msgid "reportSetting_funcKeyField_ID"
+msgstr "รหัส"
+
+msgid "reportSetting_funcKeyField_value"
+msgstr "ค่า"
+
+msgid "reportSetting_funcKeyField_name"
+msgstr "ชื่อ"
+
+msgid "reportSetting_itemField_ID"
+msgstr "รหัส"
+
+msgid "reportSetting_itemField_name"
+msgstr "ชื่อ"
+
+msgid "reportSetting_itemField_minimumUnit"
+msgstr "หน่วยขั้นต่ำ"
+
+msgid "reportSetting_itemField_roundOff"
+msgstr "ปิดรอบ"
+
+msgid "reportSetting_itemField_symbol"
+msgstr "สัญลักษณ์"
+
+msgid "calculation_item_minimumUnit"
+msgstr "หน่วยขั้นต่ำ"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "ชั่วโมง"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "นาที"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "วันทำงาน"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "ชช:นน"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "ความแม่นยำเชิงตัวเลข"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "ปัดตัวเลขลง"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "ปัดตัวเลขเป็นจำนวนเต็ม"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "ปัดตัวเลขขึ้น"
+
+msgid "symbol_in_report"
+msgstr "สัญลักษณ์ในรายงาน"
+
+msgid "replace_schedule_as_following_range"
+msgstr "แทนที่กำหนดการตามแถวต่อไปนี้"
+
+msgid "breakTime_number"
+msgstr "รหัสพัก"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "รูปแบบการนำออก:"
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "ค่าเริ่มต้น"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "จำแนกพนักงานอัตโนมัติ"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "จำแนกแผนกอัตโนมัติ"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "จำแนกวันที่อัตโนมัติ"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "จำแนกเพจอัตโนมัติ"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "โปรดเลือกวันที่เริ่มต้นและวันที่สิ้นสุด"
+
+msgid "attCalculation_alert_dateRangeInvalid"
+msgstr "เวลาไม่ถูกต้องวันที่สิ้นสุดจะต้องช้ากว่าวันที่เริ่มต้น"
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "โปรดเลือกพนักงาน"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "การคำนวณเสร็จสิ้น"
+
+msgid "shift_getDetail_error_notFound"
+msgstr "ไม่พบกะ"
+
+msgid "menu_sys_authGroup"
+msgstr "กลุ่ม"
+
+msgid "menu_sys_authUser"
+msgstr "ผู้ใช้"
+
+msgid "menu_sys_emailSetting"
+msgstr "ตั้งค่าอีเมล์"
+
+msgid "menu_sys_alertSetting"
+msgstr "ตั้งค่าการแจ้งเตือน"
+
+msgid "menu_sys_pdfReportSetting"
+msgstr "ส่งออก PDF"
+
+msgid "menu_sys_ftpSetting"
+msgstr "ตั้งค่า FTP"
+
+msgid "menu_sys_filterBookmark"
+msgstr "บุ๊คมาร์ค"
+
+msgid "menu_sys_databaseBackup"
+msgstr "สำรองข้อมูล"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "ย้ายข้อมูล"
+
+msgid "menu_sys_autoExport"
+msgstr "ส่งออกอัตโนมัติ"
+
+msgid "menu_group_sysMiddlewareTable"
+msgstr "กำหนดตาราง"
+
+msgid "menu_sys_middlewareTableDepartment"
+msgstr "แผนก"
+
+msgid "menu_sys_middlewareTablePosition"
+msgstr "ตำแหน่ง"
+
+msgid "menu_sys_middlewareTableArea"
+msgstr "โซน"
+
+msgid "menu_sys_middlewareTableEmployee"
+msgstr "พนักงาน"
+
+msgid "middlewareTable_field_postTime"
+msgstr "ส่งเวลา"
+
+msgid "middlewareTable_field_flag"
+msgstr "ธง"
+
+msgid "middlewareTable_field_updateTime"
+msgstr "เวลานัดหมาย"
+
+msgid "middlewareTable_field_syncResult"
+msgstr "สถานะ"
+
+msgid "emp_field_multipleArea"
+msgstr "หลายโซน"
+
+msgid "emp_field_activeStatus"
+msgstr "สถานะการใช้งาน"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "ตั้งค่าเสริม"
+
+msgid "menu_sys_companySetting"
+msgstr "ตั้งค่าชื่อบริษัท"
+
+msgid "menu_line_notify"
+msgstr "แจ้งเตือนผ่านไลน์"
+
+msgid "menu_group_sys_user"
+msgstr "ผู้ใช้"
+
+msgid "menu_group_sys_configuration"
+msgstr "ตั้งค่า"
+
+msgid "menu_group_sys_database"
+msgstr "ฐานข้อมูล"
+
+msgid "menu_group_sys_integration"
+msgstr "เชื่อมต่อกับ"
+
+msgid "menu_group_sys_log"
+msgstr "เข้าสู่ระบบ"
+
+msgid "menu_sys_log"
+msgstr "เข้าสู่ระบบ"
+
+msgid "menu_group_sys_task"
+msgstr "งาน"
+
+msgid "menu_sys_intervalSchedule"
+msgstr "ระยะห่าง"
+
+msgid "menu_sys_crontabSchedule"
+msgstr "แท็บ Cron"
+
+msgid "menu_sys_periodicTask"
+msgstr "งานประจำงวด"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "วันที่เริ่มต้น"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "ค้นหาโดย"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "ส่งออกแบบกำหนดเอง"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "เลือกงานที่จะดำเนินการโดยกำหนดเอง"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "เลือกงานที่จะดำเนินการโดยกำหนดเอง"
+
+msgid "user_action_changePassword"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการเปลี่ยนรหัสผ่านของผู้ใช้ที่เลือก"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "ไม่มีวัตถุ%(name)s ที่มีคีย์หลัก%(key)r"
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "เปลี่ยนรหัสผ่านเรียบร้อย"
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+msgid "adminLog_field_objects"
+msgstr "วัตถุ"
+
+msgid "group_field_name"
+msgstr "ชื่อ"
+
+msgid "autoExport_task_error_data"
+msgstr "ข้อมูลไม่ถูกต้อง"
+
+msgid "autoExport_task_error_email"
+msgstr "อีเมล์ไม่ถูกต้อง"
+
+msgid "autoExport_task_error_interval"
+msgstr "ค่าช่วงเวลาไม่ถูกต้อง"
+
+msgid "autoExport_task_error_time_point"
+msgstr "ค่าจุดเวลาไม่ถูกต้อง"
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "ความยาวรหัสพนักงาน"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "ชื่อไฟล์"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "รูปแบบรหัสผ่านไม่ถูกต้อง หรือ ไม่ทราบแฮชชิงอัลกอริทึม"
+
+msgid "password_mismatch_errorMessage"
+msgstr "รหัสผ่านทั้งสองไม่ตรงกัน"
+
+msgid "user_createForm_password"
+msgstr "รหัสผ่าน"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "ยืนยันรหัสผ่าน"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "โปรดใส่รหัสผ่านเดิมเพื่อยืนยัน"
+
+msgid "stmp_server_is_required"
+msgstr "ต้องใช้เซิร์ฟเวอร์ SMTP"
+
+msgid "email_account_is_required"
+msgstr "ต้องมีบัญชีอีเมล์"
+
+msgid "email_password_is_required"
+msgstr "ต้องระบุรหัสผ่านอีเมล"
+
+msgid "store_path_is_required"
+msgstr "จำเป็นต้องใช้ไฟล์ SN"
+
+msgid "store_path_is_wrong"
+msgstr "วิธีการเก็บผิด"
+
+msgid "autoExport_task_error_data: "
+msgstr "วัน"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "ความยาวหมายเลขพนักงาน"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "ช่วงเวลา"
+
+msgid "software_category_is_required"
+msgstr "ต้องมีหมวดหมู่ซอฟต์แวร์"
+
+msgid "migrate_fields_is_required"
+msgstr "ต้องการฟิลด์ของย้ายข้อมูล"
+
+msgid "migrate_database_type_is_required"
+msgstr "ต้องมีประเภทฐานข้อมูลการย้าย"
+
+msgid "migrate_database_address_is_required"
+msgstr "ต้องระบุที่อยู่ไอพีของฐานข้อมูลการย้ายข้อมูล"
+
+msgid "migrate_database_port_is_required"
+msgstr "ต้องระบุหมายเลขพอร์ตของฐานข้อมูลการย้าย"
+
+msgid "migrate_database_name_is_required"
+msgstr "จำเป็นต้องใช้ชื่อฐานข้อมูลการย้าย"
+
+msgid "migrate_database_user_is_required"
+msgstr "ต้องระบุชื่อผู้ใช้ของฐานข้อมูลการย้าย"
+
+msgid "migrate_database_password_is_required"
+msgstr "ต้องมีรหัสผ่านของฐานข้อมูลการโยกย้าย"
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "ทดสอบการเชื่อมต่อผิดพลาด"
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "ยกเว้นการเชื่อมต่อฐานข้อมูล"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured"
+msgstr "สำรองข้อมูลผิดพลาด โปรดตรวจสอบให้แน่ใจว่ามีกำหนดค่า sqlcmd.exe"
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured"
+msgstr "สำรองข้อมูลผิดพลาด โปรดตรวจสอบให้แน่ใจว่ามีกำหนดค่า mysqldump.exe"
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured"
+msgstr "สำรองข้อมูลผิดพลาด โปรดตรวจสอบให้แน่ใจว่ามีกำหนดค่า pg_dump.exe"
+
+msgid "backup_failed_please_make_sure_exp_is_configured"
+msgstr "สำรองข้อมูลผิดพลาด โปรดตรวจสอบว่ามีกำหนดค่า exp.exe"
+
+msgid "dbBackup_action_dbRestoreErrorPSQLNotFount"
+msgstr "คืนค่าข้อมูลผิดพลาด โปรดตรวจสอบให้แน่ใจว่าได้กำหนดค่า psql.exeแล้ว"
+
+msgid "dbBackup_action_dbRestoreErrorNoSupport"
+msgstr "คืนค่าผิดพลาดสนับสนุนเฉพาะฐานข้อมูล PostgreSQL"
+
+msgid "dbBackup_action_dbRestoreErrorFileNoFound"
+msgstr "คืนค่าผิดพลาดไม่พบไฟล์สำรองข้อมูล"
+
+msgid "dbBackup_action_dbRestoreErrorIllegalDatabaseName"
+msgstr "คืนค่าผิดพลาด โปรดทำให้ชื่อฐานข้อมูลไม่ได้ใช้"
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(engine) ไม่สามารถสำรองข้อมูลได้"
+
+msgid "adminLog_field_user"
+msgstr "ผู้ใช้งาน"
+
+msgid "adminLog_field_action"
+msgstr "การดำเนินการ"
+
+msgid "adminLog_field_contentType"
+msgstr "ประเภทเนื้อหา"
+
+msgid "adminLog_field_actionStatus"
+msgstr "สถานะ"
+
+msgid "actionStatus_option_fail"
+msgstr "ผิดพลาด"
+
+msgid "actionStatus_option_success"
+msgstr "เรียบร้อย"
+
+msgid "adminLog_field_description"
+msgstr "รายละเอียด"
+
+msgid "adminLog_field_ipAddress"
+msgstr "ไอพี"
+
+msgid "adminLog_field_routable"
+msgstr "ตาราง"
+
+msgid "adminLog_field_operationTime"
+msgstr "เวลาดำเนินการ"
+
+msgid "base_model_adminLog"
+msgstr "เข้าสู่ระบบ"
+
+msgid "autoExportTask_field_code"
+msgstr "รหัส"
+
+msgid "autoExportTask_field_name"
+msgstr "ชื่อ"
+
+msgid "autoExportTask_field_params"
+msgstr "พารามิเตอร์"
+
+msgid "base_model_autoExportTask"
+msgstr "ส่งออกอัตโนมัติ"
+
+msgid "bookmark_field_title"
+msgstr "หัวข้อ"
+
+msgid "bookmark_field_user"
+msgstr "ผู้ใช้"
+
+msgid "bookmark_field_contentType"
+msgstr "ประเภทเนื้อหา"
+
+msgid "bookmark_field_filtersString"
+msgstr "ตัวกรอง"
+
+msgid "bookmark_menu_noBookmarks"
+msgstr "ไม่มีบุ๊กมาร์ก"
+
+msgid "bookmark_menu_newBookmark"
+msgstr "บุ๊กมาร์กใหม่"
+
+msgid "bookmark_menu_enterBookmarkTitle"
+msgstr "ป้อนชื่อบุ๊คมาร์ค"
+
+msgid "bookmark_menu_saveBookmark"
+msgstr "บันทึกบุ๊คมาร์ค"
+
+msgid "bookmark_field_isShared"
+msgstr "แชร์แล้ว"
+
+msgid "bookmark_field_savedTime"
+msgstr "เวลาที่บันทึก"
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "ชื่อซ้ำ"
+
+msgid "base_model_bookmark"
+msgstr "บุ๊คมาร์ค"
+
+msgid "base_integrationTable_employee"
+msgstr "พนักงาน"
+
+msgid "base_integrationTable_position"
+msgstr "ตำแหน่ง"
+
+msgid "base_integrationTable_department"
+msgstr "แผนก"
+
+msgid "base_integrationTable_area"
+msgstr "โซน"
+
+msgid "enableStatus_option_enable"
+msgstr "เปิดการใช้งาน"
+
+msgid "enableStatus_option_disable"
+msgstr "ปิดการใช้งาน"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "เวลาพัก"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "สรุปการเข้างานระหว่างวัน"
+
+msgid "lineNotify_field_department"
+msgstr "แผนก"
+
+msgid "lineNotify_field_includeSubDepartment"
+msgstr "แผนกย่อย"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "โทเค็น"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "คลิกปุ่มการเชื่อมต่อ"
+
+msgid "lineNotify_field_messageType"
+msgstr "ประเภทข้อความ"
+
+msgid "lineNotify_field_pushTime"
+msgstr "ช่วงเวลา"
+
+msgid "lineNotify_field_isValid"
+msgstr "มีประสิทธิภาพ"
+
+msgid "lineNotify_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "base_model_lineNotifySetting"
+msgstr "ตั้งค่าแจ้งเตือนผ่านไลน์"
+
+msgid "dbMigrate_field_name"
+msgstr "ย้ายชื่อ"
+
+msgid "dbMigrate_field_value"
+msgstr "ย้ายเนื้อหา"
+
+msgid "base_model_dbBackupLog"
+msgstr "log สำรองฐานข้อมูล"
+
+msgid "dbBackupLog_field_type"
+msgstr "ฐานข้อมูล"
+
+msgid "dbBackupLog_field_name"
+msgstr "ชื่อฐานข้อมูล"
+
+msgid "dbBackupLog_field_operator"
+msgstr "ผู้ปฏิบัติการ"
+
+msgid "dbBackupLog_field_filePath"
+msgstr "ที่จัดเก็บข้อมูล"
+
+msgid "dbBackupLog_field_time"
+msgstr "เวลา"
+
+msgid "dbBackupLog_field_status"
+msgstr "สถานะ"
+
+msgid "dbBackupLog_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "dbBackupLog_field_frequency"
+msgstr "ความถี่"
+
+msgid "dbBackupLog_field_pointDay"
+msgstr "วัน"
+
+msgid "dbBackupLog_field_pointTime"
+msgstr "เวลา"
+
+msgid "dbBackupLog_action_dbBackupAuto"
+msgstr "สำรองข้อมูลโดยอัตโนมัติ"
+
+msgid "dbBackupLog_action_dbBackupManually"
+msgstr "สำรองข้อมูลโดยตนเอง"
+
+msgid "dbBackupLog_action_dbBackupManuallyConfirmation"
+msgstr "คุณแน่ใจหรือไม่ว่าจะสำรองฐานข้อมูลด้วยตนเอง"
+
+msgid "backup_status_success"
+msgstr "เรียบร้อย"
+
+msgid "backup_status_failed"
+msgstr "ผิดพลาด"
+
+msgid "dbBackupLog_action_dbRestoreManually"
+msgstr "คืนค่าด้วยตนเอง"
+
+msgid "dbBackupLog_field_backupFile"
+msgstr "ไฟล์สำรองข้อมูล"
+
+msgid "model_send_email"
+msgstr "ส่งอีเมล์"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "รหัสผ่าน"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "คีย์สาธารณะ"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "ที่อยู่เซิร์ฟเวอร์"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "พอร์ต"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "วิธีที่น่าเชื่อถือ"
+
+msgid "sftpSetting_field_username"
+msgstr "ผู้ใช้"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "รหัสผ่าน"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "คีย์ SSH"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "รหัสผ่าน"
+
+msgid "sftp_setting"
+msgstr "ตั้งค่า SFTP "
+
+msgid "sysParam_field_name"
+msgstr "ชื่อ"
+
+msgid "sysParam_field_type"
+msgstr "ประเภท"
+
+msgid "sysParam_field_value"
+msgstr "ค่า"
+
+msgid "sysParam_default_ruleName"
+msgstr "กฎเข้างานตามค่าเริ่มต้น"
+
+msgid "system_setting"
+msgstr "ตั้งค่าระบบ"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "วันที่จาก %(from)s ถึง %(to)s"
+
+msgid "reportExport_author"
+msgstr "ผู้เขียน"
+
+msgid "reportExport_createTime"
+msgstr "เวลาสร้าง"
+
+msgid "pdfExport_pageSize"
+msgstr "ขนาดหน้ากระดาษ"
+
+msgid "pdfExport_orientation"
+msgstr "ปรับตัว"
+
+msgid "pdfExport_footerLeft"
+msgstr "ส่วนท้ายซ้าย"
+
+msgid "pdfExport_footerRight"
+msgstr "ส่วนท้ายขวา"
+
+msgid "pdfExport_auto"
+msgstr "ออโต้"
+
+msgid "pdfExport_orientation_portrait"
+msgstr "ภาพเหมือน"
+
+msgid "pdfExport_orientation_landscape"
+msgstr "ภูมิประเทศ"
+
+msgid "pdfExport_blank"
+msgstr "ว่างเปล่า"
+
+msgid "pdfExport_pageToPage"
+msgstr "หน้า / หน้าทั้งหมด"
+
+msgid "pdfExport_author"
+msgstr "ผู้เขียน"
+
+msgid "pdfExport_time"
+msgstr "เวลา"
+
+msgid "user_createFrom_legendInformation"
+msgstr "ข้อมูล"
+
+msgid "user_createFrom_legendPermission"
+msgstr "การอนุญาต"
+
+msgid "user_createFrom_isStaffNoCheckMsg"
+msgstr "หากไม่ได้ทำเครื่องหมายฟิลด์นี้ผู้ใช้รายนี้จะไม่อนุญาตให้ลงชื่อเข้าใช้"
+
+msgid "permission_verboseName_add"
+msgstr "เพิ่ม"
+
+msgid "permission_verboseName_view"
+msgstr "ดู"
+
+msgid "permission_verboseName_change"
+msgstr "แก้ไข"
+
+msgid "permission_verboseName_delete"
+msgstr "ลบ"
+
+msgid "permission_verboseName_changePassword"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "พนักงาน"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "แผนก"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "ตำแหน่ง"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "โซน"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "ลาออก"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "ข้อมูลเอกสาร"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "เอกสารของพนักงาน"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "รูปภาพ"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "จุดเชื่อมเวิร์คโฟลว์"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "เครื่องมือเวิร์คโฟลว์"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "กฎเวิร์คโฟลว์"
+
+msgid "permission_verboseName_attDeptAttrule"
+msgstr "กฎแผนก"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "ตั้งค่ารายงาน"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "ตารางเวลา"
+
+msgid "permission_verboseName_attShift"
+msgstr "กะทำงาน"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "Log แบบกำหนดเอง"
+
+msgid "permission_verboseName_attLeave"
+msgstr "ลางาน"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "ล่วงเวลา"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "ประเภทลา"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "วันหยุดนักขัตฤกษ์"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "คำนวณรายงาน"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "รายงานการเข้างานประจำวัน"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "รายงานสรุปทำงาน"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "รายงานสรุปลางาน"
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "รายงานสรุปบัตร"
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "รายงานเฉพาะเวลาเข้ากับเวลาออก"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "รายงานยกเว้น"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "รายงานสรุปแผนก"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "รายงานบัตรเวลา"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "รายงานมาสาย"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "รายงานออกก่อนเวลา"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "รายงานขาดงาน"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "รายงานบันทึกเวลาทั้งหมด"
+
+msgid "permission_verboseName_attTraining"
+msgstr "เทรนนิ่ง"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "พักเที่ยง"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "ตารางเวลา"
+
+msgid "permission_verboseName_attSetting"
+msgstr "ตั้งค่าบันทึกเวลา"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "ตารางเวลาแบบชั่วคราว"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "ประเภทเทรนนิ่ง"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "เปลี่ยนตารางเวลา"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "การอนุญาตรายงาน"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "อุปกรณ์"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "บันทึกการทำงานของอุปกรณ์"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "คำสั่ง"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "อัพโหลดบันทึกการทำงาน"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "เทมเพลตไบโอ"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "ข้อความสาธารณะ"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "ข้อความส่วนตัว"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "รหัสงาน"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "รายการแอพพลิเคชั่น"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "ประกาศ"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "แจ้งเตือน"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "บันทึกการทำงานของแอปพลิเคชั่น"
+
+msgid "permission_verboseName_sysUser"
+msgstr "ผู้ใช้"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "กลุ่ม"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "การตั้งค่า FTP"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "ส่งออกอัตโนมัติ"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "บันทึกการทำงาน"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "บุ๊คมาร์ค"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "ตั้งค่า FTP"
+
+msgid "permission_verboseName_psnl"
+msgstr "พนักงาน"
+
+msgid "permission_verboseName_iclock"
+msgstr "อุปกรณ์"
+
+msgid "permission_verboseName_att"
+msgstr "บันทึกเวลา"
+
+msgid "permission_verboseName_payroll"
+msgstr "คิดเงินเดือน"
+
+msgid "permission_verboseName_sys"
+msgstr "ระบบ"
+
+msgid "autoExport_task_manualStart"
+msgstr "วันที่เริ่ม"
+
+msgid "autoExport_task_manualEnd"
+msgstr "วันที่สิ้นสุด"
+
+msgid "autoExport_task_queryField"
+msgstr "ค้นหาจาก"
+
+msgid "autoExport_task_filePrefix"
+msgstr "ชื่อไฟล์"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "ตั้งค่ารูปแบบ"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "ตั้งค่าตัวกรองข้อมูล"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "ตั้งเวลาส่งออก"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "ตั้งค่าที่จัดเก็บส่งออก"
+
+msgid "autoExport_task_departments"
+msgstr "แผนก"
+
+msgid "autoExport_task_areas"
+msgstr "โซน"
+
+msgid "autoExport_task_code"
+msgstr "โค๊ด"
+
+msgid "autoExport_task_name"
+msgstr "ชื่อ"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "เทมเพลตข้อมูล"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "(โปรดลากฟิลด์ที่คุณต้องการส่งออกจากด้านขวาไปยังกล่องข้อความด้านล่าง)"
+
+msgid "autoExport_task_shortDate"
+msgstr "วันที่สั้นๆ"
+
+msgid "autoExport_task_shortTime"
+msgstr "เวลาสั้นๆ"
+
+msgid "autoExport_task_frequency"
+msgstr "ความถี่"
+
+msgid "frequency_option_none"
+msgstr "ลำดับ"
+
+msgid "frequency_option_daily"
+msgstr "ประจำวัน"
+
+msgid "frequency_option_weekly"
+msgstr "ประจำสัปดาห์"
+
+msgid "frequency_option_monthly"
+msgstr "ประจำเดือน"
+
+msgid "autoExport_task_exportDay"
+msgstr "วัน"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "เวลาอัพโหลด"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "เวลาที่ลงเวลา"
+
+msgid "autoExport_task_interval"
+msgstr "ระยะห่าง"
+
+msgid "autoExport_task_exportFormat"
+msgstr "ฟอร์แมต"
+
+msgid "autoExport_task_exportTime"
+msgstr "เวลา"
+
+msgid "autoExport_task_deadline"
+msgstr "วันกำหนดส่ง"
+
+msgid "autoExport_deadline_previous"
+msgstr "ก่อนหน้า"
+
+msgid "autoExport_deadline_current"
+msgstr "ปัจจุบัน"
+
+msgid "autoExport_task_exportPath"
+msgstr "โฟลเดอร์ส่งออก"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "	 (Position: \\files\\temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "เซิร์ฟเวอร์ FTP"
+
+msgid "autoExport_task_ftpPath"
+msgstr "โฟลเดอร์ FTP"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "(ฟอร์แมต: /Folder/)"
+
+msgid "autoExport_task_exportEmail"
+msgstr "อีเมล์"
+
+msgid "autoExport_task_empCodeLength"
+msgstr "รหัสพนักงาน"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "ความยาวของรหัสพนักงาน"
+
+msgid "autoExport_task_departmentCode"
+msgstr "รหัสแผนก"
+
+msgid "autoExport_task_departmentName"
+msgstr "ชื่อแผนก"
+
+msgid "autoExport_task_punchTime"
+msgstr "เวลาทำงาน"
+
+msgid "autoExport_task_verifyType"
+msgstr "ประเภทยืนยัน"
+
+msgid "autoExport_task_workCode"
+msgstr "รหัสงาน"
+
+msgid "autoExport_task_cardNumber"
+msgstr "หมายเลขบัตร"
+
+msgid "autoExport_task_areaAlias"
+msgstr "โซน"
+
+msgid "autoExport_task_terminalAlias"
+msgstr "ชื่ออุปกรณ์"
+
+msgid "autoExport_task_terminalSN"
+msgstr "หมายเลขซีเรียล"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "ย้ายจาก"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "ฐานข้อมูล"
+
+msgid "db_sqlserver"
+msgstr "MSSQL"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "ที่อยู่"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "พอร์ต"
+
+msgid "dataMigrate_front_databaseName"
+msgstr "ชื่อ"
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "ผู้ใช้"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "รหัสผ่าน"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "ฟิลด์ที่จะย้าย"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "ระยะเวลา"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "สถานะย้ายฐานข้อมูล"
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "ทดสอบการเชื่อมต่อ"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "ย้าย"
+
+msgid "dataMigrate_front_btn_clearConnectInfo"
+msgstr "เคลียร์การเชื่อมต่อ"
+
+msgid "dataMigrate_front_area_or_zone"
+msgstr "โซน"
+
+msgid "dataMigrate_front_startTime"
+msgstr "เวลาเริ่มต้น"
+
+msgid "dataMigrate_front_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "ไฟล์ Sqlite"
+
+msgid "dataMigrate_cache_clean"
+msgstr "เคลียร์แคช"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "หากยังไม่ได้ดำเนินการย้ายลองใช้วิธีนี้เพื่อแก้ไข"
+
+msgid "exportForm_itemLabel_scope"
+msgstr "ขอบเขตการส่งออก:"
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "หน้าปัจจุบัน"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "ข้อมูลทั้งหมด"
+
+msgid "line_taken_btn"
+msgstr "คลิกที่นี่เพื่อเข้าสู่หน้าเว็บ Line Notify"
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "ตั้งค่าแจ้งเตือนบันทึกเวลา"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "จำนวนมาสายทำงาน"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "จำนวนออกก่อนเวลา"
+
+msgid "alertSettingPage_label_absentExceed"
+msgstr "จำนวนขาดงาน"
+
+msgid "alertSettingPage_exceedUnit_times"
+msgstr "เวลา"
+
+msgid "alertSettingPage_label_emailSendingFrequency"
+msgstr "ส่งความถี่"
+
+msgid "alertSettingPage_label_emailSendingDay"
+msgstr "วัน"
+
+msgid "alertSettingPage_label_emailSendingTime"
+msgstr "เวลา"
+
+msgid "alertSettingPage_label_sendingDay"
+msgstr "วันที่ส่ง"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "วันปัจจุบัน"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "วันถัดไป"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "รวมวันปัจจุบัน"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "อนุมัติตั้งค่าแจ้งเตือน"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "แจ้งเตือนอีเมล์"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "พอร์ต"
+
+msgid "alertSettingPage_btn_submit"
+msgstr "ยื่นเสนอ"
+
+msgid "backup_database"
+msgstr "ฐานข้อมูล"
+
+msgid "backup_database_name"
+msgstr "ชื่อฐานข้อมูล"
+
+msgid "backup_store_path"
+msgstr "ที่จัดเก็บสโตร์"
+
+msgid "backup_frequency"
+msgstr "ความถี่"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "ครั้งเดียวเท่านั้น"
+
+msgid "backup_day"
+msgstr "วัน"
+
+msgid "backup_time"
+msgstr "เวลา"
+
+msgid "backup_last_backup"
+msgstr "สำรองข้อมูลล่าสุด"
+
+msgid "backup_file"
+msgstr "ไฟล์สำรอง"
+
+msgid "btn_save"
+msgstr "บันทึก"
+
+msgid "btn_apply"
+msgstr "ตกลง"
+
+msgid "btn_backup"
+msgstr "สำรองข้อมูล"
+
+msgid "emailSettingPage_label_smtpServer"
+msgstr "เซิร์ฟเวอร์ Smtp"
+
+msgid "emailSettingPage_label_smtpServerPort"
+msgstr "พอร์ต"
+
+msgid "emailSettingPage_label_enableSSL"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "บัญชีอีเมล์"
+
+msgid "emailSettingPage_help_emailAccount"
+msgstr "ชื่อโดเมน / ผู้ใช้โดเมน"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "รหัสผ่าน"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "ที่อยู่อีเมล์"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "นำเสนอ"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "ตั้งค่าสื่อสารอุปกรณ์"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "เปิดใช้งานอุปกรณ์ลงทะเบียน"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "เปิดใช้งานอุปกรณ์นี้จะอนุญาตเฉพาะอุปกรณ์ที่ทำเครื่องหมายว่าอุปกรณ์การลงทะเบียนสามารถอัปโหลดข้อมูลผู้ใช้ได้"
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "เปิดใช้งานการอัพโหลดชื่อ"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "เปิดใช้งานการอัพโหลดชื่อ"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "เปิดใช้งานการอัพโหลดการ์ด"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "เปิดใช้งานการอัพโหลดการ์ด"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "ตั้งค่าอื่นๆ"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "สำรองรูปถ่าย"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "ที่จัดเก็บรูปภาพพนักงาน"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "นำเสนอ"
+
+msgid "translation_option_english"
+msgstr "อังกฤษ"
+
+msgid "translation_option_korean"
+msgstr "อาหรับคลาสสิก"
+
+msgid "translation_option_japanese"
+msgstr "ญี่ปุ่น"
+
+msgid "translation_option_spanish"
+msgstr "สเปน"
+
+msgid "translation_option_thai"
+msgstr "ไทย"
+
+msgid "translation_option_arabic"
+msgstr "อาหรับ"
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr "google แปล"
+
+msgid "translation_btn_onlineTranslate"
+msgstr "แปลออนไลน์"
+
+msgid "database_backup_is_under_processing"
+msgstr "สำรองฐานข้อมูลอยู่ระหว่างดำเนินการ โปรดลองอีกครั้งในภายหลัง"
+
+msgid "dbMigrate_status_processing"
+msgstr "ประมวลผล"
+
+msgid "dbMigrate_status_finish"
+msgstr "เรียบร้อย"
+
+msgid "dbMigrate_status_exception"
+msgstr "ข้อยกเว้น"
+
+msgid "dbMigrate_status_pending"
+msgstr "รอดำเนินการ"
+
+msgid "login_authorize_license_missing"
+msgstr "ไม่พบใบอนุญาต"
+
+msgid "login_authorize_md5_error"
+msgstr "ไฟล์ระบบถูกแก้ไขโดยไม่ได้รับอนุญาต"
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "อุปกรณ์เกินจำนวนที่ได้รับอนุญาตแล้ว"
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "พนักงานเกินจำนวนที่ได้รับอนุญาตแล้ว"
+
+msgid "login_authorize_license_app_exceed"
+msgstr "แอปพลิเคชั่นเกินจำนวนที่ได้รับอนุญาตแล้ว"
+
+msgid "login_authorize_database_error"
+msgstr "ตารางฐานข้อมูลถูกทำเครื่องหมายว่าขัดข้องโปรดตรวจสอบและซ่อมแซม"
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "เชื่อมต่อฐานข้อมูลผิดพลาด %(db_ver)s."
+
+msgid "login_authorize_illegal_username"
+msgstr "ชื่อผู้ใช้ไม่ถูกต้อง"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "ล็อกอินผิดพลาด %(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "ล็อกอินผิดพลาด ผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+
+msgid "login_authorize_invalid_username"
+msgstr "ผู้ใช้ไม่ถูกต้อง"
+
+msgid "login_authorize_illegal_login"
+msgstr "เข้าสู่ระบบไม่ถูกต้อง"
+
+msgid "login_authorize_license_inactive"
+msgstr "ใบอนุญาตไม่ทำงาน"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "อุปกรณ์"
+
+msgid "menu_device_terminal"
+msgstr "อุปกรณ์"
+
+msgid "menu_device_terminalCommand"
+msgstr "คำสั่งอุปกรณ์"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "ข้อความ"
+
+msgid "menu_device_publicMessage"
+msgstr "สาธารณะ"
+
+msgid "menu_device_privateMessage"
+msgstr "ส่วนบุคคล"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "ข้อมูล"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "รหัสงาน"
+
+msgid "menu_device_terminalBioData"
+msgstr "เทมเพลตไบโอ"
+
+msgid "menu_device_transaction"
+msgstr "ข้อมูลบันทึกเวลาทั้งหมด"
+
+msgid "menu_group_device_terminalLog"
+msgstr "ข้อมูลบันทึก"
+
+msgid "menu_device_terminalLog"
+msgstr "ข้อมูลบันทึกของอุปกรณ์"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "อัพโหลดข้อมูลบันทึก"
+
+msgid "menu_group_mobile_application"
+msgstr "แอปพลิเคชั่น"
+
+msgid "menu_mobile_appList"
+msgstr "บัญชี"
+
+msgid "menu_mobile_announcement"
+msgstr "ประกาศ"
+
+msgid "menu_mobile_notification"
+msgstr "แจ้งให้ทราบ"
+
+msgid "menu_mobile_appActionLog"
+msgstr "ข้อมูลบันทึก"
+
+msgid "menu_group_deviceConfiguration"
+msgstr "การกำหนดค่า"
+
+msgid "menu_iclock_deviceConfig"
+msgstr "การกำหนดค่า"
+
+msgid "privateMessage_field_employee"
+msgstr "พนักงาน"
+
+msgid "privateMessage_field_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "privateMessage_field_duration"
+msgstr "ช่วงเวลา"
+
+msgid "privateMessage_field_content"
+msgstr "เนื้อหา"
+
+msgid "privateMsg_action_add"
+msgstr "เพิ่ม"
+
+msgid "privateMsg_action_addDescription"
+msgstr "เพิ่ม"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "send_message"
+msgstr "ส่งข้อความ"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "แน่ใจหรือไม่ว่าต้องการส่งข้อความ"
+
+msgid "publicMessage_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "publicMessage_field_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "publicMessage_field_duration"
+msgstr "ช่วงเวลา"
+
+msgid "publicMessage_field_content"
+msgstr "เนื้อหา"
+
+msgid "publicMsg_action_add"
+msgstr "เพิ่ม"
+
+msgid "publicMsg_action_addDescription"
+msgstr "เพิ่ม"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "terminal_op_reboot"
+msgstr "รีบูต"
+
+msgid "terminal_op_rebootDescription"
+msgstr "รีบูตอุปกรณ์"
+
+msgid "terminal_op_rebootHelp"
+msgstr "รีบูตอุปกรณ์"
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "คุณแน่ใจว่าจะรีบูตอุปกรณ์ที่เลือกหรือไม่(s)"
+
+msgid "terminal_action_reUploadData"
+msgstr "ส่งข้อมูลผู้ใช้"
+
+msgid "terminal_action_reUploadDataDescription"
+msgstr "อัปโหลดข้อมูลผู้ใช้จากอุปกรณ์อีกครั้ง"
+
+msgid "terminal_action_reUploadDataHelpTxt"
+msgstr "อัปโหลดข้อมูลผู้ใช้จากอุปกรณ์อีกครั้ง"
+
+msgid "reUploadData_field_employee"
+msgstr "พนักงาน"
+
+msgid "reUploadData_field_employeeCode"
+msgstr "รหัสพนักงาน"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "คุณแน่ใจหรือไม่ว่าจะอัปโหลดข้อมูลสำหรับอุปกรณ์ที่เลือกอีกครั้ง"
+
+msgid "reUploadData_field_transaction"
+msgstr "ข้อมูลบันทึกเวลาทั้งหมด"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "เวลาเริ่มต้น"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "อัพโหลดข้อมูลบันทึก"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "อัพโหลดข้อมูลบันทึก"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "อัพโหลดข้อมูลบันทึก"
+
+msgid "reloadData_field_employee"
+msgstr "พนักงาน"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "รูปภาพ"
+
+msgid "reloadData_field_fingerprint"
+msgstr "ลายนิ้วมือ"
+
+msgid "reloadData_field_face"
+msgstr "ใบหน้า"
+
+msgid "reloadData_field_palm"
+msgstr "ฝ่ามือ"
+
+msgid "reloadData_field_fingerVein"
+msgstr "หลอดเลือดดำ"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "ไบโอรูปภาพ"
+
+msgid "terminal_op_reloadData"
+msgstr "ซิงค์ข้อมูลไปยังอุปกรณ์"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "ซิงค์ข้อมูลผู้ใช้จากระบบไปยังอุปกรณ์"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "ซิงค์ข้อมูลผู้ใช้จากระบบไปยังอุปกรณ์"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "เวลาเริ่มต้น"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "ล้างทั้งหมด"
+
+msgid "terminal_op_clearData"
+msgstr "ล้างข้อมูลทั้งหมด"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "ล้างข้อมูลทั้งหมดในอุปกรณ์รวมถึง (ข้อมูลผู้ใช้บันทึกรูปภาพถ่าย ฯลฯ )"
+
+msgid "terminal_op_clearDataHelp"
+msgstr "ล้างข้อมูลทั้งหมดในอุปกรณ์รวมถึง (ข้อมูลผู้ใช้บันทึกรูปภาพถ่าย ฯลฯ )"
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "คุณแน่ใจหรือไม่ว่าล้างข้อมูลทั้งหมดในอุปกรณ์ {0} ที่เลือก"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "ล้างข้อมูลบันทึกเวลา"
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "ล้างข้อมูลบันทึกเวลา"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "ล้างข้อมูลบันทึกเวลา"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลบักทึกทั้งหมดในอุปกรณ์ {0} ที่เลือกไว้"
+
+msgid "terminal_op_readInformation"
+msgstr "อ่านข้อมูล"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "อ่านข้อมูล"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "อ่านข้อมูล"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "คุณแน่ใจหรือว่าอ่านข้อมูลจากอุปกรณ์ที่เลือก"
+
+msgid "terminal_op_deleteCapture"
+msgstr "ล้างรูปภาพถ่าย"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "ล้างรูปภาพถ่ายทั้งหมดในอุปกรณ์"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "ล้างรูปภาพถ่ายทั้งหมดในอุปกรณ์"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "คุณแน่ใจหรือไม่ว่าจะล้างรูปภาพของอุปกรณ์ {0} ที่เลือก"
+
+msgid "terminal_op_clearAll"
+msgstr "ล้างข้อมูลทั้งหมด"
+
+msgid "terminal_op_clearAllHelpTxt"
+msgstr "ดำเนินการนี้จะล้างข้อมูลทั้งหมดในอุปกรณ์ข้อมูลรวมถึงข้อมูลบันทึกและรูปภาพและอื่น ๆ"
+
+msgid "terminal_op_clearAllDescription"
+msgstr "ดำเนินการนี้จะล้างข้อมูลทั้งหมดในอุปกรณ์ข้อมูลรวมถึงข้อมูลบันทึกและรูปภาพและอื่น ๆ"
+
+msgid "terminal_op_clearAllConfirmation"
+msgstr "คุณแน่ใจหรือไม่ว่าล้างข้อมูลทั้งหมดในอุปกรณ์"
+
+msgid "duplicate_punch_period"
+msgstr "ระยะเวลาซ้ำ (m)"
+
+msgid "minutes/seconds"
+msgstr "นาที"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "	 ระยะเวลาซ้ำ"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "	 ระยะเวลาซ้ำ"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "	 ระยะเวลาซ้ำ"
+
+msgid "terminal_capture"
+msgstr "รูปภาพ"
+
+msgid "capture_no_photo"
+msgstr "ไม่มีรูปภาพ"
+
+msgid "capture_take_photo_no_save"
+msgstr "ถ่ายรูปโดยไม่บันทึก"
+
+msgid "capture_verify_photo_and_save"
+msgstr "ยืนยันรูปภาพและบันทึก"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "ตรวจสอบเรียบร้อยแล้วและบันทึก"
+
+msgid "capture_verify_failed_and_save"
+msgstr "การตรวจสอบผิดพลสาดและบันทึก"
+
+msgid "terminal_op_captureSetting"
+msgstr "ตั้งค่ารูปภาพ"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "แก้ไขตั้งค่าเพื่อเปิดใช้งานหรือปิดใช้งานบันทึกรูปภาพ"
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "แก้ไขตั้งค่าเพื่อเปิดใช้งานหรือปิดใช้งานบันทึกรูปภาพ"
+
+msgid "terminal_captureUpload"
+msgstr "อัพโหลดรูปภาพ"
+
+msgid "captureUpload_disabled"
+msgstr "ปืดการใช้งาน"
+
+msgid "captureUpload_enabled"
+msgstr "เปิดการใช้งาน"
+
+msgid "terminal_op_captureUpload"
+msgstr "อัพโหลดรูปภาพ"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "อัพโหลดรูปภาพ"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "อัพโหลดรูปภาพ"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "อัพเกรดไฟล์"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "อัพเกรดเฟิร์มแวร์"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "อัพเกรดเฟิร์มแวร์"
+
+msgid "action_transactionCorrection_start"
+msgstr "เวลาเริ่มต้น"
+
+msgid "action_transactionCorrection_end"
+msgstr "เวลาสิ้นสุด"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "แก้ไขบันทึกข้อมูล"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "ตรวจสอบบันทึกข้อมูลของอุปกรณ์ในช่วงเวลา"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "ตรวจสอบบันทึกข้อมูลของอุปกรณ์ในช่วงเวลา"
+
+msgid "terminal_op_pullFile"
+msgstr "ดาวโหลดไฟล์"
+
+msgid "terminal_op_pullFileDescription"
+msgstr "ดาวน์โหลดไฟล์จากอุปกรณ์ โดยปกติจะใช้สำหรับบำรุงรักษาอุปกรณ์ โปรดใช้ฟังก์ชั่นนี้ระหว่างอุปกรณ์ฟรี"
+
+msgid "terminal_op_pullFileHelpTxt"
+msgstr "ดาวน์โหลดไฟล์จากอุปกรณ์ โดยปกติจะใช้สำหรับบำรุงรักษาอุปกรณ์ โปรดใช้ฟังก์ชั่นนี้ระหว่างอุปกรณ์ฟรี"
+
+msgid "terminal_op_clearCommand"
+msgstr "ล้างคำสั่งที่รอดำเนินการ"
+
+msgid "terminal_op_clearCommandDescription"
+msgstr "ล้างคำสั่งที่ค้างอยู่ทั้งหมด"
+
+msgid "terminal_op_clearCommandHelpTxt"
+msgstr "ล้างคำสั่งที่ค้างอยู่ทั้งหมด"
+
+msgid "terminal_op_clearCommandConfirmation"
+msgstr "คุณแน่ใจหรือไม่ว่าจะล้างคำสั่งที่รอดำเนินการทั้งหมด"
+
+msgid "action_pullFile_filePath"
+msgstr "ที่จัดเก็บไฟล์"
+
+msgid "terminal_op_enrollRemotely"
+msgstr "ลงทะเบียนจากระยะไกล"
+
+msgid "terminal_op_enrollRemotelyDescription"
+msgstr "ลงทะเบียนไบโอเมตริกซ์จากอุปกรณ์"
+
+msgid "terminal_op_enrollRemotelyHelpTxt"
+msgstr "ลงทะเบียนไบโอเมตริกซ์จากอุปกรณ์"
+
+msgid "enrollRemotely_field_bioType"
+msgstr "ประเภทไบโอ"
+
+msgid "enrollRemotely_bioType_card"
+msgstr "การ์ด MF"
+
+msgid "enrollRemotely_bioType_fingerprint"
+msgstr "ลายนิ้วมือ"
+
+msgid "enrollRemotely_bioType_face"
+msgstr "ใบหน้า"
+
+msgid "enrollRemotely_bioType_palm"
+msgstr "ฝ่ามือ"
+
+msgid "enrollRemotely_field_empCode"
+msgstr "รหัสพนักงาน"
+
+msgid "enrollRemotely_field_finger"
+msgstr "นิ้ว"
+
+msgid "enrollRemotely_finger_leftHandLittle"
+msgstr "(มือซ้าย) นิ้วก้อย"
+
+msgid "enrollRemotely_finger_leftHandRing"
+msgstr "(มือซ้าย) นิ้วนาง"
+
+msgid "enrollRemotely_finger_leftHandMiddle"
+msgstr "(มือซ้าย) นิ้วกลาง"
+
+msgid "enrollRemotely_finger_leftHandFore"
+msgstr "(มือซ้าย) นิ้วชี้"
+
+msgid "enrollRemotely_finger_leftHandThumb"
+msgstr "(มือซ้าย) นิ้วโป้ง"
+
+msgid "enrollRemotely_finger_rightHandThumb"
+msgstr "(มือขวา) นิ้วก้อย"
+
+msgid "enrollRemotely_finger_rightHandFore"
+msgstr "(มือขวา) นิ้วนาง"
+
+msgid "enrollRemotely_finger_rightHandMiddle"
+msgstr "(มือขวา) นิ้วกลาง"
+
+msgid "enrollRemotely_finger_rightHandRing"
+msgstr "(มือขวา) นิ้งชี้"
+
+msgid "enrollRemotely_finger_rightHandLittle"
+msgstr "(มือขวา) นิ้วโป้ง"
+
+msgid "terminal_op_newArea"
+msgstr "โซนใหม่"
+
+msgid "terminal_op_newAreaDescription"
+msgstr "โซนใหม่"
+
+msgid "terminal_op_newAreaHelpTxt"
+msgstr "โซนใหม่"
+
+msgid "terminal_field_numberReduce"
+msgstr "จำนวนลด"
+
+msgid "terminal_field_numberReduceHelpText"
+msgstr " 0 - 999"
+
+msgid "loopDelTransaction_helpText_tip1"
+msgstr "1. เมื่อการทำธุรกรรมอุปกรณ์เต็มจะลบจำนวนบันทึกข้อมูลตามมูลค่าอินพุต (0 หมายถึงไม่ลบ)"
+
+msgid "terminal_op_loopDelTransaction"
+msgstr "ลบรายการบันทึกซ้ำ"
+
+msgid "terminal_op_loopDelTransactionDescription"
+msgstr "ลบรายการบันทึกซ้ำ"
+
+msgid "terminal_op_loopDelTransactionHelpTxt"
+msgstr "ลบรายการบันทึกซ้ำ"
+
+msgid "terminalNewArea_error_duplicateAreaCode"
+msgstr "รหัสโซนซ้ำกัน"
+
+msgid "terminal_field_alias"
+msgstr "ชื่ออุปกรณ์"
+
+msgid "terminal_field_sn"
+msgstr "หมายเลขซีเรียล"
+
+msgid "terminal_state"
+msgstr "สถานะ"
+
+msgid "op_menu_group_dataClean"
+msgstr "ล้างข้อมูล"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "โอนถ่ายข้อมูล"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "เมนูอุปกรณ์"
+
+msgid "upload_file"
+msgstr "อัพโหลดไฟล์"
+
+msgid "usb_data_upload"
+msgstr "อัพโหลดรายการบันทึกแบบUSB"
+
+msgid "file_format_incorrect"
+msgstr "รูปแบบไฟล์ไม่ถูกต้อง"
+
+msgid "device_not_found"
+msgstr "ไม่พบอุปกรณ์"
+
+msgid "system_error"
+msgstr "ระบบผิดพลาด"
+
+msgid "read_file_failed"
+msgstr "อ่านไฟล์ผิดพลาด"
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "แถว %(row_num)s ไม่ถูกต้อง"
+
+msgid "transaction_column_employeeName"
+msgstr "ชื่อ"
+
+msgid "transaction_column_employeeLastName"
+msgstr "นามสกุล"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "แผนก"
+
+msgid "transaction_column_employeePosition"
+msgstr "ตำแหน่ง"
+
+msgid "transaction_punch_date"
+msgstr "วันที่"
+
+msgid "transaction_punch_time"
+msgstr "เวลา"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "send_work_code"
+msgstr "ส่งไปยังอุปกรณ์"
+
+msgid "send_work_code_to_terminal"
+msgstr "ส่งรหัสงานไปยังอุปกรณ์"
+
+msgid "remove_work_code"
+msgstr "นำออกจากอุปกรณ์"
+
+msgid "remove_work_code_from_terminal"
+msgstr "นำรหัสงานออกจากอุปกรณ์"
+
+msgid "bio_fingerprint"
+msgstr "ลายนิ้วมือ"
+
+msgid "bio_face"
+msgstr "ใบหน้า"
+
+msgid "bio_finger_vein"
+msgstr "หลอดเลือดดำ"
+
+msgid "bio_palm"
+msgstr "ฝ่ามือ"
+
+msgid "terminal_verifyOption_password"
+msgstr "รหัสผ่าน"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "ลายนิ้วมือ"
+
+msgid "terminal_verifyOption_badge"
+msgstr "หมายเลขพนักงาน"
+
+msgid "terminal_verifyOption_card"
+msgstr "บัตร"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "ลายนิ้วมือ/รหัสผ่าน"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "ลายนิ้วมือ/บัตร"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "รหัสผ่าน/บัตร"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "หมายเลขพนักงานและลายนิ้วมือ"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "ลายนิ้วมือและรหัสผ่าน"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "ลายนิ้วมือและบัตร"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "รหัสผ่านและบัตร"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "ลายนิ้วมือและรหัสผ่านและบัตร"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "หมายเลขพนักงานและลายนิ้วมือและรหัสผ่าน"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "ลายนิ้วมือและบัตรและหมายเลขพนักงาน"
+
+msgid "terminal_verifyOption_face"
+msgstr "ใบหน้า"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "ใบหน้าและลายนิ้วมือ"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "ใบหน้าและรหัสผ่าน"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "ใบหน้าและบัตร"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "ใบหน้าและลายนิ้วมือและบัตร"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "ใบหน้าและลายนิ้วมือและรหัสผ่าน"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "หลอดเลือดดำ"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "หลอดเลือดดำและรหัสผ่าน"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "หลอดเลือดดำและบัตร"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "หลอดเลือดดำและรหัสผ่านและบัตร"
+
+msgid "terminal_verifyOption_palm"
+msgstr "ฝ่ามือ"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "ฝ่ามือและบัตร"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "ฝ่ามือและใบหน้า"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "ฝ่ามือและลายนิ้วมือ"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "ฝ่ามือและลายนิ้วมือและบัตร"
+
+msgid "terminal_verifyOption_gps"
+msgstr "จีพีเอส"
+
+msgid "terminal_verifyOption_aiCamera"
+msgstr "กล้อง AI"
+
+msgid "terminal_verifyOption_other"
+msgstr "อื่นๆ"
+
+msgid "transaction_punchState_checkIn"
+msgstr "เช็คอิน"
+
+msgid "transaction_punchState_checkOut"
+msgstr "เช็คเอาต์"
+
+msgid "transaction_punchState_breakOut"
+msgstr "ออกไปพัก"
+
+msgid "transaction_punchState_breakIn"
+msgstr "เข้าจากพัก"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "เข้างานล่วงเวลา"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "ออกงานล่วงเวลา"
+
+msgid "transaction_punchState_noStatus"
+msgstr "ไม่มีสถานะ"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "เรียบร้อย"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "พารามิเตอร์ไม่ถูกต้อง: -1"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "ถ่ายโอนรูปภาพผู้ใช้ไม่ถูกต้อง: -2"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "อ่านหรือเขียนของอุปกรณ์ไม่ถูกต้อง: -3"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "ถ่ายโอนเทมเพลตไบโอไม่ถูกต้อง: -9"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "ผู้ใช้ไม่ถูกต้อง: -10"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "รูปแบบลายนิ้วมือไม่ถูกต้อง: -11"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "แม่แบบลายนิ้วมือไม่ถูกต้อง: -12"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "ความจุของอุปกรณ์ ,ผิดพลาด: -1001"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "อุปกรณ์ไม่รองรับ: -1002"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "หมดเวลา: -1003"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "ยกเว้นข้อมูลผิดพลาด: -1004"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "อุปกรณ์ไม่ว่าง ผิดพลาด: -1005"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "ข้อมูลยาวเกินไป 	 Data Too Long, Error: -1006"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "หน่วยความจำอุปกรณ์ ผิดพลาด: -1007"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "รับข้อมูลเซิร์ฟเวอร์ล้มเหลว ผิดพลาด: -1008"
+
+msgid "deviceLog_action_powerOn"
+msgstr "เปิดเครื่อง"
+
+msgid "deviceLog_action_powerOff"
+msgstr "ปิดเครื่อง"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "ตรวจสอบไม่ถูกต้อง"
+
+msgid "deviceLog_action_alarm"
+msgstr "อลาม"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "เข้าสู่เมนู"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "ตั้งค่าอัพเดต"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "ลงทะเบียนลายนิ้วมือ"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "ลงทะเบียนรหัสผ่าน"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "ลงทะเบียนบัตร"
+
+msgid "deviceLog_action_deleteUser"
+msgstr "ลบผู้ใช้"
+
+msgid "deviceLog_action_deleteFP"
+msgstr "ลบลายนิ้วมือ"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "ลบรหัสผ่าน"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "ลบบัตร"
+
+msgid "deviceLog_action_cleanData"
+msgstr "ลบข้อมูล"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "สร้างบัตร MF"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "ลงทะเบียนบัตร MF"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "ลบบัตร MF ลงทะเบียนไว้"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "ลบบัตร MF"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "ย้ายข้อมูลลงทะเบียนไปที่บัตร"
+
+msgid "deviceLog_action_migrateDataCard2Device"
+msgstr "คัดลอกวันที่ในการ์ดไปยังอุปกรณ์"
+
+msgid "deviceLog_action_setupTime"
+msgstr "ตั้งเวลา"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "เรียกคืนตั้งค่าจากโรงงาน"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "ลบรายการบันทึกของประตู"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "ลบสิทธิ์ของผู้ดูแลระบบ"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "อัพเดตตั้งค่าควบคุมประตู"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "อัพเดตตั้งค่าผู้ใช้ควบคุมประตู"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "อัพเดตโซนเวลา"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "อัพเดตตั้งค่าปลดล็อกแบบกลุ่ม"
+
+msgid "deviceLog_action_unlock"
+msgstr "ปลดล็อค"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "ลงทะเบียนผู้ใช้ใหม่"
+
+msgid "deviceLog_action_updateFP"
+msgstr "อัพเดตลายนิ้วมือ"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "อลาม"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "ป้องกันติดตาม"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "ลบรูปถ่าย"
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "อัพเดตผู้ใช้อื่นๆ"
+
+msgid "deviceLog_action_holiday"
+msgstr "วันนักขัตฤกษ์"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "ลงทะเบียนรูปภาพผู้ใช้"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "อัพเดตรูปภาพผู้ใช้"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "ลงทะเบียนชื่อผู้ใช้"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "ลงทะเบียนสิทธิ์ผู้ใช้"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "อัพเดตฝ่ามือ"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "ลบฝ่ามือ"
+
+msgid "iclock_model_deviceConfig"
+msgstr "กำหนดค่าอุปกรณ์"
+
+msgid "deviceConfig_deviceCommunicationSetting"
+msgstr "ตั้งค่าการสื่อสารอุปกรณ์"
+
+msgid "deviceConfig_field_enableRegistration"
+msgstr "ลงทะเบียนผ่านอุปกรณ์"
+
+msgid "deviceConfig_field_enableResignedFilterHelpText"
+msgstr "ตัวกรองพนักงานลาออกเมื่ออัพโหลดข้อมูลพนักงานจากอุปกรณ์ระบบจะส่งคำสั่งลบเพื่อลบออกจากอุปกรณ์"
+
+msgid "deviceConfig_field_enableResignedFilter"
+msgstr "ตัวกรองที่ลาออก"
+
+msgid "deviceConfig_field_autoAdd"
+msgstr "อนุญาตให้เพิ่มอัตโนมัติ"
+
+msgid "deviceConfig_field_enableNameUpload"
+msgstr "อนุญาตให้อัพโหลดชื่อ"
+
+msgid "deviceConfig_field_enableNameUploadHelpTxt"
+msgstr "เปิดใช้งานเพื่ออัพโหลดชื่อผู้ใช้จากอุปกรณ์"
+
+msgid "deviceConfig_field_enableCardUpload"
+msgstr "อนุญาตให้อัพโหลดการ์ด"
+
+msgid "deviceConfig_field_enableCardUploadHelpTxt"
+msgstr "เปิดใช้งานเพื่ออัพโหลดหมายเลขบัตรของผู้ใช้จากอุปกรณ์"
+
+msgid "deviceConfig_deviceDataRetentionSetting"
+msgstr "ตั้งค่าการเก็บข้อมูล (ตั้งค่า 9999 เพื่อเก็บข้อมูล)"
+
+msgid "deviceConfig_field_transactionRetention"
+msgstr "รายการบันทึก"
+
+msgid "deviceConfig_field_transactionRetentionHelpTxt"
+msgstr "90 - 9999 วัน"
+
+msgid "deviceConfig_field_commandRetention"
+msgstr "คำสั่ง"
+
+msgid "deviceConfig_field_commandRetentionHelpTxt"
+msgstr "5 - 9999 วัน"
+
+msgid "deviceConfig_field_devLogRetention"
+msgstr "log อุปกรณ์"
+
+msgid "deviceConfig_field_devLogRetentionHelpTxt"
+msgstr "15 - 9999 วัน"
+
+msgid "deviceConfig_field_uploadLogRetention"
+msgstr "อัพโหลดเข้าสู่ระบบ"
+
+msgid "deviceConfig_field_uploadLogRetentionHelpTxt"
+msgstr "15 - 9999 วัน"
+
+msgid "deviceConfig_field_retentionUnit"
+msgstr "วัน"
+
+msgid "deviceConfig_bioPhotoApprovalPolicy"
+msgstr "นโยบายการอนุมัติรูปภาพไบโอ"
+
+msgid "deviceConfig_field_editBioPhotoPolicy"
+msgstr "พนักงานแก้ไข"
+
+msgid "deviceConfig_field_importBioPhotoPolicy"
+msgstr "ชุดนำเข้า"
+
+msgid "deviceConfig_field_mobileBioPhotoPolicy"
+msgstr "ลงทะเบียนมือถือ"
+
+msgid "deviceConfig_field_deviceBioPhotoPolicy"
+msgstr "อัพโหลดอุปกรณ์"
+
+msgid "employee_disabled"
+msgstr "ปิดการใช้งานพนักงาน"
+
+msgid "employee_not_found"
+msgstr "ไม่พบพนักงาน"
+
+msgid "terminal_not_found"
+msgstr "ไม่พบอุปกรณ์"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "ประเทศ"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "เมือง"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "บริษัท"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "อุตสาหกรรม"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "ผู้ติดต่อ"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "ซัพพลายเออร์"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "โทรศัพท์"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "อีเมล์"
+
+msgid "license_active_customerInfoForm_address"
+msgstr "ที่อยู่"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "ไฟล์ SN"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "ชื่อไฟล์ควรลงท้ายด้วย -sn.xml"
+
+msgid "license_active_generatingUPKFailed"
+msgstr "การสร้าง UPK ล้มเหลว"
+
+msgid "license_active_systemFileWasModified"
+msgstr "ไฟล์ระบบถูกแก้ไข โปรดอย่าแก้ไขไฟล์ระบบที่ได้รับอนุญาต"
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "ไฟล์ใบอนุญาตใช้งานไม่ได้"
+
+msgid "license_active_activeSuccessful"
+msgstr "เปิดใช้งานสำเร็จ"
+
+msgid "license_active_onlineActiveFailedServerNoResponse"
+msgstr "เปิดใช้งานออนไลน์ล้มเหลว เซิร์ฟเวอร์ใบอนุญาตไม่ตอบสนอง"
+
+msgid "license_active_snFileIsRequired"
+msgstr "จำเป็นต้องมีไฟล์ SN"
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "เปิดใช้งานออนไลน์ล้มเหลว เซิร์ฟเวอร์ใบอนุญาตไม่ได้กำหนด"
+
+msgid "online_active_onlineActiveFailed"
+msgstr "เปิดใช้งานออนไลน์ล้มเหลว"
+
+msgid "onlineActive_error_inactiveLicense"
+msgstr "ใบอนุญาตไม่ทำงาน"
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "เปิดใช้งานสำเร็จ"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "เปิดใช้งานออนไลน์ล้มเหลว ข้อยกเว้นระบบ"
+
+msgid "license_active_snFileIsWrong"
+msgstr "ไฟล์ SN ไม่ถูกต้อง"
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "ไม่พบ UPK ในไฟล์ SN"
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "การสร้างไฟล์ UPK ล้มเหลว ข้อยกเว้นระบบ"
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "ไฟล์ใบอนุญาต"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "ชื่อไฟล์ควรลงท้ายด้วย -license.xml"
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "ไม่พบใบอนุญาต ไม่สามารถอัพเกรดได้"
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "การอัพเกรดใบอนุญาตล้มเหลว"
+
+msgid "online_active_licenseNotFound"
+msgstr "ไม่พบใบอนุญาต"
+
+msgid "license_expiredDate_permanent"
+msgstr "ถาวร"
+
+msgid "license_capacity_unlimited"
+msgstr "ไม่จำกัด"
+
+msgid "terminal_field_ipAddress"
+msgstr "ที่อยู่ไอพี"
+
+msgid "terminal_field_realIPAddress"
+msgstr "ไอพีจริง"
+
+msgid "terminal_field_timezone"
+msgstr "ช่วงเวลา"
+
+msgid "terminal_field_area"
+msgstr "โซน"
+
+msgid "terminal_field_heartbeat"
+msgstr "คำขอ Heartbeat"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "วินาที"
+
+msgid "terminal_field_transferMode"
+msgstr "โหมดถ่ายโอน"
+
+msgid "deviceModel_option_attendance"
+msgstr "บันทึกเวลา"
+
+msgid "deviceModel_option_accessController"
+msgstr "ควบคุมประตู"
+
+msgid "deviceModel_option_informationScreen"
+msgstr "หน้าจอข้อมูล"
+
+msgid "deviceModel_option_AICamera"
+msgstr "กล้อง AI"
+
+msgid "transferMode_option_realTime"
+msgstr "เรียลไทม์"
+
+msgid "transferMode_option_timing"
+msgstr "จับเวลา"
+
+msgid "dataSources_option_terminal"
+msgstr "อุปกรณ์"
+
+msgid "dataSources_option_manualLog"
+msgstr "บันทึกคู่มือการใช้งาน"
+
+msgid "dataSources_option_mobile"
+msgstr "โทรศัพท์มือถือ"
+
+msgid "terminal_field_transferInterval"
+msgstr "ยื่นขอช่วงเวลา"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "รายงานการประชุม"
+
+msgid "bioData_field_employee"
+msgstr "พนักงาน"
+
+msgid "bioData_field_bioTemplate"
+msgstr "แม่แบบ"
+
+msgid "bioData_field_bioIndex"
+msgstr "ดัชชี Bio"
+
+msgid "bioData_field_templateIndex"
+msgstr "ดัชนีแม่แบบ"
+
+msgid "bioData_field_bioType"
+msgstr "ประเภท Bio"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "รุ่นหลัก"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "รุ่นรอง"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "รูปแบบ"
+
+msgid "bioData_field_isValid"
+msgstr "ถูกต้อง"
+
+msgid "bioData_field_isDuress"
+msgstr "ถูกข่มขู่"
+
+msgid "bioData_field_createTime"
+msgstr "สร้างเวลา"
+
+msgid "bioData_field_updateTime"
+msgstr "เวลาอัพเดต"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "หมายเลขซีเรียล"
+
+msgid "iclock_model_bioData"
+msgstr "ข้อมูล Bio"
+
+msgid "privateMessage_field_lastSend"
+msgstr "ส่งครั้งล่าสุด"
+
+msgid "iclock_model_privateMessage"
+msgstr "ข้อความส่วนตัว"
+
+msgid "publicMessage_field_lastSend"
+msgstr "ส่งครั้งล่าสุด"
+
+msgid "iclock_model_publicMessage"
+msgstr "ข้อความสาธารณะ"
+
+msgid "terminal_field_state"
+msgstr "สถานะ"
+
+msgid "terminal_field_transferTime"
+msgstr "เวลาถ่ายโอน"
+
+msgid "terminal_field_productType"
+msgstr "ประเภทผลิตภัณฑ์"
+
+msgid "terminal_field_isAttendance"
+msgstr "การเข้างาน"
+
+msgid "terminal_field_enableAccessControl"
+msgstr "เปิดใช้งานควบคุมประตู"
+
+msgid "terminal_field_isRegistration"
+msgstr "ลงทะเบียนอุปกรณ์"
+
+msgid "terminal_field_purpose"
+msgstr "วัตถุประสงค์"
+
+msgid "terminal_field_accessControllerType"
+msgstr "เครื่องควบคุมการเข้าถึง"
+
+msgid "terminal_field_authentication"
+msgstr "โหมดการยืนยัน"
+
+msgid "terminal_field_style"
+msgstr "ประเภท"
+
+msgid "terminal_field_uploadFlag"
+msgstr "อัพโหลดโลโก้"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "รุ่นเฟิร์มแวร์"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "โปรโตคอล Push"
+
+msgid "terminal_field_pushVersion"
+msgstr "รุ่นพุช"
+
+msgid "terminal_field_language"
+msgstr "ภาษา"
+
+msgid "terminal_field_isTft"
+msgstr "Tft"
+
+msgid "terminal_field_terminalName"
+msgstr "รุ่นอุปกรณ์"
+
+msgid "terminal_field_platform"
+msgstr "แพลตฟอร์ม"
+
+msgid "terminal_field_oemVendor"
+msgstr "ผู้ขาย"
+
+msgid "terminal_field_logStamp"
+msgstr "ตราประทับ LOG"
+
+msgid "terminal_field_operationLogStamp"
+msgstr "ตราประทับ LOG การดำเนินการ"
+
+msgid "terminal_field_captureStamp"
+msgstr "ตราประทับภาพที่จับ"
+
+msgid "terminal_field_userCount"
+msgstr "จำนวนผู้ใช้"
+
+msgid "terminal_field_userCapacity"
+msgstr "ความจุผู้ใช้"
+
+msgid "terminal_field_photoFuncOn"
+msgstr "เปิดฟังก์ชันรูปภาพ"
+
+msgid "terminal_field_transactionCount"
+msgstr "จำนวนการทำธุรกรรม"
+
+msgid "terminal_field_transactionCapacity"
+msgstr "ความจุของการทำธุรกรรม"
+
+msgid "terminal_field_fpFuncOn"
+msgstr "เปิดฟังก์ชันลายนิ้วมือ"
+
+msgid "terminal_field_fingerprintCount"
+msgstr "จำนวนลายนิ้วมือ"
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr "ความจุลายนิ้วมือ"
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr "รุ่นอัลกอริธึมลายนิ้วมือ"
+
+msgid "terminal_field_faceFuncOn"
+msgstr "เปิดฟังก์ชันใบหน้า"
+
+msgid "terminal_field_faceCount"
+msgstr "จำนวนใบหน้า"
+
+msgid "terminal_field_faceCapacity"
+msgstr "ความจุใบหน้า"
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr "รุ่นอัลกอริธึมใบหน้า"
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr "เปิดฟังก์ชันหลอดเลือดดำ"
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "จำนวนหลอดเลือดดำ"
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr "ความจุหลอดเลือดดำ"
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr "รุ่นอัลกอริธึมหลอดเลือดดำ"
+
+msgid "terminal_field_palmFuncOn"
+msgstr "เปิดฟังก์ชันฝ่ามือ"
+
+msgid "terminal_field_palmCount"
+msgstr "จำนวนฝ่ามือ"
+
+msgid "terminal_field_palmCapacity"
+msgstr "ความจุฝ่ามือ"
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr "รุ่นอัลกอริธึมฝ่ามือ"
+
+msgid "terminal_field_lockFunc"
+msgstr "รองรับการควบคุมการเข้าถึง"
+
+msgid "terminal_field_lastActivity"
+msgstr "กิจกรรมล่าสุด"
+
+msgid "terminal_field_uploadTime"
+msgstr "เวลาอัพโหลด"
+
+msgid "terminal_field_syncTime"
+msgstr "เวลาซิงค์"
+
+msgid "terminal_field_cmdCount"
+msgstr "Cmd"
+
+msgid "iclock_model_terminal"
+msgstr "อุปกรณ์"
+
+msgid "command_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "command_field_content"
+msgstr "เนื้อหา"
+
+msgid "command_field_commit_time"
+msgstr "เวลาที่ดำเนินการ"
+
+msgid "command_field_transferTime"
+msgstr "เวลาถ่ายโอน"
+
+msgid "command_field_returnTime"
+msgstr "เวลาที่กลับมา"
+
+msgid "command_field_returnValue"
+msgstr "คืนค่า"
+
+msgid "iclock_model_terminalCommand"
+msgstr "คำสั่ง"
+
+msgid "menu_device_errorCommandLog"
+msgstr "log ผิดพลาด"
+
+msgid "terminal_model_errorCommandLog"
+msgstr "log ผิดพลาด"
+
+msgid "errorCommandLog_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "errorCommandLog_field_errorCode"
+msgstr "รหัสผิดพลาด"
+
+msgid "errorCommandLog_field_errorMsg"
+msgstr "ข้อความผิดพลาด"
+
+msgid "errorCommandLog_field_dataOrigin"
+msgstr "คำสั่งผิดพลาด"
+
+msgid "errorCommandLog_field_cmd"
+msgstr "รหัสคำสั่ง"
+
+msgid "errorCommandLog_field_additional"
+msgstr "ข้อความพิเศษ"
+
+msgid "errorCommandLog_field_uploadTime"
+msgstr "เวลาอัพโหลด"
+
+msgid "terminalEmployee_field_sn"
+msgstr "หมายเลขซีเรียล"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "หมายเลขพนักงาน"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "สิทธิพิเศษ"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "พนักงาน"
+
+msgid "terminalLog_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "terminalLog_field_timezone"
+msgstr "เขตเวลา"
+
+msgid "terminalLog_field_administrator"
+msgstr "ผู้ดูแลระบบ"
+
+msgid "terminalLog_field_actionName"
+msgstr "เวลาดำเนินการ"
+
+msgid "terminalLog_field_actionTime"
+msgstr "เวลาดำเนินการ"
+
+msgid "terminalLog_field_object"
+msgstr "วัตถุ"
+
+msgid "terminalLog_field_param1"
+msgstr "พารามิเตอร์"
+
+msgid "terminalLog_field_param2"
+msgstr "พารามิเตอร์"
+
+msgid "terminalLog_field_param3"
+msgstr "พารามิเตอร์"
+
+msgid "terminalLog_field_uploadTime"
+msgstr "เวลาอัพโหลด"
+
+msgid "iclock_model_terminalLog"
+msgstr "Log อุปกรณ์"
+
+msgid "terminalParameter_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "terminalParameter_field_type"
+msgstr "ประเภท"
+
+msgid "terminalParameter_field_name"
+msgstr "ชื่อ"
+
+msgid "terminalParameter_field_value"
+msgstr "ค่า"
+
+msgid "iclock_model_terminalParameter"
+msgstr "พารามิเตอร์อุปกรณ์"
+
+msgid "transaction_field_employeeCode"
+msgstr "หมายเลขพนักงาน"
+
+msgid "transaction_field_employee"
+msgstr "พนักงาน"
+
+msgid "transaction_field_punchTime"
+msgstr "เวลาที่ลงเวลา"
+
+msgid "transaction_field_punchState"
+msgstr "สถานะการลงเวลา"
+
+msgid "transaction_field_verifyType"
+msgstr "ประเภทการยืนยัน"
+
+msgid "transaction_field_workCode"
+msgstr "รหัสงาน"
+
+msgid "transaction_field_terminalSN"
+msgstr "หมายเลขซีเรียล"
+
+msgid "transaction_terminal_alias"
+msgstr "ชื่ออุปกรณ์"
+
+msgid "transaction_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "transaction_field_areaAlias"
+msgstr "พื้นที่"
+
+msgid "transaction_field_longitude"
+msgstr "ลองจิจูด"
+
+msgid "transaction_field_latitude"
+msgstr "ละติจูด"
+
+msgid "transaction_field_gpsLocation"
+msgstr "จีพีเอส"
+
+msgid "transaction_field_mobile"
+msgstr "โทรศัพท์"
+
+msgid "transaction_field_source"
+msgstr "ที่มา"
+
+msgid "transaction_field_purpose"
+msgstr "วัตถุประสงค์"
+
+msgid "transaction_field_crcCode"
+msgstr "รหัส CRC"
+
+msgid "transaction_field_isAttendance"
+msgstr "การเข้างาน"
+
+msgid "transaction_field_reserved"
+msgstr "จองแล้ว"
+
+msgid "transaction_field_uploadTime"
+msgstr "เวลาอัพโหลด"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "สถานะการซิงค์"
+
+msgid "transaction_field_synchronized_time"
+msgstr "เวลาซิงค์"
+
+msgid "iclock_model_transaction"
+msgstr "ธุรกรรม"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "terminalUploadLog_field_event"
+msgstr "อีเวนต์"
+
+msgid "terminalUploadLog_field_content"
+msgstr "เนื้อหา"
+
+msgid "terminalUploadLog_field_count"
+msgstr "การนับ"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "การนับผิดพลาด"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "เวลาอัพโหลด"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "Log การอัพโหลดของอุปกรณ์"
+
+msgid "terminalWorkCode_field_code"
+msgstr "รหัส"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "ชื่อ"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "กิจกรรมล่าสุด"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "รหัสงาน"
+
+msgid "employee_photo"
+msgstr "รูปภาพ"
+
+msgid "biometric_template"
+msgstr "แม่แบบชีวภาพ"
+
+msgid "fingerprint"
+msgstr "ลายนิ้วมือ"
+
+msgid "attendance_capture"
+msgstr "จับภาพ"
+
+msgid "transaction_field_firstName"
+msgstr "ชื่อจริง"
+
+msgid "transaction_field_lastName"
+msgstr "นามสกุล"
+
+msgid "transaction_field_department"
+msgstr "แผนก"
+
+msgid "transaction_field_position"
+msgstr "ตำแหน่ง"
+
+msgid "transaction_field_punchDate"
+msgstr "วันที่ลงเวลา"
+
+msgid "transaction_field_area"
+msgstr "พื้นที่"
+
+msgid "chart_present"
+msgstr "ปัจจุบัน"
+
+msgid "chart_today"
+msgstr "วันนี้"
+
+msgid "chart_absent"
+msgstr "ขาด"
+
+msgid "dashboard_exception"
+msgstr "ข้อยกเว้นการเข้างาน"
+
+msgid "dashboard_history"
+msgstr "ประวัติ"
+
+msgid "chart_late"
+msgstr "สาย"
+
+msgid "chart_early_leave"
+msgstr "ออกก่อนเวลา"
+
+msgid "dashboard_real_time_monitor"
+msgstr "ตรวจสอบตามเวลาจริง"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "เรื่อง"
+
+msgid "announcement_filed_content"
+msgstr "เนื้อหา"
+
+msgid "announcement_filed_emp"
+msgstr "รหัสพนักงาน"
+
+msgid "mobile_action_publicNotice"
+msgstr "กดประกาศส่วนตัว"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "กดประกาศส่วนตัว"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "กดประกาศส่วนตัว"
+
+msgid "mobile_action_privateNotice"
+msgstr "กดประกาศส่วนตัว"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "กดประกาศส่วนตัว"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "กดประกาศส่วนตัว"
+
+msgid "title_required"
+msgstr "ต้องเช็คอินก"
+
+msgid "content_required"
+msgstr "ต้องเช็คเอาต์"
+
+msgid "appNotice_field_content"
+msgstr "เนื้อหา"
+
+msgid "mobile_action_pushNotification"
+msgstr "แจ้งเตือนแบบพุช"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "แจ้งเตือนแบบพุช"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "แจ้งเตือนแบบพุช"
+
+msgid "applist_action_forceOffline"
+msgstr "บังคับออฟไลน์"
+
+msgid "force_offline_confirm {0} {1}"
+msgstr "คุณแน่ใจหรือว่าบังคับอุปกรณ์ออฟไลน์ {0} {1}"
+
+msgid "app_account_disable_confirm {0} {1}"
+msgstr "คุณแน่ใจว่าจะเปิดใช้งานอุปกรณ์ {0} {1}"
+
+msgid "app_account_enable_confirm {0} {1}"
+msgstr "คุณแน่ใจว่าจะเปิดใช้งานอุปกรณ์ {0} {1}"
+
+msgid "applist_action_disable"
+msgstr "ปิดการใช้งาน"
+
+msgid "applist_action_enable"
+msgstr "เปิดการใช้งาน"
+
+msgid "announce_all_emp"
+msgstr "ทั้งหมด"
+
+msgid "announcement_filed_sender"
+msgstr "ผู้ส่ง"
+
+msgid "announcement_category_public"
+msgstr "สาธารณะ"
+
+msgid "announcement_category_private"
+msgstr "ส่วนบุคคล"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "แอนดรอยด์"
+
+msgid "activeStatus_option_active"
+msgstr "ทำงานอยู่"
+
+msgid "activeStatus_option_inactive"
+msgstr "ไม่ได้ทำงาน"
+
+msgid "notification_category_leave"
+msgstr "ลาหยุด"
+
+msgid "notification_category_overtime"
+msgstr "งานล่วงเวลา"
+
+msgid "notification_category_manualLog"
+msgstr "Log แบบกำหนดเอง"
+
+msgid "notification_category_training"
+msgstr "การฝึกอบรม"
+
+msgid "notification_category_schedule"
+msgstr "กำหนดการ"
+
+msgid "notification_category_announcement"
+msgstr "การประกาศ"
+
+msgid "notification_category_exception"
+msgstr "ข้อยกเว้น"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "การประกาศแบบสาธารณะ"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "การประกาศแบบส่วนบุคคล"
+
+msgid "notification_subCategory_late"
+msgstr "สาย"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "ออกก่อน"
+
+msgid "notification_subCategory_absent"
+msgstr "ขาด"
+
+msgid "notification_readStatus_unread"
+msgstr "ยังไม่ได้อ่าน"
+
+msgid "notification_readStatus_read"
+msgstr "อ่าน"
+
+msgid "appActionLog_status_exception"
+msgstr "ข้อยกเว้น"
+
+msgid "appActionLog_status_successful"
+msgstr "สำเร็จ"
+
+msgid "announcement_field_category"
+msgstr "หมวดหมู่"
+
+msgid "announcement_field_sender"
+msgstr "ผู้ส่ง"
+
+msgid "announcement_field_systemSender"
+msgstr "ผู้ส่งระบบ"
+
+msgid "announcement_field_noticeTime"
+msgstr "เวลาแจ้งเตือน"
+
+msgid "app_model_announcement"
+msgstr "การประกาศ"
+
+msgid "actionLog_field_user"
+msgstr "ผู้ใช้"
+
+msgid "actionLog_field_client"
+msgstr "ลูกค้า"
+
+msgid "actionLog_field_action"
+msgstr "การกระทำ"
+
+msgid "actionLog_field_params"
+msgstr "พารามิเตอร์"
+
+msgid "actionLog_field_describe"
+msgstr "คำอธิบาย"
+
+msgid "actionLog_field_status"
+msgstr "สถานะ"
+
+msgid "actionLog_field_actionTime"
+msgstr "เวลาการดำเนินการ"
+
+msgid "actionLog_field_remoteIp"
+msgstr "IP รีโมท"
+
+msgid "app_model_actionLog"
+msgstr "Log การดำเนินการ"
+
+msgid "appList_field_userName"
+msgstr "ชื่อผู้ใช้"
+
+msgid "appList_field_loginTime"
+msgstr "เวลาล็อกอิน"
+
+msgid "appList_field_lastActive"
+msgstr "การดำเนินการล่าสุด"
+
+msgid "appList_field_token"
+msgstr "เหรียญ"
+
+msgid "appList_field_deviceToken"
+msgstr "เหรียญอุปกรณ์"
+
+msgid "appList_field_clientId"
+msgstr "รหัสลูกค้า"
+
+msgid "appList_field_clientCategory"
+msgstr "หมวดหมู่ลูกค้า"
+
+msgid "appList_field_runStatus"
+msgstr "สถานะการรัน"
+
+msgid "appList_field_accessStatus"
+msgstr "สถานะ APP"
+
+msgid "app_model_appList"
+msgstr "รายการ App"
+
+msgid "appNotice_field_receiver"
+msgstr "ผู้รับ"
+
+msgid "appNotice_field_sender"
+msgstr "ผู้ส่ง"
+
+msgid "appNotice_field_systemSender"
+msgstr "ผู้ส่งระบบ"
+
+msgid "appNotice_field_category"
+msgstr "หมวดหมู่"
+
+msgid "appNotice_field_subCategory"
+msgstr "หมวดหมู่รอง"
+
+msgid "appNotice_field_source"
+msgstr "ที่มา"
+
+msgid "appNotice_field_sendTime"
+msgstr "เวลาส่ง"
+
+msgid "appNotice_field_readStatus"
+msgstr "สถานะการอ่าน"
+
+msgid "appNotice_field_readTime"
+msgstr "เวลาอ่าน"
+
+msgid "app_model_notification"
+msgstr "แจ้งเตือน"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "GPS สำหรับพนักงาน"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "GPS สำหรับพนักงาน"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "เพิ่ม"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "เพิ่ม"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "พนักงาน"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "ลองจิจูด"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "ละติจูด"
+
+msgid "gpsForEmployee_field_location"
+msgstr "ตำแหน่งที่ตั้ง"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "ระยะทาง (เมตร)"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "เมตร"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "วันที่เริ่มต้น"
+
+msgid "gpsForEmployee_field_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "ช่วงวันที่ทับซ้อนกัน"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "GPS สำหรับแผนก"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "GPS สำหรับแผนก"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "เพิ่ม"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "เพิ่ม"
+
+msgid "gpsForDepartment_field_department"
+msgstr "แผนก"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "ลองจิจูด"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "ละติจูด"
+
+msgid "gpsForDepartment_field_location"
+msgstr "ตำแหน่งที่ตั้ง"
+
+msgid "gpsForDepartment_field_distance"
+msgstr "ระยะทาง (เมตร)"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "เมตร"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "วันที่เริ่มต้น"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "ช่วงวันที่ทับซ้อนกัน"
+
+msgid "gps_distance_invalid"
+msgstr "ระยะทางไม่ถูกต้อง"
+
+msgid "gps_date_invalid_range"
+msgstr "ช่วงวันที่ไม่ถูกต้อง"
+
+msgid "gps_latitude_invalid_range"
+msgstr "ค่า Latitude ต้องอยู่ในช่วง [-90,90]"
+
+msgid "departmentGps_select_dept"
+msgstr "กรุณาเลือกแผนก"
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "เครือข่ายไม่เสถียรลองอีกครั้ง"
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "ออกจากตำแหน่ง"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "พนักงาน %(emp)s กำหนดการ APP ทับซ้อนกัน"
+
+msgid "menu_group_psnl_organization"
+msgstr "องค์กร"
+
+msgid "menu_psnl_department"
+msgstr "แผนก"
+
+msgid "menu_psnl_position"
+msgstr "ตำแหน่ง"
+
+msgid "menu_psnl_area"
+msgstr "โซน"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "พนักงาน"
+
+msgid "menu_psnl_employee"
+msgstr "พนักงาน"
+
+msgid "menu_psnl_resign"
+msgstr "ลาออก"
+
+msgid "menu_psnl_certification"
+msgstr "เอกสาร"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "เอกสารพนักงาน"
+
+msgid "menu_iclock_bioPhoto"
+msgstr "รูปภาพไบโอ"
+
+msgid "menu_group_workflow"
+msgstr "เวิร์คโฟลว์"
+
+msgid "menu_workflow_workflowRole"
+msgstr "หน้าที่"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "เครื่องมือ"
+
+msgid "menu_workflow_workflowNode"
+msgstr "จุดเชื่อม"
+
+msgid "menu_group_configuration"
+msgstr "การกำหนดค่า"
+
+msgid "area_action_adjustEmployee"
+msgstr "ปรับเปลี่ยนพนักงาน"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "ปรับเปลี่ยนพนักงานให้เหมาะกับพื้นที่ที่เลือก"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "ปรับเปลี่ยนพนักงาน"
+
+msgid "select_none_employee"
+msgstr "โปรดเลือกพนักงาน"
+
+msgid "bioPhoto_field_userPhoto"
+msgstr "รูปภาพผู้ใช้"
+
+msgid "bioPhoto_field_bioPhoto"
+msgstr "รูปภาพไบโอ"
+
+msgid "bioPhoto_field_approvalState"
+msgstr "สถานะอนุมัติ"
+
+msgid "bioPhoto_approvalState_approvalPassed"
+msgstr "ผ่านการอนุมัติแล้ว"
+
+msgid "bioPhoto_approvalState_reject"
+msgstr "ปฏิเสธ"
+
+msgid "bioPhoto_field_remark"
+msgstr "หมายเหตุ"
+
+msgid "biophoto_approve"
+msgstr "อนุมัติ"
+
+msgid "approval_can_not_approve_again"
+msgstr "การอนุมัติไม่สามารถอนุมัติซ้ำได้"
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "รูปภาพ %(emp_code)s อนุมัติผ่านเรียบร้อยแล้ว"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "มีรูปภาพ %(emp_code)s แล้ว"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "ไม่พบรูปภาพ %(emp_code)s"
+
+msgid "bioPhoto_action_qrCode"
+msgstr "คิวอาร์โค้ด"
+
+msgid "dataImport_action_importBioPhoto"
+msgstr "นำเข้ารูปถ่ายไบโอ"
+
+msgid "dataImport_action_importBioPhotoHelpTxt"
+msgstr "นำเข้ารูปถ่ายไบโอสำหรับพนักงาน"
+
+msgid "dataImport_action_importBioPhotoDescription"
+msgstr "นำเข้ารูปถ่ายไบโอสำหรับพนักงาน"
+
+msgid "bioPhotoImport_error_noPhotoSelected"
+msgstr "โปรดเลือกรูปภาพที่จะอัพโหลด"
+
+msgid "bioPhotoImport_error_userNoFound_{pin}"
+msgstr "ไม่พบพนักงาน ({pin})"
+
+msgid "bioPhotoImport_button_upload"
+msgstr "อัพโหลด"
+
+msgid "bioPhotoImport_button_clear"
+msgstr "ล้าง"
+
+msgid "bioPhotoImport_helpText_tip1"
+msgstr "1. ชื่อภาพถ่ายต้องเป็นรหัสพนักงาน"
+
+msgid "department_action_adjustEmployee"
+msgstr "ปรับเปลี่ยนพนักงาน"
+
+msgid "dataImport_action_import"
+msgstr "นำเข้า"
+
+msgid "resign_action_disableAttendance"
+msgstr "ปิดใช้งานบันทึกเวลา"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "ปรับเปลี่ยนพนักงานให้เหมาะกับแผนกที่เลือก"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "ปรับเปลี่ยนพนักงาน"
+
+msgid "dataImport_field_file"
+msgstr "ไฟล์"
+
+msgid "data_import_fileHelpTxt"
+msgstr "รองรับไฟล์ .xls และไฟล์ .csv เท่านั้น"
+
+msgid "dataImport_action_importEmployee"
+msgstr "นำเข้าพนักงาน"
+
+msgid "dataImport_action_importEmployeeHelpTxt"
+msgstr "นำเข้าพนักงานผ่านไฟล์ excel"
+
+msgid "dataImport_action_importEmployeeDescription"
+msgstr "นำเข้าพนักงานผ่านไฟล์ excel"
+
+msgid "dataImport_action_importDocument"
+msgstr "นำเข้าเอกสาร"
+
+msgid "dataImport_action_importDocumentHelpTxt"
+msgstr "นำเข้าเอกสารการตั้งค่าการแจ้งเตือนหมดอายุผ่านไฟล์ excel"
+
+msgid "dataImport_action_importDocumentDescription"
+msgstr "นำเข้าเอกสารการตั้งค่าการแจ้งเตือนหมดอายุผ่านไฟล์ excel"
+
+msgid "dataImport_action_importPhoto"
+msgstr "นำเข้ารูปภาพ"
+
+msgid "dataImport_action_importPhotoHelpTxt"
+msgstr "นำเข้ารูปพนักงานสำหรับพนักงาน"
+
+msgid "dataImport_action_importPhotoDescription"
+msgstr "นำเข้ารูปพนักงานสำหรับพนักงาน"
+
+msgid "empPhotoImport_error_noPhoto"
+msgstr "โปรดเลือกรูปภาพที่จะอัพโหลด"
+
+msgid "empPhotoImport_error_{pin}NotFound"
+msgstr "ไม่พบพนักงาน ({pin})"
+
+msgid "empPhotoImport_error_{pin}SizeExceed25KB"
+msgstr "ขนาดภาพถ่ายของพนักงาน ({pin}) เกิน 25KB"
+
+msgid "empPhotoImport_button_upload"
+msgstr "อัพโหลด"
+
+msgid "empPhotoImport_button_clear"
+msgstr "ล้าง"
+
+msgid "empPhotoImport_helpText_title"
+msgstr "ประกาศ"
+
+msgid "empPhotoImport_helpText_tip1"
+msgstr "1. ชื่อภาพถ่ายต้องเป็นรหัสพนักงาน"
+
+msgid "empPhotoImport_helpText_tip2"
+msgstr "2. ขนาดภาพสูงสุด 25kb"
+
+msgid "dataImport_field_overwrite"
+msgstr "เขียนทับ"
+
+msgid "dataImport_field_ignoreError"
+msgstr "ละเว้นผิดพลาด"
+
+msgid "employee_action_resynchronize2Device"
+msgstr "ซิงค์ไปยังอุปกรณ์"
+
+msgid "employee_action_resynchronize2DeviceConfirmation"
+msgstr "คุณแน่ใจหรือไม่ว่าซิงโครไนซ์ข้อมูลผู้ใช้ไปยังอุปกรณ์อีกครั้ง"
+
+msgid "dataRange_option_all"
+msgstr "ทั้งหมด"
+
+msgid "dataRange_option_specified"
+msgstr "ระบุ"
+
+msgid "reUploadFromDevice_field_device"
+msgstr "อุปกรณ์"
+
+msgid "reUploadFromDevice_field_deviceSN"
+msgstr "หมายเลขซีเรียล"
+
+msgid "eUploadFromDevice_field_deviceSNHelpTxt"
+msgstr "มันรองรับการใช้ ',' เพื่อเข้าร่วมหลายหมายเลขซีเรียลของอุปกรณ์หากค่าว่างเปล่าจะทำให้อุปกรณ์อยู่ในพื้นที่ของพนักงาน"
+
+msgid "employee_action_reUploadFromDevice"
+msgstr "อัพโหลดจากอุปกรณ์อีกครั้ง"
+
+msgid "employee_action_reUploadFromDeviceConfirmation"
+msgstr "คุณแน่ใจว่าจะอัปโหลดข้อมูลพนักงานจากอุปกรณ์อีกครั้ง"
+
+msgid "employeeResign_field_date"
+msgstr "วันที่ลาออก"
+
+msgid "employeeResign_field_leaveType"
+msgstr "ประเภทลาออก"
+
+msgid "employeeResign_field_reason"
+msgstr "เหตุผล"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "ปิดใช้งานการเข้าร่วม"
+
+msgid "employee_action_resignation"
+msgstr "ลาออก"
+
+msgid "employee_action_transferDepartment"
+msgstr "ถ่ายโอนแผนก"
+
+msgid "transferDepartment_field_remarks"
+msgstr "หมายเหตุ"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "จำเป็นต้องมีโซน"
+
+msgid "employee_action_transferArea"
+msgstr "ถ่ายโอนโซน"
+
+msgid "transferArea_field_remarks"
+msgstr "หมายเหตุ"
+
+msgid "employee_action_transferPosition"
+msgstr "ถ่ายโอนตำแหน่ง"
+
+msgid "transferPosition_field_remarks"
+msgstr "หมายเหตุ"
+
+msgid "employee_action_passProbation"
+msgstr "ผ่านการทดลอง"
+
+msgid "employee_action_passProbationConfirmation"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการทดลองพนักงาน"
+
+msgid "bio_templateType_fingerprint"
+msgstr "ลายนิ้วมือ"
+
+msgid "bio_templateType_face"
+msgstr "ใบหน้า"
+
+msgid "bio_templateType_fingerVein"
+msgstr "หลอดเลือดดำ"
+
+msgid "bio_templateType_palm"
+msgstr "ฝ่ามือ"
+
+msgid "delete_biometric_templates"
+msgstr "ลบแม่แบบชีวภาพ"
+
+msgid "enable_mobile_application"
+msgstr "เปิดการใช้งาน"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "แน่ใจหรือไม่ว่าต้องการเปิดการใช้งาน APP โทรศัพท์ {0} {1}"
+
+msgid "disable_mobile_application"
+msgstr "ปิดการใช้งาน"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr "แน่ใจหรือไม่ว่าต้องการปิดการใช้งาน APP โทรศัพท์ {0} {1}"
+
+msgid "position_action_adjustEmployee"
+msgstr "ปรับเปลี่ยนพนักงาน"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "ปรับพนักงานให้อยู่ในตำแหน่งที่เลือก"
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "ปรับเปลี่ยนพนักงาน"
+
+msgid "resign_field_employee"
+msgstr "พนักงาน"
+
+msgid "resign_field_resignDate"
+msgstr "วันที่ลาออก"
+
+msgid "resign_field_resignType"
+msgstr "ประเภทลาออก"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "ปิดใช้งานฟังก์ชั่นบันทึกเวลา"
+
+msgid "resign_field_resignReason"
+msgstr "เหตุผลลาออก"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "เพิ่ม"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "เพิ่ม"
+
+msgid "resign_action_reinstatement"
+msgstr "ทำให้เหมือนเดิม"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "ทำให้เหมือนเดิม"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "ทำให้เหมือนเดิม"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการคืนสถานะ {0} {1}"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "แน่ใจหรือไม่ว่าจะปิดใช้งานฟังก์ชันการเข้างาน {0} {1}"
+
+msgid "area_field_code"
+msgstr "รหัส"
+
+msgid "area_field_name"
+msgstr "ชื่อ"
+
+msgid "area_field_parentArea"
+msgstr "โซนหลัก"
+
+msgid "area_field_resignEmployeeCount"
+msgstr "จำนวนลาออก"
+
+msgid "area_field_employeeCount"
+msgstr "จำนวนพนักงาน"
+
+msgid "area_field_deviceCount"
+msgstr "จำนวนอุปกรณ์"
+
+msgid "area_name_defaultValue"
+msgstr "ไม่มีสิทธิ์"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "ข้อมูลผิดพลาดในรหัสพื้นที่แถว (%(index)s) ว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของรหัสพื้นที่สูงสุดคือ %(length)s"
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "ชชื่อพื้นที่แถวที่ %(index)s ต้องไม่ว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของชื่อพื้นที่สูงสุดคือ %(length)s"
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr "แถวข้อมูล %(index)s ไม่สามารถกำหนดสิทธิ์สูงกว่าเป็นส่วน %(index_name)s หรือส่วนย่อยของตัวเอง"
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "ฐานข้อมูลผิดพลาด:SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "พนักงานกำลังใช้พื้นที่"
+
+msgid "certification_field_code"
+msgstr "รหัส"
+
+msgid "certification_field_name"
+msgstr "ชื่อ"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รหัสใบรับรองว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของรหัสใบรับรองสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "ข้อมูลข้อผิดพลาดในแถว%(index)s รูปแบบควรเป็น%(male)s /%(female)s"
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr "แถวข้อมูลชื่อใบรับรอง %(index)s ต้องไม่ว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของชื่อใบรับรองสูงสุดคือ %(length)s"
+
+msgid "department_field_code"
+msgstr "รหัส"
+
+msgid "department_filed_name"
+msgstr "ชื่อ"
+
+msgid "department_field_parentDepartment"
+msgstr "แผนกหลัก"
+
+msgid "default_department"
+msgstr "แผนก"
+
+msgid "department_filed_employeeCount"
+msgstr "จำนวนพนักงาน"
+
+msgid "department_filed_resignedCount"
+msgstr "จำนวนที่ลาออก"
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รหัสแผนกว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของรหัสตำแหน่งสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s ชื่อแผนกต้องไม่ว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของชื่อแผนกสูงสุดคือ %(length)s"
+
+msgid "op_menu_group_import"
+msgstr "นำเข้า"
+
+msgid "op_menu_group_adjustment"
+msgstr "ปรับ"
+
+msgid "op_menu_group_app"
+msgstr "แอปพลิเคชั่น"
+
+msgid "op_menu_group_more"
+msgstr "มากกว่า"
+
+msgid "emp_field_fingerprint"
+msgstr "ลายนิ้วมือ"
+
+msgid "emp_field_face"
+msgstr "ใบหน้า"
+
+msgid "emp_field_palm"
+msgstr "ฝ่ามือ"
+
+msgid "emp_field_vlFace"
+msgstr "ใบหน้า VL"
+
+msgid "emp_field_area"
+msgstr "พื้นที่"
+
+msgid "emp_field_cardNumber"
+msgstr "บัตร"
+
+msgid "area_code"
+msgstr "พื้นที่"
+
+msgid "emp_field_birthday"
+msgstr "วันเกิด"
+
+msgid "emp_field_gender"
+msgstr "เพศ"
+
+msgid "emp_field_mobile"
+msgstr "โทรศัพท์"
+
+msgid "emp_field_email"
+msgstr "อีเมล์"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รหัสพนักงานว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของรหัสพนักงานสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "ชื่อของพนักงานในแถวว่างอยู่ (%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของชื่อสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของนามสกุลสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของรหัสตำแหน่งสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของชื่อตำแหน่งสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของชื่อบัตรสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวสูงสุดของโทรศัพท์มือถือคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวสูงสุดของอีเมล์คือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รูปแบบของประเภทอีเมล์ไม่ถูกต้อง"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รูปแบบของวันเกิดควรเป็น yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รูปแบบของวันที่จ้างควรเป็น yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของชื่อพื้นที่สูงสุดคือ %(length)s"
+
+msgid "employeeCert_field_employee"
+msgstr "พนักงาน"
+
+msgid "employeeCert_field_expireOn"
+msgstr "วันหมดอายุ"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "แจ้งเตือนอีเมล์"
+
+msgid "employeeCert_field_before"
+msgstr "แจ้งเตือนก่อน"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "เพิ่ม"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "เพิ่ม"
+
+msgid "certification"
+msgstr "แน่นอน"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ไม่มีรหัสพนักงาน"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รหัสใบรับรองว่างเปล่า"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ไม่มีรหัสใบรับรอง"
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) วันหมดอายุไม่ถูกต้อง"
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) การแจ้งเตือนอีเมล์ผิดรูปแบบควรเป็น %(no)s/%(yes)s"
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "ข้อมูลผิดพลาดในแถว %(index)s"
+
+msgid "position_field_code"
+msgstr "รหัส"
+
+msgid "position_field_name"
+msgstr "ชื่อ"
+
+msgid "position_field_parentPosition"
+msgstr "ตำแหน่งหลัก"
+
+msgid "position_field_employeeCount"
+msgstr "จำนวนพนักงาน"
+
+msgid "position_field_resignedCount"
+msgstr "จำนวนที่ลาออก"
+
+msgid "position_default_value"
+msgstr "ตำแหน่ง"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "ในแถวมีข้อมูลผิดพลาด %(index)s รหัสตำแหน่งว่าง"
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "ในแถวมีข้อมูลผิดพลาด %(index)s ชื่อตำแหน่งว่าง"
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "ในแถวมีข้อมูลผิดพลาด %s รูปแบบควรเป็น yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) ความยาวของเหตุผลที่ลาออกสูงสุดคือ %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "ในแถวมีข้อมูลผิดพลาด %(index)s ไม่มีหมายเลขพนักงาน"
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "ในแถวมีข้อมูลผิดพลาด %(index)s วันที่ลาออกว่างอยู่"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr "ข้อมูลผิดพลาดในแถว (%(index)s) รูปแบบของประเภทการลาออกควรเป็น %(expect)s"
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "ประเภทการลาออกว่างเปล่าในแถว (%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr "ข้อมูลข้อผิดพลาดในแถว%(index)s การเข้าร่วมควรเป็น%(expect)s"
+
+msgid "department_field_name"
+msgstr "ชื่อแผนก"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "ไม่สนใจ"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "เขียนทับ"
+
+msgid "devicePrivilege_option_employee"
+msgstr "พนักงาน"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "ลงทะเบียน"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "ผู้ดูแลระบบ"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "ผู้ดูแลระบบระดับสูง"
+
+msgid "employee_genderOption_male"
+msgstr "ชาย"
+
+msgid "employee_genderOption_female"
+msgstr "หญิง"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "ประจำ"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "ชั่วคราว"
+
+msgid "employee_appStatusOption_enable"
+msgstr "เปิดการใช้งาน"
+
+msgid "employee_appStatusOption_disable"
+msgstr "ปิดการใช้งาน"
+
+msgid "employee_appRoleOption_employee"
+msgstr "พนักงาน"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "ผู้ดูแลระบบ"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "ใช้โหมดกลุ่ม"
+
+msgid "employee_verificationOption_any"
+msgstr "ทั้งหมด"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "ลายนิ้วมือ/รหัสผ่าน"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "ลายนิ้วมือ"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "รหัสผู้ใช้เท่านั้น"
+
+msgid "employee_verificationOption_password"
+msgstr "รหัสผ่าน"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "บัตรเท่านั้น"
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "ลายนิ้วมือ/รหัสผ่าน"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "ลายนิ้วมือ/การ์ด"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "รหัสผ่าน/การ์ด"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "ลายนิ้วมือและรหัสผ่าน"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "ลายนิ้วมือและบัตร"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "รหัสผ่านและบัตร"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "รหัสผู้ใช้และลายนิ้วมือ"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "ลายนิ้วมือและรหัสผ่านและบัตร"
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "รหัสผู้ใช้และลายนิ้วมือและรหัสผ่าน"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "ลายนิ้วมือและบัตร/รหัสผู้ใช้"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "ใบหน้าเท่านั้น"
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "ใบหน้า&ลายนิ้วมือ"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "ใบหน้า&รหัสผ่าน"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "ใบหน้า&การ์ด"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "ใบหน้า&ลายนิ้วมือ&การ์ด"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "ใบหน้า&ลายนิ้วมือ&รหัสผ่าน"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "หลอดเลือดดำของนิ้ว"
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "หลอดเลือดดำของนิ้ว&รหัสผ่าน"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "หลอดเลือดดำของนิ้ว&การ์ด"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "หลอดเลือดดำของนิ้ว&รหัสผ่าน&การ์ด"
+
+msgid "employee_verificationOption_palm"
+msgstr "ฝ่ามือ"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "ฝ่ามือ&การ์ด"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "ฝ่ามือ&ใบหน้า"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "ฝ่ามือ&ลายนิ้วมือ"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "ฝ่ามือ&ลายนิ้วมือ&ใบหน้า"
+
+msgid "resign_typeOption_pending"
+msgstr "รอดำเนินการ"
+
+msgid "resign_typeOption_processing"
+msgstr "กำลังประมวลผล"
+
+msgid "resign_typeOption_done"
+msgstr "เสร็จสิ้น"
+
+msgid "resign_typeOption_quit"
+msgstr "ออก"
+
+msgid "resign_typeOption_dismissed"
+msgstr "ยกเลิก"
+
+msgid "resign_typeOption_resign"
+msgstr "ลาออก"
+
+msgid "resign_typeOption_transfer"
+msgstr "ถ่ายโอนข้อมูล"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "รักษาตำแหน่งไว้โดยไม่ได้รับเงินเดือน"
+
+msgid "approve_pending"
+msgstr "รอดำเนินการ"
+
+msgid "approve_approval_passed"
+msgstr "ผ่านอนุมัติ"
+
+msgid "approve_rejected"
+msgstr "ไม่อนุมัติ"
+
+msgid "approve_auto_approved"
+msgstr "อนุมัติอัตโนมัติ"
+
+msgid "module_parameter_error"
+msgstr "พารามิเตอร์โมดูลผิดพลาด"
+
+msgid "invalid_file_format"
+msgstr "รูปแบบไฟล์ไม่ถูกต้อง"
+
+msgid "please_select_file"
+msgstr "โปรดเลือกพนักงาน"
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "จำเป็นต้องใช้ฟิลด์ %(index)s"
+
+msgid "invalid_file_format:%(index)s"
+msgstr "รูปแบบไฟล์ไม่ถูกต้อง:%(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "แผ่นไฟล์ควรมีแค่หนึ่ง"
+
+msgid "file_data_must_be_more_than_two"
+msgstr "ข้อมูลไฟล์ต้องมีมากกว่าสอง"
+
+msgid "no_matched_fields"
+msgstr "ไม่มีฟิลด์ที่ตรงกัน"
+
+msgid "file_data_cannot_be_empty"
+msgstr "หมายเลขโฆษณาไม่ถูกต้อง"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "มีฐานข้อมูลผิดพลาดเมื่อมีการนำเข้า โปรดตรวจสอบข้อมูลที่ไม่ถูกต้อง"
+
+msgid "area_field_isDefault"
+msgstr "ค่าเริ่มต้น"
+
+msgid "parent_can_not_itself"
+msgstr "ผู้ปกครองไม่สามารถเป็นตัวของตัวเอง"
+
+msgid "psnl_model_area"
+msgstr "โซน"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "%(name)sมีพื้นที่ย่อยและไม่สามารถลบได้"
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s มีพนักงานไม่สามารถลบได้"
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "%(name)s ยังคงมีการใช้งานโดยอุปกรณ์และไม่สามารถยกเลิกได้"
+
+msgid "default_area_can_not_be_removed"
+msgstr "โซนเริ่มต้นไม่สามารถลบได้"
+
+msgid "assigned_time"
+msgstr "เวลาสิ้นสุด"
+
+msgid "model_assign_area_to_employee"
+msgstr "พนักงาน"
+
+msgid "bioPhoto_field_employee"
+msgstr "พนักงาน"
+
+msgid "bioPhoto_field_firstName"
+msgstr "ชื่อ"
+
+msgid "bioPhoto_field_lastName"
+msgstr "นามสกุล"
+
+msgid "bioPhoto_field_email"
+msgstr "อีเมล์"
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "หมายเลขซีเรียล"
+
+msgid "bioPhoto_field_registerPhoto"
+msgstr "รูปภาพลงทะเบียน"
+
+msgid "bioPhoto_field_registerTime"
+msgstr "เวลาลงทะเบียน"
+
+msgid "bioPhoto_field_approvalPhoto"
+msgstr "อนุมัติรูปภาพ"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "รูปภาพ"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "เวลาดำเนินการ"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "เวลาอนุมัติ"
+
+msgid "iclock_model_bioPhoto"
+msgstr "ไบโอรูปภาพ"
+
+msgid "psnl_model_certification"
+msgstr "เอกสาร"
+
+msgid "document_is_using_can_not_delete."
+msgstr "ไม่สามารถลบเอกสารที่กำลังใช้งานอยู่ได้"
+
+msgid "department_field_isDefault"
+msgstr "ค่าเริ่มต้น"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr "ไม่สามารถตั้งค่าที่เหนือกว่าเป็นของตัวเอง"
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "%(name)s มีแผนกย่อยและไม่สามารถลบได้"
+
+msgid "default_department_can_not_be_removed."
+msgstr "ไม่สามารถลบแผนกเริ่มต้นได้"
+
+msgid "psnl_model_department"
+msgstr "แผนก"
+
+msgid "emp_field_localizedName"
+msgstr "ชื่อในพื้นที่"
+
+msgid "emp_field_passport_number"
+msgstr "หมายเลขหนังสือเดินทาง"
+
+msgid "emp_field_driver_license_automobile"
+msgstr "ใบขับขี่รถยนต์"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "ใบขับขี่รถจักรยานยนต์"
+
+msgid "emp_field_photo"
+msgstr "รูปภาพ"
+
+msgid "emp_field_selfPassword"
+msgstr "รหัสผ่านตนเอง"
+
+msgid "emp_field_devicePassword"
+msgstr "รหัสผ่านอุปกรณ์"
+
+msgid "emp_field_devicePrivilege"
+msgstr "สิทธิ์ของอุปกรณ์"
+
+msgid "emp_field_accessGroup"
+msgstr "กลุ่มผ่านประตู"
+
+msgid "emp_field_accessTimezone"
+msgstr "ช่วงเวลาผ่านประตู"
+
+msgid "emp_field_address"
+msgstr "ที่อยู่"
+
+msgid "emp_field_postcode"
+msgstr "รหัสไปรษณีย์"
+
+msgid "emp_field_officeTel"
+msgstr "สำนักงานโทร"
+
+msgid "emp_field_contactTel"
+msgstr "ติดต่อโทร"
+
+msgid "emp_field_national"
+msgstr "ชาติ"
+
+msgid "emp_field_religion"
+msgstr "ศาสนา"
+
+msgid "emp_field_title"
+msgstr "ชื่อเรื่อง"
+
+msgid "emp_field_enrollSN"
+msgstr "ลงทะเบียนอุปกรณ์"
+
+msgid "emp_field_SSN"
+msgstr "SSN"
+
+msgid "emp_field_updateTime"
+msgstr "เวลาอัพเดต"
+
+msgid "emp_field_verifyMode"
+msgstr "โหมดยืนยัน"
+
+msgid "emp_field_city"
+msgstr "เมือง"
+
+msgid "emp_field_isAdmin"
+msgstr "ผู้ดูแลระบบ"
+
+msgid "emp_field_type"
+msgstr "ประเภทพนักงาน"
+
+msgid "emp_field_enableAtt"
+msgstr "เปิดใช้งานบันทึกเวลา"
+
+msgid "emp_field_enableOvertime"
+msgstr "เปิดใช้งานงานล่วงเวลา"
+
+msgid "emp_field_enableHoliday"
+msgstr "เปิดใช้งานวันหยุดนักขัตฤกษ์"
+
+msgid "emp_field_workflowRole"
+msgstr "กฎเวิร์คโฟลว์"
+
+msgid "employee_certification"
+msgstr "ใบรับรอง"
+
+msgid "emp_field_appStatus"
+msgstr "สถานะแอปพลิเคชั่น"
+
+msgid "emp_field_appRole"
+msgstr "กฎแอปพลิเคชั่น"
+
+msgid "emp_field_lastLogin"
+msgstr "ล็อกอินครั้งล่าสุุด"
+
+msgid "emp_field_isActive"
+msgstr "ใช้งาน"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr "มีหมายเลขบัตรอยู่แล้ว หากคุณต้องการออกบัตรอีกครั้ง ต้องลบผู้ถือบัตร %(index)s คนเดิมก่อน"
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "ไม่พบพนักงาน(%(code)s)"
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "ล้างบทบาทเวิร์กโฟลว์ล้มเหลว:%(message)s"
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "เพิ่มข้อยกเว้นบทบาทเวิร์กโฟลว์:%(message)s"
+
+msgid "model_employee"
+msgstr "พนักงาน"
+
+msgid "invalid_picture_format"
+msgstr "รูปแบบรูปภาพไม่ถูกต้อง"
+
+msgid "personnel_photo_size_must_not_exceed_16kb"
+msgstr "ขนาดของรูปภาพพนักงานไม่เกิน 16 kb"
+
+msgid "employeeCert_field_cert"
+msgstr "เอกสาร"
+
+msgid "pnsl_model_empProfile"
+msgstr "โปรไฟล์ผู้ใช้งาน"
+
+msgid "position_field_isDefault"
+msgstr "ค่าเริ่มต้น"
+
+msgid "psnl_model_position"
+msgstr "ตำแหน่ง"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "ผู้ปกครองไม่สามารถเป็นตัวของตัวเอง"
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "%(name)s มีตำแหน่งย่อยและไม่สามารถลบได้"
+
+msgid "default_position_can_not_be_removed."
+msgstr "ตำแหน่งเริ่มต้นไม่สามารถลบได้"
+
+msgid "psnl_model_resign"
+msgstr "ลาออก"
+
+msgid "data_import_labelFile"
+msgstr "นำเข้าไฟล์:"
+
+msgid "date_import_labelExistingData"
+msgstr "ข้อมูลที่มีอยู่:"
+
+msgid "data_import_fileTemplateDemo"
+msgstr "เดโมแม่แบบ:"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "ดาวน์โหลดรูปแบบ"
+
+msgid "data_import_description"
+msgstr "รายละเอียด"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1.จำเป็นต้องมีส่วนหัวของไฟล์เทมเพลต"
+
+msgid "data_import_areaImportRequired2"
+msgstr "2.ฟิลด์จำเป็นต้องมีรหัสและชื่อ"
+
+msgid "data_import_areaImportRequired3"
+msgstr "3.ตำแหน่งหลักจะต้องเป็นรหัสพื้นที่"
+
+msgid "data_import_areaImportRequired4"
+msgstr "4.่าคอลัมน์ทั้งหมดควรเป็นรูปแบบข้อความ"
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "รีเฟรช"
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "ดาวน์โหลด"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1.จำเป็นต้องมีส่วนหัวของไฟล์เทมเพลต"
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2.จำเป็นต้องมีรหัสใบรับรองและชื่อ"
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3.ค่าคอลัมน์ทั้งหมดควรเป็นรูปแบบข้อความ"
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1.จำเป็นต้องมีส่วนหัวของไฟล์เทมเพลตd"
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2.ฟิลด์จำเป็นต้องมีรหัสและชื่อ"
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3.ตำแหน่งหลักจะต้องเป็นรหัสตำแหน่ง"
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4.ค่าคอลัมน์ทั้งหมดควรเป็นรูปแบบข้อความ"
+
+msgid "departmentList_search_department"
+msgstr "แผนก"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1.จำเป็นต้องมีส่วนหัวของไฟล์เทมเพลต"
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2.ฟิลด์จำเป็นต้องมี หมายเลขพนักงาน ชื่อจริง หมายเลขแผนก"
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3.ค่าคอลัมน์ทั้งหมดควรเป็นรูปแบบข้อความ"
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4.หมายเลขบัตรจะต้องมีเอกลักษณ์"
+
+msgid "personnel_profile"
+msgstr "โปรไฟล์"
+
+msgid "register_fingerprint"
+msgstr "ลงทะเบียนลายนิ้วมือ"
+
+msgid "fingerprint_registration"
+msgstr "ลงทะเบียนลายนิ้วมือ"
+
+msgid "download_driver"
+msgstr "ดาวน์โหลดไดรเวอร์"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr "(ขนาดรูป 120×140 พิกเซล)"
+
+msgid "employee_title_clickToUploadPhoto"
+msgstr "คลิกเพื่ออัพโหลดรูป"
+
+msgid "employee_title_UploadPhoto"
+msgstr "รูปภาพ"
+
+msgid "employee_label_fingerprintRegistered"
+msgstr "ลงทะเบียนลายนิ้วมือ (v10)"
+
+msgid "employee_btn_fingerprintEnroll"
+msgstr "ลงทะเบียน"
+
+msgid "employee_title_clickToUploadBioPhoto"
+msgstr "คลิกเพื่ออัพโหลดรูปถ่ายไบโอ"
+
+msgid "employee_basicInformation_setting"
+msgstr "โปร์ไฟล์"
+
+msgid "employee_moreDetail_setting"
+msgstr "ข้อมูลส่วนตัว"
+
+msgid "employee_attendance_settings"
+msgstr "ตั้งค่าบันทึกเวลา"
+
+msgid "employee_document_settings"
+msgstr "เอกสาร"
+
+msgid "employee_accessController_settings"
+msgstr "ควบคุมประตู"
+
+msgid "employee_app_setting"
+msgstr "ตั้งค่าแอปพลิเคชั่น"
+
+msgid "payroll_setting"
+msgstr "ตั้งค่าบัญชีเงินเดือน"
+
+msgid "employee_deviceRelate_setting"
+msgstr "ตั้งค่าบันทึกเวลาอุปกรณ์"
+
+msgid "employee_editPage_addCert"
+msgstr "เพิ่ม"
+
+msgid "registered_fingerprint:"
+msgstr "ลงทะเบียนลายนิ้วมือ:"
+
+msgid "employee_field_employeeCode"
+msgstr "รหัสพนักงาน"
+
+msgid "employee_field_employeeFirstName"
+msgstr "ชื่อ"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "พนักงาน"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "เลือก"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1.จำเป็นต้องมีส่วนหัวของไฟล์เทมเพลต"
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2.จำเป็นต้องมีใบการรับรอง พนักงาน การแจ้งเตือนอีเมล์"
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3.ค่าคอลัมน์ทั้งหมดควรเป็นรูปแบบข้อความ"
+
+msgid "data_import_positionImportRequired1"
+msgstr "1.จำเป็นต้องมีส่วนหัวของไฟล์เทมเพลต"
+
+msgid "data_import_positionImportRequired2"
+msgstr "2.ฟิลด์จำเป็นต้องมีรหัสและชื่อ"
+
+msgid "data_import_positionImportRequired3"
+msgstr "3.ตำแหน่งหลักจะต้องเป็นรหัสตำแหน่ง"
+
+msgid "data_import_positionImportRequired4"
+msgstr "4.ค่าคอลัมน์ ll ควรเป็นรูปแบบข้อความ"
+
+msgid "data_import_resignImportRequired1"
+msgstr "1.จำเป็นต้องมีส่วนหัวของไฟล์เทมเพลต"
+
+msgid "data_import_resignImportRequired2"
+msgstr "2.ฟิลด์จำเป็นต้องมี ID พนักงาน วันที่ลาออก ประเภทการลาออก "
+
+msgid "data_import_resignImportRequired3"
+msgstr "3.ค่าคอลัมน์ทั้งหมดควรเป็นรูปแบบข้อความ"
+
+msgid "BioTime 8.0"
+msgstr "BioTime 8.0"
+
+msgid "mobile_photo_register"
+msgstr "ลงทะเบียนรูปภาพ"
+
+msgid "mobile_onlineRegister_employeeCode"
+msgstr "รหัสพนักงาน"
+
+msgid "mobile_employee_first_name"
+msgstr "ชื่อ"
+
+msgid "mobile_employee_last_name"
+msgstr "นามสกุล"
+
+msgid "mobile_employee_email"
+msgstr "อีเมล์"
+
+msgid "mobile_onlineRegister_remark"
+msgstr "หมายเหตุ"
+
+msgid "mobile_photo_enroll"
+msgstr "ลงทะเบียน"
+
+msgid "lng_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "lng_option_traditionalChinese"
+msgstr "中文繁體"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "Pусский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Bahasa Indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "lng_option_cambodian"
+msgstr "ជនជាតិខ្មែរ។"
+
+msgid "menu_personnel"
+msgstr "พนักงาน"
+
+msgid "ADMS"
+msgstr "ADMS"
+
+msgid "menu_terminal"
+msgstr "อุปกรณ์"
+
+msgid "menu_attendance"
+msgstr "บันทึกเวลา"
+
+msgid "menu_system"
+msgstr "ระบบ"
+
+msgid "menu_group_employee_request"
+msgstr "ยื่นขอ"
+
+msgid "menu_request_employee_leave"
+msgstr "ลาหยุด"
+
+msgid "menu_request_employee_overtime"
+msgstr "ทำงานล่วงเวลา"
+
+msgid "menu_request_employee_manual_log"
+msgstr "Log แบบกำหนดเอง"
+
+msgid "menu_request_employee_training"
+msgstr "อบรม"
+
+msgid "menu_group_employee_approval"
+msgstr "อนุมัติ"
+
+msgid "menu_approve_employee_leave"
+msgstr "ลาหยุด"
+
+msgid "menu_approve_employee_overtime"
+msgstr "ทำงานล่วงเวลา"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "Log แบบกำหนดเอง"
+
+msgid "menu_approve_employee_training"
+msgstr "อบรม"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "เปลี่ยนตารางเวลา"
+
+msgid "menu_group_employee_report"
+msgstr "รายงาน"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "Log กำหนดการ"
+
+msgid "menu_staff_detailReport"
+msgstr "บัตรเวลาทั้งหมด"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "สรุปการเข้างาน"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "การทำธุรกรรมหลายประเภท"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "เวลาพัก"
+
+msgid "menu_staff_timeCardReport"
+msgstr "บัตรเวลา"
+
+msgid "staff_leave_actionDelete"
+msgstr "เพิ่ม"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "รหัสพนักงาน"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "ชื่อ"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "นามสกุล"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "วันที่"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "ตารางเวลาก่อนหน้า"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "ตารางเวลา"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "ใช้เวลา"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "ผู้อนุมัติล่าสุด"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "สถานะปัจจุบัน"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "สถานะการอนุมัติ"
+
+msgid "attendance_analyze"
+msgstr "วิเคราะห์การเข้างาน"
+
+msgid "csv_export"
+msgstr "ส่งออก Csv"
+
+msgid "pdf_export"
+msgstr "ส่งออก PDF"
+
+msgid "xlsx_export"
+msgstr "ส่งออก Xlsx"
+
+msgid "staff_search_startDate"
+msgstr "วันที่เริ่ม"
+
+msgid "staff_search_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "staff_approval_approvalState"
+msgstr "สถานะการอนุมัติ"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "รอดำเนินการ"
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "อนุมัติแล้ว"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "ไม่อนุมัติ"
+
+msgid "staff_search_searchTitle"
+msgstr "ค้นหา"
+
+msgid "staff_search_clearTitle"
+msgstr "ล้างการค้นหา"
+
+msgid "staff_leave_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "staff_leave_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "staff_leave_leaveCategory"
+msgstr "หมวดหมู่"
+
+msgid "staff_leave_applyReason"
+msgstr "สาเหตุ"
+
+msgid "staff_leave_empCode"
+msgstr "รหัสพนักงาน"
+
+msgid "staff_leave_firstName"
+msgstr "ชื่อ"
+
+msgid "staff_leave_lastName"
+msgstr "นามสกุล"
+
+msgid "staff_leave_applyTime"
+msgstr "ใช้เวลา"
+
+msgid "staff_leave_lastApprover"
+msgstr "ผู้อนุมัติล่าสุด"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "สถานะปัจจุบัน"
+
+msgid "staff_leave_approvalState"
+msgstr "สถานะการอนุมัติ"
+
+msgid "staff_search_category"
+msgstr "หมวดหมู่"
+
+msgid "staff_leave_actionAdd"
+msgstr "เพิ่ม"
+
+msgid "staff_manualLog_empCode"
+msgstr "รหัสพนักงาน"
+
+msgid "staff_manualLog_firstName"
+msgstr "ชื่อ"
+
+msgid "staff_manualLog_lastName"
+msgstr "นามสกุล"
+
+msgid "staff_manualLog_applyTime"
+msgstr "ใช้เวลา"
+
+msgid "staff_manualLog_punchTime"
+msgstr "เวลาที่ลงเวลา"
+
+msgid "staff_manualLog_punchState"
+msgstr "สถานะการลงเวลา"
+
+msgid "staff_manualLog_workCode"
+msgstr "รหัสงาน"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "ผู้อนุมัติล่าสุด"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "สถานะปัจจุบัน"
+
+msgid "staff_manualLog_approvalState"
+msgstr "สถานะการอนุมัติ"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "ลบ"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "เพิ่ม"
+
+msgid "staff_manualLog_applyReason"
+msgstr "สาเหตุการใช้"
+
+msgid "staff_overtime_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "staff_overtime_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "staff_overtime_overtimeType"
+msgstr "ประเภททำงานล่วงเวลา"
+
+msgid "staff_overtime_applyReason"
+msgstr "สาเหตุ"
+
+msgid "normal_overtime"
+msgstr "ทำงานล่วงเวลาปกติ"
+
+msgid "weekend_overtime"
+msgstr "ทำงานล่วงเวลาสุดสัปดาห์"
+
+msgid "holiday_overtime"
+msgstr "ทำงานล่วงเวลาวันหยุดนักขัตฤกษ์"
+
+msgid "staff_overtime_actionDelete"
+msgstr "ลบ"
+
+msgid "staff_overtime_empCode"
+msgstr "รหัสพนักงาน"
+
+msgid "staff_overtime_firstName"
+msgstr "ชื่อ"
+
+msgid "staff_overtime_lastName"
+msgstr "นามสกุล"
+
+msgid "staff_overtime_applyTime"
+msgstr "ใช้เวลา"
+
+msgid "staff_overtime_lastApprover"
+msgstr "ผู้อนุมัติล่าสุด"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "สถานะปัจจุบัน"
+
+msgid "staff_overtime_approvalSate"
+msgstr "สถานะการอนุมัติ"
+
+msgid "staff_overtime_actionAdd"
+msgstr "เพิ่ม"
+
+msgid "search_start_date"
+msgstr "วันที่เริ่ม"
+
+msgid "search_end_date"
+msgstr "วันที่สิ้นสุด"
+
+msgid "timetable"
+msgstr "ตารางเวลา"
+
+msgid "userProfile_itemLabel_language"
+msgstr "ภาษา"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "รหัสผ่านเก่า"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "รหัสผ่านใหม่"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "ยืนยันรหัสผ่านใหม่"
+
+msgid "staff_training_empCode"
+msgstr "รหัสพนักงาน"
+
+msgid "staff_training_firstName"
+msgstr "ชื่อ"
+
+msgid "staff_training_lastName"
+msgstr "นามสกุล"
+
+msgid "staff_training_applyTime"
+msgstr "ใช้เวลา"
+
+msgid "staff_training_trainingCategory"
+msgstr "ประเภทอบรม"
+
+msgid "staff_training_startTime"
+msgstr "เวลาเริ่ม"
+
+msgid "staff_training_endTime"
+msgstr "เวลาสิ้นสุด"
+
+msgid "staff_training_lastApprover"
+msgstr "ผู้อนุมัติล่าสุด"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "สถานะปัจจุบัน"
+
+msgid "staff_training_approvalState"
+msgstr "สถานะการอนุมัติ"
+
+msgid "staff_training_actionDelete"
+msgstr "ลบ"
+
+msgid "staff_training_actionAdd"
+msgstr "เพิ่ม"
+
+msgid "the_old_pwd_is_required"
+msgstr "จำเป็นต้องมีไฟล์ SN"
+
+msgid "the_new_pwd_is_required"
+msgstr "จำเป็นต้องมีเซิร์ฟเวอร์ SMTP"
+
+msgid "the_two_password_are_different"
+msgstr "รหัสผ่านทั้งสองไม่ตรงกัน"
+
+msgid "the_old_pwd_is_wrong"
+msgstr "วิธีการเก็บไม่ถูกต้อง"
+
+msgid "setting_employee_pwd_failed"
+msgstr "โปรไฟล์พนักงาน"
+
+msgid "system_exception_illegal_login"
+msgstr "ล็อกอินไม่ถูกต้อง"
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "แก้ไขรหัสผ่านของคุณ"
+
+msgid "model_action_add"
+msgstr "เพิ่ม"
+
+msgid "model_action_modify"
+msgstr "แก้ไข"
+
+msgid "system_welcome"
+msgstr "ยินดีตอนรับ"
+
+msgid "system_userMenu_op_language"
+msgstr "ภาษา"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "รหัสผ่าน"
+
+msgid "system_userMenu_op_about"
+msgstr "เกี่ยวกับ"
+
+msgid "system_userMenu_op_logout"
+msgstr "ออกจากระบบ"
+
+msgid "filter_title_search"
+msgstr "ค้นหาตามตัวกรอง"
+
+msgid "filter_title_clear"
+msgstr "ล้างตัวกรอง"
+
+msgid "user_username"
+msgstr "ผู้ใช้"
+
+msgid "user_password"
+msgstr "รหัสผ่าน"
+
+msgid "software_version"
+msgstr "เวอร์ชั่นซอฟต์แวร์"
+
+msgid "authorized_information"
+msgstr "ข้อมูลที่ได้รับอนุญาต"
+
+msgid "label_customer_code"
+msgstr "รหัสลูกค้า"
+
+msgid "label_used_devices"
+msgstr "อุปกรณ์ที่ใช้งาน"
+
+msgid "label_used_employees"
+msgstr "พนักงานที่ใช้งาน"
+
+msgid "label_used_apps"
+msgstr "แอปพลิดคชั่นที่ใช้งาน"
+
+msgid "label_authorized_date"
+msgstr "วันได้รับอนุญาต"
+
+msgid "label_expired_date"
+msgstr "วันหมดอายุ"
+
+msgid "label_authorized_company"
+msgstr "ข้อมูลที่ได้รับอนุญาต"
+
+msgid "license_activation"
+msgstr "เปิดใช้งานใบอนุญาต"
+
+msgid "online_activation"
+msgstr "เปิดใช้งานออนไลน์"
+
+msgid "download_upk"
+msgstr "ดาวน์โหลด UPK"
+
+msgid "offline_activation"
+msgstr "เปิดใช้งานแบบออฟไลน์"
+
+msgid "online_upgrade_license"
+msgstr "อัพเกรดใบอนุญาตแบบออนไลน์"
+
+msgid "export_license"
+msgstr "ส่งออกใบอนุญาต"
+
+msgid "import_license"
+msgstr "นำเข้าใบอนุญาต"
+
+msgid "aboutPage_title_licenseMigration"
+msgstr "ย้ายสิทธิ์การใช้งาน"
+
+msgid "server_information"
+msgstr "ข้อมูลเซิร์ฟเวอร์"
+
+msgid "label_machine"
+msgstr "อุปกรณ์"
+
+msgid "label_processor"
+msgstr "ประมวลผล"
+
+msgid "label_platform"
+msgstr "แบบฟอร์ม"
+
+msgid "label_ram_total"
+msgstr "แรม"
+
+msgid "label_ram_free"
+msgstr "RAM ฟรี"
+
+msgid "user_authenticate"
+msgstr "รับรอง"
+
+msgid "user_login"
+msgstr "ล็อกอินผู้ใช้"
+
+msgid "employee_self"
+msgstr "บริการตนเอง"
+
+msgid "login_username"
+msgstr "ชื่อผู้ใช้"
+
+msgid "login_pwd"
+msgstr "รหัสผ่าน"
+
+msgid "btn_user_login"
+msgstr "ล็อกอิน"
+
+msgid "btn_fp_login"
+msgstr "ลายนิ้วมือ"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "โปรดติดตั้งไดร์เวอร์ลายนิ้วมือ"
+
+msgid "login_emp_number"
+msgstr "รหัสพนักงาน"
+
+msgid "login_emp_pwd"
+msgstr "รหัสผ่าน"
+
+msgid "btn_emp_login"
+msgstr "ล็อกอิน"
+
+msgid "login_about_btn_title"
+msgstr "คลิกเพื่อตรวจสอบรายละเอียดใบอนุญาต"
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr "สงวนลิขสิทธิ์ © 2018 ZKTECO CO., LTD."
+
+msgid "system_about"
+msgstr "เกี่ยวกับ"
+
+msgid "last_approver"
+msgstr "ผู้อนุมัติล่าสุด"
+
+msgid "tool_filters"
+msgstr "ตัวกรอง"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "ไม่พบหมายเลขพนักงาน โปรดลงทะเบียนจากระบบก่อน"
+
+msgid "employee_photo_not_found"
+msgstr "ไม่พบรูปพนักงาน"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "บันทึกรูปล้มเหลว โปรดตรวจสอบรูปภาพอีกครั้ง"
+
+msgid "workflowRole_field_employee"
+msgstr "พนักงาน"
+
+msgid "workflowRole_field_role"
+msgstr "สิทธิ์เวิร์กโฟลว์"
+
+msgid "workflow_action_assignEmployee"
+msgstr "กำหนดพนักงาน"
+
+msgid "workflow_action_assignEmployeeHelpTxt"
+msgstr "กำหนดพนักงานให้กับสิทธิ์เวิร์กโฟลว์"
+
+msgid "workFlowRoleAssignEmployee_error_noneEmployee"
+msgstr "โปรดเลือกพนักงาน"
+
+msgid "workFlowRoleAssignEmployee_error_noneWorkflowRole"
+msgstr "โปรดเลือกสิทธิ์เวิร์กโฟลว์"
+
+msgid "workflowEngine_field_code"
+msgstr "รหัส"
+
+msgid "workflowEngine_field_name"
+msgstr "ชื่อ"
+
+msgid "workflowEngine_field_startDate"
+msgstr "วันที่เริ่ม"
+
+msgid "workflowEngine_field_endDate"
+msgstr "วันที่สิ้นสุด"
+
+msgid "workflowEngine_field_departments"
+msgstr "แผนก"
+
+msgid "workflowEngine_field_contentType"
+msgstr "ประเภทเนื้อหา"
+
+msgid "workflow_model_workflowNode"
+msgstr "จุดเชื่อมเวิร์คโฟลว์"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "ตำแหน่ง"
+
+msgid "workflow_node_is_required"
+msgstr "จำเป็นต้องมีจุดเชื่อมเวิร์คโฟลว์"
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "จำเป็นต้องมีจุดเชื่อมและชื่อเวิร์คโฟลว์"
+
+msgid "workflow_node_is_unique"
+msgstr "จุดเชื่อมเวิร์คโฟลว์เป็นเอกลักษณ์"
+
+msgid "workflowEngine_field_employee"
+msgstr "พนักงาน"
+
+msgid "node_code"
+msgstr "หมายเลขจุดเชื่อม"
+
+msgid "node_name"
+msgstr "ชื่อจุดเชื่อม"
+
+msgid "workflow_node_approver"
+msgstr "ผู้อนุมัติ"
+
+msgid "workflow_node_notifier"
+msgstr "แจ้งเตือน"
+
+msgid "employee_count"
+msgstr "จำนวนพนักงาน"
+
+msgid "approval_field_approvalStatus"
+msgstr "สถานะการอนุมัติ"
+
+msgid "workflowEngine_field_description"
+msgstr "รายละเอียด"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "วัตถุสะท้อน"
+
+msgid "workflowEngine_field_type"
+msgstr "ประเภทเวิร์คโฟลว์"
+
+msgid "workflowEngine_field_informType"
+msgstr "ประเภทการแจ้ง"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "ไม่มี"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "อีเมล์"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "การแจ้งเตือน"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "แจ้งเตือนผ่านอีเมล์"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "เวลาการลาหยุดไม่ถูกต้อง เวลาสิ้นสุดต้องเป็นหลังจากเวลาเริ่ม"
+
+msgid "the_workflow_is_already_used"
+msgstr "เวิร์คโฟลว์ถูกใช้ไปแล้ว"
+
+msgid "workflow_model_workflowEngine"
+msgstr "เครื่องมือเวิร์คโฟลว์"
+
+msgid "is_last_node"
+msgstr "เป็นจุดเชื่อมล่าสุด"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr "ผู้ใช้ไม่ได้รับอนุญาตให้อนุมัติจุดเชื่อมงานนี้"
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr "ผู้ใช้ไม่มีสิทธิ์ในการทำงานบนจุดเชื่อมเวิร์คโฟลว์นี้"
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr "ผู้ใช้ไม่ได้รับอนุญาตให้ปฏิเสธจุดเชื่อมงานนี้"
+
+msgid "workflow_node_instance"
+msgstr "ตัวอย่างจุดเชื่อมเวิร์คโฟลว์"
+
+msgid "workflow_code"
+msgstr "หมายเลขเวิร์คโฟลว์"
+
+msgid "workflow_name"
+msgstr "ชื่อเวิร์คโฟลว์"
+
+msgid "issue_date"
+msgstr "วันที่ออก"
+
+msgid "workflow_description"
+msgstr "รายละเอียด"
+
+msgid "content_type"
+msgstr "ประเภทเวิร์คโฟลว์"
+
+msgid "inform_type"
+msgstr "ประเภทการแจ้ง"
+
+msgid "del_flag"
+msgstr "ลบโลโก้"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr "เวิร์คโฟลว์ไม่ทำงานจะไม่สามารถประมวลการดำเนินการได้"
+
+msgid "workflow_instance"
+msgstr "ตัวอย่างเวิร์คโฟลว์"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "เป็นเจ้าของแผนก"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "ทั้งหมด"
+
+msgid "workflowNode_field_code"
+msgstr "รหัส"
+
+msgid "workflowNode_field_name"
+msgstr "ชื่อ"
+
+msgid "workflowNode_field_orderID"
+msgstr "ID คำสั่ง"
+
+msgid "workflowNode_field_approverType"
+msgstr "ประเภทผู้อนุมัติ"
+
+msgid "workflowNode_field_approver"
+msgstr "ผู้อนุมัติ"
+
+msgid "workflowNode_field_notifierType"
+msgstr "ประเภทการแจ้งเตือน"
+
+msgid "workflowNode_field_notifier"
+msgstr "การแจ้งเตือน"
+
+msgid "workflowNode_field_approverScope"
+msgstr "ขอบเขตผู้อนุมัติ"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "ขอบเขตการแจ้งเตือน"
+
+msgid "workflow_engine_name"
+msgstr "ชื่อ"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "จุดเชื่อมเวิร์คโฟลว์ถูกใช้งานแล้ว"
+
+msgid "workflowRole_field_code"
+msgstr "รหัส"
+
+msgid "workflowRole_field_name"
+msgstr "ชื่อ"
+
+msgid "workflowRole_field_description"
+msgstr "รายละเอียด"
+
+msgid "workflow_model_workflowRole"
+msgstr "กฎเวิร์คโฟลว์"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "Position %(name)s has already associated some employees and cannot be deleted for now"
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "%(name)s ยังคงใช้งานอยู่โดยโหนดเวิร์กโฟลว์และไม่สามารถยกเลิกได้"
+
+msgid "node_state"
+msgstr "สถานะจุดเชื่อม"
+
+msgid "notifier_type_no_selected"
+msgstr "ไม่ได้เลือกประเภทการแจ้งเตือน"
+
+msgid "name"
+msgstr "ชื่อ"
+
+msgid "remark"
+msgstr "หมายเหตุ"
+
+msgid "information_workflow"
+msgstr "ข้อมูล"
+
+msgid "workflow_content_type"
+msgstr "ประเภทเนื้อหา"
+
+msgid "instance_issue_date"
+msgstr "วันที่ออก"
+
+msgid "approve"
+msgstr "อนุมัติ"
+
+msgid "remark_is_missing"
+msgstr "หมายเหตุหายไป"
+
+msgid "workflow_instance_id_is_missing"
+msgstr "ตัวอย่างจุดเชื่อมเวิร์คโฟลว์"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "ตัวอย่างจุดเชื่อมเวิร์คโฟลว์"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "ตัวอย่างจุดเชื่อมเวิร์คโฟลว์"
+
+msgid "did_not_have_match_workflow"
+msgstr "ไม่มีเวิร์คโฟลว์ที่ตรงกัน"
+
+msgid "verity_type"
+msgstr "ประเภทยืนยัน"
+
+msgid "lineNotify_field_messageHead"
+msgstr "ข้อความส่วนหัว"
+
+msgid "lineNotify_field_messageTail"
+msgstr "ข้อความส่วนท้าย"
+
+msgid "export_title_departments"
+msgstr "แผนก"
+
+msgid "export_title_positions"
+msgstr "ตำแหน่ง"
+
+msgid "export_title_areas"
+msgstr "โซน"
+
+msgid "export_title_employees"
+msgstr "พนักงาน"
+
+msgid "export_title_resigns"
+msgstr "ลาออก"
+
+msgid "export_title_certifications"
+msgstr "เอกสาร"
+
+msgid "export_title_employeecertifications"
+msgstr "เอกสารพนักงาน"
+
+msgid "export_title_terminals"
+msgstr "อุปกรณ์"
+
+msgid "export_title_terminalcommands"
+msgstr "คำสั่งอุปกรณ์"
+
+msgid "export_title_publicmessages"
+msgstr "สาธารณะ"
+
+msgid "export_title_privatemessages"
+msgstr "ส่วนตัว"
+
+msgid "export_title_terminalworkcodes"
+msgstr "รหัสงาน"
+
+msgid "export_title_biodatas"
+msgstr "เทมเพลทไบโอ"
+
+msgid "export_title_terminallogs"
+msgstr " Log อุปกรณ์"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "อัพโหลด Log"
+
+msgid "export_title_break_times"
+msgstr "พักเที่ยง"
+
+msgid "export_title_time_intervals"
+msgstr "ตารางเวลาทำงาน"
+
+msgid "export_title_att_shifts"
+msgstr "กะทำงาน"
+
+msgid "export_title_att_schedules"
+msgstr "ตารางเวลา"
+
+msgid "export_title_temp_schedules"
+msgstr "ตารางชั่วคราว"
+
+msgid "export_title_employeeschedule_report"
+msgstr "ตารางพนักงาน"
+
+msgid "export_title_manual_logs"
+msgstr "กำหนดด้วยตนเอง"
+
+msgid "export_title_leaves"
+msgstr "ลางาน"
+
+msgid "export_title_overtimes"
+msgstr "ล่วงเวลาทำงาน"
+
+msgid "export_title_trainings"
+msgstr "เทรนนิ่ง"
+
+msgid "export_title_holiday"
+msgstr "วันนักขัตฤกษ์"
+
+msgid "export_title_leave_categorys"
+msgstr "ประเภทลางาน"
+
+msgid "export_title_training_categorys"
+msgstr "ประเภทเทรนนิ่ง"
+
+msgid "export_title_transactions"
+msgstr "รายการบันทึกทั้งหมด"
+
+msgid "export_field_employee_area"
+msgstr "โซน"
+
+msgid "export_field_device_count"
+msgstr "จำนวนอุปกรณ์"
+
+msgid "export_field_employee"
+msgstr "พนักงาน"
+
+msgid "export_field_employee_name"
+msgstr "ชื่อ"
+
+msgid "new_schedule"
+msgstr "การปรับกำหนดการ"
+
+msgid "new_schedule_description"
+msgstr "เพิ่มกำหนดการ"
+
+msgid "new_schedule_help_txt"
+msgstr "เพิ่มกำหนดการ"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "ไม่สามารถลบหมวดหมู่ตามค่าเริ่มต้นได้"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "ไม่สามารถลบหมวดหมู่ที่ใช้ได้"
+
+msgid "base_setting"
+msgstr "ตั้งค่าระบบ"
+
+msgid "calculation_rule"
+msgstr "สาย"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "รายการบันทึกทั้งหมด"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "ความยาว ID พนักงาน"
+
+msgid "menu_device_remoteupgrade"
+msgstr "อุปกรณ์"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "อุปกรณ์"
+
+msgid "remoteUpgrade_field_password"
+msgstr "รหัสผ่าน"
+
+msgid "remoteUpgrade_action_add"
+msgstr "เพิ่ม"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "เพิ่ม"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "เพิ่ม"
+
+msgid "upgrade_file_error"
+msgstr "อัพโหลดไฟล์"
+
+msgid "please_select_device"
+msgstr "โปรดเลือกพนักงาน"
+
+msgid "password_is_required"
+msgstr "จำเป็นต้องมีไฟล์ SN"
+
+msgid "password_is_error"
+msgstr "รหัสผ่านทั้งสองไม่ตรงกัน"
+
+msgid "set_upgrade_password_first"
+msgstr "รหัสผ่าน"
+
+msgid "please_select_upgrade_file"
+msgstr "โปรดเลือกไฟล์อัพเกรด"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "ไฟล์อัพเกรด"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "เวลาที่ดำเนินการ"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "เวลาที่ถ่ายโอน"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "เวลาย้อนกลับ"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "ค่าย้อนกลับ"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "อัพเกรดจากระยะไกล"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "ล้างแคชเมื่อมันไม่ทำงานหลังจากผ่านไปหนึ่งนาที"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "จีนตัวย่อ"
+
+msgid "deviceLanguage_option_English"
+msgstr "อังกฤษ"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "สเปน"
+
+msgid "deviceLanguage_option_French"
+msgstr "ฝรั่งเศส"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "อาหรับ"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "โปรตุเกส"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "รัสเซีย"
+
+msgid "deviceLanguage_option_German"
+msgstr "เยอรมัน"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "เปอร์เซีย"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "ไทย"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "อินโดนีเซีย"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "ญี่ปุ่น"
+
+msgid "deviceLanguage_option_Korean"
+msgstr "เกาหลี"
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "เวียตนาม"
+
+msgid "deviceLanguage_option_Turkish"
+msgstr "ตุรกี"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "อิสราเอล"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "สาธารณรัฐเช็ก"
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "ดัตช์"
+
+msgid "deviceLanguage_option_Italian"
+msgstr "อิตาลี"
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "สโลวะเกีย"
+
+msgid "deviceLanguage_option_Greek"
+msgstr "กรีก"
+
+msgid "deviceLanguage_option_Polish"
+msgstr "ขัด"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr "จีนดั้งเดิม"
+
+msgid "adminLog_action_login"
+msgstr "ล็อดอิน"
+
+msgid "adminLog_action_logout"
+msgstr "ออกจากระบบ"
+
+msgid "adminLog_action_add"
+msgstr "เพิ่ม"
+
+msgid "adminLog_action_change"
+msgstr "เปลี่ยนแปลง"
+
+msgid "adminLog_action_delete"
+msgstr "ลบ"
+
+msgid "app_download"
+msgstr "ดาวน์โหลดแอปพลิเคชั่น"
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr "การทำงานล่วงเวลาขั้นต่ำในช่วงต้นไม่ถูกต้อง"
+
+msgid "minimum_above_overtime_invalid"
+msgstr "การทำงานล่วงเวลาขั้นต่ำไม่ถูกต้อง"
+
+msgid "delete_default_user_alert"
+msgstr "ไม่สามารถลบผู้ใช้ผู้ดูแลระบบได้"
+
+msgid "delete_user_self_alert"
+msgstr "ผู้ใช้ปัจจุบันไม่สามารถลบได้"
+
+msgid "biophoto_upload"
+msgstr "อัพโหลดรูปภาพ"
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr "พนักงานไม่ได้มีอยู่:"
+
+msgid "biophoto_upload_error_photo"
+msgstr "ข้อผิดพลาดรูปภาพ:"
+
+msgid "biophoto_upload_other_errors"
+msgstr "ข้อผิดพลาดอื่น ๆ :"
+
+msgid "biophoto_upload_ignore_error"
+msgstr "ละเว้นข้อผิดพลาด"
+
+msgid "biophoto_upload_select_files"
+msgstr "เลือกไฟล์"
+
+msgid "biophoto_upload_start"
+msgstr "เริ่ม"
+
+msgid "staff_training_applyReason"
+msgstr "เหตุผล"
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr "ทำซ้ำเวิร์กโฟลว์สำหรับช่วงเวลานี้"
+
+msgid "holiday_duration_invalid"
+msgstr "วันหยุดซ้อนกัน"
+
+msgid "migrate_sqlite_file_is_required"
+msgstr "จำเป็นต้องใช้ไฟล์ฐานข้อมูล Sqlite"
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr "พนักงาน%(emp)s มีเอกสาร%(certification)s แล้ว"
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr "มีรูปภาพที่เลือกมากเกินไปโปรด จำกัด ไว้ที่ 500 หรือน้อยกว่า"
+
+msgid "autoExport_task_time"
+msgstr "เวลา"
+
+msgid "autoExport_task_date"
+msgstr "วัน"
+
+msgid "no_record"
+msgstr "ไม่มีข้อมูล"
+
+msgid "autoExport_task_punchState"
+msgstr "เลือกสถานะ"
+
+msgid "adjust_timeinterval"
+msgstr "ตารางเวลา"
+
+msgid "app_login_failed"
+msgstr "เข้าสู่ระบบไม่ถูกต้อง"
+
+msgid "appLogin_param_client_missing"
+msgstr "พารามิเตอร์ลูกค้าหายไป"
+
+msgid "appLogin_incorrect_username_or_password"
+msgstr "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+
+msgid "appLogin_illegal_request"
+msgstr "คำขอผิดกฎหมาย"
+
+msgid "app_account_disabled"
+msgstr "บัญชีถูกปิดใช้งาน"
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "บัญชีถูกปิดใช้งาน โปรดติดต่อผู้ดูแลระบบเพื่อเปิดใช้งาน"
+
+msgid "appLogin_request_blocked"
+msgstr "คำขอถูกปิดกั้น"
+
+msgid "app_client_already_block_by_administrator"
+msgstr "แอปไคลเอ็นต์ถูกบล็อกโดยผู้ดูแลระบบ"
+
+msgid "app_client_blocked"
+msgstr "แอปไคลเอ็นต์ถูกบล็อก"
+
+msgid "system_exception"
+msgstr "ข้อยกเว้นระบบ"
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "ขอพารามิเตอร์ไม่พบชื่อผู้ใช้"
+
+msgid "appLogin_params_exception"
+msgstr "ข้อยกเว้นของพารามิเตอร์"
+
+msgid "app_sign_out_successful"
+msgstr "ออกจากระบบเรียบร้อย"
+
+msgid "appLogout_illegal_request"
+msgstr "คำขอผิดกฎหมาย"
+
+msgid "biotime_app_password_reset"
+msgstr "รีเซ็ตรหัสผ่านสำหรับแอป Biotime"
+
+msgid "app_password_reset_failed"
+msgstr "การรีเซ็ตรหัสผ่านผิดพลาด"
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "การรีเซ็ตรหัสผ่านจะต้องเปิดใช้งานบนมือถือ"
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "การดำเนินการที่ผิดกฎหมายกรุณาติดต่อกับผู้ดูแลระบบ"
+
+msgid "app_password_reset_user_not_exists"
+msgstr "ไม่มีผู้ใช้"
+
+msgid "app_password_reset_user_not_found"
+msgstr "ไม่พบชื่อผู้ใช้."
+
+msgid "app_manuallog_wrong_data"
+msgstr "ข้อมูลผิดพลาด"
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "ไม่พบรหัสงาน"
+
+msgid "app_manuallog_data_exception"
+msgstr "ยกเว้นข้อมูล"
+
+msgid "app_manuallog_request_already_processing"
+msgstr "ขอการประมวลผลแล้ว"
+
+msgid "request_already_processing"
+msgstr "ขอการประมวลผลแล้ว"
+
+msgid "object_not_found"
+msgstr "ไม่พบวัตถุ"
+
+msgid "object_id_not_found"
+msgstr "ไม่พบรหัสวัตถุ"
+
+msgid "app_application_remove_success"
+msgstr "ลบเรียบร้อยแล้ว"
+
+msgid "app_application_remove_rejected"
+msgstr "แอปพลิเคชันที่ผ่านการอนุมัติไม่สามารถลบได้"
+
+msgid "app_attendance_date_today"
+msgstr "วันนีิ้"
+
+msgid "app_attendance_date_yesterday"
+msgstr "เมื่อวาน"
+
+msgid "app_attendance_date_this_week"
+msgstr "ในสัปดาห์นี้"
+
+msgid "app_attendance_date_last_week"
+msgstr "อาทิตย์ที่แล้ว"
+
+msgid "app_attendance_date_this_month"
+msgstr "เดือนนี้"
+
+msgid "app_attendance_date_last_month"
+msgstr "เดือนที่แล้ว"
+
+msgid "app_attendance_date_user-defined"
+msgstr "กำหนดโดยผู้ใช้"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "เวลาสแกนไม่ถูกต้องโปรดลองอีกครั้ง"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "ข้อมูล GPS ไม่ถูกต้อง"
+
+msgid "app_clockIn_gps_required"
+msgstr "ต้องระบุข้อมูล GPS"
+
+msgid "app_clockIn_upload_failed"
+msgstr "การอัพโหลดล้มเหลว"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "ไม่พบรหัสการทำงาน"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "รีวิวโลโก้"
+
+msgid "companySettingPage_size_200x75"
+msgstr "ขนาด 200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "ตั้งค่าบริษัท"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "โลโก้บริษัท"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "คลิกอัพโหลดโลโก้"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "แสดงโลโก้"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "ไม่แสดงโลโก้"
+
+msgid "companySettingPage_posOption_left"
+msgstr "ซ้าย"
+
+msgid "companySettingPage_posOption_center"
+msgstr "กลาง"
+
+msgid "companySettingPage_posOption_right"
+msgstr "ขวา"
+
+msgid "companySettingPage_label_companyName"
+msgstr "ชื่อบริษัท"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "แสดงชื่อบริษัท"
+
+msgid "companySettingPage_btn_submit"
+msgstr "ตกลง"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "ความสำเร็จในการส่งออกของ %(task_code)s"
+
+msgid "company_logo_setting"
+msgstr "ตั้งค่าโลโก้ บริษัท"
+
+msgid "company_name_setting"
+msgstr "ตั้งค่าชื่อบริษัท"
+
+msgid "area_tree_selectAll"
+msgstr "เลือกทั้งหมด"
+
+msgid "area_tree_multipleSelect"
+msgstr "เลือกหลายรายการ"
+
+msgid "area_tree_selectSubArea"
+msgstr "เลือกโซนย่อย"
+
+msgid "please_input_a_valid_number"
+msgstr "กรุณาใส่หมายเลขที่ถูกต้อง"
+
+msgid "report_exportColumnTitle_statics"
+msgstr "สถิติ"
+
+msgid "menu_sys_languageTranslate"
+msgstr "แปลภาษา"
+
+msgid "language_translate_field_lan"
+msgstr "ภาษา"
+
+msgid "language_translate_field_name"
+msgstr "ชื่อภาษา"
+
+msgid "language_translate_field_build"
+msgstr "ในตัว"
+
+msgid "auto_deduct"
+msgstr "หักอัตโนมัติ"
+
+msgid "required_punch"
+msgstr "บันทึกที่จำเป็น"
+
+msgid "training_name"
+msgstr "ชื่อเทรนนิ่ง"
+
+msgid "minimum_unit"
+msgstr "หน่วยขั้นต่ำ"
+
+msgid "unit"
+msgstr "หน่วย"
+
+msgid "round_off"
+msgstr "หมดยก"
+
+msgid "report_symbol"
+msgstr "สัญลักษณ์รายงาน"
+
+msgid "reference"
+msgstr "ภาษาตัวอย่าง"
+
+msgid "translated"
+msgstr "แปล"
+
+msgid "language_key"
+msgstr "รหัสภาษา"
+
+msgid "original_password"
+msgstr "รหัสผ่านเดิม"
+
+msgid "front_end_minutes"
+msgstr "นาที"
+
+msgid "att_action_approve"
+msgstr "ผู้อนุมัติ"
+
+msgid "report_item_min_unit_empty"
+msgstr "ว่างเปล่า"
+
+msgid "report_item_min_unit_invalid"
+msgstr "ไม่ถูกต้อง"
+
+msgid "menu_sys_indTableLog"
+msgstr "ตารางระดับกลาง"
+
+msgid "IndTableLog_field_contentType"
+msgstr "ชนิดของเนื้อหา"
+
+msgid "IndTableLog_field_postTime"
+msgstr "เวลา"
+
+msgid "IndTableLog_field_postCount"
+msgstr "นับ"
+
+msgid "IndTableLog_field_updateTime"
+msgstr "อัพเดตเวลา"
+
+msgid "IndTableLog_field_updateStatus"
+msgstr "อัพเดตสถานะ"
+
+msgid "IndTableLog_field_updateDescription"
+msgstr "รายละเอียด"
+
+msgid "base_inmedit_field_invalid"
+msgstr "ไม่ถูกต้อง"
+
+msgid "base_inmedit_field_error"
+msgstr "ผิดพลาด"
+
+msgid "base_inmedit_field_succ"
+msgstr "เรียบร้อย"
+
+msgid "indtable_code_or_name_required {0}{1}"
+msgstr "ต้องระบุรหัสหรือชื่อ {0} {1}"
+
+msgid "indtabel_data_insert_error {0}{1}"
+msgstr "ผิดพลาดในการแทรกข้อมูล {0} {1}"
+
+msgid "system_translate_btnRestart"
+msgstr "รีสตาร์"
+
+msgid "system_translate_btnDownload"
+msgstr "ดาวโหลด"
+
+msgid "select_download_language"
+msgstr "กรุณาเลือกภาษาที่จำเป็นต้องดาวน์โหลด"
+
+msgid "fingerprint_download"
+msgstr "ดาวน์โหลดไดร์เวอร์ลายนิ้วมือ"
+
+msgid "drive_download"
+msgstr "ดาวน์โหลดไดร์เวอร์"
+
+msgid "confirm_be_sure"
+msgstr "คุณแน่ใจไหม"
+
+msgid "confirm_not_modify_audited"
+msgstr "บันทึกที่ตรวจสอบแล้วไม่สามารถแก้ไขได้"
+
+msgid "employeeSave_error_duplicateCard_{emp}"
+msgstr "ทำสำเนาบัตรด้วย {emp}"
+
+msgid "Choice Date"
+msgstr "เลือกวันที่"
+
+msgid "Now"
+msgstr "ลาสุด"
+
+msgid "Date Range"
+msgstr "ช่วงวันที่"
+
+msgid "module"
+msgstr "โมดูล"
+
+msgid "year"
+msgstr "ปี"
+
+msgid "month"
+msgstr "เดือน"
+
+msgid "day"
+msgstr "วัน"
+
+msgid "From"
+msgstr "จาก"
+
+msgid "To"
+msgstr "ไป"
+
+msgid "lineNotify_field_sendPhoto"
+msgstr "ส่งภาพถ่ายการเข้างาน"
+
+msgid "real_time"
+msgstr "เวลาพัก"
+
+msgid "intraday_attendance_summary"
+msgstr "สรุปการเข้างานระหว่างวัน"
+
+msgid "lineNotify_field_include_sub_department"
+msgstr "แผนก"
+
+msgid "lineNotify_field_line_notify_token"
+msgstr "โทเค็น"
+
+msgid "please enter your token"
+msgstr "โปรดใส่โทเค็นของคุณ"
+
+msgid "lineNotify_field_message_type"
+msgstr "ประเภทข้อความ"
+
+msgid "lineNotify_field_push_time"
+msgstr "ช่วงเวลา"
+
+msgid "lineNotify_field_del_tag"
+msgstr ""
+
+msgid "line_notify_setting"
+msgstr "รายงานการตั้งค่าการแสดงผล"
+
+msgid "attendance is checked on machine number {terminal_sn}"
+msgstr "ตรวจสอบลงเวลาเข้างานที่ SN เครื่อง  {terminal_sn}"
+
+msgid "The current attendance situation of the {dept_name} is shown below:"
+msgstr "สถานการณ์การเข้างานปัจจุบันของ {dept_name} แสดงอยู่ด้านล่าง:"
+
+msgid "attendance: {attendance} people"
+msgstr "บันทึกเวลา: {attendance} คน"
+
+msgid "absent: {absent} people"
+msgstr "ขาด: {absent}คน"
+
+msgid "attendance rate: {percentage:.2%}"
+msgstr "อัตราบันทึกเวลา: {percentage:.2%}"
+
+msgid "Hello"
+msgstr "สวัสดี"
+
+msgid "emp_code"
+msgstr "หมายเลขบุคลากร"
+
+msgid "punch_time"
+msgstr "เวลาที่ลงเวลา"
+
+msgid "punch_state"
+msgstr "สถานะการลงเวลา"
+
+msgid "breakTime_validationError_durationGreatThanPeriod"
+msgstr "ระยะเวลาเกิน"
+
+msgid "time_unit_day"
+msgstr "วัน"
+
+msgid "time_unit_hour"
+msgstr "ชั่วโมง("
+
+msgid "time_unit_minute"
+msgstr "นาที"
+
+msgid "timeTable_helpText_tip2"
+msgstr "2. บัตรลงเวลาที่ควรมี> = เริมเช็คอิน และ <สิ้นสุดเช็คเอาท์"
+
+msgid "timeInterval_field_dayChange"
+msgstr "เปลี่ยนวันเวลา"
+
+msgid "timeInterval_error_flexibleWorkTime_{duration}"
+msgstr "เวลาทำงานต้องอยู่ในช่วง 0-{ระยะเวลา}"
+
+msgid "timeInterval_error_invalidCheckIn/Out"
+msgstr "เวลาเช็คอินไม่สามารถมาถึงหลังเวลาเช็คเอาต์"
+
+msgid "availablePunch_policy_any"
+msgstr "ทั้งหมด"
+
+msgid "availablePunch_policy_punchStateBased"
+msgstr "สถานะลงเวลา"
+
+msgid "permission_verboseName_iclockTransaction"
+msgstr "บันทึกเวลาทั้งหมด"
+
+msgid "permission_verboseName_iclockEmployeeGps"
+msgstr "ระบุพิกัดของพนักงาน"
+
+msgid "permission_verboseName_iclockDepartmentGps"
+msgstr "ระบุพิกัดแผนก"
+
+msgid "permission_verboseName_iclockDeviceConfig"
+msgstr "ตั้งค่า"
+
+msgid "permission_verboseName_SyncEmployee"
+msgstr "ย้ายตารางพนักงาน"
+
+msgid "permission_verboseName_SyncJob"
+msgstr "ย้ายตารางตำแหน่ง"
+
+msgid "permission_verboseName_SyncDepartment"
+msgstr "ย้ายตารางแผนก"
+
+msgid "permission_verboseName_SyncArea"
+msgstr "ย้ายตารางโซน"
+
+msgid "permission_verboseName_payrollReportPermission"
+msgstr "อนุญาตรายงาน"
+
+msgid "autoExport_departments_helpTxt"
+msgstr "ส่งออกทั้งหมดตามค่าเริ่มต้น"
+
+msgid "autoExport_areas_helpTxt"
+msgstr "ส่งออกทั้งหมดตามค่าเริ่มต้น"
+
+msgid "autoExport_exportFormat_helpTxt"
+msgstr "รองรับส่งออกไฟล์ *.xls *.csv *.txt เท่านั้น"
+
+msgid "btn_view"
+msgstr "ดู"
+
+msgid "btn_hide"
+msgstr "ซ่อน"
+
+msgid "login_authorize_incorrectUPK"
+msgstr "UPK ไม่ถูกต้อง"
+
+msgid "gps_start_and_end_required"
+msgstr "ต้องระบุวันที่เริ่มและวันที่สิ้นสุด"
+
+msgid "lng_option_ukrainian"
+msgstr "Українська"
+
+msgid "Enter Number"
+msgstr "ใส่หมายเลข"
+
+msgid "Enter Keyword"
+msgstr "ใส่คำค้นหา"
+
+msgid "device"
+msgstr "อุปกรณ์"
+
+msgid "area_or_zone"
+msgstr "โซน"
+
+msgid "position"
+msgstr "ตำแหน่ง"
+
+msgid "att_action_revoke"
+msgstr "ยกเลิก"
+
+msgid "revoke_reason"
+msgstr "เหตุผลยกเลิก"
+
+msgid "only_approved_records_can_be_revoked"
+msgstr "สามารถเพิกถอนได้เฉพาะระเบียนที่อนุมัติเท่านั้น"
+
+msgid "revoke_remark_is_required"
+msgstr "เหตุผล"
+
+msgid "application_has_approved_node"
+msgstr "กำลังตรวจสอบแอปพลิเคชันนี้ ไม่สามารถแก้ไขได้ "
+
+msgid "terminal_state_online"
+msgstr "ออนไลน์"
+
+msgid "terminal_state_offline"
+msgstr "ออฟไลน์"
+
+msgid "terminal_state_unauthorized"
+msgstr "ไม่มีสิทธิ์"
+
+msgid "terminal_state_communication"
+msgstr "การสื่อสาร"
+
+msgid "emp_field_fingervein"
+msgstr "หลอดเลือดดำ"
+
+msgid "used_holiday_can_not_be_removed"
+msgstr "วันหยุดนี้ใช้สำหรับวันหยุดการควบคุมประตู โปรดลบออกจากการควบคุมประตูก่อน"
+
+msgid "user_group_field_name"
+msgstr "ชื่อกลุ่ม"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_department_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว%(index)sความยาวสูงสุดของรหัสที่เหนือกว่าคือ%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_position_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว%(index)sความยาวสูงสุดของรหัสที่เหนือกว่าคือ%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_area_code_maximum_is_%(length)s"
+msgstr "ข้อมูลผิดพลาดในแถว%(index)sความยาวสูงสุดของรหัสที่เหนือกว่าคือ%(length)s"
+
+msgid "msg_all_saved_filters"
+msgstr "ตัวกรองที่บันทึกไว้ทั้งหมด"
+
+msgid "msg_customize_filters"
+msgstr "กำหนดค่าตัวกรองของคุณ"
+
+msgid "dbBackupLog_field_isBackupPhoto"
+msgstr "ต้องการสำรองข้อมูลรูปภาพ"
+
+msgid "dbBackupLog_field_isRestorePhoto"
+msgstr "ต้องการเรียกคืนภาพถ่าย"
+
+msgid "Null"
+msgstr "โมฆะ"
+
+msgid "%(obj)s_is_already_used_in_%(objs)s_and_can_not_delete"
+msgstr "%(obj)sถูกใช้ไปแล้วใน%(objs)sและไม่สามารถลบได้"
+
+msgid "this_field_can_not_include_space_tab_or_enter"
+msgstr "ฟิลด์นี้ไม่สามารถรวมแท็บช่องว่างหรือป้อน"
+
+msgid "the_breaktime_%(n1)s_and_%(n2)s_has_intersection"
+msgstr "เวลาพัก%(n1)s และ%(n2)sมีจุดตัด"

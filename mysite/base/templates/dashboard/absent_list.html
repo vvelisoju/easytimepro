@@ -1,0 +1,62 @@
+{% load i18n static%}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" media="screen" href="{% static "layui/css/layui.css" %}?v=2.4.3"/>
+  <script src="{% static 'locale/i18n.min.js' %}?v=1.2"></script>
+  <script src="{{ STATIC_URL }}locale/i18n_{{ LANGUAGE_CODE|default:'en' }}.js?v=1.3"></script>
+  <script src="{% static "layui/layui.js" %}?v=2.4.3" type="text/javascript"></script>
+</head>
+<body>
+<div>
+  <table id="id_absent" class="layui-hide" lay-filter="absent"></table>
+</div>
+<script>
+
+  layui.use(['table', 'form', 'element'], function () {
+    var table = layui.table;
+    var $ = layui.$;
+    var tb = table.render({
+      id: "id_absent"
+      , elem: "#id_absent"
+      , toolbar: false
+      , canSelectRow: 'false'
+      , method: 'GET'
+      , cellMinWidth: 80
+      , autowidth: 'true'
+      ,height: 'full-20'
+      , size: 'sm'
+      , cols: [
+        [
+          {field: 'id', type: "checkbox", hide: true}
+          , {field: 'emp_code', title: "{% trans 'report_column_empCode' %}"}
+          , {field: 'first_name', title: "{% trans 'report_column_firstName' %}"}
+          , {field: 'last_name', title: "{% trans 'report_column_lastName' %}"}
+          , {field: 'dept_name', title: "{% trans 'report_column_departmentName' %}"}
+          , {field: 'position_name', title: "{% trans 'report_column_positionName' %}"}
+          , {field: 'last_punch', title: "{% trans 'report_column_lastPunch' %}"}
+        ]
+      ]
+      , loading: true
+      , url: '/base/api/dailyAbsent/'
+      ,request: {
+          pageName: 'page' //Default：page
+          ,limitName: 'page_size' //Default：limit
+        }
+      , page: {
+        layout: ['prev', 'page', 'next', 'limit', 'count']
+      }
+      , text: {
+        none: gettext("none_data")
+      }
+      , pagerId: "pages"
+      ,limit: 50
+      ,limits: [10, 20, 50, 80, 100, 200]
+    });
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+{% load i18n static common %}
+<!--suppress ContinueStatementJS -->
+<div  style="padding: 10px;min-height: 460px;width: 905px">
+  <form id="attemployeeschedule_addattemployeeschedule" action="" class="layui-form action-form" lay-filter="employeescheduleForm">
+    <div class="">
+      {% with form.form as f %}
+        <div class="layui-row">
+          <div class="layui-col-md5">
+            <div class="layui-card">
+              <div class="layui-card-header" style="padding: 0 0 0 3px;background-color: #f2f2f2;">
+                <div class="layui-form">
+                  <div class="layui-form-item">
+                    <div class="layui-inline" style="margin-right: 0px;">
+                      <div class="layui-input-inline" style="width: 115px">
+                        <select id="employee_search" class="layui-input" lay-filter="empSearchSelect">
+                          <option value="emp">{% trans 'schedule_empFrameOption_employee' %}</option>
+                          <option value="dept">{% trans 'schedule_empFrameOption_department' %}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="layui-inline layui-inline-emp" style="margin-right: 0px;">
+                      <div class="layui-input-inline" style="width: 150px">
+                        <input id="id_frameEmpSearch" type="text" style="min-width: 150px"
+                               placeholder="{% trans 'schedule_empFrameSearch_placeholder_employee' %}"
+                               name="frame-emp-search" autocomplete="off"
+                               class="layui-input">
+                      </div>
+                      <div id="id_frameEmpContainer" class="layui-hide"></div>
+                    </div>
+                    <div class="layui-inline layui-inline-dept layui-hide" style="margin-right: 0px;">
+                      <div class="layui-input-inline" style="width: 150px">
+                        <input id="id_frameDeptSearch" type="text" style="min-width: 150px"
+                               placeholder="{% trans 'schedule_empFrameSearch_placeholder_department' %}"
+                               name="frame-dept-search" autocomplete="off"
+                               class="layui-input" readonly>
+                      </div>
+                      <div id="id_frameDeptContainer" class="layui-hide"></div>
+                    </div>
+{#                    <div class="layui-inline layui-inline-dept layui-hide"#}
+{#                         title="{% trans 'schedule_empFrameSearch_placeholder_allEmployee' %}" style="margin-right: 0px;">#}
+{#                      <input id="id_frameAllEmp" type="checkbox" name="dept_emp" lay-skin="primary" lay-filter="allEmp">#}
+{#                    </div>#}
+                    <div class="layui-inline" style="margin-right: 0px;">
+                      <div class="button-3d" lay-submit="" lay-filter="employeeSearch"
+                           style="background-color: #f2f2f2;">
+                        <i class="fa fa-fw fa-search"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="id_empFrame" class="layui-card-body">
+                <table id="schedule_employee" class="layui-hide" lay-filter="scheduleEmployee"></table>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md7" style="padding-left: 5px;border-left: 1px solid rgba(0, 0, 0, 0)">
+            <div class="layui-row">
+              <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body schedule-add-form">
+                        <input type="hidden" id="id_model_pk" name="pk" value="{{ object_id }}"/>
+                        <input type="hidden" id="id_days" name="days" class="layui-hide">
+                        {% csrf_token %}
+                        <div class="layui-form-item">
+                          {% layui_inline form.form.start_date %}
+                          {% layui_inline form.form.end_date %}
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="layui-col-md12">
+                <div class="layui-card">
+                  <div class="layui-card-header" style="padding: 0;">
+                    <div class="layui-form">
+                      <div class="layui-form-item">
+                        <div class="layui-inline">
+                          <div class="layui-input-inline" style="width: 160px">
+                            <input id="id_frameShiftSearch" type="text" placeholder="Schedule" name="frame-shift-search" autocomplete="off"
+                                   class="layui-input">
+                          </div>
+                        </div>
+                        <div class="layui-inline">
+                          <div lay-submit="" lay-filter="ScheduleSearch" style="padding: 0 0 0 15px;">
+                            <i class="fa fa-fw fa-search"></i>
+                          </div>
+                        </div>
+                        <!--TODO implement add shift
+                        <div class="layui-inline">
+                          <div lay-submit="" lay-filter="ShiftAdd">
+                            <i class="fa fa-fw fa-plus"></i>
+                          </div>
+                        </div>
+                        -->
+                        <div class="layui-inline">
+                          <div lay-submit="" lay-filter="ScheduleRefresh">
+                            <i class="fa fa-fw fa-refresh"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="layui-hide">{% layui_inline form.form.schedule_planner %}</div>
+                    </div>
+                  </div>
+                  <div class="layui-card-body">
+                    <table id="schedule_shift" class="layui-hide" lay-filter="scheduleShift"></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endwith %}
+    </div>
+  </form>
+</div>
+<!--suppress JSUnfilteredForInLoop -->
+<script>
+  $(function () {
+      var gloable_pm_codes = new Array();
+    var table_data = new Array();
+    layui.use(['form', 'laydate', 'table', 'tablePlug'], function () {
+      var table = layui.table, tablePlug = layui.tablePlug, form = layui.form, laydate = layui.laydate;
+      tablePlug.smartReload.enable(true);
+      var empOpts = {
+        elem: "#schedule_employee"
+        , height: 395
+        , text: {none: gettext('none_data')}
+        , request: {
+          pageName: 'page',
+          limitName: 'page_size'
+        }
+        , page: {
+          layout: ['count', 'prev', 'page', 'next', 'limit']
+          , limit: 50
+          , limits: [20, 50, 80, 100, 200]
+          , groups: 1
+        }
+        , cols: [[
+          {field: 'id', type: 'checkbox'}
+          , {field: 'emp_code', title: "{% trans 'emp_field_employeeCode' %}"}
+          , {field: 'first_name', title: "{% trans 'emp_field_firstName' %}"}
+        ]]
+        , url: '/personnel/api/employee/?outDoor=1'
+        , done: function (res, curr, count) {
+          //this.where = {};
+            table_data = res.data;
+            for(var i=0;i<res.data.length;i++){
+                for(var j=0;j<gloable_pm_codes.length;j++){
+                    if(res.data[i].id===gloable_pm_codes[j]){
+                        res.data[i]["LAY_CHECKED"]='true';
+                        var index= res.data[i]['LAY_TABLE_INDEX'];
+                        $('#id_empFrame .layui-table tr[data-index=' + index + '] input[type="checkbox"]').prop('checked', true);
+                        $('#id_empFrame .layui-table tr[data-index=' + index + '] input[type="checkbox"]').next().addClass('layui-form-checked');
+                    }
+                }
+            }
+            var checkStatus = table.checkStatus('scheduleEmployee');
+            if(checkStatus.isAll){
+                $('#id_empFrame .layui-table-header th[data-field="0"] input[type="checkbox"]').prop('checked', true);
+                $('#id_empFrame .layui-table-header th[data-field="0"] input[type="checkbox"]').next().addClass('layui-form-checked');
+            }
+        }
+      };
+      var empTable = table.render(empOpts);
+      table.on('checkbox(scheduleEmployee)', function (obj) {
+        $("#id_frameEmpContainer").empty();
+        //var checkedData = table.checkStatus("schedule_employee");
+        //if (checkedData.data.length > 0) {
+        //  checkedData.data.forEach(function (item, index) {
+        //    $("#id_frameEmpContainer").append('<input name="schd_employee" value="' + item.id + '"/>');
+        //  });
+        //}
+        if(obj.checked===true){
+           if(obj.type==='one'){
+               if (!gloable_pm_codes.includes(obj.data.id))
+                    gloable_pm_codes.push(obj.data.id);
+          }else{
+               for(var i=0;i<table_data.length;i++){
+                   if (!gloable_pm_codes.includes(table_data[i].id))
+                        gloable_pm_codes.push(table_data[i].id);
+               }
+           }
+        }else{
+           if(obj.type==='one'){
+               for(var i=0;i<gloable_pm_codes.length;i++){
+                  if(gloable_pm_codes[i]===obj.data.id){
+                       gloable_pm_codes.remove(i);
+                   }
+              }
+           }else{
+               for(var j=0;j<table_data.length;j++){
+                    for(var i=0;i<gloable_pm_codes.length;i++){
+                        if(gloable_pm_codes[i]===table_data[j].id){
+                            gloable_pm_codes.remove(i);
+                            break;
+                        }
+                    }
+                }
+           }
+       }
+       gloable_pm_codes.forEach(function (item) {
+           $("#id_frameEmpContainer").append('<input name="schedule_employee" value="' + item + '"/>');
+        });
+      });
+
+      Array.prototype.remove=function(dx)
+      {
+        if(isNaN(dx)||dx>this.length){return false;}
+        for(var i=0,n=0;i<this.length;i++)
+        {
+            if(this[i]!=this[dx])
+            {
+                this[n++]=this[i]
+            }
+        }
+        this.length-=1
+      };
+      var shiftOpts = {
+        elem: "#schedule_shift"
+        , height: 310
+        , text: {none: gettext('none_data')}
+        , request: {
+          pageName: 'page',
+          limitName: 'page_size'
+        }
+        , page: {
+          layout: ['count', 'prev', 'page', 'next', 'limit']
+          , limit: 50
+          , limits: [20, 50, 80, 100, 200]
+          , groups: 1
+        }
+        , cols: [[
+          {field: 'id', type: 'radio'}
+          , {field: 'schedule_name', title: "{% trans 'SchedulePlanner_field_scheduleName' %}"}
+        ]]
+        , url: '/att/api/employeeschedule/'
+      };
+      var shiftTable = table.render(shiftOpts);
+      form.render();
+      var cur = moment(new Date());
+      var startDate = laydate.render({
+        elem: '#id_start_date'
+        , type: 'date'
+        , value: cur.startOf('month').format('YYYY-MM-DD')
+      });
+      var endDate = laydate.render({
+        elem: '#id_end_date'
+        , type: 'date'
+        , value: cur.endOf('month').format('YYYY-MM-DD')
+      });
+      form.on('select(empSearchSelect)', function (data) {
+        switch (data.value) {
+          case 'emp':
+            $(".layui-inline-emp").removeClass('layui-hide');
+            $(".layui-inline-dept").addClass('layui-hide');
+            $("#id_frameDeptSearch").val("");
+            $("#id_frameDeptContainer").empty();
+            table.reload(empTable.config.id, {where: {departments: ""}});
+            gloable_pm_codes = [];
+            break;
+          case 'dept':
+            $(".layui-inline-dept").removeClass('layui-hide');
+            $(".layui-inline-emp").addClass('layui-hide');
+            $("#id_frameEmpContainer").empty();
+            table.reload(empTable.config.id, {where: {emp_code_icontains: ""}});
+            gloable_pm_codes = [];
+            break;
+        }
+      });
+      table.on('radio(scheduleShift)', function (obj) {
+        $("#id_schedule_planner").val(obj.data.id);
+      });
+      form.on('submit(employeeSearch)', function () {
+        var v = $("#employee_search").val();
+        switch (v) {
+          case 'emp':
+            var emp = $("#id_frameEmpSearch").val();
+            table.reload(empTable.config.id, {where: {search: emp}, page: {curr: 1}});
+            gloable_pm_codes = [];
+            break;
+          case 'dept':
+            break;
+          default :
+            break;
+        }
+      });
+      $("#id_frameEmpSearch").keypress(function (event) {
+        if (event.keyCode == "13") {
+          var emp = $(this).val();
+          table.reload(empTable.config.id, {where: {search: emp}, page: {curr: 1}});
+          gloable_pm_codes = [];
+        }
+      });
+       form.on('submit(ScheduleSearch)', function () {
+        var alias = $("#id_frameShiftSearch").val();
+        table.reload(shiftTable.config.id, {where: {schedule_name__icontains: alias}});
+      });
+      form.on('submit(ScheduleRefresh)', function () {
+        $("#id_frameShiftSearch").val("");
+        table.reload(shiftTable.config.id, {where: {schedule_name__icontains: ""}});
+      });
+      $("#id_frameShiftSearch").keypress(function (event) {
+        if (event.keyCode == "13") {
+          var alias = $(this).val();
+          table.reload(shiftTable.config.id, {where: {schedule_name__icontains: alias}});
+        }
+      });
+      $("#id_frameDeptSearch").click(function () {
+        $.ajax({
+          url: "/personnel/getDepartmentList/"
+          , type: "GET"
+          , dataType: "html"
+          , success: function (response) {
+            layer.open({
+              type: 1
+              , title: ' '
+              , closeBtn: 1
+              , area: ['450px', '400px']
+              , maxmin: false
+              , shadeClose: false
+              , content: response
+              , btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+              , yes: function (index, layero) {
+                var selectedDepts = $(layero).find("#id_selectedDepartment").val();
+                $("#id_frameDeptContainer").empty();
+                if (selectedDepts) {
+                  var depts = JSON.parse(selectedDepts);
+                  var alias = [];
+                  var ids = [];
+                  depts.forEach(function (item, index) {
+                    alias.push(item.dept_name);
+                    ids.push(item.id);
+                    $("#id_frameDeptContainer").append('<input name="department" value="' + item.id + '"/>');
+                  });
+                  $("#id_frameDeptSearch").val(alias.join(','));
+                  table.reload(empTable.config.id, {where: {departments: ids.join(',')}});
+                  gloable_pm_codes = [];
+                } else {
+                  $("#id_frameDeptSearch").val("");
+                }
+                layer.close(index);
+              }
+            });
+          }
+        });
+      });
+      form.on('checkbox(allEmp)', function (data) {
+        if (data.elem.checked) {
+          var depts = $("#id_frameDeptContainer").find("input[name='department']");
+          if (depts.length == 0) {
+            form.val('shiftForm', {is_department: false});
+            layer.alert(gettext('department_not_found'),
+                {title: gettext('layer_title_error'), icon: 2, time: 3000, btn: []});
+          } else {
+            $("#id_empFrame").addClass('layui-admin-shade ');
+          }
+        } else {
+          $("#id_empFrame").removeClass('layui-admin-shade ');
+        }
+      });
+    });
+  });
+</script>

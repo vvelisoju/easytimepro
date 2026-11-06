@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% trans 'easy TimePro' %}</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static "layui/css/layui.css" %}?v=2.4.2" />
+        <script src="{% static "layui/layui.js" %}?v=2.4.2" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-row" style="top:100px;text-align: center">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">
+                            <h2>{% trans "Logout Success" %}</h2>
+                        </div>
+                        <div class="layui-card-body layui-row layui-col-space10">
+                            <p>{% trans "Thanks for spending some quality time with the Web site today." %}</p>
+                            <div class="layui-btn-container">
+                                <a href="#" onclick="javascript:window.opener=null;window.open('','_self');window.close();" class="layui-btn layui-btn-normal">{% trans 'Close Window' %}</a>
+                                <a href="{% url 'biotime:index' %}" class="layui-btn layui-btn-normal">{% trans 'Log in again' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,761 @@
+{% load i18n static %}
+{% load common %}
+<div id="tab_{{ model_name }}">
+  <div id="calculation-container" class="layui-row layui-col-space15" style="margin-bottom: 0px">
+    <div class="layui-col-md2">
+    <div class="layui-tab" style="padding-top: 20px;">
+      <ul class="layui-tab-title">
+        <li class="layui-this">{% trans 'employee_department_filter' %}</li>
+        <li>{% trans 'employee_area_filter' %}</li>
+        <li>{% trans 'employee_position_filter' %}</li>
+      </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+        <div id="calculation-tree-container" class="layui-card">
+        <div  id="calculation-tree-control" class="layui-card-header" style="background-color: #f2f2f2">
+          <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                class="fa fa-fw fa-check-square-o"></i></a></span>
+          <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                class="fa fa-fw fa-list"></i></a></span>
+          <span name="sub"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                class="fa fa-fw fa-sitemap"></i></a></span>
+          <span name="sort"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                class="fa fa-fw fa-sort"></i></a></span>
+
+          </div>
+        <div class="layui-card-body">
+            <ul id="calculation_tree" class="ztree ztree-pure" style="overflow-y: auto"></ul>
+        </div>
+        </div>
+      </div>
+      <div class="layui-tab-item">
+        <div id="calculation-tree-container" class="layui-card">
+        <div  id="calculation-tree-area-control" class="layui-card-header" style="background-color: #f2f2f2">
+          <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                class="fa fa-fw fa-check-square-o"></i></a></span>
+          <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                class="fa fa-fw fa-list"></i></a></span>
+          <span name="sub"><a href="javascript:void(0);" title="{% trans 'area_tree_selectSubDepartment' %}"><i
+                class="fa fa-fw fa-sitemap"></i></a></span>
+          <span name="sort"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                class="fa fa-fw fa-sort"></i></a></span>
+          </div>
+        <div class="layui-card-body">
+            <ul id="calculation_tree_area" class="ztree ztree-pure" style="overflow-y: auto"></ul>
+        </div>
+        </div>
+      </div>
+        <div class="layui-tab-item">
+        <div id="calculation-tree-container" class="layui-card">
+        <div  id="calculation-tree-position-control" class="layui-card-header" style="background-color: #f2f2f2">
+          <span class="" name="all"><a href="javascript:void(0);" title="{% trans 'department_tree_selectAll' %}"><i
+                class="fa fa-fw fa-check-square-o"></i></a></span>
+          <span class="selected" name="mul"><a href="javascript:void(0);" title="{% trans 'department_tree_multipleSelect' %}"><i
+                class="fa fa-fw fa-list"></i></a></span>
+          <span name="sub"><a href="javascript:void(0);" title="{% trans 'position_tree_selectSubPosition"' %}"><i
+                class="fa fa-fw fa-sitemap"></i></a></span>
+          <span name="sort"><a href="javascript:void(0);" title="{% trans 'department_tree_selectSubDepartment' %}"><i
+                class="fa fa-fw fa-sort"></i></a></span>
+          </div>
+        <div class="layui-card-body">
+            <ul id="calculation_tree_pos" class="ztree ztree-pure" style="overflow-y: auto"></ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="layui-col-md10">
+      <div class="layui-card">
+        <div class="layui-card-header" style="background-color: #ffffff">
+          <form id="calculation-emp" action="" class="layui-form fixed-search-form att-caculation-emp-form">
+            {% csrf_token %}
+            <div class="layui-form-item">
+              <div class="layui-inline emp-query" style="margin-right:0px">
+                <label for="" class="layui-form-label">{% trans 'emp_field_employeeCode' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="emp_code" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline emp-query" style="margin-right:0px">
+                <label for="" class="layui-form-label">{% trans 'emp_field_firstName' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="first_name" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline" title="{% trans 'calculation_page_empSearch' %}">
+                <div class="button-3d" lay-submit="" lay-filter="employee-search">
+                  <i class="fa fa-fw fa-search fa-2x"></i>
+                </div>
+              </div>
+              <!-- <br /> -->
+              <div class="layui-inline" style="margin-right:0px">
+                <label for="" class="layui-form-label">{% trans 'calculation_page_startDate' %}</label>
+                <div class="layui-input-inline">
+                  <input id="id_calculationStartDate" type="text" name="start_date" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+                <div class="layui-inline" style="margin-right:0px">
+                <label for="" class="layui-form-label">{% trans 'calculation_page_endDate' %}</label>
+                <div class="layui-input-inline">
+                  <input id="id_calculationEndDate" type="text" name="end_date" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline" title="{% trans 'calculation_page_attCalculate' %}">
+                <div class="button-3d" lay-submit="" lay-filter="calculation">
+                  <button type="button" value="calculation" id="calculate_btn" class="btn btn-md" style="background:#7ac143;">calculate</button>
+                </div>
+              </div>
+              <div id="id_calculation_emp" class="layui-hide"></div>
+              <div id="id_calculation_dept" class="layui-hide"></div>
+            </div>
+          </form>
+        </div>
+        <div class="layui-card-body">
+          <table class="layui-hide" id="emp-frame" lay-filter="test"></table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var gloable_pm_codes = new Array();
+    var table_data = new Array();
+
+    layui.use(['table', 'form', 'laydate', 'tablePlug'], function () {
+      var table = layui.table, form = layui.form, laydate = layui.laydate, tablePlug = layui.tablePlug;
+      tablePlug.smartReload.enable(true);
+      var date = new Date();
+      var startDate = null, endDate = null;
+      startDate = laydate.render({
+        elem: '#id_calculationStartDate',
+        type: 'date',
+        value: date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01',
+        done: function (value, date) {
+          endDate.config.min = {
+            year: date.year,
+            month: date.month - 1,
+            date: date.date
+          };
+        }
+      });
+      endDate = laydate.render({
+        elem: '#id_calculationEndDate',
+        type: 'date',
+        value: date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-' + leftInsertZero(date.getDate()),
+        /*done: function (value, date) {
+          startDate.config.max = {
+            year: date.year,
+            month: date.month - 1,
+            date: date.date
+          };
+        }*/
+      });
+      form.render();
+      var tb = table.render({
+        id: "emp-frame"
+        , elem: "#emp-frame"
+        , defaultToolbar: []
+        , cellMinWidth: 80
+        , height: 'full-200'
+        , loading: true
+        , page: {
+          layout: ['refresh', 'limit', 'prev', 'page', 'next', 'count', 'skip'],
+          curr: 1
+        }
+        , smartReloadModel: false
+        , done: function (res, curr, count) {
+          //this.where = {};
+          var height = $("#calculation-container div.layui-table-view").height();
+          $("#calculation_form").height(height - 15);
+          $("#calculation_tree").height(height - 15);
+          $("#calculation_tree_area").height(height - 15);
+          $("#calculation_tree_pos").height(height - 15);
+            table_data = res.data;
+            for(var i=0;i<res.data.length;i++){
+                for(var j=0;j<gloable_pm_codes.length;j++){
+                    if(res.data[i].id===gloable_pm_codes[j]){
+                        res.data[i]["LAY_CHECKED"]='true';
+                        var index= res.data[i]['LAY_TABLE_INDEX'];
+                        $('#calculation-container .layui-table tr[data-index=' + index + '] input[type="checkbox"]').prop('checked', true);
+                        $('#calculation-container .layui-table tr[data-index=' + index + '] input[type="checkbox"]').next().addClass('layui-form-checked');
+                    }
+                }
+            }
+            var checkStatus = table.checkStatus('test');
+            if(checkStatus.isAll){
+                $(' .layui-table-header th[data-field="0"] input[type="checkbox"]').prop('checked', true);
+                $('.layui-table-header th[data-field="0"] input[type="checkbox"]').next().addClass('layui-form-checked');
+            }
+        }
+        , limits: [5, 20, 50, 80, 100, 200]
+        , limit: 50
+        , request: {
+          pageName: 'page',
+          limitName: 'page_size'
+        }
+        , cols: [[
+          {field: 'id', type: "checkbox"}
+          , {field: 'emp_code', title: "{% trans 'emp_field_employeeCode' %}"}
+          , {field: 'first_name', title: "{% trans 'emp_field_firstName' %}"}
+          , {field: 'last_name', title: "{% trans 'emp_field_lastName' %}"}
+          , {field: 'hire_date', title: "{% trans 'emp_field_hireDate' %}"}
+          , {field: 'dept_name', title: "{% trans 'employee_field_department' %}"}
+          , {field: 'position_name', title: "{% trans 'employee_field_position' %}"}
+        ]]
+        , url: "/personnel/api/employee/filter_by_enable_att/"
+        , method: 'get'
+        , text: {
+          none: gettext('none_data')
+        }
+      });
+
+      table.on('checkbox(test)', function (obj) {
+       if(obj.checked===true){
+           if(obj.type==='one'){
+               if (!gloable_pm_codes.includes(obj.data.id))
+                    gloable_pm_codes.push(obj.data.id);
+          }else{
+               for(var i=0;i<table_data.length;i++){
+                   if (!gloable_pm_codes.includes(table_data[i].id))
+                        gloable_pm_codes.push(table_data[i].id);
+               }
+           }
+       }else{
+           if(obj.type==='one'){
+               for(var i=0;i<gloable_pm_codes.length;i++){
+                  if(gloable_pm_codes[i]===obj.data.id){
+                       gloable_pm_codes.remove(i);
+                   }
+              }
+           }else{
+               for(var j=0;j<table_data.length;j++){
+                    for(var i=0;i<gloable_pm_codes.length;i++){
+                        if(gloable_pm_codes[i]===table_data[j].id){
+                            gloable_pm_codes.remove(i);
+                            break;
+                        }
+                    }
+                }
+           }
+       }
+    });
+
+    Array.prototype.remove=function(dx)
+    {
+        if(isNaN(dx)||dx>this.length){return false;}
+        for(var i=0,n=0;i<this.length;i++)
+        {
+            if(this[i]!=this[dx])
+            {
+                this[n++]=this[i]
+            }
+        }
+        this.length-=1
+    };
+
+      var zTree = null;
+
+      function refreshEmployee() {
+        var nodes = zTree.getCheckedNodes(true);
+        var deptID = [];
+        nodes.forEach(function (item) {
+          deptID.push(item.id);
+        });
+         var c = {departments:""};
+         c["departments"] = deptID.join(',');
+         var ext;
+        if (deptID.length > 0) {
+          ext = {'where': {departments: deptID.join(',')}};
+        }else {
+            ext = {'where': {departments: zTree.getNodes(true).join(',')}};
+        }
+        $("#calculation-emp").find('div.emp-query input').each(function () {
+          var n = $(this).attr('name');
+          var val = $(this).val();
+          if (val) {
+            ext['where'][n] = val;
+          }
+          else{
+             ext['where'][n] = "";
+          }
+        });
+      table.reload(tb.config.id, {where: c,page:{curr:1}});
+      }
+
+      var zTree_area = null;
+      function refreshEmployeeByArea(){
+        var nodes = zTree_area.getCheckedNodes(true);
+        var deptID = [];
+        nodes.forEach(function (item) {
+          deptID.push(item.id);
+        });
+         var c = {areas:""};
+         c["areas"] = deptID.join(',');
+         var ext;
+         if (deptID.length > 0) {
+          ext = {'where': {areas: deptID.join(',')}};
+        }else {
+            ext = {'where': {areas: zTree_area.getNodes(true).join(',')}};
+        }
+
+        $("#calculation-emp").find('div.emp-query input').each(function () {
+          var n = $(this).attr('name');
+          var val = $(this).val();
+          if (val) {
+            ext['where'][n] = val;
+          }
+          else{
+             ext['where'][n] = "";
+          }
+        });
+      table.reload(tb.config.id, {where: c,page:{curr:1}});
+      }
+
+      var zTree_pos = null;
+      function refreshEmployeeByPosition(){
+        var nodes = zTree_pos.getCheckedNodes(true);
+        var posID = [];
+        nodes.forEach(function (item) {
+          posID.push(item.id);
+        });
+         var c = {positions:""};
+         c["positions"] = posID.join(',');
+         var ext;
+         if (posID.length > 0) {
+          ext = {'where': {positions: posID.join(',')}};
+        }else {
+            ext = {'where': {positions: zTree_pos.getNodes(true).join(',')}};
+        }
+
+        $("#calculation-emp").find('div.emp-query input').each(function () {
+          var n = $(this).attr('name');
+          var val = $(this).val();
+          if (val) {
+            ext['where'][n] = val;
+          }
+          else{
+             ext['where'][n] = "";
+          }
+        });
+      table.reload(tb.config.id, {where: c,page:{curr:1}});
+      }
+      function onClick(event, treeId, treeNode) {
+        if(treeId == "calculation_tree") {
+            zTree.checkNode(treeNode, !treeNode.checked, false, false);
+            refreshEmployee();
+        }else if(treeId == "calculation_tree_area"){
+            zTree_area.checkNode(treeNode, !treeNode.checked, false, false);
+            refreshEmployeeByArea();
+        }
+        else{
+            zTree_pos.checkNode(treeNode, !treeNode.checked, false, false);
+            refreshEmployeeByPosition();
+        }
+
+      }
+
+      function onCheck(event, treeId, treeNode) {
+        if(treeId == "calculation_tree") {
+            refreshEmployee();
+        }else if(treeId == "calculation_tree_area"){
+            refreshEmployeeByArea();
+        }
+        else{
+            refreshEmployeeByPosition();
+        }
+      }
+
+      function department_tree() {
+        var setting = {
+          view: {
+            dblClickExpand: false,
+            showIcon: false,
+            showLine: true
+          },
+          data: {
+            simpleData: {
+              enable: true
+            }
+          },
+          check: {
+            enable: true,
+            chkboxType: {"Y": "", "N": ""},
+            chkStyle: 'checkbox',
+            radioType: "all"
+          },
+          callback: {
+            onClick: onClick
+            , onCheck: onCheck
+          }
+        };
+        $.ajax({
+          url: "{% url 'biotime:personnel_department_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree = $.fn.zTree.init($("#calculation_tree"), setting, nodes);
+          }
+        });
+        $.ajax({
+          url: "{% url 'biotime:personnel_area_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree_area = $.fn.zTree.init($("#calculation_tree_area"), setting, nodes);
+          }
+        });
+        $.ajax({
+          url: "{% url 'biotime:personnel_position_tree_nodes' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (nodes) {
+            zTree_pos = $.fn.zTree.init($("#calculation_tree_pos"), setting, nodes);
+          }
+        });
+      }
+      department_tree();
+      $("#calculation_show_all").click(function () {
+        table.reload(tb.config.id, {where: {}});
+        department_tree();
+      });
+      var dataQuery = function () {
+         var c = {departments:""};
+        $("#calculation-emp").find('div.emp-query input').each(function () {
+          var n = $(this).attr('name');
+          var val = $(this).val();
+          if (val) {
+            c[n] = val;
+          }
+          else{
+             c[n] = "";
+          }
+        });
+        table.reload(tb.config.id, {where: c,page:{curr:1}});
+        gloable_pm_codes = [];
+      };
+      $("#calculation-emp").find('div.emp-query input').each(function () {
+        $(this).keypress(function (event) {
+          if (event.keyCode === 13) {
+            dataQuery();
+          }
+        });
+      });
+      form.on('submit(employee-search)', function (data) {
+        dataQuery();
+      });
+      var complete = false;
+
+      function processBarDialog(id){
+
+        var successID = "success" + id;
+        var progressID = "progress" + id;
+        const processBar = ''
+              + '<div style="padding: 5px;margin-top: 40px;">'
+              + '  <div class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="calc_progress">'
+              + '    <div class="layui-progress-bar" lay-percent="0%" style="background-color: #7ac143 !important" >'
+              + '      <span class="layui-progress-text">0%</span>'
+              + '    </div>'
+              + '  </div>'
+              + '</div>'
+              + '<div id="' + successID + '" style="padding: 10px; width: 100%;text-align: center;color:#57c5f7 ">'
+              + '  <i class="fa fa-spinner fa-fw"></i>'
+              + '  <span id="' + progressID + '">' + gettext("Calculating...") + '</span>'
+              + '</div>';
+
+        const progress_url = '/att/calculate_progressbar/';
+        var success = false;
+        var error_count = 0;
+        layer.open({
+            type: 1
+            , title: "Progress"
+            // , shade: false
+            , area: ['450px', '180px']
+            , content: processBar
+            , success: function (layero, import_layer) {
+                 var ProgressObserver = function () {
+                    var progressStatus = layero.find("#" + successID).get(0);
+                    function UpdateProgressBar(payload) {
+                        if (complete) {
+                            layui.element.progress('calc_progress',  '100%');
+                            progressStatus.style.color = "#7ac143";
+                          //  progressStatus.innerHTML = gettext("action_post_successful");
+                            setTimeout("layer.close(layer.index)",3000);
+                          } else {
+                            if(parseInt(payload.percent)>-1){
+                              layui.element.progress('calc_progress', payload.percent + '%');
+                              layero.find("#" + progressID).get(0).innerHTML = gettext("Calculating...") + payload.processed + '/' + payload.total_len+',&nbsp;&nbsp;'+payload.processed_time+'S';
+                            }
+                            setTimeout(ProgressObserver, 1000)
+                        }
+                    }
+
+                    function ProgressException(xhr, status, e) {
+                        error_count++;
+                        if(error_count<2) {
+                            setTimeout(ProgressObserver, 1000);
+                        } else {
+                            progressStatus.style.color = "red";
+                            progressStatus.innerHTML = gettext("system_error_please_try_again");
+                        }
+                    }
+
+                        $.ajax({
+                            url: progress_url
+                            , type: "POST"
+                            , dataType: "json"
+                            , success: UpdateProgressBar
+                            , error: ProgressException
+                        })
+                };
+                layui.element.progress('calc_progress',  '0%');
+                layero.find("#" + progressID).get(0).innerHTML = gettext("Calculating...");
+                setTimeout(ProgressObserver, 1000);
+            }
+            , cancel: function (import_layer, layero) {
+                if (!complete) {
+                    $.ajax({
+                        url: "/att/calculate_revoke/"
+                        , type: "POST"
+                        , success: function (callback) {
+                        }
+                        , error: function (xhr, status, e) {
+                        }
+                    })
+                }
+                layer.close(import_layer);
+                complete = true;
+                return false;
+            }
+        });
+      }
+
+
+
+      form.on('submit(calculation)', function (data) {
+        const regex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!regex.test(data.field.start_date) || !regex.test(data.field.end_date)) {
+          layer.alert(gettext('layui_form_incorrectDate'), {
+            title: gettext('system_exception'),
+            icon: 5,
+            btn: gettext('btn_confirm')
+          });
+          return false;
+        }
+        complete = false;
+        $("#id_calculation_emp").empty();
+        $("#id_calculation_dept").empty();
+        gloable_pm_codes.forEach(function (item) {
+          $("#id_calculation_emp").append('<input name="emp" value="' + item + '"/>');
+        });
+        if(gloable_pm_codes.length === 0){
+          var nodes = zTree.getCheckedNodes(true);
+          nodes.forEach(function (item) {
+            $("#id_calculation_dept").append('<input name="dept" value="' + item.id + '"/>');
+          });
+        }
+        var id =new Date().getTime();
+        processBarDialog(id);
+
+      //  var loadIndex = layer.load(2);
+        $("#calculation-emp").ajaxSubmit({
+          url: "{% url 'biotime:calculation_view' %}",
+          type: "POST",
+          dataType: "json",
+          success: function (callback) {
+            if(callback.code==0&&callback.total>0)
+              $("#success" + id).html(callback.msg+','+callback.processed+'/'+ callback.total+','+callback.processed_time+'S')
+            else
+              $("#success" + id).html(callback.msg);
+            complete = true;
+          },
+          error: function () {
+            complete = true;
+            $("#success" + id).html('server error')
+          //  layer.close(loadIndex);
+          }
+        });
+      });
+
+      // function for sorting an Alphabet in ascending and descending order
+
+      function sortNodes(nodes, sortOrder) {
+          nodes.forEach(node => {
+              if (node.children && node.children.length > 0) {
+                  node.children.sort((child1, child2) => {
+                      if (sortOrder === 'asc') {
+                          return child1.name.localeCompare(child2.name);
+                      } else {
+                          return child2.name.localeCompare(child1.name);
+                      }
+                  });
+                  sortNodes(node.children, sortOrder);
+              }
+          });
+          if (sortOrder === 'asc') {
+              nodes.sort((node1, node2) => node1.name.localeCompare(node2.name));
+          } else {
+              nodes.sort((node1, node2) => node2.name.localeCompare(node1.name));
+          }
+      }
+      function Select_SubNode(nodes, tree){
+        nodes.forEach(node => {
+           if (node.checked) {
+              if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                  tree.checkNode(child, true, false);
+                });
+                tree.expandNode(node, true, false, true);
+              }
+           }else{
+             if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                  tree.checkNode(child, false, false);
+                });
+             }
+            }
+        });
+      }
+      $("#calculation-tree-control span").click(function () {
+        var name = $(this).attr('name');
+        var sortOrder = 'asc';
+        if ($(this).hasClass('selected')) {
+           sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree.setting.check.chkStyle === 'checkbox') {
+              zTree.checkAllNodes(false);
+              refreshEmployee();
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree.getCheckedNodes(true);
+            zTree.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree.checkNode(nodes[0], true, false, true);
+            }
+            zTree.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+            zTree.setting.check.chkboxType = {"Y": "", "N": ""};
+            zTree.expandAll(false);
+          } else if (name === 'sort') {
+            var nodes = zTree.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree.refresh();
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree.setting.check.chkStyle === 'checkbox') {
+              zTree.checkAllNodes(true);
+              refreshEmployee();
+            }
+          } else if (name === 'mul') {
+            zTree.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+            zTree.setting.check.chkboxType = {"Y": "s", "N": "s"};
+            var nodes = zTree.getNodes();
+            Select_SubNode(nodes, zTree);
+          } else if (name === 'sort') {
+            var nodes = zTree.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree.refresh();
+          }
+        }
+        zTree.refresh();
+      });
+      $("#calculation-tree-area-control span").click(function () {
+        var name = $(this).attr('name');
+        var sortOrder = 'asc';
+        if ($(this).hasClass('selected')) {
+           sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree_area.setting.check.chkStyle === 'checkbox') {
+              zTree_area.checkAllNodes(false);
+              refreshEmployeeByArea();
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree_area.getCheckedNodes(true);
+            zTree_area.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree_area.checkNode(nodes[0], true, false, true);
+            }
+            zTree_area.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+            zTree_area.setting.check.chkboxType = {"Y": "", "N": ""};
+            zTree_area.expandAll(false);
+          } else if (name === 'sort') {
+            var nodes = zTree_area.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_area.refresh();
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree_area.setting.check.chkStyle === 'checkbox') {
+              zTree_area.checkAllNodes(true);
+              refreshEmployeeByArea();
+            }
+          } else if (name === 'mul') {
+            zTree_area.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+            zTree_area.setting.check.chkboxType = {"Y": "s", "N": "s"};
+            var nodes = zTree_area.getNodes();
+            Select_SubNode(nodes, zTree_area);
+          } else if (name === 'sort') {
+            var nodes = zTree_area.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_area.refresh();
+          }
+        }
+        zTree_area.refresh();
+      });
+      $("#calculation-tree-position-control span").click(function () {
+        var name = $(this).attr('name');
+        var sortOrder = 'asc';
+        if ($(this).hasClass('selected')) {
+          sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+          $(this).removeClass('selected');
+          if (name === 'all') {
+            if (zTree_pos.setting.check.chkStyle === 'checkbox') {
+              zTree_pos.checkAllNodes(false);
+              refreshEmployeeByPosition();
+            }
+          } else if (name === 'mul') {
+            var nodes = zTree_pos.getCheckedNodes(true);
+            zTree_pos.checkAllNodes(false);
+            if (nodes.length > 0) {
+              zTree_pos.checkNode(nodes[0], true, false, true);
+            }
+            zTree_pos.setting.check.chkStyle = 'radio';
+          } else if (name === "sub") {
+            zTree_pos.setting.check.chkboxType = {"Y": "", "N": ""};
+            zTree_pos.expandAll(false);
+          } else if (name === 'sort') {
+            var nodes = zTree_pos.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_pos.refresh();
+          }
+        } else {
+          $(this).addClass('selected');
+          if (name === 'all') {
+            if (zTree_pos.setting.check.chkStyle === 'checkbox') {
+              zTree_pos.checkAllNodes(true);
+              refreshEmployeeByPosition();
+            }
+          } else if (name === 'mul') {
+            zTree_pos.setting.check.chkStyle = 'checkbox';
+          } else if (name === "sub") {
+            zTree_pos.setting.check.chkboxType = {"Y": "s", "N": "s"};
+            var nodes = zTree_pos.getNodes();
+            Select_SubNode(nodes, zTree_pos);
+          } else if (name === 'sort') {
+            var nodes = zTree_pos.getNodes();
+            sortNodes(nodes,sortOrder);
+            zTree_pos.refresh();
+          }
+        }
+        zTree_pos.refresh();
+      });
+    });
+  </script>
+</div>

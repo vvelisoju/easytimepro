@@ -1,0 +1,459 @@
+{% load i18n static %}
+
+<style>
+    .divStatus {
+        float: left;
+        display: inline;
+        border-radius: 4px;
+        color: #636363;
+        margin: 4px;
+        vertical-align: top;
+        width: 250px;
+        font-family: Open sans, sans-serif;
+        padding: 20px;
+        letter-spacing: 0.5px;
+        max-width: 250px;
+        box-shadow: 0 8px 6px -6px #9E9E9E;
+        text-transform: capitalize;
+    }
+
+    #divPending {
+        border: 1px solid #d8d8d8;
+        background-color: #efefef;
+        font-weight: 300;
+    }
+
+    #divApproved{
+        border: 1px solid #9ad852;
+        background-color: #9eda59;
+    }
+
+    #divRejected{
+        border: 1px solid #fb521c;
+        background-color: #fb764c;
+    }
+
+    .info-block{
+        display: inline-block;
+        min-width: 130px;
+    }
+    .node_name{
+        font-size: 18px;
+        text-align: center;
+        display: inherit;
+        padding-bottom: 10px;
+    }
+    .scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .scroll::-webkit-scrollbar-thumb {
+      background: white !important;
+      -webkit-border-radius: 10px;
+    }
+    .scroll::-webkit-scrollbar-track-piece {
+        background-color: transparent;
+    }
+    .popover-content{
+        background-color: rgb(219, 88, 96);
+        padding: 8px;
+        color: white;
+    }
+</style>
+
+<div id="{{ model_name }}_edit_form" style="width: auto;">
+    <form class="layui-form data-form" style="width:800px ;  " action="" method="post" >
+        {% csrf_token %}
+        <div style="display: flex; flex-direction: row; height:auto; padding-bottom: 10px;  overflow-x:scroll;">
+            {% for node in node_list %}
+                {% if node.state == 1 %}  <!-- Node-Pending -->
+                    <div id="divPending" class="divStatus" title="{% trans 'node_name' %} : {{ node.name | title }} | {% trans 'workflow_status' %} : {% trans 'approve_pending' %}">
+                {% else %}
+                    {% if node.state == 2 %}   <!-- Node-Approve -->
+                        <div id="divApproved" class="divStatus"
+                             title="{% trans 'workflowNode_field_approver' %} : {% if node.approver_admin_id %}{% trans 'Admin' %} {% else %}{% if node.approver_employee.first_name %}{{ node.approver_employee.first_name }}{% endif %} {% if node.approver_employee.last_name %}{{ node.approver_employee.last_name }}{% endif %}{% endif %} | {% trans 'node_name' %} : {{ node.name | title }} | {% trans 'workflow_status' %} : {% trans 'approve_approval_passed' %}">
+                    {% elif node.state == 6 %}  <!-- Node-Revoke -->
+                        <div id="divRejected" class="divStatus"
+                             title="{% trans 'Revoked By' %} : {% if node.approver_admin_id %}{% trans 'Admin' %}{% else %}{% if node.approver_employee.first_name %}{{ node.approver_employee.first_name }}{% endif %} {% if node.approver_employee.last_name %}{{ node.approver_employee.last_name }}{% endif %}{% endif %} | {% trans 'workflow_status' %} : {% trans 'approvalStatus_option_revoke' %}" >
+                    {% elif node.state == 7 %}  <!-- Node-Withdraw -->
+                        <div id="divRejected" class="divStatus"
+                             title="{% trans 'Withdraw By' %} : {% if node.approver_admin_id %}{% trans 'Admin' %}{% else %}{% if node.approver_employee.first_name %}{{ node.approver_employee.first_name }}{% endif %} {% if node.approver_employee.last_name %}{{ node.approver_employee.last_name }}{% endif %}{% endif %} | {% trans 'workflow_status' %} : {% trans 'approvalStatus_option_withdraw' %}">
+                    {% else %} <!-- Node-Reject: 3 and Node-Void: 4  -->
+                        <div id="divRejected" class="divStatus"
+                             title="{% trans 'approve_rejected' %} : {% if node.approver_admin_id %}{% trans 'Admin' %}{% else %}{% if node.approver_employee.first_name %}{{ node.approver_employee.first_name }}{% endif %} {% if node.approver_employee.last_name %}{{ node.approver_employee.last_name }}{% endif %}{% endif %} | {% trans 'workflow_status' %} : {% trans 'approve_rejected' %}">
+                    {% endif %}
+                {% endif %}
+            <label class="node_name">{{ node.name }}</label>
+{#          <label>{{ node.state.name }}</label>#}
+{#            <button id="btnview{{ node.id }}"#}
+{#                    onclick="openDiv('div{{ node.id }}','btnview{{ node.id }}') ;return false">{% trans 'btn_view' %}#}
+{#            </button>#}
+            <div id="div{{ node.id }}" class="foo scroll" style="overflow: auto; max-height: 200px;">
+                {% if node.approver_admin_id %}
+                    <label><u>Admin</u></label>
+                    <br>
+                    <label>{% trans 'base_model_user' %}: {{ node.approver_admin.username }} </label>
+                {% elif node.approver_employee %}
+                    <script>
+                        function imgerrorfun(){
+                           var img=event.srcElement;
+                           img.src="/files/photo/nophoto.gif";
+                       }
+                    </script>
+                    <img  src="/files/photo/{{ node.approver_employee.company.hex_id }}/{{ node.approver_employee.emp_code }}.jpg" width='50px' height="44px"  style="border-radius: 5px" onerror="imgerrorfun(this)"/><br>
+                    <label><strong>{% trans 'model_employee' %}:</strong>
+                        {% if node.approver_employee.first_name %}
+                            {{ node.approver_employee.first_name }}
+                        {% endif %}
+                        {% if node.approver_employee.last_name %}
+                            {{ node.approver_employee.last_name }}
+                        {% endif %}
+                    </label>
+                    <br>
+                    <label>{% trans 'node_name' %}: <span style="font-weight: normal;">{{ node.name }}</span></label>
+                {% else %}
+                    <label><strong>{% trans 'workflow_node_approver' %}:</strong> {{ node.flow_name | upper }} </label>
+                    <br>
+                    <label>{% trans 'node_name' %}: <span style="font-weight: normal;">{{ node.name }}</span></label>
+                {% endif %}
+                {% if node.apply_time %}
+                    <br><span style="font-weight: bold;">{% trans 'manualLog_field_approvalTime' %}: </span><span>{{ node.apply_time }}</span>
+                {% endif %}
+                <br>
+                {% if node.approver_employee or node.approver_admin_id %}
+                    <label>{% trans 'remark' %}: {% if node.remark %}<span style="font-weight: normal;">{{ node.remark }}</span>{% endif %}</label>
+                {% else %}
+                        <br><label>{% trans 'workflow_status' %}: <span style="font-weight: normal;">{% if node.state == 3 or node.state == 4 %} {% trans 'approve_rejected' %} {% else %} {% trans 'approve_pending' %} {% endif %}</span></label>
+                {% endif %}
+            </div>
+            </div>
+                {% if forloop.last %}
+
+                {% else %}
+                    <img src="/media/img/right-arrow.png" style="float: left;box-sizing: initial; padding-top: 37px; height: 20px;">
+                {% endif %}
+            {% endfor %}
+            </div>
+            <div class="layui-collapse" lay-accordion>
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">{% trans 'information_workflow' %}</h2>
+                    <div class="layui-colla-content layui-show">
+                        <div class="layui-row">
+                            <div class="layui-col-md9">
+                                <div class="layui-form-item">
+                                    {% if workflow_employee_first_name %}
+                                    <label><strong class="info-block">{% trans 'emp_field_firstName' %}</strong>:&nbsp;&nbsp;{{ workflow_employee_first_name }}</label>
+                                    {% endif %}
+                                </div>
+                                <div class="layui-form-item">
+                                    {% if workflow_employee_last_name %}
+                                    <label><strong class="info-block">{% trans 'emp_field_lastName' %}</strong>:&nbsp;&nbsp;{{ workflow_employee_last_name }}</label>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="layui-col-md9">
+                                <div class="layui-form-item">
+                                    <label><strong class="info-block">{% trans 'emp_field_employeeCode' %}</strong>:&nbsp;&nbsp;{{ workflow_employee_code }}</label>
+                                </div>
+                            </div>
+                            <div class="layui-col-md9">
+                                <div class="layui-form-item">
+                                    <label><strong class="info-block">{% trans 'workflow_content_type' %}</strong>:&nbsp;&nbsp;{{ workflow_content_type }}</label>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label><strong class="info-block">{% trans 'instance_issue_date' %}</strong>:&nbsp;&nbsp;{{ workflow_instance_issue_date }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="layui-col-md9">
+                                <div class="layui-form-item">
+                                    <label><strong class="info-block">{% trans 'workflow_name' %}</strong>:&nbsp;&nbsp;{{ workflow_name }}</label>
+                                </div>
+                                <div class="layui-form-item" id="divRemark">
+                                    <label for="txtReason"><strong class="info-block">{% trans 'Reason' %}</strong>:&nbsp;&nbsp;</label>
+                                    <textarea type="text" name="txtReason" id="txtReason" class="form-control" data-toggle="popover"
+                                          data-trigger="manual" data-content="This field is required." data-placement="right" style="height:40px;width:150px;" maxlength="200">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="divButtonera" class="layui-layer-btn" style="display: none">
+                    <!--  <button class="layui-layer-btn1"  type="button" id="Approve" onclick="Approve()"  style="width: 60px;  color: #fff;  background-color: #1E9FFF; height: 30px ; border-color: #1E9FFF" >Approve</button> -->
+
+                    <a class="layui-layer-close1 layui-layer-close " id="Approve"
+                       style="width: auto;  color: #fff;  background-color: #1E9FFF; height: 30px ; margin-top:-20px;   margin-left: -280px; border-color: #1E9FFF">{% trans 'approve' %}</a>
+
+                    <!-- layui-layer-btn1 -->
+                    <a class="layui-layer-close1 layui-layer-close " id="reject"
+                       style="width: auto;  color: #fff;  background-color: #1E9FFF; height: 30px ;  margin-top:-20px;  margin-left: -180px; border-color: #1E9FFF">{% trans 'Reject' %}</a>
+
+                    <a class="layui-layer-close1 layui-layer-close " id="revoke"
+                       style="width: auto;  color: #fff;  background-color: #1E9FFF; height: 30px ;  margin-top:-20px;  margin-left: -95px; border-color: #1E9FFF">{% trans 'Revoke' %}</a>
+
+                    <!-- <button type="button" id="rejecte" onclick="rejecte()"  style="width: 60px; color: #fff;  background-color: #1E9FFF; height: 30px ; border-color: #1E9FFF">Rejecte</button>
+                     -->
+                </div>
+            </div>
+            <input type="hidden" name="hhworkflowintanceid" value="{{ workflow_intance_id }}">
+            <input type="hidden" name="hhedit" value="{{ edit }}">
+    </form>
+</div>
+
+
+<script>
+    {#$('#' + divId + '').show();#}
+    {#$(document).ready(function () {#}
+    {#    $('.foo').hide();#}
+    {#    var queryString = $("input[name=hhedit]").val();#}
+    {##}
+    {##}
+    {#    $("#txtReason").val($("#txtReason").val().trim());#}
+    {#    var countReject = $("#divRejected").length;#}
+    {#    var countPending = $("#divPending").length;#}
+    {#    if (countReject > 0 || countPending == 0 || queryString == 0) {#}
+    {#        $('#Approve').hide();#}
+    {#        $('#reject').hide();#}
+    {#        $('#divRemark').hide();#}
+    {#    }#}
+    {##}
+    {##}
+    {#    //$('.layui-layer-btn')[1].remove();#}
+    {#);#}
+
+    {#function openDiv(divId, buttonID) {#}
+    {#    if ($('#' + divId + '').is(":visible")) {#}
+    {#        $('#' + divId + '').hide();#}
+    {#        $('#' + buttonID + '').text("{% trans 'btn_view' %}");#}
+    {#    }#}
+    {#    else {#}
+    {#        $('#' + divId + '').show();#}
+    {#        $('#' + buttonID + '').text("{% trans 'btn_hide' %}");#}
+    {#    }#}
+    {##}
+    {#    return true;#}
+    {##}
+    var model_name = ""
+    $(document).ready(function () {
+        var csrf = $("input[name=csrfmiddlewaretoken]").val();
+        var wfi = {{ workflow_intance_id }};
+        var request_grid = {{ request_grid }};
+        $.ajax({
+            type: 'GET',
+            url: '/workflowinstance/get_approval_button_stats/',
+            data: {
+                csrfmiddlewaretoken: csrf,
+                workflow_instance_id: wfi,
+                request_grid: request_grid
+            },
+            dataType: 'json',
+            success: function (data) {
+                model_name = data.model_name
+                if(data.is_approve_enable){
+                    if (data.state == 1) {
+                        $("#divButtonera").show();
+                        $("#divRemark").show();
+                        $("#Approve").show();
+                        $("#reject").show();
+                        $("#revoke").hide();
+                    }
+                    else if (data.state == 2) {
+                        $("#divButtonera").show();
+                        $("#divRemark").hide();
+                        $("#Approve").hide();
+                        $("#reject").hide();
+                        $("#revoke").show();
+                    }
+                }
+                else{
+                    $("#divButtonera").hide();
+                    $("#divRemark").hide();
+                }
+            }
+        })
+    })
+
+    function returnModelCapitalize(modelName){
+        if(modelName === "manuallog"){
+            modelName = "ManualLog"
+        }
+        else if(modelName === "leave"){
+            modelName = "Leave"
+        }
+        else if(modelName === "overtime"){
+            modelName = "Overtime"
+        }
+        else if(modelName === "training"){
+            modelName = "Training"
+        }
+        else if(modelName === "reimbursement"){
+            modelName = "Reimbursement"
+        }
+        return modelName
+    }
+    $('#Approve').click(function () {
+        var csrf = $("input[name=csrfmiddlewaretoken]").val();
+        var wfi = {{ workflow_intance_id }};
+        var reason = $("#txtReason").val().trim();
+        var table = layui.table
+//ajax
+        $.ajax({
+            type: 'POST',
+            headers: {'X-CSRFToken': csrf},
+            url: '/workflowinstance/approve/',
+            data: {
+                csrfmiddlewaretoken: csrf,
+                workflow_instance_id: wfi,
+                model_name: model_name,
+                remark: reason,
+                is_ui_approve: true,
+            },
+            dataType: 'text',
+            success: function (data) {
+                response_message = JSON.parse(data)
+                if (response_message['error_code'] != 0) {
+                    alert(response_message['result'])
+                    console.log('error-code: ', response_message['error_code']);
+                    console.log('error-message: ', response_message['result']);
+                } else {
+                    model_name = returnModelCapitalize(model_name)
+                    table.reload("id_grid_staff"+model_name+"Approve");
+                }
+            },
+            error: function (request, status, error) {
+                var ret = JSON.parse(request.responseText);
+                  layer.msg(ret['result'], {
+                    icon: 5,
+                    time: '2000',
+                    shade: 0.1
+                  });
+            }
+        });
+//end ajax
+    });
+
+
+    $('#reject').click(function () {
+        var csrf = $("input[name=csrfmiddlewaretoken]").val();
+        var wfi = {{ workflow_intance_id }};
+        var reason = $("#txtReason").val().trim();
+        var table = layui.table
+        var textarea = $("#txtReason");
+        if (!reason) {
+            var csrf = $("input[name=csrfmiddlewaretoken]")
+            textarea.addClass("is-invalid").popover('show').css("border-color", "red").on("input", function() {
+                textarea.popover('hide').css("border-color", "");
+            });
+        }
+//ajax
+        $.ajax({
+            type: 'POST',
+            headers: {'X-CSRFToken': csrf},
+            url: '/workflowinstance/reject/',
+            data: {
+                csrfmiddlewaretoken: csrf,
+                workflow_instance_id: wfi,
+                model_name: model_name,
+                remark: reason,
+                is_ui_approve: true,
+            },
+            dataType: 'text',
+            success: function (data) {
+                response_message = JSON.parse(data)
+                if (response_message['error_code'] != 0) {
+                    alert(response_message['result'])
+                    console.log('error-code: ', response_message['error_code']);
+                    console.log('error-message: ', response_message['result']);
+                } else {
+                    model_name = returnModelCapitalize(model_name)
+                    table.reload("id_grid_staff"+model_name+"Approve");
+                }
+            },
+            error: function (request, status, error) {
+                var ret = JSON.parse(request.responseText);
+                  layer.msg(ret['result'], {
+                    icon: 5,
+                    time: '2000',
+                    shade: 0.1
+                  });
+            }
+        });
+
+//end ajax
+    });
+
+    $('#revoke').click(function () {
+        var actionRender = function (url, postParams, revoke=false) {
+            var table = layui.table
+            var approvalError = function (request) {
+              var ret = JSON.parse(request.responseText);
+              layer.msg(ret['result'], {
+                icon: 5,
+                time: '2000',
+                shade: 0.1
+              });
+            };
+            var approvalSuccess = function (response, msg) {
+              if (response instanceof String){
+                var ret = JSON.parse(response);
+              }else {
+                ret = response
+              }
+              if (ret['error_code'] != 0)
+              {
+                msg = ret['result'];
+                layer.msg(gettext(msg), {
+                  icon: 5
+                  , time: '2000'
+                  , shade: 0.1
+                });
+              } else {
+                layer.msg(gettext(msg), {
+                  icon: 1
+                  , time: '2000'
+                  , shade: 0.1
+                });
+                model_name = returnModelCapitalize(model_name)
+                table.reload("id_grid_staff"+model_name+"Approve");
+              }
+            };
+          layer.prompt({
+            formType: 2
+            , value: ''
+            , title: gettext('approval_formTitleRemark')
+            , area: ['auto', 'auto']
+            , btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+            , yes: function(index, layero){
+              var value =  layero.find(".layui-layer-input").val();
+              if (value=='' && revoke==true){
+                layer.alert("{% trans 'revoke_remark_is_required' %}", {title: gettext("layer_title"), icon: 0, btn: gettext("btn_confirm")});
+              }else if (value.length > 200) {
+                layer.alert("{% trans 'input_limit' %}", {title: gettext("layer_title"),icon: 0,btn: gettext("btn_confirm")});
+              }else{
+              layer.close(index);
+              $.extend(postParams, {remark: value});
+              $.ajax({
+                type: 'POST',
+                url: url,
+                data: postParams,
+                dataType: 'json',
+                success: function (response) {
+                  approvalSuccess(response, gettext('approval_actionSuccessful'));
+
+                },
+                error: function (request, status, error) {
+                  approvalError(request);
+                }
+                });
+              }
+            }
+          });
+        };
+        var postParams = {}
+        postParams['csrfmiddlewaretoken'] = $("input[name=csrfmiddlewaretoken]").val();
+        postParams['workflow_instance_id'] = $("input[name=hhworkflowintanceid]").val();
+        postParams['request_grid'] = {{ request_grid }};
+        postParams['model_name'] = model_name;
+        actionRender('/workflowinstance/revoke/', postParams, revoke=true);
+    })
+</script>

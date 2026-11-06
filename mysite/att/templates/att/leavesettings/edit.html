@@ -1,0 +1,54 @@
+{% load i18n static common %}
+{% autoescape off %}
+    <div id="{{ model_name }}_edit_form" style="padding: 10px;">
+        <form class="layui-form data-form" action="" method="post">
+            {% csrf_token %}
+            {% with adminform.form as f %}
+                {% layui_form_item f.emp %}
+                {% layui_form_item f.allotment_type %}
+                {% layui_form_item f.days %}
+                {% layui_form_item f.effective_date %}
+                {% layui_form_item f.max_leave_per_month %}
+                {% layui_form_item f.auto_deduct %}
+                {% layui_form_item f.carry_forward_limit %}
+            {% endwith %}
+        </form>
+    </div>
+    <script>
+            $(".layui-layer-btn0").click(function () {
+            if ($("input[name='days']").val() == '0'){
+            $("#id_days").css({'border':'solid', 'border-color': 'red', 'border-width': '1px', 'border-radius': '2px'})
+            }
+            });
+    </script>
+    <script>
+        layui.use(['form', 'laydate'], function () {
+            var form = layui.form;
+            var laydate = layui.laydate;
+            $("form.layui-form input.layui-datetime").each(function () {
+                laydate.render({elem: this, type: 'datetime'});
+            });
+            $("form.layui-form input.layui-date").each(function () {
+                laydate.render({elem: this, type: 'date'});
+            });
+            $("form.layui-form input.layui-time").each(function () {
+                laydate.render({elem: this, type: 'time'});
+            });
+            var auto_carry_forward = $('#id_auto_deduct').val();
+            if(auto_carry_forward == "1"){
+                $('.field-carry_forward_limit').css('display','none');
+            }
+            form.on('select(auto_deduct)', function (data) {
+                if(data.value == "0"){
+                    $('.field-carry_forward_limit').css('display','block');
+                }else{
+                    $('.field-carry_forward_limit').css('display','none');
+                }
+            });
+            {% block form_verify %}
+                form.verify({});
+            {% endblock %}
+            form.render();
+        });
+    </script>
+{% endautoescape %}

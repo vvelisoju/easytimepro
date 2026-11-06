@@ -1,0 +1,34 @@
+{% load i18n static common %}
+<div style="width: 570px;height: 242px">
+    <form action="" class="layui-form online-activation" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="layui-form-item company-input">
+            {% layui_inline form.name %}
+        </div>
+        <div class="layui-form-item">
+            {% layui_inline form.country %}
+            {% layui_inline form.city %}
+        </div>
+        <div class="layui-form-item">
+            {% layui_inline form.email %}
+            {% layui_inline form.address %}
+        </div>
+        <div class="layui-form-item">
+            {% layui_inline form.contacts %}
+            {% layui_inline form.phone %}
+        </div>
+        <div class="layui-form-item">
+            {% layui_inline form.industry %}
+            {% layui_inline form.productsSuppliers %}
+        </div>
+        <div class="layui-form-item sn-input">
+            {% layui_inline form.sn_file %}
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form'], function () {
+        var form=layui.form;
+        form.render();
+    })
+</script>

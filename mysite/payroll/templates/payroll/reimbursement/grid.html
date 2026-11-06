@@ -1,0 +1,223 @@
+{% extends 'data_grid.html' %}
+{% load i18n common %}
+{% load iclock_tags %}
+{% block grid_opt_update %}
+  var cols = data_grid_opts['grid_opts']['cols'][0];
+  var payload = {};
+  cols.forEach(function(col, index){
+  payload[col.field] = col;
+})
+  $.extend(payload.rmb_file,{event:'getRecptFile', templet:function(d){
+    return '<a href="javascript:void(0);" style="color: #57c5f7">'+d.rmb_file+'</a>';
+  }})
+  data_grid_opts.events = $.extend(data_grid_opts.events || {},{
+    getRecptFile: function(data){
+     $.ajax({
+      url: '/payroll/reimbursement/recepts/',
+      type:'GET',
+      data: {
+          obj_id: data['id']
+      },
+      dataType: 'html',
+      success: function (res) {
+          layer.open({
+              title: gettext("Reimbursement receipt"),
+              type: 1,
+              zIndex: 998,
+              resize:false,
+              area: ['1000px', '650px'],
+              content: res,
+              btn:[gettext("btn_confirm")],
+              end: function () {
+                layer.closeAll('tips');
+              }
+          })
+      }
+       , error: function () {
+      layer.close(loadIndex);
+      }
+    })
+    }
+  })
+{% endblock %}
+{% block function_js %}
+{% endblock function_js %}
+{% block filter_bar %}
+    {{ block.super }}
+    {% csrf_token %}
+{% block row_event %}
+  {% if all_perms.change or all_perms.delete %}
+    <script type="text/html" id="model_{{ model_name }}_toolbar">
+      {% if all_perms.change %}
+        <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="fa fa-fw fa-pencil-square-o"></i></a>
+      {% endif %}
+      {% if all_perms.delete %}
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="fa fa-fw fa-trash-o"></i></a>
+          <a class="layui-btn layui-btn-xs" lay-event="staffViewWorkflow" onclick="approvalEyeView()"><i class="fa fa-eye"></i></a>
+      {% endif %}
+    </script>
+  {% endif %}
+{% endblock row_event %}
+<script>
+function approvalEyeView() {
+    layui.use(['table'], function () {
+            var table = layui.table
+            table.on('tool({{ model_name }})', function (obj) {
+                var postParams = {workflow_instance_id: obj.data.id};
+                postParams['model_name'] = "{{ model_name }}";
+                postParams['csrfmiddlewaretoken'] = "{{ csrf_token }}"
+                function show_error(response){
+                    var res_msg = JSON.parse(response.responseText);
+                    var display_msg = '';
+                    for (var prop in res_msg) {
+                        var name = prop
+                        $('form input[name="' + prop + '"]').addClass('layui-form-danger');
+                        $('form select[name="' + prop + '"]').addClass('layui-form-danger');
+                        var input_lable = $('form input[name="' + prop + '"]').parent().parent().children().first().text();
+                        var select_lable = $('form input[name="' + prop + '"]').parent().parent().children().first().text();
+                        if(input_lable) {
+                          name = input_lable
+                        } else if(select_lable) {
+                          name = select_lable
+                        } else {
+                          name = gettext(name)
+                        }
+                        display_msg += '<p>'+ res_msg[prop] + '</p>'
+                        layer.msg(gettext(display_msg), {icon: 5});
+                    }
+                    {#layer.alert(display_msg, {'icon': 0, btn: [gettext("btn_confirm")], title: gettext("layer_title")});#}
+                }
+                switch (obj.event) {
+                    case 'staffViewWorkflow':
+                        $.ajax({
+                            url: "/workflow/view/"
+                            , dataType: 'html'
+                            , data: postParams
+                            , type: 'GET'
+                            , success: function (response) {
+                                try {
+                                    var ret = JSON.parse(response);
+                                    if (ret['error_code'] != 0) {
+                                        layer.msg(ret['result'], {
+                                            icon: 0,
+                                            time: '2000',
+                                            shade: 0.1
+                                        });
+                                    }
+                                } catch (err) {
+                                    layer.open({
+                                        title: gettext('approval_workflow_view')
+                                        , area: ['auto', '']
+                                        , content: response
+                                        , btn: gettext("btn_confirm")
+                                        , success: function (layero, index) {
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                        break;
+                    case 'editPopUp':case 'edit':
+                        var tableId = "id_grid_{{ model_name }}";
+                        var data = obj.data;
+                        $.ajax({
+                            url: "{% url 'biotime:staff_reimbursement_edit' %}?id='"+obj.data['id']+"'"
+                            , dataType: 'html'
+                            , type: 'GET'
+                            , success: function (page) {
+                                layer.open({
+                                    title: gettext("model_action_editTitle"),
+                                    area:['830px','447px'],
+                                    type: 1,
+                                    content: page,
+                                    success: function (layero, index) {
+                                        layero.find("#id_rmb_amount").val(obj.data['rmb_amount']);
+                                        layero.find("#id_rmb_start_date").val(obj.data['rmb_start_date']);
+                                        layero.find("#id_rmb_end_date").val(obj.data['rmb_end_date']);
+                                        layero.find("#id_rmb_remark").val(obj.data['rmb_remark']);
+                                        layero.find("input.layui-input")[3].value = obj.data['allowance_type'];
+                                        layero.find("input.layui-input")[4].value = obj.data['purpose_type'];
+                                    },
+                                    btn: [gettext("btn_confirm"), gettext("btn_cancel")],
+                                    yes: function (index, layero) {
+                                        var newForm = layero.find("form.layui-form");
+                                        $(newForm).ajaxSubmit({
+                                            url: "/staff/api/reimbursement/" + data['id'] + "/",
+                                            type: "PUT",
+                                            success: function (response, status, xhr) {
+                                                layer.close(index);
+                                                layer.msg(gettext('save_successful'), {icon: 6, time: 600});
+                                                table.reload(tableId, true);
+                                                //bindAllActions();
+                                            },
+                                            error: function (response) {
+                                                show_error(response);
+                                            }
+                                        });
+                                    },
+                                    end: function () {
+                                        layer.closeAll('tips');
+                                    }
+                                });
+                            }
+                        })
+                        break;
+                    case 'del':
+                        postParams['obj_ids'] = postParams['workflow_instance_id']
+                        delete postParams['workflow_instance_id']
+                        layer.confirm("{% trans 'confirm_be_sure' %}", {
+                            title: gettext("btn_confirm")
+                            , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+                        }, function (index) {
+                            obj.del();
+                            layer.close(index);
+                            $.ajax({
+                                url: '/payroll/reimbursement/del/'
+                                , dataType: 'html'
+                                , data: postParams
+                                , type: 'POST'
+                                , success: function (data) {
+                                    layer.msg(gettext('delete_successful'), {icon: 6, time: 600});
+                                    table.reload(tb.config.id, true);
+                                    //bindAllActions();
+                                }
+                            });
+                        });
+                        break
+                    case "getRecptFile":
+                        $.ajax({
+                          url: '/payroll/reimbursement/recepts/',
+                          type:'GET',
+                          data: {
+                              obj_id: obj.data['id']
+                          },
+                          dataType: 'html',
+                          success: function (res) {
+                              layer.open({
+                                  title: gettext("Reimbursement receipt"),
+                                  type: 1,
+                                  zIndex: 998,
+                                  resize:false,
+                                  area: ['1000px', '650px'],
+                                  content: res,
+                                  btn:[gettext("btn_confirm")],
+                                  end: function () {
+                                    layer.closeAll('tips');
+                                  }
+                              })
+                          }
+                           , error: function () {
+                            layer.close(loadIndex);
+                          }
+                        })
+                        break
+                    default:
+                        break;
+                }
+            });
+        })
+}
+</script>
+{% endblock %}
+<script>
+</script>

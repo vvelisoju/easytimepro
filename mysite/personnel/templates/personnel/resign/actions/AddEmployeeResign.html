@@ -1,0 +1,38 @@
+{% load i18n common %}
+{% autoescape off %}
+<div style="padding: 10px;min-height: 300px;min-width: 850px">
+  <form class="layui-form action-form" action="" method="post" id="{{ model_name }}_{{ action_repr }}"
+        enctype="multipart/form-data">
+    {% csrf_token %}
+    {% with form.form as f %}
+      <div style="padding-bottom: 20px">{{ f.employee }}</div>
+      <div class="layui_form_item">
+        {% layui_inline f.resign_date %}
+        {% layui_inline f.report_generation_end_date %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.resign_type %}
+        {% layui_inline f.disableatt %}
+      </div>
+      <div class="layui_form_item">
+        {% layui_inline f.reason %}
+      </div>
+    {% endwith %}
+  </form>
+</div>
+<script>
+    layui.use('form', function() {
+        var form = layui.form;
+        form.render();
+        $("form.layui-form input.layui-date").each(function () {
+                var laydate = layui.laydate;
+                laydate.render({
+                    elem: this,
+                    type: 'date'
+                });
+        });
+        var max_height = window.innerHeight - 93 - Math.floor(Math.random() * -5 + 5);
+        $('#{{ model_name }}_{{ action_repr }}').css('max-height', max_height);
+    });
+</script>
+{% endautoescape %}

@@ -1,0 +1,529 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "Bordro"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "Personel Profili"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "Personel Profili"
+
+msgid "menu_group_payroll_formula"
+msgstr "Formül"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "Kesinti Formülü"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "İstisna Formülü"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "Kazanç Formülü"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "İzin Formülü"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "Fazla Mesai Formülü"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "Ekstra Kaynak"
+
+msgid "menu_payroll_extraincrease"
+msgstr "Ekstra Kazanç"
+
+msgid "menu_payroll_extradeduction"
+msgstr "Ekstratra Kesinti"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "Bordro Yapısı"
+
+msgid "menu_payroll_salarystructure"
+msgstr "Bordro Yapısı"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "Borç"
+
+msgid "menu_payroll_empLoan"
+msgstr "Borç"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "Maaş Avansı"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "Maaş Avansı"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "Geri Ödeme"
+
+msgid "menu_payroll_reimbursement"
+msgstr "Geri Ödeme"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Hesaplama"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "Maaş Hesaplama"
+
+msgid "menu_group_payroll_report"
+msgstr "Rapor"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "Maaş Yapısı"
+
+msgid "menu_payroll_increase_report"
+msgstr "Kazanç Öğeleri"
+
+msgid "menu_payroll_deduction_report"
+msgstr "Kesinti Öğeleri"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "Maaş Detayları"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "Katılım Param."
+
+msgid "menu_payroll_setting"
+msgstr "Bordro Ayarları"
+
+msgid "paroll_mode_monthly"
+msgstr "Aylık"
+
+msgid "paroll_type_cash"
+msgstr "Nakit"
+
+msgid "paroll_type_check"
+msgstr "Kontrol"
+
+msgid "paroll_type_bank_transfer"
+msgstr "Banka Transferi"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "Personel Profili"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "Ödeme Periyodu"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "Ödeme Tipi"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "Banka Adı"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "Banka Hesabı"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "Personel No"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "İsim"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "Soyisim"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "Acenta No"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "Acenta Hesabı"
+
+msgid "payroll_model_deductionFormula"
+msgstr "Kesinti Formülü"
+
+msgid "deductionFormula_field_name"
+msgstr "İsim"
+
+msgid "deductionFormula_field_formula"
+msgstr "Formül"
+
+msgid "deductionFormula_field_remark"
+msgstr "Açıklamalar"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "İstisna Formülü"
+
+msgid "exceptionFormula_field_name"
+msgstr "İsim"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "İstisna Tipi"
+
+msgid "exceptionFormula_field_formula"
+msgstr "Formül"
+
+msgid "exceptionFormula_field_remark"
+msgstr "Açıklamalar"
+
+msgid "payroll_model_increasementFormula"
+msgstr "Kazanç Formülü"
+
+msgid "increasementFormula_field_name"
+msgstr "İsim"
+
+msgid "increasementFormula_field_formula"
+msgstr "Formül"
+
+msgid "increasementFormula_field_remark"
+msgstr "Açıklamalar"
+
+msgid "payroll_model_leaveFormula"
+msgstr "İzin Formülü"
+
+msgid "leaveFormula_field_name"
+msgstr "İsim"
+
+msgid "leaveFormula_field_category"
+msgstr "İzin Tipi"
+
+msgid "leaveFormula_field_formula"
+msgstr "Formül"
+
+msgid "leaveFormula_field_remark"
+msgstr "Açıklamalar"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "Fazla Mesai Formülü"
+
+msgid "overtimeFormula_field_name"
+msgstr "İsim"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "Fazla Mesai Düzeyi"
+
+msgid "overtimeFormula_field_formula"
+msgstr "Formül"
+
+msgid "overtimeFormula_field_remark"
+msgstr "Açıklamalar"
+
+msgid "payroll_model_extraIncrease"
+msgstr "Ekstra Kazanç"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "Ekle"
+
+msgid "extraIncrease_field_employee"
+msgstr "Personel"
+
+msgid "extraIncrease_field_amount"
+msgstr "Miktar"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "Yayın Zamanı"
+
+msgid "extraIncrease_field_remark"
+msgstr "Açıklamalar"
+
+msgid "payroll_model_extraDeduction"
+msgstr "Ekstra Kesinti"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "Ekle"
+
+msgid "extraDeduction_field_employee"
+msgstr "Personel"
+
+msgid "extraDeduction_field_amount"
+msgstr "Miktar"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "Yayın Zamanı"
+
+msgid "extraDeduction_field_remark"
+msgstr "Açıklamalar"
+
+msgid "payroll_model_salarystructure"
+msgstr "Bordro Yapısı"
+
+msgid "salaryStructure_field_amount"
+msgstr "Basit Maaş"
+
+msgid "salaryStructure_field_formula"
+msgstr "Maaş Formulü"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "Geçerlilik Tarihi"
+
+msgid "salaryStructure_field_remark"
+msgstr "Açıklama"
+
+msgid "salaryStructure_field_formulas"
+msgstr "Formüller"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "Maaş Avansı"
+
+msgid "salaryAdvance_field_amount"
+msgstr "Miktar"
+
+msgid "salaryAdvance_field_time"
+msgstr "Yayın Zamanı"
+
+msgid "salaryAdvance_field_remark"
+msgstr "Açıklama"
+
+msgid "payroll_model_Reimbursement"
+msgstr "Geri Ödeme"
+
+msgid "Reimbursement_field_amount"
+msgstr "Miktar"
+
+msgid "Reimbursement_field_time"
+msgstr "Geri Ödeme Zamanı"
+
+msgid "Reimbursement_field_file"
+msgstr "Geri Ödeme Makbuzu"
+
+msgid "Reimbursement_field_remark"
+msgstr "Açıklama"
+
+msgid "payroll_model_empLoan"
+msgstr "Borç"
+
+msgid "empLoan_field_employee"
+msgstr "Personel ID"
+
+msgid "empLoan_field_loanAmount"
+msgstr "Borç Miktarı"
+
+msgid "empLoan_field_loanTime"
+msgstr "Borç Zamanı"
+
+msgid "empLoan_field_refundCycle"
+msgstr "Geri Ödeme Döngüsü"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "Dönemsel Geri Ödeme Periyodu"
+
+msgid "empLoan_field_clean_time"
+msgstr "Temiz Zaman"
+
+msgid "empLoan_field_remark"
+msgstr "Açıklama"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "Ekle"
+
+msgid "payroll_action_addRmb"
+msgstr "Ekle"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "Ekle"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "Ekle"
+
+msgid "reimbursement_file"
+msgstr "Geri Ödeme Makbuzu"
+
+msgid "report_column_overtimeFormula1"
+msgstr "FM1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "FM2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "FM3"
+
+msgid "report_column_increaseFormula"
+msgstr "Kazanç Formulü"
+
+msgid "report_column_deductionFormula"
+msgstr "Kesinti Formulü"
+
+msgid "report_column_lateFormula"
+msgstr "Geç Kalma Formulü"
+
+msgid "report_column_absentFormula"
+msgstr "Devamsızlık Formülü"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "Erken Çıkma Formülü"
+
+msgid "payroll_model_monthlysalary"
+msgstr "Aylık Maaş Raporu"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "Basit Maaş"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "Geçerlilik Tarihi"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "Hesap. Tarihi"
+
+msgid "monthlySalary_field_ot1"
+msgstr "FM1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "FM2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "FM3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "Geç Kalma"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "Erken Çıkma"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "Devamsızlık"
+
+msgid "monthlySalary_field_increase"
+msgstr "Kazanç"
+
+msgid "monthlySalary_field_deduction"
+msgstr "Kesinti"
+
+msgid "monthlySalary_field_leave"
+msgstr "İzin"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "Ekstra Kazanç"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "Ekstra Kesinti"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "Toplam Borç Miktarı"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "Borç Geri Ödeme Miktarı"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "Geri Ödenmemiş Borç"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "Borç Kesintisi"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "Borç Artışı"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "Avans Artışı"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "Peşin Kesinti"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "Geri Ödeme"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "Toplam Kazanç"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "Toplam Kesinti"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "Toplam Maaş"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "Basit maaş 0'dan küçük olamaz"
+
+msgid "payroll_attParamUnit"
+msgstr "Katılım Parametre Birimi"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}:Çalışan {1} aktif maaş yapısına sahiptir.."
+
+msgid "receipt_file_format_constraints"
+msgstr "Desteklenen resim formatları jpg/jpeg/png/bmp."
+
+msgid "1_period"
+msgstr "1 Periyodod"
+
+msgid "2_periods"
+msgstr "2 Periyod"
+
+msgid "3_periods"
+msgstr "3 Periyod"
+
+msgid "4_periods"
+msgstr "4 Periyod"
+
+msgid "5_periods"
+msgstr "5 Periyod"
+
+msgid "6_periods"
+msgstr "6 Periyod"
+
+msgid "7_periods"
+msgstr "7 Periyod"
+
+msgid "8_periods"
+msgstr "8 Periyod"
+
+msgid "9_periods"
+msgstr "9 Periyod"
+
+msgid "10_periods"
+msgstr "10 Periyod"
+
+msgid "11_periods"
+msgstr "11 Periyod"
+
+msgid "12_periods"
+msgstr "12 Periyod"
+
+msgid "deductionformula_addform_note"
+msgstr "Not:Bu kesinti her ay için geçerlidir."
+
+msgid "increasementformula_addform_note"
+msgstr "Not:Bu kazanç her ay için geçerlidir."
+
+msgid "caleulator_title"
+msgstr "Hesaplama"
+
+msgid "caleulator_basicSalary"
+msgstr "Basit Maaş"
+
+msgid "caleulator_scheduleDays"
+msgstr "Planlanan Günler"
+
+msgid "caleulator_schedulePeriod"
+msgstr "Planlama Periyodu"
+
+msgid "caleulator_check"
+msgstr "Kontrol"
+
+msgid "report_column_total_increase_formula"
+msgstr "Toplam Kazanç Formulü"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "Toplam Kazanç Formulü İsmi"
+
+msgid "report_column_total_increase_expression"
+msgstr "Toplam Kazanç İfadesi"
+
+msgid "report_column_total_deduction_formula"
+msgstr "Toplam Kesinti Formulü"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "Toplam Kesinti Formulü İsmi"
+
+msgid "report_column_total_deduction_expression"
+msgstr "Toplam Kesinti İfadesi"

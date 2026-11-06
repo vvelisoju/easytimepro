@@ -1,0 +1,41 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  $.extend(opts, {
+  cols: [[
+  {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+  ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+  ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+  ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+  ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+  ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+  ,{field:'att_date', title: "{% trans 'report_column_attendanceDate' %}", width:100, sort:true}
+  ,{field:'timetable', title: "{% trans 'report_column_timeIntervalName' %}"}
+  ,{field:'duration', title: "{% trans 'report_column_timetableDuration' %}"}
+  ,{field:'clock_in', title: "{% trans 'report_column_clockInTime' %}", templet: function(obj){
+    if(obj.late && obj.late.length > 0 && obj.late != '0.0' && obj.late != obj.break_late){
+      return '<span style="color: #DC143C;">'+ obj.clock_in +'</span>'
+    }else{
+      return obj.clock_in
+    }
+  }}
+  ,{field:'clock_out', title: "{% trans 'report_column_clockOutTime' %}", templet: function(obj){
+    if(obj.early_leave && obj.early_leave.length > 0 && obj.early_leave != '0.0' && obj.early_leave != obj.break_early){
+      return '<span style="color: #00CD66;">'+ obj.clock_out +'</span>'
+    }else{
+      return obj.clock_out
+    }
+  }}
+  ,{field:'actual_wt', title: "{% trans 'report_column_actualWorkedTime' %}", width:80}
+  ,{field:'total_ot', title: "{% trans 'report_column_total_ot' %}"}
+  ,{field:'normal_ot', title: "{% trans 'report_column_normalOvertime' %}"}
+  ,{field:'weekend_ot', title: "{% trans 'report_column_weekendOvertime' %}"}
+  ,{field:'holiday_ot', title: "{% trans 'report_column_holidayOvertime' %}"}
+  ,{field:'total_worked', title: "{% trans 'report_column_totalWorkedDuration' %}", width:100}
+  ,{field:'attendance_status', title: "{% trans 'report_column_attendance_status' %}"}
+  ,{field:'Remarks', title: "{% trans 'report_column_remarks' %}"}
+  ]]
+  ,method: "get"
+  ,url: "/att/api/dailyAttendanceReport/"
+  });
+{% endblock %}

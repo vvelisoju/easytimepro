@@ -1,0 +1,347 @@
+{% extends 'data_grid.html' %}
+{% load i18n common %}
+{% block filter_bar %}
+  {% include 'staff/includes/approval_search_form.html' %}
+  <form id="{{ model_name }}ActionDefault" class="layui-hide">
+    {% csrf_token %}
+    <input name="model_name" value="{{ model }}"/>
+  </form>
+  <script type="text/html" id="{{ model_name }}-delBar">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"
+       title="{% trans 'staff_leave_actionDelete' %}">
+      <i class="fa fa-fw fa-trash-o"></i>
+    </a>
+  </script>
+  <script type="text/html" id="model_{{ model_name|safe }}_toolbar">
+<!--    <a class="layui-btn layui-btn-xs" lay-event="staffWorkflowApprove"><i-->
+<!--      class="fa fa-check-square-o"></i></a>-->
+<!--    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="staffWorkflowReject"><i-->
+<!--      class="fa fa-times"></i></a>-->
+<!--    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="staffWorkflowRevoke"><i-->
+<!--      class="fa fa-reply"></i></a>-->
+    <a class="layui-btn layui-btn-xs" lay-event="staffViewWorkflow"><i class="fa fa-eye "></i></a>
+  </script>
+{% endblock %}
+{% block init_script %}
+  <script>
+    $(function () {
+      layui.use(['table', 'form', 'element', 'laydate'], function () {
+        var fluid_container = "#{{ model_name }}_fluid";
+        var tableId = "id_grid_{{ model_name }}";
+        var tableElem = "#id_grid_{{ model_name }}";
+        var toolbarID = "#{{ model_name|safe }}_toolbar";
+        var rowToolbarID = "#model_{{ model_name|safe }}_toolbar";
+        var opts = {
+          id: tableId,
+          elem: tableElem,
+          toolbar: toolbarID,
+          defaultToolbar: [],
+          cellMinWidth: 80,
+          smartReloadModel: true,
+          height: 'full-200',
+          loading: true,
+          page: {
+            layout: ['prev', 'page', 'next', 'limit', 'count', 'refresh', 'skip'],
+            curr: 1
+          },
+          text: {
+            none: gettext('none_data')
+          },
+          limit: 50,
+          limits: [5, 10, 20, 30, 50, 60, 90],
+          request: {
+            pageName: 'page',
+            limitName: 'page_size'
+          },
+          done: function (res, curr, count) {
+            //this.where = {};
+            $.fn.trigger_action_auto("{{ model_name }}");
+          },
+          cols: [[
+            {'field': 'id', 'fixed': 'left', 'type': 'checkbox', 'width': 30}
+            , {'field': 'emp_code', 'width': 120, 'title': "{% trans 'staff_changeSchedule_empCode' %}", sort:true}
+            , {'field': 'first_name', 'width': 120, 'title': "{% trans 'staff_changeSchedule_firstName' %}"}
+            , {'field': 'last_name', 'width': 120, 'title': "{% trans 'staff_changeSchedule_lastName' %}"}
+            , {'field': 'att_date', 'width': 150, 'title': "{% trans 'staff_changeSchedule_attDate' %}", sort:true}
+            , {
+              'field': 'previous_timeinterval',
+              'width': 120,
+              'title': "{% trans 'staff_changeSchedule_previousTimeInterval' %}"
+            }
+            , {
+              'field': 'adjust_timeinterval',
+              'width': 180,
+              'title': "{% trans 'staff_changeSchedule_adjustTimeInterval' %}"
+            }
+            , {'field': 'apply_time', 'width': 120, 'title': "{% trans 'staff_changeSchedule_applyTime' %}"}
+            , {'field': 'last_approver', 'width': 120, 'title': "{% trans 'staff_changeSchedule_lastApprover' %}"}
+            , {
+              'field': 'workflow_current_state_name',
+              'width': 120,
+              'title': "{% trans 'staff_changeSchedule_workflowCurrentStateName' %}"
+            }
+            , {
+              'field': 'audit_status_string',
+              'width': 120,
+              'title': "{% trans 'staff_changeSchedule_approvalState' %}"
+            }
+            , {'toolbar': rowToolbarID, 'width': 100}
+          ]],
+          url: '/staff/api/changeschedules/approve_list/'
+        };
+        var table = layui.table, form = layui.form, laydate = layui.laydate, element = layui.element;
+        form.render();
+        var date = new Date();
+        var _start = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-01';
+        var _end = date.getFullYear() + '-' + leftInsertZero(date.getMonth() + 1) + '-' + leftInsertZero(date.getDate());
+         $("input[name='{{ model_name }}-start']").val(_start);
+         $("input[name='{{ model_name }}-end']").val(_end);
+        var startDate = laydate.render({
+          elem: '#{{ model_name }}-start',
+          type: 'date',
+          lang: 'en',
+          //value: _start,
+          done: function (value, date) {
+              if (Object.keys(date).length !== 0) {
+                  endDate.config.min = {
+                      year: date.year,
+                      month: date.month - 1,
+                      date: date.date
+                  };
+              }
+              else {
+                  endDate.config.min = {
+                      year: 1900,
+                      month: 01,
+                      date: 01
+                  };
+                  endDate.config.max = {
+                      year: 2099,
+                      month: 12,
+                      date: 31
+                  };
+              }
+              $.fn.trigger_action_auto("{{ model_name }}");
+          }
+        });
+        var endDate = laydate.render({
+          elem: '#{{ model_name }}-end',
+          type: 'date',
+          lang: 'en',
+          //value: _end,
+          done: function (value, date) {
+              if (Object.keys(date).length !== 0) {
+                  startDate.config.max = {
+                      year: date.year,
+                      month: date.month - 1,
+                      date: date.date
+                  };
+              }
+              else {
+                  startDate.config.min = {
+                      year: 1900,
+                      month: 01,
+                      date: 01
+                  };
+                  startDate.config.max = {
+                      year: 2099,
+                      month: 12,
+                      date: 31
+                  };
+              }
+              $.fn.trigger_action_auto("{{ model_name }}");
+          }
+        });
+        var tb = table.render(opts);
+
+        function bindacitons() {
+          $(fluid_container + " div.grid-toolbar").actions({
+            container: fluid_container,
+            actionContainer: fluid_container + " div.grid-toolbar",
+            model: "{{model_name}}",
+            table: table,
+            tableId: tableId,
+            form: form,
+            element: element,
+            curTable: tb,
+            grid_opts: opts,
+            column_order_url:'/column_order/',
+            actions: "",
+            export_url: "/staff/api/changeschedules/export/?export_list=approve",
+            disabled_fields_url: "/disabled_fields/",
+            init_disabled_fields: [],
+            dimension: {height: "auto", width: "auto"},
+            disabled_action_panel_east: ["history"],
+            callback: {}
+          });
+        }
+
+        bindacitons();
+        var approvalError = function (request) {
+          var ret = JSON.parse(request.responseText);
+          layer.msg(ret['result'], {
+            icon: 5,
+            time: '2000',
+            shade: 0.1
+          });
+        };
+        var approvalSuccess = function (response, msg) {
+          if (response instanceof String){
+            var ret = JSON.parse(response);
+          }else {
+            ret = response
+          }
+          if (ret['error_code'] != 0)
+          {
+            msg = ret['result'];
+            layer.msg(gettext(msg), {
+                icon: 5
+                , time: '2000'
+                , shade: 0.1
+            });
+          } else {
+            layer.msg(gettext(msg), {
+                icon: 1
+                , time: '2000'
+                , shade: 0.1
+            });
+           table.reload(tb.config.id);
+          }
+        };
+        var actionRender = function (url, postParams, revoke=false) {
+          layer.prompt({
+            formType: 2
+            , value: ''
+            , title: gettext('approval_formTitleRemark')
+            , area: ['auto', 'auto']
+            , btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+            , yes: function(index, layero){
+              var value =  layero.find(".layui-layer-input").val();
+              if (value=='' && revoke==true){
+                layer.alert("{% trans 'revoke_remark_is_required' %}", {title: gettext("layer_title"), icon: 0, btn: gettext("btn_confirm")});
+              }else{
+              layer.close(index);
+              $.extend(postParams, {remark: value}, {model_name: 'changeschedule'});
+              $.ajax({
+                type: 'POST',
+                url: url,
+                data: postParams,
+                dataType: 'json',
+                success: function (response) {
+                  approvalSuccess(response, gettext('approval_actionSuccessful'));
+
+                },
+                error: function (request, status, error) {
+                  approvalError(request);
+                }
+                });
+              }
+            }
+          });
+        };
+        table.on('tool({{ model_name }})', function (obj) {
+          var params = $("#{{ model_name }}ActionDefault").serializeArray();
+          var postParams = {workflow_instance_id: obj.data.id};
+          params.forEach(function (item) {
+            postParams[item.name] = item.value;
+          });
+          console.log('##postParams:'+postParams);
+          switch (obj.event) {
+            case 'staffWorkflowApprove':
+              actionRender('/workflowinstance/approve/', postParams);
+              break;
+            case 'staffWorkflowReject':
+              actionRender('/workflowinstance/reject/', postParams);
+              break;
+            case 'staffWorkflowRevoke':
+              actionRender('/workflowinstance/revoke/', postParams, revoke=true);
+              break;
+            case 'staffViewWorkflow':
+              $.ajax({
+                url: "/workflow/view/"
+                , dataType: 'html'
+                , data: postParams
+                , type: 'GET'
+                , success: function (response) {
+                  try {
+                    var ret = JSON.parse(response);
+                    if (ret['error_code'] != 0) {
+                      layer.msg(ret['result'], {
+                        icon: 0,
+                        time: '2000',
+                        shade: 0.1
+                      });
+                    }
+                  } catch (err) {
+                    layer.open({
+                      title: gettext('approval_workflow_view')
+                      , area: ['auto', '']
+                      , content: response
+                      , btn: gettext("btn_confirm")
+                      , success: function (layero, index) {
+                      }
+                    });
+                  }
+                }
+              });
+              break;
+            default:
+              break;
+          }
+        });
+        $('#{{ model_name }}-search_btn').on('click', function () {
+          var emp_code = $("input[name='{{ model_name }}-emp_code']").val();
+          var first_name = $("input[name='{{ model_name }}-first_name']").val();
+          var start = $("input[name='{{ model_name }}-start']").val();
+          var end = $("input[name='{{ model_name }}-end']").val();
+          if (new Date(start) > new Date(end)) {
+            layer.alert(gettext('end_date_can_not_greater_than_start_date'), {
+                title: gettext('system_exception')
+                , icon: 5
+                , btn: gettext('btn_confirm')
+            })
+            return false;
+          }
+          if (!start) {
+            layer.alert(gettext("start_date_is_empty"),{
+                  title: gettext('system_exception')
+                  , icon: 5
+                  , btn: gettext('btn_confirm')
+                  })
+            return false;
+          }
+          if (!end) {
+            layer.alert(gettext("end_date_is_empty"),{
+                title: gettext('system_exception')
+                , icon: 5
+                , btn: gettext('btn_confirm')
+                })
+          return false;
+        }
+          table.reload(tb.config.id, {
+            where: {
+              emp_code: emp_code,
+              first_name: first_name,
+              att_date_gte: start,
+              att_date_lte: end,
+              audit_status: $('#{{ model_name }}-aStatus').val() || null
+            }
+          });
+          bindacitons();
+        });
+        $('#{{ model_name }}-refresh_btn').on('click', function () {
+          $("input[name='{{ model_name }}-emp_code']").val('');
+          $("input[name='{{ model_name }}-first_name']").val('');
+          $("input[name='{{ model_name }}-start']").val(_start);
+          $("input[name='{{ model_name }}-end']").val(_end);
+          $('#tab_{{ model_name }} .layui-form-select .layui-select-title input[readonly]').each(function () {
+            $(this).val('');
+            $(this).closest('.layui-unselect').find('.layui-select-tips').addClass('layui-this').siblings().removeClass('layui-this');
+          });
+          table.render(opts);
+          bindacitons();
+        });
+      });
+    });
+  </script>
+{% endblock %}

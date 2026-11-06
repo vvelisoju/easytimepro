@@ -1,0 +1,59 @@
+<style>
+    .layui-form-item {
+        margin-bottom: 10px;
+        width: 750px;
+    }
+</style>
+{% load i18n static common %}
+{% autoescape off %}
+<div id="{{ model_name }}_edit_form" style="padding: 10px;">
+    <form class="layui-form data-form" action="" method="post">
+        {% csrf_token %}
+        {% with adminform.form as f %}
+            {% layui_form_item f.emp %}
+            <div style="display:none">{{ f.employee }}</div>
+            <div style="display:none">{{ f.leave_details }}</div>
+            <div style="display:none">{{ f.monthly_leave_details }}</div>
+        {% endwith %}
+        <div style="max-height: 200px;overflow-y:auto;">
+            <div class="layui-form-item">
+                {% for x,y in data.items %}
+                    <div class="layui-inline">
+                        <label class="layui-form-label" for="id_min_len_emp_code">{{ x }}<span class="required">*</span></label>
+                        <div class="layui-input-inline" style="display:flex;padding-right: 10px;width:250px;">
+                            <input type="number" name="{{ x }}" class="layui-input yearly"
+                                   style="display:inline-block;float:left;min-width:90px;max-width:90px;margin-right:10px;"
+                                   value="{{ y.0 }}" id="id_min_len_emp_code" placeholder="Yearly"><input type="number"
+                                                                                                          name="{{ x }}m"
+                                                                                                          class="layui-input monthly"
+                                                                                                          style="display:inline-block;float:left;min-width:90px;max-width:90px;margin-right:10px;"
+                                                                                                          value="{{ y.1 }}"
+                                                                                                          placeholder="Monthly">
+                            <div class="layui-form-mid">{% trans 'leaveSchedule_add_or_edit_days' %}</div>
+                            <div class="layui-form-mid">{% trans 'leaveSchedule_add_or_edit_days' %}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </form>
+</div>
+{% endautoescape %}
+<script>
+    var leavedetails = JSON.parse($('#id_leave_details').text());
+    var monthlyleavedetails = JSON.parse($('#id_monthly_leave_details').text());
+    $(document.body).on('change', '.yearly', function () {
+        for (var x in leavedetails) {
+            var y = $('input[name="' + x + '"]').val();
+            leavedetails[x] = y;
+        }
+        $('#id_leave_details').text(JSON.stringify(leavedetails));
+    });
+    $(document.body).on('change', '.monthly', function () {
+        for (var x in monthlyleavedetails) {
+            var y = $('input[name="' + x + 'm' + '"]').val();
+            monthlyleavedetails[x] = y;
+        }
+        $('#id_monthly_leave_details').text(JSON.stringify(monthlyleavedetails));
+    });
+</script>

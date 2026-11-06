@@ -1,0 +1,433 @@
+{% extends 'abstract_edit.html' %}
+{% load i18n static %}
+{% load common %}
+{% block edit_form %}
+  {{ block.super }}
+    <style>
+        .minutes .layui-inline {
+            margin-right: -5px;
+            margin-top: 5px;
+        }
+    </style>
+  <div id="{{ model_name }}_edit_form" class="layui_body page-form" style="height:100%;">
+    <form class="layui-form" action="" method="post" id="rule-data-form" lay-filter="attRuleForm">
+      {% csrf_token %}
+      <div class="layui-tab" style="padding-top: 20px;">
+        <ul class="layui-tab-title">
+          <li>{% trans 'attRule_globalRule_basicSetting' %}</li>
+          <li>{% trans 'attRule_globalRule_weekendSetting' %}</li>
+          <li>{% trans 'attRule_globalRule_overtimeSetting' %}</li>
+          <li class="layui-this">{% trans 'attRule_globalRule_calculationSetting' %}</li>
+          <li>{% trans 'attRule_globalRule_appSetting' %}</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item">
+            <div class="layui-form-item minutes" style="padding-top: 20px;">
+              {% layui_inline form.punch_period %}
+               <span>{% trans 'front_end_minutes' %}</span>
+            </div>
+            <hr>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <input type="button" class="layui-btn" id="btn-left-side" lay-submit lay-filter="att-rule-submit" value="{% trans 'attRule_globalRule_btnSave' %}">
+              </div>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-hide">{% layui_inline form.weekend %}</div>
+            <div id="weekendSettingContainer" style="height:330px;"><table id="weekendSettingTB" class="layui-hide" lay-filter="weekendSettingTB"></table>
+          </div>
+          <hr>
+          <div class="layui-form-item">
+           <div class="layui-input-block">
+             <input type="button" class="layui-btn" id="btn-left-side" lay-submit lay-filter="att-rule-submit" value="{% trans 'attRule_globalRule_btnSave' %}">
+           </div>
+         </div>
+        </div>
+
+          <div class="layui-tab-item">
+            <div class="layui-form-item" style="padding-top: 20px;margin-bottom: 95px;">
+              {% layui_inline form.use_ot %}
+            </div>
+            <hr>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <input type="button" class="layui-btn" id="btn-left-side" lay-submit lay-filter="att-rule-submit" value="{% trans 'attRule_globalRule_btnSave' %}">
+              </div>
+            </div>
+          </div>
+          <div class="layui-tab-item layui-show" >
+              <div id='id_calculate_rule'style="overflow-y: auto;">
+            <fieldset class="layui-elem-field layui-field-title" style="margin: 10px 0;">
+              <legend>{% trans 'attRule_globalRule_calculationRule' %}</legend>
+            </fieldset>
+            <div class="base-setting base-setting-large4" style="margin-top: -15px">
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                {% layui_inline form.mins_late_absents %}
+                {% trans 'front_end_minutes' %} {% trans 'Consider As ' %}{% layui_inline_without_label form.mins_late_absent%} &nbsp;&nbsp; {% trans 'attRule_globalRule_more_than' %} <input type="checkbox" name="timecheckin" class="layui-input" lay-verify="timecheckin" lay-skin="primary" id="timecheckin" lay-filter="timecheckin">{% layui_inline_without_label form.timecheckinmin %}{% trans 'Times ' %} {% trans 'Consider As ' %}{% layui_inline_without_label form.timecheckinminchoices %}
+              </div>
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                {% layui_inline form.mins_early_absents %}
+                {% trans 'front_end_minutes' %} {% trans 'Consider As ' %} {% layui_inline_without_label form.mins_early_absent %} &nbsp;&nbsp; {% trans 'attRule_globalRule_more_than' %} <input type="checkbox" name="timecheckout" lay-verify="timecheckout" class="layui-input" lay-skin="primary" id="timecheckout" lay-filter="timecheckout">{% layui_inline_without_label form.timecheckoutmin %}{% trans 'Times ' %}{% trans 'Consider As ' %}{% layui_inline_without_label form.timecheckoutminchoices %}
+              </div>
+
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                  <div class="layui-inline field-half_day_work">
+                      <label class="layui-form-label" for="id_half_day_work">{% trans 'attRule_globalRule_halfDayWork' %}<span
+                              class="required">*</span></label>
+                      <div class="layui-input-inline">
+                          <input type="number" name="half_day_work" value="270" lay-verify="half_day_work" required=""
+                                 class="layui-input" id="id_half_day_work" min="0">
+                      </div>
+                      <div class="layui-form-mid">{% trans 'attRule_globalRule_halDayWorkSuffix' %}</div>
+                  </div>
+              </div>
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                {% layui_inline form.miss_in %}
+{#                {% layui_inline_without_label form.miss_in_mins %}{% trans 'front_end_minutes' %}#}
+              </div>
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                {% layui_inline form.miss_out %}
+{#                {% layui_inline_without_label form.miss_out_mins %}{% trans 'front_end_minutes' %}#}
+              </div>
+            </div>
+            <fieldset class="layui-elem-field layui-field-title" style="margin: 10px 0;">
+              <legend>{% trans 'attRule_globalRule_calculationItem' %}</legend>
+            </fieldset>
+
+            <div class="base-setting" style="margin-top: -15px">
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                {% layui_inline form.check_in %}
+                {% layui_inline form.check_out %}
+              </div>
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                {% layui_inline form.break_out %}
+                {% layui_inline form.break_in %}
+              </div>
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                {% layui_inline form.overtime_in %}
+                {% layui_inline form.overtime_out %}
+              </div>
+            </div>
+              <fieldset class="layui-elem-field layui-field-title" style="margin: 10px 0;">
+              <legend>{% trans 'attRule_globalRule_calculationLeave' %}</legend>
+            </fieldset>
+              <div class="base-setting" style="margin-top: -15px">
+              <div class="layui-form-item" style="margin-bottom: 3px;">
+                  <span onblur="check_enabled()">{% layui_inline form.leavemng_condition %}</span>
+              </div>
+              <div class="layui-form-item" style="margin-bottom:5px;">
+              <div class="layui-inline">
+                  <label class="layui-form-label" style="width: 209px; min-width: 0px; max-width: 209px; margin-top:6px;">Full Month</label>
+                <input type="checkbox" name="full_month" lay-skin="switch" lay-text="Yes|No"  lay-filter="full-month" id="full-month" >
+                <input type="number" name="fullmonth" value="0" id="fullMonth" style="display:none;">
+              </div>
+              </div>
+              <div class="layui-form-item id_leave_calculation_days_div" style="margin-bottom: 3px;">
+                {% layui_inline form.leave_calculation_start_day %}
+                {% layui_inline form.leave_calculation_end_day %}
+              </div>
+<!--              {% if software_type == 10 %}-->
+<!--                  <fieldset class="layui-elem-field layui-field-title" style="margin: 10px 0;">-->
+<!--                    <legend>{% trans 'attRule_globalRule_prefix_and_suffix' %}</legend>-->
+<!--                  </fieldset>-->
+<!--                  <div class="layui-form-item id_prefix_suffix_div" style="margin-bottom: 3px;padding-left:10px; margin-top: -15px;">-->
+<!--                         <label  style="width: 450px;min-width: 0px;max-width: 500px; font-weight:normal">{% trans 'attRule_globalRule_prefix_description' %}</label>-->
+<!--                        {% layui_inline_without_label form.prefix %}<br>-->
+<!--                        <label  style="width: 450px;min-width: 0px;max-width: 500px; font-weight:normal">{% trans 'attRule_globalRule_suffix_description' %}</label>-->
+<!--                         {% layui_inline_without_label form.suffix %}-->
+<!--                  </div>-->
+<!--              {% endif %}-->
+              </div>
+              <hr>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <input type="button" class="layui-btn" id="btn-left-side" lay-submit lay-filter="att-rule-submit" value="{% trans 'attRule_globalRule_btnSave' %}">
+                </div>
+              </div>
+          </div>
+          </div>
+          <div class="layui-tab-item">
+              <br>
+            <div class="layui-form-item">
+              {% layui_inline form.enable_capture %}
+              {% layui_inline form.enable_workcode %}
+            </div>
+            <div class="layui-form-item">
+              {% layui_inline form.enable_funckey %}
+            </div>
+            <hr>
+            <div class="layui-form-item" style="margin-bottom: 400px;">
+              <div class="layui-input-block">
+                <input type="button" class="layui-btn" id="btn-left-side" lay-submit lay-filter="att-rule-submit" value="{% trans 'attRule_globalRule_btnSave' %}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock edit_form %}
+
+{% block page_script %}
+  {{ block.super }}
+
+    <script>
+        $(".layui-btn").click(function () {
+            var leave_start = $("input[name='leave_calculation_start_day']").val();
+            var leave_end = $("input[name='leave_calculation_end_day']").val();
+            if (isNaN(leave_end) || isNaN(leave_start)){
+                 layer.alert(gettext('leave_cal_start_and_end_date'), {
+                 icon: 5, title: gettext('system_exception'),
+                 btn: gettext('btn_confirm')
+                });
+            }
+          });
+
+        function check_enabled() {
+            var check_status = document.getElementById('id_leavemng_condition').value;
+            if (check_status == 1){
+                $("#id_leave_calculation_start_day").prop('disabled', true);
+                $("#id_leave_calculation_end_day").prop('disabled', true);
+                $("#full-month").prop('disabled', true);
+            }
+            else {
+                $("#id_leave_calculation_start_day").prop('disabled', false);
+                $("#id_leave_calculation_end_day").prop('disabled', false);
+                $("#full-month").prop('disabled', false);
+            }
+        }
+    </script>
+
+  <script>
+
+       $(function () {
+      layui.use(['form', 'element', 'table'], function () {
+        var form = layui.form, element=layui.element, table=layui.table, $=layui.jquery;
+      if ($('#main_body').height()<720) {
+            $('#id_calculate_rule').height(400)
+         }
+        var weekendSettingData = [
+          {'weekday': "{% trans 'attRule_weekendSetting_titleWeekend' %}", 'enable': 0, 'policy': 0, 'lv1': 0, 'lv2': 0, 'lv3': 0}
+          {#,{'weekday': "{% trans 'attRule_globalRule_tuesday' %}", 'enable': 0, 'policy': 0, 'lv1': 0, 'lv2': 0, 'lv3': 0}#}
+          {#,{'weekday': "{% trans 'attRule_globalRule_wednesday' %}", 'enable': 0, 'policy': 0, 'lv1': 0, 'lv2': 0, 'lv3': 0}#}
+          {#,{'weekday': "{% trans 'attRule_globalRule_thursday' %}", 'enable': 0, 'policy': 0, 'lv1': 0, 'lv2': 0, 'lv3': 0}#}
+          {#,{'weekday': "{% trans 'attRule_globalRule_friday' %}", 'enable': 0, 'policy': 0, 'lv1': 0, 'lv2': 0, 'lv3': 0}#}
+          {#,{'weekday': "{% trans 'attRule_globalRule_saturday' %}", 'enable': 0, 'policy': 0, 'lv1': 0, 'lv2': 0, 'lv3': 0}#}
+          {#,{'weekday': "{% trans 'attRule_globalRule_sunday' %}", 'enable': 0, 'policy': 0, 'lv1': 0, 'lv2': 0, 'lv3': 0}#}
+        ];
+        var weekendSettingOpts = {
+          id: 'weekendSettingTB'
+          ,elem: '#weekendSettingTB'
+          , height: "full-220"
+          , text: {none: gettext('none_data')}
+          , request: {
+            pageName: 'page',
+            limitName: 'page_size'
+          }
+          , page: false
+          , limit: 50
+          , limits: [50, 100]
+          , cols: [[
+            {field: 'weekday', width:"120", title: ''}
+            ,{field: 'enable', width:"80", title: "", templet: function (data) {
+                return '<input id="enable'+data.LAY_TABLE_INDEX+'"  type="checkbox" lay-filter="enable" lay-skin="switch" lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" lay-filter="weekend" '+(parseInt(data.enable)===1?"checked":"")+'>'
+            }}
+            ,{field: 'policy', width:"200", title: "{% trans 'attRule_weekendSetting_workingOnDay' %}", templet: function (data) {
+              // console.log(data)
+              return '<select id="policy'+data.LAY_TABLE_INDEX+'" lay-filter="policy">'
+                +'<option value="0"'+(parseInt(data.policy)===0?"selected":"")+">{% trans 'unscheduled_ignore' %}</option>"
+                +'<option value="1"'+(parseInt(data.policy)===1?"selected":"")+">{% trans 'unscheduled_move2normalWork' %}</option>"
+                +'<option value="2"'+(parseInt(data.policy)===2?"selected":"")+">{% trans 'unscheduled_move2normalOvertime' %}</option>"
+                +'<option value="3"'+(parseInt(data.policy)===3?"selected":"")+">{% trans 'unscheduled_move2weekendOvertime' %}</option>"
+                +'<option value="4"'+(parseInt(data.policy)===4?"selected":"")+">{% trans 'unscheduled_move2holidayOvertime' %}</option>"
+                +'</select>'
+            }}
+            ,{field: 'lv1', width:"200", title: "{% trans 'attRule_weekendSetting_OTLV1' %}<span style=\'color:red\'>*</span>", templet: function (data) {
+                return '<input id="lv1'+data.LAY_TABLE_INDEX+'" class="layui-input" type="number" name="lv1" value="'+data.lv1+'" lay-filter="lv1" min="0" lay-verify="required|ot_lv">'
+            }}
+            ,{field: 'lv2', width:"200", title: "{% trans 'attRule_weekendSetting_OTLV2' %}<span style=\'color:red\'>*</span>", templet: function (data) {
+                return '<input id="lv2'+data.LAY_TABLE_INDEX+'" class="layui-input" type="number" name="lv2" value="'+data.lv2+'" lay-filter="lv2" min="0" lay-verify="required|ot_lv">'
+            }}
+            ,{field: 'lv3', width:"200", title: "{% trans 'attRule_weekendSetting_OTLV3' %}<span style=\'color:red\'>*</span>", templet: function (data) {
+                return '<input id="lv3'+data.LAY_TABLE_INDEX+'" class="layui-input" type="number" name="lv3" value="'+data.lv3+'" lay-filter="lv3" min="0" lay-verify="required|ot_lv">'
+            }}
+          ]]
+          ,data: weekendSettingData
+          ,done: function () {
+            bindChnage();
+          }
+        };
+        var bindChnage = function(){
+          $(".layui-form input[name='lv1']").change(function () {
+            var cacheData = layui.table.cache['weekendSettingTB'];
+            var index = this.id.replace("lv1", "");
+            cacheData[index]['lv1'] = $(this).val();
+            table.reload(weekendSettingOpts.id, $.extend(true, {data: cacheData}));
+          });
+          $(".layui-form input[name='lv2']").change(function () {
+            var cacheData = layui.table.cache['weekendSettingTB'];
+            var index = this.id.replace("lv2", "");
+            cacheData[index]['lv2'] = $(this).val();
+            table.reload(weekendSettingOpts.id, $.extend(true, {data: cacheData}));
+          });
+          $(".layui-form input[name='lv3']").change(function () {
+            var cacheData = layui.table.cache['weekendSettingTB'];
+            var index = this.id.replace("lv3", "");
+            cacheData[index]['lv3'] = $(this).val();
+            table.reload(weekendSettingOpts.id, $.extend(true, {data: cacheData}));
+          });
+        };
+        table.render(weekendSettingOpts);
+        form.render();
+        element.render();
+        function fillFormData(paramValue) {
+          var weekend = paramValue.weekend;
+          var fullMonths = paramValue.fullmonth;
+          $('#fullMonth').val(fullMonths)
+          if(fullMonths == 1) {
+              $('#full-month').prop("checked",true);
+              $(".id_leave_calculation_days_div").css('display', 'none');
+          }
+          for(var index in weekend){
+              $.extend(weekendSettingData[index], weekend[index], {'enable': 1});
+          }
+          table.reload(weekendSettingOpts.id, $.extend(true, {data: weekendSettingData}));
+          if (parseInt(paramValue.miss_in) > 5) {
+            paramValue.miss_in = 0
+          }
+          if (parseInt(paramValue.miss_out) > 5) {
+            paramValue.miss_out = 0
+          }
+          form.val('attRuleForm', $.extend(paramValue, {
+            leave_include_in: 2
+            , leave_include_out: 2
+            , training_include_in: 2
+            , training_include_out: 2
+          }));
+          var miss_in = (parseInt(paramValue.miss_in) === 1);
+          $("#id_miss_in_mins").attr('disabled', !miss_in);
+          var miss_out = (parseInt(paramValue.miss_out) === 1);
+          $("#id_miss_out_mins").attr('disabled', !miss_out);
+          form.render();
+
+        }
+        form.on('switch(enable)', function (data) {
+          var cacheData = layui.table.cache['weekendSettingTB'];
+          var index = data.elem.id.replace("enable", "");
+          cacheData[index]['enable'] = data.elem.checked?1:0;
+          table.reload(weekendSettingOpts.id, $.extend(true, {data: cacheData}));
+        });
+        form.on('select(policy)', function (data) {
+          var cacheData = layui.table.cache['weekendSettingTB'];
+          var index = data.elem.id.replace("policy", "");
+          cacheData[index]['policy'] = data.value;
+          table.reload(weekendSettingOpts.id, $.extend(true, {data: cacheData}));
+        });
+        form.on('select(miss_in)', function(data){
+            var selectValue = data.value;
+            var style = !(selectValue === '1');
+            $("#id_miss_in_mins").attr('disabled', style);
+        });
+        form.on('select(miss_out)', function(data){
+            var selectValue = data.value;
+            var style = !(selectValue === '1');
+            $("#id_miss_out_mins").attr('disabled', style);
+        });
+        form.on('switch(full-month)', function (data) {
+          if(data.elem.checked){
+              $(".id_leave_calculation_days_div").css('display', 'none');
+              $("#fullMonth").val(1);
+          }else{
+              $(".id_leave_calculation_days_div").css('display', 'block');
+              $("#fullMonth").val(0);
+          }
+        });
+        function fetchData() {
+          var apiUrl = "/att/api/att_rules/?param_name=global_att_rule_{{ company_id }}";
+          $.ajax({
+            url: apiUrl,
+            type: "GET",
+            dataType: 'json',
+            success: function (result) {
+              var paramValue = JSON.parse(result.data[0].param_value);
+              fillFormData(paramValue);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+              alert(textStatus + errorThrown);
+            }
+          });
+        }
+        fetchData();
+        form.verify({
+          ot_lv: function(value, item){
+             if(value < 0){
+               return gettext("form_verify_invalidNumber");
+             }
+          }
+          ,punch_period: [/^([0-9]{1,3}|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+          ,mins_late_absents: [/^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+          ,mins_early_absents: [/^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+          ,half_day_work: [/^([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+          ,miss_in_mins: [/^([0-9]{1,3}|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+          ,miss_out_mins: [/^([0-9]{1,3}|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+          ,timecheckinmin: [/^([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+          ,timecheckoutmin: [/^([0-9]|[1-9][0-9]|[1-9][0-9][0-9]|1[0-3][0-9][0-9]|14[0-3][0,9]|1440)$/, gettext("form_verify_invalidNumber")]
+        });
+        form.on('submit(att-rule-submit)', (function () {
+          var timecheckin = $('#timecheckin')[0].checked;
+          var timecheckout = $('#timecheckout')[0].checked;
+          if(timecheckin){
+            var id_timecheckinmin = $('#id_timecheckinmin').val();
+            if(id_timecheckinmin == ''){
+                layer.alert("{% trans 'msg_check_red_border_field' %}",
+                              {title: gettext('layer_title'), icon: 2, time: 3000, btn: []});
+                return false;
+            }
+          }
+          if(timecheckout){
+            var id_timecheckoutmin = $('#id_timecheckoutmin').val();
+            if(id_timecheckoutmin == ''){
+                layer.alert("{% trans 'msg_check_red_border_field' %}",
+                              {title: gettext('layer_title'), icon: 2, time: 3000, btn: []});
+                return false;
+            }
+          }
+          console.log(timecheckin)
+          console.log(timecheckout,'timecheckouttimecheckouttimecheckout')
+          var cacheData = layui.table.cache['weekendSettingTB'];
+          var weekend = {};
+          for(var index=0; index<cacheData.length; index++){
+                var item = cacheData[index];
+                if(item.enable === 1){
+                    if((parseFloat(item.lv3) <= parseFloat(item.lv2)) || (parseFloat(item.lv2) <=parseFloat(item.lv1)) || (parseFloat(item.lv3) <= parseFloat(item.lv1)))
+                    {
+                        layer.alert("{% trans 'timeInterval_error_invalidCheckOvertimeLevel' %}",
+                              {title: gettext('layer_title_error'), icon: 2, time: 3000, btn: []});
+                        return false;
+                    }
+                    function countDecimals(num) {
+                        return (num.toString().split('.')[1] || '').length > 1;
+                    }
+                    if (countDecimals(item.lv3) || countDecimals(item.lv2) || countDecimals(item.lv1))
+                    {
+                        layer.alert("{% trans 'ensure_that_there_are_no_more_than_1_decimal_place' %}",
+                              {title: gettext('layer_title_error'), icon: 2, time: 3000, btn: []});
+                        return false;
+                    }
+                    weekend[index] = {'policy': item.policy, 'lv1': item.lv1, 'lv2': item.lv2, 'lv3': item.lv3}
+                }
+          }
+          $("#id_weekend").val(JSON.stringify(weekend));
+          var action_url = "/att/att_rule_page/";
+          var data_form = "#rule-data-form";
+          return submit_callback(action_url, {
+            'alternative_form': data_form
+          })();
+        }));
+       });
+
+    });
+
+  </script>
+{% endblock page_script %}

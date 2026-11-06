@@ -1,0 +1,306 @@
+{% load i18n iclock_tags static common %}
+{% autoescape off %}
+<style>
+    #access_privelege dl{
+        height: 120px;
+    }
+</style>
+
+    <div id="{{ model_name }}_edit_form" style="padding: 10px; height: 500px; width: 1000px;overflow:auto;">
+        <form class="layui-form data-form" action="" method="post">
+            {% csrf_token %}
+            {% with adminform.form as f %}
+                <div class="layui-form-item" style="margin-bottom: 5px">
+                    {% layui_inline f.emp %}
+                </div>
+                <div class="layui-form-item" style="margin-bottom: 5px">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" for="id_group_1">
+                            {% trans 'accPrivilege_field_group' %}
+                            <span class="required">*</span>
+                        </label>
+                        <div class="layui-input-inline" >
+                            <select id="id_group_1" name="group_1" lay-filter="group_select"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10" style="margin-top: 0px; margin-bottom:0px">
+                    <div class="layui-col-md6">
+                        <div class="layui-card" style="border:1px solid #f2f2f2">
+                            <div class="layui-card-header" style="background-color: #f2f2f2;height: 30px;line-height:30px;">
+                                {% trans 'accPrivilege_field_verifyMode' %}
+                            </div>
+                            <div class="layui-card-body">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <input type="radio"
+                                               id="id_is_group_verifymode_0"
+                                               name="is_group_verifymode_1"
+                                               value="0"
+                                               title="{% trans 'accPrivilege_timePeriodModeOption_personnel' %}"
+                                               lay-filter="employee_verifymode_onoff">
+                                        <input type="radio"
+                                               id="id_is_group_verifymode_1"
+                                               name="is_group_verifymode_1"
+                                               value="1"
+                                               title="{% trans 'accPrivilege_timePeriodModeOption_group' %}"
+                                               lay-filter="employee_verifymode_onoff">
+                                    </div>
+                                </div>
+                                <div id='access_privelege'  class="layui-form-item" style="margin-bottom: 5px">
+                                    {% layui_inline f.verify_mode %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-card" style="border:1px solid #f2f2f2">
+                            <div class="layui-card-header" style="background-color: #f2f2f2;height: 30px;line-height:30px;">
+                                {% trans 'accHoliday_field_timezone' %}
+                            </div>
+                            <div class="layui-card-body">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <input type="radio"
+                                               id="id_is_group_timezone_0"
+                                               name="is_group_timezone_1"
+                                               value="0"
+                                               title="{% trans 'accPrivilege_timePeriodModeOption_personnel' %}"
+                                               lay-filter="employee_timezone_onoff">
+                                        <input type="radio"
+                                               id="id_is_group_timezone_1"
+                                               name="is_group_timezone_1"
+                                               value="1"
+                                               title="{% trans 'accPrivilege_timePeriodModeOption_group' %}"
+                                               lay-filter="employee_timezone_onoff">
+                                    </div>
+                                    {% layui_inline_hidden f.is_group_timezone %}
+                                </div>
+                                <div id="id_privilege_timezones">
+                                    <div class="layui-form-item" style="margin-bottom: 5px">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label" for="id_timezone_1">
+                                                {% trans 'accPrivilege_field_timezone1' %}
+                                            </label>
+                                            <div class="layui-input-inline" >
+                                                <select id="id_timezone_1" name="timezone_1" lay-filter="timezone1_select"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item" style="margin-bottom: 5px">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label" for="id_timezone_2">
+                                                {% trans 'accPrivilege_field_timezone2' %}
+                                            </label>
+                                            <div class="layui-input-inline" >
+                                                <select id="id_timezone_2" name="timezone_2" lay-filter="timezone2_select"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item" style="margin-bottom: 5px">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label" for="id_timezone_3">
+                                                {% trans 'accPrivilege_field_timezone3' %}
+                                            </label>
+                                            <div class="layui-input-inline" >
+                                                <select id="id_timezone_3" name="timezone_3" lay-filter="timezone3_select"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-hidden">
+                    {% layui_inline f.area %}
+                    {% layui_inline f.group %}
+                    {% layui_inline f.timezone1 %}
+                    {% layui_inline f.timezone2 %}
+                    {% layui_inline f.timezone3 %}
+                    {% layui_inline f.current_area %}
+                    {% layui_inline f.is_group_verifycode %}
+                    {% layui_inline f.group_verify_mode %}
+                    {% layui_inline f.group_timezone1 %}
+                    {% layui_inline f.group_timezone2 %}
+                    {% layui_inline f.group_timezone3 %}
+                </div>
+            {% endwith %}
+        </form>
+    </div>
+    <script>
+        layui.use(['element', 'layer', 'laydate', 'form'], function () {
+            var element = layui.element, laydate = layui.laydate, form = layui.form;
+
+            function get_area_timezones(area_id) {
+              const limitPerPage=10;
+                    var limit = 0;
+                    const getUsers = async function(pageNo = 1) {
+
+                    let actualUrl="/acc/api/acctimezones/" + `?page=${pageNo}&limit=${limitPerPage}&area=` + area_id;
+                    var apiResults=await fetch(actualUrl)
+                    .then(resp=>{
+                    return resp.json();
+                    });
+                        limit = apiResults.count
+                        return apiResults.data;
+
+                    }
+
+                      const getList = async function(pageNo = 1) {
+                      var results = await getUsers(pageNo);
+                      if (results.length>0 && pageNo < Math.ceil(limit/10)) {
+                              return results.concat(await getList(pageNo+1));
+                      } else {
+                        return results;
+                      }
+                    };
+
+
+                    (async ()=>{
+
+                        var entireList=await getList();
+                        var data = entireList;
+                        var html1 = "<option value='0'>---------</option>";
+                        var html2 = "<option value='0'>---------</option>";
+                        var html3 = "<option value='0'>---------</option>";
+                        var timezone1_no = $("#id_timezone1").val();
+                        var timezone2_no = $("#id_timezone2").val();
+                        var timezone3_no = $("#id_timezone3").val();
+                        for (var i = 0; i < data.length; i++) {
+                            html1 += '<option value="' + data[i]['timezone_no'] + '"' + (data[i]['timezone_no'].toString() === timezone1_no ? 'selected' : '') + '>' + data[i]['timezone_name'] + '</option>';
+                            html2 += '<option value="' + data[i]['timezone_no'] + '"' + (data[i]['timezone_no'].toString() === timezone2_no ? 'selected' : '') + '>' + data[i]['timezone_name'] + '</option>';
+                            html3 += '<option value="' + data[i]['timezone_no'] + '"' + (data[i]['timezone_no'].toString() === timezone3_no ? 'selected' : '') + '>' + data[i]['timezone_name'] + '</option>';
+                        }
+                        $("#id_timezone_1").append(html1);
+                        $("#id_timezone_2").append(html2);
+                        $("#id_timezone_3").append(html3);
+                        form.render('select');
+                   })();
+            }
+            function get_area_groups(area_id) {
+                $.ajax({
+                    url: "/acc/api/accgroupss/?area=" + area_id
+                    , type: "GET"
+                    , dataType: "json"
+                    , success: function (response) {
+                        var data = response.data;
+                        var html1 = "";
+                        var group_id = $("#id_group").val();
+                        for (var i = 0; i < data.length; i++) {
+                            html1 += '<option value="' + data[i]['id'] + '"' + (data[i]['id'].toString() === group_id ? 'selected' : '') + '>' + data[i]['group_name'] + '</option>';
+                        }
+                        $("#id_group_1").append(html1);
+                        form.render('select');
+                    }
+                    , error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.trace(arguments);
+                        form.render();
+                    }
+                });
+            }
+
+            function get_group(group_id) {
+                $.ajax({
+                    url: "/acc/api/accgroupss/" + group_id + "/"
+                    , type: "GET"
+                    , dataType: "json"
+                    , success: function (group) {
+                        console.log(group);
+                        $("#id_group_verify_mode").val(group.verify_mode);
+                        $("#id_group_timezone1").val(group.timezone1);
+                        $("#id_group_timezone2").val(group.timezone2);
+                        $("#id_group_timezone3").val(group.timezone3);
+                        if($("#id_is_group_verifymode_1")[0].checked)
+                        {
+                            set_verify_mode_by_group("1");
+                        }
+                        if($("#id_is_group_timezone_1")[0].checked)
+                        {
+                            set_timezone_by_group($("#id_is_group_timezone").val());
+                        }
+                        form.render('select');
+                    }
+                    , error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.trace(arguments);
+                        form.render();
+                    }
+                });
+            }
+
+            function set_verify_mode_by_group(is_group_verifymode)
+            {
+                if(is_group_verifymode==="1")
+                {
+                    $("#id_is_group_verifymode_0").removeAttr("checked");
+                    $("#id_is_group_verifymode_1").prop("checked","checked");
+                    $("#id_verify_mode").val($("#id_group_verify_mode").val()).prop("disabled","disabled");
+                }
+                else{
+                    $("#id_is_group_verifymode_0").prop("checked","checked");
+                    $("#id_is_group_verifymode_1").removeAttr("checked");
+                    $("#id_verify_mode").removeAttr('disabled');
+                }
+                form.render("select");
+            }
+
+            function set_timezone_by_group(is_group_timezone)
+            {
+                if(is_group_timezone==="1")
+                {
+                    $("#id_is_group_timezone_0").removeAttr("checked");
+                    $("#id_is_group_timezone_1").prop("checked","checked");
+                    $("#id_timezone_1").val($("#id_group_timezone1").val()).prop("disabled","disabled");
+                    $("#id_timezone_2").val($("#id_group_timezone2").val()).prop("disabled","disabled");
+                    $("#id_timezone_3").val($("#id_group_timezone3").val()).prop("disabled","disabled");
+                    $("#id_timezone1").val($("#id_group_timezone1").val());
+                    $("#id_timezone2").val($("#id_group_timezone2").val());
+                    $("#id_timezone3").val($("#id_group_timezone3").val());
+                }
+                else{
+                    $("#id_is_group_timezone_0").prop('checked','checked');
+                    $("#id_is_group_timezone_1").removeAttr('checked');
+                    $("#id_timezone_1").removeAttr("disabled");
+                    $("#id_timezone_2").removeAttr("disabled");
+                    $("#id_timezone_3").removeAttr("disabled");
+                }
+                form.render("select");
+            }
+
+            get_area_groups($("#id_current_area").val());
+            get_area_timezones($("#id_current_area").val());
+
+            element.render();
+            form.render();
+
+            set_timezone_by_group($("#id_is_group_timezone").val());
+            set_verify_mode_by_group($("#id_is_group_verifycode").val());
+
+            form.on('select(group_select)', function (data) {
+                $("#id_group").val(data.value);
+                get_group(data.value);
+            });
+
+            form.on('select(timezone1_select)', function (data) {
+                $("#id_timezone1").val(data.value);
+            });
+            form.on('select(timezone2_select)', function (data) {
+                $("#id_timezone2").val(data.value);
+            });
+            form.on('select(timezone3_select)', function (data) {
+                $("#id_timezone3").val(data.value);
+            });
+            form.on('radio(employee_timezone_onoff)', function(data){
+                set_timezone_by_group(data.value);
+                $("#id_is_group_timezone").val(data.value);
+                form.render("select");
+            });
+            form.on('radio(employee_verifymode_onoff)', function(data){
+                set_verify_mode_by_group(data.value);
+                $("#id_is_group_verifycode").val(data.value);
+                form.render("select");
+            });
+        });
+
+    </script>
+{% endautoescape %}

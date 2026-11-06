@@ -1,0 +1,16 @@
+<div class="layui-inline{% if field.is_hidden %} layui-hidden {% endif %}{% if field.name %} field-{{ field.name }}{% endif %}">
+    {% if field.is_checkbox %}
+        {{ field }}
+    {% else %}
+        <div class="layui-input-inline {% if field.is_hidden %} layui-hidden {% endif %}">
+            {% if field.is_readonly %}
+                <div class="readonly">{{ field.contents }}</div>
+            {% else %}
+                {{ field }}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if field.help_text %}
+        <div class="layui-form-mid layui-word-aux">{{ field.field.help_text|safe }}</div>
+    {% endif %}
+</div>

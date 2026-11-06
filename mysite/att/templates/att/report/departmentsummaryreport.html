@@ -1,0 +1,34 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $("#{{ model_name }}_search_employee").css("display","none");
+    var cols = [
+        {field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+        ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'total_emp', width:80, title: "{% trans 'report_column_employeeCount' %}"}
+        ,{field:'total_late', width:80, title: "{% trans 'report_column_lateDuration' %}"}
+        ,{field:'total_early_leave', width:100, title: "{% trans 'report_column_earlyLeaveDuration' %}"}
+        ,{field:'total_absent', width:80, title: "{% trans 'report_column_absentDuration' %}"}
+        ,{field:'total_late_times', width:100, title: "{% trans 'report_column_lateTimes' %}"}
+        ,{field:'total_early_leave_times', width:140, title: "{% trans 'report_column_earlyLeaveTimes' %}"}
+        ,{field:'total_absent_times', width:120, title: "{% trans 'report_column_absentTimes' %}"}
+        ,{field:'total_worked', title: "{% trans 'report_column_actualWorkDuration' %}"}
+{#        ,{field:'short_time', title: "{% trans 'report_column_shortDuration' %}"}#}
+{#        ,{field:'total_ot', title: "{% trans 'report_column_overtimeDuration' %}"}#}
+        ,{field:'total_not', title: "{% trans 'report_column_normalOvertime' %}"}
+        ,{field:'total_wot', title: "{% trans 'report_column_weekendOvertime' %}"}
+        ,{field:'total_hot', title: "{% trans 'report_column_holidayOvertime' %}"}
+        ,{field:'total_leave', title: "{% trans 'report_column_leaveDuration' %}"}
+    ];
+    var leaveCols = [];
+    {% for c in category %}
+      leaveCols.push({field: 'leave_'+"{{ c.id }}", title: "{{ c.category_name }}"})
+    {% endfor %}
+    var _cols = cols.concat(leaveCols);
+    $.extend(opts, {
+        cols: [_cols]
+        ,method: "get"
+        ,url: "/att/api/departmentSummaryReport/"
+        //,url: "/att/api/report/departmentsummary_report/"
+    });
+{% endblock %}

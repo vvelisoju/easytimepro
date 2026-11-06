@@ -1,0 +1,174 @@
+{% extends 'data_grid.html' %}
+{% load i18n static %}
+{% block main_body %}
+  <div class="layui-row layui-col-space15" style="margin-bottom: 0px">
+    <div class="layui-col-md10">
+      <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+      <script type="text/html" id="{{ model_name }}_toolbar">
+        <div class="layui-btn-container grid-toolbar" style="">
+          <ul class="layui-nav"></ul>
+        </div>
+      </script>
+    </div>
+    <div class="layui-col-md2">
+      <div class="layui-card">
+        <div class="layui-card-header" style="background-color: #e7e7e7">{% trans 'attendance_capture' %}</div>
+        <div class="layui-card-body">
+          <div>
+            <div style="padding: 5px" align="center">
+              <img id="id_employeeCapture" class="transaction-capture" src='/media/images/userImage.gif'
+                   onerror="this.src='/media/images/userImage.gif';" alt="">
+            </div>
+            <div>
+              <table id="capture-detail" class="captureRowPanel">
+                <tbody>
+                <tr>
+                  <th>{% trans 'transaction_field_employeeCode' %}</th>
+                  <td>
+                    <div id="empCodePanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_firstName' %}</th>
+                  <td>
+                    <div id="firstNamePanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_lastName' %}</th>
+                  <td>
+                    <div id="lastNamePanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_department' %}</th>
+                  <td>
+                    <div id="departmentPanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_position' %}</th>
+                  <td>
+                    <div id="positionPanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_punchDate' %}</th>
+                  <td>
+                    <div id="punchDatePanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_punchTime' %}</th>
+                  <td>
+                    <div id="punchTimePanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_area' %}</th>
+                  <td>
+                    <div id="areaPanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_terminalSN' %}</th>
+                  <td>
+                    <div id="terminalSNPanel">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_uploadTime' %}</th>
+                  <td>
+                    <div id="uploadTimePanel">-</div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+ {% block filter_extra_bar %}
+   <div id="id_transaction_extra_bar" class="layui-inline layui-col-md10" style="margin-top: -20px">
+    <div class="layui-form">
+     <div class="layui-input-block" >
+       <input type="radio" name="timeRange" value="month" title="{% trans 'dataRange_option_onemonth' %}" lay-filter="timeRangeFilter" checked >
+       <input type="radio" name="timeRange" value="six_month" title="{% trans 'dataRange_option_sixmonth' %}" lay-filter="timeRangeFilter" >
+       <input type="radio" name="timeRange" value="one_year" title="{% trans 'dataRange_option_twelvemonth' %}" lay-filter="timeRangeFilter" >
+       <input type="radio" name="timeRange" value="all" title="{% trans 'dataRange_option_all' %}" lay-filter="timeRangeFilter">
+     </div>
+     </div>
+   </div>
+  {% endblock filter_extra_bar %}
+
+
+{% block grid_opt_update %}
+  data_grid_opts[data_grid_opts.table_id] = {'init_where': {_q: 'month'}};
+  var cols = res['grid_opts']['cols'][0];
+  var payload = {};
+  cols.forEach(function(col, index){
+    payload[col.field] = col;
+  });
+{% endblock %}
+
+
+{% block actionAfterTableRender %}
+   layui.use(['table', 'form'], function(){
+   var table = layui.table, form=layui.form;
+   form.render();
+   
+   // Listen to time range Radio click event
+   form.on('radio(timeRangeFilter)', function(data){
+     var q_value = data.value;
+     
+     // Get current filter conditions (including other filter items)
+     var filterParams = $.fn.get_filter_params('{{ model_name }}') || {};
+     
+     // Merge new q value into where conditions
+     var newWhere = $.extend({}, filterParams, {_q: q_value});
+     
+     // Update init_where (using correct key)
+     data_grid_opts[data_grid_opts.table_id] = data_grid_opts[data_grid_opts.table_id] || {};
+     data_grid_opts[data_grid_opts.table_id].init_where = {_q: q_value};
+     
+     // Reload table with merged where conditions
+     table.reload(data_grid_opts.table_id, {
+       where: newWhere
+     });
+   });
+   
+   setTimeout(function () {
+      table.on('row({{ model_name }})', function(obj){
+         var data = obj.data;
+         var dd = data.transaction_punch_date;
+         var dt = data.transaction_punch_time;
+         var dtStr = dd.replace(/-/g, '') + dt.replace(/:/g, '');
+         var seconds = (Date.parse(dtStr)) / 1000;
+         punch_time_of_epoch = data.punch_time_of_epoch
+         if (data.terminal_sn === "App"){
+           var url = "/files/upload/" + dd.replace(/-/g, '').substring(0, 6) + "/" + data.terminal_sn.replace(/:/g, "-") + "/" + punch_time_of_epoch + "-" +
+             data.emp_code +".jpg";
+         } else {
+           var url = "/files/upload/" + dd.replace(/-/g, '').substring(0, 6) + "/" + data.terminal_sn.replace(/:/g, "-") + "/" + dtStr + "-" + data.emp_code + ".jpg";
+         }
+         $("#id_employeeCapture").attr('src', url);
+         $("#empCodePanel").html(data.emp_code);
+         $("#firstNamePanel").html(data.employee_name);
+         $("#lastNamePanel").html(data.employee_last_name);
+         $("#departmentPanel").html(data.employee_department);
+         $("#positionPanel").html(data.employee_position);
+         $("#punchDatePanel").html(data.transaction_punch_date);
+         $("#punchTimePanel").html(data.transaction_punch_time);
+         $("#areaPanel").html(data.area_alias);
+         $("#terminalSNPanel").html(data.terminal_sn);
+         $("#uploadTimePanel").html(data.upload_time);
+         });
+   }, 500);
+   })
+{% endblock %}
+
+

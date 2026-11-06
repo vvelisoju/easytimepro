@@ -1,0 +1,31 @@
+
+.search-form .layui-form-label {
+  /*min-width: 20px;*/
+}
+.layui-form-container {
+    margin-left: 0;
+    text-align: center;
+}
+.layui-layer-btn a {
+    border-color: #7ac142;
+    background-color: #7ac142;
+}
+.layui-hidden {
+  display: none;
+}
+
+.layui-layer-tips .layui-layer-content {
+ position:relative;
+ line-height:22px;
+ min-width:12px;
+ padding: 6px 8px;
+ font-size:12px;
+ _float:left;
+ border-radius:2px;
+ box-shadow:1px 1px 3px rgba(0,0,0,.2);
+ background-color:#f5f2f0; color:#000;
+}
+
+.layui-form-item .layui-form-checkbox[lay-skin="primary"] {
+  margin-top: 0px;
+}

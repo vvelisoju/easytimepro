@@ -1,0 +1,77 @@
+{% load i18n iclock_tags static common %}
+{% autoescape off %}
+    <div id="{{ model_name }}_edit_form" style="padding: 10px; height: 100%; width: 450px">
+        <form class="layui-form data-form" action="" method="post">
+            {% csrf_token %}
+            {% with adminform.form as f %}
+                <div class="layui-form-item">
+                    {% layui_inline f.area %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.holiday %}
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                            <label class="layui-form-label" for="id_holiday_start">
+                            {% trans 'holiday_field_startDate' %}
+                            <span class="required">*</span>
+                            </label>
+                            <div class="layui-input-inline" >
+                                <input readonly class="layui-input" id="id_holiday_start" name="holiday_start">
+                            </div>
+                        </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                            <label class="layui-form-label" for="id_holiday_duration">
+                            {% trans 'holiday_field_duration' %}
+                            <span class="required">*</span>
+                            </label>
+                            <div class="layui-input-inline" >
+                                <input readonly class="layui-input" id="id_holiday_duration" name="holiday_duration">
+                            </div>
+                        </div>
+                </div>
+
+                <div class="layui-form-item">
+                    {% layui_inline f.timezone %}
+                </div>
+            {% endwith %}
+        </form>
+    </div>
+    <script>
+        layui.use(['element', 'layer', 'laydate', 'form'], function () {
+            var element = layui.element, laydate = layui.laydate, form = layui.form;
+
+            function get_holiday(holiday_id)
+            {
+                $.ajax({
+                    url: "/att/api/holidays/" + holiday_id + "/"
+                    , type: "GET"
+                    , dataType: "json"
+                    , success: function (holiday) {
+                        $("#id_holiday_start").val(holiday.start_date);
+                        $("#id_holiday_duration").val(holiday.duration_day);
+                    }
+                    , error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.trace(arguments);
+                        form.render();
+                    }
+                });
+            }
+
+            $("#id_holiday").attr("lay-filter","select_holiday");
+            form.render('select');
+
+            form.on('select(select_holiday)', function (data) {
+                get_holiday(data.value);
+            });
+
+            var holiday_id = $("#id_holiday").val();
+            if (holiday_id != "") {
+                get_holiday($("#id_holiday").val());
+            }
+        });
+
+    </script>
+{% endautoescape %}

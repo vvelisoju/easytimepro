@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #logo-div {
+            width: 100%;
+            height: 100px;
+            {% if logo_pos == '0' %}
+                display: none;
+            {% endif %}
+        }
+        #logo-img {
+            {% if logo_pos == '3' %}
+                float: right;
+            {% elif logo_pos == '1' %}
+                float: left;
+            {% endif %}
+            {% if logo_pos != '0' %}
+                {% if name_pos != '0' %}
+                    position: relative;
+                    top: 45px;
+                {% endif %}
+            {% endif %}
+        }
+        #name-div {
+            {% if name_pos == '0' %}
+            display: none;
+            {% endif %}
+
+        }
+        #name-header {
+            {% if name_pos == '1' %}
+                text-align: left;
+            {% elif name_pos == '3' %}
+                text-align: right;
+            {% endif %}
+        }
+    </style>
+</head>
+<body>
+    <div id='logo-div' align="center">
+        <img id="logo-img" src="{{ logo_img }}" alt="logo">
+    </div>
+    <div id="name-div" align="center">
+        <h2 id="name-header">{{ company_name }}</h2>
+    </div>
+</body>
+</html>

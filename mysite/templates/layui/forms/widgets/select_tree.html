@@ -1,0 +1,60 @@
+{% load common %}
+{% with widget.self_ref_field as tree_field %}
+  <div id="{{ widget.name }}_select" style="display: none;">
+    <!--suppress HtmlFormInputWithoutLabel -->
+    <select {% if tree_field %}lay-ignore{% endif %}
+            name="{{ widget.name }}"{% include "layui/forms/widgets/attrs.html" %} >
+      {% for group_name, group_choices, group_index in widget.optgroups %}
+        {% if group_name %}
+          <optgroup label="{{ group_name }}">
+        {% endif %}
+
+      {% for option in group_choices %}
+        {% include option.template_name with widget=option %}
+      {% endfor %}
+
+      {% if group_name %}
+        </optgroup>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+  <div id="{{ widget.name }}_tree" class="ztree" style="display: block;"></div>
+  {% autoescape off %}
+    <script>
+      //# sourceURL={{ widget.name }}_select_tree.js
+      $(function () {
+        var $theForm = $('#{{ widget.source_model }}_edit_form');
+        if ($theForm === undefined || $theForm === null || $theForm.length === 0) {
+          $('#{{ widget.name }}_select').show();
+          return;
+        }
+        var form_url = $theForm.data('formUrl').replace('edit/', 'tree');
+        var obj_id = $theForm.data('objId');
+        var select_field = $('#id_{{ widget.name }}');
+        //var zTreeObj =
+        $.fn.zTree.init($('#{{ widget.name }}_tree'), $.tree.getZTreeSetting({
+          checkStyle: true,
+          mode: "async",
+          // parentCascade: true,
+          childrenCascade: true,
+          setting: {
+            async: {
+              enable: true,
+              url: form_url,
+              autoParam: ['id=nid', 'name', "level"],
+              otherParam: {'obj_id': obj_id, 'async_field': "{{ widget.name }}", 'level_limit': 1},
+              contenType: 'application/x-www-form-urlencoded',
+              type: 'POST'
+            },
+            callback: {
+              onClick: $.tree.clickHandlerWrap(select_field),
+              onCheck: $.tree.checkHandlerWrap(select_field),
+              onAsyncSuccess: $.tree.autoLoadNode(0, select_field)
+            }
+          }
+        }));
+      });
+    </script>
+  {% endautoescape %}
+{% endwith %}

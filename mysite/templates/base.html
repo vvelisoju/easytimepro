@@ -1,0 +1,109 @@
+{% load i18n static compress %}
+  <!DOCTYPE HTML>
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE|default:'en' }}"
+        xml:lang="{{ LANGUAGE_CODE|default:'en' }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="Author" content="ZKTeco Inc."/>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+    <title>{{ software_title }}</title>
+    <!--JS-->
+    <script src="{{ STATIC_URL }}locale/i18n_en.js?v=1.4"></script>
+    <script src="{{ STATIC_URL }}locale/i18n_{{ LANGUAGE_CODE|default:'en' }}.js?v=1.3"></script>
+    <script src="{% static 'polyfill/iexplore_patch.min.js' %}?v=8.0"></script>
+    <script src="{% static 'polyfill/formdata.min.js' %}?v=1.0"></script>
+    {% compress js file bass %}
+      <script src="{% static 'polyfill/html5shiv.min.js' %}?v=3.7.3"></script>
+      <script src="{% static 'polyfill/respond.min.js' %}?v=1.4.2"></script>
+      <script src="{% static 'locale/i18n.js' %}?v=1.3"></script>
+      <script src="{% static 'cloud/static/js/jquery/jquery-3.5.1.min.js' %}?v=2.2.4"></script>
+      <script src="{% static 'js/jquery/jquery.form.js' %}?v=4.2.2"></script>
+      <script src="{% static 'js/lodash.min.js' %}?v=4.17.11"></script>
+      <script src="{% static 'js/utf8.min.js' %}?v=3.0.0"></script>
+      <script src="{% static 'js/cookies.min.js' %}?v=1.2.3"></script>
+      <script src="{% static 'js/moment.min.js' %}"></script>
+      <script src="{% static 'js/fullcalendar.min.js' %}"></script>
+    {% endcompress %}
+    <!--Static-->
+    <link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"
+          sizes="16x16 24x24 32x32 64x64">
+    {% block extrastyle %}{% endblock %}
+    {% block extrahead %}{% endblock %}
+  </head>
+
+  <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}" style="background: #f0f3f5;">
+  {% block content %} {% endblock %}
+  {% block extrajs %}
+  {% endblock %}
+  </body>
+
+<script>
+    function MapViewFuntion(id, type) {
+    var map_id = id;
+    var url = '/att/get_location_mappointer/?id=' + map_id +'&type='+type;
+    layer.open({
+        title: 'Map View',
+        type: 2,
+        area: ['615px', '615px'],
+        fixed: false, //不固定
+        maxmin: true,
+        btn: ['Cancel'],
+        content: url,
+        yes: function (index, layero) {
+            layer.close(index);
+        }
+    });
+}
+function TextViewFuntion(id,type) {
+    var text_id = id;
+    var url = '/att/get_location_textpointer/?id=' + text_id +'&type='+type;
+    layer.open({
+        title: 'Text View',
+        type: 2,
+        area: ['615px', '615px'],
+        fixed: false, //不固定
+        maxmin: true,
+        btn: ['Cancel'],
+        content: url,
+        yes: function (index, layero) {
+            layer.close(index);
+        }
+    });
+}
+function getAttPunchPhoto(id, msg){
+    var loadIndex = layer.load();
+    $.ajax({
+        url: '/att/get_checkin_out_photo/',
+        type:'GET',
+        data: {
+            obj_id: id
+        },
+        dataType: 'html',
+        success: function (res) {
+            layer.close(loadIndex);
+            layer.open({
+                title: gettext(msg),
+                type: 1,
+                zIndex: 998,
+                area: ['600px', '600px'],
+                content: res,
+                btn:[gettext("btn_confirm")],
+                end: function () {
+                    layer.closeAll('tips');
+                }
+            })
+        }
+        , error: function () {
+            layer.close(loadIndex);
+        }
+    })
+}
+function getAttCheckinPhoto(id){
+    getAttPunchPhoto(id, "CheckIn Photo")
+}
+function getAttCheckoutPhoto(id){
+    getAttPunchPhoto(id, "CheckOut Photo")
+}
+</script>
+  </html>

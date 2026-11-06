@@ -1,0 +1,394 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_co\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_access"
+msgstr "Acceso"
+
+msgid "menu_group_access_control"
+msgstr "Control de Acceso"
+
+msgid "menu_group_access_control_device"
+msgstr "Dispositivo"
+
+msgid "menu_access_timezone"
+msgstr "Horario"
+
+msgid "menu_access_holiday"
+msgstr "Festivo"
+
+msgid "menu_access_groups"
+msgstr "Grupos"
+
+msgid "menu_access_combination"
+msgstr "Combinación"
+
+msgid "menu_access_privilege"
+msgstr "Privilegios"
+
+msgid "acc_timezone"
+msgstr "Horarios"
+
+msgid "acc_holiday"
+msgstr "Festivo"
+
+msgid "acc_groups"
+msgstr "Grupos"
+
+msgid "acc_combination"
+msgstr "Combinaciones"
+
+msgid "acc_privilege"
+msgstr "Privilegios"
+
+msgid "accPrivilege_field_area"
+msgstr "Área"
+
+msgid "accPrivilege_field_employee"
+msgstr "Empleado"
+
+msgid "accPrivilege_field_group"
+msgstr "Grupo"
+
+msgid "accPrivilege_field_useGroupTimezone"
+msgstr "Grupo de Horarios"
+
+msgid "accPrivilege_field_timezone1"
+msgstr "Horario 1"
+
+msgid "accPrivilege_field_timezone2"
+msgstr "Horario 2"
+
+msgid "accPrivilege_field_timezone3"
+msgstr "Horario 3"
+
+msgid "accPrivilege_field_verifyMode"
+msgstr "Modo de Verificación"
+
+msgid "clone_to_area"
+msgstr "Clonar a Área"
+
+msgid "accTimezone_field_no_maxValue"
+msgstr "Horario No. range(1-50)"
+
+msgid "accTimezone_field_no"
+msgstr "Horario No."
+
+msgid "accTimezone_field_name"
+msgstr "Descripción de Horario"
+
+msgid "accTimezone_field_remark"
+msgstr "Comentarios"
+
+msgid "accTimezone_field_start"
+msgstr "Fecha Inicial"
+
+msgid "accTimezone_field_end"
+msgstr "Fecha Final"
+
+msgid "default_timezone_can_not_be_removed"
+msgstr "El Horario que viene por defecto no puede eliminar."
+
+msgid "accTerminal_field_normalCloseTimePeriodHelpText"
+msgstr "Porfavor Ingrese 0-50"
+
+msgid "accTimezone_no_repeat"
+msgstr "Este horario ya existe."
+
+msgid "accHoliday_field_timezone"
+msgstr "Horario"
+
+msgid "accHoliday_field_holiday"
+msgstr "Festivo"
+
+msgid "accGroup_field_no"
+msgstr "Grupo No."
+
+msgid "accGroup_field_name"
+msgstr "Nombre de Grupo"
+
+msgid "accGroup_field_include_holiday"
+msgstr "Incluir Festivo"
+
+msgid "default_group_can_not_be_removed"
+msgstr "El grupo que viene por defecto no se puede elminar."
+
+msgid "accGroup_field_no_maxValue"
+msgstr "Grupo No. Rango(1-99)"
+
+msgid "group_no_repeat"
+msgstr "Este Grupo ya existe."
+
+msgid "move_to_group_1"
+msgstr "Mover al Grupo 1"
+
+msgid "current_group_1"
+msgstr "Grupo Actual 1"
+
+msgid "accCombination_field_no"
+msgstr "Combinación No."
+
+msgid "accCombination_field_name"
+msgstr "Nombre de Combinación"
+
+msgid "accCombination_field_group1"
+msgstr "Grupo del Empleado"
+
+msgid "accCombination_field_group2"
+msgstr "Grupo del Empleado"
+
+msgid "accCombination_field_group3"
+msgstr "Grupo del Empleado"
+
+msgid "accCombination_field_group4"
+msgstr "Grupo del Empleado"
+
+msgid "accCombination_field_group5"
+msgstr "Grupo del Empleado"
+
+msgid "accCombination_field_remark"
+msgstr "Comentarios"
+
+msgid "combination_1_need_at_least_group"
+msgstr "La combiación  1  necesita almenos un grupo"
+
+msgid "accPrivilege_action_adjust"
+msgstr "Ajustar"
+
+msgid "accPrivilege_action_adjustHelpTxt"
+msgstr "Ajustar privilegios de control de acceso"
+
+msgid "accPrivilege_action_adjustDescription"
+msgstr "Ajustar privilegios de control de acceso"
+
+msgid "select_none_timezone"
+msgstr "Se debe seleccionar una zona horaria"
+
+msgid "accPrivilege_timePeriodModeOption_personnel"
+msgstr "Personal"
+
+msgid "accPrivilege_timePeriodModeOption_group"
+msgstr "Grupo"
+
+msgid "op_menu_group_groupMenu"
+msgstr "Menú Grupo"
+
+msgid "door_action_open"
+msgstr "Abrir Puerta"
+
+msgid "door_action_openHelpText"
+msgstr "Abrir Puerta"
+
+msgid "door_action_openDescription"
+msgstr "Abrir Puerta"
+
+msgid "door_action_cancelAlarm"
+msgstr "Cancelar Alarma"
+
+msgid "door_action_cancelAlarmHelpText"
+msgstr "Cancelar Alarma"
+
+msgid "door_action_cancelAlarmDescription"
+msgstr "Cancelar Alarma"
+
+msgid "accTerminal_field_doorName"
+msgstr "Nombre de Puerta"
+
+msgid "accTerminal_field_doorLockDelay"
+msgstr "Retraso de Bloqueo de puerta"
+
+msgid "accTerminal_field_doorLockDelayHelpText"
+msgstr "Ingrese 0-10"
+
+msgid "accTerminal_field_doorSensorDelay"
+msgstr "Retraso de apertura de puerta"
+
+msgid "accTerminal_field_doorSensorDelayHelpText"
+msgstr "Ingrese 1-255"
+
+msgid "accTerminal_field_doorSensorType"
+msgstr "Tipo de sensor de puerta"
+
+msgid "accTerminal_field_doorAlarmDelay"
+msgstr "Retardo de Alarma"
+
+msgid "accTerminal_field_retryTimesToAlarm"
+msgstr "Reintentar Alarma"
+
+msgid "terminal_name"
+msgstr "Nombre de Terminal"
+
+msgid "menu_access_terminal"
+msgstr "Dispositivo"
+
+msgid "accTerminal_field_validHoliday"
+msgstr "Festivos Vigentes"
+
+msgid "accTerminal_field_normalCloseTimePeriod"
+msgstr "Horario NC "
+
+msgid "accTerminal_field_normalOpenTimePeriod"
+msgstr "No Horario"
+
+msgid "accTerminal_field_speakerAlarm"
+msgstr "Alarma de Altavoz"
+
+msgid "duress_options"
+msgstr "Opciones de Alarma de coacción"
+
+msgid "accTerminal_field_duressFunOn"
+msgstr "Función de Coacción"
+
+msgid "accTerminal_field_alarmOn11Match"
+msgstr "Alarma encendida 1:1 Match"
+
+msgid "accTerminal_field_alarmOn1nMatch"
+msgstr "Alarma encendida 1:N Match"
+
+msgid "accTerminal_field_alarmOnPassword"
+msgstr "Alarma por contraseña"
+
+msgid "accTerminal_field_duressAlarmDelay"
+msgstr "Retardo de Alarma(s)"
+
+msgid "accTerminal_field_antiPassBackMode"
+msgstr "Anti-passback"
+
+msgid "accTerminal_field_antiDoorDirection"
+msgstr "Dirección de puerta"
+
+msgid "door_sensor_type_normalOpen"
+msgstr "Apertura Normal Open(NO)"
+
+msgid "door_sensor_type_normalClose"
+msgstr "Cierre Normal(NC)"
+
+msgid "door_sensor_type_none"
+msgstr "Ninguno"
+
+msgid "accTerminal_field_doorAlarmDelayHelpText"
+msgstr "Please Ingrese 0-999"
+
+msgid "retry_times_to_alarm_none"
+msgstr "Ninguno"
+
+msgid "anti_passback_mode_no"
+msgstr "Sín Anti-passback"
+
+msgid "anti_passback_mode_in"
+msgstr "Ingreso Anti-passback"
+
+msgid "anti_passback_mode_out"
+msgstr "Salida Anti-passback"
+
+msgid "anti_passback_mode_inOut"
+msgstr "Ingreso/Salida Anti-passback"
+
+msgid "anti_passback_mode_noButSaveDoorStatus"
+msgstr "Guardar estado de la puerta sin Anti-passback "
+
+msgid "door_direction_none"
+msgstr "Ninguno"
+
+msgid "door_direction_out"
+msgstr "Salida"
+
+msgid "door_direction_in"
+msgstr "Ingreso"
+
+msgid "anti_passback_setup"
+msgstr "Instalar Anti-passback "
+
+msgid "are_you_sure_to_unlock_the_selected_terminal"
+msgstr "Esta seguro que desea desbloquear el dispositivo seleccionado(s)?"
+
+msgid "are_you_sure_to_unalarm_the_selected_terminal"
+msgstr "Está seguro que desea desactivar las alarmas de los dispositivos seleccionados(s)?"
+
+msgid "accTerminal_field_verifyMode485"
+msgstr "Modo de verificación  RS485"
+
+msgid "485_verificationOption_Fingerprint"
+msgstr "Huella Digital"
+
+msgid "485_verificationOption_Password"
+msgstr "Contraseña"
+
+msgid "485_verificationOption_Card"
+msgstr "Tarjeta"
+
+msgid "door_action_setParameter"
+msgstr "Enviar Parametro"
+
+msgid "door_action_setParameterHelpText"
+msgstr "Enviar parametro de control de acceso"
+
+msgid "door_action_setParameterDescription"
+msgstr "Enviar parametro de control de acceso"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Calcular"
+
+msgid "the_amount_need_lager_than_zeron"
+msgstr "El valor de la cantidad no puede ser menor a cero!"
+
+msgid "used_timezone_can_not_be_removed"
+msgstr "Sí el horario tiene movimientos, no se puede eliminar."
+
+msgid "used_group_can_not_be_removed"
+msgstr "Sí el grupo tiene movimientos, no se puede eliminar."
+
+msgid "permission_verboseName_acc"
+msgstr "Control de Acceso"
+
+msgid "permission_verboseName_accTimezone"
+msgstr "Horario"
+
+msgid "permission_verboseName_accHoliday"
+msgstr "Festivo"
+
+msgid "permission_verboseName_accGroups"
+msgstr "Grupos"
+
+msgid "permission_verboseName_accCombination"
+msgstr "Combinación"
+
+msgid "permission_verboseName_accPrivilege"
+msgstr "Privilegio"
+
+msgid "accTerminal_tab_accessControlOptions"
+msgstr ""
+
+msgid "accTerminal_tab_duressOptions"
+msgstr "Opciones de coacción"
+
+msgid "accTerminal_tab_anti-PassBackSetup"
+msgstr "Configurar Anti-PassBack"
+
+msgid "menu_access_terminalCommand"
+msgstr "Comandos de dispositivo"
+
+msgid "accTerminal_field_normalOpenTimePeriodHelpText"
+msgstr "Zona Horaria Número(0 - 50)"
+
+msgid "accTerminal_field_duressAlarmDelayHelpText"
+msgstr "0 - 999 (Segundos)"
+
+msgid "accTerminal_field_pushTime"
+msgstr "Hora de envío"

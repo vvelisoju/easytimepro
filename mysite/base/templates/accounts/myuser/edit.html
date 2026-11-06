@@ -1,0 +1,240 @@
+{% extends 'layui/edit.html' %}
+{% load i18n common %}
+{% block form_style %}padding: 20px;{% endblock %}
+{% block edit_form %}
+  <form class="layui-form data-form" action="" method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {% with adminform.form as f %}
+      <div class="layui-form-item">
+        {% layui_inline f.nickname %}
+      </div>
+      {% if f.password1 %}
+      <div class="layui-form-item">
+        {% layui_inline f.password1 %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.password2 %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.email %}
+      </div>
+
+
+      {% else %}
+      <fieldset class="layui-elem-field layui-field-title fieldset-title">
+        <legend>{% trans 'user_createFrom_legendInformation' %}</legend>
+      </fieldset>
+      <div class="layui-form-item">
+        {% layui_inline f.first_name %}
+        {% layui_inline f.last_name %}
+      </div>
+      <div class="layui-form-item">
+        {% layui_inline f.email %}
+      </div>
+      <div class="layui-form-item">
+        {% if f.employee_code.value %}
+          {% trans 'user_employee_instance' %}
+        {% endif %}
+      </div>
+      <fieldset class="layui-elem-field layui-field-title fieldset-title" style="margin: 0;">
+        <legend>{% trans 'user_createFrom_legendPermission' %}</legend>
+      </fieldset>
+      <div class="layui-form-item">
+        {% layui_inline f.is_staff %}
+        <div class="layui-inline field-is_superuser">
+          <lable class="layui-form-label" for="id_is_superuser">{% trans 'user_field_superuser' %}</lable>
+          <div class="layui-input-inline ">
+            <input type="checkbox" name="is_superuser" lay-verify="is_superuser" class="layui-input" lay-skin="primary" id="id_is_superuser" lay-filter="is_superuser">
+            <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+              <i class="layui-icon layui-icon-ok"></i>
+            </div>
+          </div>
+        </div>
+        {% if software_type == 9 %}
+        <div class="layui-inline field-is_vendor">
+          <lable class="layui-form-label" for="id_is_vendor">{% trans 'Vendor' %}</lable>
+          <div class="layui-input-inline ">
+            <input type="checkbox" name="is_vendor" lay-verify="is_vendor" class="layui-input" lay-skin="primary" id="id_is_vendor" lay-filter="is_vendor" disabled>
+            <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+              <i class="layui-icon layui-icon-ok"></i>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="layui-form-item">
+        {% if software_type != 9 %}
+          <div class="layui-inline">
+            <label class="layui-form-label" for="id_auth_company">{% trans 'Company' %}
+            </label>
+            <div class="layui-input-inline" id="auth_company_div"></div>
+          </div>
+        {% endif %}
+        <div class="layui-inline">
+          <label class="layui-form-label" for="id_auth_dept">{% trans 'user_field_authorizedDepartment' %}
+          </label>
+          <div class="layui-input-inline" id="auth_dept_div"></div>
+        </div>
+        <div class="layui-inline">
+          <label class="layui-form-label" for="id_auth_area">{% trans 'user_field_authorizedArea' %}
+          </label>
+          <div class="layui-input-inline" id="auth_area_div"></div>
+        </div>
+       <div class="layui-inline">
+          <label class="layui-form-label" for="id_auth_pos">{% trans 'user_field_authorizedPosition' %}
+          </label>
+          <div class="layui-input-inline" id="auth_pos_div"></div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label" for="id_auth_group">{% trans 'Groups' %}
+          </label>
+          <div class="layui-input-inline" id="auth_group_div"></div>
+        </div>
+      </div>
+        <div class="layui-form-item">
+        {% layui_inline f.date_joined %}
+        {% layui_inline f.last_login %}
+        </div>
+      {% endif %}
+      <div class="layui-hide">{% layui_inline f.is_active %}</div>
+      <div class="layui-hide" id="user_id" >{{ object_id }}</div>
+    {% endwith %}
+    {% block add_fields %}
+    {% endblock %}
+  </form>
+  <script>
+    function loadUserTree(dateStamp, form){
+      var userId = $('#user_id').text();
+      var company_name = 'auth_company', company_stamp = dateStamp;
+      var dept_name = 'auth_dept', dept_stamp = dateStamp;
+      var area_name = 'auth_area', area_stamp = dateStamp;
+      var pos_name = 'auth_pos', pos_stamp = dateStamp;
+      var group_name = 'auth_group', group_stamp = dateStamp;
+      var tmp_id = "", url = "/base/auth_tree_data/?user_id=" + userId;
+      $.ajax({
+        url: url,
+        type: "GET",
+        dataType: "json",
+        success: function (response) {
+          console.log('debug');
+          var dept_data = response['dept'];
+          var area_data = response['area'];
+          var pos_data = response['pos'];
+          var group_data = response['group'];
+          var company_data = response['company'];
+          var is_sp_user = response['is_superuser'];
+          var is_vendor = response['is_vendor'];
+          if(is_sp_user){
+            $('#id_is_superuser').attr('checked', is_sp_user);
+            form.render('checkbox')
+          }
+          var user_perm = "{{ request.user.is_superuser }}";
+          if (user_perm =='False') {
+                $('#id_is_superuser').attr("disabled", true);
+                $('#id_is_staff').attr("disabled", true);
+                $('#id_nickname').attr("disabled", true);
+          }else{
+              $('#id_is_superuser').attr("disabled", false);
+            }
+
+
+          if(is_vendor){
+            $('#id_is_vendor').attr('checked', is_vendor);
+            form.render('checkbox')
+          }
+          $('#auth_dept' + dept_stamp).zTreeSelect({
+            name: dept_name,
+            stamp: dept_stamp,
+            input_type: "checkbox",
+            data: dept_data
+          });
+          $('#auth_area' + area_stamp).zTreeSelect({
+            name: area_name,
+            stamp: area_stamp,
+            input_type: "checkbox",
+            data: area_data
+          });
+          $('#auth_pos' + pos_stamp).zTreeSelect({
+            name: pos_name,
+            stamp: pos_stamp,
+            input_type: "checkbox",
+            data: pos_data
+          });
+
+          $('#auth_group' + group_stamp).zTreeSelect({
+            name: group_name,
+            stamp: group_stamp,
+            input_type: "checkbox",
+            data: group_data
+          });
+          if(company_data){
+            $('#auth_company' + company_stamp).zTreeSelect({
+            name: company_name,
+            stamp: company_stamp,
+            input_type: "checkbox",
+            data: company_data
+          });
+          }
+        }
+      });
+    }
+    layui.use(['form'], function(){
+      var form = layui.form;
+      //init data for tree
+      if ('{{ add }}' === 'False'){
+        var t = new Date();
+        var dateStamp = t.getTime();
+        $("#auth_area_div").append("<div id=" + "auth_area" + dateStamp + " class='layui-form-select tree-select'></div>");
+        $("#auth_dept_div").append("<div id=" + "auth_dept" + dateStamp + " class='layui-form-select tree-select'></div>");
+        $("#auth_pos_div").append("<div id=" + "auth_pos" + dateStamp + " class='layui-form-select tree-select'></div>");
+        $("#auth_group_div").append("<div id=" + "auth_group" + dateStamp + " class='layui-form-select tree-select'></div>");
+        {% if software_type != 9 %}
+          $("#auth_company_div").append("<div id=" + "auth_company" + dateStamp + " class='layui-form-select tree-select'></div>");
+        {% endif %}
+        loadUserTree(dateStamp, form);
+      }
+
+      var switchItem = function(checked){
+        if(checked){
+          $(".field-auth_dept").css({'pointer-events': 'none', 'color': '#d2d2d2'});
+          $(".field-auth_dept input").css({'color': '#d2d2d2'});
+          $(".field-auth_area").css({'pointer-events': 'none', 'color': '#d2d2d2'});
+          $(".field-auth_area input").css({'color': '#d2d2d2'});
+          $(".field-auth_pos").css({'pointer-events': 'none', 'color': '#d2d2d2'});
+          $(".field-auth_pos input").css({'color': '#d2d2d2'});
+          $(".field-groups").css({'pointer-events': 'none', 'color': '#d2d2d2'});
+          $(".field-groups input").css({'color': '#d2d2d2'});
+        }else{
+          $(".field-auth_dept").css({'pointer-events': 'all', 'color': '#333'});
+          $(".field-auth_dept input").css({'color': '#333'});
+          $(".field-auth_area").css({'pointer-events': 'all', 'color': '#333'});
+          $(".field-auth_area input").css({'color': '#333'});
+          $(".field-auth_pos").css({'pointer-events': 'all', 'color': '#333'});
+          $(".field-auth_pos input").css({'color': '#333'});
+          $(".field-groups").css({'pointer-events': 'all', 'color': '#333'});
+          $(".field-groups input").css({'color': '#333'});
+        }
+      };
+      form.on('checkbox(is_superuser)', function(data){
+        switchItem(data.elem.checked);
+      });
+      var is_superuser = $("#id_is_superuser");
+      if(is_superuser.get(0)){
+        switchItem(is_superuser.get(0).checked);
+      }
+      form.on('checkbox(is_staff)', function(data){
+        if(data.elem.checked == false) {
+          layer.alert("{% trans 'user_createFrom_isStaffNoCheckMsg' %}", {title: gettext("layer_title"), icon: 5, btn: gettext("btn_confirm")});
+        }
+      });
+
+      if('{{ software_type }}' === 9){
+        $("label[for$='id_email']").append('<span class="required">*</span>')
+      }
+
+    })
+
+  </script>
+{% endblock %}

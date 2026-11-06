@@ -1,0 +1,102 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 300px;min-width: 450px">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-form-item field-import_file">
+            <label class="layui-form-label" for="id_import_file">{% trans 'data_import_labelFile' %}<span class='required'>*</span></label>
+            <div class="layui-input-inline ">
+               <input type="file" name="import_file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain"   id="id_import_file" required="" />
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block layui-form-mid layui-word-aux">{% trans 'data_import_fileHelpTxt' %}</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'date_import_labelExistingData' %}</label>
+            <div class="layui-input-inline">
+                <select name="import_type" id="id_import_type">
+                    <option value="0" selected="">{% trans 'date_import_typeOptionIgnore' %}</option>
+                    <option value="1">{% trans 'date_import_typeOptionOverwrite' %}</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"
+                   style="width: 150px;text-align: left">{% trans 'data_import_fileTemplateDemo' %}</label>
+            <div class="layui-input-inline" style="float: right">
+                <a target="_blank" style="color: #01AAED;"
+                   href="personnel/resign/import_template/"><i
+                        class="fa fa-download"></i>{% trans 'data_import_fileTemplateDownload' %}</a>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <table class="layui-hide" id="demo"></table>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block"
+                 style="margin-left: 0px;min-height: 24px;">{% trans 'data_import_description' %}</div>
+            <div class="layui-input-block" style="margin-left: 20px;">
+                <p>{% trans 'data_import_resignImportRequired1' %}</p>
+                {% if software_type != 11 %}
+                <p>{% trans 'data_import_resignImportRequired2' %}</p>
+                <p>{% trans 'data_import_resignImportRequired3' %}</p>
+                {% else %}
+                <p>{% trans 'data_import_resignImportRequired2(WDMS)' %}</p>
+                {% endif %}
+                <br>
+                <p>{% trans 'supported_formats' %}</p>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+  layui.use('table', function () {
+    var table = layui.table;
+    table.render({
+      elem: '#demo'
+      , cellMinWidth: 80
+      , cols: [[
+        {field: 'no', width: '8%', title: ''}
+        {% if software_type != 11 %}
+        , {field: 'Employee Code', width: '15%', title: 'A'}
+        , {field: 'Resign Date', width: '15%', title: 'B'}
+        , {field: 'Resign Type', width: '15%', title: 'C'}
+        , {field: 'Reason', width: '15%', title: 'F'}
+        , {field: 'Report Generation End Date', width: '30%', title: 'D'}
+        , {field: 'Closs Attendance', width: '15%', title: 'E'}
+        {% else %}
+        , {field: 'Employee Code', width: '24%', title: 'A'}
+        , {field: 'Resign Date', width: '23%', title: 'B'}
+        , {field: 'Resign Type', width: '23%', title: 'C'}
+        , {field: 'Reason', width: '24%', title: 'D'}
+        {% endif %}
+      ]]
+      , data: [{
+        "no": "S.No"
+        , "Employee Code": "{% trans 'emp_field_employeeCode' %}"
+        , "Resign Date": "{% trans 'resign_field_resignDate' %}"
+        , "Report Generation End Date": "{% trans 'resign_field_reportGenerationEndDate' %}"
+        , "Resign Type": "{% trans 'resign_field_resignType' %}"
+        , "Reason": "{% trans 'resign_field_resignReason' %}"
+        , "Closs Attendance": "{% trans 'resign_field_disableAttendanceFunction' %}"
+      }, {
+        "no": "1"
+        , "Employee Code": "10001"
+        , "Resign Date": "2018-07-18"
+        , "Report Generation End Date": "2018-07-18"
+        , "Resign Type": "{% trans 'resign_typeOption_quit' %}"
+        , "Reason": ""
+        , "Closs Attendance": "{% trans 'boolean_option_enable' %}/{% trans 'boolean_option_disable' %}"
+      }]
+    });
+    $(".layui-layer-btn0").click(function () {
+    if (!$("input[name='import_file']").val()){
+      $("#id_import_file").css({'border':'solid', 'border-color': 'red', 'border-width': '1px', 'border-radius': '2px'})
+    }
+  });
+  $("#id_import_file").click(function () {
+    $("#id_import_file").css({'border-width': '0'})
+  })
+
+  });
+</script>

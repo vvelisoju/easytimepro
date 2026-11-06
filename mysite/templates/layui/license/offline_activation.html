@@ -1,0 +1,22 @@
+{% load i18n static common %}
+<div style="width: 430px;height: 140px">
+    <form action="" class="layui-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="layui-form-item" style="padding: 10px;">
+            <div class="layui-inline field-license_code" title="">
+                <label  for="id_activation_code" style="width: 126px">
+                    Activation Code
+                 <span class="required">*</span></label>
+                <div class="layui-input-inline" style="width: 540px;">
+                    <textarea type="text" name="activation_code" lay-verify="activation_code" id="id_activation_code" maxlength="1000" class="layui-textarea" style="height: 200px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form'], function () {
+        var form=layui.form;
+        form.render();
+    })
+</script>

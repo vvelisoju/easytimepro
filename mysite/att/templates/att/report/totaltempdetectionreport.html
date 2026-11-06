@@ -1,0 +1,27 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+
+{% block disclaimer %}
+    <p style="color:black; font-size: 9px;">{% trans 'att_tmd_report_desclaimer' %}</p>
+{% endblock %}
+
+{% block opts_modify %}
+    $.extend(opts, {
+        cols: [[
+            {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort: true}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}", width:120}
+            ,{field:'last_name', title: "{% trans 'report_column_lastName' %}", width:80}
+            ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}", width:80}
+            ,{field:'gender', width:80, title: "{% trans 'report_column_gender' %}", width:80}
+            ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}", width:80}
+            ,{field:'dept_name', title: "{% trans 'report_column_departmentName' %}", width:120}
+            ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}", width:80}
+            ,{field:'position_name', title: "{% trans 'report_column_positionName' %}", width:120}
+            ,{field:'att_date', width:100, title: "{% trans 'report_column_attendanceDate' %}", width:120, sort: true}
+            ,{field:'punch_times', width:80, title: "{% trans 'report_column_punchTimes' %}"}
+            ,{field:'temp_set', title: "{% trans 'report_column_tempSet' %}"}
+        ]]
+        ,method: "get"
+        ,url: "/att/api/totalTempDetectionReport/"
+    });
+{% endblock %}

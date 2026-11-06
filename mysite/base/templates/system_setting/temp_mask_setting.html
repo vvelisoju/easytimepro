@@ -1,0 +1,182 @@
+{% load i18n %}
+<div class="temp_mask-setting-form">
+  <form action="" class="layui-form" lay-filter="tempMaskSettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" style=" height: 360px">
+          <div class="layui-card-header"><i class="fa fa-envelope"></i>
+            <span style="padding-left: 5px">{% trans 'temp_maskSetting_otherSetting' %}</span>
+          </div>
+          <div class="layui-card-body">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_tem_unit" class="layui-form-label" style="width: 200px; margin-top: 15px;">
+                  {% trans 'temp_maskSettingPage_label_tem_unit' %}
+                </label>
+              </div>
+              <div class="layui-inline">
+                <input type="radio" name="tem_unit" value="c" title="℃" checked>
+                <input type="radio" name="tem_unit" value="f" title="℉">
+              </div>
+            </div>
+            {% if software_type != 11 %}
+            <div class="layui-form-item">
+              <div class="layui-inline" style="margin-left: 50px">
+                <input type="checkbox" name="high_temp_limit_enable" title="{% trans 'temp_maskSetting_high_limit' %}">
+                <input type="checkbox" name="warning_temp_limit_enable" title="{% trans 'temp_maskSetting_warning_limit' %}">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label" style="width: 200px">{% trans 'temp_maskSetting_high_setting' %}</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="text" name="high_temp_min" placeholder="℃(min)" autocomplete="off" class="layui-input"
+                         style="min-width: 100px;">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="text" name="high_temp_max" placeholder="℃(max)" autocomplete="off" class="layui-input"
+                         style="min-width: 100px;">
+                </div>
+                <div id="high_temp_color_div"></div>
+                <input class="layui-hidden" name="high_temp_color" id="high_temp_color">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label" style="width: 200px">{% trans 'temp_maskSetting_warning_setting' %}</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="text" name="warn_temp_min" placeholder="℃(min)" autocomplete="off" class="layui-input"
+                         style="min-width: 100px;">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="text" name="warn_temp_max" placeholder="℃(max)" autocomplete="off" class="layui-input"
+                         style="min-width: 100px;">
+                </div>
+                <div id="warn_temp_color_div"></div>
+                <input class="layui-hidden" name="warn_temp_color" id="warn_temp_color">
+              </div>
+            </div>
+          </div>
+          <div class="layui-card-header"><i class="fa fa-envelope"></i>
+            <span style="padding-left: 5px">{% trans 'temp_maskSetting_mask_setting' %}</span>
+          </div>
+          <div class="layui-card-body">
+            <div class="layui-form-item" style=" margin-top: 15px;">
+              <div class="layui-inline">
+                <label class="layui-form-label" style="width: 200px; margin-top: 5px; margin-right: 15px;">
+                  {% trans 'temp_maskSetting_mask_detection' %}</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="checkbox" name="mask_enable" lay-skin="switch" lay-text="ON|OFF">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="layui-form-item">
+      <div class="layui-input-block" style="margin-left: 35px; margin-top: 20px">
+        <button class="layui-btn" lay-submit="" lay-filter="temp_maskSubmit" id="temp_maskSubmit">
+          {% trans 'temp_maskSettingPage_btn_submit' %}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+
+  layui.use(['form', 'colorpicker'], function () {
+    var form = layui.form, layer = layui.layer;
+    var colorpicker = layui.colorpicker;
+    form.render();
+
+    function set_color(high_color, warn_color) {
+      colorpicker.render({
+        elem: '#high_temp_color_div' //bind element
+        , color: high_color // default color
+        , done: function (color) {
+          $('#high_temp_color').val(color);
+        }
+      });
+      $('#high_temp_color').val(high_color);
+      colorpicker.render({
+        elem: '#warn_temp_color_div'
+        , color: warn_color
+        , done: function (color) {
+          $('#warn_temp_color').val(color);
+        }
+      });
+      $('#warn_temp_color').val(warn_color);
+      // set position for pull-down icon
+      $('#high_temp_color_div > div > span > span').css('line-height', '1.5em');
+      $('#warn_temp_color_div > div > span > span').css('line-height', '1.5em');
+    }
+
+    // get init data by api and render to html
+    $.ajax({
+      url: "/base/api/systemSetting/?name=temp_mask_setting"
+      , type: "GET"
+      , dataType: "json"
+      , success: function (response, xhr) {
+        var val = response.data[0];
+        if (val) {
+          var result = JSON.parse(val.value);
+          form.val('tempMaskSettingForm', result);
+          // deal for color
+          var high_temp_color = $('#high_temp_color')
+              , warn_temp_color = $('#warn_temp_color');
+          high_temp_color.val(result['high_temp_color']);
+          warn_temp_color.val(result['warn_temp_color']);
+          set_color(high_temp_color.val(), warn_temp_color.val());
+        }else {
+          var high_color='#ff0000';
+          var warn_color='#ff9100';
+          set_color(high_color, warn_color);
+        }
+      }
+      , error: function (xhr, error, e) {
+      }
+    });
+
+    //save value when click submit
+    form.on('submit(temp_maskSubmit)', function (data) {
+      var loadIndex = layer.load();
+      var csrf = data.field['csrfmiddlewaretoken'];
+      var value = {
+        tem_unit: data.field['tem_unit']
+        , high_temp_limit_enable: !!data.field['high_temp_limit_enable']
+        , warning_temp_limit_enable: !!data.field['warning_temp_limit_enable']
+        , high_temp_min: data.field['high_temp_min']
+        , high_temp_max: data.field['high_temp_max']
+        , warn_temp_min: data.field['warn_temp_min']
+        , warn_temp_max: data.field['warn_temp_max']
+        , mask_enable: !!data.field['mask_enable']
+        , high_temp_color: data.field['high_temp_color']
+        , warn_temp_color: data.field['warn_temp_color']
+      };
+      $.ajax({
+        url: "/base/api/systemSetting/"
+        , type: "POST"
+        , data: {'name': 'temp_mask_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.close(loadIndex);
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+        }
+        , error: function (xhr, error, e) {
+          layer.close(loadIndex);
+          if (xhr.responseJSON.value && xhr.responseJSON.value[0] != '') {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('action_notification_failed'), {icon: 5});
+          }
+        }
+      });
+      return false;
+    });
+  });
+</script>

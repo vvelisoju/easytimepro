@@ -1,0 +1,57 @@
+{% extends 'payroll/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    var cols = [[
+         {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+        ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+        ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+        ,{field:'department', title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'calc_time', title: "{% trans 'monthlySalary_field_calc_time' %}"}
+
+        ,{field:'total_increase_formula_name', title: "{% trans 'report_column_total_increase_formula_name' %}"}
+        ,{field:'total_increase_expression', title: "{% trans 'report_column_total_increase_expression' %}"}
+        ,{field:'total_deduction_formula_name', title: "{% trans 'report_column_total_deduction_formula_name' %}"}
+        ,{field:'total_deduction_expression', title: "{% trans 'report_column_total_deduction_expression' %}"}
+
+        ,{field:'Basic Salary', title: "{% trans 'report_column_basic_salary' %}"}
+        ,{field:'Schedule Days', title: "{% trans 'report_column_schedule_days' %}"}
+        ,{field:'Schedule Period', title: "{% trans 'report_column_schedule_period' %}"}
+        ,{field:'Required Work', title: "{% trans 'report_column_required_work' %}"}
+        ,{field:'Actual Work', title: "{% trans 'report_column_actual_work' %}"}
+        ,{field:'OT1', title: "{% trans 'OT1' %}"}
+        ,{field:'OT2', title: "{% trans 'OT2' %}"}
+        ,{field:'OT3', title: "{% trans 'OT3' %}"}
+        ,{field:'Normal OT', title: "{% trans 'report_column_normal_ot' %}"}
+        ,{field:'Weekend OT', title: "{% trans 'report_column_weekend_ot' %}"}
+        ,{field:'Holiday OT', title: "{% trans 'report_column_holiday_ot' %}"}
+        ,{field:'Late In', title: "{% trans 'report_column_late_in' %}"}
+        ,{field:'Absence', title: "{% trans 'report_column_absence' %}"}
+        ,{field:'Early Leave', title: "{% trans 'report_column_early_leave' %}"}
+    ]]
+    var leaveCols = [];
+    $.ajax({
+        url: "/payroll/api/leaveformulas/"
+        ,type: "GET"
+        ,dataType: "json"
+        ,async: false
+        ,success:function(response){
+            var data = response.data;
+            leave_set = new Set()
+            data.forEach(function(col, index){
+                if(!leave_set.has(col['category_name'])) {
+                    leave_set.add(col['category_name'])
+                    leaveCols.push({field: col['category_name'], title: col['category_name']})
+                };
+            });
+        }
+        ,error:function(){
+
+        }
+    });
+    var _cols = cols[0].concat(leaveCols);
+    cols[0] = _cols;
+    $.extend(opts, {
+        cols: cols
+        ,url: "/payroll/api/report/calcparam_report/"
+    });
+{% endblock %}

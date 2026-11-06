@@ -1,0 +1,532 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "급여"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "직원 프로필"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "직원 프로필"
+
+msgid "menu_group_payroll_formula"
+msgstr "공식"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "공제 공식"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "예외 공식"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "공식 증가"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "공식 떠나"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "초과 근무 포뮬러"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "추가 자금"
+
+msgid "menu_payroll_extraincrease"
+msgstr "추가 증가"
+
+msgid "menu_payroll_extradeduction"
+msgstr "추가 공제"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "급여 구조"
+
+msgid "menu_payroll_salarystructure"
+msgstr "급여 구조"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "차관"
+
+msgid "menu_payroll_empLoan"
+msgstr "차관"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "급여 사전"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "급여 사전"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "반제"
+
+msgid "menu_payroll_reimbursement"
+msgstr "반제"
+
+msgid "menu_group_payroll_calculation"
+msgstr "계산"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "급여 계산"
+
+msgid "menu_group_payroll_report"
+msgstr "보고서"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "급여 구조"
+
+msgid "menu_payroll_increase_report"
+msgstr "아이템 증가"
+
+msgid "menu_payroll_deduction_report"
+msgstr "공제 항목"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "급여 세부 사항"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "출석 매개 변수"
+
+msgid "menu_payroll_setting"
+msgstr "급여 설정"
+
+msgid "paroll_mode_monthly"
+msgstr "월간 간행물"
+
+msgid "paroll_type_cash"
+msgstr "현금"
+
+msgid "paroll_type_check"
+msgstr "검사"
+
+msgid "paroll_type_bank_transfer"
+msgstr "은행 송금"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "직원 프로필"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "지불 기간"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "지불 유형"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "은행 이름"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "은행 계좌"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "인사 ID"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "이름"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "성"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "에이전트 ID"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "에이전트 계정"
+
+msgid "payroll_model_deductionFormula"
+msgstr "공제 공식"
+
+msgid "deductionFormula_field_name"
+msgstr "이름"
+
+msgid "deductionFormula_field_formula"
+msgstr "공식"
+
+msgid "deductionFormula_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "예외 공식"
+
+msgid "exceptionFormula_field_name"
+msgstr "이름"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "예외 유형"
+
+msgid "exceptionFormula_field_formula"
+msgstr "공식"
+
+msgid "exceptionFormula_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_increasementFormula"
+msgstr "공식 증가"
+
+msgid "increasementFormula_field_name"
+msgstr "이름"
+
+msgid "increasementFormula_field_formula"
+msgstr "공식"
+
+msgid "increasementFormula_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_leaveFormula"
+msgstr "공식 떠나"
+
+msgid "leaveFormula_field_name"
+msgstr "이름"
+
+msgid "leaveFormula_field_category"
+msgstr "잎 종류"
+
+msgid "leaveFormula_field_formula"
+msgstr "공식"
+
+msgid "leaveFormula_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "초과 근무 포뮬러"
+
+msgid "overtimeFormula_field_name"
+msgstr "이름"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "초과 근무 수준"
+
+msgid "overtimeFormula_field_formula"
+msgstr "공식"
+
+msgid "overtimeFormula_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_extraIncrease"
+msgstr "추가 증가"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "더하다"
+
+msgid "extraIncrease_field_employee"
+msgstr "종업원"
+
+msgid "extraIncrease_field_amount"
+msgstr "양"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "발급 시간"
+
+msgid "extraIncrease_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_extraDeduction"
+msgstr "추가 공제"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "더하다"
+
+msgid "extraDeduction_field_employee"
+msgstr "종업원"
+
+msgid "extraDeduction_field_amount"
+msgstr "양"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "발급 시간"
+
+msgid "extraDeduction_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_salarystructure"
+msgstr "급여 구조"
+
+msgid "salaryStructure_field_amount"
+msgstr "기본 급여"
+
+msgid "salaryStructure_field_formula"
+msgstr "급여 공식"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "유효 날짜"
+
+msgid "salaryStructure_field_remark"
+msgstr "비고"
+
+msgid "salaryStructure_field_formulas"
+msgstr "방식"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "급여 사전"
+
+msgid "salaryAdvance_field_amount"
+msgstr "양"
+
+msgid "salaryAdvance_field_time"
+msgstr "발급 시간"
+
+msgid "salaryAdvance_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_Reimbursement"
+msgstr "반제"
+
+msgid "Reimbursement_field_amount"
+msgstr "양"
+
+msgid "Reimbursement_field_time"
+msgstr "상환 시간"
+
+msgid "Reimbursement_field_file"
+msgstr "상환 영수증"
+
+msgid "Reimbursement_field_remark"
+msgstr "비고"
+
+msgid "payroll_model_empLoan"
+msgstr "차관"
+
+msgid "empLoan_field_employee"
+msgstr "직원 ID"
+
+msgid "empLoan_field_loanAmount"
+msgstr "대출 금액"
+
+msgid "empLoan_field_loanTime"
+msgstr "대출 시간"
+
+msgid "empLoan_field_refundCycle"
+msgstr "환불주기"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "기간별 환불 금액"
+
+msgid "empLoan_field_clean_time"
+msgstr "청소 시간"
+
+msgid "empLoan_field_remark"
+msgstr "말"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "더하다"
+
+msgid "payroll_action_addRmb"
+msgstr "더하다"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "더하다"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "더하다"
+
+msgid "reimbursement_file"
+msgstr "상환 영수증"
+
+msgid "report_column_overtimeFormula1"
+msgstr "초과 근무 수준 1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "초과 근무 수준 2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "초과 근무 수준 3"
+
+msgid "report_column_increaseFormula"
+msgstr "공식 증가"
+
+msgid "report_column_deductionFormula"
+msgstr "공제 공식"
+
+msgid "report_column_lateFormula"
+msgstr "늦은 공식"
+
+msgid "report_column_absentFormula"
+msgstr "결석 수식"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "조기 휴가 포뮬러"
+
+msgid "payroll_model_monthlysalary"
+msgstr "월급 보고서"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "기본 급여"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "유효 날짜"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "계산 날짜"
+
+msgid "monthlySalary_field_ot1"
+msgstr "초과 근무 수준 1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "초과 근무 수준 2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "초과 근무 수준 3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "늦은"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "조기 휴가"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "결석"
+
+msgid "monthlySalary_field_increase"
+msgstr "증가하다"
+
+msgid "monthlySalary_field_deduction"
+msgstr "공제"
+
+msgid "monthlySalary_field_leave"
+msgstr "떠나다"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "추가 증가"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "추가 공제"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "총 대출 금액"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "환불 대출 금액"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "환불되지 않은 대출 금액"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "대출 공제"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "대출 증가"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "사전 증가"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "사전 공제"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "반제"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "총 증가"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "총 수수료"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "총 급여"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "기본 급여는 0보다 작을 수 없습니다"
+
+msgid "payroll_attParamUnit"
+msgstr "출석 매개 변수 단위"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}:직원{1}은 (는) 효과적인 급여 구조를 가지고 있습니다."
+
+msgid "receipt_file_format_constraints"
+msgstr "jpg / jpeg / png / bmp 이미지 파일 만 지원하십시오."
+
+msgid "1_period"
+msgstr "1 기간"
+
+msgid "2_periods"
+msgstr "2 기간"
+
+msgid "3_periods"
+msgstr "3 기간"
+
+msgid "4_periods"
+msgstr "4 기간"
+
+msgid "5_periods"
+msgstr "5 기간"
+
+msgid "6_periods"
+msgstr "6 기간"
+
+msgid "7_periods"
+msgstr "7 기간"
+
+msgid "8_periods"
+msgstr "8 기간"
+
+msgid "9_periods"
+msgstr "9 기간"
+
+msgid "10_periods"
+msgstr "10 기간"
+
+msgid "11_periods"
+msgstr "11 기간"
+
+msgid "12_periods"
+msgstr "12 기간"
+
+msgid "deductionformula_addform_note"
+msgstr "참고 :이 공제는 매달 유효합니다."
+
+msgid "increasementformula_addform_note"
+msgstr "참고 :이 증가는 매월 적용됩니다."
+
+msgid "caleulator_title"
+msgstr "계산자"
+
+msgid "caleulator_basicSalary"
+msgstr "기본 급여"
+
+msgid "caleulator_scheduleDays"
+msgstr "일정 일"
+
+msgid "caleulator_schedulePeriod"
+msgstr "일정 기간"
+
+msgid "caleulator_check"
+msgstr "검사"
+
+msgid "report_column_total_increase_formula"
+msgstr "총 증가 공식"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "총 증가 공식 이름"
+
+msgid "report_column_total_increase_expression"
+msgstr "총 증가 식"
+
+msgid "report_column_total_deduction_formula"
+msgstr "총 공제 공식"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "총 공제 공식 이름"
+
+msgid "report_column_total_deduction_expression"
+msgstr "총 공제 식"
+
+msgid "basic_salary_need_lager_then_zero"
+msgstr "기본 급여는 0보다 작을 수 없습니다!"

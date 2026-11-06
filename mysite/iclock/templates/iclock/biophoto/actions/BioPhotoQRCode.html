@@ -1,0 +1,53 @@
+{% load i18n %}
+<div style="overflow: hidden;width: 440px;height: 260px;">
+    <div style="height: 230px;width: 420px;">
+        <div style="text-align: center; padding: 20px">
+            <img id="qrImg" src="/files/qrcode/register.png" alt="" style="height: 140px;width: 140px;">
+        </div>
+        <div style="text-align: center;">
+            <a id="qrRefresh" href="javascript:void(0);" style="text-decoration: underline;padding: 15px;"><i class="fa fa-refresh"></i>{% trans 'bioPhoto_action_qrCodeRefresh' %}</a>
+            <a href="/files/qrcode/register.png" download="register.png" style="text-decoration: underline;padding: 15px;"><i class="fa fa-download"></i>{% trans 'bioPhoto_action_qrCodeDownload' %}</a>
+        </div>
+    </div>
+</div>
+<script>
+    $("#qrRefresh").click(function(){
+        var loadIndex = layer.load();
+        var href = window.location.href;
+        $.ajax({
+            url: '/qrRefresh/?hook='+href
+            ,type: 'GET'
+            ,dataType: 'json'
+            ,success: function(response){
+                var ret = response.ret;
+                if(ret == 0){
+                    $("#qrImg").attr('src', '/files/qrcode/register.png?t='+Math.random());
+                    layer.msg('QRCode Changed', {icon: 6});
+                }else{
+                    var msg = response.msg;
+                    layer.msg(msg, {icon: 5});
+                }
+                layer.close(loadIndex)
+            }
+            ,error: function(){
+                layer.close(loadIndex)
+            }
+        });
+    });
+    $(".layui-layer-btn0").hide()
+    $(document).ready(function(){
+        var href = window.location.href;
+        $.ajax({
+            url: '/qrRefresh/?hook='+href
+            ,type: 'GET'
+            ,dataType: 'json'
+            ,success: function(response){
+                var ret = response.ret;
+                if(ret == 0){
+                    $("#qrImg").attr('src', '/files/qrcode/register.png?t='+Math.random());
+                }
+            }
+
+        });
+    })
+</script>

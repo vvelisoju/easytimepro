@@ -1,0 +1,75 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  $.extend(opts, {
+  cols: [[
+  {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+  ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+  ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+{#  ,{field:'gender', title: "{% trans 'report_column_gender' %}", hide: true}#}
+  ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}", sort:true}
+  ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+  ,{field:'att_date', title: "{% trans 'report_column_attendanceDate' %}", width:100, sort:true}
+{#  ,{field:'weekday', width:80, title: "{% trans 'report_column_attendanceWeekday' %}", width:100}#}
+{#  ,{field:'att_exception', title: "{% trans 'report_column_exception' %}"}#}
+  ,{field:'timetable', title: "{% trans 'report_column_timeIntervalName' %}"}
+{#  ,{field:'duration', title: "{% trans 'report_column_timetableDuration' %}"}#}
+  ,{field:'clock_in', title: "{% trans 'report_column_clockInTime' %}", templet: function(obj){
+    if(obj.late && obj.late.length > 0 && obj.late != '0.0' && obj.late != obj.break_late){
+      return '<span style="color: #DC143C;">'+ obj.clock_in +'</span>'
+    }else{
+      return obj.clock_in
+    }
+  }}
+  ,{field:'clock_out', title: "{% trans 'report_column_clockOutTime' %}", templet: function(obj){
+    if(obj.early_leave && obj.early_leave.length > 0 && obj.early_leave != '0.0' && obj.early_leave != obj.break_early){
+      return '<span style="color: #00CD66;">'+ obj.clock_out +'</span>'
+    }else{
+      return obj.clock_out
+    }
+  }}
+{#  ,{field:'check_in', title: "{% trans 'report_column_checkInTime' %}"}#}
+{#  ,{field:'check_out', title: "{% trans 'report_column_checkOutTime' %}"}#}
+{#  ,{field:'duty_duration', title: "{% trans 'report_column_attendanceDuration' %}"}#}
+{#  ,{field:'work_day', title: "{% trans 'report_column_workDay' %}"}#}
+{#  ,{field:'total_time', title: "{% trans 'report_column_totalTimeDuration' %}", width:80}#}
+{#  ,{field:'duty_wt', title: "{% trans 'report_column_dutyWorkedTime' %}", width:80}#}
+{#  ,{field:'actual_wt', title: "{% trans 'report_column_actualWorkedTime' %}", width:80}#}
+{#  ,{field:'unscheduled', title: "{% trans 'report_column_unscheduled' %}", width:80}#}
+{#  ,{field:'remaining', title: "{% trans 'report_column_remaining' %}", width:80}#}
+{#  ,{field:'break_out', title: "{% trans 'report_column_breakOutTime' %}", hide: true}#}
+{#  ,{field:'break_in', title: "{% trans 'report_column_breakInTime' %}", hide: true, templet: function(obj){#}
+{#    if((obj.break_late && parseInt(obj.break_late) > 0) || (obj.break_early && parseInt(obj.break_early) > 0)){#}
+{#      return '<span style="color: #FF5722;">'+ obj.break_in +'</span>'#}
+{#    }else if(obj.break_in){#}
+{#      return obj.break_in#}
+{#    }else{#}
+{#      return ''#}
+{#    }#}
+{##}
+{#  }}#}
+{#  ,{field:'actual_break', title: "{% trans 'report_column_actualBreakTimeDuration' %}", hide: true}#}
+{#  ,{field:'taken_break', title: "{% trans 'report_column_breakTime' %}"}#}
+{#  ,{field:'late', title: "{% trans 'report_column_lateDuration' %}"}#}
+{#  ,{field:'break_late', title: "{% trans 'report_column_breakLateDuration' %}", hide: true}#}
+{#  ,{field:'early_leave', title: "{% trans 'report_column_earlyLeaveDuration' %}", width:100}#}
+{#  ,{field:'break_early', title: "{% trans 'report_column_breakEarlyLeaveDuration' %}", hide: true}#}
+{#  ,{field:'absent', title: "{% trans 'report_column_absentDuration' %}"}#}
+{#  ,{field:'break_absent', title: "{% trans 'report_column_breakTimeAbsentDuration' %}", hide: true}#}
+{#  ,{field:'leave', title: "{% trans 'report_column_leaveDuration' %}"}#}
+  ,{field:'total_worked', title: "{% trans 'report_column_totalWorkedDuration' %}", width:100}
+{#  ,{field:'normal_wt', title: "{% trans 'report_column_normalWorkTime' %}"}#}
+{#  ,{field:'break_duration', title: "{% trans 'report_column_breakTimeDuration' %}", hide: true}#}
+{#  ,{field:'normal_ot', title: "{% trans 'report_column_normalOvertime' %}"}#}
+{#  ,{field:'weekend_ot', title: "{% trans 'report_column_weekendOvertime' %}"}#}
+{#  ,{field:'holiday_ot', title: "{% trans 'report_column_holidayOvertime' %}"}#}
+{#  ,{field:'ot_lv1', title: "{% trans 'report_column_overtimeLevel1' %}"}#}
+{#  ,{field:'ot_lv2', title: "{% trans 'report_column_overtimeLevel2' %}"}#}
+{#  ,{field:'ot_lv3', title: "{% trans 'report_column_overtimeLevel3' %}"}#}
+  ,{field:'attendance_status', title: "{% trans 'report_column_attendance_status' %}"}
+  ,{field:'Remarks', title: "{% trans 'report_column_remarks' %}"}
+  ]]
+  ,method: "get"
+  ,url: "/att/api/dailySummaryReport/"
+  });
+{% endblock %}

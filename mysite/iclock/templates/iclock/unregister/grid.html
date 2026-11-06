@@ -1,0 +1,93 @@
+{% extends 'data_grid.html' %}
+{% load i18n static %}
+{% block main_body %}
+  <div class="layui-row layui-col-space15" style="margin-bottom: 0px">
+    <div class="layui-col-md10" >
+      <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+      <script type="text/html" id="{{ model_name }}_toolbar">
+        <div class="layui-btn-container grid-toolbar" style="">
+          <ul class="layui-nav"></ul>
+        </div>
+      </script>
+      <p style="color:black; font-size: 10px;padding-left: 15px;margin-top: 0px;">{% trans 'disclaimer_unregistered_users' %}</p>
+    </div>
+    <div class="layui-col-md2">
+      <div class="layui-card">
+        <div class="layui-card-header" style="background-color: #e7e7e7">{% trans 'attendance_capture' %}</div>
+        <div class="layui-card-body">
+          <div>
+            <div style="padding: 5px" align="center">
+              <img id="id_employeeCapture1" class="transaction-capture" src='/media/images/userImage.gif'
+                   onerror="this.src='/media/images/userImage.gif';" alt="">
+            </div>
+            <div>
+              <table id="capture-detail" class="captureRowPanel">
+                <tbody>
+                <tr>
+                  <th>{% trans 'transaction_field_punchDate' %}</th>
+                  <td>
+                    <div id="punchDatePanel1">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_punchTime' %}</th>
+                  <td>
+                    <div id="punchTimePanel1">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_area' %}</th>
+                  <td>
+                    <div id="areaPanel1">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_terminalSN' %}</th>
+                  <td>
+                    <div id="terminalSNPanel1">-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>{% trans 'transaction_field_uploadTime' %}</th>
+                  <td>
+                    <div id="uploadTimePanel1">-</div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block grid_opt_update %}
+  data_grid_opts.disabled_action_panel_east = ['history'];
+  var cols = res['grid_opts']['cols'][0];
+  var payload = {};
+  cols.forEach(function(col, index){
+    payload[col.field] = col;
+  });
+{% endblock %}
+{% block actionAfterTableRender %}
+  layui.use(['table', 'form'], function(){
+  var table = layui.table, form=layui.form;
+  form.render();
+  setTimeout(function () {
+     table.on('row({{ model_name }})', function(obj){
+        var data = obj.data;
+        var dd = data.transaction_punch_date;
+        var dt = data.transaction_punch_time;
+        var dtStr = dd.replace(/-/g, '') + dt.replace(/:/g, '');
+        var url = "/files/upload/" + dd.replace(/-/g, '').substring(0, 6) + "/" + data.terminal_sn.replace(/:/g, "-") + "/" + dtStr + ".jpg";
+        $("#id_employeeCapture1").attr('src', url);
+        $("#punchDatePanel1").html(data.transaction_punch_date);
+        $("#punchTimePanel1").html(data.transaction_punch_time);
+        $("#areaPanel1").html(data.area_alias);
+        $("#terminalSNPanel1").html(data.terminal_sn);
+        $("#uploadTimePanel1").html(data.upload_time);
+        });
+  }, 500);
+  })
+{% endblock %}

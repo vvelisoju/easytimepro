@@ -1,0 +1,20 @@
+{% load i18n static %}
+<div id="{{ model_name }}_edit_form" style="padding: 10px;">
+    <form class="layui-form data-form" action="" method="post" >
+        {% csrf_token %}
+        <div>
+            {% for fieldset in adminform %}
+              {% include "includes/fieldset.html" %}
+            {% endfor %}
+        </div>
+    </form>
+</div>
+<script>
+    layui.use('form', function() {
+        var form = layui.form
+          ,$ = layui.$;
+        $('#id_minimum_unit').attr('min', 0);
+        {#$('#id_category_name').attr('disabled',true);#}
+        form.render();
+    });
+</script>

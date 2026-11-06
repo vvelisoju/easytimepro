@@ -1,0 +1,427 @@
+{% load i18n %}
+
+<div class="report-setting-form">
+    <form action="" class="layui-form" lay-filter="reportSettingForm">
+        {% csrf_token %}
+        <div class="layui-row layui-col-space15" id="report_settings_id" style="overflow:scroll">
+            <div class="layui-col-md12" style="padding-top: 0;">
+                <div class="layui-card-body" >
+                    {% if software_type != 11 %}
+                        <div class="layui-card-header"><i class="fa fa-fw fa-group"></i><span style="padding-left: 5px">{% trans 'Enable Automatic Email Trigger of Reports' %}</span></div>
+                        <div class="layui-card-body" style="margin: 0 0 0 10px;">
+                            <div class="layui-form-item layui-col-space15">
+                                <div class="layui-inline" style="padding-left: 45px; padding-top:10px; position: relative; top: 10px">
+                                    <div class="layui-input-inline">
+                                        <input type="checkbox" name="auto_mail_trigger" lay-skin="primary" title="{% trans 'Enable Automatic Mail trigger of selected reports' %} ">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline" style="padding-top:10px;">
+                                        <label for="id_admin_username" class="layui-form-label" style="width: 150px">{% trans 'Admin Username' %}<span class="required">*</span></label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" id="id_admin_username" name="admin_username" autocomplete="off" placeholder="" lay-verify="required" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline" style="padding-top:10px;">
+                                        <label for="id_admin_password" class="layui-form-label" style="width: 150px">{% trans 'Admin Password' %}<span class="required">*</span></label>
+                                        <div class="layui-input-inline">
+                                            <input type="password" id="id_admin_password" name="admin_password" autocomplete="off" placeholder="" lay-verify="required" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-card-header"><i class="fa fa-pie-chart"></i><span style="padding-left: 5px">{% trans 'menu_report_settings_name' %}</span></div>
+                        <div class="layui-card-body" style="margin: 0 0 0 10px;">
+                            <div class="layui-form-item layui-col-space15">
+                                <div class="layui-inline" style="padding-top:10px;">
+                                    <div id="list2" class="dropdown-check-list" tabindex="100">
+                                        <span>{% trans 'report_setting_label_reports_selection' %}</span><span
+                                      class="required">*</span><br>
+                                        <span class="anchor" style="margin-top:8px;">{% trans 'report_setting_label_choose_reports' %}</span>
+                                        <div class="seach-box" >
+                                              <ul class="items" >
+{#                                                <li class="report-names"><input lay-skin="primary" type="checkbox" id="checkall" name="check_all" lay-filter="allChoose" value="checkall"/><span>{% trans 'report_setting_label_select_all' %}</span></li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="transaction"/>{% trans 'report_setting_label_transaction' %} </li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="mobile_transaction"/>{% trans 'report_setting_label_mobile_transaction' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="total_punches"/>{% trans 'report_setting_label_total_punches' %}</li>#}
+                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="first_last"/>{% trans 'report_setting_label_first_lat' %}</li>
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="schedule_log"/>{% trans 'report_setting_label_schedule_log' %}</li>#}
+                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="total_timecard"/>{% trans 'report_setting_label_total_time_card' %}</li>
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="missed_in_out"/>{% trans 'report_setting_label_missed_in_out' %}</li>#}
+                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="late"/>{% trans 'report_setting_label_late' %}</li>
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="early_leave"/>{% trans 'report_setting_label_early_leave' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="birthday"/>{% trans 'report_setting_label_birthday' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="absent"/>{% trans 'report_setting_label_absent' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="half_day"/>{% trans 'report_setting_label_half_day' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="daily_attendance"/>{% trans 'report_setting_label_daily_attendance' %}</li>#}
+                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="daily_details"/>{% trans 'report_setting_label_daily_detailes' %}</li>
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="daily_summary"/>{% trans 'report_setting_label_daily_summary' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="daily_status"/>{% trans 'report_setting_label_daily_status' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="basic_status"/>{% trans 'report_setting_label_basic_status' %}</li>#}
+{#                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="status_summary"/>{% trans 'report_setting_label_status_summary' %}</li>#}
+                                                <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="work_detailed"/>{% trans 'report_setting_label_work_detailed' %}</li>
+                                                  <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="monthly_att_status"/>{% trans 'report_setting_label_monthly_attendance' %}</li>
+                                                  <li class="report-names" style="padding-left:15px"><input type="checkbox" lay-skin="primary" name="monthly_att_summary"/>{% trans 'report_setting_label_monthly_att_summary' %}</li>
+                                              </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="layui-card-header"><i class="fa fa-envelope"></i><span style="padding-left: 5px"> {% trans 'report_setting_label_mail_settings_for_report_sending' %}</span></div>
+                        <div class="layui-card-body" style="margin: 0 0 0 10px">
+                            <div class="layui-form-item">
+                            <div class="layui-inline" style="padding-top:10px;">
+                                <div class="layui-input-inline layui-hide" style="width: 30px" title="{% trans 'sending_alert' %}">
+                                    <input type="checkbox" name="exception_alert" lay-skin="primary" title="">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_label_emailSendingFrequency' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                    <select name="auto_email_frequency" id="id_auto_email_frequency" class="layui-input" lay-filter="emailFrequency">
+                                      <option value="0">{% trans 'frequency_option_none' %}</option>
+                                      <option value="3">{% trans 'frequency_option_daily' %}</option>
+                                      <option value="2">{% trans 'frequency_option_weekly' %}</option>
+                                      <option value="1">{% trans 'frequency_option_monthly' %}</option>
+                                    </select>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_label_emailSendingDay' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                    <select name="auto_email_day" id="id_auto_email_day" class="layui-input"></select>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'reportSettingPage_label_emailSendingTime' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                    <input type="time" id="email_time" name="email_time" autocomplete="off" placeholder="" lay-verify="required" class="layui-input" value="00:00">
+                                </div>
+                            </div>
+                                <div class="layui-inline"  style="padding-top:10px;">
+                                    <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_label_sendingDay' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                  <select name="mail_sending_day" id="id_mail_sending_day">
+                                    <option value="0">{% trans 'alertSettingPage_sendingDayOpts_currentDay' %}</option>
+                                    <option value="-1">{% trans 'alertSettingPage_sendingDayOpts_nextDay' %}</option>
+                                  </select>
+                                </div>
+                                </div>
+                                 <div class="layui-inline" style="margin: 0 0 0 10px; padding-top:10px;">
+                                     <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'report_setting_last_email_time' %}</span></div>
+                                <div class="layui-input-inline">
+                                    <input readonly="readonly" type="text" id="id_last_email_alert_time" name="last_email_alert_time" autocomplete="off" placeholder="" class="layui-input">
+                                </div>
+                           </div>
+                            </div>
+                            <div class="layui-form-item layui-col-space15">
+                                <div style="display: flex;">
+                                    <div style="margin-right: 5px;"><span>{% trans 'emailSettingPage_label_emailAddress' %}</span><span
+                                      class="required">*</span></div>
+                                    <div> <textarea placeholder="Enter Emails (comma separated)" id="email_val" name="mail" rows="3" cols="50" lay-verify="required"></textarea></div>
+                                <div class="layui-inline" style="margin: 0 0 0 10px; padding-top:10px;">
+                                    <div class="layui-form-mid layui-word-aux">
+                                        <span class="form_label">{% trans 'File extension' %}</span>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <select id="id_File_extension" name="file_extension" lay-verify="required" class="layui-input">
+                                            <option value="xlsx">{% trans 'Excel' %}</option>
+                                            <option value="csv">{% trans 'CSV' %}</option>
+                                        </select>
+                                    </div>
+                               </div>
+                            </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left:45px; margin-top: 12px;">
+                      <button class="layui-btn" lay-submit="" lay-filter="reportSubmit" id="reportSubmit">{% trans 'alertSettingPage_btn_submit' %}</button>
+                    </div>
+                </div>
+            <div class="layui-form-item">
+                <p style="margin-bottom: 2px; font-weight: bold; color: red">Note:</p>
+                <p style="margin-left: 20px;margin-bottom: 2px">{% trans 'report_settings_helptext1' %}</p>
+                <p style="margin-left: 20px;">{% trans 'report_settings_helptext2' %}</p>
+            </div>
+        </div>
+    </form>
+</div>
+<style>
+    #report_settings_id {
+        background: white;
+        padding-bottom: 20px;
+    }
+    .layui-form-item{
+        padding-left: 22px;
+    }
+    span.form_label {
+        color: #333;
+    }
+    .layui-form-checkbox[lay-skin=primary] span {
+        color: #333;
+    }
+    .layui-form-checkbox span {
+        font-size: 12px;
+    }
+    @media screen and (min-width: 1900px) {
+        .layui-form-checkbox span {
+            font-size: 14px;
+        }
+    }
+    .dropdown-check-list {
+      display: inline-block;
+    }
+
+    .dropdown-check-list .anchor {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 85px 5px 10px;
+        border: 1px solid #ccc;
+    }
+
+    .dropdown-check-list .anchor:after {
+        position: absolute;
+        content: "";
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        padding: 5px;
+        right: 10px;
+        top: 20%;
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+    .dropdown-check-list .anchor:active:after {
+        right: 8px;
+        top: 21%;
+    }
+
+    .dropdown-check-list ul.items {
+        padding: 2px;
+        display: none;
+        border: 1px solid #ccc;
+        border-top: 2px;
+    }
+
+    .dropdown-check-list ul.items li {
+      list-style: none;
+    }
+
+    .dropdown-check-list.visible .items {
+      display: block;
+    }
+    .report-names:hover {
+        background-color: #f2f2f2;
+    }
+</style>
+<script>
+   // $('#myTime').prop('disabled',true);
+   layui.use(['form','jquery'], function () {
+        var form = layui.form;
+        var $ = layui.jquery;
+        //Click to select all, check
+        form.on('checkbox(allChoose)', function (data) {
+            var child = $(".items input[type='checkbox']");
+            child.each(function (index, item) {
+                item.checked = data.elem.checked;
+            });
+            form.render('checkbox');
+        });
+    });
+    layui.use(['form', 'layer', 'laydate'], function(){
+        var form = layui.form, layer=layui.layer, laydate=layui.laydate;
+
+        var maxHeight = window.innerHeight - 140;
+        $('.report-setting-form').css({
+            'height': maxHeight,
+            'overflow-y': 'auto',
+            'overflow-x':'hidden'
+        });
+        form.render();
+        function dayChange(f, d){
+            switch(f){
+                case '0':
+                    document.getElementById("email_time").disabled = true;
+                    document.getElementById("id_mail_sending_day").disabled = true;
+                    var options = "";
+                    $("#id_auto_email_day").html(options);
+                    form.render('select');
+                    break;
+
+                case '1':   //Monthly
+                   document.getElementById("email_time").disabled = false;
+                   document.getElementById("id_mail_sending_day").disabled = false;
+                    var nowDate = new Date();
+                    var date = nowDate.getDate();
+                    var options = '';
+                    for(var i=1; i < 32; i ++){
+                        if (i<date){
+                            options += '<option disabled value="'+i+'">'+i+'</option>';
+                            $("#id_auto_email_day").val(d);
+                        }
+                        else{
+                            options += '<option value="'+i+'">'+i+'</option>';
+                            $("#id_auto_email_day").val(date);
+                        }
+                    }
+                    $("#id_auto_email_day").html(options);
+                    form.render('select');
+                    break;
+                case '2':   //Weekly
+                   document.getElementById("email_time").disabled = false;
+                   document.getElementById("id_mail_sending_day").disabled = false;
+                    var options = ''
+                        + '<option value="'+0+'">'+gettext('monday')+'</option>'
+                        + '<option value="'+1+'">'+gettext('tuesday')+'</option>'
+                        + '<option value="'+2+'">'+gettext('wednesday')+'</option>'
+                        + '<option value="'+3+'">'+gettext('thursday')+'</option>'
+                        + '<option value="'+4+'">'+gettext('friday')+'</option>'
+                        + '<option value="'+5+'">'+gettext('saturday')+'</option>'
+                        + '<option value="'+6+'">'+gettext('sunday')+'</option>';
+                    $("#id_auto_email_day").html(options);
+                    $("#id_auto_email_day").val(d);
+                    form.render('select');
+                    break;
+                case '3':   //Daily
+                    document.getElementById("email_time").disabled = false;
+                    document.getElementById("id_mail_sending_day").disabled = false;
+                    var options = '<option value="'+1+'">'+1+'</option>';
+                    $("#id_auto_email_day").html(options);
+                    $("#id_auto_email_day").val(1);
+                    form.render('select');
+                    break;
+                default: break;
+            }
+        }
+        $.ajax({
+            url: "/base/api/systemSetting/?name=report_setting"
+            ,type: "GET"
+            ,dataType: "json"
+            ,success: function(response, xhr){
+                var val = response.data[0];
+                if(val){
+                    var formVal = JSON.parse(val.value);
+                    dayChange(formVal.auto_email_frequency, formVal.auto_email_day);
+                     $('#email_val').val(formVal.mails);
+                    form.val('reportSettingForm', formVal);
+                }else{
+                    dayChange('1', 1);
+                }
+            }
+            ,error: function(xhr, error, e){
+
+            }
+        });
+        form.on('select(emailFrequency)', function(data){
+            dayChange(data.value, 1);
+        });
+        form.on('submit(reportSubmit)', function(data){
+        scheme = location.protocol;
+        ip_address = location.hostname;
+        port = location.port;
+        var final_email_data = [];
+        var checkbox_length = $("div :checkbox:checked").length;
+        if (checkbox_length == 0)
+        {
+        layer.alert("{% trans 'select_atleast_one_report' %}", {title: gettext("layer_title"), icon: 5, btn: gettext("btn_confirm")});
+        return false;
+        }
+        var email_data = [];
+         var emailList = $("#email_val").val().split(',');
+         if (emailList != 0)
+         {
+            for (i = 0; i < emailList.length; i++) {
+                if (email_data.includes(emailList[i])){
+                layer.alert("{% trans 'you_have_enter_duplicate_email_address' %}", {title: gettext("layer_title"), icon: 5, btn: gettext("btn_confirm")});
+                 return false;
+                }
+                else{
+                email_data.push(emailList[i]);
+                }
+                var expr = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var result = expr.test(emailList[i]);
+                if (!result) {
+                     layer.alert("{% trans 'sorry_enter_valid_email_adrress' %}", {title: gettext("layer_title"), icon: 5, btn: gettext("btn_confirm")});
+                     return false;
+                }
+                else {
+                      final_email_data= emailList;
+                      }
+            }
+         }
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                 {#check_all: data.field['check_all']#}
+                transaction: data.field['transaction']
+                ,mobile_transaction: data.field['mobile_transaction']
+                ,total_punches : data.field['total_punches']
+                ,first_last: data.field['first_last']
+                ,schedule_log: data.field['schedule_log']
+                ,total_timecard: data.field['total_timecard']
+                ,missed_in_out: data.field['missed_in_out']
+                ,late: data.field['late']
+                ,early_leave: data.field['early_leave']
+                ,birthday: data.field['birthday']
+                ,absent: data.field['absent']
+                ,half_day: data.field['half_day']
+                ,daily_attendance: data.field['daily_attendance']
+                ,daily_details: data.field['daily_details']
+                ,daily_summary: data.field['daily_summary']
+                ,daily_status: data.field['daily_status']
+                ,basic_status: data.field['basic_status']
+                ,status_summary: data.field['status_summary']
+                ,work_detailed: data.field['work_detailed']
+                ,monthly_att_status: data.field['monthly_att_status']
+                ,monthly_att_summary: data.field['monthly_att_summary']
+                ,mail_time: data.field['mail_time']
+                ,mails: final_email_data
+                ,scheme: scheme
+                ,ip_address: ip_address
+                ,port: port
+                ,auto_mail_trigger: Boolean(data.field['auto_mail_trigger'])
+                ,admin_username: data.field['admin_username']
+                ,admin_password: data.field['admin_password']
+                ,auto_email_frequency: data.field['auto_email_frequency']
+                ,auto_email_day: data.field['auto_email_day']
+                ,email_time: data.field['email_time']
+                ,file_extension: data.field['file_extension']
+                ,mail_sending_day: data.field['mail_sending_day']
+                ,last_email_alert_time: data.field['last_email_alert_time']
+            };
+            var loadIndex = layer.load();
+            $.ajax({
+            url: "/base/api/systemSetting/"
+            ,type: "POST"
+            ,data: {'name': 'report_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+            ,dataType: "json"
+            ,success: function(response, xhr){
+                layer.close(loadIndex);
+                layer.msg(gettext('save_successful'), {icon: 6});
+            }
+            ,error: function(xhr, error, e){
+                layer.close(loadIndex);
+                if(xhr.responseJSON.value){
+                    layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                }else{
+                    layer.msg(gettext('save_failed'), {icon: 5});
+                }
+            }
+            });
+            return false
+        });
+    });
+</script>
+<script>
+    var checkList = document.getElementById('list2');
+checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+  if (checkList.classList.contains('visible'))
+    checkList.classList.remove('visible');
+  else
+    checkList.classList.add('visible');
+}
+</script>

@@ -1,0 +1,187 @@
+{% extends "data_grid.html" %}
+{% load i18n iclock_tags %}
+{% block main_body %}
+    <div class="layui-row layui-col-space15" style="margin-top: 0px; margin-bottom: 0px">
+        <div class="layui-col-md9">
+            <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+            <script type="text/html" id="{{ model_name|safe }}_toolbar">
+                <div class="layui-btn-container grid-toolbar" style="">
+                    <ul class="layui-nav" ></ul>
+                </div>
+            </script>
+        </div>
+        <div class="layui-col-md3">
+            <div id="id_shift_detail_{{ model_name }}" class="layui-card">
+                <div class="layui-card-header">
+                    {% trans 'shiftDetail_grid_detailLabel' %}
+                </div>
+                <div class="layui-card-body">
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block dimension_info %}
+  {{ block.super }}
+  dimension.height = '600px'
+  dimension.width = '1000px'
+{% endblock dimension_info  %}
+
+{% block grid_opt_update %}
+
+  $.extend(true, dimension, {
+    actions: {
+      GeneralActionNew: [1000, 600],
+    }
+  });
+
+  data_grid_opts["rowClick"] = function(obj){
+    var height = $("#{{ model_name }}_fluid div.layui-table-view").height();
+    $("#id_shift_detail_{{ model_name }}").height(height - 15);
+    var data = obj.data;
+    {#$(".layui-card-header").text(data.alias + ' ' + gettext('shift_details'));#}
+    var shiftDetailsContainer = '#id_shift_detail_{{ model_name }}';
+    $(shiftDetailsContainer+" .layui-card-header").text(data.alias);
+    show_shift_detail(data);
+    var week=[
+        "{% trans 'weekday_option_sunday' %}",
+        "{% trans 'weekday_option_monday' %}",
+        "{% trans 'weekday_option_tuesday' %}",
+        "{% trans 'weekday_option_wednesday' %}",
+        "{% trans 'weekday_option_thursday' %}",
+        "{% trans 'weekday_option_friday' %}",
+        "{% trans 'weekday_option_saturday' %}",
+    ];
+
+    function getDayLabel(index, weekend){
+        if (index in weekend){
+          return (index + 1) + '<sup style="color:greenyellow;">'+ ' week off' +'</sup>';
+        }
+        return (index + 1)
+    }
+
+    function getWeekLabel(index, weekend){
+        if (index in weekend){
+          return week[index % 7] + '<sup style="color:greenyellow;">'+ ' week off' +'</sup>';
+        }
+        return week[index % 7];
+    }
+
+    function getTZDateAlt(index, sdate){
+      if(sdate == undefined)
+          return "";
+      var tmp = moment(sdate).add(index, 'days');
+      return tmp.format('YYYY-MM-DD');
+    }
+
+    function show_during_times(t1,t2, cross_day){
+      if(cross_day > 0){
+        return getDuring_time_Str(t1)+"-"+getDuring_time_Str(t2)+"<sup style='color:#7ac143;'>+"+cross_day+"</sup>";
+      }
+      return getDuring_time_Str(t1)+"-"+getDuring_time_Str(t2);
+    }
+    function getDuring_time_Str(t){
+        var sec=1/24/60/60;
+        t_hour=parseInt((t+sec)*24*60/60)
+        t_minute=Math.round((t+sec)*24*60%60)
+        return getTimeStr(t_hour)+":"+getTimeStr(t_minute);
+    }
+
+    function getTimeStr(t){
+        if(t < 10){
+            return "0"+t;
+        }
+        else{
+            return t;
+        }
+    }
+
+    function createTZTable(tzData, dayLabelFun, dayCount, sDate){
+        var weekend = tzData.weekend_total
+        var tzData = tzData.data;
+        var tz, i, dayi=0, curDay=-1, timei=0, temp=[];
+        var html='<div id="tz" style="display:block"><div id="id_timezone_header"></div><table class="timezone-table">';
+        for(i=0;i<tzData.length || temp.length>0;){
+            if(temp.length==0){
+                tz=tzData[i];
+            }else{
+                tz=temp[0];
+                temp=[];
+            }
+            dayi= Math.floor(tz.start_time);
+            while(curDay<dayi){ //new a day row
+                curDay+=1;
+                if(curDay<dayi)
+                    html+='</td></tr>';
+                html+='<tr>'
+                if(sDate==undefined)
+                    html+='<td class="timezones-week">'+dayLabelFun(curDay,weekend)+'</td><td class="timezones-container">';
+                else
+                    html+='<td class="timezones-week">'+dayLabelFun(curDay,sDate)+'</td><td class="timezones-container" >';
+                timei=0;
+            }
+            var dayi2=Math.floor(tz.end_time)
+            var time1=Math.round((tz.start_time-Math.floor(tz.start_time))*10000);
+            var time2=Math.round((tz.end_time-Math.floor(tz.end_time))*10000);
+            if(dayi2>dayi){
+                var obj={}
+                for (var f in tz) {
+                    obj[f]=tz[f];
+                }
+                obj.start_time=dayi+1;
+                temp=[obj];
+                time2=10000;
+            }
+            html+='<div alt0="'+tz['start_time']+'" alt1="'+tz['end_time']+'" alt2="'+getTZDateAlt(curDay,sDate)+'" alt4="'+tz['id']+'" style="text-align: center; width:100%;'+
+                    (tz['Color']==undefined?' ':' background-color: #'+(tz['Color']).toString(16)+' ')+
+                '" class="tzbar"><span title="'+tz['alias']+'" alt3="'+tz['alias']+'" style="color:red;font-size:12px;vertical-align:top;">'+show_during_times(tz.start_time-Math.floor(tz.start_time),tz.end_time-Math.floor(tz.end_time), tz.cross_day)+'</span></div>'
+            timei=time2;
+            if(temp.length==0)
+                i+=1;
+        }
+        html+='</td></tr>'
+        curDay+=1;
+        if(dayCount!=undefined)
+          while(curDay<dayCount){
+              if(sDate==undefined)
+                  html+='<tr><td class="timezones-week">'+dayLabelFun(curDay,weekend)+'</td><td class="timezones-container"><div style="width:100%;"></div></td></tr>'
+              else
+                  html+='<tr><td class="timezones-week">'+dayLabelFun(curDay,sDate)+'</td><td class="timezones-container"><div style="width:100%;"></div></td></tr>'
+              curDay+=1;
+          }
+        html+='<tr style="background: #ccc;display:none;"><td colspan="2" style="height:2px;"></td></tr></table></div>'
+        return html
+    }
+
+    function show_shift_detail(data){
+        var shiftId = data.id;
+        var shift_cycle = parseInt(data.shift_cycle);
+        var shiftDetailsContainer = '#id_shift_detail_{{ model_name }}';
+        $.ajax({
+            url: "/att/showShiftDetail/",
+            type: "GET",
+            data: {shift: shiftId, show_type: 'shift'},
+            dataType: "json",
+            success: function(returnData){
+                var unit = parseInt(returnData['shift'][3]);
+                if (unit == 0){ //day
+                    var days = shift_cycle * 1;
+                    $(shiftDetailsContainer + " .layui-card-body").html(createTZTable(returnData, getDayLabel, days));
+                }
+                else if (unit == 1){ //week
+                    var days = shift_cycle * 7;
+                    $(shiftDetailsContainer + " .layui-card-body").html(createTZTable(returnData, getWeekLabel, days));
+                }
+                else{  //month
+                    var days = shift_cycle * 31;
+                    $(shiftDetailsContainer + " .layui-card-body").html(createTZTable(returnData, getDayLabel, days));
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus+errorThrown);
+            }
+        });
+    }
+  }
+{% endblock %}

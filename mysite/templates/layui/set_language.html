@@ -1,0 +1,16 @@
+{% load i18n %}
+<div>
+  <form id="id_lngForm" action="" method="post">
+    {% csrf_token %}
+    <div id='id_language_div'  style="width:200px;margin:auto;padding:20px 0 0 0;">
+      <label for="id_language"  style="width: 150px;">{% trans 'userProfile_itemLabel_language' %}</label>
+      <div class="layui-input-inline">
+        <select id="id_language" name="language" size='5' style='width:200px;height:100px'>
+          {% for lng in language_list %}
+            <option value="{{ lng.0 }}" {% if lng.0 == language %}selected{% endif %}>{{ lng.1 }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </form>
+</div>

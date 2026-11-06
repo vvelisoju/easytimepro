@@ -1,0 +1,40 @@
+{% extends 'payroll/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    $("#{{ model_name }}_search_employee").css("display","none");
+    var cols = [[
+        {field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+        ,{field:'dept_name', title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'total_emp', title: "{% trans 'report_column_employeeCount' %}"}
+        ,{field:'basic_salary', title: "{% trans 'monthlySalary_field_basic_salary_summary_report' %}"}
+{#        ,{field:'amount_payable', title: "{% trans 'report_column_amount_payable' %}"}#}
+        ,{field:'ot1', title: "{% trans 'monthlySalary_field_ot1_increase_loan_amount_summary_report' %}"}
+        ,{field:'ot2', title: "{% trans 'monthlySalary_field_ot2_deduction_summary_report' %}"}
+        ,{field:'ot3', title: "{% trans 'monthlySalary_field_ot3_summary_report' %}"}
+        ,{field:'normal_ot', title: "{% trans 'monthlySalary_field_normal_ot_bonus_summary_report' %}"}
+        ,{field:'weekend_ot', title: "{% trans 'monthlySalary_field_weekend_ot_summary_report' %}"}
+        ,{field:'holiday_ot', title: "{% trans 'monthlySalary_field_total_salary_holiday_ot_summary_report' %}"}
+        ,{field:'late_time', title: "{% trans 'monthlySalary_field_late_time_summary_report' %}"}
+        ,{field:'early_leave', title: "{% trans 'monthlySalary_field_early_leave_summary_report' %}"}
+        ,{field:'absent_time', title: "{% trans 'monthlySalary_field_absent_time_summary_report' %}"}
+        ,{field:'increase', title: "{% trans 'monthlySalary_field_total_salary_increase_summary_report' %}"}
+        ,{field:'extra_increase', title: "{% trans 'monthlySalary_field__extra_increase_summary_report' %}"}
+        ,{field:'loan_increase', title: "{% trans 'monthlySalary_field_loan_increase_summary_report' %}"}
+        ,{field:'advance_increase', title: "{% trans 'monthlySalary_field_advance_increase_summary_report' %}"}
+        ,{field:'reimbursement', title: "{% trans 'monthlySalary_field_reimbursement_summary_report' %}"}
+        ,{field:'extra_deduction', title: "{% trans 'monthlySalary_field_extra_deduction_summary_report' %}"}
+        ,{field:'advance_deduction', title: "{% trans 'monthlySalary_field_advance_deduction_summary_report' %}"}
+        ,{field:'loan_deduction', title: "{% trans 'monthlySalary_field_extra_increase_bonus' %}"}
+        ,{field:'total_deduction', title: "{% trans 'monthlySalary_field_total_deduction_summary_report' %}"}
+        ,{field:'total_loan_amount', title: "{% trans 'monthlySalary_field_loan_amount' %}"}
+        ,{field:'refund_loan_amount', title: "{% trans 'monthlySalary_field_total_refund_paid' %}"}
+        ,{field:'unrefund_loan_amount', title: "{% trans 'monthlySalary_field_unrefund_loan_amount_summary_report' %}"}
+        ,{field:'total_increase', title: "{% trans 'monthlySalary_field_total_increases_summary_report' %}"}
+        ,{field:'total_salary', title: "{% trans 'monthlySalary_field_total_salary_summary_report' %}"}
+    ]];
+
+    $.extend(opts, {
+        cols: cols
+        ,url: "/payroll/api/report/deptmonthlysalarydetail_report/"
+    });
+{% endblock %}

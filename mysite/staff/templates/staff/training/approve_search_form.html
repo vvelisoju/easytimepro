@@ -1,0 +1,12 @@
+{% extends 'staff/includes/approval_search_form.html' %}
+{% load i18n %}
+{% block searchFormExtra %}
+    <div class="layui-inline">
+        <label for="" class="layui-form-label">{% trans 'staff_training_trainingCategory' %}</label>
+        <div class="layui-input-inline">
+            <select name="Training" id="{{ model_name }}ApprovalCategory">
+                <option value="">{% trans '----------' %}</option>
+            </select>
+        </div>
+    </div>
+{% endblock %}

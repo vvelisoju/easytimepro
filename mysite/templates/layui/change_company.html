@@ -1,0 +1,16 @@
+{% load i18n %}
+<div>
+  <form id="id_comForm"  action="" method="post">
+    {% csrf_token %}
+    <div id='id_company_div'  style="width:300px;margin:auto;padding:20px 0 0 10px;">
+      <label for="id_company"  style="width: 150px;">{% trans 'userProfile_itemLabel_company' %}</label>
+      <div >
+        <select id="id_company" name="company" size=10 style='width:280px;height:250px'>
+          {% for com in company_ls %}
+            <option value="{{ com.0 }}" {% if com.0 == current_company_id %}selected{% endif %}>{{ com.1 }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </form>
+</div>

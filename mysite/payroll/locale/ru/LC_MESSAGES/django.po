@@ -1,0 +1,496 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "menu_payroll"
+msgstr "Оплата"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "Профиль сотрудника"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "Профиль сотрудника"
+
+msgid "menu_group_payroll_formula"
+msgstr "Формула"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "Формула вычитания"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "Формула исключения"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "Формула увеличения"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "Формула отпусков"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "Формула сверхурочных"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "Доп. средства"
+
+msgid "menu_payroll_extraincrease"
+msgstr "Доп. увеличение"
+
+msgid "menu_payroll_extradeduction"
+msgstr "Доп. вычитание"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "Структура оплаты"
+
+msgid "menu_payroll_salarystructure"
+msgstr "Структура оплаты"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "Займ"
+
+msgid "menu_payroll_empLoan"
+msgstr "Займ"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "Аванс зарплаты"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "Аванс зарплаты"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "Возмещение"
+
+msgid "menu_payroll_reimbursement"
+msgstr "Возмещение"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Расчет"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "Расчет зарплаты"
+
+msgid "menu_group_payroll_report"
+msgstr "Отчет"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "Структура зарплаты"
+
+msgid "menu_payroll_increase_report"
+msgstr "Пункты увеличения"
+
+msgid "menu_payroll_deduction_report"
+msgstr "Пункты вычитания"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "Детали зарплаты"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "Параметры посещаемости"
+
+msgid "paroll_mode_monthly"
+msgstr "Ежемесячно"
+
+msgid "paroll_type_cash"
+msgstr "Наличные"
+
+msgid "paroll_type_check"
+msgstr "Чек"
+
+msgid "paroll_type_bank_transfer"
+msgstr "Банковский перевод"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "Профиль сотрудника"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "ИНН"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "Режим оплаты"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "Тип оплаты"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "Название банка"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "Счет банка"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "Персональный ID"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "Имя"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "Фамилия"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "ID агента"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "Счет агента"
+
+msgid "payroll_model_deductionFormula"
+msgstr "Вычитания"
+
+msgid "deductionFormula_field_name"
+msgstr "Название"
+
+msgid "deductionFormula_field_formula"
+msgstr "Формула"
+
+msgid "deductionFormula_field_remark"
+msgstr "Примечания"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "Исключения"
+
+msgid "exceptionFormula_field_name"
+msgstr "Название"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "Тип исключения"
+
+msgid "exceptionFormula_field_formula"
+msgstr "Формула"
+
+msgid "exceptionFormula_field_remark"
+msgstr "Примечания"
+
+msgid "payroll_model_increasementFormula"
+msgstr "Увеличения"
+
+msgid "increasementFormula_field_name"
+msgstr "Название"
+
+msgid "increasementFormula_field_formula"
+msgstr "Формула"
+
+msgid "increasementFormula_field_remark"
+msgstr "Примечания"
+
+msgid "payroll_model_leaveFormula"
+msgstr "Отпуска"
+
+msgid "leaveFormula_field_name"
+msgstr "Название"
+
+msgid "leaveFormula_field_category"
+msgstr "Тип отпуска"
+
+msgid "leaveFormula_field_formula"
+msgstr "Формула"
+
+msgid "leaveFormula_field_remark"
+msgstr "Примечания"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "Сверхурочные"
+
+msgid "overtimeFormula_field_name"
+msgstr "Название"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "Уровень сверхурочных"
+
+msgid "overtimeFormula_field_formula"
+msgstr "Формула"
+
+msgid "overtimeFormula_field_remark"
+msgstr "Примечания"
+
+msgid "payroll_model_extraIncrease"
+msgstr "Доп. увеличение"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "Добавить"
+
+msgid "extraIncrease_field_employee"
+msgstr "Сотрудник"
+
+msgid "extraIncrease_field_amount"
+msgstr "Сумма"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "Время выдачи"
+
+msgid "extraIncrease_field_remark"
+msgstr "Примечания"
+
+msgid "payroll_model_extraDeduction"
+msgstr "Доп. вычитание"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "Добавить"
+
+msgid "extraDeduction_field_employee"
+msgstr "Сотрудник"
+
+msgid "extraDeduction_field_amount"
+msgstr "Сумма"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "Время выдачи"
+
+msgid "extraDeduction_field_remark"
+msgstr "Примечания"
+
+msgid "payroll_model_salarystructure"
+msgstr "Структура оплаты"
+
+msgid "salaryStructure_field_amount"
+msgstr "Базовый оклад"
+
+msgid "salaryStructure_field_formula"
+msgstr "Формула зарплаты"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "Действительная дата"
+
+msgid "salaryStructure_field_remark"
+msgstr "Примечание"
+
+msgid "salaryStructure_field_formulas"
+msgstr "Формулы"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "Аванс зарплаты"
+
+msgid "salaryAdvance_field_amount"
+msgstr "Сумма"
+
+msgid "salaryAdvance_field_time"
+msgstr "Время выдачи"
+
+msgid "salaryAdvance_field_remark"
+msgstr "Примечание"
+
+msgid "payroll_model_Reimbursement"
+msgstr "Возмещение"
+
+msgid "Reimbursement_field_amount"
+msgstr "Сумма"
+
+msgid "Reimbursement_field_time"
+msgstr "Время возмещения"
+
+msgid "Reimbursement_field_file"
+msgstr "Квитанция возмещения"
+
+msgid "Reimbursement_field_remark"
+msgstr "Примечание"
+
+msgid "payroll_model_empLoan"
+msgstr "Займ"
+
+msgid "empLoan_field_employee"
+msgstr "ID сотрудника"
+
+msgid "empLoan_field_loanAmount"
+msgstr "Сумма займа"
+
+msgid "empLoan_field_loanTime"
+msgstr "Время займа"
+
+msgid "empLoan_field_refundCycle"
+msgstr "Цикл погашения"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "Сумма погашения в период"
+
+msgid "empLoan_field_clean_time"
+msgstr "Время погашения"
+
+msgid "empLoan_field_remark"
+msgstr "Примечание"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "Добавить"
+
+msgid "payroll_action_addRmb"
+msgstr "Добавить"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "Добавить"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "Добавить"
+
+msgid "reimbursement_file"
+msgstr "Квитанция возмещения"
+
+msgid "report_column_overtimeFormula1"
+msgstr "Сверхурочные 1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "Сверхурочные 2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "Сверхурочные 3"
+
+msgid "report_column_increaseFormula"
+msgstr "Формула увеличения"
+
+msgid "report_column_deductionFormula"
+msgstr "Формула вычитания"
+
+msgid "report_column_lateFormula"
+msgstr "Формула опозданий"
+
+msgid "report_column_absentFormula"
+msgstr "Формула отсутствий"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "Формула ранних уходов"
+
+msgid "payroll_model_monthlysalary"
+msgstr "Отчет о месячной зарплате"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "Базовый оклад"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "Действительная дата"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "Дата расчета"
+
+msgid "monthlySalary_field_ot1"
+msgstr "Сверхурочные 1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "Сверхурочные 2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "Сверхурочные 3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "Поздний приход"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "Ранний уход"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "Отсутствие"
+
+msgid "monthlySalary_field_increase"
+msgstr "Увеличение"
+
+msgid "monthlySalary_field_deduction"
+msgstr "Вычитание"
+
+msgid "monthlySalary_field_leave"
+msgstr "Отпуск"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "Доп. увеличение"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "Доп. вычитание"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "Сумма займа всего"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "Сумма возмещенного займа"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "Сумма невозмещенного займа"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "Вычитание займа"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "Увеличение займа"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "Предварительное увеличение"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "Предварительное вычитание"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "Возмещение"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "Увеличение всего"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "Вычитание всего"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "Зарплата всего"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "Базовый оклад не может быть меньше нуля!"
+
+msgid "{0}_emp_{1}_has_effective_salary_structure"
+msgstr "{0}:Сотрудник {1} имеет эффективную структуру зарплаты."
+
+msgid "receipt_file_format_constraints"
+msgstr "Поддерживаются только файлы изображения jpg/jpeg/png/bmp."
+
+msgid "1_period"
+msgstr "1 Период"
+
+msgid "2_periods"
+msgstr "2 Периода"
+
+msgid "3_periods"
+msgstr "3 Периода"
+
+msgid "4_periods"
+msgstr "4 Периода"
+
+msgid "5_periods"
+msgstr "5 Периодов"
+
+msgid "6_periods"
+msgstr "6 Периодов"
+
+msgid "7_periods"
+msgstr "7 Периодов"
+
+msgid "8_periods"
+msgstr "8 Периодов"
+
+msgid "9_periods"
+msgstr "9 Периодов"
+
+msgid "10_periods"
+msgstr "10 Периодов"
+
+msgid "11_periods"
+msgstr "11 Периодов"
+
+msgid "12_periods"
+msgstr "12 Периодов"
+
+msgid "deductionformula_addform_note"
+msgstr "Примечание: это доступно только для вычитания, которое должно быть выплачено ежемесячно"
+
+msgid "increasementformula_addform_note"
+msgstr "Примечание: это доступно только для увеличения, которое должно быть выплачено ежемесячно"
+
+msgid "menu_payroll_setting"
+msgstr "Настройки оплаты"
+
+msgid "payroll_attParamUnit"
+msgstr "Единица параметров посещаемости"

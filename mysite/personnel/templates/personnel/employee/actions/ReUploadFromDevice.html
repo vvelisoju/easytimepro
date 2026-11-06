@@ -1,0 +1,30 @@
+{% load i18n static common %}
+<div style="padding: 10px;height: 160px;width: 360px">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-form-item">
+          {% layui_inline form.form.dev %}
+          {% layui_inline form.form.sn %}
+        </div>
+    </form>
+</div>
+<script>
+  layui.use(['form', 'jquery'], function () {
+    var form = layui.form;
+    var listenChange = function(val){
+        switch (val) {
+          case '0':
+              document.getElementById("id_sn").disabled=false;
+              break;
+          case '1':
+              document.getElementById("id_sn").disabled=true;
+              break;
+          default:
+              break;
+      }
+    };
+    form.on('select(dev)', function(data){
+      listenChange(data.value)
+    });
+  });
+</script>

@@ -1,0 +1,430 @@
+{% load i18n %}
+{% load countries %}
+{% get_countries as countries %}
+<div class="company-setting-form">
+  <form action="" id="id_companySettingForm" class="layui-form" lay-filter="companySettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"><i class="fa fa-file-archive-o"></i><span
+                  style="padding-left: 5px">{% trans 'companySettingPage_label_logoReview' %}</span></div>
+          <div class="layui-card-body" style="padding: 10px 0 0 60px">
+            <div class="layui-upload" style="width: 200px">
+              <div class="layui-upload-list">
+                <img class="layui-upload-img" id="idLogoPanel">
+                <input type="hidden" name="logo_img" id="idLogoImg">
+                <p style="text-align: center;color: darkorange">{% trans 'companySettingPage_size_200x75' %}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"><i class="fa fa-list-alt"></i><span
+                  style="padding-left: 5px">{% trans 'companySettingPage_label_companySetting' %}</span></div>
+          <div class="layui-card-body" style="padding-top:10px;height: 110px;">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_log_position" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_companyLogo' %}</label>
+                <div class="layui-input-inline">
+                  <input id="idLogoUpload" type="text" class="layui-input" readonly="readonly"
+                         placeholder="{% trans 'companySettingPage_placeholder_upload' %}"/>
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label for="id_log_position" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_logoDisplay' %}</label>
+                <div class="layui-input-inline">
+                  <select name="logo_pos" id="logo_display" class="layui-input" lay-filter="logo_display">
+                    <option value="0">{% trans 'companySettingPage_posOption_notDisplay' %}</option>
+                    <option value="1">{% trans 'companySettingPage_posOption_left' %}</option>
+                    <option value="2">{% trans 'companySettingPage_posOption_center' %}</option>
+                    <option value="3">{% trans 'companySettingPage_posOption_right' %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_company_name" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_companyName' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_company_name" name="company_name" autocomplete="off" placeholder=""
+                         class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label for="id_company_name" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_companyNameDisplay' %}</label>
+                <div class="layui-input-inline">
+                  <select name="name_pos" id="company_name_display" class="layui-input"
+                          lay-filter="company_name_display">
+                    <option value="0">{% trans 'companySettingPage_posOption_notDisplay' %}</option>
+                    <option value="1">{% trans 'companySettingPage_posOption_left' %}</option>
+                    <option value="2">{% trans 'companySettingPage_posOption_center' %}</option>
+                    <option value="3">{% trans 'companySettingPage_posOption_right' %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"><i class="fa fa-key"></i><span
+                  style="padding-left: 5px">{% trans 'companySettingPage_label_companyInformation' %}</span></div>
+          <div class="layui-card-body" style="padding: 10px;height: 170px;">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_company_phone" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_phone' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_company_phone" name="company_phone" autocomplete="off" placeholder=""
+                          {% if  company_cnr %}
+                         value="{{ company_phone }}"
+                          {% endif %}
+                         class="layui-input">
+                </div>
+              </div>
+            {% if company_cnr %}
+                  <div class="layui-inline">
+                    <label for="id_company_cnr" class="layui-form-label"
+                           style="width: 150px">{% trans 'companySettingPage_label_registration_id' %}</label>
+                    <div class="layui-input-inline">
+                      <input type="text" id="id_company_cnr" name="company_cnr" autocomplete="off" placeholder=""
+                             class="layui-input" value="{{ company_cnr }}">
+                    </div>
+                  </div>
+              {% endif %}
+              <div class="layui-inline">
+                <label for="id_company_country" class="layui-form-label" style="width: 150px">{% trans 'companySettingPage_label_country' %}</label>
+                <div class="layui-input-inline" id="id_country_code">
+                    <select name="company_country" id="id_company_country">
+                        <option value="">{{ company_country }}</option>
+                        {% for country in countries %}
+                        <option value="{{ country.code }}">{{ country.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="layui-inline">
+                <label for="id_company_province" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_province' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_company_province" name="company_province" autocomplete="off" placeholder=""
+                         class="layui-input">
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_company_city" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_City' %}</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_company_city" name="company_city" autocomplete="off" placeholder=""
+                         class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label for="id_company_address" class="layui-form-label"
+                       style="width: 150px">{% trans 'companySettingPage_label_Address' %}</label>
+                <div class="layui-inline">
+                  <input readonly="readonly" type="text" id="id_company_address" name="company_address" autocomplete="off"
+                         style="width: 550px; max-width: 600px" placeholder="" class="layui-input">
+                </div>
+                <div class="layui-inline">
+                  <i class="fa fa-map-marker company_map btn btn-primary comp-arabic-lang-map" aria-hidden="true"
+                     style="font-size: 1em;cursor:pointer;border-radius: 3px;">{% trans 'companySettingPage_label_Location' %}</i>
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_latitude" class="layui-form-label" style="width: 150px">{% trans 'companySettingPage_label_latitude' %}</label>
+                <div class="layui-input-inline">
+                  <input readonly="readonly" type="text" id="id_latitude" name="company_latitude" autocomplete="off" placeholder=""
+                         class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label for="id_longitude" class="layui-form-label" style="width: 150px">{% trans 'companySettingPage_label_longitude' %}</label>
+                <div class="layui-input-inline">
+                  <input readonly="readonly" type="text" id="id_longitude" name="company_longitude" autocomplete="off" placeholder=""
+                         class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline layui-hide">
+                <label for="id_country_name" class="layui-form-label" style="width: 150px">{% trans 'companySettingPage_label_country_name' %}</label>
+                <div class="layui-input-inline">
+                  <input readonly="readonly" type="text" id="id_country_name" name="country_name" autocomplete="off" placeholder=""
+                         class="layui-input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"><i class="fa fa-envelope"></i><span
+                  style="padding-left: 5px">{% trans 'companySettingPage_label_signatureSetting' %}</span></div>
+          <div class="layui-inline">
+            <label for="email_signature" class="layui-form-label"
+                   style="width: 150px">{% trans 'companySettingPage_label_companyNameRegards' %}</label>
+            <div class="layui-input-inline">
+              <input type="text" id="email_signature" name="email_signature" autocomplete="off" placeholder=""
+                     class="layui-input">
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label for="email_signature1" class="layui-form-label"
+                   style="width: 150px">{% trans 'companySettingPage_label_companyNameFiled1' %}</label>
+            <div class="layui-input-inline">
+              <input type="text" id="email_signature1" name="email_signature1" autocomplete="off" placeholder=""
+                     class="layui-input">
+            </div>
+          </div>
+          <div class="layui-inline">
+            <label for="email_signature2" class="layui-form-label"
+                   style="width: 150px">{% trans 'companySettingPage_label_companyNameFiled2' %}</label>
+            <div class="layui-input-inline">
+              <input type="text" name="email_signature2" autocomplete="off" placeholder=""
+                     class="layui-input">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" id="companySubmit" lay-submit=""
+                  lay-filter="companySubmit">{% trans 'companySettingPage_btn_submit' %}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+    $("#id_company_name").on("keypress", function(e) {
+        if (e.which === 32 && !this.value.length)
+            e.preventDefault();
+    });
+    $(document).ready(function(){
+        $("#companySubmit").click(function(){
+            companyname= document.getElementById("id_company_name").value;
+            if(companyname=="" || companyname.charAt(0) == ' '){
+                document.getElementById("company_name_display").selectedIndex = 0;
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("#companySubmit").click(function(){
+            logo_index=document.getElementById("logo_display").selectedIndex;
+            companyname_index=document.getElementById("company_name_display").selectedIndex;
+            if(logo_index!=0 && companyname_index!=0)
+            {
+                if(logo_index == companyname_index)
+                {
+                    layer.msg(gettext('action_settings_position_failed'), {icon: 5});
+                    return false
+                }
+            }
+
+        });
+    });
+</script>
+<!--<script>-->
+<!--    $(document).ajaxComplete(function(){-->
+<!--    var Logo_display = $("[name='logo_pos']").val();-->
+<!--    var display_company_name = $("[name='name_pos']").val();-->
+<!--    if (Logo_display == 0) {-->
+<!--        $("#idLogoUpload").prop('disabled', true);-->
+<!--    } else {-->
+<!--        $("#idLogoUpload").prop('disabled', false);-->
+<!--    }-->
+
+<!--    if (display_company_name == 0) {-->
+<!--        $("#id_company_name").prop('disabled', true);-->
+<!--    } else {-->
+<!--        $("#id_company_name").prop('disabled', false);-->
+<!--    }-->
+<!--    });-->
+
+<!--</script>-->
+<script>
+  $(function () {
+    // -60(nav header) - 30(tab title bar) - 3(progress bar) - extra space
+    var maxHeight = window.innerHeight - 93 - Math.floor(Math.random() * -5 + 5),
+        edit_form = $("#id_companySettingForm");
+    if (edit_form.closest('.layui-layer').length === 0) {
+      edit_form.closest('.layui-tab-item').css({
+        'height': maxHeight,
+        'overflow-y': 'auto',
+          'overflow-x':'hidden'
+      });
+    }
+  });
+  $('.company_map').click(function () {
+    company_address = document.getElementById('id_company_address').value;
+    var url = '/base/get_company_location/?company_address=' + company_address;
+    layer.open({
+      title: 'Map',
+      type: 2,
+      area: ['600px', '630px'],
+      fixed: false,
+      maxmin: false,
+      btn: ['Confirm', 'Cancel'],
+      content: url,
+      yes: function (index, layero) {
+        layer.close(index);
+        let location = JSON.parse(localStorage.getItem('addressLocation'));
+        $('#id_company_address').val(location.company_address);
+        $('#id_longitude').val(location.company_address_longitude);
+        $('#id_latitude').val(location.company_address_latitude);
+        $('#id_company_country').val(location.company_address_country_shortname);
+        $("#id_country_code > div > div > input").val(location.company_address_country);
+        $('#id_company_province').val(location.company_address_state);
+        $('#id_company_city').val(location.company_address_city);
+        $('#id_country_name').val(location.company_address_country);
+        localStorage.removeItem("addressLocation");
+      }
+    });
+
+  });
+
+  layui.use(['form', 'upload'], function () {
+    var form = layui.form, $ = layui.jquery, upload = layui.upload;
+    form.render();
+    upload.render({
+      elem: '#idLogoUpload'
+      , choose: function (obj) {
+        //not support ie8
+        obj.preview(function (index, file, result) {
+          var img = new Image();
+          img.src = result;
+          img.onload = function () {
+            if (img.width === 200 && img.height === 75) {
+              $('#idLogoPanel').attr('src', result); //base64
+              $('#idLogoImg').val(result)
+            } else {
+              layer.msg(gettext('action_notification_failed'), {icon: 5});
+              return false;
+            }
+          };
+        });
+      }
+      , auto: false
+    });
+
+    form.on('select(logo_display)', function (data) {
+      var selected_value = data.value;
+      if (selected_value == 0) {
+        $("#idLogoUpload").prop('disabled', true);
+    } else {
+        $("#idLogoUpload").prop('disabled', false);
+    }
+      $("#company_name_display option").each(function (i) {
+        var each_val = $(this).val();
+        if (each_val == selected_value) {
+          $(this).prop('disabled', true);
+        } else {
+          $(this).prop('disabled', false);
+        }
+      });
+      if (selected_value == '0') {
+        $("#company_name_display option").each(function (i) {
+          $(this).prop('disabled', false);
+        });
+      }
+      form.render('select');
+    });
+
+    form.on('select(company_name_display)', function (data) {
+      var selected_value = data.value;
+      if (selected_value == 0) {
+        $("#id_company_name").prop('disabled', true);
+    } else {
+        $("#id_company_name").prop('disabled', false);
+    }
+      $("#logo_display option").each(function (i) {
+        var each_val = $(this).val();
+        if (each_val == selected_value) {
+          $(this).prop('disabled', true);
+        } else {
+          $(this).prop('disabled', false);
+        }
+      });
+      if (selected_value == '0') {
+        $("#logo_display option").each(function (i) {
+          $(this).prop('disabled', false);
+        });
+      }
+      form.render('select');
+    });
+
+    form.on('submit(companySubmit)', function (data) {
+      var csrf = data.field['csrfmiddlewaretoken'];
+      var value = {
+        company_name: data.field['company_name']
+        , name_pos: data.field['name_pos']
+        , logo_pos: data.field['logo_pos']
+        , logo_img: data.field['logo_img']
+        , company_phone: data.field['company_phone']
+        , company_cnr: data.field['company_cnr']
+        , company_address: data.field['company_address']
+        , company_latitude: data.field['company_latitude']
+        , company_longitude: data.field['company_longitude']
+        , company_country: data.field['company_country']
+        , company_province: data.field['company_province']
+        , company_city: data.field['company_city']
+        , country_name: data.field['country_name']
+        , email_signature: data.field['email_signature']
+        , email_signature1: data.field['email_signature1']
+        , email_signature2: data.field['email_signature2']
+      };
+      var loadIndex = layer.load();
+      $.ajax({
+        url: "/base/api/systemSetting/"
+        , type: "POST"
+        , data: {'name': 'company_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.close(loadIndex);
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+        }
+        , error: function (xhr, error, e) {
+          layer.close(loadIndex);
+          if (xhr.responseJSON.value) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('action_notification_failed'), {icon: 5});
+          }
+        }
+      });
+      return false
+    });
+    $.ajax({
+      url: "/base/api/systemSetting/?name=company_setting"
+      , type: "GET"
+      , dataType: "json"
+      , success: function (response, xhr) {
+        var val = response.data[0];
+        if (val) {
+          var val_dict = JSON.parse(val.value);
+          form.val('companySettingForm', val_dict);
+          $('#idLogoPanel').attr('src', val_dict['logo_img']);
+          $('#idLogoImg').attr('src', val_dict['logo_img']);
+        }
+      }
+      , error: function (xhr, error, e) {
+
+      }
+    });
+  })
+
+</script>

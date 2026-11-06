@@ -1,0 +1,616 @@
+{% extends "cloud/base_login.html" %}
+{% load i18n %}
+{% block main %}
+    <div class="zk-login-col">
+        <div class="col-md-9 col-md-offset-3">
+            {% block logo_box %}
+                {{ block.super }}
+            {% endblock %}
+            <div class="mb-3 card zk-login-card text-white login-page-load">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">{% trans 'Login_Signup_To_Your_Account' %}</div>
+                </div>
+                <div class="card-body p-0">
+                    <form class="zk-login-form" onsubmit="return false;" id="cloud-1">
+                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-envelope"
+                                                                               aria-hidden="true"></i></span>
+                            <input type="text" id="email" class="form-control text-center input-lg"
+                                   name="email" placeholder="Enter Email ID or Employee Id"
+                                   required/>
+                        </div>
+                        <p class="text-center text-capitalize text-danger" id="msg"></p>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" onclick="check_user_type()"
+                                        class="btn btn-lg btn-block btn-primary zk-btn">{% trans "btn_user_login" %}
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="text-right pt-2"><a href="javascript:void(0)" class="text-dark text-underline"
+                                                              onclick="generate_pwd_email_div()">{% trans "forgot_password" %}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="mb-3 card zk-login-card  text-white create-new-user-page-load" style="display:none;">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">{% trans "sign_up_for_your_acnt" %}</div>
+                </div>
+                <div class="card-body p-0">
+                    <form action="" method="post" class="zk-login-form" onsubmit="return false;" id="cloud-2">
+                        {% csrf_token %}
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                            <input type="email" id="create-email" class="form-control text-center input-lg"
+                                   value="" name="email" readonly/>
+                        </div>
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </span>
+                            <input type="number" id="create-mobile" class="form-control text-center input-lg"
+                                   value="" name="mobile" placeholder="Company Mobile Number" required/>
+                        </div>
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                            <input type="password" pattern = "^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$"
+                                   title="Must contain at least one number and one uppercase and lowercase letter and one special character and at least 8 or more characters"
+                                   class="form-control text-center input-lg" id="pwd0" name="password0"
+                                   placeholder="New Password" required/>
+                            <span class="input-group-addon pwd-right-radius" onclick="viewPassword('pwd0')">
+                                    <i id="pwd0_icon" class="fa fa-eye-slash"></i>
+                        </span>
+                        </div>
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                            <input type="password" pattern = "^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$"
+                                   class="form-control text-center input-lg" id="pwd1"
+                                   title="Must contain at least one number and one uppercase and lowercase letter and one special character and at least 8 or more characters"
+                                   name="password1" placeholder="Confirm Password" required/>
+                            <span class="input-group-addon pwd-right-radius" onclick="viewPassword('pwd1')">
+                                    <i id="pwd1_icon" class="fa fa-eye-slash"></i>
+                                 </span>
+                        </div>
+                        <p class="text-center text-capitalize text-danger" id="create-msg"></p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="input-group text-dark text-center mb-0">
+                                    <label class="form-check-label text-center">
+                                        <input type="checkbox" required="required" checked="checked"
+                                               class="form-check-input">
+                                        {% trans "by_signing_up_to_intelligent_time" %} <a href="javascript:void(0);"
+                                                                                           data-toggle="modal"
+                                                                                           data-target="#termsServices"
+                                                                                           target="_blank"
+                                                                                           class="text-primary">{% trans "terms_of_service" %}</a>
+                                        and <a href="javascript:void(0);" data-toggle="modal"
+                                               data-target="#privacyPolicy" target="_blank"
+                                               class="text-primary">{% trans "privacy_policy" %}</a>.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="input-group text-dark text-center">
+                                    <label class="form-check-label text-center">
+                                        <input type="checkbox" checked="checked" required="required"
+                                               class="form-check-input">
+                                        I would like to receive updates on Intelligent Time News, Events
+                                        &amp; Promos.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit"
+                                        class="btn btn-lg btn-block btn-primary zk-btn"
+                                        onclick="create_user()">{% trans "Sign up" %}
+                                </button>
+                            </div>
+                            <p class="text-center text-dark"><a href="javascript:void(0)"
+                                                                class="text-warning text-underline"
+                                                                onclick="backToLogin()">{% trans "back_to_login" %}</a>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="mb-3 card zk-login-card  text-white verification-mail" style="display:none;">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">{% trans "Verification" %}</div>
+                </div>
+                <div class="card-body p-0">
+                    <form action="" class="zk-login-form" onsubmit="return false;" id="cloud-3">
+                        {% csrf_token %}
+                        <div class="verfication-box">
+                            <p class="text-center opacity-9">{% trans "we_have_sent_email_to_verify_your_acnt" %}</p>
+                            <div class="input-group">
+                                       <span class="input-group-addon">
+                                       <i class="fa fa-envelope" aria-hidden="true"></i>
+                                       </span>
+                                <input type="text" class="form-control text-center input-lg" id="success-email"
+                                       name="email"
+                                       value="" readonly
+                                       placeholder="Enter Email ID"/>
+                            </div>
+                            <p class="text-center text-capitalize text-success" id="success-msg"></p>
+                            <p class="text-center opacity-8">{% trans "pls_activate_your_acnt_by_clicking_activation_btn_in_the_mail" %}</p>
+                            <div class="row">
+                                <div class="col-md-12 col-7 text-center">
+                                    <button id="btn-reg" type="submit" class="mb-2 btn btn-lg btn-block btn-dark zk-btn"
+                                            onclick="send_email_again()">{% trans "send_email_again" %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center text-dark"><a href="javascript:void(0)" style="cursor: text;"
+                                                                class="text-danger text-underline">{% trans "did_not_recieve_email" %}<br>
+                                {% trans "check_your_span_or_bulk_folders_for_msg" %}<br> from platformsupport@zkteco.in
+                            </a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-8 mt-m20">
+                        <p class="text-center text-dark"><a href="javascript:void(0)"
+                                                            class="text-warning text-underline"
+                                                            onclick="backToLogin()">{% trans "back_to_login" %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 card zk-login-card  text-white check-company-div" style="display:none;">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">{% trans "login_to_your_acnt" %}</div>
+                </div>
+                <div class="card-body p-0">
+                    <form action="" class="zk-login-form" onsubmit="return false;" id="cloud-4">
+                        {% csrf_token %}
+                        <input type="hidden" id="login-user" value="">
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                            <input type="text" class="form-control text-center input-lg" id="username"
+                                   name="username" readonly value="">
+                        </div>
+                        <div class="input-group input-grp-cmpny" id="DisplayCompanyInput">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-building" aria-hidden="true"></i>
+                                    </span>
+                            <input type="text" class="form-control text-center input-lg" id="company_name"
+                                   placeholder="Enter company name" style="font-size: 1rem;"/>
+                            <span class="input-group-addon input-addon-right">.{{ main_domain_name }}</span>
+
+                        </div>
+                        <p class="text-center text-capitalize text-danger" id="check-comp-msg"></p>
+                        <div class="row support-vendor" style="display:none;">
+                            <div class="col-md-12">
+                                <div class="input-group text-dark text-center">
+                                    <label class="form-check-label text-center">
+                                        <input type="checkbox" name="is_vendor" id="is_vendor"
+                                               class="form-check-input">
+                                        {% trans "login_as_vendor_or_will_redirect_to_backnd_dashboard" %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button id="btn-reg-1" type="submit" onclick="check_company()"
+                                        class="btn btn-lg btn-block btn-primary zk-btn">{% trans "Continue" %}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-8 mt-m20">
+                                <p class="text-center text-dark"><a href="javascript:void(0)"
+                                                                    class="text-warning text-underline"
+                                                                    onclick="backToLogin()">{% trans "back_to_login" %}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="mb-3 card zk-login-card  text-white forget-password-div" style="display:none">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">{% trans "forgot_your_password" %}</div>
+                </div>
+                <div class="card-body p-0">
+                    <form action="" class="zk-login-form" onsubmit="return false;" id="cloud-6">
+                        {% csrf_token %}
+                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-envelope"
+                                                                               aria-hidden="true"></i></span>
+                            <input type="text" id="forget-pass-email" class="form-control text-center input-lg"
+                                   name="email" placeholder="Confirm Email ID or Employee ID"
+                                   required/>
+                        </div>
+                        <div class="input-group input-grp-cmpny">
+                                            <span class="input-group-addon"><i class="fa fa-building"
+                                                                               aria-hidden="true"></i></span>
+                            <input type="text" class="form-control text-center input-lg forget-pass-company-name"
+                                   id="company_name"
+                                   placeholder="Enter company name" required style="font-size: 1rem;"/>
+                            <span
+                                    class="input-group-addon input-addon-right">.{{ main_domain_name }}</span>
+                        </div>
+                        <p class="text-center text-capitalize text-danger" id="forget-pass-msg"></p>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" onclick="generate_pwd_email()"
+                                        class="btn btn-lg btn-block btn-primary zk-btn">{% trans "btn_user_login" %}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-8 mt-m20">
+                            <p class="text-center text-dark"><a href="javascript:void(0)"
+                                                                class="text-warning text-underline"
+                                                                onclick="backToLogin()">{% trans "back_to_login" %}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 card zk-login-card  text-white display-result-div" style="display:none">
+                <div class="card-header border-0 p-0 text-center">
+                    <img class="img-responsive" src="{% static 'cloud/static/images/login-curve.svg' %}"
+                         alt="login">
+                    <div class="curve-text">{% trans "Verification" %}</div>
+                </div>
+                <div class="card-body p-0">
+                    <form class="zk-login-form">
+                        <div class="verfication-box mb-3" style="padding: 5em 3em">
+                            <div>
+                                <p class="text-center opacity-9" id="">Email sent to your register mail id.</p>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-8 mt-m20">
+                            <p class="text-center text-dark"><a href="javascript:void(0)"
+                                                                class="text-warning text-underline"
+                                                                onclick="backToLogin()">{% trans "back_to_login" %}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+{% block page_script %}
+    <script>
+        $(window).ready(function () {
+            $("#cloud-1, #cloud-2, #cloud-3, #cloud-4, #cloud-5, #cloud-6").on("keypress", function (event) {
+                var keyPressed = event.keyCode || event.which;
+                if (keyPressed === 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+
+        function check_user_type() {
+            var email = $('#email').val();
+            if (email !== '') {
+                data = {'email': email, csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()}
+                $.ajax({
+                    url: "{% url 'biotime:check_user_type' %}",
+                    type: "GET",
+                    data: data,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response['type'] === 'register') {
+                            $('.login-page-load').css('display', 'none');
+                            $('.create-new-user-page-load').css('display', 'block');
+                            $('#email').val('');
+                            $('#create-email').val(response['email']);
+                        } else if (response['type'] === 'success') {
+                            $('.login-page-load').css('display', 'none');
+                            $('.verification-mail').css('display', 'block');
+                            $('#success-email').val(response['email']);
+                            $('#success-msg').text("{% trans 'email_sent_successful' %}");
+                            $('#email').val('');
+                        } else if (response['type'] === 'not_found') {
+                            $('#msg').text(response['msg']);
+                        } else if (response['type'] === 'company_check') {
+                            $('#email').val('');
+                            $('.login-page-load').css('display', 'none');
+                            $('.check-company-div').css('display', 'block');
+                            $('#username').val(response['username']);
+                            $('#login-user').val(response['login_user']);
+                            $('#company_name').val('');
+                            if (response['support_vendor']) {
+                                $('.support-vendor').css('display', 'block');
+                            }
+                        }
+
+                    },
+                })
+            }
+        }
+
+        function generate_pwd_email_div() {
+            $('.login-page-load').css('display', 'none');
+            $('#email').val('');
+            $('.forget-password-div').css('display', 'block');
+        }
+
+        function enter_click() {
+            if (event.keyCode === 13) {
+                check_user_type()
+            }
+        }
+
+        $(function () {
+            var body_dom = $('body');
+            body_dom.attr('onkeydown', 'enter_click()');
+            body_dom.keydown(function () {
+            });
+        });
+
+        function viewPassword(id) {
+            var input = document.getElementById(id);
+            var icon_id = id + "_icon";
+            var icon = document.getElementById(icon_id);
+            var input_type = input.getAttribute("type");
+
+
+            if (input_type == 'password') {
+                input.setAttribute("type", "text");
+                icon.setAttribute("class", "fa fa-eye zk-pwd");
+            } else {
+                input.setAttribute("type", "password");
+                icon.setAttribute("class", "fa fa-eye-slash zk-pwd");
+            }
+        }
+
+        function create_user() {
+            var create_email = $('#create-email').val();
+            var mobile = $('#create-mobile').val();
+            var pwd0 = $('#pwd0').val();
+            var pwd1 = $('#pwd1').val();
+            if (create_email !== '' && pwd0 !== '' && pwd1 !== '' && mobile !== '') {
+                var pass_check = check_password(pwd0);
+                if (pass_check === 'FALSE') {
+                    return false;
+                }
+                var pass_check1 = check_password(pwd1);
+                if (pass_check1 === 'FALSE') {
+                    return false;
+                }
+                if (mobile.length > 20){
+                    $('#create-msg').text("{% trans 'mobile_number_exceeds_max_length' %}");
+                    return false;
+                }
+                var create_data = {
+                    'email': create_email,
+                    'password0': pwd0,
+                    'password1': pwd1,
+                    'mobile_number': mobile,
+                    csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+                }
+                $.ajax({
+                    url: "{% url 'biotime:create_user' %}",
+                    type: "POST",
+                    data: create_data,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response['type'] === 'password_mismatch') {
+                            $('#create-msg').text(response['msg']);
+                        } else if (response['type'] === 'mobile_number_exceeds_max_length') {
+                            $('#create-msg').text("{% trans 'mobile_number_exceeds_max_length' %}");
+                        } else if (response['type'] === 'duplicate_data') {
+                            $('#create-msg').text(response['msg']);
+                        } else if (response['type'] === 'success') {
+                            $('.create-new-user-page-load').css('display', 'none');
+                            $('.verification-mail').css('display', 'block');
+                            $('#success-email').val(response['email']);
+                            $('#success-msg').text("{% trans 'email_sent_successful' %}");
+                            $('#pwd0').val('');
+                            $('#pwd1').val('');
+                            $('#create-mobile').val('');
+                        }
+
+                    },
+                })
+            }
+        }
+
+        function check_password(password) {
+            var str = password;
+            if (str.match(/[a-z]/g) && str.match(
+                /[A-Z]/g) && str.match(
+                /[0-9]/g) && str.match(
+                /[^a-zA-Z\d]/g) && str.length >= 8)
+                return "TRUE";
+            else
+                return "FALSE";
+        }
+
+        function backToLogin() {
+            $('#email').val('');
+            $('#forget-pass-email').val('');
+            $('.forget-pass-company-name').val('');
+            $('#pass-msg').text('');
+            $('#create-msg').text('');
+            $('#check-comp-msg').text('');
+            $('#forget-pass-msg').text('');
+            $('#pwd').val('');
+            $('#pwd0').val('');
+            $('#pwd1').val('');
+            $('#login-user').val('');
+            $('.login-page-load').css('display', 'block');
+            $('.verification-mail').css('display', 'none');
+            $('.create-new-user-page-load').css('display', 'none');
+            $('.check-company-div').css('display', 'none');
+            $('.forget-password-div').css('display', 'none');
+            $('.display-result-div').css('display', 'none');
+        }
+
+        function generate_pwd_email() {
+            var email_input = $('#forget-pass-email');
+            var company_input = $('.forget-pass-company-name');
+            var data = {
+                'email': email_input.val(),
+                'company_name': company_input.val(),
+                csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+            };
+            if (email_input.val() !== '' && company_input.val() !== '') {
+                $.ajax({
+                    type: "POST",
+                    data: data,
+                    dataType: "json",
+                    url: "{% url 'biotime:generate_pwd_email' %}",
+                    success: function (callback) {
+                        var ret = callback.ret,
+                            msg = callback.msg;
+                        if (ret === 0) {
+                            $('#forget-pass-email').val('');
+                            $('.forget-pass-company-name').val('');
+                            $('.forget-password-div').css('display', 'none');
+                            $('.display-result-div').css('display', 'block');
+                        } else if (ret === -1) {
+                            email_input.removeAttr('disabled');
+                            email_input.val('');
+                            email_input.blur();
+                            $('#forget-pass-msg').text(msg);
+                        } else {
+                            company_input.removeAttr('disabled');
+                            company_input.val('');
+                            company_input.blur();
+                            $('#forget-pass-msg').text(msg);
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        email_input.removeAttr('disabled');
+                        company_input.removeAttr('disabled');
+                    }
+                })
+            }
+        }
+    </script>
+    <script>
+        var InterValObj;
+        var count = 30;
+        var curCont;
+
+        function send_email_again() {
+            var email_input = $('#success-email');
+            var data = {
+                'email': email_input.val(),
+                csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+            };
+            $.ajax({
+                type: "POST",
+                data: data,
+                dataType: "json",
+                url: "{% url 'biotime:init_register_email' %}",
+                success: function (callback) {
+                    var ret = callback.ret,
+                        msg = callback.type_content;
+                    if (ret === 0) {
+                        $('#success-msg').text("{% trans 'email_sent_successful' %}");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+            $('#btn-reg').attr('disabled', 'true');
+            $('#btn-reg').removeAttr('onclick');
+            curCont = count;
+            InterValObj = window.setInterval(SetRemainTime, 1000);
+        }
+
+        function SetRemainTime() {
+            if (curCont === 0) {
+                window.clearInterval(InterValObj);//停止计时器
+                $("#btn-reg").removeAttr("disabled");//启用按钮
+                $("#btn-reg").text("Send email again");
+                $("#btn-reg").attr('onclick', 'send_email_again();')
+            } else {
+                curCont--;
+                $("#btn-reg").text("Send email again " + curCont.toString());
+            }
+        }
+
+        $('#btn-reg').attr('disabled', 'true');
+        $('#btn-reg').removeAttr('onclick');
+        curCont = count;
+        InterValObj = window.setInterval(SetRemainTime, 1000);
+
+    </script>
+    <script>
+        function check_company() {
+            var company_name_input = $('#company_name');
+            var login_data = {
+                'username': $('#username').val(),
+                'login_user': $('#login-user').val(),
+                'company_name': company_name_input.val(),
+                'is_vendor': $('#is_vendor').is(':checked'),
+                csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val()
+            };
+            $.ajax({
+                url: "{% url 'biotime:check_comp' %}",
+                type: "POST",
+                data: login_data,
+                dataType: "json",
+                success: function (callback) {
+                    var result = callback.ret;
+                    if (result === 0) {
+                        window.location.href = "{% url 'biotime:redirect_check_pwd' %}" +
+                            '?company_name=' + company_name_input.val() + '&username=' + $('#username').val() + '&login_user=' + callback.login_user;
+                    } else if (result === 1) {
+                        window.location.href = "{% url 'biotime:redirect_check_pwd' %}" +
+                            '?is_vendor=' + callback.is_vendor + '&username=' + $('#username').val() + '&login_user=' + callback.login_user + '&company_name=' + company_name_input.val();
+                    } else {
+                        company_name_input.val('');
+                        company_name_input.blur();
+                        $('#check-comp-msg').text(callback.message);
+                    }
+                },
+            })
+        }
+
+    </script>
+    <script>
+        $(document).ready(function (){
+            $('#is_vendor').on('click', function (){
+                if($(this).is(':checked')) {
+                    $('#DisplayCompanyInput').hide();
+                }else{
+                     $('#DisplayCompanyInput').show();
+                }
+            })
+        })
+    </script>
+{% endblock page_script %}

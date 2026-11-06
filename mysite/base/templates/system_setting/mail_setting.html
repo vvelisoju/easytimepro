@@ -1,0 +1,181 @@
+{% load i18n %}
+<div class="email-setting-form">
+  <form action="" id="id_emailSettingForm" class="layui-form" lay-filter="emailSettingForm">
+    {% csrf_token %}
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card" style=" height: 310px">
+          <div class="layui-card-header"><i class="fa fa-envelope"></i><span style="padding-left: 5px">{% trans 'emailSetting_otherSetting' %}</span></div>
+          <div class="layui-card-body">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_smtp_server" class="layui-form-label">{% trans 'emailSettingPage_label_smtpServer' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_smtp_server" name="smtp_server" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">smtp.xxx.xxx</div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_smtp_server_port" class="layui-form-label">{% trans 'emailSettingPage_label_smtpServerPort' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="number" id="id_smtp_server_port" name="smtp_server_port"  autocomplete="off"
+                         placeholder="" lay-verify="required" class="layui-input">
+                </div>
+                <div class="layui-input-inline">
+                  <input type="checkbox" name="enable_ssl" lay-skin="primary" title="{% trans 'emailSettingPage_label_enableSSL' %}">
+                  <input type="checkbox" name="enable_tls" lay-skin="primary" title="{% trans 'emailSettingPage_label_enableTLS' %}">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_email_account" class="layui-form-label">{% trans 'emailSettingPage_label_emailAccount' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_email_account" name="email_account" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">xxx@xxx.xxx,{% trans 'emailSettingPage_help_emailAccount' %}</div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="" class="layui-form-label">{% trans 'emailSettingPage_label_emailPassword' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="password" id="id_email_password" name="email_password" autocomplete="off" placeholder=""
+                         class="layui-input" lay-verify="required">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label for="id_email_address" class="layui-form-label">{% trans 'emailSettingPage_label_emailAddress' %}<span
+                  class="required">*</span></label>
+                <div class="layui-input-inline">
+                  <input type="text" id="id_email_address" name="email_address" autocomplete="off" placeholder=""
+                         lay-verify="required" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">xxx.xxx.xxx</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block layui-inline">
+        <button class="layui-btn" lay-submit="" lay-filter="emailSubmit" id="mailSubmit">{% trans 'emailSettingPage_btn_submit' %}</button>
+      </div>
+      <div class="layui-inline" style="margin-top: 10px;" id="emailClearDiv">
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  layui.use(['form'], function () {
+    var form = layui.form, layer = layui.layer;
+    form.render();
+    $.ajax({
+      url: "/base/api/systemSetting/?name=email_setting"
+      , type: "GET"
+      , dataType: "json"
+      , success: function (response, xhr) {
+        var val = response.data[0];
+        if (val) {
+          form.val('emailSettingForm', JSON.parse(val.value));
+          document.getElementById('emailClearDiv').innerHTML= "<button class='layui-btn' lay-submit='' lay-filter='emailClear' id='emailClear'>{% trans 'clear_system_settings' %}</button>"
+        }
+      }
+      , error: function (xhr, error, e) {
+
+      }
+    });
+    form.on('submit(emailSubmit)', function (data) {
+      var csrf = data.field['csrfmiddlewaretoken'],
+        emailacc = data.field['email_account'];
+        emailadd = data.field['email_address'];
+        // if(emailacc !== emailadd)
+        // {
+        //     layer.msg(gettext('Email Account and Email Address should be match.'), {icon: 5});
+        //     return false
+        // }
+        port = data.field['smtp_server_port'];
+      if (!/\d+/.test(port)) {
+        show_prompt('Field `smtp_server_port` is illegal!');
+        return;
+      }
+      var value = {
+        smtp_server: data.field['smtp_server']
+        , smtp_server_port: parseInt(port)
+        , enable_ssl: !!data.field['enable_ssl']
+        , enable_tls: !!data.field['enable_tls']
+        , email_account: data.field['email_account']
+        , email_password: data.field['email_password']
+        , email_address: data.field['email_address']
+      };
+      var loadIndex = layer.load();
+      $.ajax({
+        url: "/base/api/systemSetting/"
+        , type: "POST"
+        , data: {'name': 'email_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+        , dataType: "json"
+        , success: function (response, xhr) {
+          layer.close(loadIndex);
+          layer.msg(gettext('action_notification_successful'), {icon: 6});
+          document.getElementById('emailClearDiv').innerHTML= "<button class='layui-btn' lay-submit='' lay-filter='emailClear' id='emailClear'>{% trans 'clear_system_settings' %}</button>"
+        }
+        , error: function (xhr, error, e) {
+          layer.close(loadIndex);
+          if (xhr.responseJSON.value && xhr.responseJSON.value[0] != '' ) {
+            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+          } else {
+            layer.msg(gettext('action_notification_failed'), {icon: 5});
+          }
+        }
+      });
+      return false;
+    });
+
+    form.on('submit(emailClear)', function (data) {
+        var csrf = data.field['csrfmiddlewaretoken'];
+
+        layer.confirm(gettext("confirm_be_sure"),
+        {
+            title: gettext("btn_confirm")
+            , icon: 3
+            , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+        },
+        function (index) {
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/clear_system_settings/"
+                , type: "POST"
+                , data: {'name': 'email_setting', csrfmiddlewaretoken: csrf}
+                , dataType: "json"
+                , success: function (response, xhr) {
+                    document.getElementById("id_emailSettingForm").reset();
+                    layer.close(loadIndex);
+                    layer.msg(gettext('action_notification_successful'), {icon: 6});
+                    document.getElementById('emailClearDiv').innerHTML= ""
+                }
+                , error: function (xhr, error, e) {
+                    layer.close(loadIndex);
+                    if (xhr.responseJSON.value) {
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    } else {
+                        layer.msg(gettext('action_notification_failed'), {icon: 5});
+                    }
+                }
+            });
+            layer.close(index);
+        });
+        return false
+    });
+  });
+</script>

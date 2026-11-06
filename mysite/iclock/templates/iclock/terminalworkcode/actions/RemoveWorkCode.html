@@ -1,0 +1,50 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div style="padding: 10px;min-height: 150px;max-height: 650px;">
+  <form id="terminalworkcode_removeworkcode" action="" class="layui-form action-form" lay-filter="removeWorkCode">
+    {% csrf_token %}
+    <div class="layui-form-item field-devices">
+        <label class="layui-form-label"
+               for="id_devices">{% trans 'terminalWorkCode_field_terminal' %}<span class="required">*</span></label>
+        <div class="layui-input-inline" id="devices_div">
+        </div>
+    </div>
+  </form>
+  </div>
+{% endautoescape %}
+
+<script>
+  var t = new Date();
+  data_stamp = t.getTime();
+  $("#devices_div").append("<div id=" + "devices" + data_stamp + " class='layui-form-select tree-select'></div>");
+
+  function loadTreeData() {
+      var terminal_name = 'terminal', terminal_stamp = data_stamp;
+      var urlTerminal = "/base/terminal_tree_data/";
+
+      $.ajax({
+        url: urlTerminal
+        , type: "GET"
+        , dataType: "json"
+        , success: function (response, xhr) {
+          terminal_data = response;
+          $('#devices' + data_stamp).zTreeSelect({
+            model: terminal_name,
+            name: 'devices',
+            stamp: terminal_stamp,
+            input_type: "checkbox",
+            data: terminal_data
+          });
+        }
+        , error: function (xhr, error, e) {
+        }
+      });
+    }
+
+  layui.use(['form'], function () {
+    var form = layui.form;
+    loadTreeData();
+    form.render();
+  })
+</script>

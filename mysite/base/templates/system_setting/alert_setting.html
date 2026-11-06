@@ -1,0 +1,360 @@
+{% load i18n %}
+
+<div class="alert-setting-form">
+    <form action="" class="layui-form" lay-filter="alertSettingForm">
+        {% csrf_token %}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                 {% if software_type != 11 %}
+                    <div class="layui-card-header"><i class="fa fa-bell-o"></i><span style="padding-left: 5px">{% trans 'alertSettingPage_label_attendanceAlertSetting' %}</span></div>
+                    <div class="layui-card-body" style="margin: 9px 10px">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label for="id_late_exceed" class="layui-form-label">{% trans 'alertSettingPage_label_lateExceed' %}<span class="required">*</span></label>
+                                <div class="layui-input-inline">
+                                    <input type="number" id="id_late_exceed" name="late_exceed" value="0" autocomplete="off" placeholder="" lay-verify="required" class="layui-input" min="0" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_exceedUnit_times' %}</span></div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label for="id_early_leave_exceed" class="layui-form-label">{% trans 'alertSettingPage_label_earlyLeaveExceed' %}<span class="required">*</span></label>
+                                <div class="layui-input-inline">
+                                    <input type="number" id="id_early_leave_exceed" name="early_leave_exceed" value="0" autocomplete="off" placeholder="" lay-verify="required" class="layui-input" min="0" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_exceedUnit_times' %}</span></div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label for="id_absent_exceed" class="layui-form-label">{% trans 'alertSettingPage_label_absentExceed' %}<span class="required">*</span></label>
+                                <div class="layui-input-inline">
+                                    <input type="number" id="id_absent_exceed" name="absent_exceed" value="0" autocomplete="off" placeholder="" lay-verify="required" class="layui-input" min="0" oninput="this.value=this.value.replace(/[^0-9]/g, '');">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_exceedUnit_times' %}</span></div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <div class="layui-input-inline layui-hide" style="width: 30px" title="{% trans 'sending_alert' %}">
+                                    <input type="checkbox" name="exception_alert" lay-skin="primary" title="">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_label_emailSendingFrequency' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                    <select name="email_frequency" id="id_email_frequency" class="layui-input" lay-filter="emailFrequency">
+                                      <option value="0">{% trans 'frequency_option_none' %}</option>
+                                      <option value="3">{% trans 'frequency_option_daily' %}</option>
+                                      <option value="2">{% trans 'frequency_option_weekly' %}</option>
+                                      <option value="1">{% trans 'frequency_option_monthly' %}</option>
+                                    </select>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_label_emailSendingDay' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                    <select name="email_day" id="id_email_day" class="layui-input"></select>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_label_emailSendingTime' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="id_email_time" name="email_time" autocomplete="off" placeholder="" lay-verify="required" class="layui-input">
+                                </div>
+                            </div>
+                                <div class="layui-inline" >
+                                    <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_label_sendingDay' %}</span><span class="required">*</span></div>
+                                <div class="layui-input-inline">
+                                  <select name="sending_day" id="id_sending_day">
+                                    <option value="0">{% trans 'alertSettingPage_sendingDayOpts_currentDay' %}</option>
+                                    <option value="-1">{% trans 'alertSettingPage_sendingDayOpts_nextDay' %}</option>
+                                  </select>
+                                </div>
+                                </div>
+                                 <div class="layui-inline" style="margin: 0 0 0 10px;">
+                                     <div class="layui-form-mid layui-word-aux"><span class="form_label">{% trans 'alertSettingPage_Last_Alert_Time' %}</span></div>
+                                <div class="layui-input-inline">
+                                    <input readonly="readonly" type="text" id="id_last_alert_time" name="last_alert_time" autocomplete="off" placeholder="" class="layui-input">
+                                </div>
+                           </div>
+                            </div>
+                    </div>
+                 {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space15" id="alert_settings_id">
+            <div class="layui-col-md12" style="padding-top: 0;">
+                <div class="layui-card-body" style="height: 220px">
+                    <div class="layui-card-header"><i class="fa fa-bell-o"></i><span style="padding-left: 5px">{% trans 'alertSettingPage_label_PasswordChangeAlertSetting' %}</span></div>
+                    <div class="layui-card-body" style="margin: 0 0 0 10px">
+                        <div class="layui-form-item layui-col-space15">
+                            <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                <div class="layui-input-inline">
+                                    <input type="checkbox" name="adminpasschange_alert" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_AdminPasswordChangeAlert' %}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-card-header"><i class="fa fa-bell-o"></i><span style="padding-left: 5px">{% trans 'alertSettingPage_approveAlertOpts_DeviceOfflineNotificationAlert' %}</span></div>
+                    <div class="layui-card-body" style="margin: 0 0 0 10px">
+                        <div class="layui-form-item layui-col-space15">
+                            <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                <div class="layui-input-inline" style="margin-right:50px">
+                                    <input type="checkbox" name="deviceoffline_alert" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_DeviceOfflineNotificationAlert' %} (email will be sent to superuser and area user in about 5 minutes after the device is offline)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="layui-card-header"><i class="fa fa-bell-o"></i><span style="padding-left: 5px">{% trans 'alertSettingPage_label_approveAlertSetting' %}</span></div>
+                    <div class="layui-card-body" style="margin: 0 0 0 10px; padding-left: 33px; padding-top: 10px">
+                    <div class="layui-card-body">
+                        <div class="layui-form-item ">
+                            <div class="layui-inline" id="alerts">
+                                <div class="layui-inline">
+                                    <input type="checkbox" name="email_alert" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_emailAlert' %}">
+                                </div>
+                                {% if software_type != 11 %}
+                                <div class="layui-inline">
+                                    <input type="checkbox" name="sms_alert" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_smsAlert' %}">
+                                </div>
+                                <div class="layui-inline">
+                                    <input type="checkbox" name="whatsapp_alert" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_whatsappAlert' %}">
+                                </div>
+                                <div class="layui-inline">
+                                    <input type="checkbox" name="mask_status" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_mask_statusAlert' %}">
+                                </div>
+                                <div class="layui-inline">
+                                    <input type="checkbox" name="temperature_alert" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_temperature_Alert' %}">
+                                </div>
+                                <div class="layui-inline">
+                                    <input type="checkbox" name="popup_alert" lay-skin="primary" title="{% trans 'alertSettingPage_approveAlertOpts_popup_alert' %}">
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-row layui-col-space15" id="alert_settings_id">
+            <div class="layui-col-md12" style="padding-top: 0;">
+                <div class="layui-card-body" style="height: 140px">
+                {% if software_type != 11 %}
+                    <div class="layui-card-header"><i class="fa fa-bell-o"></i><span style="padding-left: 5px">{% trans 'Auto Calculation' %}</span></div>
+                    <div class="layui-card-body" style="margin: 0 0 0 10px">
+                        <div class="layui-form-item layui-col-space15">
+                            <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                <div class="layui-input-inline">
+                                    <input type="checkbox" name="autocalculation_alert" lay-skin="primary" title="{% trans 'Enable' %} ">
+                                </div>
+                                <div class="layui-inline">
+                                    Auto Cal Time: <input type="time" name="autocalculation_alert_time" id="myTime" value="23:00" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space15" id="alert_settings_id">
+            <div class="layui-col-md12">
+                <div class="layui-card-body" style="height: 140px; margin-top: -60px;">
+                    {% if software_type == 10 %}
+                        <div class="layui-card-header"><i class="fa fa-bell-o"></i><span style="padding-left: 5px">{% trans 'Employee Login Settings' %}</span></div>
+                        <div class="layui-card-body" style="margin: 0 0 0 10px">
+                            <div class="layui-form-item layui-col-space15">
+                                <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                    <div class="layui-input-inline">
+                                        <input type="checkbox" id="checkbox-status" name="employee_login_status" lay-skin="primary" title="{% trans 'Disable' %}">
+                                    </div>
+                                    <div style="display: flex;">
+                                        <div style="margin-right: 5px;">
+                                            <p>Display Message:</p>
+                                        </div>
+                                        <div>
+                                            <textarea name="login_message_display" lay-skin="primary" id="text-area" maxlength="1000" style="width: 500px; height: 50px"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit="" lay-filter="alertSubmit" id="alertSubmit">{% trans 'alertSettingPage_btn_submit' %}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<style>
+    #alert_settings_id {
+        background: white;
+        padding-bottom: 24px;
+    }
+    span.form_label {
+        color: #333;
+    }
+    .layui-form-checkbox[lay-skin=primary] span {
+        color: #333;
+    }
+    .layui-form-checkbox span {
+        font-size: 12px;
+    }
+    @media screen and (min-width: 1900px) {
+        .layui-form-checkbox span {
+            font-size: 14px;
+        }
+    }
+</style>
+<script>
+   // $('#myTime').prop('disabled',true);
+    layui.use(['form', 'layer', 'laydate'], function(){
+        var form = layui.form, layer=layui.layer, laydate=layui.laydate;
+
+        var maxHeight = window.innerHeight - 140;
+        $('.alert-setting-form').css({
+        'height': maxHeight,
+        'overflow-y': 'auto',
+          'overflow-x':'hidden'
+      });
+        laydate.render({
+          elem: '#id_email_time'
+          ,type: 'time'
+          ,value: '00:00:00'
+        });
+        form.render();
+        function dayChange(f, d){
+            switch(f){
+                case '0':
+                    document.getElementById("id_email_time").disabled = true;
+                    document.getElementById("id_sending_day").disabled = true;
+                    var options = "";
+                    $("#id_email_day").html(options);
+                    form.render('select');
+                    break;
+
+                case '1':   //Monthly
+                   document.getElementById("id_email_time").disabled = false;
+                   document.getElementById("id_sending_day").disabled = false;
+                    var options = '';
+                    for(var i=1; i < 32; i ++){
+                        options += '<option value="'+i+'">'+i+'</option>';
+                    }
+                    $("#id_email_day").html(options);
+                    form.render('select');
+                    $("#id_email_day").val(d);
+                    break;
+                case '2':   //Weekly
+                   document.getElementById("id_email_time").disabled = false;
+                   document.getElementById("id_sending_day").disabled = false;
+                    var options = ''
+                        + '<option value="'+0+'">'+gettext('monday')+'</option>'
+                        + '<option value="'+1+'">'+gettext('tuesday')+'</option>'
+                        + '<option value="'+2+'">'+gettext('wednesday')+'</option>'
+                        + '<option value="'+3+'">'+gettext('thursday')+'</option>'
+                        + '<option value="'+4+'">'+gettext('friday')+'</option>'
+                        + '<option value="'+5+'">'+gettext('saturday')+'</option>'
+                        + '<option value="'+6+'">'+gettext('sunday')+'</option>';
+                    $("#id_email_day").html(options);
+                    $("#id_email_day").val(d);
+                    form.render('select');
+                    break;
+                case '3':   //Daily
+                    document.getElementById("id_email_time").disabled = false;
+                    document.getElementById("id_sending_day").disabled = false;
+                    var options = '<option value="'+1+'">'+1+'</option>';
+                    $("#id_email_day").html(options);
+                    $("#id_email_day").val(1);
+                    form.render('select');
+                    break;
+                default: break;
+            }
+        }
+        $.ajax({
+            url: "/base/api/systemSetting/?name=alert_setting"
+            ,type: "GET"
+            ,dataType: "json"
+            ,success: function(response, xhr){
+                var val = response.data[0];
+                if(val){
+                    var formVal = JSON.parse(val.value);
+                    dayChange(formVal.email_frequency, formVal.email_day);
+                    form.val('alertSettingForm', formVal);
+                }else{
+                    dayChange('1', 1);
+                }
+            }
+            ,error: function(xhr, error, e){
+
+            }
+        });
+        form.on('select(emailFrequency)', function(data){
+            dayChange(data.value, 1);
+        });
+        form.on('submit(alertSubmit)', function(data){
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                late_exceed: data.field['late_exceed']
+                ,early_leave_exceed: data.field['early_leave_exceed']
+                ,absent_exceed: data.field['absent_exceed']
+                ,exception_alert: data.field['exception_alert']
+                ,email_frequency: data.field['email_frequency']
+                ,email_day: data.field['email_day']
+                ,email_time: data.field['email_time']
+                ,email_alert: data.field['email_alert']
+                ,sms_alert: data.field['sms_alert']
+                ,whatsapp_alert: data.field['whatsapp_alert']
+                ,mask_status: data.field['mask_status']
+                ,temperature_alert: data.field['temperature_alert']
+                ,popup_alert: data.field['popup_alert']
+                ,pop_alert: data.field['pop_alert']
+                ,sending_day: data.field['sending_day']
+                ,last_alert_time: data.field['last_alert_time']
+                ,deviceoffline_alert: data.field['deviceoffline_alert']
+                ,adminpasschange_alert: data.field['adminpasschange_alert']
+                ,autocalculation_alert: data.field['autocalculation_alert']
+                ,autocalculation_alert_time: data.field['autocalculation_alert_time']
+                ,employee_login_status: data.field['employee_login_status']
+                ,login_message_display: data.field['login_message_display']
+            };
+            var loadIndex = layer.load();
+            {% if software_type == 10 %}
+
+            const messageLength = 1000
+            if(data.field['login_message_display'].length > messageLength){
+                layer.msg(gettext('Message length should not be more than ' +messageLength+ ' characters'), {icon: 2});
+                layer.close(loadIndex);
+                return;
+            }
+            {% endif %}
+                $.ajax({
+                url: "/base/api/systemSetting/"
+                ,type: "POST"
+                ,data: {'name': 'alert_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+                ,dataType: "json"
+                ,success: function(response, xhr){
+                    layer.close(loadIndex);
+                    layer.msg(gettext('save_successful'), {icon: 6});
+                }
+                ,error: function(xhr, error, e){
+                    layer.close(loadIndex);
+                    if(xhr.responseJSON.value){
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    }else{
+                        layer.msg(gettext('save_failed'), {icon: 5});
+                    }
+                }
+            });
+            return false
+        });
+    });
+</script>

@@ -1,0 +1,67 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div style="padding: 10px;min-height: 150px;max-height: 650px;">
+  <form id="biophoto_upload" action="" class="layui-form action-form" lay-filter="biophotoupload">
+    {% csrf_token %}
+    <div class=layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label" for="id_ignore_error">{% trans 'biophoto_upload_ignore_error' %}</label>
+        <div class="layui-input-inline">
+          <input type="checkbox" name="ignore_error" style="margin-top: 2px;">
+        </div>
+      </div>
+    </div>
+    <div class=layui-form-item" style="margin-top: 10px;">
+      <div class="layui-inline">
+        <lable class="layui-form-label" for="id_select_files">{% trans 'biophoto_upload_select_files' %}</lable>
+        <div class="layui-input-inline">
+          <input type="file" name="select_files" id="id_select_files" multiple style="margin-top: 2px;">
+        </div>
+      </div>
+    </div>
+  <div class=layui-form-item" style="margin-top: 18px;">
+    <button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="upload_start" style="margin-left: 10px">
+      {% trans 'biophoto_upload_start' %}
+    </button>
+  </div>
+  </form>
+  </div>
+{% endautoescape %}
+
+<script>
+  layui.use(['form'], function () {
+    var form = layui.form
+      ,$ = layui.jquery;
+    form.render();
+     form.on('submit(upload_start)', function (data){
+       var form = new FormData($('#biophoto_upload')[0])
+       , csrf = data.field['csrfmiddlewaretoken']
+       , loadIndex = layer.load();
+       console.log('dubug');
+       $.ajax({
+        url: '/personnel/upload_biophoto/'
+        , type: "POST"
+        , headers: {'X-CSRFToken': csrf}
+        , data: form
+        , processData: false
+        , contentType: false
+        , success: function (response, xhr) {
+          layer.close(loadIndex);
+          response = JSON.parse(response);
+          if (response.error_flag === -1){
+            layer.alert("{% trans 'biophoto_upload_employee_not_exist' %}" + response.error_name.join() + '  ' + "{% trans 'biophoto_upload_error_photo' %}" + response.error_photo.join()
+             + '  ' + "{% trans 'biophoto_upload_other_errors' %}" + response.other_error.join(), {title: gettext('system_exception'), btn: gettext("btn_confirm")})
+          }else {
+            layer.msg(('OK'), {icon: 6});
+          }
+        }
+        ,error: function(xhr, error, e){
+            layer.close(loadIndex);
+            layer.alert("{% trans 'biophoto_upload_too_many_images_selected' %}", {title: ' ', btn: gettext("btn_confirm")})
+        }
+      });
+       return false;
+     })
+  })
+</script>

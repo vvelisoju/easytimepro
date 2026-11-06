@@ -1,0 +1,115 @@
+{% load i18n %}
+<div class="map-setting-form">
+    <form action="" id="id_mapSettingForm" class="layui-form" lay-filter="mapSettingForm">
+        {% csrf_token %}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card" style="height: 200px">
+                    <div class="layui-card-header"><i class="fa fa-map-marker"></i><span style="padding-left: 5px">{% trans 'mapSetting_otherSetting' %}</span></div>
+                    <div class="layui-card-body" style="padding: 10px 0 0 60px">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label for="id_apikey" class="layui-form-label" style="width: 70px;margin-right: 10px;">{% trans 'mapSetting_api_key' %}<span class="required">*</span></label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="id_apikey" name="map_apikey" autocomplete="off" placeholder="" lay-verify="required" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block layui-inline">
+                    <button class="layui-btn" id="mapSubmit" lay-submit="" lay-filter="mapSubmit">{% trans 'mapSetting_submit' %}</button>
+                </div>
+                <div class="layui-inline" id="mapClearDiv">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    layui.use('form', function () {
+        var form = layui.form, $ = layui.jquery ;
+        form.render();
+        form.on('submit(mapSubmit)', function (data) {
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = { map_apikey: data.field['map_apikey'] };
+            var loadIndex = layer.load();
+            $.ajax({
+                url: "/base/api/systemSetting/"
+                , type: "POST"
+                , data: {'name': 'map_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+                , dataType: "json"
+                , success: function (response, xhr) {
+                    layer.close(loadIndex);
+                    layer.msg(gettext('action_notification_successful'), {icon: 6});
+                    document.getElementById('mapClearDiv').innerHTML= "<button class='layui-btn' id='mapClear' lay-submit='' lay-filter='mapClear'>{% trans 'clear_system_settings' %}</button>"
+                }
+                , error: function (xhr, error, e) {
+                    layer.close(loadIndex);
+                    if (xhr.responseJSON.value) {
+                        layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                    } else {
+                        layer.msg(gettext('action_notification_failed'), {icon: 5});
+                    }
+                }
+            });
+            return false
+        });
+
+        form.on('submit(mapClear)', function (data) {
+            var csrf = data.field['csrfmiddlewaretoken'];
+
+             layer.confirm(gettext("confirm_be_sure"),
+            {
+                title: gettext("btn_confirm")
+                , icon: 3
+                , btn: [gettext("btn_confirm"), gettext("btn_cancel")]
+            },
+            function (index) {
+                var loadIndex = layer.load();
+                $.ajax({
+                    url: "/base/clear_system_settings/"
+                    , type: "POST"
+                    , data: {'name': 'map_setting', csrfmiddlewaretoken: csrf}
+                    , dataType: "json"
+                    , success: function (response, xhr) {
+                        document.getElementById("id_mapSettingForm").reset();
+                        layer.close(loadIndex);
+                        layer.msg(gettext('action_notification_successful'), {icon: 6});
+                        document.getElementById('mapClearDiv').innerHTML= ""
+                    }
+                    , error: function (xhr, error, e) {
+                        layer.close(loadIndex);
+                        if (xhr.responseJSON.value) {
+                            layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                        } else {
+                            layer.msg(gettext('action_notification_failed'), {icon: 5});
+                        }
+                    }
+                });
+                layer.close(index);
+            });
+            return false
+        });
+
+        $.ajax({
+            url: "/base/api/systemSetting/?name=map_setting"
+            , type: "GET"
+            , dataType: "json"
+            , success: function (response, xhr) {
+                var val = response.data[0];
+                if (val) {
+                    var val_dict = JSON.parse(val.value);
+                    form.val('mapSettingForm', val_dict);
+                    document.getElementById('mapClearDiv').innerHTML= "<button class='layui-btn' id='mapClear' lay-submit='' lay-filter='mapClear''>{% trans 'clear_system_settings' %}</button>"
+                }
+            }
+            , error: function (xhr, error, e) {
+
+            }
+        });
+    })
+</script>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlgroup>
+    <sql id="report_paging_sql">
+        <content engine="default">
+            <![CDATA[
+                select top %(pagesize)s o.* from ( select row_number() over(order by %(orderby)s) as rownumber, * from (
+                    %(sql)s
+                ) oo) o where o.rownumber>%(firstindex)s
+            ]]>
+        </content>
+        <content engine="mysql">
+            <![CDATA[
+                select 0 as rownumber,o.* from ( %(sql)s   order by %(orderby)s ) o limit %(firstindex)s,%(pagesize)s
+            ]]>
+        </content>
+        <content engine="oracle">
+            <![CDATA[
+                select * from ( select ROWNUM rownumber, o.* from (
+                    %(sql)s   order by %(orderby)s
+                ) o) where rownumber<=(%(firstindex)s + %(pagesize)s) and rownumber>%(firstindex)s
+            ]]>
+        </content>
+        <content engine="postgresql">
+            <![CDATA[
+                select 0 as rownumber,o.* from ( %(sql)s  order by %(orderby)s ) o limit %(pagesize)s offset %(firstindex)s
+            ]]>
+        </content>
+    </sql>
+    <sql id="salary_structure_data">
+        <content engine="default">
+            <![CDATA[
+            select u.emp_code, u.first_name, u.last_name,d.dept_code, d.dept_name,p.position_name, ss.salary_amount, ss.effective_date,
+            ms.increase_formula, ms.deduction_formula, ms.early_leave_formula, ms.absent_time_formula, ms.late_time_formula as late_formula
+            from payroll_salarystructure ss
+            left join payroll_monthlysalary ms on ms.employee_id = ss.employee_id
+            inner join personnel_employee u on u.id=ss.employee_id
+            inner join personnel_department d on d.id=u.department_id
+            left join personnel_position p on p.id = u.position_id
+            where ss.effective_date >= '%(st)s' and ss.effective_date <= '%(et)s'
+            ]]>
+        </content>
+        <part id="emp">
+            <![CDATA[
+            and '%(emp)s'
+            ]]>
+        </part>
+    </sql>
+
+    <sql id="salary_structure_columns">
+        <content engine="default">
+            <![CDATA[
+              select pl.name, lc.category_name
+              from payroll_leaveformula pl
+              inner join att_leavecategory lc on  lc.id = pl.category_id
+            ]]>
+        </content>
+        <part id="emp">
+            <![CDATA[
+            ]]>
+        </part>
+    </sql>
+
+    <sql id="salary_structure_count">
+        <content engine="default">
+            <![CDATA[
+            select
+                 count(s.id) as data_count
+                 from payroll_salarystructure as s
+                 left join personnel_employee u  on u.id=s.employee_id
+                 where s.effective_date>='%(st)s' and s.effective_date < '%(et)s' and
+                 s.status=0
+            ]]>
+        </content>
+        <part id="">
+            <![CDATA[
+            and %(emp)s
+            ]]>
+        </part>
+    </sql>
+
+    <sql id="monthly_salary_count">
+        <content engine="default">
+            <![CDATA[
+            select
+                 count(s.id) as data_count
+                 from payroll_monthlysalary as s
+                 left join personnel_employee u  on u.id=s.employee_id
+                 where s.calc_time>='%(st)s' and s.calc_time < '%(et)s' and
+                 s.status=0
+            ]]>
+        </content>
+        <part id="">
+            <![CDATA[
+            and %(emp)s
+            ]]>
+        </part>
+    </sql>
+
+    <sql id="monthly_salary_data">
+        <content engine="default">
+            <![CDATA[
+             select u.emp_code, u.first_name, u.last_name,d.dept_code, d.dept_name,p.position_name, ms.basic_salary,ms.total_increase_formula_name as all_increase_name,
+             ms.total_increase as other_increase_amount, ms.extra_increse as monthly_increase_amount,ms.total_deduction_formula_name as all_deduction_name,
+             ms.total_deduction as other_deduction_amount, ms.extra_deduction as monthly_deduction_amount
+             ms.total_loan_amount as loan_amount, ms.loan_deduction as loan_refund, ms.refund_loan_amount as remain_repayment, ms.reimbursement,ms.total_salary
+            from payroll_monthlysalary ms
+            inner join personnel_employee u on u.id=ms.employee_id
+            inner join personnel_department d on d.id=u.department_id
+            left join personnel_position p on p.id = u.position_id
+            where ms.calc_time >= '%(st)s' and ms.calc_time <= '%(et)s'
+            ]]>
+        </content>
+        <part id="">
+            <![CDATA[
+            and %(emp)s
+            ]]>
+        </part>
+    </sql>
+</sqlgroup>

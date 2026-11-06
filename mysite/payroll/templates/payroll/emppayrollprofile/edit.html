@@ -1,0 +1,83 @@
+{% load i18n static common %}
+<div id="{{ model_name }}_edit_form" style="{% block form_style %}padding: 10px;{% endblock %}">
+    {% block edit_form %}
+    <form class="layui-form data-form" action="" method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+        {% with adminform.form as f %}
+            <div>
+                <div class="layui-form-item">
+                    {% layui_inline f.payment_mode %}
+                    <span onblur="disableInput()">{% layui_inline f.payment_type %}</span>
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.bank_name %}
+                    {% layui_inline f.bank_account %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.agent_id %}
+                    {% layui_inline f.agent_account %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.personnel_id %}
+                </div>
+            </div>
+        {% endwith %}
+
+        {% block add_fields %}
+        {% endblock %}
+    </form>
+    {% endblock %}
+</div>
+<script>
+    function disableInput()
+    {
+
+        var payment_type = document.getElementById("id_payment_type").value;
+        if (payment_type!=='3'){
+            $(".field-bank_name span").remove();
+            $(".field-bank_account span").remove();
+            document.getElementById("id_bank_name").disabled = true;
+            document.getElementById("id_bank_account").disabled = true;
+            document.getElementById("id_bank_name").value = null;
+            document.getElementById("id_bank_account").value = null;
+        }
+        else {
+            $(".field-bank_name label span").remove();
+            $(".field-bank_account label span").remove();
+            var span_req ="<span class='required'>*</span>";
+            $(".field-bank_name label").append(span_req);
+            $(".field-bank_account label").append(span_req);
+            document.getElementById("id_bank_name").disabled = false;
+            document.getElementById("id_bank_account").disabled = false;
+        }
+    }
+
+    var payment_type = document.getElementById("id_payment_type").value;
+    if (payment_type!=='3'){
+            document.getElementById("id_bank_name").disabled = true;
+            document.getElementById("id_bank_account").disabled = true;
+            document.getElementById("id_bank_name").value = null;
+            document.getElementById("id_bank_account").value = null;
+        }
+    if($('#id_payment_type').val() == "3") {
+        var span_req = "<span class='required'>*</span>";
+        $(".field-bank_name label").append(span_req);
+        $(".field-bank_account label").append(span_req);
+    }
+</script>
+
+<script>
+    layui.use(['form', 'laydate'], function() {
+        var form = layui.form, laydate = layui.laydate;
+        form.render();
+        $("form.layui-form input.layui-datetime").each(function(){
+            laydate.render({elem: this, type: 'datetime'});
+        });
+        $("form.layui-form input.layui-date").each(function(){
+            laydate.render({elem: this, type: 'date'});
+        });
+        $("form.layui-form input.layui-time").each(function(){
+            laydate.render({elem: this, type: 'time'});
+        });
+    });
+</script>

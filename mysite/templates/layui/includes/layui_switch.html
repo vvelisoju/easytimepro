@@ -1,0 +1,7 @@
+{% load i18n %}
+<div class="layui-inline{% if field.is_hidden %} layui-hidden {% endif %}{% if field.name %} field-{{ field.name }}{% endif %}" title="{{ field.field.help_text|safe }}">
+    <label class="layui-form-label" for="{{ field.id_for_label }}" style="margin-top: 6px;">{{ field.label }}{% if field.field.required %}<span class="required">*</span>{% endif %}</label>
+    <div class="layui-input-inline {% if field.is_hidden %} layui-hidden {% endif %}">
+      <input type="checkbox" id="{{ field.id_for_label }}" name="{{ field.name }}" lay-skin="switch" lay-text="{% trans 'boolean_option_yes' %}|{% trans 'boolean_option_no' %}" {% if field.initial %}checked{% endif %}>
+    </div>
+</div>

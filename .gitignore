@@ -1,0 +1,4 @@
+# --- Secrets / credentials (keep local, never commit) ---
+certs/*.key
+files/app_cert/*.pem
+files/app_cert/*-firebase-adminsdk-*.json

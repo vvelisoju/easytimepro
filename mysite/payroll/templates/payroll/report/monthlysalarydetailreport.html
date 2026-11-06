@@ -1,0 +1,65 @@
+{% extends 'payroll/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+    var cols = [[
+           {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}"}
+            ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+            ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+            ,{field:'department', title: "{% trans 'report_column_departmentName' %}"}
+            ,{field:'calc_time', title: "{% trans 'monthlySalary_field_calc_time' %}"}
+            ,{field:'basic_salary', title: "{% trans 'monthlySalary_field_basic_salary' %}"}
+            ,{field:'total_salary', title: "{% trans 'monthlySalary_field_total_salary' %}"}
+            ,{field:'total_increase', title: "{% trans 'monthlySalary_field_total_increase' %}"}
+            ,{field:'total_deduction', title: "{% trans 'monthlySalary_field_total_deduction' %}"}
+
+            ,{field:'ot1', title: "{% trans 'monthlySalary_field_ot1' %}"}
+            ,{field:'ot2', title: "{% trans 'monthlySalary_field_ot2' %}"}
+            ,{field:'ot3', title: "{% trans 'monthlySalary_field_ot3' %}"}
+            ,{field:'normal_ot', title: "{% trans 'report_column_normalOvertime' %}"}
+            ,{field:'weekend_ot', title: "{% trans 'report_column_weekendOvertime' %}"}
+            ,{field:'holiday_ot', title: "{% trans 'report_column_holidayOvertime' %}"}
+            ,{field:'increase', title: "{% trans 'monthlySalary_field_increase' %}"}
+            ,{field:'extra_increase', title: "{% trans 'monthlySalary_field_extra_increase' %}"}
+            ,{field:'loan_increase', title: "{% trans 'monthlySalary_field_loan_increase' %}"}
+            ,{field:'advance_increase', title: "{% trans 'monthlySalary_field_advance_increase' %}"}
+            ,{field:'reimbursement', title: "{% trans 'monthlySalary_field_reimbursement' %}"}
+
+            ,{field:'late_time', title: "{% trans 'monthlySalary_field_late_time' %}"}
+            ,{field:'early_leave', title: "{% trans 'monthlySalary_field_early_leave' %}"}
+            ,{field:'absent_time', title: "{% trans 'monthlySalary_field_absent_time' %}"}
+            ,{field:'deduction', title: "{% trans 'monthlySalary_field_deduction' %}"}
+            ,{field:'extra_deduction', title: "{% trans 'monthlySalary_field_extra_deduction' %}"}
+            ,{field:'advance_deduction', title: "{% trans 'monthlySalary_field_advance_deduction' %}"}
+            ,{field:'loan_deduction', title: "{% trans 'monthlySalary_field_loan_deduction' %}"}
+            ,{field:'total_loan_amount', title: "{% trans 'monthlySalary_field_total_loan_amount' %}"}
+            ,{field:'refund_loan_amount', title: "{% trans 'monthlySalary_field_refund_loan_amount' %}"}
+            ,{field:'unrefund_loan_amount', title: "{% trans 'monthlySalary_field_unrefund_loan_amount' %}"}
+        ]]
+    var leaveCols = [];
+    $.ajax({
+        url: "/payroll/api/leaveformulas/"
+        ,type: "GET"
+        ,dataType: "json"
+        ,async: false
+        ,success:function(response){
+            var data = response.data;
+            leave_set = new Set()
+            data.forEach(function(col, index){
+                if(!leave_set.has(col['category_name'])) {
+                    leave_set.add(col['category_name'])
+                    leaveCols.push({field: col['category_name'], title: col['category_name']})
+                };
+            });
+        }
+        ,error:function(){
+
+        }
+    });
+
+    var _cols = cols[0].concat(leaveCols);
+    cols[0] = _cols;
+    $.extend(opts, {
+        cols: cols
+        ,url: "/payroll/api/report/monthlysalarydetail_report/"
+    });
+{% endblock %}

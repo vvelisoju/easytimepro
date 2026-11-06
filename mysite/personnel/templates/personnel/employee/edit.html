@@ -1,0 +1,518 @@
+{% load i18n iclock_tags static common %}
+{% autoescape off %}
+  <div id="{{ model_name }}_edit_form" style="padding: 10px;">
+    <form class="layui-form data-form" action="" method="post" enctype="multipart/form-data" autocomplete="off">
+      {% csrf_token %}
+      {% with adminform.form as f %}
+        <div class="layui-card">
+          <div class="layui-card-header" style="background: #f2f2f2;">{% trans 'employee_basicInformation_setting' %}</div>
+          <div class="layui-card-body" style="padding-top: 10px">
+            <div class="layui-row">
+              <div class="layui-col-md9">
+                <div class="layui-form-item">
+                  {% layui_inline f.emp_code %}
+                  {% layui_inline f.first_name %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_inline f.department %}
+                  {% layui_inline f.last_name %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_inline f.position %}
+                  {% layui_inline f.area %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_inline f.emp_type %}
+                  {% layui_inline f.hire_date %}
+                </div>
+                <div class="layui-form-item">
+                    {% layui_inline f.location %}
+                    {% if software_type != 11 %}
+                      {% layui_inline f.enable_outdoor_management %}
+                    {% endif %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_inline f.validity_start %}
+                  {% layui_inline f.validity_end %}
+                </div>
+              </div>
+              <div class="layui-col-md3">
+                <div class="layui-upload-drag" id="empPhoto" style="width: 130px;height: 150px;padding: 5px;" title="{% trans 'employee_title_clickToUploadPhoto' %}">
+                  <script>
+                    function imgerrorfun(){
+                       var img=event.srcElement;
+                       img.src="/files/photo/nophoto.gif";
+                   }
+                  </script>
+                  <img id="reviewPhoto" src= "/files/photo/nophoto.gif" alt="" style="width: 120px;height: 140px;" onerror="imgerrorfun();">
+                  <div>{% trans 'employee_title_UploadPhoto' %}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-tab layui-tab-brief" lay-filter="employee_profile_tabs">
+          <ul class="layui-tab-title">
+            <li lay-id="emp_detail" class="layui-this">{% trans 'employee_moreDetail_setting' %}</li>
+            <li lay-id="emp_app">{% trans 'employee_deviceRelate_setting' %}</li>
+            {% if not 'ENABLE_WDMS'|get_sale_param %}
+              <li lay-id="emp_attendance">{% trans 'employee_attendance_settings' %}</li>
+              {% if adminform.form.instance.emp_code %}
+              <li lay-id="emp_certification">{% trans 'employee_document_settings' %}</li>
+              {% endif %}
+              <li lay-id="emp_access" class="layui-hide">{% trans 'employee_accessController_settings' %}</li>
+              <li lay-id="emp_app">{% trans 'employee_app_setting' %}</li>
+              <li lay-id="emp_whatsapp">{% trans 'whatsappSetting_otherSetting' %}</li>
+              <li lay-id="emp_sms">{% trans 'smsSetting_otherSetting' %}</li>
+              {% if 'ENABLE_PAYROLL'|get_sale_param %}
+                  <li lay-id="emp_payroll">{% trans 'payroll_setting' %}</li>
+              {% endif %}
+            {% endif %}
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+              <div style="margin-bottom: 5px;">
+                {% layui_inline f.ssn %}
+                {% layui_inline f.nickname %}
+                {% layui_inline f.gender %}
+              </div>
+              <div style="margin-bottom: 5px;">
+                {% layui_inline f.passport %}
+
+                {% layui_inline f.mobile %}
+                 {% layui_inline f.driver_license_motorcycle %}
+              </div>
+              <div style="margin-bottom: 5px;">
+                {% layui_inline f.contact_tel %}
+                {% layui_inline f.office_tel %}
+               {% layui_inline f.driver_license_automobile %}
+ 
+             </div>
+              <div style="margin-bottom: 5px;">
+                {% layui_inline f.card_no %}
+                {% layui_inline f.religion %}
+                {% layui_inline f.city %}
+              </div>
+              <div style="margin-bottom: 5px;">
+                {% layui_inline f.address %}
+                {% layui_inline f.postcode %}
+                {% layui_inline f.email %}
+              </div>
+              <div style="margin-bottom: 5px;">
+                {% layui_inline f.birthday %}
+                {% layui_inline f.national %}
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-row">
+                <div class="layui-col-md9">
+                  <div class="layui-form-item">
+                    {% layui_inline f.verify_mode %}
+                    {% layui_inline f.dev_privilege %}
+                  </div>
+                  <div class="layui-form-item">
+                    {% layui_inline f.device_password %}
+                  </div>
+                  <div class="layui-form-item">
+                    {% layui_inline f.enroll_sn %}
+                    <div class="layui-inline">
+                      <label for="" class="layui-form-label">{% trans "employee_label_fingerprintRegistered" %}</label>
+                      <div class="layui-input-inline" style="width: 115px !important;">
+                        <input id="fpCount" type="text" class="layui-input" value="{{ f.fp_count.value }}" disabled style="min-width: 110px !important;">
+                      </div>
+                      <div class="layui-form-mid layui-word-aux">
+                        <a id="fpRegister" href="javascript:void(0);" class="layui-btn layui-btn-sm" onclick="submitRegister()" style="width: 75px;">{% trans 'employee_btn_fingerprintEnroll' %}</a>
+                      </div>
+                      <div class="layui-hide">
+                        {{ f.fps }}
+                        {{ f.fp_type }}
+                        {{ f.templates }}
+                        {{ f.dur_fps }}
+                        {{ f.del_fps }}
+                        {{ f.preferences }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-col-md3">
+                    <div class="layui-upload-drag" id="bioPhoto" style="width: 130px;height: 150px;padding: 5px;" title="{% trans 'employee_title_clickToUploadBioPhoto' %}">
+                    <img id="reviewBioPhoto" src="/files/photo/nophoto.gif" alt="" style="width: 120px;height: 140px;" onerror="imgerrorfun();">
+                    <div>Bio-Photo</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item">
+                {% layui_inline f.enable_att %}
+                {% layui_inline f.enable_holiday %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.self_password %}
+                {% layui_inline f.flow_role %}
+              </div>
+            </div>
+            {% if adminform.form.instance.emp_code %}
+            <div class="layui-tab-item">
+              <table class="layui-hide" id="id_empDocument" lay-filter="empDocument"></table>
+            </div>
+            {% endif %}
+            <div class="layui-tab-item layui-hide">
+              <div style="margin-bottom: 5px;">
+                {% layui_inline f.acc_group %}
+                {% layui_inline f.acc_timezone %}
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item">
+                {% layui_inline f.app_status %}
+                {% layui_inline f.app_role %}
+                {% layui_inline f.app_punch_status %}
+              </div>
+              {% if f.client_id %}
+              <div class="layui-form-item">
+                  {% layui_inline f.client_id %}
+                  <a id="reset_client" href="javascript:void(0);" class="layui-btn layui-btn-sm" style="width: 88px;">Reset Client
+                  </a>
+              </div>
+              {% endif %}
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item">
+                {% layui_inline f.enable_whatsapp %}
+                {% layui_inline f.whatsapp_exception %}
+                {% layui_inline f.whatsapp_punch %}
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item">
+                {% layui_inline f.enable_sms %}
+                {% layui_inline f.sms_exception %}
+                {% layui_inline f.sms_punch %}
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <div class="layui-form-item">
+                {% layui_inline f.payment_mode %}
+                <span onblur="disableInput()">{% layui_inline f.payment_type %}</span>
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.bank_name %}
+                {% layui_inline f.bank_account %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.agent_id %}
+                {% layui_inline f.agent_account %}
+              </div>
+              <div class="layui-form-item">
+                {% layui_inline f.personnel_id %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endwith %}
+    </form>
+  </div>
+
+<script>
+        var passwordInput = document.getElementById('id_device_password');
+        passwordInput.setAttribute('autocomplete', 'new-password');
+    function disableInput()
+    {
+        var payment_type = document.getElementById("id_payment_type").value;
+        console.log(payment_type)
+        if (payment_type!=='3'){
+
+            document.getElementById("id_bank_name").disabled = true;
+            document.getElementById("id_bank_account").disabled = true;
+            document.getElementById("id_bank_name").value = null;
+            document.getElementById("id_bank_account").value = null;
+        }
+        else {
+            document.getElementById("id_bank_name").disabled = false;
+            document.getElementById("id_bank_account").disabled = false;
+        }
+    }
+
+    var payment_type = document.getElementById("id_payment_type").value;
+    if (payment_type!=='3'){
+            document.getElementById("id_bank_name").disabled = true;
+            document.getElementById("id_bank_account").disabled = true;
+            document.getElementById("id_bank_name").value = null;
+            document.getElementById("id_bank_account").value = null;
+        }
+</script>
+  <script>
+    layui.use(['element', 'layer', 'laydate', 'form', 'upload', 'table'], function () {
+      var element = layui.element,
+        laydate = layui.laydate,
+        form = layui.form,
+        upload = layui.upload,
+        table = layui.table;
+      form.render();
+      element.render();
+      laydate.render();
+      if($('#id_payment_type').val() == "3"){
+        var span_req ="<span class='required'>*</span>";
+            $(".field-bank_name label").append(span_req);
+            $(".field-bank_account label").append(span_req);
+      }
+      form.on('select(payment_type)', function(data){
+        if(data.value=="3"){
+            $(".field-bank_name label span").remove();
+            $(".field-bank_account label span").remove();
+            var span_req ="<span class='required'>*</span>";
+            $(".field-bank_name label").append(span_req);
+            $(".field-bank_account label").append(span_req);
+        }else{
+            $(".field-bank_name span").remove();
+            $(".field-bank_account span").remove();
+        }
+      });
+      upload.render({
+          elem: "#empPhoto"
+          //,url: ''
+          ,auto: false
+          ,field: "photo"
+          ,exts: "jpg|jpeg|png|bmp"
+          ,choose: function(obj){
+            obj.preview(function(index, file, result){
+              $('#reviewPhoto').attr('src', result); //图片链接（base64）
+            });
+          }
+          ,error: function(index, upload){
+
+          }
+      });
+      upload.render({
+          elem: "#bioPhoto"
+          //,url: ''
+          ,auto: false
+          ,field: "bio_photo"
+          ,exts: "jpg|jpeg|png|bmp"
+          ,choose: function(obj){
+            obj.preview(function(index, file, result){
+              $('#reviewBioPhoto').attr('src', result); //图片链接（base64）
+            });
+          }
+          ,error: function(index, upload){
+
+          }
+      });
+      $("#id_validity_start, #id_validity_end").each(function () {
+        var laydate = layui.laydate;
+        laydate.render({
+          elem: this,
+          type: 'date',
+          format: 'yyyy-MM-dd',
+        });
+      });
+      $("form.layui-form input.layui-date").each(function () {
+        var laydate = layui.laydate;
+        laydate.render({
+          elem: this,
+          type: 'date',
+            min: '1900-01-01',
+            max: 'date.year-12-31'
+        });
+      });
+      //$("#id_emp_code").change(function(){
+      //    alert($(this).val());
+      //});
+
+      $("#reset_client").click(function (index, layero) {
+            layer.open({
+                type: 1,
+                title: 'Reset Client',
+                content: '<div style="padding: 20px 100px;">'+ "Are you sure to reset？" +'</div>',
+                btn: ['Confirm', 'Cancel'],
+                cancelBlur: 2,
+                yes: function(index, layero) {
+                    var loadIndex = layer.load();
+                    $.ajax({
+                       url: "/personnel/reset_client/?emp={{ adminform.form.instance.pk }}",
+                       type: "GET",
+                       dataType: "json",
+                       success: function(callback){
+                            if(callback.code == 1){
+                                layer.alert(gettext('reset_successful'), {icon: 1, time: 2000, title: ' ',
+                                btn: gettext("btn_confirm")})
+                                layer.close(loadIndex);
+
+                                layui.table.reload('employee_edit_form');
+                                layer.close(index);
+                            }else if(callback.code == 0){
+                                layer.alert(gettext('client_not_set'), {icon: 5, time: 2000, title: ' ',
+                                btn: gettext("btn_confirm")})
+                                layer.close(loadIndex);
+                                layer.close(index);
+                           }else{
+                                layer.alert(gettext('reset_error'), {icon: 5, time: 2000, title: ' ', btn: gettext("btn_confirm")});
+                                layer.close(index);
+                            }
+                           layer.close(loadIndex);
+                            layer.close(index);
+                       },
+                       error: function(){
+                           layer.close(loadIndex);
+                           layer.close(index);
+                       }
+                    })
+                }
+          });
+      })
+
+    });
+  </script>
+  {% block add_contents %}
+
+  <script src="{% static "/js/baseISSObject.min.js" %}"></script>
+  <script src="{% static "/js/baseFPRegister.js" %}"></script>
+  <script src="{% static "/js/empFPRegister.js" %}"></script>
+  
+  {% endblock %}
+  <script type="text/html" id="toolbarHead">
+  <div class="layui-btn-container">
+    <a class="layui-btn layui-btn-sm" lay-event="add">{% trans "common_action_new" %}</a>
+  </div>
+  </script>
+  <script type="text/html" id="toolbarRow">
+   {% verbatim %}
+        {{#  if(d.file_name){ }}
+         <a class="layui-btn layui-btn-xs" lay-event="file"><i class="fa fa-fw fa-drivers-license"></i></a>
+        {{# }else{ }}
+         <a class="layui-btn layui-btn-xs" lay-event="file"><i class="fa fa-fw fa-drivers-license" style="color: grey"></i></a>
+        {{# } }}
+   {% endverbatim %}
+    <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="fa fa-fw fa-pencil-square-o"></i></a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="fa fa-fw fa-trash-o"></i></a>
+  </script>
+  <script>
+    $(document).ready(function () {
+      var company_id = '{{ adminform.form.instance.company.hex_id }}';
+      var emp_code = encodeURIComponent('{{ adminform.form.instance.emp_code }}');
+      var photo_url = "/files/photo/" + company_id + "/"+emp_code+".jpg?r="+Math.random();
+      var biophoto_url = "/files/biophoto/" + company_id + "/"+emp_code+".jpg?r="+Math.random();
+      $('#reviewPhoto').attr('src', photo_url);
+      $('#reviewBioPhoto').attr('src', biophoto_url);
+      layui.use('table', function () {
+        var table = layui.table;
+        {% if adminform.form.instance.emp_code %}
+          var tb = table.render({
+            elem: '#id_empDocument'
+            ,method: 'GET'
+            ,url: '/personnel/api/employeecertifications/?employee_id={{ adminform.form.instance.pk }}'
+            ,toolbar: '#toolbarHead'
+            ,defaultToolbar: []
+            ,title: 'table'
+            ,height: 220
+            ,cols: [[ //title
+              {field: 'id', sort: true, hide: true}
+              , {field: 'cert_name', title: "{% trans 'employeeCert_field_doc'%}"}
+              , {field: 'expire_on', title: "{% trans 'employeeCert_field_expireOn'%}"}
+              , {field: 'email_alert', title: "{% trans 'employeeCert_field_emailAlert'%}"}
+              , {field: 'before', title: "{% trans 'employeeCert_field_before'%}"}
+              , {field: 'file_name', title: "{% trans 'employeeCert_field_fileName'%}"}
+              , {toolbar: '#toolbarRow'}
+            ]]
+            ,data: [{id: '', cert_name: '', expire_on: '', email_alert: '', before: '', file_name: ''}]
+            ,page: false
+            ,text: {
+              none: gettext('none_data')
+            }
+          });
+        {% endif %}
+        var upload_doc = function(url){
+            $.ajax({
+                url: url
+                ,type: "GET"
+                ,dataType: "html"
+                ,success: function (page) {
+                    layer.open({
+                        title: "Add"
+                        ,area: ['800px', '300px']
+                        ,content: page
+                        ,btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+                        ,yes: function (index, layero) {
+                            var f = $(layero).find('.layui-form');
+                            var data = new FormData(f[0]);
+                            $.ajax({
+                                url: '/personnel/update_document/'
+                                ,type: 'POST'
+                                ,dataType: ""
+                                ,processData:false
+                                ,contentType:false
+                                ,async: false
+                                ,cache: false
+                                ,data: data
+                                ,success: function(response){
+                                    if(response.code == 0){
+                                        layer.msg(gettext('action_post_successful'));
+                                        tb.reload();
+                                    }else{
+                                      if(response.code == -2 || response.code == -3 || response.code == -4){
+                                          var contents = response.msg;
+                                      }else{
+                                          var errors_get = JSON.parse(response.msg);
+                                          var test = errors_get['__all__'];
+                                          var contents = test[0]['message'];
+                                      }
+                                      layer.open({
+                                      title: 'Prompt',
+                                      type: 1,
+                                      fixed: false, //不固定
+                                      maxmin: false,
+                                      btn: ['Cancel'],
+                                      content: contents,
+                                      yes: function (index, layero) {
+                                        layer.close(index);
+                                      }
+                                      });
+                                    }
+                                }
+                            });
+                        }
+                    })
+                }
+            })
+        };
+        table.on('toolbar(empDocument)', function (obj) {
+            if (obj.event === 'add') {
+                var url= '/personnel/update_document/?emp={{ adminform.form.instance.pk }}';
+                upload_doc(url);
+            }
+        });
+        table.on('tool(empDocument)', function (obj) {
+          var data = obj.data;
+          if (obj.event === 'del') {
+            layer.confirm("{% trans 'are_you_sure_to_delete_the_selected_document' %}", {
+                  title:gettext('layer_title'),
+                  btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+                }, function (index) {
+                  $.ajax({
+                      url: '/personnel/remove_document/?_id='+data['id']
+                      ,type: "GET"
+                      ,dataType: "json"
+                      ,success: function (response) {
+                          layer.close(index);
+                          tb.reload();
+                      }
+                  });
+                }
+            );
+          }else if(obj.event === 'edit'){
+            var url= '/personnel/update_document/?emp={{ adminform.form.instance.pk }}&&_id='+data['id'];
+            upload_doc(url);
+          }else if(obj.event=='file'){
+              if(data.file_name){
+                  var a = document.createElement('a');
+                  a.href =  '/files/document/' + data.file_name ;
+                  a.download=data.file_name;
+                  a.click();
+              }
+          }
+        });
+      });
+    });
+  </script>
+{% endautoescape %}

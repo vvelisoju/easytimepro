@@ -1,0 +1,83 @@
+{% extends 'att/report/base.html' %}
+{% load i18n %}
+{% block search_form_init %}
+  var date = new Date();
+  var cur = moment(new Date());
+  var _start = cur.startOf('month').format('YYYY-MM');
+  var fullStartOfMonth = cur.startOf('month').format('YYYY-MM-DD');
+  var fullEndOfMonth = cur.endOf('month').format('YYYY-MM-DD');
+
+  var startDate = laydate.render({
+    elem: '#{{ model_name }}-start-date',
+    type: 'month',
+    value: _start,
+  });
+  $.extend(opts, {where: {start_date: fullStartOfMonth, end_date: fullEndOfMonth}});
+{% endblock %}
+{% block opts_modify %}
+    var userCols = [
+        {field:'emp_code', width:120, title: "{% trans 'report_column_empCode' %}", sort:true}
+        ,{field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+        ,{field:'last_name', title: "{% trans 'report_column_lastName' %}"}
+        ,{field:'nick_name', title: "{% trans 'report_column_nickName' %}"}
+        ,{field:'gender', title: "{% trans 'report_column_gender' %}"}
+        ,{field:'dept_code', title: "{% trans 'report_column_departmentCode' %}"}
+        ,{field:'dept_name', width:140, title: "{% trans 'report_column_departmentName' %}"}
+        ,{field:'position_code', title: "{% trans 'report_column_positionCode' %}"}
+        ,{field:'position_name', title: "{% trans 'report_column_positionName' %}"}
+        ,{field:'data_type', title: "{% trans 'report_column_type' %}"}
+    ];
+
+    var dateCols = [];
+    var start = new Date(date.getFullYear(), date.getMonth(), 1)
+    while((date.getTime() - start.getTime()) >= 0){
+        var _start = moment(start)
+        dateCols.push({field:_start.format("MM/DD"), title:_start.format("D"), width: 50})
+        start.setDate(start.getDate()+1);
+    }
+    _cols = userCols.concat(dateCols)
+    $.extend(opts, {
+        cols: [_cols]
+        ,method: "get"
+        ,url: "/att/api/monthlyDurationSummaryReport/"
+    });
+{% endblock %}
+{% block columns_modify %}
+    var start = new Date(startDate.substring(0, 4), parseInt(startDate.substring(5, 7))-1, startDate.substring(8, 10))
+    var temp_end_date = moment(startDate).endOf('month').format('YYYY-MM-DD');
+    var end = new Date(temp_end_date.substring(0, 4), parseInt(temp_end_date.substring(5, 7))-1, temp_end_date.substring(8, 10))
+    var dateCols = [];
+    while((end.getTime() - start.getTime()) >= 0){
+        var _start = moment(start);
+        dateCols.push({field:_start.format("MM/DD"), title:_start.format("D"), width: 50})
+        start.setDate(start.getDate()+1);
+    }
+    _cols = userCols.concat(dateCols)
+
+    $.extend(opts, {
+        cols: [_cols]
+        ,method: "get"
+        ,where: c
+<!--        ,page: {curr: 1}-->
+    });
+
+    // tb = table.reload(tb.config.id, opts)
+    tb = table.render(opts)
+
+    $.extend(action_opts, {
+        curTable: tb
+    });
+    $("#{{model_name}}_fluid" + " div.grid-toolbar").actions(action_opts);
+
+    form.on("submit({{ model_name }}-search)", function (data) {
+                refreshReport('');
+            });
+{% endblock %}
+{% block search_report_date %}
+  var startDate = $("#{{ model_name }}-search-form input[name='start_date']").val();
+  startDate = moment(startDate).startOf('month').format('YYYY-MM-DD');
+  var endDate = moment(startDate).endOf('month').format('YYYY-MM-DD');
+{% endblock %}
+
+{% block search_form_enddate %}
+{% endblock %}

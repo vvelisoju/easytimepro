@@ -1,0 +1,94 @@
+volumes:
+  postgres_data: {}
+  postgres_backup: {}
+  redis_data: {}
+
+services:
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: easytimepro-postgres
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - postgres_backup:/backups
+      - ./compose/production/postgres/postgresql.conf:/etc/postgresql/18/main/postgresql.conf
+      - ./compose/production/postgres/pg_hba.conf:/etc/postgresql/18/main/pg_hba.conf
+    environment:
+      - POSTGRES_DB=easytime
+      - POSTGRES_USER=my_super_user
+      - POSTGRES_PASSWORD=mysecretpass
+      - POSTGRES_HOST=postgres
+    ports:
+      - 7496:5432
+  redis:
+    build:
+      context: .
+      dockerfile: ./compose/production/redis/Dockerfile
+    image: easytimepro-redis
+    restart: unless-stopped
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+     - ./compose/production/redis/redis.conf:/usr/local/etc/redis/redis.conf
+     - redis_data:/data
+
+
+  web:
+    build:
+      context: .
+      dockerfile: ./compose/production/web/Dockerfile  
+    image: easytimepro-web
+    restart: unless-stopped
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    environment:
+      - DJANGO_ENV=enterprise_version_test
+      - DJANGO_SETTINGS_MODULE=mysite.settings
+      - CONTAINER_DEPLOY=compose
+      - CLOUD_VERSION=false
+      - SERVICE=web
+
+  worker:
+    image: easytimepro-web
+    restart: unless-stopped
+    environment:
+      - SERVICE=worker
+      - CONTAINER_DEPLOY=compose
+      - CLOUD_VERSION=false
+      - DEBUG=false
+      - C_FORCE_ROOT=false
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+ 
+  beat:
+    image: easytimepro-web
+    restart: unless-stopped
+    environment:
+      - SERVICE=beat
+      - CONTAINER_DEPLOY=compose
+      - CLOUD_VERSION=false
+      - DEBUG=false
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./compose/production/nginx/Dockerfile
+    image: easytimepro-ngnix
+    restart: unless-stopped
+    ports:
+      - "${web_port:-80}:8080"
+    volumes:
+      - .:/app
+      - ./certs:/app/certs:ro
+    depends_on:
+      - web

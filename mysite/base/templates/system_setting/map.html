@@ -1,0 +1,299 @@
+{% load i18n common %}
+<script src="{% static 'cloud/static/js/jquery/jquery-3.5.1.min.js' %}?v=2.2.4"></script>
+<script src="{% static 'layer/layer.js' %}?v=1.0.1"></script>
+<script src="{% static 'locale/i18n.min.js' %}?v=1.2"></script>
+<script src="{{ STATIC_URL }}locale/i18n_{{ LANGUAGE_CODE|default:'en' }}.js?v=1.3"></script>
+<style>
+  .pac-container {
+    z-index: 1100 !important;
+  }
+</style>
+<form class="test-form" action style="margin: 0;">
+    <div style="padding: 1em; height: auto;">
+      <table style="margin: 0 !important; width: 100%;">
+        <tbody>
+        <tr>
+          <td style="vertical-align:top">
+            <div class=layui-form-item" style="margin-bottom: 1em;">
+              <div class="layui-inline">
+                <label class="layui-form-label" for="id_search_map">{% trans 'companySettingPage_label_Search_Map' %}</label>
+                    <input type="text" name="search_map" class="layui-input" id="id_search_map" autocomplete="on"
+                         style="padding: 0.3em;width: 70%; max-width: 448px">
+                    <input type="button" id="search_button" onclick="formatAddress()" class="fa fa-fw fa-search" value="Search"/>
+                    <input type="hidden" name="latitude" id="id_latitude" value="">
+                    <input type="hidden" name="longitude" id="id_longitude" value="">
+                </div>
+            </div>
+            <div id="map-canvas" style="height: 350px; width: 100%; position: relative; overflow: hidden; border: 1px solid #797979;"></div>
+            <div style="margin-top: 1em;">
+              <div id="gps_add" style="width: 100%; line-height: 1.5em; font-size: 13px;"></div>
+              <br>
+              <span id="gps_pos"></span>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+</form>
+<script>
+
+  var circle, map, marker, zoomUpdate, mapDistance;
+  var tmp_google, tmp_circle, tmp_map, tmp_marker, tmp_zoomUpdate, tmp_mapDistance;
+  var initLat = '12.9891657',
+      initLon = '77.6885258',
+      check_submit = 0,
+      noPos = false;
+
+  function checkSubmit() {
+    if (check_submit) {
+      check_submit = 0;
+      circle = tmp_circle;
+      google = tmp_google;
+      map = tmp_map;
+      marker = tmp_marker;
+      zoomUpdate = tmp_zoomUpdate;
+      mapDistance = tmp_zoomUpdate
+    }
+  }
+
+  function initData() {
+    var autocomplete = new google.maps.places.Autocomplete(document.getElementById('id_search_map'));
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+      var place = autocomplete.getPlace();
+      zoomUpdate = 18;
+      if (place !== undefined) {
+        if (place.formatted_address === undefined) {
+<!--          formatAddress();-->
+        } else {
+          showInMap(place.geometry.location);
+        }
+      } else {
+        showInMap(new google.maps.LatLng(initLat, initLon), true);
+      }
+    });
+    initMap();
+  }
+
+  function formatAddress() {
+    var geocoder = new google.maps.Geocoder();
+    var entered_address = document.getElementById('id_search_map').value;
+    if ('{{ company_address }}' === '' || entered_address !== '') {
+      var address = document.getElementById('id_search_map').value;
+    } else {
+      var address = '{{ company_address }}';
+    }
+    geocoder.geocode({'address': address}, function (results, status) {
+      if (status === 'OK') {
+        geometryLocation = results[0].geometry.location;
+        geometryAddress = results[0].formatted_address;
+        if (typeof (map) == "undefined") {
+          let mapOptions = {
+            center: geometryLocation,
+            zoom: 6,
+            disableDefaultUI: true,
+            scrollwheel: false,
+            draggable: false
+          };
+          map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+          marker = new google.maps.Marker({
+            position: geometryLocation,
+            map: map,
+            draggable: true
+          });
+
+          google.maps.event.addListener(marker, 'dragend', function () {
+            checkSubmit();
+          });
+        } else {
+          map.setOptions({center: geometryLocation, zoom: map.getZoom()});
+          marker.setPosition(geometryLocation);
+        }
+        geocodePosition(marker.getPosition());
+      }
+      else{
+        layer.alert(gettext('invalid_location'), {title: gettext("layer_title"), icon: 5, btn: gettext("btn_confirm")});
+      }
+    });
+  }
+
+  function showInMap(pos, noPos) {
+    checkSubmit();
+    if (typeof (map) == "undefined") {
+      var mapOption = {
+        center: pos,
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
+        scrollwheel: false,
+        draggable: false
+      };
+      if (noPos) {
+        mapOption['zoom'] = 5;
+        zoomUpdate = 5
+      } else {
+        zoomUpdate = 18
+      }
+
+      map = new google.maps.Map(document.getElementById("map-canvas"), mapOption);
+      marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        draggable: true
+      });
+      marker.addListener('click', function () {
+        map.setZoom(zoomUpdate);
+        map.setCenter(marker.getPosition());
+      });
+
+      google.maps.event.addListener(marker, 'dragend', function () {
+        checkSubmit();
+        geocodePosition(marker.getPosition());
+      });
+    } else {
+      map.setOptions({center: pos, zoom: 12});
+      marker.setPosition(pos);
+    }
+    geocodePosition(marker.getPosition(), noPos);
+  }
+
+  function geocodePosition(pos, noPos) { // noPos means first time to add
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode
+    ({latLng: pos}, function (responses) {
+      if (responses && responses.length > 0) {
+        geometryLocation = pos;
+        geometryAddress = responses[0].formatted_address;
+        addressLongitude = responses[0].geometry.location.lng();
+        addressLatitude = responses[0].geometry.location.lat();
+
+        let companyAddress = getCompanyAddress(responses[0].address_components)
+        addressCountry = companyAddress.country;
+        addressCountryShortName = companyAddress.country_short_name;
+        addressState = companyAddress.state;
+        addressCity = companyAddress.city;
+
+        document.getElementById('gps_add').innerText = geometryAddress;
+        let addressLocation = {
+           "company_address" : geometryAddress,
+           "company_address_longitude": addressLongitude,
+           "company_address_latitude": addressLatitude,
+           "company_address_country" : addressCountry,
+           "company_address_country_shortname" : addressCountryShortName,
+           "company_address_state" : addressState,
+           "company_address_city" : addressCity,
+        }
+        localStorage.setItem('addressLocation', JSON.stringify(addressLocation));
+        if (!noPos) {
+          document.getElementById('id_latitude').value = pos.lat();
+          document.getElementById('id_longitude').value = pos.lng()
+        }
+      }
+      if (!(circle === undefined)) {
+        circle.setOptions({center: pos, radius: parseFloat(mapDistance)});
+      } else {
+        circle = new google.maps.Circle({
+          strokeColor: "#7ac143",
+          strokeOpacity: 0.8,
+          strokeWeight: 1.5,
+          fillColor: "#7ac143",
+          fillOpacity: 0.35,
+          map: map,
+          center: pos,
+          radius: parseFloat(mapDistance)
+        })
+      }
+    });
+  }
+
+  function updateDistannce() {
+    circle.setOptions({center: marker.getPosition(), radius: parseFloat(mapDistance)});
+  }
+
+  function initMap() {
+    mapDistance = 50;
+    if (!mapDistance || isNaN(mapDistance)) {
+      mapDistance = 0
+    }
+    let company_address = '{{ company_address }}'
+    if (company_address === '') {
+      showInMap(new google.maps.LatLng(initLat, initLon), true);
+    } else {
+      formatAddress()
+    }
+  }
+  (function(){
+      $.getScript("https://maps.googleapis.com/maps/api/js?key={% MAPS_API_KEY %}&v=3.31&libraries=places", function () {
+        initData()
+      });
+      $('#id_distance').on("input", function () {
+        //change distance need change circle also.
+        if (!isNaN(this.value)) {
+          mapDistance = this.value
+        } else {
+          mapDistance = 0
+        }
+        updateDistannce()
+      });
+      $('#id_distance').change(function () {
+        var distance = $('#id_distance').val();
+        if (distance < 0) {
+          layer.alert(gettext('gps_distance_invalid'), {
+            title: gettext('system_exception')
+            , icon: 5
+            , btn: gettext('btn_confirm')
+          })
+        }
+      });
+  })();
+
+    $(".layui-layer-btn0, .layui-layer-close1, .layui-layer-btn1").click(function () {
+      if (google !== undefined) {
+        check_submit = 1;
+        tmp_google = google;
+        tmp_circle = circle;
+        tmp_map = map;
+        tmp_marker = marker;
+        tmp_zoomUpdate = zoomUpdate;
+        tmp_mapDistance = mapDistance;
+        google = circle = map = marker = zoomUpdate = mapDistance = undefined;
+      }
+    });
+
+    var search = document.getElementById("id_search_map");
+    search.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        formatAddress();
+      }
+    });
+
+    function getCompanyAddress(addressComponents) {
+        let country = "";
+        let country_short_name = "";
+        let state = "";
+        let city = "";
+        for (let i = 0; i < addressComponents.length; i++) {
+          switch(addressComponents[i].types[0]) {
+            case "country":
+              country = addressComponents[i].long_name
+              country_short_name = addressComponents[i].short_name
+              break;
+            case "administrative_area_level_1":
+              state = addressComponents[i].long_name
+              break;
+            case "locality":
+              city = addressComponents[i].long_name
+              break;
+          }
+        }
+        dict= {
+            "country": country,
+            "country_short_name": country_short_name,
+            "state": state,
+            "city": city
+        };
+        return dict;
+    }
+
+</script>

@@ -1,0 +1,18 @@
+{% extends 'staff/includes/approval_search_form.html' %}
+{% load i18n %}
+{% block searchFormExtra %}
+    <div class="layui-inline">
+    <label for="" class="layui-form-label">{% trans 'report_column_punchState' %}</label>
+    <div class="layui-input-inline">
+      <select name="state" id="state_{{ model_name }}" >
+        <option value="">{% trans '----------' %}</option>
+        <option value="0">{% trans 'report_display_checkIn' %}</option>
+        <option value="1">{% trans 'report_display_checkOut' %}</option>
+        <option value="3">{% trans 'report_display_breakIn' %}</option>
+        <option value="2">{% trans 'report_display_breakOut' %}</option>
+        <option value="4">{% trans 'report_display_overtimeIn' %}</option>
+        <option value="5">{% trans 'report_display_overtimeOut' %}</option>
+      </select>
+    </div>
+  </div>
+{% endblock %}

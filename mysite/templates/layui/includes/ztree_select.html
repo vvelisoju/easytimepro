@@ -1,0 +1,15 @@
+{% load common %}
+<div id="{{ widget.name }}{{ widget.attrs.stamp }}" class="layui-form-select tree-select"></div>
+<script>
+  // sourceURL={{ widget.name }}{{ widget.attrs.stamp }}.js
+  $(function () {
+    var widget_name = '{{ widget.name }}', widget_model = '{{ widget.attrs.model }}', widget_stamp = '{{ widget.attrs.stamp }}';
+    $('#' + widget_name + widget_stamp).zTreeSelect({
+      model: widget_model,
+      name: widget_name,
+      stamp: widget_stamp,
+      input_type: "{{ widget.attrs.input_type }}",
+      data: {{ widget.attrs.data|py_dict_to_js|safe }}
+    });
+  });
+</script>

@@ -1,0 +1,19 @@
+{% extends 'staff/report/base.html' %}
+{% load i18n %}
+{% block opts_modify %}
+  $.extend(opts, {
+    cols: [[
+      {field:'first_name', title: "{% trans 'report_column_firstName' %}"}
+      ,{field:'allotment_type', title: "{% trans 'report_leave_type' %}"}
+      ,{field:'effective_date', title: "{% trans 'report_start_date' %}"}
+      ,{field:'increment_date', title: "{% trans 'report_end_date' %}"}
+      ,{field:'days', title: "{% trans 'report_total_leave' %}"}
+      ,{field:'max_leave_per_month', title: "{% trans 'report_allowed_leaves_permonth' %}"}
+      ,{field:'carry_forward_limit', title: "{% trans 'report_carry_forward' %}"}
+      ,{field:'leave_availed', title: "{% trans 'report_leave_availed' %}"}
+      ,{field:'leave_balance', title: "{% trans 'report_leave_balance' %}"}
+    ]]
+    ,url: "/att/api/leavedetailsReport/"
+    ,method: "get"
+  });
+{% endblock %}

@@ -1,0 +1,903 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: <arvin.chen@zkteco.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "menu_payroll"
+msgstr "Payroll"
+
+msgid "menu_group_payroll_empPayrollProfile"
+msgstr "Employee Profile"
+
+msgid "menu_payroll_empPayrollProfile"
+msgstr "Employee Profile"
+
+msgid "menu_group_payroll_formula"
+msgstr "Formula"
+
+msgid "menu_payroll_deductionFormula"
+msgstr "Deduction Formula"
+
+msgid "menu_payroll_exceptionFormula"
+msgstr "Exception Formula"
+
+msgid "menu_payroll_increasementFormula"
+msgstr "Allowance Formula"
+
+msgid "menu_payroll_leaveFormula"
+msgstr "Leave Formula"
+
+msgid "menu_payroll_overtimeFormula"
+msgstr "Overtime Formula"
+
+msgid "menu_group_payroll_extra_funds"
+msgstr "Extra Funds"
+
+msgid "menu_payroll_extraincrease"
+msgstr "Bonus"
+
+msgid "menu_payroll_extradeduction"
+msgstr "Extra Deduction"
+
+msgid "menu_group_payroll_salarystructure"
+msgstr "Payroll Structure"
+
+msgid "menu_payroll_salarystructure"
+msgstr "Payroll Structure"
+
+msgid "menu_group_payroll_empLoan"
+msgstr "Loan"
+
+msgid "menu_payroll_empLoan"
+msgstr "Loan"
+
+msgid "menu_group_payroll_salaryadvance"
+msgstr "Salary Advance"
+
+msgid "menu_payroll_salaryadvance"
+msgstr "Salary Advance"
+
+msgid "menu_group_payroll_reimbursement"
+msgstr "Reimbursement"
+
+msgid "menu_payroll_reimbursement"
+msgstr "Reimbursement"
+
+msgid "menu_group_payroll_calculation"
+msgstr "Calculate Payroll"
+
+msgid "menu_payroll_salary_report_calculator"
+msgstr "Calculate"
+
+msgid "menu_group_payroll_report"
+msgstr "Report"
+
+msgid "menu_payroll_salary_structure_report"
+msgstr "Salary Structure"
+
+msgid "menu_payroll_increase_report"
+msgstr "Bonus Report"
+
+msgid "menu_payroll_deduction_report"
+msgstr "Deduction Report"
+
+msgid "menu_payroll_monthly_salary_report"
+msgstr "Salary Details"
+
+msgid "menu_payroll_clac_param_report"
+msgstr "Attendance Parameter"
+
+msgid "menu_payroll_setting"
+msgstr "Payroll Setting"
+
+msgid "paroll_mode_monthly"
+msgstr "Monthly"
+
+msgid "paroll_type_cash"
+msgstr "Cash"
+
+msgid "paroll_type_cheque"
+msgstr "Cheque"
+
+msgid "paroll_type_bank_transfer"
+msgstr "Bank Transfer"
+
+msgid "payroll_model_empPayrollProfile"
+msgstr "Employee Profile"
+
+msgid "empPayrollProfile_field_ssn"
+msgstr "SSN"
+
+msgid "empPayrollProfile_field_payment_mode"
+msgstr "Payment Cycle"
+
+msgid "empPayrollProfile_field_payment_type"
+msgstr "Payment Mode"
+
+msgid "empPayrollProfile_field_bank_name"
+msgstr "Bank Name"
+
+msgid "empPayrollProfile_field_bank_account"
+msgstr "Account Number"
+
+msgid "empPayrollProfile_field_personnel_id"
+msgstr "Personnel ID"
+
+msgid "empPayrollProfile_field_first_name"
+msgstr "First Name"
+
+msgid "empPayrollProfile_field_last_name"
+msgstr "Last Name"
+
+msgid "empPayrollProfile_field_agent_id"
+msgstr "Agent ID"
+
+msgid "empPayrollProfile_field_agent_account"
+msgstr "Agent Account"
+
+msgid "payroll_model_deductionFormula"
+msgstr "Deduction Formula"
+
+msgid "deductionFormula_field_name"
+msgstr "Deduction Name"
+
+msgid "deductionFormula_field_formula"
+msgstr "Formula"
+
+msgid "deductionFormula_field_remark"
+msgstr "Remarks"
+
+msgid "payroll_model_exceptionFormula"
+msgstr "Exception Formula"
+
+msgid "exceptionFormula_field_name"
+msgstr " Exception Name"
+
+msgid "exceptionFormula_field_exception_type"
+msgstr "Exception Type"
+
+msgid "exceptionFormula_field_formula"
+msgstr "Formula"
+
+msgid "exceptionFormula_field_remark"
+msgstr "Remarks"
+
+msgid "payroll_model_increasementFormula"
+msgstr "Allowance Formula"
+
+msgid "increasementFormula_field_name"
+msgstr "Allowance Name"
+
+msgid "increasementFormula_field_formula"
+msgstr "Formula"
+
+msgid "increasementFormula_field_remark"
+msgstr "Remarks"
+
+msgid "payroll_model_leaveFormula"
+msgstr "Leave Formula"
+
+msgid "leaveFormula_field_name"
+msgstr " Leave Name"
+
+msgid "leaveFormula_field_category"
+msgstr "Leave Type"
+
+msgid "leaveFormula_field_formula"
+msgstr "Formula"
+
+msgid "leaveFormula_field_remark"
+msgstr "Remarks"
+
+msgid "payroll_model_overtimeFormula"
+msgstr "Overtime Formula"
+
+msgid "overtimeFormula_field_name"
+msgstr "Name"
+
+msgid "overtimeFormula_field_overtime_level"
+msgstr "Overtime Level"
+
+msgid "overtimeFormula_field_formula"
+msgstr "Formula"
+
+msgid "overtimeFormula_field_remark"
+msgstr "Remarks"
+
+msgid "payroll_model_extraIncrease"
+msgstr "Extra Increase"
+
+msgid "payroll_action_addExtraIncrease"
+msgstr "Add"
+
+msgid "extraIncrease_field_employee"
+msgstr "Employee"
+
+msgid "extraIncrease_field_amount"
+msgstr "Amount"
+
+msgid "extraIncrease_field_issuedTime"
+msgstr "Issued Date"
+
+msgid "extraIncrease_field_remark"
+msgstr "Remarks"
+
+msgid "payroll_model_extraDeduction"
+msgstr "Extra Deduction"
+
+msgid "payroll_action_addExtraDeduction"
+msgstr "Add"
+
+msgid "extraDeduction_field_employee"
+msgstr "Employee"
+
+msgid "extraDeduction_field_amount"
+msgstr "Amount"
+
+msgid "extraDeduction_field_issuedTime"
+msgstr "Issued Date"
+
+msgid "extraDeduction_field_remark"
+msgstr "Remarks"
+
+msgid "payroll_model_salarystructure"
+msgstr "Payroll Structure"
+
+msgid "salaryStructure_field_amount"
+msgstr "Basic Salary"
+
+msgid "salaryStructure_field_formula"
+msgstr "Salary Formula"
+
+msgid "salaryStructure_field_effectiveDate"
+msgstr "Effective Date"
+
+msgid "salaryStructure_field_remark"
+msgstr "Remark"
+
+msgid "salaryStructure_field_formulas"
+msgstr "Formulas"
+
+msgid "payroll_model_SalaryAdvance"
+msgstr "Salary Advance"
+
+msgid "salaryAdvance_field_amount"
+msgstr "Amount"
+
+msgid "salaryAdvance_field_time"
+msgstr "Issue Time"
+
+msgid "salaryAdvance_field_remark"
+msgstr "Remark"
+
+msgid "payroll_model_AllowanceType"
+msgstr "Allowance Type"
+
+msgid "payroll_model_PurposeType"
+msgstr "Purpose Type"
+
+msgid "payroll_model_Reimbursement"
+msgstr "Reimbursement"
+
+msgid "Reimbursement_field_amount"
+msgstr "Amount"
+
+msgid "Reimbursement_field_start_date"
+msgstr "Start Date"
+
+msgid "Reimbursement_field_end_date"
+msgstr "End Date"
+
+msgid "Reimbursement_field_file"
+msgstr "Reimbursement Receipt"
+
+msgid "Reimbursement_field_remark"
+msgstr "Remark"
+
+msgid "payroll_model_empLoan"
+msgstr "Loan"
+
+msgid "empLoan_field_employee"
+msgstr "Employee ID"
+
+msgid "empLoan_field_loanAmount"
+msgstr "Loan Amount"
+
+msgid "empLoan_field_loanTime"
+msgstr "Issued Date"
+
+msgid "empLoan_field_refundCycle"
+msgstr "Installment Cycle"
+
+msgid "empLoan_field_per_cycle_amount"
+msgstr "Payment Per Installment"
+
+msgid "empLoan_field_clean_time"
+msgstr "Closing Date"
+
+msgid "empLoan_field_remark"
+msgstr "Remark"
+
+msgid "payroll_action_addEmpLoan"
+msgstr "Add"
+
+msgid "payroll_action_addRmb"
+msgstr "Add"
+
+msgid "payroll_action_addSalaryAdvance"
+msgstr "Add"
+
+msgid "payroll_action_addSalaryStructure"
+msgstr "Add"
+
+msgid "reimbursement_file"
+msgstr "Reimbursement Receipt"
+
+msgid "report_column_overtimeFormula1"
+msgstr "OT1"
+
+msgid "report_column_overtimeFormula2"
+msgstr "OT2"
+
+msgid "report_column_overtimeFormula3"
+msgstr "OT3"
+
+msgid "report_column_increaseFormula"
+msgstr "Allowance Formula"
+
+msgid "report_column_deductionFormula"
+msgstr "Deduction Formula"
+
+msgid "report_column_lateFormula"
+msgstr "Late Formula"
+
+msgid "report_column_absentFormula"
+msgstr "Absent Formula"
+
+msgid "report_column_earlyleaveFormula"
+msgstr "Early Leave Formula"
+
+msgid "payroll_model_monthlysalary"
+msgstr "Monthly Salary Report"
+
+msgid "monthlySalary_field_basic_salary"
+msgstr "Basic Salary"
+
+msgid "monthlySalary_field_effective_date"
+msgstr "Effective Date"
+
+msgid "monthlySalary_field_calc_time"
+msgstr "Calc Date"
+
+msgid "monthlySalary_field_ot1"
+msgstr "OT1"
+
+msgid "monthlySalary_field_ot2"
+msgstr "OT2"
+
+msgid "monthlySalary_field_ot3"
+msgstr "OT3"
+
+msgid "monthlySalary_field_late_time"
+msgstr "Late In"
+
+msgid "monthlySalary_field_early_leave"
+msgstr "Early Leave"
+
+msgid "monthlySalary_field_absent_time"
+msgstr "Absent"
+
+msgid "monthlySalary_field_increase"
+msgstr "Allowance"
+
+msgid "monthlySalary_field_deduction"
+msgstr "Deduction"
+
+msgid "monthlySalary_field_leave"
+msgstr "Leave"
+
+msgid "monthlySalary_field_extra_increase"
+msgstr "Extra Increase"
+
+msgid "monthlySalary_field_extra_deduction"
+msgstr "Extra Deduction"
+
+msgid "monthlySalary_field_total_loan_amount"
+msgstr "Total Loan Amount"
+
+msgid "monthlySalary_field_refund_loan_amount"
+msgstr "Refund Loan Amount"
+
+msgid "monthlySalary_field_unrefund_loan_amount"
+msgstr "Unrefund Loan Amount"
+
+msgid "monthlySalary_field_loan_deduction"
+msgstr "Loan Deduction"
+
+msgid "monthlySalary_field_loan_increase"
+msgstr "Loan Increase"
+
+msgid "monthlySalary_field_advance_increase"
+msgstr "Advance Increase"
+
+msgid "monthlySalary_field_advance_deduction"
+msgstr "Advance Deduction"
+
+msgid "monthlySalary_field_reimbursement"
+msgstr "Reimbursement"
+
+msgid "monthlySalary_field_total_increase"
+msgstr "Total Increase"
+
+msgid "monthlySalary_field_total_deduction"
+msgstr "Total Deduction"
+
+msgid "monthlySalary_field_total_salary"
+msgstr "Total Salary"
+
+msgid "basic_salary_need_lager_than_zero"
+msgstr "The basic salary can not less then zero!"
+
+msgid "payroll_attParamUnit"
+msgstr "Attendance Parameter Unit"
+
+msgid "deductionformula_addform_note"
+msgstr "Note:This deduction is effective every month."
+
+msgid "increasementformula_addform_note"
+msgstr "Note:This increase is effective every month."
+
+msgid "1_period"
+msgstr "1 Month"
+
+msgid "2_periods"
+msgstr "2 Months"
+
+msgid "3_periods"
+msgstr "3 Months"
+
+msgid "4_periods"
+msgstr "4 Months"
+
+msgid "5_periods"
+msgstr "5 Months"
+
+msgid "6_periods"
+msgstr "6 Months"
+
+msgid "7_periods"
+msgstr "7 Months"
+
+msgid "8_periods"
+msgstr "8 Months"
+
+msgid "9_periods"
+msgstr "9 Months"
+
+msgid "10_periods"
+msgstr "10 Months"
+
+msgid "11_periods"
+msgstr "11 Months"
+
+msgid "12_periods"
+msgstr "12 Months"
+
+msgid "caleulator_title"
+msgstr "Calculator"
+
+msgid "caleulator_basicSalary"
+msgstr "Basic Salary"
+
+msgid "caleulator_scheduleDays"
+msgstr "Schedule Days"
+
+msgid "caleulator_schedulePeriod"
+msgstr "Schedule Period"
+
+msgid "caleulator_check"
+msgstr "Check"
+
+msgid "report_column_total_increase_formula"
+msgstr "Total Increase Formula"
+
+msgid "report_column_total_increase_formula_name"
+msgstr "Total Increase Formula Name"
+
+msgid "report_column_total_increase_expression"
+msgstr "Total Increase Expression"
+
+msgid "report_column_total_deduction_formula"
+msgstr "Total Deduction Formula"
+
+msgid "report_column_total_deduction_formula_name"
+msgstr "Total Deduction Formula Name"
+
+msgid "report_column_total_deduction_expression"
+msgstr "Total Deduction Expression"
+
+msgid "monthlySalary_field_normal_ot"
+msgstr "OT1(Normal Overtime) Salary"
+
+msgid "monthlySalary_field_weekend_ot"
+msgstr "OT2(Weekend Overtime) Salary"
+
+msgid "monthlySalary_field_holiday_ot"
+msgstr "OT3(Holiday Overtime) Salary"
+
+msgid "monthlySalary_field_total_increase_formula_name"
+msgstr "Increment type"
+
+msgid "monthlySalary_field_total_increase_formula"
+msgstr "Total Increment"
+
+msgid "monthlySalary_field_total_increase_expression"
+msgstr "Total Increment"
+
+msgid "monthlySalary_field_total_deduction_formula_name"
+msgstr "Deduction names"
+
+msgid "monthlySalary_field_total_deduction_expression"
+msgstr "Deduction expression"
+
+msgid "monthlySalary_field_total_deduction_formula"
+msgstr "Total Deduction"
+
+msgid "loan_amount_time_fields_requied"
+msgstr "Please fill Loan Amount and Issued Date"
+
+msgid "loan_amount_field_requied"
+msgstr "Please Fill Loan Amount Field"
+
+msgid "the_amount_need_lager_than_zero"
+msgstr "The Entered Amount Should be Greater than Zero"
+
+msgid "loan_issued_date_required"
+msgstr "Please Fill Issued date field"
+
+msgid "monthlySalary_field_basic_salary_summary_report"
+msgstr "Gross Salary"
+
+msgid "monthlySalary_field_basic_salary_Amount_salary"
+msgstr "Amount Payable"
+
+msgid "report_column_amount_payable"
+msgstr "Amount Payable"
+
+msgid "monthlySalary_field_total_increases_summary_report"
+msgstr "Total Increase"
+
+msgid "monthlySalary_field_total_deduction_summary_report"
+msgstr "Total Deduction"
+
+msgid "monthlySalary_field_late_time_summary_report"
+msgstr "Late Time"
+
+msgid "monthlySalary_field_absent_time_summary_report"
+msgstr "Absent Time"
+
+msgid "monthlySalary_field_early_leave_summary_report"
+msgstr "Leave Summary"
+
+msgid "monthlySalary_field_total_salary_increase_summary_report"
+msgstr "Total Salary Increase"
+
+msgid "monthlySalary_field__extra_increase_summary_report"
+msgstr "Extra Increase"
+
+msgid "monthlySalary_field_loan_increase_summary_report"
+msgstr "Loan Increase"
+
+msgid "monthlySalary_field_advance_deduction_summary_report"
+msgstr "Advance Deduction"
+
+msgid "monthlySalary_field_extra_increase_bonus"
+msgstr "Extra Increase Bonus"
+
+msgid "monthlySalary_field_unrefund_loan_amount_summary_report"
+msgstr "Unrefund Loan Amount"
+
+msgid "monthlySalary_field_total_salary_summary_report"
+msgstr "Total Salary"
+
+msgid "menu_payroll_department_summary_salary_report"
+msgstr "Summary Report"
+
+msgid "monthlySalary_field_extra_deduction_summary_report"
+msgstr "Extra Deduction"
+
+msgid "monthlySalary_field_advance_increase_summary_report"
+msgstr "Advance Increase"
+
+msgid "monthlySalary_field_ot1_increase_loan_amount_summary_report"
+msgstr "OT1 Increase"
+
+msgid "monthlySalary_field_ot2_deduction_summary_report"
+msgstr "OT2 Increase"
+
+msgid "monthlySalary_field_ot3_summary_report"
+msgstr "OT3 Increase"
+
+msgid "monthlySalary_field_reimbursement_summary_report"
+msgstr "Reimbursement"
+
+msgid "monthlySalary_field_total_refund_paid"
+msgstr "Loan Refund Paid"
+
+msgid "monthlySalary_field_normal_ot_bonus_summary_report"
+msgstr "Normal OT"
+
+msgid "monthlySalary_field_weekend_ot_summary_report"
+msgstr "Weekend OT"
+
+msgid "monthlySalary_field_total_salary_holiday_ot_summary_report"
+msgstr "Holiday OT"
+
+msgid "menu_payroll_dept_summary_report"
+msgstr "Department Summary"
+
+msgid "reimbursement_startdate_cannot_greater_than_current_day"
+msgstr "Start date cannot be greater than Now"
+
+msgid "reimbursement_enddate_cannot_greater_than_current_day"
+msgstr "End date cannot be greater than Current time"
+
+msgid "monthlySalary_field_loan_amount"
+msgstr "Loan amount"
+
+msgid "payrollCalculation_alert_selectdateNotFound"
+msgstr "Select Date cannot be left blank."
+
+msgid "loan_fields_requied"
+msgstr "Please fill the loan amount"
+
+msgid "advance_time_requied"
+msgstr "Please fill the Issue Time"
+
+msgid "allowance_field_code"
+msgstr "Allowance code"
+
+msgid "allowance_filed_name"
+msgstr "Allowance Name"
+
+msgid "payroll_model_allowancetype"
+msgstr "Allowance Type"
+
+msgid "this_allowance_code_already_exists"
+msgstr "Allowance code already exists"
+
+msgid "this_allowance_name_already_exists"
+msgstr "Allowance name already exists"
+
+msgid "menu_payroll_allowancetype"
+msgstr "Allowance Type"
+
+msgid "reimbursement_field_approvalRemark"
+msgstr "Approval Remark"
+
+msgid "reimbursement_field_approvalTime"
+msgstr "Approval Time"
+
+msgid "reimbursement_field_approvalLevel"
+msgstr "Approval Level"
+
+msgid "reimbursement_field_approver"
+msgstr "Approver"
+
+msgid "payroll_action_approve"
+msgstr "Approve/Reject"
+
+msgid "payroll_action_revoke"
+msgstr "Revoke"
+
+msgid "reimbursement_approve_audit"
+msgstr "Approved/Rejected Reimbursement records cannot be modified by the audit."
+
+msgid "menu_request_employee_reimbursement"
+msgstr "Reimbursement"
+
+msgid "menu_payroll_purposetype"
+msgstr "Purpose Type"
+
+msgid "purpose_field_code"
+msgstr "Purpose code"
+
+msgid "purpose_filed_name"
+msgstr "Purpose Name"
+
+msgid "payroll_model_purposetype"
+msgstr "Purpose Type"
+
+msgid "this_purpose_code_already_exists"
+msgstr "Purpose code already exists"
+
+msgid "this_purpose_name_already_exists"
+msgstr "Purpose name already exists"
+
+msgid "payroll_model_additional_employee"
+msgstr "Additional Employee"
+
+msgid "receipt_file_validation"
+msgstr "Please upload reimbursement receipt"
+
+msgid "file_size_validation"
+msgstr "File size cannot be greater than 2.5MB"
+
+msgid "reimbursement_field_applyTime"
+msgstr "Apply Time"
+
+msgid "staff_reimbursement_actionDelete"
+msgstr "Delete"
+
+msgid "staff_reimbursement_actionAdd"
+msgstr "Add"
+
+msgid "staff_reimbursement_empCode"
+msgstr "Employee ID"
+
+msgid "staff_reimbursement_firstName"
+msgstr "First Name"
+
+msgid "staff_reimbursement_lastName"
+msgstr "Last Name"
+
+msgid "staff_reimbursement_applyTime"
+msgstr "Apply Time"
+
+msgid "staff_reimbursement_lastApprover"
+msgstr "Last Approver"
+
+msgid "staff_reimbursement_workflowCurrentStateName"
+msgstr "Current State"
+
+msgid "staff_reimbursement_approvalSate"
+msgstr "Approval State"
+
+msgid "staff_reimbursement_startDate"
+msgstr "Start Date"
+
+msgid "staff_reimbursement_endDate"
+msgstr "End Date"
+
+msgid "staff_reimbursement_allowanceType"
+msgstr "Allowance Type"
+
+msgid "staff_reimbursement_purposeType"
+msgstr "Purpose Type"
+
+msgid "staff_reimbursement_staff_reimbursement_applyTime"
+msgstr "Apply Time"
+
+msgid "staff_reimbursement_rmbFile"
+msgstr "Reimbursement Receipt"
+
+msgid "Payroll structure not found"
+msgstr "Payroll structure not found"
+
+msgid "staff_reimbursement_required_field"
+msgstr "Fill all required fields"
+
+msgid "reimbursement_receipt_file_format_constraints"
+msgstr "Only supports .jpg, .jpeg, .png, .bmp, .pdf, .docx, and .xlsx format"
+
+msgid "please_fill_basic_salary_and_effective_date"
+msgstr "Please fill Basic Salary and Effective Date."
+
+msgid "please_fill_effective_date"
+msgstr "Please fill Effective Date."
+
+msgid "please_fill_salary_amount"
+msgstr "Please fill Salary Amount."
+
+msgid "ensure_the_basic_salary_is_greater_than_or_equal_to_1"
+msgstr "Ensure the basic salary is greater than or equal to 1"
+
+msgid "formula_should_not_contain_special_character's"
+msgstr "Formula should not contain special character's"
+
+msgid "deduction_formula_with_the_same_name_already_exists"
+msgstr "Deduction formula with the same name already exists"
+
+msgid "bank_name_and_account_number_cant_be_empty"
+msgstr "Bank name and Account number cant be empty"
+
+msgid "exception_formula_with_the_same_name_already_exists"
+msgstr "Exception formula with the same name already exists"
+
+msgid "the_amount_need_lager_then_zero"
+msgstr "The amount value must be greater than zero!"
+
+msgid "allowance_formula_with_the_same_name_already_exists"
+msgstr "Allowance formula with the same name already exists"
+
+msgid "leave_formula_with_the_same_name_already_exists"
+msgstr "Leave formula with the same name already exists"
+
+msgid "over_time_formula_with_the_same_name_already_exists"
+msgstr "Over time formula with the same name already exists'"
+
+msgid "start_date_cannot_be_less_than_salary_effective_date"
+msgstr "start date cannot be less than salary effective date"
+
+msgid "the_purpose_type_is_already_in_use"
+msgstr "The purpose type is already in use"
+
+msgid "post_Resign_date_you_cannot_add_reimbursement_for_the_employee"
+msgstr "Post Resign date you cannot add reimbursement for the employee"
+
+msgid "basic_salary_must_be_greater_than_zero"
+msgstr "Basic salary must be greater than zero"
+
+msgid "payroll_reimbursement_payroll_structure_validation"
+msgstr "Payroll structure not found for the employee %s please create the one"
+
+msgid "reimbursement_field_approvalreason"
+msgstr "Apply reason"
+
+msgid "help_text"
+msgstr "Note: max limit 30"
+
+msgid "report_column_basic_salary"
+msgstr "Basic Salary"
+
+msgid "report_column_schedule_days"
+msgstr "Schedule Days"
+
+msgid "report_column_schedule_period"
+msgstr "Schedule Period"
+
+msgid "report_column_required_work"
+msgstr "Required Work"
+
+msgid "report_column_actual_work"
+msgstr "Actual Work"
+
+msgid "report_column_normal_ot"
+msgstr "Normal OT"
+
+msgid "report_column_weekend_ot"
+msgstr "Weekend OT"
+
+msgid "report_column_holiday_ot"
+msgstr "Holiday OT"
+
+msgid "report_column_late_in"
+msgstr "Late In"
+
+msgid "report_column_absence"
+msgstr "Absent"
+
+msgid "report_column_early_leave"
+msgstr "Early Leave"
+
+msgid "salary_structure_report"
+msgstr "Salary Structure"
+
+msgid "bonus_report"
+msgstr "Bonus Report"
+
+msgid "deduction_report"
+msgstr "Deduction Report"
+
+msgid "attendance_parameter_report"
+msgstr "Attendance Parameter Report"
+
+msgid "department_summary_salary_report"
+msgstr "Department Summary Salary Report"
+
+msgid "salary_detail_report"
+msgstr "Salary Detail Report"

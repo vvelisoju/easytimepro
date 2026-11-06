@@ -1,0 +1,44 @@
+{% load i18n static %}
+<div class="layui-fluid" id="{{ model_name }}_fluid">
+    <div class="layui-card"></div>
+    <div class="layui-card-body module">
+        {% block main_body %}
+        <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+        <script type="text/html" id="{{ model|safe }}_toolbar">
+            <div class="layui-btn-container grid-toolbar" style="">
+                <ul class="layui-nav" ></ul>
+            </div>
+        </script>
+        {% endblock %}
+    </div>
+</div>
+<script>
+    $(function () {
+        layui.use(['table', 'form', 'element', 'laydate'], function () {
+           var table = layui.table;
+           var report = table.render({
+               tblId: 'tbl'
+                , id: "id_grid_{{ model|safe }}"
+                , elem: "#id_grid_{{ model|safe }}"
+                , toolbar: "#{{ model|safe }}_toolbar"
+                , defaultToolbar: []
+                , cellMinWidth: 80
+                , cols: [[
+                    {field:'id', title: 'ID', sort: true}
+                    ,{field:'emp_code', title: 'emp_code'}
+                    ,{field:'first_name', title: 'first_name'}
+                ]]
+                , url: "{% url 'biotime:att_transaction_report' %}"
+                , method: "post"
+                , height: 'full-140'
+                , loading: true
+                , page: {
+                    layout: ['prev', 'page', 'next', 'limit', 'count', 'refresh', 'skip']
+                }
+                , where: {
+                    csrfmiddlewaretoken: "{{csrf_token}}"
+                }
+           });
+        });
+    });
+</script>

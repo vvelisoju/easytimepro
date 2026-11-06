@@ -1,0 +1,60 @@
+{% load i18n %}
+<style>
+    .work_code_input dl {
+        max-height: 120px;
+    }
+</style>
+<div id="staff_manual_add" style="padding: 20px">
+    <form action="" method="post" class="layui-form">
+        {% csrf_token %}
+        <input type="hidden" name="employee" class="layui-hide" value="{{ user.pk }}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'manualLog_field_punchTime' %}<span class="required">*</span></label>
+            <div class="layui-input-block">
+              <input id="id_punch_time" type="text" name="punch_time" lay-verify="punch_time" autocomplete="off" placeholder="" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'manualLog_field_punchState' %}<span class="required">*</span></label>
+            <div class="layui-input-block">
+                <select id="id_punch_state" type="text" name="punch_state" lay-verify="punch_state" autocomplete="off" placeholder="" class="layui-input"></select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'manualLog_field_workCode' %}</label>
+            <div class="layui-input-block work_code_input">
+              <select id="id_work_code" type="text" name="work_code" lay-verify="work_code" autocomplete="off" placeholder="" class="layui-input">
+                  <option value="">-------</option>
+                  {% for code, alias in work_codes %}
+                     <option value="{{ code }}">{{ alias }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'staff_manualLog_applyReason' %}</label>
+            <div class="layui-input-block">
+              <input type="text" id="id_apply_reason" name="apply_reason" lay-verify="apply_reason" autocomplete="off" placeholder="" class="layui-textarea" maxlength="200">
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form', 'laydate'], function(){
+        var form = layui.form, laydate=layui.laydate;
+        laydate.render({
+            elem: '#id_punch_time'
+            ,type: 'datetime'
+            ,lang: 'en'
+        });
+        var html = "";
+        html+='<option value="0">'+"{% trans 'report_display_checkIn' %}"+'</option>';
+        html+='<option value="1">'+"{% trans 'report_display_checkOut' %}"+'</option>';
+        html+='<option value="2">'+"{% trans 'report_display_breakOut' %}"+'</option>';
+        html+='<option value="3">'+"{% trans 'report_display_breakIn' %}"+'</option>';
+        html+='<option value="4">'+"{% trans 'report_display_overtimeIn' %}"+'</option>';
+        html+='<option value="5">'+"{% trans 'report_display_overtimeOut' %}"+'</option>';
+        $("#id_punch_state").append(html);
+        form.render();
+    })
+</script>

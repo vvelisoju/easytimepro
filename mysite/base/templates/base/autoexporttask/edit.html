@@ -1,0 +1,263 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div id="{{ model_name }}_edit_form" style="margin: 10px;height: 150px; width: 100%;">
+    <form class="layui-form data-form" action="" method="post" lay-filter="autoExportTaskForm">
+      {% csrf_token %}
+      {% with adminform.form as f %}
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+          <div class="layui-card">
+            <div class="layui-card-body">
+              <div class="layui-form-item">
+                {% layui_inline f.task_code %}
+                {% layui_inline f.task_name %}
+              </div>
+              <div>
+                <table>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="layui-form-item">
+                        {% layui_inline f.file_prefix %}
+                        {% layui_inline_without_label f.file_date %}
+                        {% layui_inline_without_label f.file_time %}
+                      </div>
+                      <div class="layui-form-item">
+                        <div class="layui-inline">
+                          <label class="layui-form-label task-template-lable"
+                                 for="id_areas">{% trans 'autoExport_task_dataTemplate' %}  <span class="required">*</span> </label>
+                          <div
+                              class="layui-form-mid layui-word-aux task-template-help">{% trans 'autoExport_task_dataTemplateHelpTxt' %}</div>
+                        </div>
+                      </div>
+                      <div class="layui-form-item">
+                      <textarea class="layui-textarea task-template-textarea" name="data_template"
+                                ondrop="drop(event)"
+                                ondragover="allowDrop(event)" id="id_data_template">{{ f.data_template.initial }}</textarea>
+                      </div>
+                      <div class="layui-tab">
+                        <ul class="layui-tab-title">
+                          <li class="layui-this">{% trans 'autoExportTask_tab_formatSetting' %}</li>
+                          <li>{% trans 'autoExportTask_tab_filterSetting' %}</li>
+                          <li>{% trans 'autoExportTask_tab_exportSetting' %}</li>
+                          <li>{% trans 'autoExportTask_tab_storeSetting' %}</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                          <div class="layui-tab-item layui-show" style="height: 150px">
+                            <div class="layui-form-item" style="padding-top: 10px">
+                              {% layui_mid f.short_date %}
+                              {% layui_mid f.short_time %}
+                            </div>
+                            <div class="layui-form-item">
+                              {% layui_mid f.pin_digit %}
+                              {% layui_mid f.export_format %}
+                            </div>
+                          </div>
+                          <div class="layui-tab-item" style="height: 150px">
+                            <div class="layui-form-item" style="padding-top: 10px">
+                              {% layui_mid f.query_field %}
+                              {% layui_mid f.end_day %}
+                            </div>
+                            <div class="layui-form-item">
+                              {% layui_mid f.departments %}
+                              {% layui_mid f.areas %}
+                            </div>
+                          </div>
+                          <div class="layui-tab-item" style="height: 150px">
+                            <div class="layui-form-item" style="padding-top: 10px">
+                              {% layui_mid f.export_interval %}
+                              {% layui_mid f.export_time %}
+                            </div>
+                            <div class="layui-form-item">
+                              {% layui_mid f.frequency %}
+                              {% layui_mid f.month_day %}
+                              {% layui_mid f.week_day %}
+                              {% layui_mid f.day %}
+                            </div>
+                          </div>
+                          <div class="layui-tab-item" style="height: 150px">
+                            <div class="layui-form-item" style="padding-top: 10px">
+                              {% layui_mid f.export_path %}
+                              {% layui_mid f.export_email %}
+                            </div>
+                            <div class="layui-form-item">
+                              {% layui_mid f.ftp_server %}
+                              {% layui_mid f.ftp_path %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="vertical-align:top">
+                      <div class="layui-form-item">
+                        <div class="layui-input-block" style="margin-left: 20px;">
+                          <table class="task-template-help-table">
+                            <tbody class="layui-form-mid layui-word-aux">
+                            <tr>
+                              <td>{% trans 'emp_field_employeeCode' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{emp_code}">{emp_code}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'emp_field_firstName' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{first_name}">{first_name}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'emp_field_lastName' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{last_name}">{last_name}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_departmentCode' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{dept_code}">{dept_code}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_departmentName' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{dept_name}">{dept_name}</code></td>
+                            </tr>
+{#                            <tr>#}
+{#                              <td>{% trans 'autoExport_task_punchTime' %}</td>#}
+{#                              <td><code draggable="true" ondragstart="drag(event)"#}
+{#                                        id="{punch_time}">{punch_time}</code></td>#}
+{#                            </tr>#}
+                             <tr>
+                              <td>{% trans 'autoExport_task_date' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{date}">{date}</code></td>
+                            </tr>
+                             <tr>
+                              <td>{% trans 'autoExport_task_time' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{time}">{time}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_verifyType' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{verify_type}">{verify_type}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_punchState' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{punch_state}">{punch_state}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_workCode' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{work_code}">{work_code}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_cardNumber' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{card_number}">{card_number}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_areaAlias' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{area_name}">{area_name}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_terminalAlias' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{terminal_alias}">{terminal_alias}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_terminalSN' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{terminal_sn}">{terminal_sn}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_temperature' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{temperature}">{temperature}</code></td>
+                            </tr>
+                            <tr>
+                              <td>{% trans 'autoExport_task_maskflag' %}</td>
+                              <td><code draggable="true" ondragstart="drag(event)"
+                                        id="{mask_flag}">{mask_flag}</code></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="layui-hide">{% layui_inline f.params %}</div>
+      {% endwith %}
+    </form>
+  </div>
+{% endautoescape %}
+
+{% block extend_js %}
+  <script>
+   $('#autoexporttask_edit_form').parent().height(520);
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("Text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("Text");
+      var base_val = $("#id_data_template").val();
+      $("#id_data_template").val(base_val + data);
+    }
+    layui.use(['form'], function () {
+      var form = layui.form;
+      $('input.layui-datetime').each(function () {
+        var laydate = layui.laydate;
+        laydate.render({elem: this, type: 'datetime'});
+      });
+      var switch_widget = function(frequency){
+        switch (frequency) {
+          case '0':
+            $("div.field-day").show();
+            $("div.field-week_day").hide();
+            $("div.field-month_day").hide();
+            break;
+          case '1':
+            $("div.field-day").hide();
+            $("div.field-week_day").show();
+            $("div.field-month_day").hide();
+            break;
+          case '2':
+            $("div.field-day").hide();
+            $("div.field-week_day").hide();
+            $("div.field-month_day").show();
+            break;
+          default:
+            break;
+        }
+      };
+      switch_widget($("#id_frequency").val());
+      form.on('select(frequency)', function (data) {
+        switch_widget(data.value);
+      });
+      var switch_interval = function(val){
+        val = parseInt(val);
+        if(val === 0){
+          document.getElementById("id_export_time").disabled = false;
+        }else if(val > 0){
+          document.getElementById("id_export_time").disabled = true;
+        }
+      };
+      $("#id_export_interval").change(function () {
+        switch_interval($(this).val());
+      });
+      switch_interval($("#id_export_interval").val());
+    });
+  </script>
+  {% endblock %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 2px 5px;
+            font-weight: normal;
+            font-size: 16px;
+        }
+        table, tr, td, th, tbody, thead, tfoot {
+            page-break-inside: avoid !important;
+            /*word-break: keep-all !important;*/
+            /*white-space: nowrap !important;*/
+        }
+        h2 {
+            text-align: center;
+        }
+        th{
+            height:25px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>{{ title }}</h2>
+    {% autoescape off %}
+        {% block main_table %}
+        <table>
+            <tr>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in datas %}
+                <tr>
+                    {% for coloum in row %}
+                        <th>{{ coloum }}</th>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        {% endblock %}
+    {% endautoescape %}
+</body>
+</html>

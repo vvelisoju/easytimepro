@@ -1,0 +1,145 @@
+{% extends "data_grid.html" %}
+{% load i18n static iclock_tags common %}
+{% block main_body %}
+  <div class="layui-row layui-col-space15" style="margin-top: 0px; margin-bottom: 0px">
+    <div class="layui-col-md9">
+      <table id="id_grid_{{ model_name }}" class="layui-hide" lay-filter="{{ model_name }}"></table>
+      <script type="text/html" id="{{ model_name|safe }}_toolbar">
+        <div class="layui-btn-container grid-toolbar" style="">
+          <ul class="layui-nav"></ul>
+        </div>
+      </script>
+    </div>
+    <div class="layui-col-md3">
+      <div class="layui-card side-grid-tree">
+        <div class="layui-card-header">
+          <a href="javascript:void(0);" data-toggle="tooltip" title="Refresh">
+            <span id="{{ model_name }}_show_all"><i class="fa fa-fw fa-refresh" style="color: #7ac143;"></i></span>
+          </a>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <a href="javascript:void(0);" data-toggle="tooltip" title="Recycle" >
+            <span id="{{ model_name }}_reset"><i class="fa fa-fw fa-recycle" style="color: #7ac143;"></i></span>
+          </a>
+        </div>
+        <div id="id_{{ model_name }}flow" class="layui-card-body">
+          <ul id="{{ model_name }}_tree" class="ztree ztree-pure" style="overflow-y: auto;"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+{% block grid_opt_update %}
+  function update_side_ztree() {
+    $('#{{ model_name }}_show_all').trigger('click');
+  }
+
+  $.extend(true, dimension, {
+    actions: {
+      GeneralActionDelete: ['auto', 'auto'],
+      Import: [600, 550],
+      // SetDepartment: [900, 550]
+    }
+  });
+
+  $.extend(true, callback, {
+    load: {
+      done: $.fn.resize_side_ztree_if_any
+    },
+    edit: {
+      done: update_side_ztree
+    },
+    delete: {
+      done: update_side_ztree
+    },
+    actions: {
+      GeneralActionNew: {
+        done: update_side_ztree
+      },
+      GeneralActionDelete: {
+        done: update_side_ztree
+      },
+      Import: {
+        done: update_side_ztree
+      }
+    }
+  });
+{% endblock grid_opt_update %}
+{% block actionAfterTableRender %}
+  layui.use(['table', 'tablePlug', 'layer', 'flow'], function(){
+    var table = layui.table, tablePlug = layui.tablePlug, layer=layui.layer, flow=layui.flow;
+    tablePlug.smartReload.enable(true);
+    function department_tree() {
+      var setting = {
+        view: {
+          dblClickExpand: false,
+          showLine: true
+        },
+        data: {
+          simpleData: {
+            enable: true
+          }
+        },
+        check: {
+          enable: false,
+          chkboxType: {"Y": "ps", "N": "s"},
+          radioType: "all"
+        },
+        callback: {
+          onClick: onClick
+        }
+      };
+
+      function onClick(event, treeId, treeNode) {
+        table.reload('id_grid_{{ model_name }}', {where: {_p1_parent_dept__in: JSON.stringify([treeNode.id])}});
+      }
+      $.ajax({
+        url: "{% url 'biotime:personnel_department_tree_nodes' %}",
+        type: "GET",
+        dataType: "json",
+        success: function (nodes) {
+          var zTree = $.fn.zTree.init($("#{{ model_name }}_tree"), setting, nodes);
+          //var _len = nodes.length, capacity=151, batch=50;
+          //if(_len < capacity){
+          //  var zTree = $.fn.zTree.init($("#{{ model_name }}_tree"), setting, nodes);
+          //}else{
+          //  var zTreeDepartment = $.fn.zTree.init($("#{{ model_name }}_tree"), setting, nodes.slice(0, batch));
+          //  flow.load({
+          //    elem: '#id_{{ model_name }}flow'
+          //    ,scrollElem: '#id_{{ model_name }}flow'
+          //    ,isAuto: true
+          //    ,mb: 80
+          //    ,done: function(page, next){
+          //      var _page = page - 1;
+          //      if(_page > 0){
+          //        nodes.slice(_page * batch, page * batch - 1).forEach(function(item){
+          //          zTreeDepartment.addNodes(null, item)
+          //        })
+          //      }
+          //      next('', (_page+1) * 50 < _len);
+          //    }
+          //  });
+          //}
+        }
+      });
+    }
+
+    department_tree();
+
+    $("#{{ model_name }}_show_all").click(function () {
+      department_tree();
+    });
+
+    $("#{{ model_name }}_reset").click(function () {
+      table.reload('id_grid_{{ model_name }}', {
+        where: {
+          _p1_parent_dept__in: ''
+        }
+      });
+    });
+  })
+    // tooltip
+    $(document).ready(function() {
+       $('[data-toggle="tooltip"]').tooltip();
+    });
+{% endblock %}

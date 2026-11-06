@@ -1,0 +1,380 @@
+{% load i18n static %}
+{% load common %}
+{% autoescape off %}
+  <div id="{{ model_name }}_edit_form" style="padding: 10px;height: 380px;width: 850px;">
+    <form class="layui-form data-form time-interval-form" action="" method="post" lay-filter="timetableForm">
+       <div class="layui-hide"><button id="idSubmitTrigger{{ action_name }}" lay-submit lay-filter="submitTrigger{{ action_name }}"></button></div>
+      <input type="hidden" id="id_model_pk" data-name="pk" value="{{ object_id }}"/>
+      {% csrf_token %}
+      {% with form.form as f %}
+        <div class="base-setting base-setting-large1">
+          <div class="layui-form-item">
+            {% layui_inline f.alias %}
+          </div>
+          <div class="layui-tab">
+            <ul class="layui-tab-title">
+              <li class="layui-this">{% trans 'timeInterval_tab_basicSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_breakTimeSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_unscheduledTimeSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_overtimeLevelSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_ruleSetting' %}</li>
+              <li>{% trans 'timeInterval_tab_halfDatSetting' %}</li>
+            </ul>
+            <div class="layui-tab-content">
+              <div class="layui-tab-item cross-setup layui-show">
+                <div class="layui-form-item"  style="padding-top: 20px">
+                  <div class="layui-inline">
+                    <label class="layui-form-label" for="{{ f.in_time.id_for_label }}">
+                      {{ f.in_time.label }}{% if f.in_time.field.required %}<span class="required">*</span>{% endif %}
+                    </label>
+                    <div class="time-table-input-time layui-input-inline">
+                      {{ f.in_time }}
+                    </div>
+                    <div class="layui-form-mid"></div>
+                    <div class="time-table-input-cross-day layui-input-inline" style="margin-right: 5px"></div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label" for="{{ f.out_time.id_for_label }}">
+                      {{ f.out_time.label }}{% if f.out_time.field.required %}<span class="required">*</span>{% endif %}
+                    </label>
+                    <div class="time-table-input-time layui-input-inline">
+                      {{ f.out_time }}
+                    </div>
+                    <div class="layui-form-mid">{% trans 'timeInterval_field_crossDay' %}</div>
+                    <div class="time-table-input-cross-day layui-input-inline" style="margin-right: 5px">
+                      {{ f.out_time_cross_days }}
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                    <label class="layui-form-label" for="{{ f.begin_in.id_for_label }}">
+                      {{ f.begin_in.label }}{% if f.begin_in.field.required %}<span class="required">*</span>{% endif %}
+                    </label>
+                    <div class="time-table-input-time layui-input-inline">
+                      {{ f.begin_in }}
+                    </div>
+                    <div class="layui-form-mid">{% trans 'timeInterval_field_crossDay' %}</div>
+                    <div class="time-table-input-cross-day layui-input-inline" style="margin-right: 5px">
+                      {{ f.begin_in_cross_days }}
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label" for="{{ f.begin_out.id_for_label }}">
+                      {{ f.begin_out.label }}{% if f.begin_out.field.required %}<span class="required" id="in_end">*</span>{% endif %}
+                    </label>
+                    <div class="time-table-input-time layui-input-inline">
+                      {{ f.begin_out }}
+                    </div>
+                    <div class="layui-form-mid">{% trans 'timeInterval_field_crossDay' %}</div>
+                    <div class="time-table-input-cross-day layui-input-inline" style="margin-right: 5px">
+                      {{ f.begin_out_cross_days }}
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                    <label class="layui-form-label" for="{{ f.end_in.id_for_label }}">
+                      {{ f.end_in.label }}{% if f.end_in.field.required %}<span class="required" id="out_start">*</span>{% endif %}
+                    </label>
+                    <div class="time-table-input-time layui-input-inline">
+                      {{ f.end_in }}
+                    </div>
+                    <div class="layui-form-mid">{% trans 'timeInterval_field_crossDay' %}</div>
+                    <div class="time-table-input-cross-day layui-input-inline" style="margin-right: 5px">
+                      {{ f.end_in_cross_days }}
+                    </div>
+                  </div>
+                  <div class="layui-inline">
+                    <label class="layui-form-label" for="{{ f.end_out.id_for_label }}">
+                      {{ f.end_out.label }}{% if f.end_out.field.required %}<span class="required">*</span>{% endif %}
+                    </label>
+                    <div class="time-table-input-time layui-input-inline">
+                      {{ f.end_out }}
+                    </div>
+                    <div class="layui-form-mid">{% trans 'timeInterval_field_crossDay' %}</div>
+                    <div class="time-table-input-cross-day layui-input-inline" style="margin-right: 5px">
+                      {{ f.end_out_cross_days }}
+                    </div>
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  {% layui_mid f.work_day %}
+                </div>
+                <div class="layui-card"><div class="layui-card-body">
+                  <div><span style="color: red">*</span><span>{% trans 'form_helpText_title' %}</span></div>
+                  <div style="padding: 0 20px;">
+                    <p>{% trans 'timeTable_helpText_tip1' %}</p>
+                  </div>
+                </div></div>
+              </div>
+              <div class="layui-tab-item non-cross-setup">
+                <div id="id_break_div" style="height: 200px;">
+                  <table id="idBreakTable" class="layui-table" lay-filter="breakTable" width="100%">
+                  </table>
+                </div>
+              </div>
+              <div class="layui-tab-item non-cross-setup">
+                <div class="layui-form-item" style="padding-top: 20px">
+                  {% layui_inline f.early_in %}
+                  {% layui_mid f.min_early_in %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_inline f.late_out %}
+                  {% layui_mid f.min_late_out %}
+                </div>
+              </div>
+              <div class="layui-tab-item non-cross-setup">
+                <div class="layui-form-item" style="padding-top: 20px">
+                  {% layui_inline f.overtime_lv %}
+                  {% layui_mid f.overtime_lv1 %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_mid f.overtime_lv2 %}
+                  {% layui_mid f.overtime_lv3 %}
+                </div>
+              </div>
+              <div class="layui-tab-item non-cross-setup">
+                <div class="layui-form-item" style="padding-top: 20px">
+                  {% layui_inline f.in_required %}
+                  {% layui_inline f.out_required %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_mid f.allow_late %}
+                  {% layui_mid f.allow_leave_early %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_mid f.available_interval_type %}
+                  {% layui_mid f.available_interval %}
+                </div>
+                <div class="layui-form-item">
+                  {% layui_inline f.func_key %}
+                  {% layui_inline f.day_change %}
+                </div>
+              </div>
+              <div class="layui-tab-item non-cross-setup">
+                <div class="layui-form-item" style="padding-top: 20px">
+                    <div class="layui-inline field-first_half_in_time" title="">
+                         <label class="layui-form-label" style="width: 122px; min-width: 185px; max-width: 122px;">
+                             {% trans 'timeInterval_field_firstHalfInTime' %}
+                             <span class="required">*</span>
+                         </label>
+                    <div class="layui-input-inline ">
+                        <input type="text" name="first_half_in_time" class="layui-input layui-time" autocomplete="off"
+                               required="" lay-key="59" disabled="disabled" id="id_first_half_in_time">
+                    </div>
+                    </div>
+                  {% layui_inline f.second_half_in_time %}
+                </div>
+                <div class="layui-form-item" style="margin-right: 5px; padding: 3px 0px;">
+                  {% layui_inline f.first_half_out_time %}
+                    <div class="layui-inline field-second_half_out_time" title="">
+                         <label class="layui-form-label" style="width: 122px; min-width: 185px; max-width: 122px; margin-right: 3px; padding: 3px 0px;">
+                             {% trans 'timeInterval_field_secondHalfOutTime' %}
+                             <span class="required">*</span>
+                         </label>
+                    <div class="layui-input-inline ">
+                        <input type="text" name="second_half_out_time" class="layui-input layui-time" autocomplete="off"
+                               required="" lay-key="59" disabled="disabled" id="id_second_half_out_time">
+                    </div>
+                    </div>
+                  <div class="layui-form-item">
+                    {% layui_mid f.half_day_work_time_duration %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="idOffPeriod" class="layui-hidden">{{ f.off_period }}</div>
+        </div>
+      {% endwith %}
+    </form>
+  </div>
+  <script>
+    layui.use(['element', 'form', 'laydate', 'table', 'tablePlug'], function () {
+        var form = layui.form, element=layui.element, laydate = layui.laydate, table=layui.table, tablePlug = layui.tablePlug;
+        tablePlug.smartReload.enable(true);
+
+        function set_in_out_time() {
+            var in_time_value = $('#id_in_time').val();
+            var out_time_value = $('#id_out_time').val();
+            $('#id_first_half_in_time').val(in_time_value);
+            $('#id_second_half_out_time').val(out_time_value);
+        }
+        set_in_out_time();
+
+        form.render();
+        element.render();
+        $("form.layui-form input.layui-time:not(#id_in_time,#id_out_time)").each(function () {
+          laydate.render({
+              elem: this,
+              type: 'time',
+              format: 'HH:mm:ss'
+          });
+        });
+        laydate.render({
+          elem: '#id_in_time',
+          type: 'time',
+          format: 'HH:mm:ss',
+          done: function (value, date) {
+              $('#id_first_half_in_time').val(value);
+          }
+        });
+        let timetable_in_time = document.querySelector('#id_in_time');
+        timetable_in_time.addEventListener('change', (event) => {
+             let value = $('#id_in_time').val()
+             $('#id_first_half_in_time').val(value);
+        });
+        laydate.render({
+          elem: '#id_out_time',
+          type: 'time',
+          format: 'HH:mm:ss',
+          done: function (value, date) {
+              $('#id_second_half_out_time').val(value);
+          }
+        });
+         let timetable_out_time = document.querySelector('#id_out_time');
+        timetable_out_time.addEventListener('change', (event) => {
+             let value = $('#id_out_time').val()
+             $('#id_second_half_out_time').val(value);
+        });
+      var objs = [];
+      table.on('checkbox(breakTable)', function (obj) {
+          var checkStatus = table.checkStatus('idBreakTable');
+            if (!obj.checked && checkStatus.data.length === 0) {
+                var pageData = table.cache['idBreakTable'];
+                pageData.forEach(function (item) {
+                    var index = objs.indexOf(item.id);
+                    if (index > -1) {
+                        objs.splice(index, 1);
+                    }
+                });
+            } else if (!obj.checked) {
+                var index = objs.indexOf(obj.data.id);
+                if (index > -1) {
+                    objs.splice(index, 1);
+                }
+            } else {
+                checkStatus.data.forEach(function (item) {
+                    if (!objs.includes(item.id)) {
+                        objs.push(item.id);
+                    }
+                });
+            }
+            $("#id_off_period").val(objs.join(","));
+        });
+        function init_break_table() {
+          var url = '/att/api/breaktimes/?page_size=100';
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (callback) {
+              //var table = layui.table;
+              var data = callback['data'];
+              table.render({
+                elem: "#idBreakTable"
+                , height: 240
+                , data: data
+                , page: true
+                , text: {none: gettext('none_data')}
+                , cols: [[
+                  {type: 'checkbox'},
+                  {field: 'id', title: "{% trans 'breakTime_number' %}", hide: true},
+                  {field: 'alias', title: "{% trans 'breakTime_field_alias' %}"},
+                  {field: 'period_start', title: "{% trans 'breakTime_field_startTime'%}"},
+                  {field: 'period_end', title: "{% trans 'breakTime_field_endTime' %}", templet: function (data) {
+                    if(data.cross_day > 0){
+                        return data.period_end + '<sup style="color: #7ac143;">+'+data.cross_day + '</sup>';
+                    }else{
+                        return data.period_end;
+                    }}},
+                  {field: 'duration', title: "{% trans 'breakTime_field_duration' %}"},
+                  {field: 'calc_type', title: "{% trans 'breakTime_field_calculateType' %}"}
+                ]]
+              });
+            }
+          });
+        }
+
+        function init_input(){
+            if ($("#id_available_interval_type").val() === '0') {
+                $("#id_available_interval").attr("disabled", "disabled");
+            }
+            if ($("#id_func_key").val() === '0') {
+                $('#in_end, #out_start').css('display', 'none');
+            }
+            if ($("#id_early_in").val() === '0') {
+                $("#id_min_early_in").attr("disabled", "disabled");
+            }
+            if ($("#id_late_out").val() === '0') {
+                $("#id_min_late_out").attr("disabled", "disabled");
+            }
+            if ($("#id_overtime_lv").val() === '0') {
+                $("#id_overtime_lv1").attr("disabled", "disabled");
+                $("#id_overtime_lv2").attr("disabled", "disabled");
+                $("#id_overtime_lv3").attr("disabled", "disabled");
+            }
+        }
+        init_break_table();
+        init_input();
+
+        form.on('select', function (data) {
+            var elem = data.elem;
+            var selectValue = data.value;
+            switch (elem.id) {
+                case 'id_available_interval_type':
+                    if (selectValue === '0') {
+                      $("#id_available_interval").attr("disabled", "disabled");
+                    }
+                    else{
+                      $("#id_available_interval").removeAttr("disabled");
+                    }
+                    break;
+                case 'id_func_key':
+                    if (selectValue === '0') {
+                        $('#in_end, #out_start').css('display', 'none');
+                    }
+                    else{
+                        $('#in_end, #out_start').css('display', '');
+                    }
+                    break;
+                case 'id_early_in':
+                    if (selectValue === '0') {
+                      $("#id_min_early_in").attr("disabled", "disabled");
+                    }
+                    else{
+                      $("#id_min_early_in").removeAttr("disabled");
+                    }
+                    break;
+                case 'id_late_out':
+                    if (selectValue === '0') {
+                      $("#id_min_late_out").attr("disabled", "disabled");
+                    }
+                    else{
+                      $("#id_min_late_out").removeAttr("disabled");
+                    }
+                    break;
+                case 'id_overtime_lv':
+                    if (selectValue === '0') {
+                        $("#id_overtime_lv1").attr("disabled", "disabled");
+                        $("#id_overtime_lv2").attr("disabled", "disabled");
+                        $("#id_overtime_lv3").attr("disabled", "disabled");
+                        $("#id_overtime_lv1").val(0);
+                        $("#id_overtime_lv2").val(0);
+                        $("#id_overtime_lv3").val(0);
+                    }
+                    else{
+                        $("#id_overtime_lv1").removeAttr("disabled");
+                        $("#id_overtime_lv2").removeAttr("disabled");
+                        $("#id_overtime_lv3").removeAttr("disabled");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
+
+    })
+  </script>
+{% endautoescape %}

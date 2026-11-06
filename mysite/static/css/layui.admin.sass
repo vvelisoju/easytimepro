@@ -1,0 +1,1943 @@
+$zk-primary-color: #7ac143
+$zk-small-font-size: 12px
+$zk-middle-font-size: 12px
+$zk-large-font-size: 14px
+$table_text_color: #666
+$table_border_color: #e6e6e6
+$table_normal_color: #FFFFFF
+$table_zebra_color: rgba(242, 242, 242, 0.43922)
+
+%zk-default-color
+  background: $zk-primary-color
+
+%panel-icon-middle
+  font-size: 1.3em
+  color: #777
+
+%table-prefer-highlight-identifier
+  text-decoration: none !important
+  cursor: pointer
+  color: #57c5f7
+
+%table-prefer-highlight-identifier-off
+  color: $table_text_color
+  cursor: pointer
+  text-decoration: underline !important
+
+%table-prefer-show-zebra-stripes
+  background: $table_zebra_color
+
+%table-prefer-show-zebra-stripes-off
+  background: $table_normal_color
+
+%table-prefer-show-line-division
+  border-width: 1px
+  border-style: solid
+  border-color: #e6e6e6
+
+%table-prefer-show-line-division-off
+  border: none
+
+
+body
+  font: $zk-small-font-size "Microsoft YaHei", "PingFang SC", Helvetica, Tahoma, Arial, sans-serif !important
+
+.layui-table td, .layui-table th
+  font-size: inherit
+
+.layui-tab-title li
+  font-size: $zk-small-font-size
+
+.layui-nav *
+  font-size: $zk-small-font-size
+
+.layui-card-header
+  font-size: $zk-small-font-size
+
+@media screen and (min-width: 1300px)
+  body
+    font: $zk-middle-font-size "Microsoft YaHei", "PingFang SC", Helvetica, Tahoma, Arial, sans-serif !important
+
+  .layui-nav *
+    font-size: $zk-middle-font-size
+
+  .layui-tab-title li
+    font-size: $zk-middle-font-size
+  .layui-card-header
+    font-size: $zk-middle-font-size
+@media screen and (min-width: 1900px)
+  body
+    font: $zk-large-font-size "Microsoft YaHei", "PingFang SC", Helvetica, Tahoma, Arial, sans-serif !important
+
+  .layui-nav *
+    font-size: $zk-large-font-size
+
+  .layui-tab-title li
+    font-size: $zk-large-font-size
+
+  .layui-card-header
+    font-size: $zk-large-font-size
+
+
+.layui-layout-admin .layui-side
+  top: 65px
+
+.layui-nav .layui-nav-item
+  line-height: 40px
+
+.layui-table-tool .layui-nav .layui-nav-item
+  line-height: 30px
+  height: 30px
+
+.layui-header
+  line-height: 65px
+  height: 65px
+
+  .layui-nav
+    top: 0
+    padding: 0
+    background: none
+
+  .layui-nav-menu
+    position: absolute
+    left: 0
+    top: 0
+    padding: 0
+    background: none
+
+    .menu_module
+      padding: 0 20px
+      min-width: 110px
+      text-align: center
+
+    .layui-nav-logo
+      padding: 0px
+
+      a
+        padding: 0px
+
+.layui-form-select dl
+  dd, dt
+    line-height: 23px
+
+.layui-header .layui-nav-menu a:link
+  color: #474b4f
+  text-decoration: none
+  font-size: 18px
+  line-height: 62px
+  padding: 22px 30px
+
+.layui-header .layui-nav-menu a:link
+  color: #fff
+
+.top_nav a
+  &:visited, &:active
+    color: #474b4f
+    text-decoration: none
+    font-size: 18px
+    line-height: 62px
+    padding: 22px 30px
+
+.layui-header .layui-nav
+  .layui-nav-item a
+    padding: 0
+    outline: 0
+
+  &.layui-layout-right .layui-nav-item
+    padding: 3px 25px 3px 15px
+
+.layui-tab
+  margin: 0
+
+//#zk-layui-tab-ul
+//position: absolute
+//border-bottom: none
+
+#top_tabs_box
+  padding-right: 152px
+  height: 40px
+  border-bottom: 1px solid #e2e2e2
+
+.info-box
+  padding: 20px 10px
+
+  span
+    font-weight: bold
+
+  .info-box-label
+    color: #7ac143
+
+.admin-log .layui-form-label
+  min-width: 100px
+
+.clildFrame.layui-tab-content
+  top: 41px
+  position: absolute
+  bottom: 0
+  width: 100%
+  padding: 0
+
+.closeBox
+  position: absolute
+  right: 0
+  background-color: #fff !important
+  color: #000
+  border-left: 1px solid #e2e2e2
+  border-bottom: 1px solid #e2e2e2
+  padding: 0px
+
+  .layui-nav-item
+    line-height: 40px
+
+    > a
+      color: #000
+
+      &:hover
+        color: #000
+
+.layui-fluid, .layui-card-body
+  padding: 0
+
+.layui-layout-admin .layui-body
+  bottom: 0px
+
+.layui-upload-img
+  width: 200px
+  height: 75px
+  margin: 0 10px 10px 0
+
+.layui-form-checkbox i
+  width: 30px
+  height: 28px
+
+.layui-table-tool
+  border-width: 0px
+  //background-color: #dcdfe2
+  min-height: 0px
+  padding: 0px
+  height: 30px
+  background-color: #FFFFFF
+  border-style: none
+
+  .layui-nav
+    background-color: #FFFFFF
+    padding: 0px
+    height: 30px
+
+    .layui-nav-child
+      top: 30px
+
+a.layui-btn + .layui-btn
+  margin-left: 0
+  margin-right: 3px
+
+div.grid-toolbar
+  height: 30px
+  margin: 0
+  padding: 0px
+  width: 100%
+  list-style: none
+  text-align: left
+
+  .layui-nav-item
+    .layui-btn
+      margin-right: 3px
+      background: #d8dce1
+      border-color: #e7e7e7
+      color: #777777
+
+    .layui-nav-child .layui-btn
+      margin: 0
+      background: #d8dce1
+      border-color: #e7e7e7
+      color: #777777
+
+    .layui-btn:hover
+      background-color: #a9acb0
+      color: #000000
+
+  .layui-nav-bar, .layui-nav-child
+    background-color: #d8dce1
+
+
+.layui-table-tool
+
+  .layui-nav-item .layui-btn
+    text-align: left
+
+  .layui-inline[lay-event]
+    width: auto
+    height: 30px
+    margin-left: 10px
+    top: -1px
+    border: 1px solid transparent
+
+    &:hover
+      border: 1px solid #ccc !important
+      border-radius: 2px
+      box-shadow: 0 2px 1px rgba(0, 0, 0, 0.12)
+      box-sizing: border-box
+
+      > i.fa.fa-fw
+        color: $zk-primary-color
+
+.layui-fluid
+  .layui-card.side-grid-tree
+    .layui-card-header
+      height: 31px
+      line-height: 31px
+
+      .layui-btn
+        background-color: #FFFFFF
+        color: #000000
+        padding: 0
+        height: 28px
+        line-height: 24px
+
+    span > i.fa.fa-fw
+      @extend %panel-icon-middle
+
+
+.layui-btn.layuiadmin-btn-list
+  background-color: #FFFFFF
+  color: #000000
+  padding: 0
+  height: 28px
+  line-height: 24px
+
+.layui-table-view .layui-table td
+  padding: 1px 0
+  border-left: 1px solid #e6e6e6
+  border-top: 1px solid #e6e6e6
+
+tr[data-index="0"]
+  transition: 0s
+
+  td
+    border: 1px solid #e6e6e6
+
+.layui-table-header
+  border-width: 0px
+  overflow: hidden
+  .layui-table
+    margin-bottom: -1px
+    th
+      padding: 5px 0
+      border-top: none
+      border-left: 1px solid $table_border_color
+
+
+.layui-table-box
+  td[lay-event="editPopUp"]
+    @extend %table-prefer-highlight-identifier
+
+  tr.layui-table-click
+    transition: 0s
+    background: rgba(255, 249, 217, 0.458824) !important
+
+  tr.layui-table-hover
+    transition: 0s
+    background: rgba(227, 227, 227, 0.458824) !important
+
+  tr.layui-table-hover.layui-table-click
+    background: rgba(255, 249, 217, 0.521569) !important
+
+  tr.layui-table-hover:not([data-index="0"])
+    transition: 0s
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3)
+  //outline: 1px dashed rgba(87, 197, 247, 0.8) !important
+
+  tr.layui-table-hover[data-index="0"]
+    //td
+      //border: 1px dashed rgba(87, 197, 247, 0.8) !important
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3)
+
+.layui-table-cell
+  height: 20px
+  line-height: 20px
+
+.layui-form-label
+  float: left
+  display: block
+  padding: 3px 5px
+  width: 110px
+  text-overflow: ellipsis
+  font-weight: 400
+  line-height: 20px
+  text-align: right
+//min-width: 200px
+//max-width: 350px
+
+.layui-form-item
+  margin-bottom: 10px
+
+.layui-input, .layui-select, .layui-textarea
+  height: 26px
+  line-height: 26px
+
+.layui-form-select dl
+  top: 32px
+
+.layui-table-tool .layui-table-tool-self
+  top: 0px
+  right: 0px
+
+  > div > i.fa.fa-fw
+    @extend %panel-icon-middle
+
+.employee-frame
+  .layui-card-header
+    height: 76px
+
+  .layui-input-block
+    margin-left: 0px
+    width: 200px
+
+  .layui-form-label
+    text-align: left
+    min-width: 0px
+
+  .layui-btn-primary
+    border: none
+
+  .layui-form-item
+    margin-bottom: 0px
+
+.layui-form-select .tree-select
+  top: 32px
+
+.layui-form-selected .tree-select
+  display: block
+
+.layui-form-select .tree-select
+  display: none
+  position: absolute
+  left: 0
+  top: 42px
+  padding: 5px 0
+  z-index: 899
+  min-width: 100%
+  border: 1px solid #d2d2d2
+  max-height: 300px
+  overflow-y: auto
+  background-color: #fff
+  border-radius: 2px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+
+.layui-form-selected
+  .tree-select, .tree-content
+    display: block
+
+.tree-content
+  display: none
+  position: absolute
+  left: 0
+  top: 32px
+  padding: 5px 0 0 0
+  z-index: 1001
+  border: 1px solid #d2d2d2
+  max-height: 300px
+  max-width: 300px
+  overflow-y: auto
+  background-color: #fff
+  border-radius: 2px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+
+.auth-tree-content
+  height: 380px
+  overflow-y: auto
+
+div[id$='-tree-control'], .auth-tree-control
+  span[data-name]
+    &:not(:first-child)
+      padding-left: 5px
+
+    > a
+      &:hover, &:focus
+        color: #333
+        text-decoration: none
+
+
+.layui-layer-content
+  .tree-content
+    top: 0px
+    color: #666
+
+td
+  &[data-field='approver_type'] .layui-table-cell, &[data-field='approver'] .layui-table-cell
+    overflow: visible
+    padding: 0px 3px
+
+  &[data-field='approver_type'] .layui-table-cell .layui-input, &[data-field='approver'] .layui-table-cell .layui-input
+    height: 23px
+
+  &[data-field='notifier_type'] .layui-table-cell
+    overflow: visible
+    padding: 0px 3px
+
+    .layui-input
+      height: 23px
+
+.layui-btn
+  background-color: $zk-primary-color
+
+.layui-form-onswitch
+  background-color: $zk-primary-color
+
+.boot-nav .caret
+  border-top-color: #333
+  border-bottom-color: #333
+
+
+.work-flow
+  .layui-table-body, .layui-table-box
+    overflow: visible
+
+.layui-table-view
+  overflow: visible
+
+  .layui-table-col-special
+    .layui-btn
+      background: transparent
+      color: $zk-primary-color
+
+    .layui-btn-danger
+      color: #E84C3D
+
+    .layui-btn-xs
+      height: 20px
+      line-height: 20px
+      padding: 0px
+      font-size: 14px
+
+      i.fa-fw
+        font-size: 1.4em !important
+
+.layui-table-page .layui-laypage-btn
+  background-color: $zk-primary-color
+  color: #fff
+
+.layui-layout-admin
+  .layui-layout-left
+    .layui-nav-item .layui-this
+      background-color: rgba(57, 61, 73, 0.66667)
+      color: #fff
+
+      a
+        background-color: transparent
+        color: #fff
+
+    .layui-this:after
+      background-color: #3f4245
+
+  .layui-layout-right .layui-nav-bar
+    background-color: $zk-primary-color
+
+  .layui-layout-left .layui-this:after
+    background-color: #3f4245
+
+  .layui-layout-right .layui-this:after
+    background-color: $zk-primary-color
+
+  .layui-layout-left
+    line-height: 65px
+    height: 65px
+
+    .layui-nav-item
+      a
+        line-height: 65px
+        height: 65px
+
+      &:not(layui-menu-logo):hover
+        background-color: rgba(230, 230, 230, 0.43137)
+        color: #3f4245
+
+.layui-nav-tree .layui-nav-child dd.layui-this
+  background-color: rgba(84, 88, 93, 0.25098)
+  color: $zk-primary-color
+
+  a
+    background-color: transparent
+    color: $zk-primary-color
+
+.layui-tab-card > .layui-tab-title li
+  border-top: 1px solid #f2f2f2
+
+//
+// *.layui-tab-card > .layui-tab-title li.layui-this
+// *  background-color: #fff
+// *  border-top: 1px solid #e6e6e6
+// *  transition: transform 0.1s
+// *
+
+.layui-tab-title .layui-this:after
+  position: absolute
+  left: 0
+  top: 0
+  content: ''
+  width: 100%
+  height: 41px
+  border-width: 1px
+  border-style: solid
+  border-bottom-color: #fff
+  //border-top-color: #e6e6e6
+  border-radius: 0px
+  // border-radius: 2px 2px 0 0
+  box-sizing: border-box
+  pointer-events: none
+
+.zk-switch-menu
+  //position: absolute
+  //height: 30px
+  //margin: 15px 15px 0 0
+  font-size: 18px
+  padding: 8px 5px 0 5px
+  color: #fff
+
+.zk-show-menu.layui-layout-admin .layui-side
+  //left: -170px
+  width: 60px
+  min-width: 60px
+  max-width: 60px
+  flex: 0 0 60px
+
+.side-menu-group
+  overflow-x: hidden
+//padding-left: 10px
+
+.layui-side-collapsed
+  .layui-side-scroll li.layui-nav-item.side-menu-group > a > .menu-icon + span
+    max-width: 0
+    display: inline-block
+    opacity: 0
+
+  > a > .zk-switch-menu
+    //padding-left: 18px
+    text-align: center !important
+
+.menu-icon
+  min-width: 16px
+  margin-right: 10px
+  font-size: 16px
+  transition: font-size 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+.layui-side-scroll .layui-nav-item .layui-nav-child dd
+  cursor: pointer
+
+.layui-side-scroll
+  position: relative
+  width: 220px
+  // -65(banner) - 30px(switch) - 20px
+  height: calc(100% - 50px)
+  overflow-x: hidden
+  transition: all .7s
+
+.zk-switch-menu
+  input
+    //height: 100%
+    color: #ffffff
+    height: 20px
+    width: 0
+    padding-right: 5px
+    border: none
+    border-bottom: 1px solid transparent
+    outline: none
+    background: transparent
+    transition: width 0.4s, font-size 0.4s
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 2
+
+    &:focus
+      width: 180px
+      z-index: 1
+      border-bottom: 1px solid #ffffff
+
+  i
+    margin-left: 5px
+
+    &.fa-indent
+      margin: 0
+
+// nav
+
+.nav
+  width: 220px
+  height: 100%
+  background: #263238
+  transition: all .3s
+  position: absolute
+  top: 0
+  left: 0
+
+  a
+    display: block
+    overflow: hidden
+    padding-left: 20px
+    line-height: 46px
+    max-height: 46px
+    color: #ABB1B7
+    transition: all .3s
+
+    span
+      margin-left: 30px
+
+.nav-item
+  position: relative
+
+  &.nav-show
+    border-bottom: none
+
+  ul
+    display: none
+    background: rgba(0, 0, 0, 0.1)
+
+  &.nav-show ul
+    display: block
+
+  > a:before
+    content: ""
+    position: absolute
+    left: 0px
+    width: 2px
+    height: 46px
+    background: #34A0CE
+    opacity: 0
+    transition: all .3s
+
+.nav .nav-icon
+  font-size: 20px
+  position: absolute
+  margin-left: -1px
+
+/* Here to modify nav icon, it can be replaced by define iconfont
+
+.icon_1::after
+  content: "\e62b"
+
+.icon_2::after
+  content: "\e669"
+
+.icon_3::after
+  content: "\e61d"
+
+//---------------------
+
+.nav-more
+  float: right
+  margin-right: 20px
+  font-size: 12px
+  transition: transform .3s
+
+  &::after
+    content: "\e621"
+
+/* Here is right arrow of nav, it can be replaced by define iconfont
+
+//---------------------
+
+.nav-show
+  .nav-more
+    transform: rotate(90deg)
+  color: #FFF
+  background: rgba(0, 0, 0, 0.1)
+
+.nav-item > a:hover
+  color: #FFF
+  background: rgba(0, 0, 0, 0.1)
+
+.nav-show > a:before
+  opacity: 1
+
+.nav-item
+  > a:hover:before
+    opacity: 1
+
+  li:hover a
+    color: #FFF
+    background: rgba(0, 0, 0, 0.1)
+
+// nav-mini
+
+.nav-mini.nav
+  width: 60px
+  //.nav-icon
+    // margin-left:-2px
+  .nav-item > a span
+    display: none
+
+  .nav-more
+    margin-right: -20px
+
+  .nav-item
+    ul
+      position: absolute
+      top: 0px
+      left: 60px
+      width: 180px
+      z-index: 99
+      background: #3C474C
+      overflow: hidden
+
+    &:hover
+      background: rgba(255, 255, 255, 0.1)
+
+      .nav-item a
+        color: #FFF
+
+      a:before
+        opacity: 1
+
+      ul
+        display: block
+
+#dashboard
+  .layui-col-space15
+    padding-top: 15px
+    margin: 0px
+
+  .layui-card-body
+    border: 1px solid #dcdfe2
+    padding: 5px
+
+  .real-time .layui-card-body
+    border: none
+
+  .dashboard-table td
+    border-width: 1px 0px 0px 0px
+    border-color: #d5d8d2
+    border-style: solid
+    color: #666666
+    // line-height: 45px
+     *padding: 5px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    img.radius
+      width: 45px
+      height: 45px
+      -webkit-border-radius: 50px
+      border-radius: 50px
+
+    .user-img img
+      padding: 5px
+
+.l
+  float: left
+
+.r
+  float: right
+
+.node_name
+  font-size: 12px
+
+//.layui-form-item .layui-input-inline, .layui-form-item .layui-input-inline input
+///!*width: 120px*!/
+//width: auto !important
+//
+
+div.layui-rule-page .layui-card
+  padding-left: 20px
+
+  .layui-form-label
+    width: 160px
+
+  .layui-input-inline
+    width: 200px
+
+    input
+      width: 200px
+
+  .layui-body
+    left: 100px
+
+#calculate_item
+  .layui-form-label
+    width: 80px
+
+  .layui-input-inline
+    width: 80px
+
+    input
+      width: 80px
+
+.layui-form-mid
+  padding: 0 !important
+
+.layui-layout-search
+  padding: 0px
+
+  .layui-layout-left
+    left: 0px
+    line-height: 28px
+
+  .layui-nav .layui-nav-item
+    line-height: 28px
+
+    a
+      line-height: 28px
+
+//.layui-form-checked span, .layui-form-checked:hover span
+//  background-color: $zk-primary-color
+
+span.required
+  color: red
+
+.layui-tab ul, ol
+  margin: 0
+
+.layui-report-item select
+  left: 0
+  padding: 5px 0
+  min-width: 100%
+  border: 1px solid #d2d2d2
+  max-height: 200px
+  overflow-y: auto
+  background-color: #fff
+  border-radius: 2px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+
+  option
+    padding: 4px 10px 3px 10px
+    height: 23px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    cursor: pointer
+
+    &:active
+      background-color: $zk-primary-color
+      color: #fff
+
+    &:hover
+      background-color: #f2f2f2
+      -webkit-transition: .5s all
+      transition: .5s all
+  top: 32px
+  display: block
+
+.layui-table-tool-panel
+  overflow: hidden
+
+  >
+  ul
+    width: auto
+    max-height: 300px
+    overflow-y: auto
+
+    .column-control
+      > input[role=search]
+        margin: 5px 15px 0 15px
+        width: calc(100% - 30px)
+
+.layui-input-inline textarea[id^=id_email]
+  height: 40px
+  width: 100%
+
+.layui-table-grid-down, .layui-table-tips-c
+  padding: 0px
+
+.layui-table-tips-main
+  overflow-y: auto
+
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after
+  height: 0
+
+.employee-search-form
+  width: 680px
+
+  .layui-inline label
+    width: 120px
+
+  .layui-input-inline
+    width: 130px
+
+    input
+      width: 120px
+
+[id$=-search-form]
+  .layui-icon.fa-search
+    color: #000
+
+  .button-3d
+    text-align: center
+    vertical-align: middle
+    height: 30px
+    width: 30px
+    cursor: pointer
+    outline: none
+    margin-bottom: 8px
+    color: #fff
+    background-color: #53a069
+    border: none
+    border-radius: 50%
+    box-shadow: 0px 4px 4px 1px rgba(153, 153, 153, 0.501961)
+
+    i.fa-search
+      top: -5px
+      position: relative
+
+
+    &:hover
+      background-color: $zk-primary-color
+
+    &:active
+      background-color: $zk-primary-color
+      box-shadow: 0 5px 5px 1px rgba(153, 153, 153, 1)
+      transform: translateY(3px)
+
+
+.layui-tab-title .layui-this
+  color: #000c00
+
+.layui-layer-page .layui-layer-content-fixed
+  overflow: initial
+
+.layui-progress
+  margin-top: 5px
+  border-radius: 0
+  height: 3px
+  background: #f2f2f2
+
+#main_body .layui-tab-title
+  height: 30px
+
+  li
+    line-height: 30px
+
+  .layui-this:after
+    height: 31px
+
+.layui-nav-tree .layui-nav-child a
+  height: 40px
+  line-height: 40px
+  padding-left: 30px
+
+span.selected
+  .fa-fw
+    color: $zk-primary-color
+
+  &.float-right .fa-fw
+    color: #1E9FFF
+
+.email-setting-form .layui-form-label
+  width: 150px
+
+.alert-setting-form .layui-form-label
+  width: 300px
+
+.personalized-custom-setting-form .layui-form-label
+  width: 150px
+
+//.layui-form-select dl
+//height: auto
+//min-height: 100px
+//
+
+.layui-form-selectup dl
+  top: inherit
+  bottom: inherit
+
+.tree-content-filter
+  display: block
+  left: 0
+  top: 32px
+  padding: 5px 0
+  z-index: 1001
+  //min-width: 500px
+  border: 1px solid #d2d2d2
+  //min-height: 300px
+  max-height: 300px
+  overflow-y: auto
+  background-color: #fff
+  border-radius: 2px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+
+//.layui-table-cell, .layui-table-tool-panel li
+//overflow: visible
+//text-overflow: ellipsis
+//white-space: nowrap
+
+.layui-form
+  .layui-inline
+    max-width: 100%
+  .layui-input
+    min-width: 190px
+    max-width: 190px
+
+.layui-laypage-skip .layui-input
+  min-width: auto
+  max-width: auto
+
+.layui-form-danger
+  + .layui-form-select .layui-input, &:hover
+    border-color: #FF5722 !important
+  border-color: #FF5722 !important
+
+.user-popup-layer
+  &.level-2
+    background: #fd6d65
+
+  &.level-0 .desc-outer-arrow
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-bottom: 10px solid #d2d2d2
+
+  &.level-1 .desc-outer-arrow
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-bottom: 10px solid #d29633
+
+.header-popup-layer.level-2
+  .desc-outer-arrow
+    border-left: 12px solid transparent
+    border-right: 12px solid transparent
+    border-bottom: 12px solid #f2f2f2
+
+  .desc-inner-arrow
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-bottom: 10px solid #f2f2f2
+
+.user-popup-layer.level-2 .desc-outer-arrow, .skin-popup-layer.level-2 .desc-outer-arrow
+  border-left: 12px solid transparent
+  border-right: 12px solid transparent
+  border-bottom: 12px solid #d2d2d2
+
+.user-popup-layer.level-2 .desc-inner-arrow, .skin-popup-layer.level-2 .desc-inner-arrow
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-bottom: 10px solid #fff
+
+.user-popup-layer
+  .desc-inner-arrow
+    width: 0
+    height: 0
+    background-size: cover
+    background-position: center center
+    position: absolute
+    right: 50px
+    top: -10px
+    z-index: 99999
+
+  .desc-outer-arrow
+    width: 0
+    height: 0
+    background-size: cover
+    background-position: center center
+    position: absolute
+    right: 48px
+    top: -12px
+//z-index: 1
+
+.layui-tab-card
+  border-color: #f2f2f2
+  box-shadow: none
+  border-radius: 0px
+
+.system-user-menu
+  left: -30px
+
+  dd
+    width: auto
+    overflow-x: hidden
+    padding: 3px 0px
+
+    i
+      padding: 0 3px
+
+  &.layui-nav-child
+    top: 57px
+    border-radius: 3px
+    background-color: #fafafa
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.28)
+    border: 0
+
+.filter-search-input
+  background-image: url(data:image/pngbase64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAACYktHRAD/h4/MvwAAAAl2cEFnAAABKgAAASkAUBZlMQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNC0xMFQwNjo1OTowNy0wNzowMI5BiVEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDQtMTBUMDY6NTk6MDctMDc6MDD/HDHtAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABF0RVh0VGl0bGUAc2VhcmNoLWljb27Cg+x9AAACKklEQVQ4T6WUSavqQBCFK+2sII7gShFXLpUsBBHFf+1KcAQFwaWiolsnnBDn++4p0iHRqPDuByFJd/Wp6qrqVn5+IQP3+52m0ymtVis6Ho885na7KRgMUiKR4O9vmEQHgwGNx2NyOp0khCBFUXgcJo/Hg67XK8ViMcpkMjz+Dl200+nQZrMhh8PBE4gYQgDidrudvzEOm2KxyP9WsCginM1mHKEUS6VSFA6HOWI4G41GPAfx2+1GgUCAVFXVZMwovwY/lUqFPB4PiyFn+XxemzbT6/VovV6z8Ol0olwux+LPCBQFEQKIvhME2WyWbWGHFCD/VghUGVvE1rDlb6TTabbFmuVyqY2aEWgbFALeI5GINvyeUCjEtlgju+IZoRWfkS30CURoxFJUNjMEt9stf38CNjJKIFvNiMBJgTebzcZt843hcMhCELWqPBDxeJwulwtvC/3X7/e1qVfgFD0rC5tMJrUZM8Lr9VI0GmVBRDCfz6nZbHI/Sna7HXW7XZpMJtxSiBIP1lmhH9NqtaqfGKQDTmQREBnSgwfmMqfYYblc1o+2xHShtNttLgSiee4EmMEp3hDBPJzikimVSuRyuTTLJ1GwWCz4pCB3UhiL/X4/Hw50C5zjLSM+n898weCogxdRIzAGxigAdtNqtV6EC4UC+Xy+z6Kf2O/31Gg0TMK4ZBDxf4uCw+FA9XpdF0aaUOg/iQLcHbVaTb/p0Cl/FgXIJ/oYnaCqKv0DC6dltH6Ks84AAAAASUVORK5CYII=)
+  background-position: 12px 12px
+  background-repeat: no-repeat
+  font-size: 14px
+  background-size: 14px
+  padding: 12px 12px 12px 36px
+  border: 0
+  border-bottom: 1px solid #ddd
+  //width: 100%
+  width: calc(100% - 1px)
+
+  &:focus
+    outline: 3px solid #ddd
+
+.fa-1-5x
+  font-size: 1.5em
+
+.column-control > span
+  padding: 0px 5px
+
+.layui-table-tool-panel span a
+  &:hover, &:focus
+    color: black
+    text-decoration: none
+
+.layui-table-cell
+  padding: 0px 5px
+
+.layui-layer-tips .layui-layer-content
+  overflow-wrap: break-word
+
+.layui-nav .layui-nav-more
+  right: 6px
+
+#deptattrule_edit_form .base-setting-large1 label
+  width: 240px !important
+
+.action-form .base-setting label
+  width: 220px
+
+label
+  &[for=id_weekend_type], &[for=id_day_off_type]
+    // 220 - 28
+    width: 140px !important
+
+.field-work_weekend > .layui-form-checkbox
+  margin-left: 59px
+  padding-left: 0px !important
+
+.field-work_day_off > .layui-form-checkbox
+  margin-left: 77px
+  padding-left: 0px !important
+
+#leavecategory_edit_form .layui-form-label, #trainingcategory_edit_form .layui-form-label
+  width: 120px
+
+#biophoto_fluid .layui-table-cell
+  height: auto !important
+  white-space: normal
+
+ul.layui-tab-title > li > span
+  list-style-type: none
+  touch-action: none
+  user-select: none
+  -webkit-user-drag: none
+  -webkit-tap-highlight-color: #0000
+
+.layui-progress-bar
+  transition: all 0.5s
+  -webkit-transition: all 0.5s
+  transition-timing-function: step-start
+
+.layui-layer-grim > .layui-layer-content
+  overflow-x: hidden !important
+
+.layui-elem-field legend
+  width: auto !important
+  border-bottom: 0px
+
+#attshift_edit_form
+  label
+    &[for=id_weekend_type], &[for=id_day_off_type]
+      width: 140px !important
+
+  .field-work_weekend > .layui-form-checkbox
+    margin-left: 24px
+    padding-left: 0px !important
+
+  .field-work_day_off > .layui-form-checkbox
+    margin-left: 42px
+    padding-left: 0px !important
+
+//#timeinterval_edit_form .base-setting-large1 label, #breaktime_edit_form .base-setting-large1 label
+//  width: 180px !important
+
+#leave_addleave.action-form .layui-form-label, #myuser_edit_form .layui-form-label
+  width: 120px
+
+//div[id$=_edit_form]
+//overflow: auto
+//
+
+.layui-tab-content
+  padding: 5px
+
+.ztree .ztree-pure
+  height: auto !important
+
+.captureRowPanel
+  width: 100%
+  font-size: 12px
+  padding-top: 10px
+
+//.layui-layer-page .layui-layer-content
+//erflow: hidden !important
+//!*padding-right: 12px*!
+//
+
+//.layui-layer-page .layui-layer-content:hover
+///verflow: auto !important
+//padding-right: 1px
+//transition: width 0.3s cubic-bezier(0.125, 0.7, 0.125, 0.1)
+//
+
+//noinspection CssUnknownTarget
+.transaction-capture
+  width: 120px
+  height: 140px
+  background: url(/media/images/userImage.gif) no-repeat 0 0
+
+// *.layui-table-body
+// *  overflow-x: hidden !important
+// *.layui-table-body:hover
+// *  overflow-x: auto !important
+// *  border-right: 1px solid transparent
+// *
+
+.layui-inline.open
+  color: #333
+  background-color: #ebebeb
+  border-color: #adadad
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+
+//noinspection CssUnknownTarget
+.layui-layer-resize
+  background: url(/media/img/move.png) right bottom no-repeat
+
+div[id^=auxiliary_setting_form_] .layui-form-label
+  width: 140px
+
+.fa.deactivated
+  color: #b2b2b2
+
+#main_body
+  overflow: hidden
+
+ #main_body .layui-tab-content
+    overflow: hidden
+    width: 100%
+    min-width: 100%
+
+.schedule-add-form
+  .layui-form-switch, .shift-add-form .layui-form-switch
+    margin-top: 0px
+  .layui-input-inline
+    width: 110px
+    .layui-date
+      min-width: 110px
+      max-width: 110px
+
+.time-interval-form .cross-setup .layui-inline
+  .layui-form-label
+    width: 120px !important
+  .layui-form-mid
+    width: 75px
+    padding: 3px 0 0 0 !important
+    margin: 0 !important
+  .time-table-input-time
+    width: 95px !important
+    .layui-input
+      width: 95px !important
+      min-width: 95px !important
+      max-width: 95px !important
+  .time-table-input-cross-day
+    width: 60px !important
+    .layui-input
+      width: 60px !important
+      min-width: 60px !important
+      max-width: 60px !important
+
+.time-interval-form .non-cross-setup .layui-inline
+  .layui-form-label
+    width: 185px !important
+    min-width: 185px !important
+    max-width: 185px !important
+
+#id_unitCycle .layui-form-item
+  margin-bottom: 0px
+
+.layui-admin-shade
+  z-index: 3001
+  opacity: 0.3
+
+.capital-letter-box
+  display: inline-block
+  border: 1px solid #000
+  background: #393d49
+  color: rgba(255, 255, 255, 0.70196)
+  line-height: 15px
+  text-align: center
+  width: 22px
+  margin-left: 5px
+  margin-right: 5px
+  font-size: 13px
+
+.layui-nav-tree .layui-nav-child a:hover
+  text-decoration-line: underline
+
+@-webkit-keyframes layui-rl
+  from
+    -webkit-transform: translate3d(100%, 0, 0)
+
+  to
+    -webkit-transform: translate3d(0, 0, 0)
+
+
+@keyframes layui-rl
+  from
+    transform: translate3d(100%, 0, 0)
+
+  to
+    transform: translate3d(0, 0, 0)
+
+
+.layui-anim-rl
+  -webkit-animation-name: layui-rl
+  animation-name: layui-rl
+
+@-webkit-keyframes layui-lr
+  from
+    -webkit-transform: translate3d(0, 0, 0)
+    opacity: 1
+
+  to
+    -webkit-transform: translate3d(100%, 0, 0)
+    opacity: 1
+
+
+@keyframes layui-lr
+  from
+    transform: translate3d(0, 0, 0)
+
+  to
+    transform: translate3d(100%, 0, 0)
+
+
+.layui-anim-lr, .layui-anim-rl.layer-anim-close
+  -webkit-animation-name: layui-lr
+  animation-name: layui-lr
+
+.layui-layer-adminRight
+  top: 50px !important
+  bottom: 0
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
+  border-radius: 0
+  overflow: auto
+
+.layui-layer-dialog .layui-layer-content
+  word-break: break-word !important
+  word-break-cjk: break-all !important
+
+.zydeco-layer-rim
+  border: 5px solid rgba(0, 0, 0, 0.07059)
+  border-radius: 5px
+  box-shadow: none !important
+
+.layui-layer-content.layer-of-tree-content
+  overflow: visible !important
+
+  ~ .layui-layer-resize
+    display: none
+
+ul.side-menu-vertical::-webkit-scrollbar
+  width: 6px
+
+.side-menu.side-menu-vertical
+  overflow-y: auto
+
+  &::-webkit-scrollbar-thumb
+    background: #fff
+    border-radius: 5px
+    outline: 0
+
+  &::-webkit-scrollbar-track-piece
+    background: #393d49
+    border-radius: 5px
+
+.layui-colorpicker-main
+  box-sizing: content-box
+
+.header-popup-layer
+  .desc-inner-arrow
+    width: 0
+    height: 0
+    background-size: cover
+    background-position: center center
+    position: absolute
+    left: 0px
+    top: 56px
+    z-index: 99999
+
+  .desc-outer-arrow
+    width: 0
+    height: 0
+    background-size: cover
+    background-position: center center
+    position: absolute
+    left: 0px
+    top: 54px
+//z-index: 1
+
+.skin-popup-layer
+  .desc-inner-arrow
+    width: 0
+    height: 0
+    background-size: cover
+    background-position: center center
+    position: absolute
+    right: 27px
+    top: -10px
+    z-index: 99999
+
+  .desc-outer-arrow
+    width: 0
+    height: 0
+    background-size: cover
+    background-position: center center
+    position: absolute
+    right: 25px
+    top: -12px
+//z-index: 1
+
+.zydeco-skin-box img
+  height: 112px
+  width: 130px
+
+.zydeco-font
+  color: #ffffff
+
+.zydeco-skin-box
+  height: 113px
+//padding: 0px 2px
+
+.zydeco-skin-caption
+  top: -20px
+  position: relative
+  background-color: rgba(0, 0, 0, 0.18824)
+  width: 130px
+//margin: 0px 5px
+
+.zydeco-skin-fluid
+  padding: 10px 10px 0 10px
+
+.sp-extension
+  .layui-layer-content
+    overflow: hidden !important
+
+  &.layui-layer
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.28)
+
+.zydeco-skin-box.check-mark .zydeco-skin-caption
+  &:after
+    content: " "
+    display: block
+    width: 0.4em
+    height: 0.7em
+    border: solid #fff
+    border-width: 0 0.2em 0.2em 0
+    position: absolute
+    right: 0.2em
+    top: 45%
+    margin-top: -0.2em
+    -webkit-transform: rotate(45deg)
+    -moz-transform: rotate(45deg)
+    -o-transform: rotate(45deg)
+    transform: rotate(45deg)
+
+  &:before
+    content: " "
+    display: block
+    border: solid 0.8em rgba(120, 177, 63, 0.8)
+    border-radius: 1em
+    height: 0
+    width: 0
+    position: absolute
+    right: -0.4em
+    top: 40%
+    margin-top: -0.5em
+
+.layui-layout-admin .layui-header
+  background: transparent
+  z-index: 999
+
+.layui-table-tool .layui-btn-container
+  margin: 0 !important
+  width: fit-content
+
+.register-box
+  .info-sm-box
+    padding: 3px 10px
+
+    .info-sm-box-label
+      font-size: 18px
+      color: #7ac143
+      padding: 3px 0
+
+  .info-box-item
+    padding: 2px 0
+
+    .box-item-label
+      font-weight: bold
+
+    .box-item
+      display: inline-block
+
+    .box-item-val
+      text-decoration: underline
+
+  .info-box-activation a
+    padding: 0 5px
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
+
+.menu_module.layui-this:before
+  width: 0
+  height: 0
+  background-size: cover
+  background-position: center center
+  position: absolute
+  right: 72px
+  top: -10px
+  z-index: 99999
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-bottom: 10px solid #d2d2d2
+
+.online-activation
+  .layui-form-item
+    margin-bottom: 0px
+
+    .layui-inline
+      margin: 5px
+
+    .layui-input-inline
+      width: 150px
+
+  .layui-form-label
+    width: 100px
+    padding: 3px
+
+  .layui-input, .layui-select, .layui-textarea
+    height: 28px
+
+  .sn-input .layui-input-inline
+    width: 280px
+
+  .company-input .layui-input-inline
+    width: 430px
+
+.upk-download .company-input.layui-input
+  width: 430px
+
+.fieldset-title
+  margin: 30px 0 20px 0
+
+.layui-form-checked[lay-skin=primary] i.fa-ban
+  background: #cbcbcb
+  border-color: #cbcbcb
+
+.layui-nav.layui-layout-right dd > a
+  padding: 3px 15px !important
+  height: 25px
+
+.layui-form-switch ~ span
+  padding-left: 8px
+
+.layui-table-tool .layui-table-tool-self .layui-inline[lay-event]
+  margin: 0 0 0 8px
+
+.layui-table-tool-panel
+  .layui-checkbox-disbaled.layui-disabled ~ span
+    color: #d2d2d2
+    cursor: not-allowed
+
+  .layui-form-onswitch.layui-checkbox-disbaled.layui-disabled
+    background-color: rgba(95, 184, 120, 0.46667)
+
+.rule-batchAdd-form label
+  width: 200px
+
+.layui-table-tool
+  .layui-form-switch
+    em
+      position: relative
+      top: 0px
+      width: 20px
+      margin-left: 2px
+      padding: 0 !important
+      text-align: center !important
+      vertical-align: middle
+      color: #999 !important
+      font-style: normal !important
+      font-size: 10px
+
+    i
+      position: absolute
+      left: 4px
+      top: 2px
+      width: 16px
+      height: 16px
+      border-radius: 20px
+      background-color: #d2d2d2
+      -webkit-transition: .1s linear
+      transition: .1s linear
+
+    position: relative
+    height: 20px
+    line-height: 20px
+    min-width: 30px
+    padding: 0 2px
+    margin-top: 8px
+    border: 1px solid #d2d2d2
+    border-radius: 20px
+    cursor: pointer
+    background-color: #fff
+    -webkit-transition: .1s linear
+    transition: .1s linear
+
+  .layui-form-onswitch
+    em
+      margin-left: 2px
+      margin-right: 20px
+      color: #fff !important
+
+    i
+      left: 100%
+      margin-left: -19px
+      background-color: #fff
+
+    border-color: $zk-primary-color
+    background-color: $zk-primary-color
+
+
+.table-prefer-highlight-identifier
+  td[lay-event="editPopUp"]
+    @extend %table-prefer-highlight-identifier
+
+.table-prefer-highlight-identifier-off
+  td[lay-event="editPopUp"]
+    @extend %table-prefer-highlight-identifier-off
+
+.table-prefer-show-zebra-stripes
+  .layui-table
+    tr:nth-child(even)
+      @extend %table-prefer-show-zebra-stripes
+
+.table-prefer-show-zebra-stripes-off
+  .layui-table
+    tr:nth-child(even)
+      @extend %table-prefer-show-zebra-stripes-off
+
+.table-prefer-show-line-division
+  .layui-table-view .layui-table td
+    @extend %table-prefer-show-line-division
+
+.table-prefer-show-line-division-off
+  .layui-table-view .layui-table td
+    @extend %table-prefer-show-line-division-off
+
+#id-frame-unselect-container .layui-form-item .layui-input-inline
+  width: 140px
+
+#id_shift_detail_attshift .layui-card-header
+  background-color: #f2f2f2
+
+.license_file-label
+  padding: 9px 5px
+
+.license_file-container
+  margin-top: 15px
+
+.btn-success
+  background-color: $zk-primary-color
+  border-color: $zk-primary-color
+
+.dropdown-menu .active a
+  background-color: $zk-primary-color
+
+  &:hover, &:focus
+    background-color: $zk-primary-color
+
+.datepicker table tr td .active
+  &:hover, &:active, &:hover:active
+    @extend %zk-default-color
+
+  &.active, &:hover.active
+    @extend %zk-default-color
+
+  &.disabled
+    &.active, &:hover.active
+      @extend %zk-default-color
+
+    &[disabled], &:hover[disabled]
+      @extend %zk-default-color
+
+    &:hover
+      @extend %zk-default-color
+    @extend %zk-default-color
+
+  &[disabled], &:hover[disabled]
+    @extend %zk-default-color
+
+.layui-layer-btn .layui-layer-btn0, .layui-form-checked[lay-skin=primary] i.layui-icon-ok
+  border-color: $zk-primary-color !important
+  background-color: $zk-primary-color !important
+  color: #fff
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em
+  background-color: $zk-primary-color !important
+
+.layui-nav-tree .layui-nav-child dd.layui-this
+  background-color: rgba(84, 88, 93, 0.25098)
+  color: $zk-primary-color
+
+  a
+    background-color: transparent
+    color: $zk-primary-color
+
+.license_file-container
+  margin-top: 15px
+
+.layui-bg-zk
+  background-color: #777777
+
+.btn-primary
+  background-color: $zk-primary-color
+  border-color: $zk-primary-color
+
+// Action Form
+#terminal_terminalreloaddata
+  .layui-form-label
+    width: 150px
+  .layui-inline
+    width: 160px
+
+#employee_edit_form
+  .layui-form-item
+    margin-bottom: 5px
+  //.layui-form-label
+  //  width: 150px
+  //  max-width: 150px
+  .layui-tab-title
+    background: #f2f2f2
+
+  .layui-tab-item
+    margin-top: 10px
+  //padding-top: 10px
+  .layui-tab.layui-tab-brief
+    margin-top: 6px
+
+  .layui-tab-content
+    padding: 10px 15px
+    border: 1px solid #e6e6e6
+
+#attschedule_addattschedule
+  #id_unitCycle
+    .layui-form-item
+      input
+        width: fit-content
+        min-width: fit-content
+        max-width: fit-content
+
+#calculation-emp .layui-input, .employee-frame-search-form .layui-input, .att-report-search-form .layui-input
+  min-width: 100%
+  max-width: 100%
+
+table.dashboard-table
+  tr
+    img.img-user
+      &:hover
+        transform: scale(2.5)
+        transform-origin: left
+    img.img-capture
+      &:hover
+        transform: scale(2.5)
+        transform-origin: right
+
+div#timeinterval_fluid, div#breaktime_fluid
+  sup
+    color: $zk-primary-color
+
+.enroll-button
+  background-image: none !important
+  color: #ffffff
+  border-radius: 3px
+  border: none
+  background-color: #7ac142
+  letter-spacing: 1px
+  font-size: 14px
+  font-weight: normal
+  margin: 0 5px
+  text-align: center
+  cursor: pointer
+  height: 26px
+  padding-left: 10px
+  padding-right: 10px
+  min-width: 100px
+
+#reportDisplayTab
+  .layui-form-label
+    min-width: 160px
+    max-width: 160px
+
+#funcKeyTab
+  .layui-form-label
+    min-width: 60px
+    max-width: 60px
+
+#reportItemTable, #funcKeyTab, #weekendSettingContainer
+  .layui-table-cell
+    overflow: visible !important
+    height: 28px
+    line-height: 28px
+  .layui-table-edit
+    width: 100% !important
+    height: 100% !important
+
+.daily-shift-attr
+  .layui-form-item .layui-input-inline
+    width: 100px
+    .layui-input
+      min-width: 100px
+
+.break-form .layui-form-label
+  width: 190px !important
+  min-width: 190px !important
+  max-width: 190px !important

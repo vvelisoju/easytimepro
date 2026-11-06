@@ -1,0 +1,8473 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "geçerli e-posta adresini girin."
+
+msgid "user_field_username"
+msgstr "Kullanıcı Adı"
+
+msgid "user_field_usernameHelpTxt"
+msgstr "Gerekli. 30 karakter veya daha az. Harfler, rakamlar ve yalnız @/./+/-/_."
+
+msgid "user_field_usernameValidator"
+msgstr "Geçerli bir kullanıcı adı girin."
+
+msgid "user_field_password"
+msgstr "Şifre"
+
+msgid "user_field_firstName"
+msgstr "Ad"
+
+msgid "user_field_lastName"
+msgstr "Soyadı"
+
+msgid "user_field_email"
+msgstr "E-posta"
+
+msgid "user_field_authorizedDepartment"
+msgstr "Yetkili Departman"
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "Tüm alanları seçmeden işleyin"
+
+msgid "user_field_authorizedArea"
+msgstr "Yetkili Bölge"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "Tüm departmanları seçmeden işleyin"
+
+msgid "user_field_loginTimes"
+msgstr "Giriş Saatleri"
+
+msgid "user_field_staff"
+msgstr "Etkinleştir"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_active"
+msgstr "Aktif"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_superuser"
+msgstr "Süper kullanıcı"
+
+msgid "user_field_dateJoined"
+msgstr "Katılma Tarihi"
+
+msgid "user_field_lastLogin"
+msgstr "Son Giriş"
+
+msgid "base_model_user"
+msgstr "Kullanıcı"
+
+msgid "userProfile_field_username"
+msgstr "Kullanıcı Adı"
+
+msgid "userProfile_field_pinTabs"
+msgstr "Sekmeleri Sabitle"
+
+msgid "userProfile_field_hideColumns"
+msgstr "Sütunları Gizle"
+
+msgid "userProfile_field_order"
+msgstr "Sütun Sırası"
+
+msgid "userProfile_field_preferences"
+msgstr "Profil"
+
+msgid "base_model_userProfile"
+msgstr "Kullanıcı Profili"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "Sil"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "Seçili Kayıtları Sil"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "Seçili Kayıtları Sil"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "Seçilenleri silmek istediğinize emin misiniz {0} {1}?"
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "Seçilen düğümü silmek istediğinizden emin misiniz??"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "Seçilen dokümanı silmek istediğinizden emin misiniz??"
+
+msgid "common_action_new"
+msgstr "Ekle"
+
+msgid "common_action_newDescription"
+msgstr "Ekle"
+
+msgid "common_action_newHelpTxt"
+msgstr "Ekle"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "Eylem:"
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "Başka Ekle %(verbose_name)s"
+
+msgid "helpers_deleteText_remove"
+msgstr "Sil"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr "Yer işaretinde geçerli parametreler eksik."
+
+msgid "bookmark_duplication_echo"
+msgstr "Aynı ada sahip yer işareti var, adı değiştirebilir veya önceki kaydı geçersiz kılabilirsiniz."
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "Geçerli"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "Geçersiz"
+
+msgid "baseModel_field_createTime"
+msgstr "Zaman oluştur"
+
+msgid "baseModel_field_createUser"
+msgstr "Kullanıcı oluştur"
+
+msgid "baseModel_field_changeTime"
+msgstr "Zamanı değiştir"
+
+msgid "baseModel_field_changeUser"
+msgstr "Kullanıcı değiştir"
+
+msgid "baseModel_field_dataStatus"
+msgstr "Bilgi Durumu"
+
+msgid "userProfile_languageChange_successful"
+msgstr "Başarılı"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "Geçersiz giriş"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "Superuser gerekli"
+
+msgid "action_not_available"
+msgstr "İşlem mevcut değil"
+
+msgid "hiddenField_save_successful"
+msgstr "Başarılı"
+
+msgid "hiddenField_reset_successful"
+msgstr "Başarılı"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "Yasak"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "Parametre hatası"
+
+msgid "columnOrder_save_successful"
+msgstr "Başarılı"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "Parametre Hatası"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "{Num} sekmeden daha fazlasına izin verilmiyor"
+
+msgid "pinTab_saveError_duplicate"
+msgstr "Tekrarlanan"
+
+msgid "duplicate"
+msgstr "Tekrarlanan"
+
+msgid "pinTab_remove_successful"
+msgstr "Başarılı"
+
+msgid "pinTab_action_parameterError"
+msgstr "Parametre hatası"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "Yasak"
+
+msgid "login_authorize_license_expired"
+msgstr "Lisansın süresi dolmuş"
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "Lisansın süresi dolmak üzere %(day)s day(s)"
+
+msgid "booleanFieldFilter_option_all"
+msgstr "Hepsi"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "Evet"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "Hayır"
+
+msgid "fieldFilter_option_all"
+msgstr "Hepsi"
+
+msgid "textFieldFilter_option_contain"
+msgstr "Var"
+
+msgid "textFieldFilter_option_exact"
+msgstr "Kesin"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "İle başla"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "İle bitir"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "Biri"
+
+msgid "textFieldFilter_option_regex"
+msgstr "Düzenli ifade"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "Herhangi bir tarih"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "Tarih ile"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "Tarihsiz"
+
+msgid "dateFieldFilter_option_today"
+msgstr "Bugün"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "Yarın"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "Son 7 gün"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "Bu Hafta"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "Bu Ay"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "Bu yıl"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "Herhangi bir zaman"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "Zamanla"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "Zamansız"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "İçinde"
+
+msgid "base_model_bookmarks"
+msgstr "Yer imleri"
+
+msgid "report_column_empCode"
+msgstr "Çalışan ID"
+
+msgid "report_column_firstName"
+msgstr "Ad"
+
+msgid "report_column_lastName"
+msgstr "Soyad"
+
+msgid "report_column_nickName"
+msgstr "Takma Ad"
+
+msgid "report_column_gender"
+msgstr "Cinsiyet"
+
+msgid "report_column_departmentCode"
+msgstr "Departman kodu"
+
+msgid "report_column_departmentName"
+msgstr "Departman"
+
+msgid "report_column_positionCode"
+msgstr "Pozisyon kodu"
+
+msgid "report_column_positionName"
+msgstr "Pozisyon"
+
+msgid "report_column_workCode"
+msgstr "İş Kodu"
+
+msgid "report_column_dataSources"
+msgstr "Veri Kaynakları"
+
+msgid "report_column_punchDate"
+msgstr "Tarih"
+
+msgid "report_column_punchTime"
+msgstr "Zaman"
+
+msgid "report_column_punchState"
+msgstr "Okutma Durumu"
+
+msgid "report_column_correctState"
+msgstr "Doğru Durum"
+
+msgid "report_column_lateDuration"
+msgstr "Geç"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "Erken Ayrılma"
+
+msgid "report_column_absentDuration"
+msgstr "Yok"
+
+msgid "report_column_actualWorkDuration"
+msgstr "Fiili Çalışma"
+
+msgid "report_column_shortDuration"
+msgstr "Kısa"
+
+msgid "report_column_overtimeDuration"
+msgstr "Fazla mesai"
+
+msgid "report_column_normalWorkTime"
+msgstr "Normal ÇS"
+
+msgid "report_column_normalOvertime"
+msgstr "Normal FN"
+
+msgid "report_column_weekendOvertime"
+msgstr "Hafta Sonu FM"
+
+msgid "report_column_holidayOvertime"
+msgstr "Tatil FM"
+
+msgid "report_column_overtimeLevel1"
+msgstr "FM Seviye 1"
+
+msgid "report_column_overtimeLevel2"
+msgstr "FM Seviye 2"
+
+msgid "report_column_overtimeLevel3"
+msgstr "FM Seviye 3"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "Hastalık İzni"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "Geçici İzin"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "Doğum İzni"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "Mazeret İzin"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "Yıllık İzin"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "İş Gezisi"
+
+msgid "report_column_attendanceDate"
+msgstr "Tarih"
+
+msgid "report_column_exception"
+msgstr "İstisna"
+
+msgid "report_column_timeIntervalName"
+msgstr "Zaman Tablosu"
+
+msgid "report_column_checkInTime"
+msgstr "Giriş"
+
+msgid "report_column_checkOutTime"
+msgstr "Çıkış Yap"
+
+msgid "report_column_deviceTn"
+msgstr "Cihaz [Giriş]"
+
+msgid "report_column_deviceOut"
+msgstr "Cihaz [Çıkış]"
+
+msgid "report_column_workCodeIn"
+msgstr "Çalışma Kodu [Giriş]"
+
+msgid "report_column_workCodeOut"
+msgstr "Çalışma Kodu [Çıkış]"
+
+msgid "report_column_clockInTime"
+msgstr "Saat Girişi"
+
+msgid "report_column_clockOutTime"
+msgstr "Saat Çıkışı"
+
+msgid "report_column_totalTimeDuration"
+msgstr "Toplam Süre"
+
+msgid "report_column_dutyWorkedTime"
+msgstr "Görev Ağırlığı"
+
+msgid "report_column_actualWorkedTime"
+msgstr "Gerçek ÇS"
+
+msgid "report_column_unscheduled"
+msgstr "Planlanmamış"
+
+msgid "report_column_remaining"
+msgstr "Kalan"
+
+msgid "report_column_breakOutTime"
+msgstr "Mola Çıkış"
+
+msgid "report_column_breakInTime"
+msgstr "Mola Giriş"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "Güncel Mola Zamanı"
+
+msgid "report_column_breakTime"
+msgstr "Mola Zamanı"
+
+msgid "report_column_breakLateDuration"
+msgstr "Geç Kalma[Mola Zamanı]"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "Erken Ayrılma [Mola Zamanı]"
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "Devamsızlık[Mola Zamanı]"
+
+msgid "report_column_totalWorkedDuration"
+msgstr "Toplam ÇS"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "Gerçek Çalışma"
+
+msgid "report_column_leaveDuration"
+msgstr "iZİN"
+
+msgid "report_column_overtime"
+msgstr "Fazla mesai"
+
+msgid "report_column_missIn"
+msgstr "Eksik Giriş"
+
+msgid "report_column_missOut"
+msgstr "Eksik Çıkış"
+
+msgid "report_column_present"
+msgstr "Mevcut"
+
+msgid "report_column_dayOff"
+msgstr "Gün Kapalı"
+
+msgid "report_column_weekend"
+msgstr "Haftasonu"
+
+msgid "report_column_holiday"
+msgstr "Tatil"
+
+msgid "report_column_trainingDuration"
+msgstr "Eğitim"
+
+msgid "report_column_timetableDuration"
+msgstr "Süre"
+
+msgid "report_column_scheduledBreakTime"
+msgstr "Çoklu Mola Zamanı"
+
+msgid "report_column_attendanceDuration"
+msgstr "Görev Süresi"
+
+msgid "report_column_breakTimeDuration"
+msgstr "Mola Süresi"
+
+msgid "report_column_timetableDays"
+msgstr "İş Günleri"
+
+msgid "report_column_cardNumber"
+msgstr "Kart No."
+
+msgid "report_column_firstPunch"
+msgstr "İlk Okutma"
+
+msgid "report_column_lastPunch"
+msgstr "Son Okutma"
+
+msgid "report_column_totalDuration"
+msgstr "Toplam Süre"
+
+msgid "report_column_firstIn"
+msgstr "İlk Giriş"
+
+msgid "report_column_lastOut"
+msgstr "Son Çıkış"
+
+msgid "report_column_exceptionDescription"
+msgstr "Açıklama"
+
+msgid "report_column_employeeCount"
+msgstr "Çalışan Sayısı."
+
+msgid "report_column_lateTimes"
+msgstr "Geç Kalma (Saat)"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "Erken Ayrılma (Saat)"
+
+msgid "report_column_absentTimes"
+msgstr "Devamsızlık (Saat)"
+
+msgid "report_column_punchTimes"
+msgstr "Saat"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "Özet Zaman"
+
+msgid "report_column_timetable"
+msgstr "Zaman Tablosu"
+
+msgid "report_column_gpsLocation"
+msgstr "GPS Konumu"
+
+msgid "report_column_longitude"
+msgstr "Boylam"
+
+msgid "report_column_latitude"
+msgstr "Enlem"
+
+msgid "report_column_areaAlias"
+msgstr "Alan"
+
+msgid "report_column_terminalAlias"
+msgstr "Cihaz"
+
+msgid "report_column_terminalSN"
+msgstr "Seri Numarası"
+
+msgid "menu_att_transactionReport"
+msgstr "İşlem"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "Zamanlanmış Günlük"
+
+msgid "menu_att_dailyReport"
+msgstr "Günlük Zaman  Kontrol"
+
+msgid "menu_att_detailReport"
+msgstr "Toplam Zaman Kartı"
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "Çalışan Özeti"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "İzin Özeti"
+
+msgid "menu_att_FILOReport"
+msgstr "İlk giren son çıkan"
+
+msgid "menu_att_firstLastReport"
+msgstr "İlk ve Son"
+
+msgid "menu_att_firstInLastOutReport"
+msgstr "İlk giren son çıkan"
+
+msgid "menu_att_exceptionReport"
+msgstr "İstisna"
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "Departman Özeti"
+
+msgid "menu_att_timeCardReport"
+msgstr "Zaman Kartı"
+
+msgid "menu_att_lateReport"
+msgstr "Geç Kalma"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "Erken Ayrılma"
+
+msgid "menu_att_overtimeReport"
+msgstr "Fazla mesai"
+
+msgid "menu_att_absentReport"
+msgstr "Devamsızlık"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "Çoklu İşlem"
+
+msgid "menu_att_breakTimeReport"
+msgstr "Çoklu Mola Zamanı"
+
+msgid "menu_group_att_configuration"
+msgstr "Konfigürasyonlar"
+
+msgid "menu_staff_transactionReport"
+msgstr "İşlem Raporu"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "çalışma tablosu çakışması"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "Zamanlama kayıtları denetim tarafından değiştirilemez."
+
+msgid "att_model_leave"
+msgstr "İzin"
+
+msgid "leave_field_employee"
+msgstr "Personel"
+
+msgid "leave_field_startTime"
+msgstr "Başlangıç ​​Zamanı"
+
+msgid "leave_field_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "leave_field_leaveCategory"
+msgstr "Kategori"
+
+msgid "leave_field_reason"
+msgstr "Nedeni Uygula"
+
+msgid "leave_field_approvalState"
+msgstr "Eyalet"
+
+msgid "leave_field_approvalReason"
+msgstr "Notlar"
+
+msgid "manualLog_Action_new"
+msgstr "Ekle"
+
+msgid "manualLog_Action_newDescription"
+msgstr "Yeni manuel günlük ekle"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "Yeni manuel günlük ekle"
+
+msgid "manual_log_time_greater_now"
+msgstr "Delgeç süresi bundan daha büyük olamaz."
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "Geçersiz saat, başlangıç ​​saati çalışanın [%s] işe alınma tarihinden sonra olmalıdır."
+
+msgid "manual_log_repeat"
+msgstr "%s tekrar Okutma süresi"
+
+msgid "overtime_field_employee"
+msgstr "Personel"
+
+msgid "overtime_field_startTime"
+msgstr "Başlangıç ​​Zamanı"
+
+msgid "overtime_field_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "overtime_field_overtimeType"
+msgstr "Fazla Mesai Türü"
+
+msgid "overtime_field_applyReason"
+msgstr "Nedeni Uygula"
+
+msgid "overtime_field_approvalState"
+msgstr "Eyalet"
+
+msgid "overtime_field_approvalRemark"
+msgstr "Notlar"
+
+msgid "overtime_action_new"
+msgstr "Ekle"
+
+msgid "overtime_action_newDescription"
+msgstr "Yeni fazla mesai ekle"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "Yeni fazla mesai ekle"
+
+msgid "overtime_time_overlap"
+msgstr "%s personel fazla mesai çakışması"
+
+msgid "schedule_action_addSchedule"
+msgstr "Program Ekle"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "Program Ekle"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "Program Ekle"
+
+msgid "scheduledAssign_error_schdOverlap_%(obj)s_%(start_date)s_%(end_date)s"
+msgstr "Planlama Tarihi %(obj)s çakışıyor %(start_date)s - %(end_date)s."
+
+msgid "please_select_time_intervals"
+msgstr "Lütfen zaman tablosu seçin"
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s(%(name)s) Tekrarlanan Takvim den %(start)s e kadar %(end)s"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "Okutme yenileme periyot hatası"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "%(t)s ve %(ss)s günü çakışıyor %(d)s"
+
+msgid "shift_not_found"
+msgstr "Çalışma Tablosu bulunamadı"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "Çalışma Tablosu(%(shift)s) kullanılıyor"
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "Yenilenen takma ad(%(alias)s)"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "Geçici Program Ekle"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "yeni geçici zamanlama ekle"
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "yeni geçici zamanlama ekle"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "Lütfen çalışan seçin"
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "Lütfen departman seçiniz"
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "Lütfen Zaman Tablosuni seçin"
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(timetableA)s ve %(timetableB)s çakışıyor %(date)s"
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "işlem başarısız"
+
+msgid "training_field_employee"
+msgstr "Personel"
+
+msgid "training_field_startTime"
+msgstr "Başlangıç ​​Zamanı"
+
+msgid "training_field_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "training_field_trainingCategory"
+msgstr "Eğitim Türü"
+
+msgid "training_field_applyReason"
+msgstr "Nedeni Uygula"
+
+msgid "training_field_approvalState"
+msgstr "Durum"
+
+msgid "training_field_approvalRemark"
+msgstr "Açıklama"
+
+msgid "training_action_new"
+msgstr "Ekle"
+
+msgid "training_action_newDescription"
+msgstr "Yeni eğitim ekle"
+
+msgid "training_action_newHelpTxt"
+msgstr "Yeni eğitim ekle"
+
+msgid "training_time_overlap"
+msgstr "%s personel eğitim süresi çakışıyor"
+
+msgid "shift_field_timeInterval"
+msgstr "Zaman Tablosu"
+
+msgid "deptAttRule_field_alias"
+msgstr "İsim"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s kural zaten ayarlanmış"
+
+msgid "holiday_field_alias"
+msgstr "İsim"
+
+msgid "holiday_field_startDate"
+msgstr "Başlangıç ​​Tarihi"
+
+msgid "holiday_field_duration"
+msgstr "Süre (Gün)"
+
+msgid "holiday_field_workType"
+msgstr "Tatilde Çalışma"
+
+msgid "holiday_field_overtimeLevel"
+msgstr "FM Seviyesi"
+
+msgid "holiday_field_overtimeLevel1"
+msgstr "FM Seviye 1"
+
+msgid "holiday_field_overtimeLevel2"
+msgstr "FM Seviye 2"
+
+msgid "holiday_field_overtimeLevel3"
+msgstr "FM Seviye 3"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "Ekle"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "Tatil Ekle"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr "Hafta sonu ayarı zaten kullanılıyor, değiştirilemiyor."
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr "Hesaplama ayarında fonksiyon tuşu için aynı değer kullanılamaz."
+
+msgid "replace_existing_shift_even_using"
+msgstr "Mevcut vardiyayı kullanarak değiştir"
+
+msgid "remove_overlap_schedule"
+msgstr "Çakışma zamanlamasını kaldır"
+
+msgid "enable_work_on_weekend_as"
+msgstr "Hafta Sonu Çalışma"
+
+msgid "work_type"
+msgstr "Çalışan"
+
+msgid "enable_work_on_day_off_as"
+msgstr "Kapalı gün olarak çalıştır"
+
+msgid "auto_shift"
+msgstr "Akıllı Çalışma Tablosu"
+
+msgid "select_date"
+msgstr "Lütfen tarih seçiniz."
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr "%(t)s ve %(ss)s günler çakışıyor %(d)s"
+
+msgid "breakTime_validationError_durationGreatThanPeriod"
+msgstr "Periyod Aşımı."
+
+msgid "breakTime_validationError_earlyGreatThanDuration"
+msgstr "Erken çıkma süresi Mola süresini aşamaz."
+
+msgid "breakTime_validationError_overGreatThanRangeDuration"
+msgstr "Mola süresi aşıldı."
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr "Mola, Zaman Tablosu tarafından kullanılıyor, düzenlenemiyor."
+
+msgid "breakTime_validationError_invalidNumber"
+msgstr "Sayı 0'dan büyük olmalı"
+
+msgid "please_select_time_table"
+msgstr "Lütfen Zaman Tablosu seçin."
+
+msgid "%s error_of_sql statement_adding_failed."
+msgstr "%s SQL Deyim ekleme başarısız hatası"
+
+msgid "menu_group_att_rule"
+msgstr "Kural"
+
+msgid "menu_att_globalRule"
+msgstr "Genel Kural"
+
+msgid "menu_att_departmentRule"
+msgstr "Departman Kuralı"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "Çalışma Tablosu"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "Planlama"
+
+msgid "menu_att_breakTime"
+msgstr "Mola süresi"
+
+msgid "menu_att_timeInterval"
+msgstr "Zaman Tablosu"
+
+msgid "menu_att_shift"
+msgstr "Çalışma Tablosu"
+
+msgid "menu_att_departmentSchedule"
+msgstr "Departman Planlama"
+
+msgid "menu_att_employeeSchedule"
+msgstr "Personel Planlama"
+
+msgid "menu_att_temporarySchedule"
+msgstr "Geçici Planlama"
+
+msgid "menu_att_scheduleView"
+msgstr "Planlama Önizlemesi"
+
+msgid "menu_group_approvalManagement"
+msgstr "Onaylamalar"
+
+msgid "menu_att_manualLog"
+msgstr "Manual Hareket"
+
+msgid "menu_att_leave"
+msgstr "İzin"
+
+msgid "menu_att_overtime"
+msgstr "Fazla Mesai"
+
+msgid "menu_att_training"
+msgstr "Eğitim"
+
+msgid "menu_att_adjustSchedule"
+msgstr "Plan Ayarlaması"
+
+msgid "menu_group_att_holiday"
+msgstr "Tatil"
+
+msgid "menu_att_holiday"
+msgstr "Tatil"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "Tipler"
+
+msgid "menu_att_leaveType"
+msgstr "İzin Tipi"
+
+msgid "menu_att_trainingType"
+msgstr "Eğitim Türü"
+
+msgid "menu_group_att_reportSetting"
+msgstr "Rapor Ayarı"
+
+msgid "menu_att_reportSetting"
+msgstr "Rapor Ayarı"
+
+msgid "menu_group_att_transaction"
+msgstr "Hareket"
+
+msgid "menu_att_transaction"
+msgstr "Hareket"
+
+msgid "menu_group_att_nonSchedulingReport"
+msgstr "Hareket Raporu"
+
+msgid "menu_group_att_report"
+msgstr "Planlama Raporu"
+
+msgid "menu_group_att_summaryReport"
+msgstr "Özet Rapor"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "Monitör"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "Departman Zaman Kontrol"
+
+msgid "att_model_attendanceDetail"
+msgstr "Zaman Kontrol Detayı"
+
+msgid "att_model_attendanceException"
+msgstr "Zaman Kontrol İstisnası"
+
+msgid "att_calc_log"
+msgstr "Hareket Kayıtlarını Hesapla"
+
+msgid "attRule_field_paramName"
+msgstr "İsim"
+
+msgid "attRule_field_paramValue"
+msgstr "Değer"
+
+msgid "att_model_attRule"
+msgstr "Zaman Kontrol Kuralı"
+
+msgid "schedule_field_employee"
+msgstr "Personel"
+
+msgid "schedule_field_startDate"
+msgstr "Başlangıç ​​Tarihi"
+
+msgid "schedule_field_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "schedule_field_shift"
+msgstr "Çalışma Tablosu"
+
+msgid "att_model_schedule"
+msgstr "Planlama"
+
+msgid "deptSchedule_field_department"
+msgstr "Departman"
+
+msgid "deptSchedule_field_startDate"
+msgstr "Başlangıç ​​Tarihi"
+
+msgid "deptSchedule_field_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "deptSchedule_field_shift"
+msgstr "Çalışma Tablosu"
+
+msgid "att_model_deptSchedule"
+msgstr "Departman Planlaması"
+
+msgid "deptSchedule_action_add"
+msgstr "Ekle"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "Departman Planı Ekle"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "Departman Planı Ekle"
+
+msgid "attShift_field_code"
+msgstr "Planlama NO."
+
+msgid "attShift_field_alias"
+msgstr "Planlama İsmi"
+
+msgid "attShift_field_cycleUnit"
+msgstr "Birim"
+
+msgid "attShift_field_cycle"
+msgstr "Döngü"
+
+msgid "work_on_weekend_as"
+msgstr "Haftasonu çalışması"
+
+msgid "work_on_day_off_as"
+msgstr "Kapalı Gün Çalışması"
+
+msgid "attShift_field_autoShift"
+msgstr "Oot. Çalışma Tablosu"
+
+msgid "shift_name_repeat"
+msgstr "Çalışma Tablo (%s) ismi mevcut"
+
+msgid "att_model_shift"
+msgstr "Çalışma Tablosu"
+
+msgid "breakTime_field_alias"
+msgstr "İsim"
+
+msgid "breakTime_field_startTime"
+msgstr "Başlangıç Zamanı"
+
+msgid "breakTime_field_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "breakTime_field_duration"
+msgstr "Süre"
+
+msgid "breakTime_field_durationHelpTxt"
+msgstr "Mola süresi, birim dakikadır."
+
+msgid "breakTime_field_startMargin"
+msgstr "Kenar Boşluğunu Dağıt"
+
+msgid "breakTime_field_endMargin"
+msgstr "Bitiş Saati Marjı"
+
+msgid "breakTime_field_endMarginHelpTxt"
+msgstr "Bitiş zamanı = Başlangıç ​​zamanı + Süre + Bitiş Zamanı Marjı, kenar boşluğu birimi dakikadır."
+
+msgid "breakTime_field_allowDuration"
+msgstr "Mola Zamanına İzin Ver"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "Okutma Durumuna Dayalı"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "Yinelenen Okutma İlkesi"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "Yinelenen Okutma Dönemi"
+
+msgid "breakTime_field_useMultiplePunch"
+msgstr "Çoklu Giriş / Çıkış"
+
+msgid "breakTime_field_calculateType"
+msgstr "Hesaplama Türü"
+
+msgid "breakTime_field_minimumBreakTime"
+msgstr "Minimum Mola Zamanı (m)"
+
+msgid "breakTime_field_earlyIn"
+msgstr "Erken Giriş"
+
+msgid "breakTime_field_minEarlyIn"
+msgstr "Minimum Erken Giriş"
+
+msgid "breakTime_field_lateIn"
+msgstr "Geç Giriş"
+
+msgid "breakTime_field_minLateIn"
+msgstr "Minimum Geç Giriş"
+
+msgid "breakTime_field_considerBreakInEarly"
+msgstr "Erken Düşün"
+
+msgid "breakTime_field_breakInEarlyAs"
+msgstr "Erken Erken"
+
+msgid "breakTime_field_considerBreakInLate"
+msgstr "Geç Geri Dön"
+
+msgid "breakTime_field_breakInLateAs"
+msgstr "Geri Kadar Geç"
+
+msgid "att_model_breakTime"
+msgstr "Mola Zamanı"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "Temel Ayar"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "Gerekli Okutma Ayarı"
+
+msgid "changeSchedule_field_employee"
+msgstr "Personel"
+
+msgid "changeSchedule_field_attDate"
+msgstr "Tarih"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "Önceki Planlama"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "Yeni Planlama"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "Onaylama Süresi"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "Onaylama Nedeni"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "Açıklama"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "Durum"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "Onay Zamanı"
+
+msgid "changeSchedule_field_approver"
+msgstr "Onaylayan"
+
+msgid "att_model_changeSchedule"
+msgstr "Planlama Ayarı"
+
+msgid "change_schedule"
+msgstr "Planlama Ayarı"
+
+msgid "emp_field_employeeCode"
+msgstr "Personel Kimliği"
+
+msgid "emp_field_firstName"
+msgstr "Adı"
+
+msgid "emp_field_lastName"
+msgstr "Soyadı"
+
+msgid "employee_field_department"
+msgstr "Departman"
+
+msgid "deptAttRule_field_department"
+msgstr "Departman"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "Kural"
+
+msgid "att_model_deptAttRule"
+msgstr "Departman Kuralı"
+
+msgid "departmentRule_tab_calculationRule"
+msgstr "Hesaplama Kuralı"
+
+msgid "departmentRule_tab_overtimeSetting"
+msgstr "Fazla Mesai Ayarları"
+
+msgid "holiday_field_department"
+msgstr "Departman"
+
+msgid "att_model_holiday"
+msgstr "Tatil"
+
+msgid "leaveCategory"
+msgstr "İzin Katagorisi"
+
+msgid "leave_field_applyReason"
+msgstr "Onaylama Nedeni"
+
+msgid "leave_field_applyTime"
+msgstr "Onay Süresi"
+
+msgid "leave_field_approvalRemark"
+msgstr "Onay Açıklaması"
+
+msgid "leave_field_approvalTime"
+msgstr "Onay Zamanı"
+
+msgid "leave_field_approvalLevel"
+msgstr "Onay Seviyesi"
+
+msgid "leave_field_approver"
+msgstr "Onaylayan"
+
+msgid "leave_approve_audit"
+msgstr "İzin kayıtları Onaylayıcı tarafından değiştirilemez."
+
+msgid "leaveCategory_field_name"
+msgstr "İsim"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "Minimum Birim"
+
+msgid "leaveCategory_field_unit"
+msgstr "Birim"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "Yuvarlama"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "Sembolü Bildir"
+
+msgid "this_category_name_already_exists."
+msgstr "Tür adı zaten var"
+
+msgid "this_report_symbol_already_exists."
+msgstr "Rapor simgesi zaten kullanılıyor"
+
+msgid "att_model_leaveCategory"
+msgstr "Bırakma Türü"
+
+msgid "manualLog_field_applyTime"
+msgstr "Süreyi Uygula"
+
+msgid "manualLog_field_approvalTime"
+msgstr "Onay Zamanı"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "Onay Seviyesi"
+
+msgid "manualLog_field_approver"
+msgstr "Onaylayan"
+
+msgid "manuallog_approve_audit"
+msgstr "Manuel kayıtlar denetim tarafından değiştirilemez."
+
+msgid "att_model_manualLog"
+msgstr "Manuel Hareket"
+
+msgid "overtime_field_applyTime"
+msgstr "Onaylama Süresi"
+
+msgid "overtime_field_approvalReason"
+msgstr "Notlar"
+
+msgid "overtime_field_approvalTime"
+msgstr "Onay Zamanı"
+
+msgid "overtime_field_approvalLevel"
+msgstr "Onay Seviyesi"
+
+msgid "overtime_field_approver"
+msgstr "Onaylayan"
+
+msgid "overtime_approve_audit"
+msgstr "Fazla mesai kayıtları onaylayan tarafından değiştirilemez."
+
+msgid "att_model_overtime"
+msgstr "Fazla mesai"
+
+msgid "reportParam_field_name"
+msgstr "İsim"
+
+msgid "reportParam_field_value"
+msgstr "Değer"
+
+msgid "att_model_reportParameter"
+msgstr "Rapor Parametresi"
+
+msgid "report_display_checkIn"
+msgstr "Giriş"
+
+msgid "report_display_checkOut"
+msgstr "Çıkış"
+
+msgid "report_display_breakOut"
+msgstr "Mola"
+
+msgid "report_display_breakIn"
+msgstr "Mola Girişi"
+
+msgid "report_display_overtimeIn"
+msgstr "Fazla Mesai Girişi"
+
+msgid "report_display_overtimeOut"
+msgstr "Fazla Mesai Çıkışı"
+
+msgid "report_display_unknown"
+msgstr "Bilinmiyor"
+
+msgid "shiftDetail_field_shift"
+msgstr "Çalışma Tablosu"
+
+msgid "shiftDetail_field_inTime"
+msgstr "Giriş Saati"
+
+msgid "shiftDetail_field_outTime"
+msgstr "Çıkış Saati"
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "Gün İndeksi"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "Zaman Tablosu"
+
+msgid "att_model_shiftDetail"
+msgstr "Planlama Detayı"
+
+msgid "tempSchedule_field_employee"
+msgstr "Personel"
+
+msgid "tempSchedule_field_startTime"
+msgstr "Başlangıç ​​Zamanı"
+
+msgid "tempSchedule_field_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "tempSchedule_field_rule"
+msgstr "Geçici Planlama Kuralı"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "Zaman Tablosu ID"
+
+msgid "tempSchedule_field_workType"
+msgstr "İş Tipi"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "Zaman Tablosu"
+
+msgid "att_model_tempSchedule"
+msgstr "Geçici Planlama"
+
+msgid "time_unit_hour"
+msgstr "Saat"
+
+msgid "timeInterval_field_alias"
+msgstr "İsim"
+
+msgid "timeInterval_field_type"
+msgstr "Tür"
+
+msgid "timeInterval_field_checkIn"
+msgstr "Giriş"
+
+msgid "timeInterval_field_checkOut"
+msgstr "Çıkış"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "Giriş Başlangıçı"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "Giriş Sonu"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "Çıkış Başlangıcı"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "Çıkış Sonu"
+
+msgid "timeInterval_field_crossDay"
+msgstr "Çapraz Gün (ler)"
+
+msgid "timeTable_helpText_tip1"
+msgstr "1.Tüm günler ayarı Giriş için temel alınmıştır."
+
+msgid "timeTable_helpText_tip2"
+msgstr "2. Kullanılabilir Zaman Tablosu> = Giriş Başlangıçı ​​ve < Çıkış Bitiş olmalıdır"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "Kenar Boşluğunun Üzerinde (') "
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "(Dışarı) İleri Marjı"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "(Dışarı) Kenar Boşluğunun Üzerinde"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "Zaman Kontrol Süresi"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "Çıkış ile zaman kontrol süresini ayarlamak için tıklayın"
+
+msgid "timeInterval_label_checkOut"
+msgstr "Çıkış"
+
+msgid "timeInterval_txt_days"
+msgstr "Günler"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "Maksimum 3 Gün"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "Çıkış, Giriş'ten daha az"
+
+msgid "timeInterval_checkOut_title"
+msgstr "Çıkış Ayarı"
+
+msgid "timeInterval_field_inRequired"
+msgstr "Giriş Saati Gerekli"
+
+msgid "timeInterval_field_outRequired"
+msgstr "Çıkış Saati Gerekli"
+
+msgid "timeInterval_field_allowLate"
+msgstr "Geç Girmeye İzin Ver"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "Erken Çıkışa İzin Ver"
+
+msgid "timeInterval_field_paidDay"
+msgstr "ÇalışmaGünü"
+
+msgid "timeInterval_field_earlyIn"
+msgstr "Erken Giriş"
+
+msgid "timeInterval_field_minEarlyIn"
+msgstr "Minimum Erken Giriş"
+
+msgid "timeInterval_field_lateOut"
+msgstr "Geç Çıkış"
+
+msgid "timeInterval_field_minLateOut"
+msgstr "Minimum Geç Çıkış"
+
+msgid "timeInterval_field_overtimeLevel"
+msgstr "FM Seviyesi"
+
+msgid "timeInterval_field_overtimeLevel1"
+msgstr "FM Seviye 1"
+
+msgid "timeInterval_field_overtimeLevel2"
+msgstr "FM Seviye 2"
+
+msgid "timeInterval_field_overtimeLevel3"
+msgstr "FM Seviye 3"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "Minimum FM (Erken Giriş)"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "Minimum Fazla Mesai (Geç Çıkış)"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "Değiştirme Yeri"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "Çoklu Giriş / Çıkış"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "Tekrarlanan Okutma İlkesi"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "Tekrarlanan Okutma Dönemi"
+
+msgid "timeInterval_field_workTimeType"
+msgstr "Çalışma Süresi Türü"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "Çalışma Zamanı"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "Dakika"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "Okutma Durum Bazlı"
+
+msgid "timeInterval_field_workType"
+msgstr "İş Tipi"
+
+msgid "timeInterval_field_dayChange"
+msgstr "Gün Değiştirme Zamanı"
+
+msgid "timeInterval_field_breakTime"
+msgstr "Mola Zamanı"
+
+msgid "timeInterval_error_invalidWorkDay"
+msgstr "Geçersiz sayım iş günü, değer 0.1-9.9 arasında olmalı"
+
+msgid "time_duration_greater_user_defined"
+msgstr "Süre, tanımlanan bir kullanıcıdan daha uzun."
+
+msgid "att_model_timeInterval"
+msgstr "Zaman Tablosu"
+
+msgid "timeInterval_action_addNormalTimetable"
+msgstr "Normal Zaman Tablosu Ekle"
+
+msgid "timeInterval_action_addNormalTimetable_description"
+msgstr "Normal Zaman Tablosu Ekle"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "Normal Zaman Tablosu Ekle"
+
+msgid "timeInterval_filed_crossDayUnit"
+msgstr "Gün (ler)"
+
+msgid "timeInterval_error_invalidOvertimeValue"
+msgstr "Geçersiz Fazla Mesai değeri"
+
+msgid "timeInterval_error_invalidFieldValue"
+msgstr "{field} 'in değeri geçersiz"
+
+msgid "timeInterval_error_invalidCheckOvertimeLevel"
+msgstr "Fazla Mesai Seviyesi değeri L3> = L2> = L1 gerekir."
+
+msgid "timeInterval_error_invalidCheckInStart"
+msgstr "Geçersiz Giriş başlangıcı"
+
+msgid "timeInterval_error_invalidCheckInEnd"
+msgstr "Geçersiz Giriş sonu"
+
+msgid "timeInterval_error_invalidCheckOutStart"
+msgstr "Geçersiz Çıkış başlangıcı"
+
+msgid "timeInterval_error_invalidCheckOutEnd"
+msgstr "Geçersiz çıkış sonu"
+
+msgid "timeInterval_error_invalidCheckOut"
+msgstr "Geçersiz çıkış"
+
+msgid "timeInterval_error_invalidEarlyIn"
+msgstr "Geçersiz erken giriş"
+
+msgid "timeInterval_error_invalidLateOut"
+msgstr "Geçersiz geç çıkış"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "Temel Ayarlar"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "Mola Ayarı"
+
+msgid "timeInterval_tab_unscheduledTimeSetting"
+msgstr "Planlanmamış Zaman Ayarı"
+
+msgid "timeInterval_tab_overtimeLevelSetting"
+msgstr "FM Seviye Ayarı"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "Kural Ayarı"
+
+msgid "training_field_applyTime"
+msgstr "Süreyi Uygula"
+
+msgid "training_field_approvalTime"
+msgstr "Onay Zamanı"
+
+msgid "training_field_approvalLevel"
+msgstr "Onay Seviyesi"
+
+msgid "training_field_approver"
+msgstr "Onaylayan"
+
+msgid "training_approve_audit"
+msgstr "Eğitim kayıtları onaylayan tarafından değiştirilemez."
+
+msgid "att_model_training"
+msgstr "Eğitim"
+
+msgid "mulTransaction_field_employee"
+msgstr "Perosnel Id"
+
+msgid "mulTransaction_field_dataType"
+msgstr "Veri Türü"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "Normal Okutma"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "Mola Zamanı"
+
+msgid "mulTransaction_field_date"
+msgstr "Tarih"
+
+msgid "mulTransaction_field_timetable"
+msgstr "Zaman Tablosu"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "Veri İndeksi"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "Saat Girişi"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "Giriş Saati Id"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "Çıkış Saati"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "Çıkış Saati ID"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "Toplam Süre"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "Çalışma Zamanı"
+
+msgid "att_model_multipleTransaction"
+msgstr "Çoklu İşlem"
+
+msgid "att_model_scheduledTransaction"
+msgstr "Planlanmış Hareket"
+
+msgid "based_on_schedule"
+msgstr "Planlama bazlı"
+
+msgid "first_check_in"
+msgstr "İlk Giriş"
+
+msgid "last_check_out"
+msgstr "Son Çıkış"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "Fazla Mesai Devre Dışı Bırak"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "FM Hesaplama"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "FM Onay"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "FM Onay Önceliği"
+
+msgid "attRule_missIn_late"
+msgstr "Geç Kalma"
+
+msgid "attRule_missIn_absent"
+msgstr "Devamsızlık"
+
+msgid "attRule_missIn_noComplete"
+msgstr "Tamamlanmadı"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "Erken Ayrılma"
+
+msgid "attRule_missOut_absent"
+msgstr "Devamsızlık"
+
+msgid "attRule_missOut_noComplete"
+msgstr "Tamamlanmadı"
+
+msgid "must_check_in"
+msgstr "Giriş Yapılmalıdır"
+
+msgid "using_leave_end_time"
+msgstr "İzin bitiş saatini kullan"
+
+msgid "must_check_out"
+msgstr "Çıkış Yapmılmalı"
+
+msgid "using_leave_start_time"
+msgstr "İzin başlangıç ​​zamanını kullan"
+
+msgid "using_training_end_time"
+msgstr "Eğitim bitiş saatini Kullan"
+
+msgid "using_training_start_time"
+msgstr "Egzersiz başlangıç ​​zamanını kullan"
+
+msgid "overtimeLevel_ignore"
+msgstr "Yoksay"
+
+msgid "overtimeLevel_dependsOnWorkTime"
+msgstr "Çalışma Süresine Bağlıdır"
+
+msgid "overtimeLevel_dependsOnOvertime"
+msgstr "FM'ye Bağlıdır"
+
+msgid "unscheduled_ignore"
+msgstr "Yoksay"
+
+msgid "unscheduled_move2normalWork"
+msgstr "Normal Çalışmaya Taşı"
+
+msgid "unscheduled_move2overtime"
+msgstr "FM'ye Taşı"
+
+msgid "unscheduled_move2normalOvertime"
+msgstr "Normal FM'ye Taşı"
+
+msgid "unscheduled_move2weekendOvertime"
+msgstr "Hafta Sonu FM'yı Taşı"
+
+msgid "unscheduled_move2holidayOvertime"
+msgstr "Tatil FM'ye Taşı"
+
+msgid "boolean_option_no"
+msgstr "Hayır"
+
+msgid "boolean_option_yes"
+msgstr "Evet"
+
+msgid "boolean_option_enable"
+msgstr "Etkinleştir"
+
+msgid "boolean_option_disable"
+msgstr "Devre dışı bırak"
+
+msgid "availablePunch_policy_any"
+msgstr "Herhangi biri"
+
+msgid "availablePunch_policy_punchStateBased"
+msgstr "Okutma Durumuna Dayalı"
+
+msgid "breakTime_calculateMode_autoDeduct"
+msgstr "Otomatik İndir"
+
+msgid "breakTime_calculateMode_requiredPunch"
+msgstr "Zorunlu Okutma"
+
+msgid "breakTime_earlyInMode_normalWork"
+msgstr "Normal Çalışma"
+
+msgid "breakTime_earlyInMode_normalOvertime"
+msgstr "Normal FM"
+
+msgid "breakTime_lateInMode_ignore"
+msgstr "Yoksay"
+
+msgid "breakTime_lateInMode_move2Late"
+msgstr "Geç gelmeye taşı"
+
+msgid "breakTime_lateInMode_move2EarlyOut"
+msgstr "Erken Çıkmaya taşı"
+
+msgid "breakTime_lateInMode_move2Absence"
+msgstr "Devamsızlığa Taşı"
+
+msgid "breakTime_lateInMode_late"
+msgstr "Geç Gelme"
+
+msgid "breakTime_lateInMode_earlyLeave"
+msgstr "Erken Ayrılma"
+
+msgid "breakTime_lateInMode_absent"
+msgstr "Devamsızlık"
+
+msgid "timeInterval_typeOption_normal"
+msgstr "Normal"
+
+msgid "timeInterval_typeOption_basedOnRule"
+msgstr "Kural Tabanlı"
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "Kullanıcı Tanımlı"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "Normal Çalışma"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "Gün Kapalı"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "Haftasonu"
+
+msgid "shift_OTOption_normalWork"
+msgstr "Normal Çalışma"
+
+msgid "shift_OTOption_normalOT"
+msgstr "Normal FM"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "Hafta Sonu FM"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "Gün"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "Hafta"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "Ay"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "Etkin Geçici Planlama"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "Ek Planlama Ekle"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "Normal Çalışma"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "Normal FM"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "Hafta Sonu FM"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "Tatil FM"
+
+msgid "punchState_option_checkIn"
+msgstr "Giriş"
+
+msgid "punchState_option_checkOut"
+msgstr "Çıkış"
+
+msgid "punchState_option_breakOut"
+msgstr "Mola"
+
+msgid "punchState_option_breakIn"
+msgstr "Mola Giriş"
+
+msgid "punchState_option_overtimeIn"
+msgstr "Fazla Mesai Giriş"
+
+msgid "punchState_option_overtimeOut"
+msgstr "Fazla Mesai Çıkış"
+
+msgid "punchState_option_noStatus"
+msgstr "Durum Yok"
+
+msgid "overtime_option_normalOvertime"
+msgstr "Normal FM"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "Hafta Sonu FM"
+
+msgid "overtime_option_normalWork"
+msgstr "Normal Çalışma"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "Haftasonu"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "Gün Kapalı"
+
+msgid "report_exceptionDisplay_Holiday"
+msgstr "Tatil"
+
+msgid "absent_report"
+msgstr "Rapor Yok"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "Giriş Yok"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "Çıkış Yok"
+
+msgid "weekday_option_monday"
+msgstr "Pazartesi"
+
+msgid "weekday_option_tuesday"
+msgstr "Salı"
+
+msgid "weekday_option_wednesday"
+msgstr "Çarşamba"
+
+msgid "weekday_option_thursday"
+msgstr "Perşembe"
+
+msgid "weekday_option_friday"
+msgstr "Cuma"
+
+msgid "weekday_option_saturday"
+msgstr "Cumartesi"
+
+msgid "weekday_option_sunday"
+msgstr "Pazar"
+
+msgid "attRule_globalRule_basicSetting"
+msgstr "Temel Ayar"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "Hafta Sonu Ayarı"
+
+msgid "attRule_globalRule_overtimeSetting"
+msgstr "Fazla Mesai Ayarı"
+
+msgid "attRule_globalRule_calculationSetting"
+msgstr "Hesaplama Ayarı"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "Uyg. Ayarı"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "Giriş Kuralı"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "Planlama Bazlı"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "İlk Giriş"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "Çıkış Kuralı"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "Son Çıkış"
+
+msgid "attRule_globalRule_monday"
+msgstr "Pazartesi"
+
+msgid "attRule_globalRule_workingOnMonday"
+msgstr "Pazartesi Çalışması"
+
+msgid "attRule_globalRule_tuesday"
+msgstr "Salı"
+
+msgid "attRule_globalRule_workingOnTuesday"
+msgstr "Salı Çalışması"
+
+msgid "attRule_globalRule_wednesday"
+msgstr "Çarşamba"
+
+msgid "attRule_globalRule_workingOnWednesday"
+msgstr "Çarşamba Çalışması"
+
+msgid "attRule_globalRule_thursday"
+msgstr "Perşembe"
+
+msgid "attRule_globalRule_workingOnThursday"
+msgstr "Perşembe Çalışması"
+
+msgid "attRule_globalRule_friday"
+msgstr "Cuma"
+
+msgid "attRule_globalRule_workingOnFriday"
+msgstr "Cuma Çalışması"
+
+msgid "attRule_globalRule_saturday"
+msgstr "Cumartesi"
+
+msgid "attRule_globalRule_workingOnSaturday"
+msgstr "Cumartesi Çalışması"
+
+msgid "attRule_globalRule_sunday"
+msgstr "Pazar"
+
+msgid "attRule_globalRule_workingOnSunday"
+msgstr "Pazar Çalışması"
+
+msgid "attRule_globalRule_OTLevel1"
+msgstr "FM Seviye 1"
+
+msgid "attRule_globalRule_OTLevel2"
+msgstr "FM Seviye 2"
+
+msgid "attRule_globalRule_OTLevel3"
+msgstr "FM Seviye 3"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "Fazla Mesai Kuralı"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "Yinelenen Okutma Aralığı"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "Salı"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "Çarşamba"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "Perşembe"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "Cuma"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "Cumartesi"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "Pazar"
+
+msgid "attRule_weekendSetting_titleWeekend"
+msgstr "Haftasonu"
+
+msgid "attRule_weekendSetting_workingOnDay"
+msgstr "Çalışma Günü"
+
+msgid "attRule_weekendSetting_OTLV1"
+msgstr "FM Seviye 1 (Saat)"
+
+msgid "attRule_weekendSetting_OTLV2"
+msgstr "FM Seviye 2 (Saat)"
+
+msgid "attRule_weekendSetting_OTLV3"
+msgstr "FM Seviye 3 (Saat)"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "Hesaplama Kuralı"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "Geç kaldığında"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "dakika, devamsızlık olarak say"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "Erken Çıkış aşıldığında"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "dakika, devamsızlık olarak say"
+
+msgid "attRule_globalRule_missIn"
+msgstr "Giriş yok ise"
+
+msgid "attRule_globalRule_missOut"
+msgstr "Çıkış Yok ise"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "Hesaplama Öğesi"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "Giriş"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "Çıkış"
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "Mola"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "Mola Giriş"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "Fazla Mesai Giriş"
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "Fazla Mesai Çıkış"
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "Resim Çekme"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "Gerekli değil"
+
+msgid "attRule_globalRule_required"
+msgstr "Gerekli"
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "Çalışma Kodu"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "İşlev Tuşu"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "Personel"
+
+msgid "schedule_empFrameOption_department"
+msgstr "Departman"
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "Personel"
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "Departman"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "Tüm çalışanları seç"
+
+msgid "schedule_action_shiftCover"
+msgstr "Vardiya Üzerine Yaz"
+
+msgid "schedule_action_scheduleCover"
+msgstr "Planlamanın Üzerine Yaz"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "Zaman çizelgesi"
+
+msgid "form_helpText_title"
+msgstr "Uyarı"
+
+msgid "shift_helpText_tip1"
+msgstr "1. Sol taraftan zaman çizelgesini seçerek sağ taraftaki vardiyayı doldurun."
+
+msgid "shift_helpText_tip2"
+msgstr "2. Zaman periyodu 366 günü aşamaz."
+
+msgid "shift_helpText_tip3"
+msgstr "3. Hafta periyodu 52 haftayı aşamaz."
+
+msgid "shift_helpText_tip4"
+msgstr "4. Ay periyodu 12'yi aşamaz."
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "Detay"
+
+msgid "shiftList_search_shift"
+msgstr "Çalışma Tablosu"
+
+msgid "department_tree_multipleSelect"
+msgstr "Çoklu Seçim"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "Alt Bölüm Seçin"
+
+msgid "emp_field_hireDate"
+msgstr "İşe Alındığı Tarih"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "Fazla Mesai Kuralı"
+
+msgid "report_searchField_startDate"
+msgstr "Başlangıç ​​Tarihi"
+
+msgid "report_searchField_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "report_searchField_employee"
+msgstr "Personel"
+
+msgid "report_column_workDay"
+msgstr "İş Günü"
+
+msgid "report_column_breakDuration"
+msgstr "Mola Zamanı"
+
+msgid "report_column_totalDurationHrs"
+msgstr "Toplam Süre (Saat)"
+
+msgid "report_column_breakDurationHrs"
+msgstr "Mola Zamanı (Saat)"
+
+msgid "report_column_totalDayOff"
+msgstr "Gün Dışı (Gün)"
+
+msgid "report_column_totalWeekend"
+msgstr "Hafta Sonu (Gün)"
+
+msgid "report_column_totalHoliday"
+msgstr "Tatil (Gün)"
+
+msgid "report_display_setting"
+msgstr "Rapor Ekran Ayarı"
+
+msgid "short_time_format"
+msgstr "Kısa Zaman Biçimi"
+
+msgid "resignEmployee_display"
+msgstr "Personel İstifa Ekranı"
+
+msgid "reportSetting_tab_basicDisplaySetting"
+msgstr "Temel Ekran"
+
+msgid "reportSetting_tab_functionKeyDisplay"
+msgstr "İşlev Tuşu Ekranı"
+
+msgid "reportSetting_tab_reportItemsDisplay"
+msgstr "Rapor Öğeleri Ekranı"
+
+msgid "reportSetting_funcKeyField_ID"
+msgstr "Kimlik"
+
+msgid "reportSetting_funcKeyField_value"
+msgstr "Değer"
+
+msgid "reportSetting_funcKeyField_name"
+msgstr "İsim"
+
+msgid "reportSetting_itemField_ID"
+msgstr "Kimlik"
+
+msgid "reportSetting_itemField_name"
+msgstr "İsim"
+
+msgid "reportSetting_itemField_minimumUnit"
+msgstr "Minimum Birim"
+
+msgid "reportSetting_itemField_roundOff"
+msgstr "Yuvarlama"
+
+msgid "reportSetting_itemField_symbol"
+msgstr "Sembol"
+
+msgid "symbol_in_report"
+msgstr "Rapordaki Sembol"
+
+msgid "replace_schedule_as_following_range"
+msgstr "Planlamayı aşağıdaki seçilen aralıkta değiştir."
+
+msgid "breakTime_number"
+msgstr "Mola Kodu"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "Dışa Aktarma Stili:"
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "Varsayılan"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "Çalışan Bilge"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "Bilge Bölümü"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "Bilge Tarih"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "Sayfa Bilge"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "Lütfen başlangıç ​​ve bitiş tarihlerini seçin."
+
+msgid "attCalculation_alert_dateRangeInvalid"
+msgstr "Geçersiz saat, bitiş tarihi başlangıç ​​tarihinden sonra olmalı"
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "Lütfen personel seçin"
+
+msgid "shift_getDetail_error_notFound"
+msgstr "Vardiya bulunamadı."
+
+msgid "menu_sys_authGroup"
+msgstr "Grup"
+
+msgid "menu_sys_authUser"
+msgstr "Kullanıcı"
+
+msgid "menu_sys_emailSetting"
+msgstr "E-posta Ayarı"
+
+msgid "menu_sys_alertSetting"
+msgstr "Uyarı Ayarı"
+
+msgid "menu_sys_pdfReportSetting"
+msgstr "PDF Dışa Aktar"
+
+msgid "menu_sys_ftpSetting"
+msgstr "Ftp Ayarı"
+
+msgid "menu_sys_filterBookmark"
+msgstr "Yer İşaretleri"
+
+msgid "menu_sys_databaseBackup"
+msgstr "Yedekleme"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "Tayin"
+
+msgid "menu_sys_autoExport"
+msgstr "Otomatik Dışa Aktar"
+
+msgid "menu_group_sysMiddlewareTable"
+msgstr "Ara Katman Tablosu"
+
+msgid "menu_sys_middlewareTableDepartment"
+msgstr "Departman"
+
+msgid "menu_sys_middlewareTablePosition"
+msgstr "Konum"
+
+msgid "menu_sys_middlewareTableArea"
+msgstr "Alan"
+
+msgid "menu_sys_middlewareTableEmployee"
+msgstr "Personel"
+
+msgid "middlewareTable_field_postTime"
+msgstr "ZGönderi Zamanı"
+
+msgid "middlewareTable_field_flag"
+msgstr "Bayrak"
+
+msgid "middlewareTable_field_updateTime"
+msgstr "Hedeflenen Zaman"
+
+msgid "middlewareTable_field_syncResult"
+msgstr "Durum"
+
+msgid "emp_field_multipleArea"
+msgstr "Birden Çok Alan"
+
+msgid "emp_field_activeStatus"
+msgstr "Etkin Durum"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "Yardımcı Ayar"
+
+msgid "menu_sys_companySetting"
+msgstr "Şirket Ayarı"
+
+msgid "menu_line_notify"
+msgstr "Hat Uygulaması Bildir"
+
+msgid "menu_group_sys_user"
+msgstr "Kullanıcı"
+
+msgid "menu_group_sys_configuration"
+msgstr "Yapılandırma"
+
+msgid "menu_group_sys_database"
+msgstr "Veritabanı"
+
+msgid "menu_group_sys_integration"
+msgstr "Entegrasyon"
+
+msgid "menu_group_sys_log"
+msgstr "Kayıtları"
+
+msgid "menu_sys_log"
+msgstr "Kayıtları"
+
+msgid "menu_group_sys_task"
+msgstr "Görev"
+
+msgid "menu_sys_intervalSchedule"
+msgstr "Dahili"
+
+msgid "menu_sys_crontabSchedule"
+msgstr "Crontab"
+
+msgid "menu_sys_periodicTask"
+msgstr "Periyodik Görev"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "Başlangıç ​​Tarihi"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "Sorgulayan"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "Manuel Dışa Aktarma"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "Manuel olarak yürütülecek görevi seç"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "Manuel olarak yürütülecek görevi seç"
+
+msgid "user_action_changePassword"
+msgstr "Parolayı Değiştir"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "Seçilen kullanıcıların şifresini değiştirmek istediğinizden emin misiniz?"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s birincil anahtarlı%(key)r nesnesi yok."
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "Şifre başarıyla değiştirildi."
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "Parolayı Değiştir"
+
+msgid "adminLog_field_objects"
+msgstr "Nesne"
+
+msgid "group_field_name"
+msgstr "İsim"
+
+msgid "autoExport_task_error_data"
+msgstr "Geçersiz veri"
+
+msgid "autoExport_task_error_email"
+msgstr "Geçersiz E-posta"
+
+msgid "autoExport_task_error_interval"
+msgstr "Geçersiz aralık değeri"
+
+msgid "autoExport_task_error_time_point"
+msgstr "Geçersiz zaman noktası değeri"
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "Çalışan Kimliği Uzunluğu"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "Dosya Adı"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "Geçersiz şifre biçimi veya bilinmeyen karma algoritması."
+
+msgid "password_mismatch_errorMessage"
+msgstr "İki şifre alanı eşleşmedi."
+
+msgid "user_createForm_password"
+msgstr "Şifre"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "Şifre onayı"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "Doğrulama için öncekiyle aynı şifreyi girin."
+
+msgid "stmp_server_is_required"
+msgstr "SMTP sunucusu gerekli."
+
+msgid "email_account_is_required"
+msgstr "E-posta hesabı gerekli."
+
+msgid "email_password_is_required"
+msgstr "E-posta şifresi gerekiyor."
+
+msgid "store_path_is_required"
+msgstr "SN dosyası gerekli."
+
+msgid "store_path_is_wrong"
+msgstr "Mağaza yolu yanlış"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "Çalışan Kimliği Uzunluğu"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "Zaman Aralığı"
+
+msgid "software_category_is_required"
+msgstr "Yazılım kategorisi gerekli."
+
+msgid "migrate_fields_is_required"
+msgstr "Taşıma alanı zorunludur."
+
+msgid "migrate_database_type_is_required"
+msgstr "Geçiş veritabanı türü gerekli."
+
+msgid "migrate_database_address_is_required"
+msgstr "Taşıma veritabanının IP adresi gerekli."
+
+msgid "migrate_database_port_is_required"
+msgstr "Geçiş veritabanının bağlantı noktası numarası gerekiyor."
+
+msgid "migrate_database_name_is_required"
+msgstr "Taşıma veritabanının adı gerekli."
+
+msgid "migrate_database_user_is_required"
+msgstr "Taşıma veritabanının kullanıcı adı gerekli."
+
+msgid "migrate_database_password_is_required"
+msgstr "Taşıma veritabanının şifresi gerekiyor."
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "Bağlantı testi başarısız"
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "Veritabanı bağlantısı istisnası"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured"
+msgstr "Yedekleme başarısız, lütfen sqlcmd.exe'nin yapılandırıldığından emin olun."
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured"
+msgstr "Yedekleme başarısız, lütfen mysqldump.exe'nin yapılandırıldığından emin olun."
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured"
+msgstr "Yedekleme başarısız, lütfen pg_dump.exe'nin yapılandırıldığından emin olun."
+
+msgid "backup_failed_please_make_sure_exp_is_configured"
+msgstr "Yedekleme başarısız, lütfen exp.exe'nin yapılandırıldığından emin olun."
+
+msgid "dbBackup_action_dbRestoreErrorPSQLNotFount"
+msgstr "Geri yükleme başarısız, lütfen psql.exe'nin yapılandırıldığından emin olun."
+
+msgid "dbBackup_action_dbRestoreErrorNoSupport"
+msgstr "Geri yükleme başarısız, sadece PostgreSQL veritabanını destekliyor."
+
+msgid "dbBackup_action_dbRestoreErrorFileNoFound"
+msgstr "Geri yükleme başarısız, yedekleme dosyası bulunamadı."
+
+msgid "dbBackup_action_dbRestoreErrorIllegalDatabaseName"
+msgstr "Geri yükleme başarısız, lütfen veritabanı adının kullanılmamasını sağlayın."
+
+msgid "adminLog_field_user"
+msgstr "Kullanıcı"
+
+msgid "adminLog_field_action"
+msgstr "Eylem"
+
+msgid "adminLog_field_contentType"
+msgstr "İçerik Türü"
+
+msgid "adminLog_field_actionStatus"
+msgstr "Durum"
+
+msgid "actionStatus_option_fail"
+msgstr "Hatalı"
+
+msgid "actionStatus_option_success"
+msgstr "Başarılı"
+
+msgid "adminLog_field_description"
+msgstr "Tanımla"
+
+msgid "adminLog_field_ipAddress"
+msgstr "IP Adresi"
+
+msgid "adminLog_field_routable"
+msgstr "Yönlendirilebilir"
+
+msgid "adminLog_field_operationTime"
+msgstr "Hareket Süresi"
+
+msgid "base_model_adminLog"
+msgstr "Günlük"
+
+msgid "autoExportTask_field_code"
+msgstr "Kod"
+
+msgid "autoExportTask_field_name"
+msgstr "Ad"
+
+msgid "autoExportTask_field_params"
+msgstr "Parametreler"
+
+msgid "base_model_autoExportTask"
+msgstr "Otomatik Dışa Aktar"
+
+msgid "bookmark_field_title"
+msgstr "Başlık"
+
+msgid "bookmark_field_user"
+msgstr "Kullanıcı"
+
+msgid "bookmark_field_contentType"
+msgstr "İçerik Tipi"
+
+msgid "bookmark_field_filtersString"
+msgstr "Filtreler"
+
+msgid "bookmark_menu_noBookmarks"
+msgstr "Yer İşareti Yok"
+
+msgid "bookmark_menu_newBookmark"
+msgstr "Yeni Yer İşareti"
+
+msgid "bookmark_menu_enterBookmarkTitle"
+msgstr "Yer İşareti Başlığını Girin"
+
+msgid "bookmark_menu_saveBookmark"
+msgstr "Yer İşaretini Kaydet"
+
+msgid "bookmark_field_isShared"
+msgstr "Paylaşıldı"
+
+msgid "bookmark_field_savedTime"
+msgstr "Kayıt Zamanı"
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "Yinelenen Başlık"
+
+msgid "base_model_bookmark"
+msgstr "Yer İşaretleri"
+
+msgid "base_integrationTable_employee"
+msgstr "Personel"
+
+msgid "base_integrationTable_position"
+msgstr "Pozisyon"
+
+msgid "base_integrationTable_department"
+msgstr "Departman"
+
+msgid "base_integrationTable_area"
+msgstr "Alan"
+
+msgid "enableStatus_option_enable"
+msgstr "Etkin"
+
+msgid "enableStatus_option_disable"
+msgstr "Devre Dışı"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "Canlı İzleme"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "Günlük Katılım Özeti"
+
+msgid "lineNotify_field_department"
+msgstr "Departman"
+
+msgid "lineNotify_field_includeSubDepartment"
+msgstr "Alt Departmanı Dahil Et"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "Jeton"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "Alt Bağlantıya Tıkalyın"
+
+msgid "lineNotify_field_messageType"
+msgstr "Mesaj Tipi"
+
+msgid "lineNotify_field_pushTime"
+msgstr "Okutma Zamanı"
+
+msgid "lineNotify_field_isValid"
+msgstr "Verimli"
+
+msgid "lineNotify_field_remark"
+msgstr "Açıklama"
+
+msgid "base_model_lineNotifySetting"
+msgstr "Satır Bildirimi Ayarı"
+
+msgid "dbMigrate_field_name"
+msgstr "Taşıma Adı"
+
+msgid "dbMigrate_field_value"
+msgstr "İçeriği Taşıma"
+
+msgid "base_model_dbBackupLog"
+msgstr "VT Yedekleme Kaydı"
+
+msgid "dbBackupLog_field_type"
+msgstr "Veritabanı"
+
+msgid "dbBackupLog_field_name"
+msgstr "Veritabanı Adı"
+
+msgid "dbBackupLog_field_operator"
+msgstr "Operatör"
+
+msgid "dbBackupLog_field_filePath"
+msgstr "Mağaza Yolu"
+
+msgid "dbBackupLog_field_isBackupPhoto"
+msgstr "Yedek Fotoğraflara İhtiyacınız Var"
+
+msgid "dbBackupLog_field_isRestorePhoto"
+msgstr "Fotoğrafların Yeniden Yüklenmesi Gerekiyor"
+
+msgid "dbBackupLog_field_time"
+msgstr "Zaman"
+
+msgid "dbBackupLog_field_status"
+msgstr "Durum"
+
+msgid "dbBackupLog_field_remark"
+msgstr "Açıklama"
+
+msgid "dbBackupLog_field_frequency"
+msgstr "Frekans"
+
+msgid "dbBackupLog_field_pointDay"
+msgstr "Gün"
+
+msgid "dbBackupLog_field_pointTime"
+msgstr "Zaman"
+
+msgid "dbBackupLog_action_dbBackupAuto"
+msgstr "Otomatik Yedekleme"
+
+msgid "dbBackupLog_action_dbBackupManually"
+msgstr "Manuel Yedekleme"
+
+msgid "dbBackupLog_action_dbBackupManuallyConfirmation"
+msgstr "Veritabanını manuel olarak yedeklediğinizden emin misiniz??"
+
+msgid "backup_status_success"
+msgstr "Başarılı"
+
+msgid "backup_status_failed"
+msgstr "Hatalı"
+
+msgid "dbBackupLog_action_dbRestoreManually"
+msgstr "Manuel Olarak Yenile"
+
+msgid "dbBackupLog_field_backupFile"
+msgstr "Yedekleme Dosyası"
+
+msgid "model_send_email"
+msgstr "Mail Gönder"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "Şifre"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "Genel Anahtar"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "Host Adresi"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "Port Numarası"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "Otantik Yöntem"
+
+msgid "sftpSetting_field_username"
+msgstr "Kullanıcı Adı"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "Şifre"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "SSH Anahtarı"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "Şifre"
+
+msgid "sftp_setting"
+msgstr "SFTP Ayarı"
+
+msgid "sysParam_field_name"
+msgstr "Ad"
+
+msgid "sysParam_field_type"
+msgstr "Tip"
+
+msgid "sysParam_field_value"
+msgstr "Değer"
+
+msgid "sysParam_default_ruleName"
+msgstr "Varsayılan Katılım Kuralı"
+
+msgid "system_setting"
+msgstr "Sistem Ayarı"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "den  %(from)s  e kadar %(to)s"
+
+msgid "reportExport_author"
+msgstr "Yazar"
+
+msgid "reportExport_createTime"
+msgstr "Oluşturma Zamanı"
+
+msgid "pdfExport_pageSize"
+msgstr "Sayfa Boyutu"
+
+msgid "pdfExport_orientation"
+msgstr "Oryantasyon"
+
+msgid "pdfExport_footerLeft"
+msgstr "Sol Altbilgi"
+
+msgid "pdfExport_footerRight"
+msgstr "Sağ Altbilgi"
+
+msgid "pdfExport_auto"
+msgstr "Otomatik"
+
+msgid "pdfExport_orientation_portrait"
+msgstr "Vesikalık"
+
+msgid "pdfExport_orientation_landscape"
+msgstr "Manzara"
+
+msgid "pdfExport_blank"
+msgstr "Boş"
+
+msgid "pdfExport_pageToPage"
+msgstr "Sayfa/Toplam Sayfa"
+
+msgid "pdfExport_author"
+msgstr "Yazar"
+
+msgid "pdfExport_time"
+msgstr "Zaman"
+
+msgid "user_createFrom_legendInformation"
+msgstr "Bilgi"
+
+msgid "user_createFrom_legendPermission"
+msgstr "İzin"
+
+msgid "user_createFrom_isStaffNoCheckMsg"
+msgstr "Bu alan işaretlenmezse, bu kullanıcının giriş yapmasına izin verilmez"
+
+msgid "permission_verboseName_add"
+msgstr "Ekle"
+
+msgid "permission_verboseName_view"
+msgstr "Görüntüle"
+
+msgid "permission_verboseName_change"
+msgstr "Düzenle"
+
+msgid "permission_verboseName_delete"
+msgstr "Sil"
+
+msgid "permission_verboseName_changePassword"
+msgstr "Şifreyi Değiştir"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "Personel"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "Departman"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "Pozisyon"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "Alan"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "Yeniden İşaretle"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "Döküman"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "Personel Dökümanı"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "Bio-Foto"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "İş Akışı Öbeği"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "İş Akışı Motoru"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "İş Akışı Rolü"
+
+msgid "permission_verboseName_attDeptAttrule"
+msgstr "Departman Kuralı"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "Rapor Ayarı"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "Zaman Tablosu"
+
+msgid "permission_verboseName_attShift"
+msgstr "Çalışma Tablosu"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "Manuel Log"
+
+msgid "permission_verboseName_attLeave"
+msgstr "Ayrıl"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "Mesai"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "Ayrılma Tipi"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "Tatil"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "Rapor Hesabı"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "Günlük Katılım Raporu"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "Çalışan Özeti"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "Ayrılma Özeti"
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "Toplam Zaman Kartı "
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "Son Çıkış"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "İstisna Raporu"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "Departman Özeti"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "Zaman Kartı Raporu"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "Geç Kalma Raporu"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "Erken Ayrılma Raporu"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "Devamsızlık Raporu"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "Çoklu İşlem"
+
+msgid "permission_verboseName_attTraining"
+msgstr "Eğitim"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "Mola Zamanı"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "Takvim"
+
+msgid "permission_verboseName_attSetting"
+msgstr "Katılım Ayarı"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "Geçici Takvim"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "Eğitim Tipi"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "Takvimi Değiştir"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "Rapor İzni"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "Cihaz"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "Operasyon Kaydı"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "Komut"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "Yükleme Kaydı"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "Bio-Şablon"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "Genel Mesaj"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "Özel Mesaj"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "İş Kodu"
+
+msgid "permission_verboseName_iclockTransaction"
+msgstr "İşlem"
+
+msgid "permission_verboseName_iclockEmployeeGps"
+msgstr "Çalışan Bölgesi"
+
+msgid "permission_verboseName_iclockDepartmentGps"
+msgstr "Departman Bölgesi"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "Uygulama Listesi"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "Duyuru"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "Bildirim"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "Hareket Kaydı"
+
+msgid "permission_verboseName_iclockDeviceConfig"
+msgstr "Yapılandırma"
+
+msgid "permission_verboseName_sysUser"
+msgstr "Kullanıcı"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "Grup"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "FTP Ayarı"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "Otomatik Dışa Aktarma"
+
+msgid "permission_verboseName_SyncEmployee"
+msgstr "Çalışan ara katman tablosu"
+
+msgid "permission_verboseName_SyncJob"
+msgstr "Pozisyon ara katman tablosu"
+
+msgid "permission_verboseName_SyncDepartment"
+msgstr "Departman ara katman tablosu"
+
+msgid "permission_verboseName_SyncArea"
+msgstr "Alan ara katman tablosu"
+
+msgid "permission_verboseName_payrollReportPermission"
+msgstr "Rapor İzni"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "Kayıt"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "Yer İmleri"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "Yapılandırma"
+
+msgid "permission_verboseName_psnl"
+msgstr "Personel"
+
+msgid "permission_verboseName_iclock"
+msgstr "Cihaz"
+
+msgid "permission_verboseName_att"
+msgstr "Katılım"
+
+msgid "permission_verboseName_payroll"
+msgstr "Maaş Hesabı"
+
+msgid "permission_verboseName_sys"
+msgstr "Sistem"
+
+msgid "autoExport_task_manualStart"
+msgstr "Başlama Tarihi"
+
+msgid "autoExport_task_manualEnd"
+msgstr "Bitiş Tarihi"
+
+msgid "autoExport_task_queryField"
+msgstr "Tarafından Filtre"
+
+msgid "autoExport_task_filePrefix"
+msgstr "Dosya Adı"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "Format Ayarı"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "Veri Filtreleme Ayarı"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "Dışa Aktarma Zaman Ayarı"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "Dışa Aktarma Yolu Ayarı"
+
+msgid "autoExport_task_departments"
+msgstr "Departman"
+
+msgid "autoExport_departments_helpTxt"
+msgstr "Tümünü varsayılan olarak dışa aktar"
+
+msgid "autoExport_task_areas"
+msgstr "alan"
+
+msgid "autoExport_areas_helpTxt"
+msgstr "Tümünü varsayılan olarak dışa aktar"
+
+msgid "autoExport_task_code"
+msgstr "Kod"
+
+msgid "autoExport_task_name"
+msgstr "Ad"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "Veri Şablonu"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "(Lütfen dışa aktarmak istediğiniz alanları sağdan aşağıdaki metin kutusuna sürükleyin.)"
+
+msgid "autoExport_task_shortDate"
+msgstr "Kısa Zaman Biçimi"
+
+msgid "autoExport_task_shortTime"
+msgstr "Kısa Zaman Biçimi"
+
+msgid "autoExport_task_frequency"
+msgstr "Frekans"
+
+msgid "frequency_option_none"
+msgstr "Hayır"
+
+msgid "frequency_option_daily"
+msgstr "Günlük"
+
+msgid "frequency_option_weekly"
+msgstr "Haftalık"
+
+msgid "frequency_option_monthly"
+msgstr "Aylık"
+
+msgid "autoExport_task_exportDay"
+msgstr "Gün"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "Yükleme Zamanı"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "Okutma Zamanı"
+
+msgid "autoExport_task_interval"
+msgstr "Ara"
+
+msgid "autoExport_task_exportFormat"
+msgstr "Dosya Formatı"
+
+msgid "autoExport_exportFormat_helpTxt"
+msgstr "Yalnızca .xls .csv .txt . destekler"
+
+msgid "autoExport_task_exportTime"
+msgstr "Zaman Noktası"
+
+msgid "autoExport_task_deadline"
+msgstr "Bugün Dahil Et"
+
+msgid "autoExport_deadline_previous"
+msgstr "Önceki"
+
+msgid "autoExport_deadline_current"
+msgstr "Şimdiki"
+
+msgid "autoExport_task_exportPath"
+msgstr "Dışa Aktarma yolu"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "(Konum: \\ dosya \\ temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "FTP Sunucusu"
+
+msgid "autoExport_task_ftpPath"
+msgstr "FTP Yolu"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "(Biçim: / Klasör /)"
+
+msgid "autoExport_task_exportEmail"
+msgstr "E-posta"
+
+msgid "autoExport_task_empCodeLength"
+msgstr "ID Numarası"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "Çalışan ID Numarası"
+
+msgid "autoExport_task_departmentCode"
+msgstr "Departman Kodu"
+
+msgid "autoExport_task_departmentName"
+msgstr "Departman Adı"
+
+msgid "autoExport_task_punchTime"
+msgstr "Okutma Zamanı"
+
+msgid "autoExport_task_verifyType"
+msgstr "Doğrulama Tipi"
+
+msgid "autoExport_task_workCode"
+msgstr "İş Kodu"
+
+msgid "autoExport_task_cardNumber"
+msgstr "Kart Numarası"
+
+msgid "autoExport_task_areaAlias"
+msgstr "Alan"
+
+msgid "autoExport_task_terminalAlias"
+msgstr "Cihaz Takma Adı"
+
+msgid "autoExport_task_terminalSN"
+msgstr "Seri Numarası"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "Taşıma"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "Veri Tabanı"
+
+msgid "db_sqlserver"
+msgstr "MSSQL Server"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "Adres"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "Bağlantı Noktası"
+
+msgid "dataMigrate_front_databaseName"
+msgstr "Ad"
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "Kullanıcı"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "Şifre"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "Taşınacak Alanlar"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "Periyot"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "Taşıma Durumu"
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "Test Bağlantısı"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "Taşıma"
+
+msgid "dataMigrate_front_btn_clearConnectInfo"
+msgstr "Net Bağlantı"
+
+msgid "dataMigrate_front_area_or_zone"
+msgstr "alan/bölge"
+
+msgid "dataMigrate_front_startTime"
+msgstr "Başlama Zamanı"
+
+msgid "dataMigrate_front_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "Sqlite Dosyası"
+
+msgid "dataMigrate_cache_clean"
+msgstr "Önbelleği Temizle"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "Taşıma işlemini gerçekleştirmediyse çözmek için bunu deneyin."
+
+msgid "exportForm_itemLabel_scope"
+msgstr "Dışa Aktarma Kapsamı:"
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "Geçerli Sayfa"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "Tüm Data"
+
+msgid "line_taken_btn"
+msgstr "Hattın web sayfasına girmek ve hat bildirim jetonunu almak için buraya tıklayın"
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "Katılım Uyarısı Ayarı"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "Gecikme sayısı aşıldığında"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "Erken çıkma sayısı aşıldığında"
+
+msgid "alertSettingPage_label_absentExceed"
+msgstr "Devamsızlık sayısı aşıldığında"
+
+msgid "alertSettingPage_exceedUnit_times"
+msgstr "Zamanlar"
+
+msgid "alertSettingPage_label_emailSendingFrequency"
+msgstr "Gönderme Frekansı"
+
+msgid "alertSettingPage_label_emailSendingDay"
+msgstr "Gün"
+
+msgid "alertSettingPage_label_emailSendingTime"
+msgstr "Zaman"
+
+msgid "alertSettingPage_label_sendingDay"
+msgstr "Gönderme Günü"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "Bugün"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "Yarın"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "Geçerli günü dahil et"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "Uyarı Ayarını Onayla"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "Email Uyarısı"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "Pop Uyarısı"
+
+msgid "alertSettingPage_btn_submit"
+msgstr "Sun"
+
+msgid "backup_database"
+msgstr "Veri Tabanı"
+
+msgid "backup_database_name"
+msgstr "Veri Tabanı Adı"
+
+msgid "backup_store_path"
+msgstr "Depolama Yolu"
+
+msgid "backup_frequency"
+msgstr "Frekans"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "Sadece Bir Kez"
+
+msgid "backup_day"
+msgstr "Gün"
+
+msgid "backup_time"
+msgstr "Zaman"
+
+msgid "backup_last_backup"
+msgstr "Son Yedekleme"
+
+msgid "backup_file"
+msgstr "Yedek Dosya"
+
+msgid "btn_save"
+msgstr "Kaydet"
+
+msgid "btn_view"
+msgstr "Görünüm"
+
+msgid "btn_hide"
+msgstr "Sakla"
+
+msgid "btn_apply"
+msgstr "Uygula"
+
+msgid "btn_backup"
+msgstr "Yedekle"
+
+msgid "emailSettingPage_label_smtpServer"
+msgstr "SMTP Sunucusu"
+
+msgid "emailSettingPage_label_smtpServerPort"
+msgstr "Sunucu Portu"
+
+msgid "emailSettingPage_label_enableSSL"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "Email Hesabı"
+
+msgid "emailSettingPage_help_emailAccount"
+msgstr "domain adı/domain kullanıcısı"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "Şifre"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "Email Adresi"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "Sun"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "Cihaz Haberleşme Ayarı"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "Kayıt Cihazını Etkinleştir"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "Bu seçeneği etkinleştirme, yalnızca işaretlenmiş kayıt cihazının kullanıcı verilerini yükleyebilmesine izin verir."
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "Ad Yüklemeyi Etkinleştir"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "Ad Yüklemeyi Etkinleştir"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "Kart Yüklemeyi Etkinleştir"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "Ad Yüklemeyi Etkinleştir"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "Diğer Ayarlar"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "Fotoğraf Yedekleme"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "Çalışan fotoğrafı yedekleme yolu"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "Sun"
+
+msgid "translation_option_english"
+msgstr "İngilizce"
+
+msgid "translation_option_korean"
+msgstr "Korece"
+
+msgid "translation_option_japanese"
+msgstr "Japonca"
+
+msgid "translation_option_spanish"
+msgstr "İspanyolca"
+
+msgid "translation_option_thai"
+msgstr "Tayland"
+
+msgid "translation_option_arabic"
+msgstr "Arapça"
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr "Google Çeviri"
+
+msgid "translation_btn_onlineTranslate"
+msgstr "Online Çeviri"
+
+msgid "database_backup_is_under_processing"
+msgstr "Veritabanı yedeklemesi devam ediyor, lütfen daha sonra tekrar deneyin."
+
+msgid "dbMigrate_status_processing"
+msgstr "İşleniyor"
+
+msgid "dbMigrate_status_finish"
+msgstr "Tamamlandı"
+
+msgid "dbMigrate_status_exception"
+msgstr "İstisna"
+
+msgid "dbMigrate_status_pending"
+msgstr "Bekliyor"
+
+msgid "login_authorize_license_missing"
+msgstr "Lisans bulunamadı."
+
+msgid "login_authorize_incorrectUPK"
+msgstr "Yanlış UPK"
+
+msgid "login_authorize_md5_error"
+msgstr "Sistem dosyaları izinsiz değiştirildi."
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "İzin verilen numarayı aşan cihaz sayısı"
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "Çalışan sayısı zaten izin verilen sayıyı aşıyor"
+
+msgid "login_authorize_license_app_exceed"
+msgstr "Uygulama sayısı zaten izin verilen sayıyı aşıyor"
+
+msgid "login_authorize_database_error"
+msgstr "Veritabanı tablosu çöktü olarak işaretlendi, lütfen kontrol edin ve onarın"
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "Veritabanı bağlantısı başarısız, %(db_ver)s."
+
+msgid "login_authorize_illegal_username"
+msgstr "Yasa Dışı Kullanıcı Adı"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "Giriş Başarısız, %(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "Giriş başarısız, kullanıcı adı veya şifre hatalı."
+
+msgid "login_authorize_invalid_username"
+msgstr "Geçersiz Kullanıcı Adı"
+
+msgid "login_authorize_illegal_login"
+msgstr "Geçersiz Giriş"
+
+msgid "login_authorize_license_inactive"
+msgstr "Lisans etkin değil"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "Cihaz"
+
+msgid "menu_device_terminal"
+msgstr "Cihaz"
+
+msgid "menu_device_terminalCommand"
+msgstr "Cihaz Komutu"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "Mesaj"
+
+msgid "menu_device_publicMessage"
+msgstr "Genel"
+
+msgid "menu_device_privateMessage"
+msgstr "Özel"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "Veri"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "İş Kodu"
+
+msgid "menu_device_terminalBioData"
+msgstr "Bio-Şablon"
+
+msgid "menu_device_transaction"
+msgstr "İşlem"
+
+msgid "menu_group_device_terminalLog"
+msgstr "Kayıt"
+
+msgid "menu_device_terminalLog"
+msgstr "Çalışma Kaydı"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "Yüklenen Kayıt"
+
+msgid "menu_group_mobile_application"
+msgstr "Mobil Uygulama"
+
+msgid "menu_mobile_appList"
+msgstr "Hesaplar"
+
+msgid "menu_mobile_announcement"
+msgstr "Duyuru"
+
+msgid "menu_mobile_notification"
+msgstr "Uyarı"
+
+msgid "menu_mobile_appActionLog"
+msgstr "Çalışma Kaydı"
+
+msgid "menu_group_deviceConfiguration"
+msgstr "Yapılandırma"
+
+msgid "menu_iclock_deviceConfig"
+msgstr "Yapılandırma"
+
+msgid "privateMessage_field_employee"
+msgstr "Çalışan"
+
+msgid "privateMessage_field_startTime"
+msgstr "Başlama Zamanı"
+
+msgid "privateMessage_field_duration"
+msgstr "Süre"
+
+msgid "privateMessage_field_content"
+msgstr "İçerik"
+
+msgid "privateMsg_action_add"
+msgstr "Ekle"
+
+msgid "privateMsg_action_addDescription"
+msgstr "Ekle"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "Ekle"
+
+msgid "send_message"
+msgstr "Mesaj Gönder"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "Mesaj göndermek istediğinizden emin misiniz ?"
+
+msgid "publicMessage_field_terminal"
+msgstr "Cihaz"
+
+msgid "publicMessage_field_startTime"
+msgstr "Başlama Zamanı"
+
+msgid "publicMessage_field_duration"
+msgstr "Süre"
+
+msgid "publicMessage_field_content"
+msgstr "İçerik"
+
+msgid "publicMsg_action_add"
+msgstr "Ekle"
+
+msgid "publicMsg_action_addDescription"
+msgstr "Ekle"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "Ekle"
+
+msgid "terminal_op_reboot"
+msgstr "Yeniden Başlat"
+
+msgid "terminal_op_rebootDescription"
+msgstr "Cihazı Yeniden Başlat"
+
+msgid "terminal_op_rebootHelp"
+msgstr "Cihazı Yeniden Başlat"
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "Cihazları yeniden başlatmak istediğinizden emin misiniz?"
+
+msgid "terminal_action_reUploadData"
+msgstr "Kullanıcı Verilerini Yükle"
+
+msgid "terminal_action_reUploadDataDescription"
+msgstr "Kullanıcı Verilerini cihazdan yeniden yükle"
+
+msgid "terminal_action_reUploadDataHelpTxt"
+msgstr "Kullanıcı Verilerini cihazdan yeniden yükle"
+
+msgid "reUploadData_field_employee"
+msgstr "Çalışan"
+
+msgid "reUploadData_field_employeeCode"
+msgstr "Çalışan ID"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "Seçili terminal (ler) için verileri yeniden yüklediğinizden emin misiniz ?"
+
+msgid "reUploadData_field_transaction"
+msgstr "İşlem"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "Başlama Zamanı"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "İşlemi Yükle"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "İşlemi Yükle"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "İşlemi Yükle"
+
+msgid "reloadData_field_employee"
+msgstr "Çalışan"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "Fotoğraf"
+
+msgid "reloadData_field_fingerprint"
+msgstr "Parmak İzi"
+
+msgid "reloadData_field_face"
+msgstr "Yüz"
+
+msgid "reloadData_field_palm"
+msgstr "Avuç İçi"
+
+msgid "reloadData_field_fingerVein"
+msgstr "Parmak Damar"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "Bio-Fotoğraf"
+
+msgid "terminal_op_reloadData"
+msgstr "Verileri Cihaza Senkronize Et"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "Kullanıcı verilerini sistemden cihaza senkronize etme"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "Kullanıcı verilerini sistemden cihaza senkronize etme"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "Başlama Zamanı"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "Bitiş Zamanı"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "Tümünü Temizle"
+
+msgid "terminal_op_clearData"
+msgstr "Tüm Veriyi Temizle"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "Cihazdaki tüm verileri temizle (kullanıcı verileri, işlem, fotoğraf vb.)"
+
+msgid "terminal_op_clearDataHelp"
+msgstr "Cihazdaki tüm verileri temizle (kullanıcı verileri, işlem, fotoğraf vb.)"
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "Seçilen {0} cihazdaki tüm verileri silmek istediğinizden emin misiniz?"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "Katılım Verilerini Temizle"
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "Katılım Verilerini Temizle"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "Katılım Verilerini Temizle"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr "Seçilen {0} cihazdaki tüm işlemleri silmek istediğinizden emin misiniz?"
+
+msgid "terminal_op_readInformation"
+msgstr "Bilgileri Oku"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "Bilgileri Oku"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "Bilgileri Oku"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "Seçilen cihazdan bilgi okumak istediğinizden emin misiniz?"
+
+msgid "terminal_op_deleteCapture"
+msgstr "Ekran Görüntüsünü Temizle"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "Cihazdaki tüm ekran fotoğraflarını temizle"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "Cihazdaki tüm ekran fotoğraflarını temizle"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "Seçilen {0} cihazın ekran görüntülerini silmek istediğinizden emin misiniz?"
+
+msgid "terminal_op_clearAll"
+msgstr "Tüm Verileri Temizle"
+
+msgid "terminal_op_clearAllHelpTxt"
+msgstr "Bu işlem cihazdaki tüm verileri temizleyecektir, veriler işlem, kullanıcı verileri, ekran görüntüleri vb."
+
+msgid "terminal_op_clearAllDescription"
+msgstr "Bu işlem cihazdaki tüm verileri temizleyecektir, veriler işlem, kullanıcı verileri, ekran görüntüleri vb."
+
+msgid "terminal_op_clearAllConfirmation"
+msgstr "Cihazdaki tüm verileri silmek istediğinizden emin misiniz?"
+
+msgid "duplicate_punch_period"
+msgstr "Yinelenen Okutma Periyodu (d)"
+
+msgid "minutes/seconds"
+msgstr "Dakikalar"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "Tekrar Okutma Periyodu"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "Yinelenen Okutma Periyodu"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "Yinelenen Okutma Periyodu"
+
+msgid "terminal_capture"
+msgstr "Ekran Görüntüsü Yakala"
+
+msgid "capture_no_photo"
+msgstr "Fotoğraf Yok"
+
+msgid "capture_take_photo_no_save"
+msgstr "Fotoğraf çek ama kaydetme"
+
+msgid "capture_verify_photo_and_save"
+msgstr "Fotoğrafı doğrulayın ve kaydedin"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "Başarılı bir şekilde doğrulayın ve kaydedin"
+
+msgid "capture_verify_failed_and_save"
+msgstr "Doğrulama ve kaydetme başarısız"
+
+msgid "terminal_op_captureSetting"
+msgstr "Çekim Ayarı"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "Çekim fotoğrafını kaydetmeyi etkinleştirmek veya devre dışı bırakmak için ayarı değiştirin."
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "Çekim fotoğrafını kaydetmeyi etkinleştirmek veya devre dışı bırakmak için ayarı değiştirin."
+
+msgid "terminal_captureUpload"
+msgstr "Yakalamayı Yükl"
+
+msgid "captureUpload_disabled"
+msgstr "Devre Dışı"
+
+msgid "captureUpload_enabled"
+msgstr "Etkin"
+
+msgid "terminal_op_captureUpload"
+msgstr "Yakalamayı Yükle"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "Yakalamayı Yükle"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "Yakalamayı Yükle"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "Dosyayı Yükle"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "Firmware Güncelle"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "Firmware Güncelle"
+
+msgid "action_transactionCorrection_start"
+msgstr "Başlama Zamanı"
+
+msgid "action_transactionCorrection_end"
+msgstr "Bitiş Zamanı"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "İşlem Düzeltme"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "Periyod içindeki cihaz işlem sayısını doğrulayın"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "Periyod içindeki cihaz işlem sayısını doğrulayın"
+
+msgid "terminal_op_pullFile"
+msgstr "Dosya İndir"
+
+msgid "terminal_op_pullFileDescription"
+msgstr "Dosyayı cihazdan indirin, normalde cihaz bakımı için kullanın, lütfen cihaz ücretsiz ise bu fonksiyonu kullanın, "
+
+msgid "terminal_op_pullFileHelpTxt"
+msgstr "Dosyayı cihazdan indirin, normalde cihaz bakımı için kullanın, lütfen cihaz ücretsiz ise bu fonksiyonu kullanın, "
+
+msgid "terminal_op_clearCommand"
+msgstr "Bekleyen Komutu Temizle"
+
+msgid "terminal_op_clearCommandDescription"
+msgstr "Bekleyen tüm komutları temizle"
+
+msgid "terminal_op_clearCommandHelpTxt"
+msgstr "Bekleyen tüm komutları temizle"
+
+msgid "terminal_op_clearCommandConfirmation"
+msgstr "Bekleyen tüm komutları temizlemek istediğinizden emin misiniz ?"
+
+msgid "action_pullFile_filePath"
+msgstr "Dosya Yolu"
+
+msgid "terminal_op_enrollRemotely"
+msgstr "Uzaktan Kaydet"
+
+msgid "terminal_op_enrollRemotelyDescription"
+msgstr "Cihazdan Biyometrik Kayıt"
+
+msgid "terminal_op_enrollRemotelyHelpTxt"
+msgstr "Cihazdan Biyometrik Kayıt"
+
+msgid "enrollRemotely_field_bioType"
+msgstr "Biyometrik Tipi"
+
+msgid "enrollRemotely_bioType_card"
+msgstr "MF Kart"
+
+msgid "enrollRemotely_bioType_fingerprint"
+msgstr "Parmak İzi"
+
+msgid "enrollRemotely_bioType_face"
+msgstr "Yüz"
+
+msgid "enrollRemotely_bioType_palm"
+msgstr "Avuç İçi"
+
+msgid "enrollRemotely_field_empCode"
+msgstr "Çalışan ID"
+
+msgid "enrollRemotely_field_finger"
+msgstr "Parmak"
+
+msgid "enrollRemotely_finger_leftHandLittle"
+msgstr "(Sol El) Serçe Parmak"
+
+msgid "enrollRemotely_finger_leftHandRing"
+msgstr "(Sol El) Yüzük Parmak"
+
+msgid "enrollRemotely_finger_leftHandMiddle"
+msgstr "(Sol El) Orta Parmak"
+
+msgid "enrollRemotely_finger_leftHandFore"
+msgstr "(Sol El) İşaret Parmak"
+
+msgid "enrollRemotely_finger_leftHandThumb"
+msgstr "(Sol El)Baş Parmak"
+
+msgid "enrollRemotely_finger_rightHandThumb"
+msgstr "(Sağ El)Baş Parmak"
+
+msgid "enrollRemotely_finger_rightHandFore"
+msgstr "(Sağ El)İşaret Parmak"
+
+msgid "enrollRemotely_finger_rightHandMiddle"
+msgstr "(Sağ El)Orta Parmak"
+
+msgid "enrollRemotely_finger_rightHandRing"
+msgstr "(Sağ El)Yüzük Parmak"
+
+msgid "enrollRemotely_finger_rightHandLittle"
+msgstr "(Sağ El)Serçe Parmak"
+
+msgid "terminal_op_newArea"
+msgstr "Yeni Alan"
+
+msgid "terminal_op_newAreaDescription"
+msgstr "Yeni Alan"
+
+msgid "terminal_op_newAreaHelpTxt"
+msgstr "Yeni Alan"
+
+msgid "terminal_field_numberReduce"
+msgstr "Azaltma sayısı"
+
+msgid "terminal_field_numberReduceHelpText"
+msgstr "0 - 999"
+
+msgid "loopDelTransaction_helpText_tip1"
+msgstr "1.Cihaz işlemi dolduğunda, giriş değerindeki işlem tabanı sayısını kaldıracaktır (0, kaldırılmamış demektir)."
+
+msgid "terminal_op_loopDelTransaction"
+msgstr "Döngüyü Silme İşlemi"
+
+msgid "terminal_op_loopDelTransactionDescription"
+msgstr "Döngüyü Silme İşlemi"
+
+msgid "terminal_op_loopDelTransactionHelpTxt"
+msgstr "Döngüyü Silme İşlemi"
+
+msgid "terminalNewArea_error_duplicateAreaCode"
+msgstr "Yinelenen alan kodu"
+
+msgid "terminal_field_alias"
+msgstr "Cihaz Adı"
+
+msgid "terminal_field_sn"
+msgstr "Seri Numarası"
+
+msgid "terminal_state"
+msgstr "Durum"
+
+msgid "op_menu_group_dataClean"
+msgstr "Veri Temizleme"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "Veri Transfer"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "Cihaz Menüsü"
+
+msgid "upload_file"
+msgstr "Yüklenen Dosya"
+
+msgid "usb_data_upload"
+msgstr "USB İşlemini Yükle"
+
+msgid "file_format_incorrect"
+msgstr "Dosya biçimi yanlış"
+
+msgid "device_not_found"
+msgstr "Cihaz bulunamadı"
+
+msgid "system_error"
+msgstr "Sistem hatası"
+
+msgid "read_file_failed"
+msgstr "Dosya okunamadı"
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "%(row_num)s satırı yanlış."
+
+msgid "transaction_column_employeeName"
+msgstr "Ad"
+
+msgid "transaction_column_employeeLastName"
+msgstr "Soyad"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "Departman"
+
+msgid "transaction_column_employeePosition"
+msgstr "Pozisyon"
+
+msgid "transaction_punch_date"
+msgstr "Tarih"
+
+msgid "transaction_punch_time"
+msgstr "Zaman"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "Cihaz"
+
+msgid "send_work_code"
+msgstr "Cihaza Gönder"
+
+msgid "send_work_code_to_terminal"
+msgstr "İş kodunu cihaza gönderiyor."
+
+msgid "remove_work_code"
+msgstr "Cihazdan Kaldır"
+
+msgid "remove_work_code_from_terminal"
+msgstr "İş kodu cihazdan kaldırılıyor."
+
+msgid "bio_fingerprint"
+msgstr "Parmak İzi"
+
+msgid "bio_face"
+msgstr "Yüz"
+
+msgid "bio_finger_vein"
+msgstr "Parmak Damar"
+
+msgid "bio_palm"
+msgstr "Avuç İçi"
+
+msgid "terminal_verifyOption_password"
+msgstr "Şifre"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "Parmak İzi"
+
+msgid "terminal_verifyOption_badge"
+msgstr "Çalışan ID"
+
+msgid "terminal_verifyOption_card"
+msgstr "Kart"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "Parmak İzi/Şifre"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "Parmak İzi/Kart"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "Şifre/Kart"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "Çalışan ID&Parmak İzi"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "Parmak İzi&Şifre"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "Parmak İzi&Kart"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "Parmak İzi&Kart"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "Parmak İzi&Şifre&Kart"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "Çalışan ID&Parmak İzi&Şifre"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "Parmak İzi & Kart & Çalışan ID"
+
+msgid "terminal_verifyOption_face"
+msgstr "Yüz"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "Yüz&Parmak İzi"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "Yüz&Şifre"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "Yüz&Kart"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "Yüz&Parmak İzi&Kart"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "Yüz&Parmak İzi&Şifre"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "Parmak Damar"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "Parmak Damar&Şifre"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "Parmak Damar&Kart"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "Parmak damar&Şifre&Kart"
+
+msgid "terminal_verifyOption_palm"
+msgstr "Avuç İçi"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "Avuç İçi&Kart"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "Avuç İçi&Yüz"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "Avuç İçi&Parmak İzi"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "Avuç İçi&Parmak İzi&Kart"
+
+msgid "terminal_verifyOption_gps"
+msgstr "GPS"
+
+msgid "terminal_verifyOption_aiCamera"
+msgstr "AI Kamera"
+
+msgid "terminal_verifyOption_other"
+msgstr "Diğer"
+
+msgid "transaction_punchState_checkIn"
+msgstr "Giriş"
+
+msgid "transaction_punchState_checkOut"
+msgstr "Çıkış"
+
+msgid "transaction_punchState_breakOut"
+msgstr "Mola Girişi"
+
+msgid "transaction_punchState_breakIn"
+msgstr "Mola Çıkışı"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "Mesai Girişi"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "Mesai Çıkışı"
+
+msgid "transaction_punchState_noStatus"
+msgstr "Durum yok"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "Başarılı"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "Parametre Yanlış, Hata: -1"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "Kullanıcı Fotoğraf Aktarma Hatası, Hata: -2"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "Aygıt Okuma veya Yazma Hatası, Hata: -3"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "Biyo-Şablon Aktarım Hatası, Hata: -9"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "Kullanıcı Mevcut Değil, Hata: -10"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "Geçersiz Pİ Şablon Biçimi, Hata: -11"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "Geçersiz Pİ Şablonu, Hata: -12"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "Aygıt Kapasitesi Sınırlaması, Hata: -1001"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "Aygıt Desteklenmiyor, Hata: -1002"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "Zaman Aşımı, Hata: -1003"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "Veri İstisnası, Hata: -1004"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "Aygıt Meşgul, Hata: -1005"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "Veri Çok Uzun, Hata: -1006"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "Aygıt Bellek Hatası, Hata: -1007"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "Sunucu Verileri Başarısız Oldu, Hata: -1008"
+
+msgid "deviceLog_action_powerOn"
+msgstr "Açık"
+
+msgid "deviceLog_action_powerOff"
+msgstr "Kapalı"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "Doğrulama Başarısız"
+
+msgid "deviceLog_action_alarm"
+msgstr "Alarm"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "Menüye girin"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "Güncelleme ayarı"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "Parmak izini kaydetme"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "Parolayı kaydet"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "Kartı Kaydet"
+
+msgid "deviceLog_action_deleteUser"
+msgstr "Kullanıcı sil"
+
+msgid "deviceLog_action_deleteFP"
+msgstr "Parmak izi sil"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "Şifre sil"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "RF kart sil"
+
+msgid "deviceLog_action_cleanData"
+msgstr "Veri Temizle"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "MF kart oluştur"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "MF kart kaydet"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "MF kartı kaydını sil"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "MF kartını temizle"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "Kayıt verilerini karta taşıyın"
+
+msgid "deviceLog_action_migrateDataCard2Device"
+msgstr "Karttaki tarihi cihaza kopyala "
+
+msgid "deviceLog_action_setupTime"
+msgstr "Kurulum zamanı"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "Fabrika ayarlarını geri yükle"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "Erişim girişini sil"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "Yönetici ayrıcalığını temizle"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "Erişim kontrol ayarını güncelleme"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "Erişim kontrol ayarını güncelle"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "Saat dilimini güncelle"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "Kilit açma kombinasyonu ayarını güncelle"
+
+msgid "deviceLog_action_unlock"
+msgstr "Kilidi Aç"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "Yeni kullanıcı kaydet"
+
+msgid "deviceLog_action_updateFP"
+msgstr "Parmak izini güncelleme"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "Acil durum alarmı"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "Anti pass back"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "ATT fotoğrafını sil"
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "Diğer kullanıcıyı güncelle"
+
+msgid "deviceLog_action_holiday"
+msgstr "Tatil"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "Kullanıcı fotoğrafını kaydet"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "Kullanıcı fotoğrafını güncelle"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "Kullanıcı adını kaydet"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "Kullanıcı ayrıcalığını kaydet"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "Avuç içini güncelle"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "Avuç içini sil"
+
+msgid "iclock_model_deviceConfig"
+msgstr "Cihaz Yapılandırma"
+
+msgid "deviceConfig_deviceCommunicationSetting"
+msgstr "Cihaz İletişim Ayarı"
+
+msgid "deviceConfig_field_enableRegistration"
+msgstr "Kayıt Cihazı"
+
+msgid "deviceConfig_field_enableResignedFilterHelpText"
+msgstr "Ayrılan çalışan filtresi, istifa eden çalışan verileri cihazdan yüklendiğinde sistem, cihazdan kaldırmak için silme komutunu yeniden gönderir."
+
+msgid "deviceConfig_field_enableResignedFilter"
+msgstr "Ayrılan Çalışan Filtresi"
+
+msgid "deviceConfig_field_autoAdd"
+msgstr "Otomatik Eklemeye İzin Ver"
+
+msgid "deviceConfig_field_enableNameUpload"
+msgstr "Yükleme Adına İzin Ver"
+
+msgid "deviceConfig_field_enableNameUploadHelpTxt"
+msgstr "Kullanıcının adını cihazdan yüklemeyi etkinleştir"
+
+msgid "deviceConfig_field_enableCardUpload"
+msgstr "Yükleme Kartına İzin Ver"
+
+msgid "deviceConfig_field_enableCardUploadHelpTxt"
+msgstr "Kullanıcının kart numarasını cihazdan yüklemeyi etkinleştir"
+
+msgid "deviceConfig_deviceDataRetentionSetting"
+msgstr "Veri Saklama Ayarı (Verileri tutmak için 9999 kurulumu))"
+
+msgid "deviceConfig_field_transactionRetention"
+msgstr "İşlem"
+
+msgid "deviceConfig_field_transactionRetentionHelpTxt"
+msgstr "90 - 9999 Gün"
+
+msgid "deviceConfig_field_commandRetention"
+msgstr "Komut"
+
+msgid "deviceConfig_field_commandRetentionHelpTxt"
+msgstr "5 - 9999 Gün"
+
+msgid "deviceConfig_field_devLogRetention"
+msgstr "Cihaz Günlüğü"
+
+msgid "deviceConfig_field_devLogRetentionHelpTxt"
+msgstr "15 - 9999 Gün"
+
+msgid "deviceConfig_field_uploadLogRetention"
+msgstr "Yükleme Günlüğü"
+
+msgid "deviceConfig_field_uploadLogRetentionHelpTxt"
+msgstr "15 - 9999 Gün"
+
+msgid "deviceConfig_field_retentionUnit"
+msgstr "Gün"
+
+msgid "deviceConfig_bioPhotoApprovalPolicy"
+msgstr "Bio-Fotoğraf Uygulama Poliçesi"
+
+msgid "deviceConfig_field_editBioPhotoPolicy"
+msgstr "Çalışan Düzenle"
+
+msgid "deviceConfig_field_importBioPhotoPolicy"
+msgstr "Toplu İçe Aktarma"
+
+msgid "deviceConfig_field_mobileBioPhotoPolicy"
+msgstr "Mobil Kayıt"
+
+msgid "deviceConfig_field_deviceBioPhotoPolicy"
+msgstr "Cihaz Yükle"
+
+msgid "employee_disabled"
+msgstr "Çalışan Devre Dışı"
+
+msgid "employee_not_found"
+msgstr "Çalışan bulunamadı"
+
+msgid "terminal_not_found"
+msgstr "Cihaz bulunamadı"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "Ülke"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "Şehir"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "Şirket"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "Endüstri"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "İlgili Kişi"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "Tedarikçi"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "Telefon"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "E-posta"
+
+msgid "license_active_customerInfoForm_address"
+msgstr "Adres"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "SN dosya"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "Dosya adı -SN.xml ile bitmelidir"
+
+msgid "license_active_generatingUPKFailed"
+msgstr "UPK oluşturulamadı"
+
+msgid "license_active_systemFileWasModified"
+msgstr "Sistem dosyası değiştirildi, lütfen sistem dosyasını yetkisiz değiştirmeyin."
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "Lisans dosyası kullanılamıyor."
+
+msgid "license_active_activeSuccessful"
+msgstr "Aktive Başarılı"
+
+msgid "license_active_onlineActiveFailedServerNoResponse"
+msgstr "Çevrimiçi etkinleştirme başarısız, lisans sunucusu yanıt vermiyor."
+
+msgid "license_active_snFileIsRequired"
+msgstr "SN dosyası gerekli"
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "Çevrimiçi etkinleştirme başarısız, lisans sunucusu yapılandırılmamış."
+
+msgid "online_active_onlineActiveFailed"
+msgstr "Online etkinleştirme başarısız."
+
+msgid "onlineActive_error_inactiveLicense"
+msgstr "Lisans devredışı."
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "Etkinleştirme başarılı"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "Çevrimiçi etkinleştirme başarısız oldu, sistem istisnası."
+
+msgid "license_active_snFileIsWrong"
+msgstr "SN dosyası yanlış"
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "SN dosyasındaki UPK bulunamadı"
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "UPK dosyası oluşturma başarısız, sistem istisnası"
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "Lisans Dosyası"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "Dosya adı -License.xml ile bitmelidir"
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "Lisans bulunamadı, yükseltilemiyor."
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "Lisans Yükseltme başarısız oldu."
+
+msgid "online_active_licenseNotFound"
+msgstr "Lisans bulunamadı"
+
+msgid "license_expiredDate_permanent"
+msgstr "Daimi"
+
+msgid "license_capacity_unlimited"
+msgstr "Sınırsız"
+
+msgid "terminal_field_ipAddress"
+msgstr "Cihaz IP"
+
+msgid "terminal_field_realIPAddress"
+msgstr "Gerçek IP"
+
+msgid "terminal_field_timezone"
+msgstr "Saat Dilimi"
+
+msgid "terminal_field_area"
+msgstr "Alan"
+
+msgid "terminal_field_heartbeat"
+msgstr "Heartbeat Sorgula"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "Saniye"
+
+msgid "terminal_field_transferMode"
+msgstr "Transfer Modu"
+
+msgid "deviceModel_option_attendance"
+msgstr "Katılım"
+
+msgid "deviceModel_option_accessController"
+msgstr "Erişim Kontrolörü"
+
+msgid "deviceModel_option_informationScreen"
+msgstr "Bilgi Ekranı"
+
+msgid "deviceModel_option_AICamera"
+msgstr "AI Kamera"
+
+msgid "transferMode_option_realTime"
+msgstr "Gerçek Zamanlı"
+
+msgid "transferMode_option_timing"
+msgstr "Zamanlama"
+
+msgid "dataSources_option_terminal"
+msgstr "Cihaz"
+
+msgid "dataSources_option_manualLog"
+msgstr "Manuel Log"
+
+msgid "dataSources_option_mobile"
+msgstr "Mobil"
+
+msgid "terminal_field_transferInterval"
+msgstr "Transfer Aralığı"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "Dakika"
+
+msgid "bioData_field_employee"
+msgstr "Çalışan"
+
+msgid "bioData_field_bioTemplate"
+msgstr "Şablon"
+
+msgid "bioData_field_bioIndex"
+msgstr "Bio-Dizini"
+
+msgid "bioData_field_templateIndex"
+msgstr "Şablon Dizini"
+
+msgid "bioData_field_bioType"
+msgstr "Bio-Tipi"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "Ana Versiyon"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "İkincil Versiyon"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "Biçim"
+
+msgid "bioData_field_isValid"
+msgstr "Geçerli mi ?"
+
+msgid "bioData_field_isDuress"
+msgstr "Acil Durum mu ?"
+
+msgid "bioData_field_createTime"
+msgstr "Zaman oluştur"
+
+msgid "bioData_field_updateTime"
+msgstr "Zaman Güncelle"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "Seri Numarası"
+
+msgid "iclock_model_bioData"
+msgstr "Bio-Veri"
+
+msgid "privateMessage_field_lastSend"
+msgstr "Son Gönderme"
+
+msgid "iclock_model_privateMessage"
+msgstr "Özel Mesaj"
+
+msgid "publicMessage_field_lastSend"
+msgstr "Son Göndermd"
+
+msgid "iclock_model_publicMessage"
+msgstr "Özel Mesaj"
+
+msgid "terminal_field_state"
+msgstr "Durum"
+
+msgid "terminal_field_transferTime"
+msgstr "Transfer Zamanı"
+
+msgid "terminal_field_productType"
+msgstr "Ürün Tipi"
+
+msgid "terminal_field_isAttendance"
+msgstr "Katılım Cihazı"
+
+msgid "terminal_field_enableAccessControl"
+msgstr "Erişim Kontrolünü Etkinleştir"
+
+msgid "terminal_field_isRegistration"
+msgstr "Kayıt Cihazı"
+
+msgid "terminal_field_purpose"
+msgstr "Amaç"
+
+msgid "terminal_field_accessControllerType"
+msgstr "Erişim Kontrolörü"
+
+msgid "terminal_field_authentication"
+msgstr "Doğrulama Modu"
+
+msgid "terminal_field_style"
+msgstr "Tip"
+
+msgid "terminal_field_uploadFlag"
+msgstr "Bayrak Yükle"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "Firmware Versiyonu"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "Push Protokol"
+
+msgid "terminal_field_pushVersion"
+msgstr "Push Versiyon"
+
+msgid "terminal_field_language"
+msgstr "Dil"
+
+msgid "terminal_field_isTft"
+msgstr "Tft mi ?"
+
+msgid "terminal_field_terminalName"
+msgstr "Cihaz Modeli"
+
+msgid "terminal_field_platform"
+msgstr "Platform"
+
+msgid "terminal_field_oemVendor"
+msgstr "Satıcı"
+
+msgid "terminal_field_logStamp"
+msgstr "Kayıt Damgası"
+
+msgid "terminal_field_operationLogStamp"
+msgstr "İşlem kaydı Damgası"
+
+msgid "terminal_field_captureStamp"
+msgstr "Damga Yakala"
+
+msgid "terminal_field_userCount"
+msgstr "Kullanıcı Sayısı"
+
+msgid "terminal_field_userCapacity"
+msgstr "Kulllanıcı Kapasitesi"
+
+msgid "terminal_field_photoFuncOn"
+msgstr "Resim Fonksiyonu Açık"
+
+msgid "terminal_field_transactionCount"
+msgstr "İşlem Sayısı"
+
+msgid "terminal_field_transactionCapacity"
+msgstr "İşlem Kapasitesi"
+
+msgid "terminal_field_fpFuncOn"
+msgstr "Parmakizi Fonksiyonu Açık"
+
+msgid "terminal_field_fingerprintCount"
+msgstr "Pİ Sayısı"
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr "Pİ Kapasitesi"
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr "Pİ Algoritma Versiyonu"
+
+msgid "terminal_field_faceFuncOn"
+msgstr "Yüz Fonksiyonu Açık"
+
+msgid "terminal_field_faceCount"
+msgstr "Yüz Sayısı"
+
+msgid "terminal_field_faceCapacity"
+msgstr "Yüz Kapasitesi"
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr "Yüz Algoritma Sayısı"
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr "Parmak Damar Fonksiyonu Açık"
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "PD Sayısı"
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr "PD Sayısı"
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr "PD Algoritma Versiyonu"
+
+msgid "terminal_field_palmFuncOn"
+msgstr "Avuç İçi Fonksiyonu Açık"
+
+msgid "terminal_field_palmCount"
+msgstr "Avuç İçi Sayısı"
+
+msgid "terminal_field_palmCapacity"
+msgstr "Avuç İçi Kapasitesi"
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr "Avuç İçi Algoritma Versiyonu"
+
+msgid "terminal_field_lockFunc"
+msgstr "Erişim Kontrol Desteği"
+
+msgid "terminal_field_lastActivity"
+msgstr "Son Aktivite"
+
+msgid "terminal_field_uploadTime"
+msgstr "Yükleme Zamanı"
+
+msgid "terminal_field_syncTime"
+msgstr "Son Eşitleme"
+
+msgid "terminal_field_cmdCount"
+msgstr "Cmd"
+
+msgid "iclock_model_terminal"
+msgstr "Cihaz"
+
+msgid "command_field_terminal"
+msgstr "Cihaz"
+
+msgid "command_field_content"
+msgstr "İçerik"
+
+msgid "command_field_commit_time"
+msgstr "İşlem Zamanı"
+
+msgid "command_field_transferTime"
+msgstr "Transfer Zamanı"
+
+msgid "command_field_returnTime"
+msgstr "Dönüş Zamanı"
+
+msgid "command_field_returnValue"
+msgstr "Dönüş Değeri"
+
+msgid "iclock_model_terminalCommand"
+msgstr "Komut"
+
+msgid "menu_device_errorCommandLog"
+msgstr "Hata Kaydı"
+
+msgid "terminal_model_errorCommandLog"
+msgstr "Hata Kaydı"
+
+msgid "errorCommandLog_field_terminal"
+msgstr "Cihaz"
+
+msgid "errorCommandLog_field_errorCode"
+msgstr "Hata Kodu"
+
+msgid "errorCommandLog_field_errorMsg"
+msgstr "Hata Mesajı"
+
+msgid "errorCommandLog_field_dataOrigin"
+msgstr "Hata Komudu"
+
+msgid "errorCommandLog_field_cmd"
+msgstr "ID Komutu"
+
+msgid "errorCommandLog_field_additional"
+msgstr "Ekstra Mesajı"
+
+msgid "errorCommandLog_field_uploadTime"
+msgstr "Yükleme Zamanı"
+
+msgid "terminalEmployee_field_sn"
+msgstr "Seri Numarası"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "Çalışan ID"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "Ayrıcalık"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "Çalışan"
+
+msgid "terminalLog_field_terminal"
+msgstr "Cihaz"
+
+msgid "terminalLog_field_timezone"
+msgstr "Saat Dilimi"
+
+msgid "terminalLog_field_administrator"
+msgstr "Yönetici"
+
+msgid "terminalLog_field_actionName"
+msgstr "Aksiyon"
+
+msgid "terminalLog_field_actionTime"
+msgstr "Aksiyon Zamanı"
+
+msgid "terminalLog_field_object"
+msgstr "Nesne"
+
+msgid "terminalLog_field_param1"
+msgstr "Parametreler"
+
+msgid "terminalLog_field_param2"
+msgstr "Parametreler"
+
+msgid "terminalLog_field_param3"
+msgstr "Parametreler"
+
+msgid "terminalLog_field_uploadTime"
+msgstr "Yükleme Zamanı"
+
+msgid "iclock_model_terminalLog"
+msgstr "Cihaz Kaydı"
+
+msgid "terminalParameter_field_terminal"
+msgstr "Cihaz"
+
+msgid "terminalParameter_field_type"
+msgstr "Tip"
+
+msgid "terminalParameter_field_name"
+msgstr "Ad"
+
+msgid "terminalParameter_field_value"
+msgstr "Değer"
+
+msgid "iclock_model_terminalParameter"
+msgstr "Cihaz Parametresi"
+
+msgid "transaction_field_employeeCode"
+msgstr "Çalışan ID"
+
+msgid "transaction_field_employee"
+msgstr "Çalışan"
+
+msgid "transaction_field_punchTime"
+msgstr "Okutma Zamanı"
+
+msgid "transaction_field_punchState"
+msgstr "Okutma Durumu"
+
+msgid "transaction_field_verifyType"
+msgstr "Doğrulama Tipi"
+
+msgid "transaction_field_workCode"
+msgstr "Çalışma Kodu"
+
+msgid "transaction_field_terminalSN"
+msgstr "Seri Numarası"
+
+msgid "transaction_terminal_alias"
+msgstr "Cihaz Adı"
+
+msgid "transaction_field_terminal"
+msgstr "Cihaz"
+
+msgid "transaction_field_areaAlias"
+msgstr "Alan"
+
+msgid "transaction_field_longitude"
+msgstr "Boylam"
+
+msgid "transaction_field_latitude"
+msgstr "Enlem"
+
+msgid "transaction_field_gpsLocation"
+msgstr "GPS"
+
+msgid "transaction_field_mobile"
+msgstr "Mobil"
+
+msgid "transaction_field_source"
+msgstr "Kaynak"
+
+msgid "transaction_field_purpose"
+msgstr "Amaç"
+
+msgid "transaction_field_crcCode"
+msgstr "CRC Kod"
+
+msgid "transaction_field_isAttendance"
+msgstr "Katılım"
+
+msgid "transaction_field_reserved"
+msgstr "Rezerve"
+
+msgid "transaction_field_uploadTime"
+msgstr "Yükleme Zamanı"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "Eşitleme Durumu"
+
+msgid "transaction_field_synchronized_time"
+msgstr "Eşitleme Zamanı"
+
+msgid "iclock_model_transaction"
+msgstr "İşlem"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "Cihaz"
+
+msgid "terminalUploadLog_field_event"
+msgstr "Etkinlik"
+
+msgid "terminalUploadLog_field_content"
+msgstr "İçerik"
+
+msgid "terminalUploadLog_field_count"
+msgstr "Sayaç"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "Hata Sayısı"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "Yükleme Süresi"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "Cihaz Yükleme Günlüğü"
+
+msgid "terminalWorkCode_field_code"
+msgstr "Kod"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "Ad"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "Son Aktivite"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "İş Kodu"
+
+msgid "employee_photo"
+msgstr "Fotoğraf"
+
+msgid "biometric_template"
+msgstr "Bio-Şablon"
+
+msgid "fingerprint"
+msgstr "Parmak İzi"
+
+msgid "attendance_capture"
+msgstr "Yakala"
+
+msgid "transaction_field_firstName"
+msgstr "Ad"
+
+msgid "transaction_field_lastName"
+msgstr "Soyad"
+
+msgid "transaction_field_department"
+msgstr "Departman"
+
+msgid "transaction_field_position"
+msgstr "Pozisyon"
+
+msgid "transaction_field_punchDate"
+msgstr "Okutma Tarihi"
+
+msgid "transaction_field_area"
+msgstr "Alan"
+
+msgid "chart_present"
+msgstr "Mevcut"
+
+msgid "chart_today"
+msgstr "Bugün"
+
+msgid "chart_absent"
+msgstr "Devamsız"
+
+msgid "dashboard_exception"
+msgstr "Katılım İstisnası"
+
+msgid "dashboard_history"
+msgstr "Tarih"
+
+msgid "chart_late"
+msgstr "Geç"
+
+msgid "chart_early_leave"
+msgstr "Erken Çıkış"
+
+msgid "dashboard_real_time_monitor"
+msgstr "Gerçek Zamanlı Monitör"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "Konu"
+
+msgid "announcement_filed_content"
+msgstr "İçerik"
+
+msgid "announcement_filed_emp"
+msgstr "Çalışan ID"
+
+msgid "mobile_action_publicNotice"
+msgstr "Herkese Açık Bildirimi"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "Push Genel Uyarı"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "Push Genel Uyarı"
+
+msgid "mobile_action_privateNotice"
+msgstr "Push Özel Uyarı"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "Push Özel Uyarı"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "Push Özel Uyarı"
+
+msgid "title_required"
+msgstr "Başlık gerekli"
+
+msgid "content_required"
+msgstr "İçerik gerekli"
+
+msgid "appNotice_field_content"
+msgstr "İçerik"
+
+msgid "mobile_action_pushNotification"
+msgstr "Push Bildirimi"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "Push Bildirimi"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "Push Bildirimi"
+
+msgid "applist_action_forceOffline"
+msgstr "ÇEvrimdışı olmaya zorla"
+
+msgid "force_offline_confirm {0} {1}"
+msgstr "Cihazı çevrimdışı olmaya zorlamak istediğinize emin misiniz {0} {1}"
+
+msgid "app_account_disable_confirm {0} {1}"
+msgstr "{0} {1} cihazını devre dışı bırakmak istediğinize emin misiniz?"
+
+msgid "app_account_enable_confirm {0} {1}"
+msgstr "{0} {1} cihazını etkinleştirdiğinizden emin misiniz?"
+
+msgid "applist_action_disable"
+msgstr "Devre Dışı"
+
+msgid "applist_action_enable"
+msgstr "Etkin"
+
+msgid "announce_all_emp"
+msgstr "Tümü"
+
+msgid "announcement_filed_sender"
+msgstr "Gönderici"
+
+msgid "announcement_category_public"
+msgstr "Genel"
+
+msgid "announcement_category_private"
+msgstr "Özel"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "Android"
+
+msgid "activeStatus_option_active"
+msgstr "Aktif"
+
+msgid "activeStatus_option_inactive"
+msgstr "İnaktif"
+
+msgid "notification_category_leave"
+msgstr "Çıkış"
+
+msgid "notification_category_overtime"
+msgstr "Mesai"
+
+msgid "notification_category_manualLog"
+msgstr "Manuel Kayıt"
+
+msgid "notification_category_training"
+msgstr "Eğitim"
+
+msgid "notification_category_schedule"
+msgstr "Takvim"
+
+msgid "notification_category_announcement"
+msgstr "Duyuru"
+
+msgid "notification_category_exception"
+msgstr "İstisna"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "Genel Duyuru"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "Özel Duyuru"
+
+msgid "notification_subCategory_late"
+msgstr "Geç"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "Erken Çıkış"
+
+msgid "notification_subCategory_absent"
+msgstr "Devamsızlık"
+
+msgid "notification_readStatus_unread"
+msgstr "Okunmamış"
+
+msgid "notification_readStatus_read"
+msgstr "Oku"
+
+msgid "appActionLog_status_exception"
+msgstr "İstisna"
+
+msgid "appActionLog_status_successful"
+msgstr "Başarılı"
+
+msgid "announcement_field_category"
+msgstr "Kategori"
+
+msgid "announcement_field_sender"
+msgstr "Gönderici"
+
+msgid "announcement_field_systemSender"
+msgstr "Sistem Göndericisi"
+
+msgid "announcement_field_noticeTime"
+msgstr "Uyarı Zamanı"
+
+msgid "app_model_announcement"
+msgstr "Duyuru"
+
+msgid "actionLog_field_user"
+msgstr "Kullanıcı"
+
+msgid "actionLog_field_client"
+msgstr "Müşteri"
+
+msgid "actionLog_field_action"
+msgstr "Hareket"
+
+msgid "actionLog_field_params"
+msgstr "Parametreler"
+
+msgid "actionLog_field_describe"
+msgstr "Tanımla"
+
+msgid "actionLog_field_status"
+msgstr "Durum"
+
+msgid "actionLog_field_actionTime"
+msgstr "Hareket Zamanı"
+
+msgid "actionLog_field_remoteIp"
+msgstr "Uzak Ip"
+
+msgid "app_model_actionLog"
+msgstr "Hareket Kaydı"
+
+msgid "appList_field_userName"
+msgstr "Kullanıcı Adı"
+
+msgid "appList_field_loginTime"
+msgstr "Giriş Zamanı"
+
+msgid "appList_field_lastActive"
+msgstr "Son Hareket"
+
+msgid "appList_field_token"
+msgstr "İşaret"
+
+msgid "appList_field_deviceToken"
+msgstr "Cihaz İşareti"
+
+msgid "appList_field_clientId"
+msgstr "Alıcı Id"
+
+msgid "appList_field_clientCategory"
+msgstr "Alıcı Kategorisi"
+
+msgid "appList_field_runStatus"
+msgstr "Çalışma Durumu"
+
+msgid "appList_field_accessStatus"
+msgstr "APP Durumu"
+
+msgid "app_model_appList"
+msgstr "App Listesi"
+
+msgid "appNotice_field_receiver"
+msgstr "Alıcı"
+
+msgid "appNotice_field_sender"
+msgstr "Gönderici"
+
+msgid "appNotice_field_systemSender"
+msgstr "Sistem Göndericisi"
+
+msgid "appNotice_field_category"
+msgstr "Kategori"
+
+msgid "appNotice_field_subCategory"
+msgstr "Alt Kategori"
+
+msgid "appNotice_field_source"
+msgstr "Kaynak"
+
+msgid "appNotice_field_sendTime"
+msgstr "Gönderim Zamanı"
+
+msgid "appNotice_field_readStatus"
+msgstr "Okuma Durumu"
+
+msgid "appNotice_field_readTime"
+msgstr "Okuma Zamanı"
+
+msgid "app_model_notification"
+msgstr "Uyarı"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "Personel Bölgesi"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "Personel Bölgesi"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "Ekle"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "Ekle"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "Ekle"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "Personel"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "Boylam"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "Enlem"
+
+msgid "gpsForEmployee_field_location"
+msgstr "Konum"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "MEsafe(Metre)"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "Metre"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "Başlama Tarihi"
+
+msgid "gpsForEmployee_field_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "Tarih aralığı çakışması"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "Departman Bölgesi"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "Departman Bölgesi"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "Ekle"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "Ekle"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "Ekle"
+
+msgid "gpsForDepartment_field_department"
+msgstr "Departman"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "Boylam"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "Enlem"
+
+msgid "gpsForDepartment_field_location"
+msgstr "Konum"
+
+msgid "gpsForDepartment_field_distance"
+msgstr "Mesafe(Metre)"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "Metre"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "Başlama Tarihi"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "Tarih aralığı çakışması"
+
+msgid "gps_distance_invalid"
+msgstr "Geçersiz mesafe."
+
+msgid "gps_date_invalid_range"
+msgstr "Geçersiz tarih aralığı"
+
+msgid "gps_start_and_end_required"
+msgstr "Başlangıç tarihi ve Bitiş tarihi gerekli."
+
+msgid "gps_latitude_invalid_range"
+msgstr "Tolerans değeri [-90,90] aralığında olmalıdır."
+
+msgid "departmentGps_select_dept"
+msgstr "Lütfen Departman seçin."
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "Ağ istikrarlı değil, lütfen tekrar deneyin."
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "Konum dışı"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "Personel %(emp)s çalışma takvimi çakışıyor"
+
+msgid "menu_group_psnl_organization"
+msgstr "Organizasyon"
+
+msgid "menu_psnl_department"
+msgstr "Departman"
+
+msgid "menu_psnl_position"
+msgstr "Pozisyon"
+
+msgid "menu_psnl_area"
+msgstr "Alan"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "Personel"
+
+msgid "menu_psnl_employee"
+msgstr "Personel"
+
+msgid "menu_psnl_resign"
+msgstr "Çekilmek"
+
+msgid "menu_psnl_certification"
+msgstr "Belge"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "Personel belgesi"
+
+msgid "menu_iclock_bioPhoto"
+msgstr "Bio-Foto"
+
+msgid "menu_group_workflow"
+msgstr "İş Akışı"
+
+msgid "menu_workflow_workflowRole"
+msgstr "İş Akışı Rolü"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "İş Akışı Oluşturucu"
+
+msgid "menu_workflow_workflowNode"
+msgstr "İş Akışı Noktası"
+
+msgid "menu_group_configuration"
+msgstr "Yapılandırmalar"
+
+msgid "area_action_adjustEmployee"
+msgstr "Personel Transferi"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "Çalışanı seçilen alana aktarma"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "Personel Transferi"
+
+msgid "select_none_employee"
+msgstr "Lütfen personel seçin"
+
+msgid "bioPhoto_field_userPhoto"
+msgstr "Kullanıcı Fotoğrafı"
+
+msgid "bioPhoto_field_bioPhoto"
+msgstr "Bio-Foto"
+
+msgid "bioPhoto_field_approvalState"
+msgstr "Onay Durumu"
+
+msgid "bioPhoto_approvalState_approvalPassed"
+msgstr "Onay Geçti"
+
+msgid "bioPhoto_approvalState_reject"
+msgstr "Reddedildi"
+
+msgid "bioPhoto_field_remark"
+msgstr "Düşünce"
+
+msgid "biophoto_approve"
+msgstr "Onaylamak"
+
+msgid "approval_can_not_approve_again"
+msgstr "Onay tekrar onaylanamıyor"
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "Çalışanın fotoğrafı (%(emp_code)s) onaylandı"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "Çalışanın fotoğrafı (%(emp_code)s) zaten var)"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "Çalışanın fotoğrafı (%(emp_code)s) bulunamadı"
+
+msgid "bioPhoto_action_qrCode"
+msgstr "QR Kodu"
+
+msgid "dataImport_action_importBioPhoto"
+msgstr "Bio-Fotoğrafı İçe Aktar"
+
+msgid "dataImport_action_importBioPhotoHelpTxt"
+msgstr "Biyo-fotoğrafı personel için içe aktar."
+
+msgid "dataImport_action_importBioPhotoDescription"
+msgstr "Biyo-fotoğrafı personel için içe aktar."
+
+msgid "bioPhotoImport_error_noPhotoSelected"
+msgstr "Lütfen yüklenecek fotoğrafı seçin."
+
+msgid "bioPhotoImport_error_userNoFound_{pin}"
+msgstr "Personel ({pin}) bulunamadı."
+
+msgid "bioPhotoImport_button_upload"
+msgstr "Yükleme"
+
+msgid "bioPhotoImport_button_clear"
+msgstr "Temizle"
+
+msgid "bioPhotoImport_helpText_tip1"
+msgstr "1.Fotoğrafın adı personel kimliği olmalıdır."
+
+msgid "department_action_adjustEmployee"
+msgstr "Personel Transferi"
+
+msgid "dataImport_action_import"
+msgstr "İçe Aktar"
+
+msgid "resign_action_disableAttendance"
+msgstr "Katılımı Devre Dışı Bırak"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "Personeli seçilen departmana aktarma"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "Personel Transferi"
+
+msgid "dataImport_field_file"
+msgstr "Dosya"
+
+msgid "data_import_fileHelpTxt"
+msgstr "Lütfen şablonu indirin ve verileri doldurmak için şablonu takip edin."
+
+msgid "dataImport_action_importEmployee"
+msgstr "Personeli İçeri Aktar"
+
+msgid "dataImport_action_importEmployeeHelpTxt"
+msgstr "Personeli Excel Dosyası ile İçeri Aktar"
+
+msgid "dataImport_action_importEmployeeDescription"
+msgstr "Personeli Excel Dosyası ile İçeri Aktar"
+
+msgid "dataImport_action_importDocument"
+msgstr "Belgeyi İçe Aktar"
+
+msgid "dataImport_action_importDocumentHelpTxt"
+msgstr "Süresi dolmuş uyarı ayarını excel dosyası ile içe aktar"
+
+msgid "dataImport_action_importDocumentDescription"
+msgstr "Süresi dolmuş uyarı ayarını excel dosyası ile içe aktar"
+
+msgid "dataImport_action_importPhoto"
+msgstr "Resim Yükle"
+
+msgid "dataImport_action_importPhotoHelpTxt"
+msgstr "Personel için resim yükleme."
+
+msgid "dataImport_action_importPhotoDescription"
+msgstr "Personel için resim yükleme."
+
+msgid "empPhotoImport_error_noPhoto"
+msgstr "Lütfen yüklenecek fotoğrafı seçin."
+
+msgid "empPhotoImport_error_{pin}NotFound"
+msgstr "Personel({pin}) Bulunamadı."
+
+msgid "empPhotoImport_error_{pin}SizeExceed25KB"
+msgstr "Personel({pin}) resim boyutu 25KB geçmemeli."
+
+msgid "empPhotoImport_button_upload"
+msgstr "Yükle"
+
+msgid "empPhotoImport_button_clear"
+msgstr "Temizle"
+
+msgid "empPhotoImport_helpText_title"
+msgstr "Uyarı"
+
+msgid "empPhotoImport_helpText_tip1"
+msgstr "1.Resim ismi personel ID olmalıdır."
+
+msgid "empPhotoImport_helpText_tip2"
+msgstr "2.Resim boyutu 25kb geçmemelidir."
+
+msgid "dataImport_field_overwrite"
+msgstr "Aşırı Yükleme"
+
+msgid "dataImport_field_ignoreError"
+msgstr "Hatayı yoksay"
+
+msgid "employee_action_resynchronize2Device"
+msgstr "Cihazı tekrar senkronize et."
+
+msgid "employee_action_resynchronize2DeviceConfirmation"
+msgstr "Kullanıcı bilgileri cihaza tekrar senkronize edilecek emin misiniz?"
+
+msgid "dataRange_option_all"
+msgstr "Tümü"
+
+msgid "dataRange_option_specified"
+msgstr "Belirtilenler"
+
+msgid "reUploadFromDevice_field_device"
+msgstr "Cihaz"
+
+msgid "reUploadFromDevice_field_deviceSN"
+msgstr "Seri Numara"
+
+msgid "eUploadFromDevice_field_deviceSNHelpTxt"
+msgstr "Birden fazla cihazın seri numarasını birleştirmek için ',' kullanılabilir, eğer bu değer boş ise personel alanı baz alınacaktır."
+
+msgid "employee_action_reUploadFromDevice"
+msgstr "Cihazda tekrar yükle"
+
+msgid "employee_action_reUploadFromDeviceConfirmation"
+msgstr "Kullanıcı bilgileri cihazdan tekrar senkronize edilecek emin misiniz?"
+
+msgid "employeeResign_field_date"
+msgstr "İstifa Tarihi"
+
+msgid "employeeResign_field_leaveType"
+msgstr "İstifa Tipi"
+
+msgid "employeeResign_field_reason"
+msgstr "Sebep"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "Zaman Kontrol"
+
+msgid "employee_action_resignation"
+msgstr "İstifa"
+
+msgid "employee_action_transferDepartment"
+msgstr "Departman Transfer"
+
+msgid "transferDepartment_field_remarks"
+msgstr "Açıklama"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "Alan gerekli"
+
+msgid "employee_action_transferArea"
+msgstr "Alan Transferi"
+
+msgid "transferArea_field_remarks"
+msgstr "Açıklama"
+
+msgid "employee_action_transferPosition"
+msgstr "Pozisyon Transfer"
+
+msgid "transferPosition_field_remarks"
+msgstr "Açıklama"
+
+msgid "employee_action_passProbation"
+msgstr "Denetimli Geçiş"
+
+msgid "employee_action_passProbationConfirmation"
+msgstr "Personel Denetimli Geçiş verilecek, Emin Misin?"
+
+msgid "bio_templateType_fingerprint"
+msgstr "Parmakizi"
+
+msgid "bio_templateType_face"
+msgstr "Yüz"
+
+msgid "bio_templateType_fingerVein"
+msgstr "Parmak Damar"
+
+msgid "bio_templateType_palm"
+msgstr "Avuçiçi"
+
+msgid "delete_biometric_templates"
+msgstr "Biometrik Veriyi Sil"
+
+msgid "enable_mobile_application"
+msgstr "Aktif"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "Mobil uygulama aktifleştirilecek, emin misin? {0} {1}"
+
+msgid "disable_mobile_application"
+msgstr "Pasif"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr "Mobil uygulama kapatılacak, emin misin? {0} {1}"
+
+msgid "position_action_adjustEmployee"
+msgstr "Personel Transfer"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "Personeli seçilen pozisyona aktar."
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "Personel Transfer"
+
+msgid "resign_field_employee"
+msgstr "Personel"
+
+msgid "resign_field_resignDate"
+msgstr "İstifa Tarihi"
+
+msgid "resign_field_resignType"
+msgstr "İstifa Tipi"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "Zaman Kontrol"
+
+msgid "resign_field_resignReason"
+msgstr "İstifa Sebebi"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "Ekle"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "Ekle"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "Ekle"
+
+msgid "resign_action_reinstatement"
+msgstr "Varsayılan"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "Varsayılan"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "Varsayılan"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "Varsayılan ayarlar kullanılacak, Emin misiniz {0} {1}?"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "Zaman Kontrol fonksiyonu kapatılacak emin misiniz {0} {1}"
+
+msgid "area_field_code"
+msgstr "Alan Kodu"
+
+msgid "area_field_name"
+msgstr "Alan İsmi"
+
+msgid "area_field_parentArea"
+msgstr "Üstün"
+
+msgid "area_field_resignEmployeeCount"
+msgstr "İstifa Mik."
+
+msgid "area_field_employeeCount"
+msgstr "Personel Mik.."
+
+msgid "area_field_deviceCount"
+msgstr "Cihaz Mik."
+
+msgid "area_name_defaultValue"
+msgstr "Yetkilendirilmemiş"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "Sıra hatası %(index)s, Alan kodu boş"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, Maksimum alan kodu uzunluğu %(length)s"
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "Sıra Hatası %(index)s, Alan ismi boş"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "Sıra Hatası%(index)s, Maksimum Alan ismi uzunluğu %(length)s"
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr "%(index)s Veri satırları kendin yetkisinden veya %(index_name)s alt yetkilerden üstün ayarlanamaz."
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "Database Hatası: SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "Silme Başarısız, Personel tarafından kullanılıyor"
+
+msgid "certification_field_code"
+msgstr "Sertifika Kodu"
+
+msgid "certification_field_name"
+msgstr "Sertifika İsmi"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "Satır bilgi hatası %(index)s, Sert. Kodu boş"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "Sıra hatası %(index)s, Maksimum sertifika kodu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "Sıra harası %(index)s, Format %(male)s/%(female)s olmalıdır"
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr "Sıra hatası %(index)s, Maksimum sertifika ismi %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr "Sıra hatası %(index)s, Maksimum sertifika kodu %(length)s %(length)s"
+
+msgid "department_field_code"
+msgstr "Departman Kodu"
+
+msgid "department_filed_name"
+msgstr "Departman İsmi"
+
+msgid "department_field_parentDepartment"
+msgstr "Üstün"
+
+msgid "default_department"
+msgstr "Departman"
+
+msgid "department_filed_employeeCount"
+msgstr "Personel Mik."
+
+msgid "department_filed_resignedCount"
+msgstr "İstifa Mik"
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "Sıra Hatası %(index)s, Departman kodu boş."
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, Maksimum departman kodu %(length)s"
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "Sıra Hatası %(index)s, Departman ismi boş"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, Maksimum departman ismi %(length)s"
+
+msgid "op_menu_group_import"
+msgstr "Yükle"
+
+msgid "op_menu_group_adjustment"
+msgstr "Personel Aktarım"
+
+msgid "op_menu_group_app"
+msgstr "Uygulama"
+
+msgid "op_menu_group_more"
+msgstr "Daha"
+
+msgid "emp_field_fingerprint"
+msgstr "Parmakizi"
+
+msgid "emp_field_face"
+msgstr "Yüz"
+
+msgid "emp_field_palm"
+msgstr "Avuçiçi"
+
+msgid "emp_field_vlFace"
+msgstr "VL Yüz"
+
+msgid "emp_field_area"
+msgstr "Alan"
+
+msgid "emp_field_cardNumber"
+msgstr "Kart NO."
+
+msgid "area_code"
+msgstr "Alan Num."
+
+msgid "emp_field_birthday"
+msgstr "Doğum Günü"
+
+msgid "emp_field_gender"
+msgstr "Cinsiyet"
+
+msgid "emp_field_mobile"
+msgstr "Mobil"
+
+msgid "emp_field_email"
+msgstr "E-posta"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "Sıra Hatası %(index)s personel kodu boş"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, Maksimum personel kodu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "Satırda personel ismi boş(%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "Satır Hatası %(index)s, Maksimum isim uzunluğu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, Maksimum soyisim uzunluğu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, Maksimum pozisyon kodu uzunluğu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, maksimum posizyon uznuluğu%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, Maksimum kart numara uzunluğu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, maksimum mobil uzunluğu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr "Sıra Hatası %(index)s, maksimum email uzunluğu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "Satırdaki email türü %(index)s yanlış"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "Satırdaki Doğum tarih formatı %(index)s yyyy-aa-gg gibi olmalıdır"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "Satırdaki iş başı tarih formatı %(index)s yyyy-aa-gg gibi olmalıdır"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr "ESatır bilgi hatası %(index)s, Maksimum alan isim uzunluğu %(length)s"
+
+msgid "employeeCert_field_employee"
+msgstr "Personel"
+
+msgid "employeeCert_field_expireOn"
+msgstr "Bitiş Tarihi"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "Email Uyarısı"
+
+msgid "employeeCert_field_before"
+msgstr "Önce Uyarı"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "Ekle"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "Ekle"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "Ekle"
+
+msgid "certification"
+msgstr "Sertifika"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr "Satır bilgi hatası %(index)s Personel ID mevcut değil"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr "Satır bilgi hatası %(index)s Sertifika boş "
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr "Satır bilgi hatası %(index)s sertifika kodu mevcut değil"
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr "Satır bilgi hatası %(index)s iş başı tarihi yanlış"
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr "Satır bilgi hatası %(index)s email uyarısı yanlış, format %(no)s/%(yes)s gibi olmalıdır"
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "Satır bilgi hatası %(index)s"
+
+msgid "position_field_code"
+msgstr "Pozisyon Kodu"
+
+msgid "position_field_name"
+msgstr "Pozisyon İsmi"
+
+msgid "position_field_parentPosition"
+msgstr "Üstün"
+
+msgid "position_field_employeeCount"
+msgstr "Personel Mik.."
+
+msgid "position_field_resignedCount"
+msgstr "İstifa Mik.."
+
+msgid "position_default_value"
+msgstr "Pozisyon"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "Satır bilgi hatası %(index)s, pozisyon kodu boş"
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "Satır bilgi hatası %(index)s, pozisyon ismi boş"
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "Satır bilgi hatası %s, tarih formatı yyyy-aa-gg gibi olmalıdır"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr "Satır bilgi hatası %(index)s, istifa sebep uzunluğu maksimum %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "Satır bilgi hatası %(index)s, personel numarası mevcut değil"
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "Satır bilgi hatası %(index)s, istifa tarihi boş"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr "Satır bilgi hatası %(index)s, istifa tarhi formatı %(expect)s gibi olmalıdır"
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "İstifa tipi satırı boş(%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr "Satır bilgi hatası %(index)s, Zaman kontrol %(expect)s gibi olmalıdır"
+
+msgid "department_field_name"
+msgstr "Departman İsmi"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "Yoksay"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "Üzerine Yaz"
+
+msgid "devicePrivilege_option_employee"
+msgstr "Personel"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "Kayıt"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "Sistem Yöneticisi"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "Super Yönetici"
+
+msgid "employee_genderOption_male"
+msgstr "Erkek"
+
+msgid "employee_genderOption_female"
+msgstr "Kadın"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "Kalıcı"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "Geçici"
+
+msgid "employee_appStatusOption_enable"
+msgstr "Aktif"
+
+msgid "employee_appStatusOption_disable"
+msgstr "Pasif"
+
+msgid "employee_appRoleOption_employee"
+msgstr "Personel"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "Yönetici"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "Grup Modunu Onayla"
+
+msgid "employee_verificationOption_any"
+msgstr "Herhangi"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "Parmakizi/Şifre/Kart"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "Parmakizi"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "Sadece Kull ID"
+
+msgid "employee_verificationOption_password"
+msgstr "Şifre"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "Sadece Kart"
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "Parmakizi/Şifre"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "Parmakizi/Kart"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "Şifre/Kart"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "Parmakizi&Şifre"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "Parmakizi&Kart"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "Şifre&Kart"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "Kull ID&Parmakizi"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "Parmakizi&Şifre&Kart"
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "Kull ID&Parmakizi&Şifre"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "Parmakizi&Kart/Kull ID"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "Sadece Yüz"
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "Yüz&Parmakizi"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "Yüz&Şifre"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "Yüz&Kart"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "Yüz&Parmakizi&Kart"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "Yüz&Parmakizi&Şifre"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "Parmak Damar"
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "Parmak Damar&Şifre"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "Parmak Damar&Kart"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "Parmak Damar&Şifre&Kart"
+
+msgid "employee_verificationOption_palm"
+msgstr "Avuçiçi"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "Avuçiçi&Kart"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "Avuçiçi&Yüz"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "Avuçiçi&Parmakizi"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "Avuçiçi&Parmakizi&Yüz"
+
+msgid "resign_typeOption_pending"
+msgstr "Beklemede"
+
+msgid "resign_typeOption_processing"
+msgstr "İşleniyor"
+
+msgid "resign_typeOption_done"
+msgstr "Bitti"
+
+msgid "resign_typeOption_quit"
+msgstr "Çıkış"
+
+msgid "resign_typeOption_dismissed"
+msgstr "Kovuldu"
+
+msgid "resign_typeOption_resign"
+msgstr "İstifa"
+
+msgid "resign_typeOption_transfer"
+msgstr "Aktar"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "Maaşsız işe başlama"
+
+msgid "approve_pending"
+msgstr "Beklemede"
+
+msgid "approve_approval_passed"
+msgstr "Onay geçildi"
+
+msgid "approve_rejected"
+msgstr "Reddedildi"
+
+msgid "approve_auto_approved"
+msgstr "Oto. Onaylandı"
+
+msgid "module_parameter_error"
+msgstr "Parametre hatası"
+
+msgid "invalid_file_format"
+msgstr "Geçersiz dosya formatı"
+
+msgid "please_select_file"
+msgstr "Lütfen personel seç"
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "%(index)s Alan zorunludur"
+
+msgid "invalid_file_format:%(index)s"
+msgstr "Geçersiz dosya formatı: %(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "Dosya yalnızca 1 sayfa olmalıdır"
+
+msgid "file_data_must_be_more_than_two"
+msgstr "Dosya için en az 1 veri satırı olmalıdır"
+
+msgid "no_matched_fields"
+msgstr "Eşleşen dosya yok"
+
+msgid "file_data_cannot_be_empty"
+msgstr "Yükleme dosyası bulunamadı"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "Database hatası"
+
+msgid "area_field_isDefault"
+msgstr "Varsayılan"
+
+msgid "parent_can_not_itself"
+msgstr "Üstün kendisi olamaz"
+
+msgid "psnl_model_area"
+msgstr "Alan"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "%(name)s alt alan kaldırılamaz."
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s Personel içeriği kaldırılamaz"
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "%(name)s cihaz içeriği kaldırılamaz."
+
+msgid "default_area_can_not_be_removed"
+msgstr "Varsayılan alan silinemez"
+
+msgid "assigned_time"
+msgstr "Atama Zamanı"
+
+msgid "model_assign_area_to_employee"
+msgstr "Personel"
+
+msgid "bioPhoto_field_employee"
+msgstr "Personel"
+
+msgid "bioPhoto_field_firstName"
+msgstr "İsim"
+
+msgid "bioPhoto_field_lastName"
+msgstr "Soyisim"
+
+msgid "bioPhoto_field_email"
+msgstr "E-posta"
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "Seri Numara"
+
+msgid "bioPhoto_field_registerPhoto"
+msgstr "Kayıt Resmi"
+
+msgid "bioPhoto_field_registerTime"
+msgstr "Kayıt Zamanı"
+
+msgid "bioPhoto_field_approvalPhoto"
+msgstr "Onay Fotoğrafı"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "Fotoğraf"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "İşlem Zamanı"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "Onay Zamanı"
+
+msgid "iclock_model_bioPhoto"
+msgstr "Bio-Resim"
+
+msgid "psnl_model_certification"
+msgstr "Evrak"
+
+msgid "document_is_using_can_not_delete."
+msgstr "Evrak kullanılıyor, Silinemez."
+
+msgid "department_field_isDefault"
+msgstr "Varsayılan"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr "Üstün kendi ile ayarlanamaz"
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "%(name)s alt departman içeriği kaldırılamaz."
+
+msgid "default_department_can_not_be_removed."
+msgstr "Varsayılan departman silinemez."
+
+msgid "psnl_model_department"
+msgstr "Departman"
+
+msgid "emp_field_localizedName"
+msgstr "Bölgesel İsim"
+
+msgid "emp_field_passport_number"
+msgstr "Pasaport NO."
+
+msgid "emp_field_driver_license_automobile"
+msgstr "Araç Plakası"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "Motorsiklet Plakası"
+
+msgid "emp_field_photo"
+msgstr "Resim"
+
+msgid "emp_field_selfPassword"
+msgstr "Kull.-Şifresi"
+
+msgid "emp_field_devicePassword"
+msgstr "SFR"
+
+msgid "emp_field_devicePrivilege"
+msgstr "Cihaz Yetkisi"
+
+msgid "emp_field_accessGroup"
+msgstr "Geçiş Grubu"
+
+msgid "emp_field_accessTimezone"
+msgstr "Geçiş Zaman Dilimi"
+
+msgid "emp_field_address"
+msgstr "Adres"
+
+msgid "emp_field_postcode"
+msgstr "PostaKodu"
+
+msgid "emp_field_officeTel"
+msgstr "Ofis Tel"
+
+msgid "emp_field_contactTel"
+msgstr "İrtibat Tel"
+
+msgid "emp_field_national"
+msgstr "Uyruk"
+
+msgid "emp_field_religion"
+msgstr "Din"
+
+msgid "emp_field_title"
+msgstr "Ünvan"
+
+msgid "emp_field_enrollSN"
+msgstr "Kayıt Cihazı"
+
+msgid "emp_field_SSN"
+msgstr "SSN"
+
+msgid "emp_field_updateTime"
+msgstr "Yükleme Zamanı"
+
+msgid "emp_field_verifyMode"
+msgstr "Doğrulama Modu"
+
+msgid "emp_field_city"
+msgstr "Şehir"
+
+msgid "emp_field_isAdmin"
+msgstr "Yönetici"
+
+msgid "emp_field_type"
+msgstr "İş tipi"
+
+msgid "emp_field_enableAtt"
+msgstr "Zaman Kontrol Aktif"
+
+msgid "emp_field_enableOvertime"
+msgstr "Fazla Mesai Aktif"
+
+msgid "emp_field_enableHoliday"
+msgstr "Tatil Aktif"
+
+msgid "emp_field_workflowRole"
+msgstr "İş Akış Rolü"
+
+msgid "employee_certification"
+msgstr "Personel Serti."
+
+msgid "emp_field_appStatus"
+msgstr "UYG. Durumu"
+
+msgid "emp_field_appRole"
+msgstr "Uyg. Rolü"
+
+msgid "emp_field_lastLogin"
+msgstr "Son Giriş"
+
+msgid "emp_field_isActive"
+msgstr "Aktif"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr "TKart numarası mevcut, eğer yeni kart kaydetmek istiyorsanız, Lütfen önce mevcut kart %(index)s sahibini silin."
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "Personel(%(code)s) bulunamadı."
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "İş Akış Rolü silme başarısız: %(message)s"
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "İstisna %(message)s"
+
+msgid "model_employee"
+msgstr "Personel"
+
+msgid "invalid_picture_format"
+msgstr "Geçersiz resim formatı"
+
+msgid "personnel_photo_size_must_not_exceed_16kb"
+msgstr "TMaksimum resim boyutu 16KB olmalıdır"
+
+msgid "employeeCert_field_cert"
+msgstr "Evrak"
+
+msgid "pnsl_model_empProfile"
+msgstr "Personel Profili"
+
+msgid "position_field_isDefault"
+msgstr "Varsayılan"
+
+msgid "psnl_model_position"
+msgstr "Pozisyon"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "Üstün kendisi olamaz"
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "Alt-Pozisyon '%(name)s' içeren pozisyon kaldırılamaz."
+
+msgid "default_position_can_not_be_removed."
+msgstr "Varsayılan pozisyon silinemez."
+
+msgid "psnl_model_resign"
+msgstr "İstifa"
+
+msgid "data_import_labelFile"
+msgstr "Yükleme Dosyası:"
+
+msgid "date_import_labelExistingData"
+msgstr "Mevcut Bilgi:"
+
+msgid "data_import_fileTemplateDemo"
+msgstr "Demo Şablon:"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "Şablon İndir"
+
+msgid "data_import_description"
+msgstr "Açıklama"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1.Dosya şablonundaki başlıklar gereklidir"
+
+msgid "data_import_areaImportRequired2"
+msgstr "2.Kod, isim gereklidir"
+
+msgid "data_import_areaImportRequired3"
+msgstr "3.Üstün Alan ve alan kodu gereklidir"
+
+msgid "data_import_areaImportRequired4"
+msgstr "4. Tüm kolon değerleri metin olmalıdır."
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "Yenile"
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "İndir"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1.Dosya şablonundaki başlıklar gerekli"
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2.2. Sertifika kodu ve adı gerekli"
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3.3.Tüm sütun değerleri metin biçiminde olmalıdır"
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1.T1.Dosya şablonundaki başlıklar gerekli"
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2..Kod, Ad Zorunlu Alanlar"
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3.Üstün Departman, departman kodu gereklidir"
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4. Tüm sütun değerleri metin biçiminde olmalıdır"
+
+msgid "departmentList_search_department"
+msgstr "Departman"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1.Dosya şablonundaki başlıklar gerekli"
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2.Çalışan Kimliği, Adı, Departman Numarası Zorunlu Alanlar"
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3. Tüm sütun değerleri metin biçiminde olmalıdır"
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4.Kart Numarası benzersiz olmalı"
+
+msgid "personnel_profile"
+msgstr "Profil"
+
+msgid "register_fingerprint"
+msgstr "Parmakizi Kaydı"
+
+msgid "fingerprint_registration"
+msgstr "Kayıt"
+
+msgid "download_driver"
+msgstr "DSürücü İndir"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr "(Uygun Boyut 120×140 Pixel)"
+
+msgid "employee_title_clickToUploadPhoto"
+msgstr "Resim Yüklemek için tıklayın"
+
+msgid "employee_title_UploadPhoto"
+msgstr "Resim"
+
+msgid "employee_label_fingerprintRegistered"
+msgstr "Pİ Kaydedildi(v10)"
+
+msgid "employee_btn_fingerprintEnroll"
+msgstr "Kayıt"
+
+msgid "employee_title_clickToUploadBioPhoto"
+msgstr "Bio-Resim yüklemek için tıklayın"
+
+msgid "employee_basicInformation_setting"
+msgstr "Profil"
+
+msgid "employee_moreDetail_setting"
+msgstr "Özel Bilgi"
+
+msgid "employee_attendance_settings"
+msgstr "Zaman Kontrol Ayarları"
+
+msgid "employee_document_settings"
+msgstr "Evrak"
+
+msgid "employee_accessController_settings"
+msgstr "Geçiş Kontrolör"
+
+msgid "employee_app_setting"
+msgstr "Uyg. Ayarları"
+
+msgid "payroll_setting"
+msgstr "Bordro Ayarları"
+
+msgid "employee_deviceRelate_setting"
+msgstr "Cihaz Geçiş Ayarları"
+
+msgid "employee_editPage_addCert"
+msgstr "Ekle"
+
+msgid "registered_fingerprint:"
+msgstr "Kayıtlı Parmakizi:"
+
+msgid "employee_field_employeeCode"
+msgstr "Personel ID"
+
+msgid "employee_field_employeeFirstName"
+msgstr "İsim"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "Personel"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "Seçildi"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1.Dosya şablonundaki başlıklar gerekli"
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2.Sertifika, Çalışan, E-posta Uyarısı Gerekli Alanlar"
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3. Tüm sütun değerleri metin biçiminde olmalıdır"
+
+msgid "data_import_positionImportRequired1"
+msgstr "1.Dosya şablonundaki başlıklar gerekli"
+
+msgid "data_import_positionImportRequired2"
+msgstr "2.Kod, Ad Zorunlu Alanlar"
+
+msgid "data_import_positionImportRequired3"
+msgstr "3. Üstün Konum, Konum Kodu olmalıdır"
+
+msgid "data_import_positionImportRequired4"
+msgstr "4. Tüm sütun değerleri metin biçiminde olmalıdır"
+
+msgid "data_import_resignImportRequired1"
+msgstr "1.Dosya şablonundaki başlıklar gerekli"
+
+msgid "data_import_resignImportRequired2"
+msgstr "2.Çalışan Kimliği, İstifa Tarihi, İstifa Türü Zorunlu Alanlar"
+
+msgid "data_import_resignImportRequired3"
+msgstr "3. Tüm sütun değerleri metin biçiminde olmalıdır"
+
+msgid "BioTime 8.0"
+msgstr ""
+
+msgid "mobile_photo_register"
+msgstr "Resim Kaydı"
+
+msgid "mobile_onlineRegister_employeeCode"
+msgstr "Personel ID"
+
+msgid "mobile_employee_first_name"
+msgstr "İsim"
+
+msgid "mobile_employee_last_name"
+msgstr "Soyisim"
+
+msgid "mobile_employee_email"
+msgstr "E-posta"
+
+msgid "mobile_onlineRegister_remark"
+msgstr "Düşünce"
+
+msgid "mobile_photo_enroll"
+msgstr "Öneri"
+
+msgid "lng_option_simpledChinese"
+msgstr "中文简体"
+
+msgid "lng_option_traditionalChinese"
+msgstr "中文繁體"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "Pусский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Bahasa Indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "lng_option_cambodian"
+msgstr "ជនជាតិខ្មែរ។"
+
+msgid "lng_option_ukrainian"
+msgstr "Українська"
+
+msgid "menu_personnel"
+msgstr "Personel"
+
+msgid "ADMS"
+msgstr "ADMS"
+
+msgid "menu_terminal"
+msgstr "Cihaz"
+
+msgid "menu_attendance"
+msgstr "Zaman Kontrol"
+
+msgid "menu_system"
+msgstr "Sistem"
+
+msgid "menu_group_employee_request"
+msgstr "İstek"
+
+msgid "menu_request_employee_leave"
+msgstr "İzin"
+
+msgid "menu_request_employee_overtime"
+msgstr "Fazla Mesai"
+
+msgid "menu_request_employee_manual_log"
+msgstr "Manuel Hareket"
+
+msgid "menu_request_employee_training"
+msgstr "Eğitim"
+
+msgid "menu_group_employee_approval"
+msgstr "Onay"
+
+msgid "menu_approve_employee_leave"
+msgstr "İzin"
+
+msgid "menu_approve_employee_overtime"
+msgstr "Fazla Mesai"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "Manuel Hareket"
+
+msgid "menu_approve_employee_training"
+msgstr "Eğitim"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "Planlı Değişiklik"
+
+msgid "menu_group_employee_report"
+msgstr "Rapor"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "Planlı Hareket"
+
+msgid "menu_staff_detailReport"
+msgstr "Toplam Kart Zamanı"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "Personel Özeti"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "Çoklu İşlem"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "Çoklu Mola"
+
+msgid "menu_staff_timeCardReport"
+msgstr "Kart Zamanı"
+
+msgid "staff_leave_actionDelete"
+msgstr "Ekle"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "Personel ID"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "İsim"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "Soyisim"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "Tarih"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "Önceki Zaman Tablosu"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "Zaman Tablosu"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "Uygulama Zamanı"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "Son onaylayan"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "Şuan ki Durum"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "Onay Durumu"
+
+msgid "attendance_analyze"
+msgstr "Zaman Kontrol Analizi"
+
+msgid "csv_export"
+msgstr "Csv Çıkart"
+
+msgid "pdf_export"
+msgstr "PDF Çıkart"
+
+msgid "xlsx_export"
+msgstr "Xlsx Çıkart"
+
+msgid "staff_search_startDate"
+msgstr "Başlangıç Tarihi"
+
+msgid "staff_search_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "staff_approval_approvalState"
+msgstr "Onay Durumu"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "Bekliyor"
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "Onaylandı"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "Reddedildi"
+
+msgid "staff_search_searchTitle"
+msgstr "Ara"
+
+msgid "staff_search_clearTitle"
+msgstr "Aramayı Temizle"
+
+msgid "staff_leave_startTime"
+msgstr "Başlangıç Tarihi"
+
+msgid "staff_leave_endTime"
+msgstr "Bitiş Tarihi"
+
+msgid "staff_leave_leaveCategory"
+msgstr "Kategori"
+
+msgid "staff_leave_applyReason"
+msgstr "Sebep"
+
+msgid "staff_leave_empCode"
+msgstr "Personel ID"
+
+msgid "staff_leave_firstName"
+msgstr "İsim"
+
+msgid "staff_leave_lastName"
+msgstr "Soyisim"
+
+msgid "staff_leave_applyTime"
+msgstr "Onay Zamanı"
+
+msgid "staff_leave_lastApprover"
+msgstr "Son Onaylayan"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "Şuan ki Durum"
+
+msgid "staff_leave_approvalState"
+msgstr "Onay Durumu"
+
+msgid "staff_search_category"
+msgstr "Kategori"
+
+msgid "staff_leave_actionAdd"
+msgstr "Ekle"
+
+msgid "staff_manualLog_empCode"
+msgstr "Personel ID"
+
+msgid "staff_manualLog_firstName"
+msgstr "İsim"
+
+msgid "staff_manualLog_lastName"
+msgstr "Soyisim"
+
+msgid "staff_manualLog_applyTime"
+msgstr "Onay Zamanı"
+
+msgid "staff_manualLog_punchTime"
+msgstr "Okutma Zamanı"
+
+msgid "staff_manualLog_punchState"
+msgstr "Okutma Durumu"
+
+msgid "staff_manualLog_workCode"
+msgstr "Çalışma Kodu"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "Son Onaylayan"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "Şuan ki Durum"
+
+msgid "staff_manualLog_approvalState"
+msgstr "Onay Durumu"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "Çalışma Kodu"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "Ekle"
+
+msgid "staff_manualLog_applyReason"
+msgstr "Sebep"
+
+msgid "staff_overtime_startTime"
+msgstr "Başlangıç Tarihi"
+
+msgid "staff_overtime_endTime"
+msgstr "Bitiş Tarihi"
+
+msgid "staff_overtime_overtimeType"
+msgstr "Fazla Mesai Tipi"
+
+msgid "staff_overtime_applyReason"
+msgstr "Sebep"
+
+msgid "normal_overtime"
+msgstr "Normal FM"
+
+msgid "weekend_overtime"
+msgstr "Haftasonu FM"
+
+msgid "holiday_overtime"
+msgstr "Tatil FM"
+
+msgid "staff_overtime_actionDelete"
+msgstr "Çalışma Kodu"
+
+msgid "staff_overtime_empCode"
+msgstr "Personel ID"
+
+msgid "staff_overtime_firstName"
+msgstr "İsim"
+
+msgid "staff_overtime_lastName"
+msgstr "Soyisim"
+
+msgid "staff_overtime_applyTime"
+msgstr "Onay Zamanı"
+
+msgid "staff_overtime_lastApprover"
+msgstr "Son Onaylayan"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "Şuan ki Durum"
+
+msgid "staff_overtime_approvalSate"
+msgstr "Onay Durumu"
+
+msgid "staff_overtime_actionAdd"
+msgstr "Ekle"
+
+msgid "search_start_date"
+msgstr "Başlangıç Tarihi"
+
+msgid "search_end_date"
+msgstr "Bitiş Tarihi"
+
+msgid "userProfile_itemLabel_language"
+msgstr "Dil"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "Eski Şifre"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "Yeni Şifre"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "Şifreyi Doğrula"
+
+msgid "staff_training_empCode"
+msgstr "Personel ID"
+
+msgid "staff_training_firstName"
+msgstr "İsim"
+
+msgid "staff_training_lastName"
+msgstr "Soyisim"
+
+msgid "staff_training_applyTime"
+msgstr "Onay Zamanı"
+
+msgid "staff_training_trainingCategory"
+msgstr "Eğitim Tipi"
+
+msgid "staff_training_startTime"
+msgstr "Başlangıç Tarihi"
+
+msgid "staff_training_endTime"
+msgstr "Bitiş Tarihi"
+
+msgid "staff_training_lastApprover"
+msgstr "Son Onaylayan"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "Şuan ki Durum"
+
+msgid "staff_training_approvalState"
+msgstr "Onay Durumu"
+
+msgid "staff_training_actionDelete"
+msgstr "Çalışma Kodu"
+
+msgid "staff_training_actionAdd"
+msgstr "Ekle"
+
+msgid "the_old_pwd_is_required"
+msgstr "Eski şifre gerekli."
+
+msgid "the_new_pwd_is_required"
+msgstr "Yeni şifre gerekli."
+
+msgid "the_two_password_are_different"
+msgstr "Şifre doğrulama eşleşmiyor "
+
+msgid "the_old_pwd_is_wrong"
+msgstr "Şifre yanlış"
+
+msgid "setting_employee_pwd_failed"
+msgstr "Şifre değiştirme başarısız"
+
+msgid "system_exception_illegal_login"
+msgstr "İsteğe izin verilmiyor"
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "Şifreni değiştir."
+
+msgid "model_action_add"
+msgstr "Ekle"
+
+msgid "model_action_modify"
+msgstr "Düzenle"
+
+msgid "system_welcome"
+msgstr "Hoşgeldiniz"
+
+msgid "system_userMenu_op_language"
+msgstr "Dil"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "Şifre"
+
+msgid "system_userMenu_op_about"
+msgstr "Hakkında"
+
+msgid "system_userMenu_op_logout"
+msgstr "Çıkış"
+
+msgid "filter_title_search"
+msgstr "Filtre ile arama"
+
+msgid "filter_title_clear"
+msgstr "Filtre Temizle"
+
+msgid "user_username"
+msgstr "Kullanıcı Adı"
+
+msgid "user_password"
+msgstr "Şifre"
+
+msgid "software_version"
+msgstr "Yazılım Versiyonu"
+
+msgid "authorized_information"
+msgstr "Yetki Bilgisi"
+
+msgid "label_customer_code"
+msgstr "Müşteri Kodu"
+
+msgid "label_used_devices"
+msgstr "Kullanılan Cihaz"
+
+msgid "label_used_employees"
+msgstr "Kullanılan Personel"
+
+msgid "label_used_apps"
+msgstr "Kullanılan Uygulama"
+
+msgid "label_authorized_date"
+msgstr "Yetkilendirme Tarihi"
+
+msgid "label_expired_date"
+msgstr "Son Kullanım Tarihi"
+
+msgid "label_authorized_company"
+msgstr "Yetkili Şirket"
+
+msgid "license_activation"
+msgstr "Lisans Aktivasyon"
+
+msgid "online_activation"
+msgstr "Çevrimiçi Aktivasyon"
+
+msgid "download_upk"
+msgstr "UPK indir"
+
+msgid "offline_activation"
+msgstr "Çevrimdışı Aktivasyon"
+
+msgid "online_upgrade_license"
+msgstr "Çevrimiçi Güncelleme"
+
+msgid "export_license"
+msgstr "Lisansı Çıkart"
+
+msgid "import_license"
+msgstr "Lisans Yükleme"
+
+msgid "aboutPage_title_licenseMigration"
+msgstr "Lisans Geçişi"
+
+msgid "server_information"
+msgstr "Sunucu Bilgisi"
+
+msgid "label_machine"
+msgstr "Makine"
+
+msgid "label_processor"
+msgstr "İşlemci"
+
+msgid "label_platform"
+msgstr "Platform"
+
+msgid "label_ram_total"
+msgstr "RAM"
+
+msgid "label_ram_free"
+msgstr "Boş RAM"
+
+msgid "user_authenticate"
+msgstr "Kimlik Doğrulama"
+
+msgid "user_login"
+msgstr "Yönetici Girişi"
+
+msgid "employee_self"
+msgstr "Kullanıcı Girişi"
+
+msgid "login_username"
+msgstr "Kullanıcı Adı"
+
+msgid "login_pwd"
+msgstr "Şifre"
+
+msgid "btn_user_login"
+msgstr "Giriş"
+
+msgid "btn_fp_login"
+msgstr "Parmak izi"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "Lütfen Parmak izi sürücüsünü indirin."
+
+msgid "login_emp_number"
+msgstr "Personel ID"
+
+msgid "login_emp_pwd"
+msgstr "Şifre"
+
+msgid "btn_emp_login"
+msgstr "Giriş"
+
+msgid "login_about_btn_title"
+msgstr "Lisans ayrıntılarını kontrol etmek için tıklayın"
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr ""
+
+msgid "system_about"
+msgstr "Hakkında"
+
+msgid "last_approver"
+msgstr "Son Onaylayan"
+
+msgid "tool_filters"
+msgstr "Filtreler"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "Personel ID bulunamadı, lütfen çnce sisteme kaydedin."
+
+msgid "employee_photo_not_found"
+msgstr "Personel resmi bulunamadı"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "Geçersiz resim, Yüz bulunamadı."
+
+msgid "workflowRole_field_employee"
+msgstr "Personel"
+
+msgid "workflowRole_field_role"
+msgstr "İş Akışı Rolü"
+
+msgid "workflow_action_assignEmployee"
+msgstr "Atanan Personel"
+
+msgid "workflow_action_assignEmployeeHelpTxt"
+msgstr "Çalışanı iş akışı rolüne atayın"
+
+msgid "workFlowRoleAssignEmployee_error_noneEmployee"
+msgstr "Lütfen personel seçin."
+
+msgid "workFlowRoleAssignEmployee_error_noneWorkflowRole"
+msgstr "Lütfen iş akışı rolü seçin."
+
+msgid "workflowEngine_field_code"
+msgstr "Kod"
+
+msgid "workflowEngine_field_name"
+msgstr "İsim"
+
+msgid "workflowEngine_field_startDate"
+msgstr "Başlangıç Tarihi"
+
+msgid "workflowEngine_field_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "workflowEngine_field_departments"
+msgstr "Departman"
+
+msgid "workflowEngine_field_contentType"
+msgstr "İçerik Türü"
+
+msgid "workflow_model_workflowNode"
+msgstr "İş Akış Düğümü"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "Pozison"
+
+msgid "workflow_node_is_required"
+msgstr "İş akış düğümü gerekli"
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "İş akış düğüm ismi gerekli"
+
+msgid "workflow_node_is_unique"
+msgstr "İş Akış düğümü benzersiz"
+
+msgid "workflowEngine_field_employee"
+msgstr "Personel"
+
+msgid "node_code"
+msgstr "Düğüm No"
+
+msgid "node_name"
+msgstr "Düğüm İsmi"
+
+msgid "workflow_node_approver"
+msgstr "Onaylayan"
+
+msgid "workflow_node_notifier"
+msgstr "Uyarılan"
+
+msgid "employee_count"
+msgstr "Personel Sayısı"
+
+msgid "approval_field_approvalStatus"
+msgstr "Onay Durumu"
+
+msgid "workflowEngine_field_description"
+msgstr "Açıklama"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "Nesneyi Yansıt"
+
+msgid "workflowEngine_field_type"
+msgstr "İş Akış Tipi"
+
+msgid "workflowEngine_field_informType"
+msgstr "Bilgi Tipi"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "Boş"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "E-posta"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "Uyarı"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "Email&Uyarı"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "Geçersiz izin tarihi, Bitiş tarihi, başlangıç tarihinden sonra olmalıdır."
+
+msgid "the_workflow_is_already_used"
+msgstr "İş Akışı kullanılıyor."
+
+msgid "workflow_model_workflowEngine"
+msgstr "İş Akış Motoru"
+
+msgid "is_last_node"
+msgstr "Son düğüm"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr "ullanıcının bu görev düğümünü onaylamasına izin verilmiyor."
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr "Kullanıcının bu iş akışları düğümü üzerinde çalışma ayrıcalıkları yok."
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr "Kullanıcının bu görev düğümünü reddetmesine izin verilmiyor."
+
+msgid "workflow_node_instance"
+msgstr "İş Akışı Düğümü Örneği"
+
+msgid "workflow_code"
+msgstr "İş akış no"
+
+msgid "workflow_name"
+msgstr "İş Akış ismi"
+
+msgid "issue_date"
+msgstr "Veriliş Tarihi"
+
+msgid "workflow_description"
+msgstr "Açıklama"
+
+msgid "content_type"
+msgstr "İş akış tipi"
+
+msgid "inform_type"
+msgstr "Uyarı tipi"
+
+msgid "del_flag"
+msgstr "Bayrak Sil"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr "Uygulama zaten onaylandı."
+
+msgid "workflow_instance"
+msgstr "İş akış örneği"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "Kendi Departmanı"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "Tümü"
+
+msgid "workflowNode_field_code"
+msgstr "Kod"
+
+msgid "workflowNode_field_name"
+msgstr "İsim"
+
+msgid "workflowNode_field_orderID"
+msgstr "Sipariş ID"
+
+msgid "workflowNode_field_approverType"
+msgstr "Onaylayan Türü"
+
+msgid "workflowNode_field_approver"
+msgstr "Onaylayan"
+
+msgid "workflowNode_field_notifierType"
+msgstr "Uyarı Tipi"
+
+msgid "workflowNode_field_notifier"
+msgstr "Uyarılan"
+
+msgid "workflowNode_field_approverScope"
+msgstr "Onaylayan Kapsamı"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "Uyarılan Kapsamı"
+
+msgid "workflow_engine_name"
+msgstr "İş Akış ismi"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "Mevcut iş akış düğümü."
+
+msgid "workflowRole_field_code"
+msgstr "Kod"
+
+msgid "workflowRole_field_name"
+msgstr "Rol Adı"
+
+msgid "workflowRole_field_description"
+msgstr "Açıklama"
+
+msgid "workflow_model_workflowRole"
+msgstr "İş Akış Rolü"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "%(name)s içeren cihaz silinemez."
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "%(name)s Kullanılan iş akış düğümü silinemez."
+
+msgid "node_state"
+msgstr "Düğüm Durumu"
+
+msgid "notifier_type_no_selected"
+msgstr "Lütfen uyarı tipi seçin."
+
+msgid "information_workflow"
+msgstr "Bilgi"
+
+msgid "workflow_content_type"
+msgstr "İçerik Tipi"
+
+msgid "instance_issue_date"
+msgstr "Veriliş Tarihi"
+
+msgid "approve"
+msgstr "Onay"
+
+msgid "remark_is_missing"
+msgstr "Yorum Yok."
+
+msgid "workflow_instance_id_is_missing"
+msgstr "İş Akışı Düğümü Örneği Bulunamadı"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "İş Akışı Düğümü Örneği Bulunamadı"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "İş Akışı Düğümü Örneği Bulunamadı"
+
+msgid "did_not_have_match_workflow"
+msgstr "Eşleşme iş akışı yoktu"
+
+msgid "verity_type"
+msgstr "Kimlik doğrulama türü"
+
+msgid "lineNotify_field_messageHead"
+msgstr "Mesajın başı"
+
+msgid "lineNotify_field_messageTail"
+msgstr "Mesaj kuyruğu"
+
+msgid "export_title_departments"
+msgstr "Departman"
+
+msgid "export_title_positions"
+msgstr "Konum"
+
+msgid "export_title_areas"
+msgstr "Alan"
+
+msgid "export_title_employees"
+msgstr "Personel"
+
+msgid "export_title_resigns"
+msgstr "İstifa"
+
+msgid "export_title_certifications"
+msgstr "Evrak"
+
+msgid "export_title_employeecertifications"
+msgstr "Personel Evrağı"
+
+msgid "export_title_terminals"
+msgstr "Cihaz"
+
+msgid "export_title_terminalcommands"
+msgstr "Cihaz Komutları"
+
+msgid "export_title_publicmessages"
+msgstr "Genel"
+
+msgid "export_title_privatemessages"
+msgstr "Kişisel"
+
+msgid "export_title_terminalworkcodes"
+msgstr "Çalışma Kodu"
+
+msgid "export_title_biodatas"
+msgstr "Bio-Veri"
+
+msgid "export_title_terminallogs"
+msgstr "Cihaz Günlüğü"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "Günlüğü Çıkart"
+
+msgid "export_title_break_times"
+msgstr "Mola"
+
+msgid "export_title_time_intervals"
+msgstr "Zaman Tablosu"
+
+msgid "export_title_att_shifts"
+msgstr "Çalışma Tablosu"
+
+msgid "export_title_att_schedules"
+msgstr "Planlama"
+
+msgid "export_title_temp_schedules"
+msgstr "Geçici Planlama"
+
+msgid "export_title_employeeschedule_report"
+msgstr "Personel Planlama"
+
+msgid "export_title_manual_logs"
+msgstr "Manuel Hareket"
+
+msgid "export_title_leaves"
+msgstr "İzin"
+
+msgid "export_title_overtimes"
+msgstr "Fazla Mesai"
+
+msgid "export_title_trainings"
+msgstr "Eğitim"
+
+msgid "export_title_holiday"
+msgstr "Tatil"
+
+msgid "export_title_leave_categorys"
+msgstr "İzin Tipi"
+
+msgid "export_title_training_categorys"
+msgstr "Eğiitm Tiipi"
+
+msgid "export_title_transactions"
+msgstr "Hareketler"
+
+msgid "export_field_employee_area"
+msgstr "Alan"
+
+msgid "export_field_device_count"
+msgstr "Cihaz Mik."
+
+msgid "export_field_employee"
+msgstr "Personel"
+
+msgid "export_field_employee_name"
+msgstr "İsim"
+
+msgid "new_schedule"
+msgstr "Planlama Ayarı"
+
+msgid "new_schedule_description"
+msgstr "Planlama Ekle"
+
+msgid "new_schedule_help_txt"
+msgstr "Planlama Ekle"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "Varsayılan katagori silinemez"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "Kullanılan katagori silinemez"
+
+msgid "base_setting"
+msgstr "Sistem Ayarları"
+
+msgid "calculation_rule"
+msgstr "Geç Kalma"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "Hareketler"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "Personel ID Uzunluğu"
+
+msgid "menu_device_remoteupgrade"
+msgstr "Cihaz"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "Cihaz"
+
+msgid "remoteUpgrade_field_password"
+msgstr "Şifre"
+
+msgid "remoteUpgrade_action_add"
+msgstr "Ekle"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "Ekle"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "Ekle"
+
+msgid "upgrade_file_error"
+msgstr "Dosya Yükle"
+
+msgid "please_select_device"
+msgstr "Lütfen Personel Seçin"
+
+msgid "password_is_required"
+msgstr "SN dosyası gerekli."
+
+msgid "password_is_error"
+msgstr "İki şifre eşleşmiyor"
+
+msgid "set_upgrade_password_first"
+msgstr "Şifre"
+
+msgid "please_select_upgrade_file"
+msgstr "Lütfen yüklenecek dosyayı seçin"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "Dosyayı güncelle"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "İşlem Zamanı"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "Aktarım Zamanı"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "Dönüş Zamanı"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "Dönüş Değeri"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "Uzaktan Güncelleme"
+
+msgid "Hello"
+msgstr "Merhaba"
+
+msgid "lineNotify_field_sendPhoto"
+msgstr "Zaman Kontrol resimlerini gönderin"
+
+msgid "Enter Number"
+msgstr "Numara girin"
+
+msgid "Enter Keyword"
+msgstr "Anahtar kelime girin"
+
+msgid "area_or_zone"
+msgstr "Alan"
+
+msgid "position"
+msgstr "Pozisyon"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "Bir dakika sonra çalışmadığında önbelleği temizle"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "Simpled Chinese"
+
+msgid "deviceLanguage_option_English"
+msgstr "English"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "Spanish"
+
+msgid "deviceLanguage_option_French"
+msgstr "French"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "Arabic"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "Portuguese"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "Russian"
+
+msgid "deviceLanguage_option_German"
+msgstr "German"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "Persian"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "Thai"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "Indonesian"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "Japanese"
+
+msgid "deviceLanguage_option_Korean"
+msgstr "Korean"
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "Vietnamese"
+
+msgid "deviceLanguage_option_Turkish"
+msgstr "Turkish"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "Hebrew"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "Czech"
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "Dutch"
+
+msgid "deviceLanguage_option_Italian"
+msgstr "Italian"
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "Slovak"
+
+msgid "deviceLanguage_option_Greek"
+msgstr "Greek"
+
+msgid "deviceLanguage_option_Polish"
+msgstr "Polish"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr "Traditional Chinese"
+
+msgid "adminLog_action_login"
+msgstr "Giriş"
+
+msgid "adminLog_action_logout"
+msgstr "Çıkış"
+
+msgid "adminLog_action_add"
+msgstr "Ekle"
+
+msgid "adminLog_action_change"
+msgstr "Değiştir"
+
+msgid "adminLog_action_delete"
+msgstr "Çalışma Kodu"
+
+msgid "app_download"
+msgstr "Uyg. Yükle"
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr "Minimum erken çıkma Fazla mesai geçersiz"
+
+msgid "minimum_above_overtime_invalid"
+msgstr "Minimum geç çıkma fazla mesai geçersiz"
+
+msgid "delete_default_user_alert"
+msgstr "Yönetici Kullanıcı silinemez"
+
+msgid "delete_user_self_alert"
+msgstr "Geçerli kullanıcı silinemez"
+
+msgid "biophoto_upload"
+msgstr "Resim Yükle"
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr "Personel mevcut değil: "
+
+msgid "biophoto_upload_error_photo"
+msgstr "Hatalı resim: "
+
+msgid "biophoto_upload_other_errors"
+msgstr "Diğer hatalar: "
+
+msgid "biophoto_upload_ignore_error"
+msgstr "Hatayı Yoksay"
+
+msgid "biophoto_upload_select_files"
+msgstr "Dosyaları seç"
+
+msgid "biophoto_upload_start"
+msgstr "Başlat"
+
+msgid "staff_training_applyReason"
+msgstr "Sebep"
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr "Bu zaman aralığı için yinelenen iş akışı"
+
+msgid "holiday_duration_invalid"
+msgstr "Tatil çakışıyor."
+
+msgid "migrate_sqlite_file_is_required"
+msgstr "Sqlite veritabanı dosyası gerekli."
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr "Çalışanın zaten %(emp)s dosyası mevcut %(certification)s"
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr "Çok fazla resim seçildi, lütfen 500 veya daha azıyla sınırlayın"
+
+msgid "autoExport_task_time"
+msgstr "Zaman"
+
+msgid "autoExport_task_date"
+msgstr "Tarih"
+
+msgid "no_record"
+msgstr "Veri yok"
+
+msgid "autoExport_task_punchState"
+msgstr "Okutma Durumu"
+
+msgid "adjust_timeinterval"
+msgstr "Zaman Tablosu"
+
+msgid "app_login_failed"
+msgstr "Giriş Başarısız."
+
+msgid "appLogin_param_client_missing"
+msgstr "Yardımcı parametre eksik."
+
+msgid "appLogin_incorrect_username_or_password"
+msgstr "Gçersiz kullanıcı adı ya da şifre"
+
+msgid "appLogin_illegal_request"
+msgstr "Geçersiz istek."
+
+msgid "app_account_disabled"
+msgstr "Hesap Kapalı."
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "Hesap Kapalı, Lütfen Yönetici ile irtibata geçin."
+
+msgid "appLogin_request_blocked"
+msgstr "İstek Engellendi."
+
+msgid "app_client_already_block_by_administrator"
+msgstr "Uygulama istemcisi yönetici tarafından engellendi."
+
+msgid "app_client_blocked"
+msgstr "Uygulama istemcisi engelli."
+
+msgid "system_exception"
+msgstr "Sistem İstisnası."
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "İstek parametrelerinde kullanıcı adı bulunamadı."
+
+msgid "appLogin_params_exception"
+msgstr "İstisna parametreleri."
+
+msgid "app_sign_out_successful"
+msgstr "Çıkış başarılı."
+
+msgid "appLogout_illegal_request"
+msgstr "Geçersiz istek."
+
+msgid "biotime_app_password_reset"
+msgstr "Biotime uygulama şifresi sıfırlama."
+
+msgid "app_password_reset_failed"
+msgstr "Şifre sıfırlama başarısız."
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "Etkin olan mobilde şifre sıfırlama olmalıdır."
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "Geçersiz işlem. Lütfen yöneticiye başvurun."
+
+msgid "app_password_reset_user_not_exists"
+msgstr "Kullanıcı mevcut değil."
+
+msgid "app_password_reset_user_not_found"
+msgstr "Kullanıcı bulunamadı."
+
+msgid "app_manuallog_wrong_data"
+msgstr "Yanlış Veri."
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "Çalışma kodu bulunamadı."
+
+msgid "app_manuallog_data_exception"
+msgstr "Veri İstisnası."
+
+msgid "app_manuallog_request_already_processing"
+msgstr "İstek zaten işleniyor."
+
+msgid "request_already_processing"
+msgstr "İstek zaten işleniyor."
+
+msgid "object_not_found"
+msgstr "Nesne bulunamadı."
+
+msgid "object_id_not_found"
+msgstr "Nesne ID bulunamadı."
+
+msgid "app_application_remove_success"
+msgstr "Kaldırma Başarılı."
+
+msgid "app_application_remove_rejected"
+msgstr "Onaylanan uygulama silinemez."
+
+msgid "app_attendance_date_today"
+msgstr "Bugün"
+
+msgid "app_attendance_date_yesterday"
+msgstr "Dün"
+
+msgid "app_attendance_date_this_week"
+msgstr "Bu Hafta"
+
+msgid "app_attendance_date_last_week"
+msgstr "Geçen Hafta"
+
+msgid "app_attendance_date_this_month"
+msgstr "Bu Ay"
+
+msgid "app_attendance_date_last_month"
+msgstr "Geçen Ay"
+
+msgid "app_attendance_date_user-defined"
+msgstr "Kullanıcı Tanımlı"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "Geçersiz okutma süresi lütfen tekrar deneyin"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "Geçersiz GPS Bilgisi"
+
+msgid "app_clockIn_gps_required"
+msgstr "GPS bilgisi gerekli"
+
+msgid "app_clockIn_upload_failed"
+msgstr "Yükleme Başarısız"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "Çalışma kodu bulunamadı"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "Logo İncelemesi"
+
+msgid "companySettingPage_size_200x75"
+msgstr "Boyutlar 200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "Şirket Ayarı"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "Şirket Logosu"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "Logo yüklemek için tıklayın"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "Logo Ekranı"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "Görüntülenmiyor"
+
+msgid "companySettingPage_posOption_left"
+msgstr "Sol"
+
+msgid "companySettingPage_posOption_center"
+msgstr "Merkez"
+
+msgid "companySettingPage_posOption_right"
+msgstr "Sağ"
+
+msgid "companySettingPage_btn_submit"
+msgstr "Gönder"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "Görev %(task_code)s çıkartma başarılı."
+
+msgid "company_logo_setting"
+msgstr "Şirket Logo Ayarları"
+
+msgid "company_name_setting"
+msgstr "Şirket Logo İsmi"
+
+msgid "area_tree_selectAll"
+msgstr "Tümünü Seç"
+
+msgid "area_tree_multipleSelect"
+msgstr "Çoklu Seçim"
+
+msgid "area_tree_selectSubArea"
+msgstr "Alt-Alanları Seç"
+
+msgid "please_input_a_valid_number"
+msgstr "LÜtfen geçerli numara girin"
+
+msgid "report_exportColumnTitle_statics"
+msgstr "İstatistikler"
+
+msgid "menu_sys_languageTranslate"
+msgstr "Dil Çevirisi"
+
+msgid "language_translate_field_lan"
+msgstr "Dil"
+
+msgid "language_translate_field_name"
+msgstr "Di ismi"
+
+msgid "language_translate_field_build"
+msgstr "Dahili"
+
+msgid "auto_deduct"
+msgstr "Oto-Kesinti"
+
+msgid "required_punch"
+msgstr "Okutma Gerekli"
+
+msgid "training_name"
+msgstr "Eğitim İsmi"
+
+msgid "minimum_unit"
+msgstr "Minimum Birim"
+
+msgid "unit"
+msgstr "Birim"
+
+msgid "round_off"
+msgstr "Yuvarla"
+
+msgid "report_symbol"
+msgstr "Rapor Sembolü"
+
+msgid "reference"
+msgstr "Referans"
+
+msgid "translated"
+msgstr "Çevrildi"
+
+msgid "language_key"
+msgstr "Dil Anahtarı"
+
+msgid "original_password"
+msgstr "Orjinal Şifre"
+
+msgid "front_end_minutes"
+msgstr "Dakikalar"
+
+msgid "att_action_approve"
+msgstr "Onay"
+
+msgid "report_item_min_unit_empty"
+msgstr " Boş"
+
+msgid "report_item_min_unit_invalid"
+msgstr "Geçersiz"
+
+msgid "IndTableLog_field_contentType"
+msgstr "İçerik Türü"
+
+msgid "IndTableLog_field_postTime"
+msgstr "Gönderme Zamanı"
+
+msgid "IndTableLog_field_postCount"
+msgstr "Kayıt Sayısı"
+
+msgid "IndTableLog_field_updateTime"
+msgstr "Güncelleme Zamanı"
+
+msgid "IndTableLog_field_updateStatus"
+msgstr "Durumu Güncelle"
+
+msgid "IndTableLog_field_updateDescription"
+msgstr "Açıklama"
+
+msgid "base_inmedit_field_invalid"
+msgstr "Geçersiz"
+
+msgid "base_inmedit_field_error"
+msgstr "Hata"
+
+msgid "base_inmedit_field_succ"
+msgstr "Başarılı"
+
+msgid "indtable_code_or_name_required {0}{1}"
+msgstr "Kod ya da isim gerekli {0}{1}"
+
+msgid "indtabel_data_insert_error {0}{1}"
+msgstr "Veri giriş hatası {0}{1}"
+
+msgid "system_translate_btnRestart"
+msgstr "Yeniden Başlat"
+
+msgid "system_translate_btnDownload"
+msgstr "İndir"
+
+msgid "select_download_language"
+msgstr "Lütfen indirmeniz gereken dili seçin"
+
+msgid "fingerprint_download"
+msgstr "Parmakizi sürücüsünü"
+
+msgid "drive_download"
+msgstr "Sürücü indir"
+
+msgid "confirm_be_sure"
+msgstr "Emin misin?"
+
+msgid "confirm_not_modify_audited"
+msgstr "Denetlenen kayıtlar değiştirilemez."
+
+msgid "employeeSave_error_duplicateCard_{emp}"
+msgstr "Mevcut kart{emp}"
+
+msgid "Choice Date"
+msgstr "Tarih Seçin"
+
+msgid "Now"
+msgstr "Şimdi"
+
+msgid "Date Range"
+msgstr "Tarih Aralığı"
+
+msgid "module"
+msgstr "Modül"
+
+msgid "year"
+msgstr "Yıl"
+
+msgid "month"
+msgstr "Ay"
+
+msgid "day"
+msgstr "Gün"
+
+msgid "From"
+msgstr "dan"
+
+msgid "To"
+msgstr "e kadar"
+
+msgid "att_action_revoke"
+msgstr "İptal et"
+
+msgid "revoke_reason"
+msgstr "İptal sebebi"
+
+msgid "only_approved_records_can_be_revoked"
+msgstr "Sadece onaylanan kayıtlar silinemez"
+
+msgid "revoke_remark_is_required"
+msgstr "İptal sebebi gerekli"
+
+msgid "application_has_approved_node"
+msgstr "Bu uygulama denetleniyor, değiştirilemez"
+
+msgid "terminal_state_online"
+msgstr "Çevrimiçi"
+
+msgid "terminal_state_offline"
+msgstr "Çevrimdışı"
+
+msgid "terminal_state_unauthorized"
+msgstr "Yetkisiz"
+
+msgid "terminal_state_communication"
+msgstr "Tebliü"
+
+msgid "emp_field_fingervein"
+msgstr "Parmak Damar"
+
+msgid "used_holiday_can_not_be_removed"
+msgstr "Bu tatil erişim kontrolü tatili için kullanılmıştı, lütfen önce erişim kontrolünden silin."
+
+msgid "user_group_field_name"
+msgstr "Grup İsmi"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_department_code_maximum_is_%(length)s"
+msgstr "Satır bilgi hatası %(index)s, Maksimum üstün kod uzunluğu%(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_position_code_maximum_is_%(length)s"
+msgstr "Satır bilgi hatası %(index)s, Maksimum üstün kod uzunluğu %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_area_code_maximum_is_%(length)s"
+msgstr "Satır bilgi hatası %(index)s, Maksimum üstün kod uzunluğu %(length)s"
+
+msgid "employeeSave_error_invalidDate"
+msgstr "Geçersiz işlem alım tarihi"
+
+msgid "%(obj)s_is_already_used_in_%(objs)s_and_can_not_delete"
+msgstr "%(obj)s kullanılıyor %(objs)s ve silinemez."
+
+msgid "this_field_can_not_include_space_tab_or_enter"
+msgstr "bu alan boşluk sekmesini içeremez veya giremez."
+
+msgid "msg_all_saved_filters"
+msgstr "Tüm filtreler kaydedildi."
+
+msgid "msg_customize_filters"
+msgstr "Özelleştirilmiş filtreler"
+
+msgid "the_breaktime_%(n1)s_and_%(n2)s_has_intersection"
+msgstr "Mola %(n1)s ve %(n2)s kesişiyor."
+
+msgid "Null"
+msgstr "Boş"
+
+msgid "report_column_attendanceWeekday"
+msgstr "Hafta içi"
+
+msgid "fixed_time"
+msgstr "Sabit Zaman"
+
+msgid "leave_action_new"
+msgstr "Ekle"
+
+msgid "leave_action_newDescription"
+msgstr "Yeni izin ekle"
+
+msgid "leave_action_newHelpTxt"
+msgstr "Yeni izin ekle"
+
+msgid "leave_time_invalid_range"
+msgstr "Geçersiz izin süresi, bitiş saati başlangıç ​​saatinden sonra olmalıdır."
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "Geçersiz saat, başlangıç ​​saati çalışanın [% s] işe alınma tarihinden sonra olmalıdır."
+
+msgid "leave_time_overlap"
+msgstr "% s personel izin süresi çakışıyor"
+
+msgid "select_employee"
+msgstr "Lütfen personel seçin"
+
+msgid "manualLog_field_employee"
+msgstr "Personel"
+
+msgid "manualLog_field_punchTime"
+msgstr "Okutma Zamanı"
+
+msgid "manualLog_field_punchState"
+msgstr "Okutma Durumu"
+
+msgid "manualLog_field_workCode"
+msgstr "Çalışma Kodu"
+
+msgid "manualLog_field_applyReason"
+msgstr "Nedeni Uygula"
+
+msgid "manualLog_field_approvalState"
+msgstr "Durum"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "Notlar"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "Hesaplama"
+
+msgid "menu_att_reportCalculate"
+msgstr "Hesaplama"
+
+msgid "employee_field_position"
+msgstr "Konum"
+
+msgid "time_unit_day"
+msgstr "Gün (ler)"
+
+msgid "time_unit_minute"
+msgstr "Dakika(lar) "
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "İleride Kenar Boşluğu"
+
+msgid "timeInterval_typeOption_flexible"
+msgstr "Esnek"
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "Pazartesi"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "Kaydet"
+
+msgid "short_date_format"
+msgstr "Kısa Tarih Biçimi"
+
+msgid "multiple_dept"
+msgstr "Departman Ağacı Göster"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "Hesaplama Tamamlandı"
+
+msgid "timetable"
+msgstr "Zaman çizelgesi"
+
+msgid "name"
+msgstr "Ad"
+
+msgid "remark"
+msgstr "Açıklama"
+
+msgid "device"
+msgstr "Cihaz"
+
+msgid "companySettingPage_label_companyName"
+msgstr "Şirket Adı"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "Şirket Adı Ekranı"
+
+msgid "menu_sys_indTableLog"
+msgstr "Ara Tablo"
+
+msgid "report_column_approvalOvertime"
+msgstr "FM Onayı"
+
+msgid "scheduledAssign_error_datePeriodError"
+msgstr "Geçersiz tarih periyodu"
+
+msgid "scheduledAssign_error_shiftNotFound"
+msgstr "Geçersiz vardiya"
+
+msgid "scheduledAssign_error_empNotFound"
+msgstr "Personel bulunamadı"
+
+msgid "scheduledAssign_error_deptNotFound"
+msgstr "Departman bulunamadı"
+
+msgid "departmentRule_action_batchAdd"
+msgstr "Ekle"
+
+msgid "departmentRule_action_batchAddDescription"
+msgstr "Birden çok departman için kural ekle"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "Birden çok departman için kural ekle"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "Tatil Ekle"
+
+msgid "calculation_item_actualPresent"
+msgstr "Gerçek Çalışma"
+
+msgid "calculation_item_durationOrShort"
+msgstr "Süre/Kısa"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "Toplam Saat/Toplam Çalışma Saati"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "Mola Süresi/Gerçek Mola Süresi"
+
+msgid "calculation_item_timetableDuration"
+msgstr "ZamanTablosu Süresi"
+
+msgid "calculation_item_late"
+msgstr "Geç Kalma"
+
+msgid "calculation_item_earlyLeave"
+msgstr "Erken Çıkma"
+
+msgid "calculation_item_leave"
+msgstr "İzin"
+
+msgid "calculation_item_absent"
+msgstr "Devamsızlık"
+
+msgid "calculation_item_overtime"
+msgstr "Fazla Mesai"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "Giriş Yok"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "Çıkış Yok"
+
+msgid "calculation_item_present"
+msgstr "Günümüz"
+
+msgid "calculation_item_dayOff"
+msgstr "Gün Kapalı"
+
+msgid "calculation_item_weekend"
+msgstr "Haftasonu"
+
+msgid "calculation_item_holiday"
+msgstr "Tatil"
+
+msgid "calculation_item_actualAttendance"
+msgstr "Gerçek Çalışma"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "Görev Süresi/Kısa"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "Toplam Saat/Toplam Çalışma Saati"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "Mola Süresi/Gerçek Mola Süresi"
+
+msgid "calculation_item_noCheckIn"
+msgstr "Giriş Yok"
+
+msgid "calculation_item_noCheckOut"
+msgstr "Çıkış Yok"
+
+msgid "calculation_item_training"
+msgstr "Eğitim"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "Erken Gelme FM"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "Geç Çıkma FM"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "FM Aktif"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "Minimum Fazla Mesai"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "Dakika"
+
+msgid "timeInterval_error_flexibleWorkTime"
+msgstr "Çalışma saati aralığı 0-1440 olmalı"
+
+msgid "timeInterval_error_flexibleWorkTime_{duration}"
+msgstr "Çalışma saat aralığı 0-{duration} olmalı "
+
+msgid "timeInterval_error_invalidCheckIn/Out"
+msgstr "Giriş saati, çıkış saatinden sonra olamaz"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "Esnek ÇalışmaTablosu Ekle"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "Esnek ÇalışmaTablosu Ekle"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "Esnek ÇalışmaTablosu Ekle"
+
+msgid "approvalStatus_option_pending"
+msgstr "Bekliyor"
+
+msgid "approvalStatus_option_reApply"
+msgstr "Tekrar Onayla"
+
+msgid "approvalStatus_option_revoke"
+msgstr "İptal Et"
+
+msgid "approvalStatus_option_auditing"
+msgstr "İnceleniyor"
+
+msgid "approvalStatus_option_approved"
+msgstr "Onaylandı"
+
+msgid "approvalStatus_option_reject"
+msgstr "Reddedildi"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "Tatil FM"
+
+msgid "calculationUnit_option_hour"
+msgstr "Saat"
+
+msgid "calculationUnit_option_minute"
+msgstr "Dakika"
+
+msgid "calculationUnit_option_workday"
+msgstr "Çalışma Günü"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "SS:DD"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "Tatil(%(Tatil)ler)"
+
+msgid "department_tree_selectAll"
+msgstr "Tümünü Seç"
+
+msgid "calculation_page_empSearch"
+msgstr "Personel Ara"
+
+msgid "calculation_page_startDate"
+msgstr "Başlama Tarihi"
+
+msgid "calculation_page_endDate"
+msgstr "Bitiş Tarihi"
+
+msgid "calculation_page_attCalculate"
+msgstr "Zaman Kontrol Hesaplaması"
+
+msgid "calculation_item_minimumUnit"
+msgstr "Minimum Birim"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "Saat"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "Dakika"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "Çalışma Günü"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "SS:DD"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "Sayısal Hassasiyet"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "Aşağı Yuvarla"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "Yuvarlama"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "Yukarı Yuvarla"
+
+msgid "autoExport_task_error_data: "
+msgstr "Geçersiz bilgi"
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(engine) Yedekleme yapılamıyor"

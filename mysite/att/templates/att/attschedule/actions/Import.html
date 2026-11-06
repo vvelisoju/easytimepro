@@ -1,0 +1,96 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 300px;min-width: 450px">
+    <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}">
+        {% csrf_token %}
+        <div class="layui-form-item field-import_file">
+            <label class="layui-form-label" for="id_import_file">{% trans 'data_import_labelFile' %}<span class='required'>*</span></label>
+            <div class="layui-input-inline ">
+                <input type="file" name="import_file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/plain"   id="id_import_file" required=""  />
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block layui-form-mid layui-word-aux">{% trans 'data_import_fileHelpTxt' %}</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">{% trans 'date_import_labelExistingData' %}<span class='required'>*</span></label></label>
+            <div class="layui-input-inline">
+                <select name="import_type" id="id_import_type">
+                    <option value="0" selected="">{% trans 'date_import_typeOptionIgnore' %}</option>
+                    <option value="1">{% trans 'date_import_typeOptionOverwrite' %}</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"
+                   style="width: 150px;text-align: left">{% trans 'data_import_fileTemplateDemo' %}</label>
+            <div class="layui-input-inline" style="float: right">
+                <a target="_blank" style="color: #01AAED;"
+                   href="att/attschedule/import_template/"><i
+                        class="fa fa-download"></i>{% trans 'data_import_fileTemplateDownload' %}</a>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <table class="layui-hide" id="demo"></table>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block"
+                 style="margin-left: 0px;min-height: 24px;">{% trans 'data_import_description' %}</div>
+            <div class="layui-input-block" style="margin-left: 20px;">
+                <p>{% trans 'data_import_attscheduleImportRequired1' %}</p>
+                <p>{% trans 'data_import_attscheduleImportRequired2' %}</p>
+                <p>{% trans 'data_import_attscheduleImportRequired3' %}</p>
+                <br>
+                <p>{% trans 'supported_formats' %}</p>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#demo'
+    ,cols: [[
+        {field:'no',width: '10%',title: ''}
+        , {field: 'employee_code', width: '11%', title: 'A'}
+        ,{field:'shift_name',width: '28%', title: 'B'}
+        ,{field:'start_date', width: '31%',title: 'C'}
+        ,{field:'end_date', width: '31%',title: 'D'}
+    ]]
+      ,data: [ {
+        "no": "S.No"
+        , "employee_code": "{% trans 'emp_field_employeeCode' %}"
+        ,"shift_name": "{% trans 'Shift' %}"
+        ,"start_date": "{% trans 'schedule_field_startDate' %}"
+        ,"end_date": "{% trans 'schedule_field_endDate' %}"
+    }, {
+        "no": "1"
+        , "employee_code": "10001"
+        , "shift_name": "First Shift"
+        , "start_date": "2020-01-01"
+        , "end_date": "2020-01-31"
+    },{
+        "no": "2"
+        , "employee_code": "10002"
+        , "shift_name": "Second Shift"
+        , "start_date": "2020-01-01"
+        , "end_date": "2020-01-31"
+    },{
+       "no": "3"
+        , "employee_code": "10003"
+        , "shift_name": "Third Shift"
+        , "start_date": "2020-01-01"
+        , "end_date": "2020-01-31"
+    }]
+  });
+
+  $(".layui-layer-btn0").click(function () {
+    if (!$("input[name='import_file']").val()){
+      $("#id_import_file").css({'border':'solid', 'border-color': 'red', 'border-width': '1px', 'border-radius': '2px'})
+    }
+  });
+  $("#id_import_file").click(function () {
+      $("#id_import_file").css({'border-width': '0'})
+  })
+});
+</script>

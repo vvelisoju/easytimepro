@@ -1,0 +1,209 @@
+{% load i18n static common %}
+<div style="padding: 10px;min-height: 370px;min-width: 480px;">
+  <form class="layui-form action-form" action method="post" id="{{ model_name }}_{{ action_repr }}"
+        style="height: 450px">
+    {% csrf_token %}
+    <div class="layui-form-item field-import_file">
+      <label class="layui-form-label" for="id_import_file">{% trans 'data_import_labelFile' %}<span class='required'>*</span></label>
+      <div class="layui-input-inline ">
+        <input type="file" name="import_file" accept=".csv, .xlsx, .xls, .txt"   id="id_import_file" required=""  />
+      </div>
+      <br>
+      <div class="layui-form-item">
+        <div class="layui-input-block layui-form-mid layui-word-aux">{% trans 'data_import_fileHelpTxt' %}</div>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">{% trans 'date_import_labelExistingData' %}</label>
+      <div class="layui-input-inline">
+        <select name="import_type" id="id_import_type">
+          <option value="0" selected="">{% trans 'date_import_typeOptionIgnore' %}</option>
+          <option value="1">{% trans 'date_import_typeOptionOverwrite' %}</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label"
+             style="width: 150px;text-align: left">{% trans 'data_import_fileTemplateDemo' %}</label>
+      <div class="layui-input-inline" style="float: right">
+        <a target="_blank" style="color: #01AAED;"
+           href="personnel/employee/import_template/"><i
+                class="fa fa-download"></i>{% trans 'data_import_fileTemplateDownload' %}</a>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <table class="layui-hide" id="demo"></table>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block"
+           style="margin-left: 0px;min-height: 24px;">{% trans 'data_import_description' %}</div>
+      <div class="layui-input-block" style="margin-left: 20px;">
+        <p>{% trans 'data_import_employeeImportRequired1' %}</p>
+        {% if software_type == 9 %}
+        <p>{% trans 'data_import_employeeImportRequired3' %}</p>
+        {% else %}
+        <p>{% trans 'data_import_employeeImportRequired2' %}</p>
+        {% endif %}
+        <p>{% trans 'data_import_employeeImportRequired4' %}</p>
+        <br>
+        <p>{% trans 'supported_formats' %}</p>
+      </div>
+    </div>
+    <div class="float-right" style="margin-top: 5px">
+      <p id="id_progress_percent"></p>
+    </div>
+    <div class="layui-progress" lay-filter="import_emp_progress">
+      <input type="hidden" value="import_emp" id="import_emp_check">
+      <div class="layui-progress-bar layui-bg-green"></div>
+    </div>
+  </form>
+</div>
+<script>
+  layui.use(['table', 'element'], function () {
+    var InterValObj;
+    var table = layui.table;
+    var element = layui.element;
+    var loop_array = [];
+    var progress_percent_div = $('#id_progress_percent');
+    table.render({
+      elem: '#demo'
+      , cellMinWidth: 80
+      , cols: [[
+        {field: 'no', width: '5%', title: ''}
+        , {field: 'employee_code', width: '9%', title: 'A'}
+        , {field: 'first_name', width: '9%', title: 'B'}
+        {#, {field: 'last_name', width: '10%', title: 'C'}#}
+        , {field: 'department_code', width: '9%', title: 'C'}
+        , {field: 'department_name', width: '14%', title: 'D'}
+        , {field: 'position_code', width: '9%', title: 'E'}
+        , {field: 'position_name', width: '13%', title: 'F'}
+        , {field: 'gender', width: '12%', title: 'G'}
+        , {field: 'hire_date', width: '12%', title: 'H'}
+        , {field: 'validity_start', width: '9%', title: 'I'}
+        , {field: 'validity_end', width: '9%', title: 'J'}
+      ]]
+      , data: [{
+        "no": "S.No"
+        , "employee_code": "{% trans 'emp_field_employeeCode' %}"
+        , "first_name": "{% trans 'emp_field_firstName' %}"
+        {#, "last_name": "{% trans 'emp_field_lastName' %}"#}
+        , "department_code": "{% trans 'department_field_code' %}"
+        , "department_name": "{% trans 'department_field_name' %}"
+        , "position_code": "{% trans 'position_field_code' %}"
+        , "position_name": "{% trans 'position_field_name' %}"
+        , "gender": "{% trans 'emp_field_gender' %}"
+        , "hire_date": "{% trans 'emp_field_hireDate' %}"
+        , "validity_start": "{% trans 'employee_field_validity_start_date' %}"
+        , "validity_end": "{% trans 'employee_field_validity_end_date' %}"
+      }, {
+        "no": "1"
+        , "employee_code": "10001"
+        , "first_name": "Koi"
+        {#, "last_name": "start"#}
+        , "department_code": "1"
+        , "department_name": "HR"
+        , "position_code": "1"
+        , "position_name": "Director"
+        , "gender": "{% trans 'employee_genderOption_male' %} / {% trans 'employee_genderOption_female' %}"
+        , "hire_date": "2016-10-14"
+        , "validity_start": "2016-10-14"
+        , "validity_end": "2016-10-16"
+      }, {
+        "no": "2"
+        , "employee_code": "10002"
+        , "first_name": "Koe"
+        {#, "last_name": "Maline"#}
+        , "department_code": "1"
+        , "department_name": "HR"
+        , "position_code": "1"
+        , "position_name": "Director"
+        , "gender": "{% trans 'employee_genderOption_male' %} / {% trans 'employee_genderOption_female' %}"
+        , "hire_date": "2016-10-14"
+        , "validity_start": "2016-10-14"
+        , "validity_end": "2016-10-16"
+      }, {
+        "no": "3"
+        , "employee_code": "10003"
+        , "first_name": "Kosan"
+        {#, "last_name": "Selin"#}
+        , "department_code": "1"
+        , "department_name": "HR"
+        , "position_code": "2"
+        , "position_name": "Manager Assistant"
+        , "gender": "{% trans 'employee_genderOption_male' %} / {% trans 'employee_genderOption_female' %}"
+        , "hire_date": "2016-10-14"
+        , "validity_start": "2016-10-14"
+        , "validity_end": "2016-10-16"
+      }]
+    });
+
+    function reset_progress() {
+      // set percent and bar be 0
+      element.progress('import_emp_progress', 0);
+      progress_percent_div.text('');
+    }
+
+    function clear_loop() {
+      //stop all loop
+      var i = 0;
+      for (i in loop_array) {
+        window.clearInterval(loop_array[i]);
+      }
+      loop_array = []
+    }
+
+    function render_process_bar() {
+      // use ajax get the progress by api
+      var url = '/api/task_progress/?process_type=import_emp';
+      var import_emp_check = $('#import_emp_check').val();
+      if (import_emp_check === 'import_emp') {
+        $.ajax({
+          url: url,
+          type: 'GET',
+          success: function (data) {
+            var progress_percent_num = data['progress_percent'];
+            var progress_percent = progress_percent_num.toString() + '%';
+            element.progress('import_emp_progress', progress_percent);
+            progress_percent_div.text(progress_percent);
+            if (progress_percent_num === 100) {
+              clear_loop();
+              setTimeout(() =>{
+                $(".layui-layer-btn1").click();
+              },2000);
+              $("#tab_employee").load('/personnel/employee/');
+              return 0
+            }
+          },
+          error: function (data) {
+            reset_progress();
+            clear_loop();
+            return 0
+          }
+        })
+      } else {
+        clear_loop();
+        return 0
+      }
+    }
+
+    $(".layui-layer-btn0").click(function () {
+      if (!$("input[name='import_file']").val()) {
+        $("#id_import_file").css({
+          'border': 'solid',
+          'border-color': 'red',
+          'border-width': '1px',
+          'border-radius': '2px'
+        })
+      }
+      reset_progress();
+      InterValObj = window.setInterval(render_process_bar, 2000);
+      loop_array.push(InterValObj)
+    });
+    $("#id_import_file").click(function () {
+      $("#id_import_file").css({'border-width': '0'});
+      reset_progress();
+      clear_loop();
+    })
+
+  });
+</script>

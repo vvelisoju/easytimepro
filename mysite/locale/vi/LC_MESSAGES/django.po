@@ -1,0 +1,8479 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: biotime 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-15 23:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "enter_valid_email_addresses"
+msgstr "Nhập địa chỉ email hợp lệ."
+
+msgid "user_field_username"
+msgstr "Tên người dùng"
+
+msgid "user_field_usernameHelpTxt"
+msgstr " Yêu cầu 30 ký tự trở xuống. Chữ cái, chữ số và các kí tự @ /. / + / - / _."
+
+msgid "user_field_usernameValidator"
+msgstr "Nhập tên người dùng hợp lệ."
+
+msgid "user_field_password"
+msgstr "Mật khẩu"
+
+msgid "user_field_firstName"
+msgstr "Tên"
+
+msgid "user_field_lastName"
+msgstr "Họ"
+
+msgid "user_field_email"
+msgstr "Hôp Thư"
+
+msgid "user_field_authorizedDepartment"
+msgstr " Bộ phận ủy quyền "
+
+msgid "user_field_authorizedDepartmentHelpTxt"
+msgstr "Xử lý tất cả các khu vực không được chọn"
+
+msgid "user_field_authorizedArea"
+msgstr "Khu vực ủy quyền"
+
+msgid "user_field_authorizedAreaHelpTxt"
+msgstr "Xử lý tất cả các phòng ban không được chọn"
+
+msgid "user_field_loginTimes"
+msgstr "Thời gian đăng nhập"
+
+msgid "user_field_staff"
+msgstr "Nhân viên"
+
+msgid "user_field_staffStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_active"
+msgstr "Hoạt động"
+
+msgid "user_field_activeStatusHelpTxt"
+msgstr " "
+
+msgid "user_field_superuser"
+msgstr "Siêu người dùng"
+
+msgid "user_field_dateJoined"
+msgstr "Ngày tham gia "
+
+msgid "user_field_lastLogin"
+msgstr "Đăng nhập lần cuối"
+
+msgid "base_model_user"
+msgstr "Người dùng"
+
+msgid "userProfile_field_username"
+msgstr "Tên người dùng"
+
+msgid "userProfile_field_pinTabs"
+msgstr "Ghim mục"
+
+msgid "userProfile_field_hideColumns"
+msgstr "Ẩn cột "
+
+msgid "userProfile_field_order"
+msgstr "Thứ tự cột"
+
+msgid "userProfile_field_preferences"
+msgstr "Hồ sơ"
+
+msgid "base_model_userProfile"
+msgstr "Hồ sơ người dùng"
+
+msgid "common_action_deleteSelectedRecord"
+msgstr "Xóa"
+
+msgid "common_action_deleteSelectedRecordDescription"
+msgstr "Xóa bản ghi đã chọn"
+
+msgid "common_action_deleteSelectedRecordHelpTxt"
+msgstr "Xóa bản ghi đã chọn"
+
+msgid "are_you_sure_to_delete_the_selected"
+msgstr "Bạn có chắc chắn xóa cái đã chọn {0} {1}?"
+
+msgid "are_you_sure_to_delete_the_selected_node"
+msgstr "Bạn có chắc chắn xóa nút đã chọn?"
+
+msgid "are_you_sure_to_delete_the_selected_document"
+msgstr "Bạn có chắc chắn xóa tài liệu đã chọn?"
+
+msgid "common_action_new"
+msgstr "Thêm vào"
+
+msgid "common_action_newDescription"
+msgstr "Thêm vào"
+
+msgid "common_action_newHelpTxt"
+msgstr "Thêm vào"
+
+msgid "helpers_actionForm_actionLabel"
+msgstr "Hoạt động:"
+
+msgid "helpers_addText_addAnother%(verbose_name)s"
+msgstr "Thêm %(verbose_name)s khác"
+
+msgid "helpers_deleteText_remove"
+msgstr "Xóa"
+
+msgid "bookmark_missing_valid_parameters_echo"
+msgstr "Đánh dấu trang bị thiếu tham số hợp lệ."
+
+msgid "bookmark_duplication_echo"
+msgstr "Dấu trang có cùng tên đã được dùng, bạn có thể thay đổi tên hoặc ghi đè lên bản ghi trước đó."
+
+msgid "baseModel_field_dataStatus_option_statusValid"
+msgstr "Có hiệu lực"
+
+msgid "baseModel_field_dataStatus_option_statusInvalid"
+msgstr "Không hợp lệ"
+
+msgid "baseModel_field_createTime"
+msgstr "Tạo thời gian"
+
+msgid "baseModel_field_createUser"
+msgstr "Tạo người dùng"
+
+msgid "baseModel_field_changeTime"
+msgstr "Thay đổi thời gian"
+
+msgid "baseModel_field_changeUser"
+msgstr "Thay đổi người dùng"
+
+msgid "baseModel_field_dataStatus"
+msgstr "Trạng thái dữ liệu"
+
+msgid "userProfile_languageChange_successful"
+msgstr "Thành công"
+
+msgid "userAuth_error_invalidLogin"
+msgstr "Đăng nhập không hợp lệ"
+
+msgid "userAuth_error_superuserRequired"
+msgstr "Siêu người dùng là bắt buộc"
+
+msgid "action_not_available"
+msgstr "Hành động không có sẵn"
+
+msgid "hiddenField_save_successful"
+msgstr "Thành công"
+
+msgid "hiddenField_reset_successful"
+msgstr "Thành công"
+
+msgid "hiddenField_actionFailed_forbidden"
+msgstr "Ngăn cấm"
+
+msgid "hiddenField_actionFailed_parameterError"
+msgstr "Lỗi tham số"
+
+msgid "columnOrder_save_successful"
+msgstr "Thành công"
+
+msgid "columnOrder_actionFailed_parameterError"
+msgstr "Lỗi tham số"
+
+msgid "pinTab_saveError_exceedMaximum{num}"
+msgstr "Các tabs không được lớn hơn {num}"
+
+msgid "pinTab_saveError_duplicate"
+msgstr "Bản sao"
+
+msgid "duplicate"
+msgstr "Bản sao"
+
+msgid "pinTab_remove_successful"
+msgstr "Thành công"
+
+msgid "pinTab_action_parameterError"
+msgstr "Lỗi tham số"
+
+msgid "theme_saveFailed_forbidden"
+msgstr "Ngăn Cấm"
+
+msgid "login_authorize_license_expired"
+msgstr "Giấy phép đã hết hạn "
+
+msgid "license_will_be_expired_after_%(day)s_days"
+msgstr "Giấy phép sẽ hết hạn sau %(day)s ngày"
+
+msgid "booleanFieldFilter_option_all"
+msgstr "Tất cả"
+
+msgid "booleanFieldFilter_option_yes"
+msgstr "Có"
+
+msgid "booleanFieldFilter_option_no"
+msgstr "Không"
+
+msgid "fieldFilter_option_all"
+msgstr "Tất cả"
+
+msgid "textFieldFilter_option_contain"
+msgstr "Chứa định"
+
+msgid "textFieldFilter_option_exact"
+msgstr "Chính Xác"
+
+msgid "textFieldFilter_option_startswith"
+msgstr "Bắt đầu với"
+
+msgid "textFieldFilter_option_endswith"
+msgstr "Kết thúc với"
+
+msgid "textFieldFilter_option_oneOf"
+msgstr "Một trong"
+
+msgid "textFieldFilter_option_regex"
+msgstr "Biểu hiện thông thường"
+
+msgid "dateFieldFilter_option_anyDate"
+msgstr "Bất kỳ ngày nào"
+
+msgid "dateFieldFilter_option_hasDate"
+msgstr "Với Ngày"
+
+msgid "dateFieldFilter_option_hasNoDate"
+msgstr "Không có ngày"
+
+msgid "dateFieldFilter_option_today"
+msgstr "Hôm nay"
+
+msgid "dateFieldFilter_option_yesterday"
+msgstr "Hôm qua"
+
+msgid "dateFieldFilter_option_past7Days"
+msgstr "7 ngày qua"
+
+msgid "dateFieldFilter_option_thisWeek"
+msgstr "Tuần này"
+
+msgid "dateFieldFilter_option_thisMonth"
+msgstr "Tháng này"
+
+msgid "dateFieldFilter_option_thisYear"
+msgstr "Năm nay"
+
+msgid "timeFieldFilter_option_anyTime"
+msgstr "Bất kỳ lúc nào"
+
+msgid "timeFieldFilter_option_hasTime"
+msgstr "với thời gian"
+
+msgid "timeFieldFilter_option_hasNoTime"
+msgstr "không có thời gian"
+
+msgid "timeFieldFilter_option_hour0008"
+msgstr "00-08"
+
+msgid "timeFieldFilter_option_hour0012"
+msgstr "00-12"
+
+msgid "timeFieldFilter_option_hour0018"
+msgstr "00-18"
+
+msgid "multiSelectFieldFilter_option_in"
+msgstr "Bên trong"
+
+msgid "base_model_bookmarks"
+msgstr "Dấu Trang"
+
+msgid "report_column_empCode"
+msgstr "ID Nhân viên"
+
+msgid "report_column_firstName"
+msgstr "Tên"
+
+msgid "report_column_lastName"
+msgstr "Họ"
+
+msgid "report_column_nickName"
+msgstr "Biệt danh"
+
+msgid "report_column_gender"
+msgstr "Giới Tính "
+
+msgid "report_column_departmentCode"
+msgstr "Mã Bộ Phận"
+
+msgid "report_column_departmentName"
+msgstr "Bộ Phận"
+
+msgid "report_column_positionCode"
+msgstr "Mã vị trí"
+
+msgid "report_column_positionName"
+msgstr "Chức Vụ"
+
+msgid "report_column_workCode"
+msgstr "Mã công việc"
+
+msgid "report_column_dataSources"
+msgstr "Nguồn dữ liệu"
+
+msgid "report_column_punchDate"
+msgstr "Ngày"
+
+msgid "report_column_punchTime"
+msgstr "Giờ"
+
+msgid "report_column_punchState"
+msgstr "Trạng thái chấm"
+
+msgid "report_column_correctState"
+msgstr "Trạng thái chính xác"
+
+msgid "report_column_lateDuration"
+msgstr "Muộn"
+
+msgid "report_column_earlyLeaveDuration"
+msgstr "Về sớm"
+
+msgid "report_column_absentDuration"
+msgstr "Vắng mặt"
+
+msgid "report_column_actualWorkDuration"
+msgstr "Công việc thực tế"
+
+msgid "report_column_shortDuration"
+msgstr "Ngắn"
+
+msgid "report_column_overtimeDuration"
+msgstr "Tăng ca"
+
+msgid "report_column_normalWorkTime"
+msgstr "Thời gian làm việc thông thường"
+
+msgid "report_column_normalOvertime"
+msgstr "Tăng ca thông thường"
+
+msgid "report_column_weekendOvertime"
+msgstr "Tăng ca cuối tuần"
+
+msgid "report_column_holidayOvertime"
+msgstr "Tăng ca ngày Lễ"
+
+msgid "report_column_overtimeLevel1"
+msgstr "Tăng ca cấp độ 1"
+
+msgid "report_column_overtimeLevel2"
+msgstr "Tăng ca cấp độ 2"
+
+msgid "report_column_overtimeLevel3"
+msgstr "Tăng ca cấp độ 3"
+
+msgid "leaveCategory_default_sickLeave"
+msgstr "Nghỉ ốm"
+
+msgid "leaveCategory_default_casualLeave"
+msgstr "Nghỉ phép"
+
+msgid "leaveCategory_default_maternity_leave"
+msgstr "Nghỉ thai sản"
+
+msgid "leaveCategory_default_compassionate_leave"
+msgstr "Nghỉ phép"
+
+msgid "leaveCategory_default_annual_leave"
+msgstr "Phép Năm"
+
+msgid "leaveCategory_default_business_trip"
+msgstr "Chuyến công tác"
+
+msgid "report_column_attendanceDate"
+msgstr "Ngày"
+
+msgid "report_column_attendanceWeekday"
+msgstr "Các ngày trong tuần"
+
+msgid "report_column_exception"
+msgstr "Ngoại lệ"
+
+msgid "report_column_timeIntervalName"
+msgstr "Thời gian biểu"
+
+msgid "report_column_checkInTime"
+msgstr "Đăng ký vào"
+
+msgid "report_column_checkOutTime"
+msgstr "Đăng ký ra"
+
+msgid "report_column_deviceTn"
+msgstr "Thiết bị [Trong]"
+
+msgid "report_column_deviceOut"
+msgstr "Thiết bị [ra ]"
+
+msgid "report_column_workCodeIn"
+msgstr "Mã công việc [Trong]"
+
+msgid "report_column_workCodeOut"
+msgstr "Mã công việc [Ra]"
+
+msgid "report_column_clockInTime"
+msgstr "GIờ vào"
+
+msgid "report_column_clockOutTime"
+msgstr "Giờ ra"
+
+msgid "report_column_totalTimeDuration"
+msgstr "Tổng thời gian"
+
+msgid "report_column_dutyWorkedTime"
+msgstr "Thời gian làm việc"
+
+msgid "report_column_actualWorkedTime"
+msgstr "Thời gian làm việc thực tế"
+
+msgid "report_column_unscheduled"
+msgstr "Đột xuất"
+
+msgid "report_column_remaining"
+msgstr "Còn lại"
+
+msgid "report_column_breakOutTime"
+msgstr "Giải lao ra"
+
+msgid "report_column_breakInTime"
+msgstr "Giải lao vào"
+
+msgid "report_column_actualBreakTimeDuration"
+msgstr "Giờ giải lao thực tế"
+
+msgid "report_column_breakTime"
+msgstr "Giờ giải lao"
+
+msgid "report_column_breakLateDuration"
+msgstr "Trễ [Giờ giải lao]"
+
+msgid "report_column_breakEarlyLeaveDuration"
+msgstr "Nghỉ sớm [Giờ giải lao] "
+
+msgid "report_column_breakTimeAbsentDuration"
+msgstr "Vắng mặt [Giờ giải lao] "
+
+msgid "report_column_totalWorkedDuration"
+msgstr "Tổng số công việc"
+
+msgid "report_column_actualWorkedDuration"
+msgstr "Thực tế làm việc"
+
+msgid "report_column_leaveDuration"
+msgstr "Rời khỏi"
+
+msgid "report_column_overtime"
+msgstr "Tăng ca"
+
+msgid "report_column_missIn"
+msgstr "Quên chấm vào"
+
+msgid "report_column_missOut"
+msgstr "Quên chấm ra"
+
+msgid "report_column_present"
+msgstr "Hiện tại"
+
+msgid "report_column_dayOff"
+msgstr "Ngày nghỉ"
+
+msgid "report_column_weekend"
+msgstr "Cuối tuần"
+
+msgid "report_column_holiday"
+msgstr "Ngày lễ"
+
+msgid "report_column_trainingDuration"
+msgstr "Đào tạo"
+
+msgid "report_column_timetableDuration"
+msgstr "Thời lượng"
+
+msgid "report_column_scheduledBreakTime"
+msgstr "Giải lao"
+
+msgid "report_column_attendanceDuration"
+msgstr "Thời gian làm nhiệm vụ"
+
+msgid "report_column_breakTimeDuration"
+msgstr "Thời gian giải lao"
+
+msgid "report_column_approvalOvertime"
+msgstr "Chấp thuận tăng ca"
+
+msgid "report_column_timetableDays"
+msgstr "Ngày làm việc"
+
+msgid "report_column_cardNumber"
+msgstr "Số thẻ"
+
+msgid "report_column_firstPunch"
+msgstr "Chấm lần đầu"
+
+msgid "report_column_lastPunch"
+msgstr "Chấm lần cuối"
+
+msgid "report_column_totalDuration"
+msgstr "Tổng giờ làm việc"
+
+msgid "report_column_firstIn"
+msgstr "Check In đầu tiên"
+
+msgid "report_column_lastOut"
+msgstr "Check Out cuối cùng "
+
+msgid "report_column_exceptionDescription"
+msgstr "Mô tả"
+
+msgid "report_column_employeeCount"
+msgstr "Số nhân viên"
+
+msgid "report_column_lateTimes"
+msgstr "Muộn (thời gian)"
+
+msgid "report_column_earlyLeaveTimes"
+msgstr "Nghỉ sớm (thời gian) "
+
+msgid "report_column_absentTimes"
+msgstr "Vắng mặt (thời gian)"
+
+msgid "report_column_punchTimes"
+msgstr "Thời gian"
+
+msgid "report_column_summaryTotalTimeDuration"
+msgstr "Tóm tắt thời gian"
+
+msgid "report_column_timetable"
+msgstr "Thời gian biểu"
+
+msgid "fixed_time"
+msgstr "Thời gian cố định"
+
+msgid "report_column_gpsLocation"
+msgstr "Vị trí GPS"
+
+msgid "report_column_longitude"
+msgstr "Kinh độ"
+
+msgid "report_column_latitude"
+msgstr "Vĩ độ"
+
+msgid "report_column_areaAlias"
+msgstr "Khu vực"
+
+msgid "report_column_terminalAlias"
+msgstr "Thiết bị"
+
+msgid "report_column_terminalSN"
+msgstr "Số sê-ri"
+
+msgid "menu_att_transactionReport"
+msgstr "Sự kiện"
+
+msgid "menu_att_scheduledLogReport"
+msgstr "Nhật ký theo lịch trình"
+
+msgid "menu_att_dailyStatusReport"
+msgstr "Tình trạng hàng ngày"
+
+msgid "menu_att_detailReport"
+msgstr "Tổng thời gian thẻ"
+
+msgid "menu_att_employeeSummaryReport"
+msgstr "Tóm tắt điểm danh"
+
+msgid "menu_att_leaveSummaryReport"
+msgstr "Tóm tắt rời khỏi"
+
+msgid "menu_att_FILOReport"
+msgstr "Lần vào đầu tiên và lần ra cuối cùng"
+
+msgid "menu_att_firstLastReport"
+msgstr "Lần đầu và lần cuối"
+
+msgid "menu_att_firstInLastOutReport"
+msgstr "Lần vào đầu tiên và lần ra cuối cùng"
+
+msgid "menu_att_exceptionReport"
+msgstr "Ngoại lệ"
+
+msgid "menu_att_departmentSummaryReport"
+msgstr "Tóm tắt theo bộ phận"
+
+msgid "menu_att_timeCardReport"
+msgstr "Thẻ thời gian"
+
+msgid "menu_att_lateReport"
+msgstr "Muộn"
+
+msgid "menu_att_leaveEarlyReport"
+msgstr "Về sớm"
+
+msgid "menu_att_overtimeReport"
+msgstr "Tăng ca"
+
+msgid "menu_att_absentReport"
+msgstr "Vắng mặt"
+
+msgid "menu_att_multipleTransactionReport"
+msgstr "Đa sự kiện"
+
+msgid "menu_att_breakTimeReport"
+msgstr "Giờ giải lao"
+
+msgid "menu_group_att_configuration"
+msgstr "Cấu hình"
+
+msgid "menu_staff_transactionReport"
+msgstr "Báo cáo sự kiện"
+
+msgid "changeSchedule_error_shiftOverlap"
+msgstr "Ca chồng chéo"
+
+msgid "changeSchedule_error_scheduleApproved"
+msgstr "Bản ghi lịch trình không thể sửa đổi bởi kiểm toán."
+
+msgid "att_model_leave"
+msgstr "Rời khỏi"
+
+msgid "leave_field_employee"
+msgstr "Nhân viên"
+
+msgid "leave_field_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "leave_field_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "leave_field_leaveCategory"
+msgstr "Danh sách"
+
+msgid "leave_field_reason"
+msgstr "Áp dụng lý do"
+
+msgid "leave_field_approvalState"
+msgstr "Trạng thái"
+
+msgid "leave_field_approvalReason"
+msgstr "Nhật xét"
+
+msgid "leave_action_new"
+msgstr "Thêm vào"
+
+msgid "leave_action_newDescription"
+msgstr "Thêm nghỉ phép mới"
+
+msgid "leave_action_newHelpTxt"
+msgstr "Thêm nghỉ phép mới"
+
+msgid "leave_time_invalid_range"
+msgstr "Thời gian nghỉ không hợp lệ, thời gian kết thúc phải muộn hơn thời gian bắt đầu."
+
+msgid "leave_time_invalid_range_hiredate"
+msgstr "Thời gian không hợp lệ, thời gian bắt đầu phải muộn hơn ngày thuê nhân viên [%s]."
+
+msgid "leave_time_overlap"
+msgstr "%ssắp xếp chồng chéo nghỉ phép của nhân sự"
+
+msgid "select_employee"
+msgstr "Vui lòng chọn nhân viên"
+
+msgid "manualLog_field_employee"
+msgstr "Nhân viên"
+
+msgid "manualLog_field_punchTime"
+msgstr "Thời gian chấm công"
+
+msgid "manualLog_field_punchState"
+msgstr "Trạng thái chấm công"
+
+msgid "manualLog_field_workCode"
+msgstr "Mã công việc"
+
+msgid "manualLog_field_applyReason"
+msgstr "Áp dụng lý do"
+
+msgid "manualLog_field_approvalState"
+msgstr "Trạng thái"
+
+msgid "manualLog_field_approvalRemark"
+msgstr "Lưu Ý"
+
+msgid "manualLog_Action_new"
+msgstr "Thêm"
+
+msgid "manualLog_Action_newDescription"
+msgstr "Thêm nhật ký hướng dẫn mới"
+
+msgid "manualLog_Action_newHelpTxt"
+msgstr "Thêm nhật ký mới"
+
+msgid "manual_log_time_greater_now"
+msgstr "Thời gian nhấn không thể lớn hơn bây giờ."
+
+msgid "leave_time_invalid_range_hire_date"
+msgstr "Thời gian không hợp lệ, thời gian bắt đầu phải muộn hơn ngày thuê nhân viên[%s]."
+
+msgid "manual_log_repeat"
+msgstr "%s  Lặp lại thời gian chấm công"
+
+msgid "overtime_field_employee"
+msgstr "Nhân viên"
+
+msgid "overtime_field_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "overtime_field_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "overtime_field_overtimeType"
+msgstr "Các loại tăng ca"
+
+msgid "overtime_field_applyReason"
+msgstr "Áp dụng lý do"
+
+msgid "overtime_field_approvalState"
+msgstr "Trạng thái"
+
+msgid "overtime_field_approvalRemark"
+msgstr "Lưu ý"
+
+msgid "overtime_action_new"
+msgstr "Thêm"
+
+msgid "overtime_action_newDescription"
+msgstr "Thêm tăng ca mới"
+
+msgid "overtime_action_newHelpTxt"
+msgstr "Thêm tăng ca mới"
+
+msgid "overtime_time_overlap"
+msgstr "%s Nhân sự tăng ca chồng chéo"
+
+msgid "schedule_action_addSchedule"
+msgstr "Thêm lịch trình"
+
+msgid "schedule_action_addSchedule_description"
+msgstr "Thêm lịch trình"
+
+msgid "schedule_action_addSchedule_help_txt"
+msgstr "Thêm lịch trình"
+
+msgid "scheduledAssign_error_datePeriodError"
+msgstr "Lỗi ngày"
+
+msgid "scheduledAssign_error_shiftNotFound"
+msgstr "Không tìm thấy ca"
+
+msgid "scheduledAssign_error_empNotFound"
+msgstr "Không tìm thấy nhân viên"
+
+msgid "scheduledAssign_error_deptNotFound"
+msgstr "Không tìm thấy bộ phận"
+
+msgid "scheduledAssign_error_schdOverlap_%(obj)s_%(start_date)s_%(end_date)s"
+msgstr "Thời khóa biểu của %(obj)s trùng nhau trên %(start_date)s_%(end_date)s."
+
+msgid "please_select_time_intervals"
+msgstr "Vui lòng chọn thời gian biểu"
+
+msgid "%(code)s(%(name)s) this_employee_already_has_schedule_in %(start)s - %(end)s"
+msgstr "%(code)s(%(name)s) bản sao trùng lập từ %(start)s đến %(end)s"
+
+msgid "Can_not_using_multiple_timeinterval_with_flexible_timeinterval"
+msgstr "Lỗi thời gian trùng lặp"
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated! In_section %(d)s day"
+msgstr "%(t)s và %(ss)s trùng nhau trong ngày %(d)s"
+
+msgid "shift_not_found"
+msgstr "Không tìm thấy ca làm"
+
+msgid "the_shift(%(shift)s) was_using_can_not_modify."
+msgstr "sự thay đổi(%(shift)s) đang sử dụng "
+
+msgid "shift_alias_%(alias)s_already_exist"
+msgstr "Bí danh trùng lặp(%(alias)s)"
+
+msgid "tmpSchedule_action_addTmpSchedule"
+msgstr "Thêm lịch trình tạm thời"
+
+msgid "tmpSchedule_action_addTmpSchedule_description"
+msgstr "Thêm lịch trình tạm thời mới"
+
+msgid "tmpSchedule_action_addTmpSchedule_help_txt"
+msgstr "Thêm lịch trình tạm thời mới"
+
+msgid "tmpSchedule_action_addTempSchedule_error_employeeIsRequired"
+msgstr "Vui lòng chọn nhân viên"
+
+msgid "tmpSchedule_action_addTempSchedule_error_departmentIsRequired"
+msgstr "Vui lòng chọn bộ phận"
+
+msgid "tmpSchedule_action_addTempSchedule_error_timetableIsRequired"
+msgstr "Vui lòng chọn thời gian biểu"
+
+msgid "%(timetableA)s_and_%(timetableB)s_is_overlap_on_%(date)s"
+msgstr "%(timetableA)s và %(timetableB)s chồng chéo lên nhau %(date)s"
+
+msgid "tmpSchedule_action_addTmpSchedule_processingFailed"
+msgstr "Xử lý không thành công"
+
+msgid "training_field_employee"
+msgstr "Nhân viên"
+
+msgid "training_field_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "training_field_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "training_field_trainingCategory"
+msgstr "Các loại đào tạo"
+
+msgid "training_field_applyReason"
+msgstr "Áp dụng lý do"
+
+msgid "training_field_approvalState"
+msgstr "Trạng thái"
+
+msgid "training_field_approvalRemark"
+msgstr "Lưu ý"
+
+msgid "training_action_new"
+msgstr "Thêm"
+
+msgid "training_action_newDescription"
+msgstr "Thêm đào tạo mới"
+
+msgid "training_action_newHelpTxt"
+msgstr "Thêm đào tạo mới"
+
+msgid "training_time_overlap"
+msgstr "%s thời gian đào tạo nhân sự trùng lặp"
+
+msgid "shift_field_timeInterval"
+msgstr "Thời gian biểu"
+
+msgid "deptAttRule_field_alias"
+msgstr "Tên"
+
+msgid "departmentRule_action_batchAdd"
+msgstr "Thêm"
+
+msgid "departmentRule_action_batchAddDescription"
+msgstr "Thêm quy tắc cho nhiều bộ phận"
+
+msgid "departmentRule_action_batchAddHelpTxt"
+msgstr "Thêm quy tắc cho nhiều bộ phận"
+
+msgid "%(department)s_already_setup_rule"
+msgstr "%(department)s đã thiết lập quy tắc "
+
+msgid "holiday_field_alias"
+msgstr "Tên"
+
+msgid "holiday_field_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "holiday_field_duration"
+msgstr "Thời lượng (ngày)"
+
+msgid "holiday_field_workType"
+msgstr "Các loại công việc"
+
+msgid "holiday_field_overtimeLevel"
+msgstr "Cấp độ tăng ca"
+
+msgid "holiday_field_overtimeLevel1"
+msgstr "Tăng ca cấp độ 1"
+
+msgid "holiday_field_overtimeLevel2"
+msgstr "Tăng ca cấp độ 2"
+
+msgid "holiday_field_overtimeLevel3"
+msgstr "Tăng ca cấp độ 3"
+
+msgid "holiday_action_addDepartmentHoliday"
+msgstr "Thêm"
+
+msgid "holiday_action_addDepartmentHolidayDescription"
+msgstr "Thêm kỳ nghỉ"
+
+msgid "holiday_action_addDepartmentHolidayHelpTxt"
+msgstr "Thêm kỳ nghỉ"
+
+msgid "weekend_setting_already_used, can_not_modify."
+msgstr "Cài đặt cuối tuần đã được sử dụng, không thể sửa đổi."
+
+msgid "can_not_using_same_value_for_function_key_in_calculation_setting."
+msgstr "Không thể sử dụng cùng một giá trị cho khóa chức năng trong cài đặt tính toán."
+
+msgid "calculation_item_actualPresent"
+msgstr "Hiện tại thực tế"
+
+msgid "calculation_item_durationOrShort"
+msgstr "Thời lượng/ngắn"
+
+msgid "calculation_item_totalTimeOrTotalWorkedTime"
+msgstr "Tổng thời gian/Tổng thời gian làm việc"
+
+msgid "calculation_item_breakTimeOrActualBreakTime"
+msgstr "Giờ giải lao/Giờ giải lao thực tế "
+
+msgid "calculation_item_timetableDuration"
+msgstr "Thời khóa biểu"
+
+msgid "calculation_item_late"
+msgstr "Muộn"
+
+msgid "calculation_item_earlyLeave"
+msgstr "Về sớm"
+
+msgid "calculation_item_leave"
+msgstr "Rời khỏi"
+
+msgid "calculation_item_absent"
+msgstr "Vắng mặt"
+
+msgid "calculation_item_overtime"
+msgstr "Tăng ca"
+
+msgid "calculation_item_no_ClockIn"
+msgstr "Không có giờ chấm vào"
+
+msgid "calculation_item_no_ClockOut"
+msgstr "Không có giờ chấm ra"
+
+msgid "calculation_item_present"
+msgstr "Hiện tại"
+
+msgid "calculation_item_dayOff"
+msgstr "Ngày nghỉ"
+
+msgid "calculation_item_weekend"
+msgstr "Cuối tuần"
+
+msgid "calculation_item_holiday"
+msgstr "Ngày lễ"
+
+msgid "replace_existing_shift_even_using"
+msgstr "Thay thế ca làm việc hiện tại ngay cả khi sử dụng"
+
+msgid "remove_overlap_schedule"
+msgstr "Xóa lịch trình chồng chéo"
+
+msgid "enable_work_on_weekend_as"
+msgstr "Làm việc cuối tuần tính như"
+
+msgid "work_type"
+msgstr "Loại công việc"
+
+msgid "enable_work_on_day_off_as"
+msgstr "Làm việc ngày nghỉ tính như"
+
+msgid "auto_shift"
+msgstr "Ca tự động"
+
+msgid "select_date"
+msgstr "Vui lòng chọn ngày."
+
+msgid "%(t)s and %(ss)s time_period_are_duplicated!_In_section %(d)s day"
+msgstr "%(t)s và %(ss)s trùng lặp trong ngày  %(d)s"
+
+msgid "breakTime_validationError_earlyGreatThanDuration"
+msgstr "Thời gian sớm không thể vượt quá thời gian nghỉ."
+
+msgid "breakTime_validationError_overGreatThanRangeDuration"
+msgstr "Độ dài quãng thời gian nghỉ vượt khỏi quãng nghỉ."
+
+msgid "breakTime_validationError_breakTimeUsing"
+msgstr "Thời gian nghỉ được sử dụng bởi thời gian biểu, không thể chỉnh sửa."
+
+msgid "breakTime_validationError_invalidNumber"
+msgstr "Số phải lớn hơn 0"
+
+msgid "please_select_time_table"
+msgstr "Vui lòng chọn thời gian biểu ."
+
+msgid "%s error_of_sql statement_adding_failed."
+msgstr "%s lỗi của câu lệnh sql thêm thất bại."
+
+msgid "menu_group_att_rule"
+msgstr "Quy tắc"
+
+msgid "menu_att_globalRule"
+msgstr "Quy tắc toàn cầu"
+
+msgid "menu_att_departmentRule"
+msgstr "Quy tắc bộ phận"
+
+msgid "menu_group_att_shiftManagement"
+msgstr "Ca"
+
+msgid "menu_group_att_scheduleManagement"
+msgstr "Lịch trình"
+
+msgid "menu_att_breakTime"
+msgstr "Giờ giải lao"
+
+msgid "menu_att_timeInterval"
+msgstr "Giờ giải lao"
+
+msgid "menu_att_shift"
+msgstr "Ca"
+
+msgid "menu_att_departmentSchedule"
+msgstr "Lịch trình bộ phận"
+
+msgid "menu_att_employeeSchedule"
+msgstr "Lịch trình nhân viên"
+
+msgid "menu_att_temporarySchedule"
+msgstr "Lịch trình tạm thời"
+
+msgid "menu_att_scheduleView"
+msgstr "Lịch Xem"
+
+msgid "menu_group_approvalManagement"
+msgstr "Chấp thuận"
+
+msgid "menu_att_manualLog"
+msgstr "Nhật ký hướng dẫn"
+
+msgid "menu_att_leave"
+msgstr "Rời khỏi"
+
+msgid "menu_att_overtime"
+msgstr "Tăng ca"
+
+msgid "menu_att_training"
+msgstr "Đào tạo"
+
+msgid "menu_att_adjustSchedule"
+msgstr "Điều chỉnh lịch trình"
+
+msgid "menu_group_att_holiday"
+msgstr "Ngày lễ"
+
+msgid "menu_att_holiday"
+msgstr "Ngày lễ"
+
+msgid "menu_group_att_leaveManagement"
+msgstr "Các loại"
+
+msgid "menu_att_leaveType"
+msgstr "Loại nghỉ phép"
+
+msgid "menu_att_trainingType"
+msgstr "Các loại đào tạo"
+
+msgid "menu_group_att_reportSetting"
+msgstr "Cài đặt báo cáo"
+
+msgid "menu_att_reportSetting"
+msgstr "Cài đặt báo cáo"
+
+msgid "menu_group_att_transaction"
+msgstr "Sự kiện"
+
+msgid "menu_att_transaction"
+msgstr "Sự kiện"
+
+msgid "menu_group_att_reportCalculate"
+msgstr "Tính toán"
+
+msgid "menu_att_reportCalculate"
+msgstr "Tính toán"
+
+msgid "menu_group_att_nonSchedulingReport"
+msgstr "Không có lịch trình"
+
+msgid "menu_group_att_report"
+msgstr "Báo cáo"
+
+msgid "menu_group_att_summaryReport"
+msgstr "Báo cáo tóm tắt"
+
+msgid "menu_group_att_attendanceDisplay"
+msgstr "Giám sát"
+
+msgid "menu_att_attendanceDisplay"
+msgstr "Điểm danh nhân sự"
+
+msgid "att_model_attendanceDetail"
+msgstr "Chi tiết điểm danh"
+
+msgid "att_model_attendanceException"
+msgstr "Điểm danh ngoại lệ"
+
+msgid "att_calc_log"
+msgstr "Tính toán nhật ký điểm danh"
+
+msgid "attRule_field_paramName"
+msgstr "Tên"
+
+msgid "attRule_field_paramValue"
+msgstr "Giá trị"
+
+msgid "att_model_attRule"
+msgstr "Quy tắc điểm danh"
+
+msgid "schedule_field_employee"
+msgstr "Nhân viên"
+
+msgid "schedule_field_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "schedule_field_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "schedule_field_shift"
+msgstr "Ca"
+
+msgid "att_model_schedule"
+msgstr "Tên lịch trình"
+
+msgid "deptSchedule_field_department"
+msgstr "Bộ phận"
+
+msgid "deptSchedule_field_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "deptSchedule_field_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "deptSchedule_field_shift"
+msgstr "Ca"
+
+msgid "att_model_deptSchedule"
+msgstr "Lịch trình bộ phận"
+
+msgid "deptSchedule_action_add"
+msgstr "Thêm"
+
+msgid "deptSchedule_action_addDescription"
+msgstr "Thêm lịch trình bộ phận"
+
+msgid "deptSchedule_action_addHelpTxt"
+msgstr "Thêm lịch trình bộ phận"
+
+msgid "attShift_field_code"
+msgstr "Mã ca"
+
+msgid "attShift_field_alias"
+msgstr "Tên ca"
+
+msgid "attShift_field_cycleUnit"
+msgstr "Đơn vị"
+
+msgid "attShift_field_cycle"
+msgstr "Chu kỳ"
+
+msgid "work_on_weekend_as"
+msgstr "Làm việc cuối tuần như"
+
+msgid "work_on_day_off_as"
+msgstr "Làm việc ngày nghỉ như"
+
+msgid "attShift_field_autoShift"
+msgstr "Ca tự động"
+
+msgid "shift_name_repeat"
+msgstr "Tên ca (%s) đã tồn tại"
+
+msgid "att_model_shift"
+msgstr "Ca"
+
+msgid "breakTime_field_alias"
+msgstr "Tên"
+
+msgid "breakTime_field_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "breakTime_field_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "breakTime_field_duration"
+msgstr "Thời lượng(phút)"
+
+msgid "breakTime_field_durationHelpTxt"
+msgstr "Quãng thời gian nghỉ, đơn vị là phút."
+
+msgid "breakTime_field_startMargin"
+msgstr "Thời gian nghỉ kĩ quỹ"
+
+msgid "breakTime_field_endMargin"
+msgstr "Thời gian nghỉ kí quỹ"
+
+msgid "breakTime_field_endMarginHelpTxt"
+msgstr "Thời gian kết thúc = Thời gian bắt đầu + Thời lượng + Thời gian kết thúc ký quỹ, đơn vị là phút."
+
+msgid "breakTime_field_allowDuration"
+msgstr "Cho phép giải lao"
+
+msgid "breakTime_field_baseOnPunchType"
+msgstr "Dựa trên trạng thái chấm công trên thiết bị"
+
+msgid "breakTime_field_duplicatePunch"
+msgstr "Thời gian chấm công trùng lặp"
+
+msgid "breakTime_field_duplicatePunchPeriod"
+msgstr "Giai đoạn nhấn trùng lặp (phút)"
+
+msgid "breakTime_field_useMultiplePunch"
+msgstr "Sử dụng nhiều vào/ra "
+
+msgid "breakTime_field_calculateType"
+msgstr "Các loại tính toán"
+
+msgid "breakTime_field_minimumBreakTime"
+msgstr "Thời gian nghỉ tối thiểu(phút)"
+
+msgid "breakTime_field_earlyIn"
+msgstr "Vào sớm"
+
+msgid "breakTime_field_minEarlyIn"
+msgstr "Vào sớm nhỏ nhất"
+
+msgid "breakTime_field_lateIn"
+msgstr "Vào muộn"
+
+msgid "breakTime_field_minLateIn"
+msgstr "Vào muộn nhỏ nhất"
+
+msgid "breakTime_field_considerBreakInEarly"
+msgstr "Xem xét quay lại sớm"
+
+msgid "breakTime_field_breakInEarlyAs"
+msgstr "Vào sớm tính như"
+
+msgid "breakTime_field_considerBreakInLate"
+msgstr "Xem xét vào muộn "
+
+msgid "breakTime_field_breakInLateAs"
+msgstr "Vào muộn tính như"
+
+msgid "att_model_breakTime"
+msgstr "Giờ giải lao"
+
+msgid "breakTime_tab_basicSetting"
+msgstr "Cài đặt cơ bản"
+
+msgid "breakTime_tab_RequirePunchSetting"
+msgstr "Cài trạng thái chấm bắt buộc"
+
+msgid "changeSchedule_field_employee"
+msgstr "Nhân viên"
+
+msgid "changeSchedule_field_attDate"
+msgstr "Ngày"
+
+msgid "changeSchedule_field_previousTimeInterval"
+msgstr "Lịch trình trước đó"
+
+msgid "changeSchedule_field_adjustTimeInterval"
+msgstr "Kế hoạch mới"
+
+msgid "changeSchedule_field_applyTime"
+msgstr "Áp dụng thời gian"
+
+msgid "changeSchedule_field_applyReason"
+msgstr "Áp dụng lý do"
+
+msgid "changeSchedule_field_approvalReason"
+msgstr "Nhận xét"
+
+msgid "changeSchedule_field_approvalState"
+msgstr "Trạng thái"
+
+msgid "changeSchedule_field_approvalTime"
+msgstr "Thời gian phê duyệt"
+
+msgid "changeSchedule_field_approver"
+msgstr "Người phê duyệt"
+
+msgid "att_model_changeSchedule"
+msgstr "Điều chỉnh lịch trình"
+
+msgid "change_schedule"
+msgstr "Điều chỉnh lịch trình"
+
+msgid "emp_field_employeeCode"
+msgstr "ID Nhân viên"
+
+msgid "emp_field_firstName"
+msgstr "Tên"
+
+msgid "emp_field_lastName"
+msgstr "Họ"
+
+msgid "employee_field_position"
+msgstr "Chức vụ"
+
+msgid "employee_field_department"
+msgstr "Bộ Phận"
+
+msgid "deptAttRule_field_department"
+msgstr "Bộ phận"
+
+msgid "deptAttRule_field_departmentRule"
+msgstr "Quy tắc"
+
+msgid "att_model_deptAttRule"
+msgstr "Quy tắc bộ phận"
+
+msgid "departmentRule_tab_calculationRule"
+msgstr "Quy tắc tính toán"
+
+msgid "departmentRule_tab_overtimeSetting"
+msgstr "Cài đặt tăng ca"
+
+msgid "holiday_field_department"
+msgstr "Bộ phận"
+
+msgid "att_model_holiday"
+msgstr "Ngày Lễ"
+
+msgid "leaveCategory"
+msgstr "Danh mục nghỉ phép"
+
+msgid "leave_field_applyReason"
+msgstr "Áp dụng lý do"
+
+msgid "leave_field_applyTime"
+msgstr "Áp dụng thời gian"
+
+msgid "leave_field_approvalRemark"
+msgstr "Nhận xét phê duyệt"
+
+msgid "leave_field_approvalTime"
+msgstr "Thời gian phê duyệt"
+
+msgid "leave_field_approvalLevel"
+msgstr "Cấp độ phê duyệt"
+
+msgid "leave_field_approver"
+msgstr "Người Phê duyệt"
+
+msgid "leave_approve_audit"
+msgstr "Để lại bản nghi không thể được sửa đổi bởi kiểm toán. "
+
+msgid "leaveCategory_field_name"
+msgstr "Tên"
+
+msgid "leaveCategory_field_minimumUnit"
+msgstr "Đơn vị tối thiểu"
+
+msgid "leaveCategory_field_unit"
+msgstr "Đơn vị"
+
+msgid "leaveCategory_field_roundOff"
+msgstr "Làm tròn số"
+
+msgid "leaveCategory_field_reportSymbol"
+msgstr "Biểu tượng báo cáo"
+
+msgid "this_category_name_already_exists."
+msgstr "Tên loại đã tồn tại"
+
+msgid "this_report_symbol_already_exists."
+msgstr "Biểu tượng báo cáo đã sử dụng"
+
+msgid "the_default_category_name_cannot_be_modified"
+msgstr "Danh mục mặc định không thể chỉnh sửa"
+
+msgid "att_model_leaveCategory"
+msgstr "Các loại nghỉ phép"
+
+msgid "manualLog_field_applyTime"
+msgstr "Áp dụng thời gian"
+
+msgid "manualLog_field_approvalTime"
+msgstr "Thời gian phê duyệt"
+
+msgid "manualLog_field_approvalLevel"
+msgstr "Cấp độ phê duyệt"
+
+msgid "manualLog_field_approver"
+msgstr "Người Phê duyệt"
+
+msgid "manuallog_approve_audit"
+msgstr "Bản ghi hướng dẫn không thể chỉnh sữa bởi cuộc kiểm toán "
+
+msgid "att_model_manualLog"
+msgstr "Nhật ký hướng dẫn"
+
+msgid "overtime_field_applyTime"
+msgstr "Áp dụng thời gian"
+
+msgid "overtime_field_approvalReason"
+msgstr "Lưu ý"
+
+msgid "overtime_field_approvalTime"
+msgstr "Áp dụng thời gian"
+
+msgid "overtime_field_approvalLevel"
+msgstr "Cấp độ phê duyệt"
+
+msgid "overtime_field_approver"
+msgstr "Người phê duyệt"
+
+msgid "overtime_approve_audit"
+msgstr "Bản ghi nhận tăng ca không được sửa đổi bởi kiểm toán"
+
+msgid "att_model_overtime"
+msgstr "Tăng ca"
+
+msgid "reportParam_field_name"
+msgstr "Tên"
+
+msgid "reportParam_field_value"
+msgstr "Giá trị"
+
+msgid "att_model_reportParameter"
+msgstr "Thông số báo cáo"
+
+msgid "calculation_item_actualAttendance"
+msgstr "Làm việc thực tế"
+
+msgid "calculation_item_attendanceDurationOrShort"
+msgstr "Thời hạn làm nhiệm vụ/ngắn"
+
+msgid "calculation_item_totalTimeOrTotalWorkedDuration"
+msgstr "Tổng thời gian/Tổng thời gian làm việc"
+
+msgid "calculation_item_breakTimeOrActualBreakDuration"
+msgstr "Giờ giải lao/Giờ giải lao thực tế"
+
+msgid "calculation_item_noCheckIn"
+msgstr "Không có giờ chấm vào"
+
+msgid "calculation_item_noCheckOut"
+msgstr "Không có giờ chấm ra"
+
+msgid "calculation_item_training"
+msgstr "Đào tạo"
+
+msgid "report_display_checkIn"
+msgstr "Đăng ký vào"
+
+msgid "report_display_checkOut"
+msgstr "Đăng ký ra"
+
+msgid "report_display_breakOut"
+msgstr "Giải lao"
+
+msgid "report_display_breakIn"
+msgstr "Hết giải lao"
+
+msgid "report_display_overtimeIn"
+msgstr "Vào tăng ca"
+
+msgid "report_display_overtimeOut"
+msgstr "Ra tăng ca"
+
+msgid "report_display_unknown"
+msgstr "Không xác định"
+
+msgid "shiftDetail_field_shift"
+msgstr "Ca"
+
+msgid "shiftDetail_field_inTime"
+msgstr "Giờ Check-In "
+
+msgid "shiftDetail_field_outTime"
+msgstr "Giờ Check-Out "
+
+msgid "shiftDetail_field_dayIndex"
+msgstr "Chỉ số ngày"
+
+msgid "shiftDetail_field_timeInterval"
+msgstr "Thời gian biểu"
+
+msgid "att_model_shiftDetail"
+msgstr "Chi tiết ca"
+
+msgid "tempSchedule_field_employee"
+msgstr "Nhân viên"
+
+msgid "tempSchedule_field_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "tempSchedule_field_endTime"
+msgstr "Thời gian kết khúc"
+
+msgid "tempSchedule_field_rule"
+msgstr "Quy tắc lịch trình tạm thời"
+
+msgid "tempSchedule_field_timeIntervalID"
+msgstr "ID thời gian biểu"
+
+msgid "tempSchedule_field_workType"
+msgstr "Các loại công việc"
+
+msgid "tempSchedule_field_timeInterval"
+msgstr "Thời gian biểu"
+
+msgid "att_model_tempSchedule"
+msgstr "Lịch trình tạm thời"
+
+msgid "timeInterval_field_alias"
+msgstr "Tên"
+
+msgid "timeInterval_field_type"
+msgstr "Các loại"
+
+msgid "timeInterval_field_checkIn"
+msgstr "Đăng ký vào "
+
+msgid "timeInterval_field_checkOut"
+msgstr "Đăng ký ra"
+
+msgid "timeInterval_field_checkInStart"
+msgstr "Bắt đầu Check-In"
+
+msgid "timeInterval_field_checkInEnd"
+msgstr "Kết thúc Check-In"
+
+msgid "timeInterval_field_checkOutStart"
+msgstr "Bắt đầu Check-Out"
+
+msgid "timeInterval_field_checkOutEnd"
+msgstr "Kết thúc Check-Out"
+
+msgid "timeInterval_field_crossDay"
+msgstr "Ngày giao nhau(s)"
+
+msgid "timeTable_helpText_tip1"
+msgstr "1.Tất cả các cài đặt trong ngày giao nhau là dựa trên Check-In."
+
+msgid "timeInterval_field_inAheadMargin"
+msgstr "(In) Ký quỹ trước"
+
+msgid "timeInterval_field_inAboveMargin"
+msgstr "(In) Ký quỹ trên"
+
+msgid "timeInterval_field_outAheadMargin"
+msgstr "(Out) Ký quỹ trước"
+
+msgid "timeInterval_field_outAboveMargin"
+msgstr "(Out) Ký quỹ trên"
+
+msgid "timeInterval_field_attendanceDuration"
+msgstr "Thời lượng làm việc"
+
+msgid "timeInterval_checkOutWidget_helpTxt"
+msgstr "Nhấn để cài thời lượng bằng cách chọn check-out"
+
+msgid "timeInterval_label_checkOut"
+msgstr "Đăng ký ra"
+
+msgid "timeInterval_txt_days"
+msgstr "Ngày"
+
+msgid "timeInterval_days_helpTxt"
+msgstr "Tối đa 3 ngày"
+
+msgid "timeInterval_error_checkOutLessThanCheckIn"
+msgstr "Check-Out trước check-in"
+
+msgid "timeInterval_checkOut_title"
+msgstr "Cài đặt Check-Out"
+
+msgid "timeInterval_field_inRequired"
+msgstr "Giờ vào cần thiết"
+
+msgid "timeInterval_field_outRequired"
+msgstr "Giờ ra cần thiết"
+
+msgid "timeInterval_field_allowLate"
+msgstr "Cho phép vào trễ"
+
+msgid "timeInterval_field_allowLeaveEarly"
+msgstr "Cho phép về sớm"
+
+msgid "timeInterval_field_paidDay"
+msgstr "Ngày làm việc"
+
+msgid "timeInterval_field_earlyIn"
+msgstr "Vào sớm"
+
+msgid "timeInterval_field_minEarlyIn"
+msgstr "Vào sớm tối thiểu"
+
+msgid "timeInterval_field_lateOut"
+msgstr "Vào muộn"
+
+msgid "timeInterval_field_minLateOut"
+msgstr "Vào muộn tối thiểu"
+
+msgid "timeInterval_field_overtimeLevel"
+msgstr "Cấp độ tăng ca"
+
+msgid "timeInterval_field_overtimeLevel1"
+msgstr "Tăng ca cấp độ 1"
+
+msgid "timeInterval_field_overtimeLevel2"
+msgstr "Tăng ca cấp độ 2"
+
+msgid "timeInterval_field_overtimeLevel3"
+msgstr "Tăng ca cấp độ 3"
+
+msgid "timeInterval_field_aheadOvertime"
+msgstr "Vào tăng ca sớm"
+
+msgid "timeInterval_field_minimumAheadOvertime"
+msgstr "Tăng ca tối thiểu (vào sớm)"
+
+msgid "timeInterval_field_aboveOvertime"
+msgstr "Ra trễ tăng ca"
+
+msgid "timeInterval_field_minimumAboveOvertime"
+msgstr "Tối thiều tăng ca (ra trễ)"
+
+msgid "timeInterval_field_criticalTime"
+msgstr "Thay đổi tại"
+
+msgid "timeInterval_field_useMultiplePunch"
+msgstr "Nhiều lần Ra/Vào"
+
+msgid "timeInterval_field_availablePunchIntervalType"
+msgstr "Khoảng chấm công"
+
+msgid "timeInterval_field_duplicatePunchPeriod"
+msgstr "Thời gian chấm công trùng lặp"
+
+msgid "timeInterval_field_workTimeType"
+msgstr "Loại thời gian làm việc"
+
+msgid "timeInterval_field_workTimeDuration"
+msgstr "Thời gian làm việc"
+
+msgid "timeInterval_field_workTimeDurationHelpTxt"
+msgstr "Phút"
+
+msgid "timeInterval_field_baseOnPunchType"
+msgstr "Căn cứ vào trạng thái chấm công"
+
+msgid "timeInterval_field_useOvertimeForFlexibleTimeInterval"
+msgstr "Kích hoạt tăng ca"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeInterval"
+msgstr "Phút tối thiểu tăng ca"
+
+msgid "timeInterval_field_minimumOvertimeForFlexibleTimeIntervalHelpTxt"
+msgstr "Phút"
+
+msgid "timeInterval_field_workType"
+msgstr "Các loại công việc"
+
+msgid "timeInterval_field_breakTime"
+msgstr "Giờ giải lao"
+
+msgid "timeInterval_error_invalidWorkDay"
+msgstr "Ngày làm việc không hợp lệ"
+
+msgid "time_duration_greater_user_defined"
+msgstr "Độ dài thời gian là lớn hơn thời gian mà người dùng đặt."
+
+msgid "att_model_timeInterval"
+msgstr "Thời gian biểu"
+
+msgid "timeInterval_action_addNormalTimetable"
+msgstr "Thêm thời gian biểu thường"
+
+msgid "timeInterval_action_addNormalTimetable_description"
+msgstr "Thêm thời gian biểu thường"
+
+msgid "timeInterval_action_addNormalTimetable_helpTxt"
+msgstr "Thêm thời gian biểu thường"
+
+msgid "timeInterval_filed_crossDayUnit"
+msgstr "Ngày(s)"
+
+msgid "timeInterval_error_invalidOvertimeValue"
+msgstr "Giá trị tăng ca không hợp lệ"
+
+msgid "timeInterval_error_invalidCheckOvertimeLevel"
+msgstr "Tăng ca cấp độ cần L3>= L2>= L1."
+
+msgid "timeInterval_error_flexibleWorkTime"
+msgstr "Thời gian làm việc linh hoạt"
+
+msgid "timeInterval_error_invalidCheckInStart"
+msgstr "Bắt đầu chấm vào không hợp lệ"
+
+msgid "timeInterval_error_invalidCheckInEnd"
+msgstr "Kết thúc chấm vào không hợp lệ"
+
+msgid "timeInterval_error_invalidCheckOutStart"
+msgstr "Bắt đầu chấm ra không hợp lệ"
+
+msgid "timeInterval_error_invalidCheckOutEnd"
+msgstr "Kết thúc chấm ra không hợp lệ"
+
+msgid "timeInterval_error_invalidCheckOut"
+msgstr "Chấm ra không hợp lệ"
+
+msgid "timeInterval_error_invalidEarlyIn"
+msgstr "Vào sớm không hợp lệ"
+
+msgid "timeInterval_error_invalidLateOut"
+msgstr "Về muộn không hợp lệ"
+
+msgid "timeInterval_tab_basicSetting"
+msgstr "Cài đặt cơ bản"
+
+msgid "timeInterval_tab_breakTimeSetting"
+msgstr "Cài đặt giải lao"
+
+msgid "timeInterval_tab_unscheduledTimeSetting"
+msgstr "Cài đặt thời gian không theo quy định"
+
+msgid "timeInterval_tab_overtimeLevelSetting"
+msgstr "Cài đặt cấp độ tăng ca"
+
+msgid "timeInterval_tab_ruleSetting"
+msgstr "Cài đặt quy tắc"
+
+msgid "timeInterval_action_addFlexibleTimetable"
+msgstr "Thêm thời gian biểu linh hoạt"
+
+msgid "timeInterval_action_addFlexibleTimetable_description"
+msgstr "Thêm thời gian biểu linh hoạt"
+
+msgid "timeInterval_action_addFlexibleTimetable_helpTxt"
+msgstr "Thêm thời gian biểu linh hoạt"
+
+msgid "training_field_applyTime"
+msgstr "Thời gian áp dụng"
+
+msgid "training_field_approvalTime"
+msgstr "Thời gian phê duyệt"
+
+msgid "training_field_approvalLevel"
+msgstr "Cấp độ phê duyệt"
+
+msgid "training_field_approver"
+msgstr "Người phê duyệt"
+
+msgid "training_approve_audit"
+msgstr "Bản ghi nhận đào tạo không được sửa đổi bởi kiểm toán"
+
+msgid "att_model_training"
+msgstr "Đào tạo"
+
+msgid "mulTransaction_field_employee"
+msgstr "ID Nhân viên"
+
+msgid "mulTransaction_field_dataType"
+msgstr "Các loại dữ liệu"
+
+msgid "mulTransaction_field_dataType_normalPunch"
+msgstr "Chấm công bình thường"
+
+msgid "mulTransaction_field_dataType_breakTime"
+msgstr "Giờ giải lao"
+
+msgid "mulTransaction_field_date"
+msgstr "Ngày"
+
+msgid "mulTransaction_field_timetable"
+msgstr "Thời gian biểu"
+
+msgid "mulTransaction_field_dataIndex"
+msgstr "Chỉ số dữ liệu"
+
+msgid "mulTransaction_field_clockIn"
+msgstr "Giờ vào"
+
+msgid "mulTransaction_field_clockInID"
+msgstr "ID Giờ vào"
+
+msgid "mulTransaction_field_clockOut"
+msgstr "Giờ ra"
+
+msgid "mulTransaction_field_clockOutID"
+msgstr "ID Giờ ra"
+
+msgid "mulTransaction_field_totalTime"
+msgstr "Tổng thời gian"
+
+msgid "mulTransaction_field_workedTime"
+msgstr "Thời gian làm việc"
+
+msgid "att_model_multipleTransaction"
+msgstr "Nhiều sự kiện"
+
+msgid "att_model_scheduledTransaction"
+msgstr "Sự kiện theo lịch trình"
+
+msgid "based_on_schedule"
+msgstr "Liên quan đến lịch trình"
+
+msgid "first_check_in"
+msgstr "Check-In đầu tiên"
+
+msgid "last_check_out"
+msgstr "Check-Out cuối cùng"
+
+msgid "attRule_overtimeRule_disableOvertime"
+msgstr "Vô hiệu hóa tăng ca"
+
+msgid "attRule_overtimeRule_calculationOvertime"
+msgstr "Tính toán tăng ca"
+
+msgid "attRule_overtimeRule_approvalOvertime"
+msgstr "Phê duyệt tăng ca"
+
+msgid "attRule_overtimeRule_approvalOvertimePriority"
+msgstr "Ưu tiên phê duyệt tăng ca"
+
+msgid "attRule_missIn_late"
+msgstr "Muộn"
+
+msgid "attRule_missIn_absent"
+msgstr "Vắng mặt"
+
+msgid "attRule_missIn_noComplete"
+msgstr "Chưa hoàn thành"
+
+msgid "attRule_missOut_earlyLeave"
+msgstr "Về sớm"
+
+msgid "attRule_missOut_absent"
+msgstr "Vắng mặt"
+
+msgid "attRule_missOut_noComplete"
+msgstr "Chưa hoàn thành"
+
+msgid "must_check_in"
+msgstr "Bắt buộc Check-In"
+
+msgid "using_leave_end_time"
+msgstr "Sử dụng thời gian kết thúc nghỉ phép"
+
+msgid "must_check_out"
+msgstr "Bắt buộc Check-Out"
+
+msgid "using_leave_start_time"
+msgstr "Thời gian bắt đầu sử dụng nghỉ phép "
+
+msgid "using_training_end_time"
+msgstr "Sử dụng thời gian kết thúc đào tạo"
+
+msgid "using_training_start_time"
+msgstr "Sử dụng thời gian bắt đầu đào tạo"
+
+msgid "overtimeLevel_ignore"
+msgstr "Bỏ qua"
+
+msgid "overtimeLevel_dependsOnWorkTime"
+msgstr "Phụ thuộc thời gian làm việc"
+
+msgid "overtimeLevel_dependsOnOvertime"
+msgstr "Phụ thuộc thời gian tăng ca"
+
+msgid "unscheduled_ignore"
+msgstr "Bỏ qua"
+
+msgid "unscheduled_move2normalWork"
+msgstr "Chuyển về làm việc bình thường"
+
+msgid "unscheduled_move2overtime"
+msgstr "Chuyển về tăng ca"
+
+msgid "unscheduled_move2normalOvertime"
+msgstr "Chuyển về tăng ca thường"
+
+msgid "unscheduled_move2weekendOvertime"
+msgstr "Chuyền về tăng ca cuối tuần"
+
+msgid "unscheduled_move2holidayOvertime"
+msgstr "Chuyền về tăng ca ngày lễ"
+
+msgid "boolean_option_no"
+msgstr "Không"
+
+msgid "boolean_option_yes"
+msgstr "Có"
+
+msgid "boolean_option_enable"
+msgstr "Kích hoạt"
+
+msgid "boolean_option_disable"
+msgstr "Vô hiệu"
+
+msgid "breakTime_calculateMode_autoDeduct"
+msgstr "Tự động khấu trừ"
+
+msgid "breakTime_calculateMode_requiredPunch"
+msgstr "Yêu cầu chấm"
+
+msgid "breakTime_earlyInMode_normalWork"
+msgstr "Vào sớm tính như làm việc bình thường"
+
+msgid "breakTime_earlyInMode_normalOvertime"
+msgstr "Vào sớm tính như tăng ca"
+
+msgid "breakTime_lateInMode_ignore"
+msgstr "Vào muộn tính như bỏ qua"
+
+msgid "breakTime_lateInMode_move2Late"
+msgstr "Vào muộn tính như muộn"
+
+msgid "breakTime_lateInMode_move2EarlyOut"
+msgstr "Vào muộn tính như về sớm"
+
+msgid "breakTime_lateInMode_move2Absence"
+msgstr "Vào muộn tính như vắng mặt"
+
+msgid "breakTime_lateInMode_late"
+msgstr "Muộn"
+
+msgid "breakTime_lateInMode_earlyLeave"
+msgstr "Về sớm"
+
+msgid "breakTime_lateInMode_absent"
+msgstr "Vắng mặt"
+
+msgid "timeInterval_typeOption_normal"
+msgstr "Bình thường"
+
+msgid "timeInterval_typeOption_flexible"
+msgstr "Linh hoạt"
+
+msgid "timeInterval_typeOption_basedOnRule"
+msgstr "Dựa trên quy tắc"
+
+msgid "timeInterval_typeOption_userDefined"
+msgstr "Xác định người dùng"
+
+msgid "timeInterval_workTypeOption_normalWork"
+msgstr "Làm việc bình thường"
+
+msgid "timeInterval_workTypeOption_dayOff"
+msgstr "Ngày nghỉ"
+
+msgid "timeInterval_workTypeOption_weekend"
+msgstr "Cuối tuần"
+
+msgid "shift_OTOption_normalWork"
+msgstr "Công việc bình thường"
+
+msgid "shift_OTOption_normalOT"
+msgstr "Tăng ca bình thường"
+
+msgid "shift_OTOption_weekendOT"
+msgstr "Tăng ca cuối tuần"
+
+msgid "attShift_cycleUnitOption_day"
+msgstr "Ngày"
+
+msgid "attShift_cycleUnitOption_week"
+msgstr "Tuần"
+
+msgid "attShift_cycleUnitOption_month"
+msgstr "Tháng"
+
+msgid "tempSchedule_ruleFlagOption_activateTempSchedule"
+msgstr "Lịch trình hoạt động tạm thời"
+
+msgid "tempSchedule_ruleFlagOption_addAdditionalTempSchedule"
+msgstr "Thêm lịch trình bổ sung"
+
+msgid "tempSchedule_workTypeOption_normalWork"
+msgstr "Công việc bình thường"
+
+msgid "tempSchedule_workTypeOption_normalOvertime"
+msgstr "Tăng ca bình thường"
+
+msgid "tempSchedule_workTypeOption_weekendOvertime"
+msgstr "Tăng ca cuối tuần"
+
+msgid "tempSchedule_workTypeOption_holidayOvertime"
+msgstr "Tăng ca ngày lễ"
+
+msgid "approvalStatus_option_pending"
+msgstr " Đang chờ xử lý"
+
+msgid "approvalStatus_option_reApply"
+msgstr "Áp dụng lại"
+
+msgid "approvalStatus_option_revoke"
+msgstr "Thu hồi"
+
+msgid "approvalStatus_option_auditing"
+msgstr "Kiểm toán"
+
+msgid "approvalStatus_option_approved"
+msgstr "Phê duyệt"
+
+msgid "approvalStatus_option_reject"
+msgstr "Từ chối"
+
+msgid "punchState_option_checkIn"
+msgstr "Đăng ký vào"
+
+msgid "punchState_option_checkOut"
+msgstr "Đăng ký ra "
+
+msgid "punchState_option_breakOut"
+msgstr "Giải lao"
+
+msgid "punchState_option_breakIn"
+msgstr "Hết giải lao"
+
+msgid "punchState_option_overtimeIn"
+msgstr "Tăng ca vào"
+
+msgid "punchState_option_overtimeOut"
+msgstr "Tăng ca ra"
+
+msgid "punchState_option_noStatus"
+msgstr "Không có trạng thái"
+
+msgid "overtime_option_normalOvertime"
+msgstr "Tăng ca bình thường"
+
+msgid "overtime_option_weekendOvertime"
+msgstr "Tăng ca cuối tuần"
+
+msgid "overtime_option_holidayOvertime"
+msgstr "Tăng ca ngày lễ"
+
+msgid "calculationUnit_option_hour"
+msgstr "Giờ"
+
+msgid "calculationUnit_option_minute"
+msgstr "Phút"
+
+msgid "calculationUnit_option_workday"
+msgstr "Ngày làm việc"
+
+msgid "calculationUnit_option_minuteFormat"
+msgstr "GG:PP"
+
+msgid "overtime_option_normalWork"
+msgstr "Công việc bình thường"
+
+msgid "report_exceptionDisplay_(%(holiday)s)"
+msgstr "Ngày lễ (%(holiday)s)"
+
+msgid "report_exceptionDisplay_weekend"
+msgstr "Cuối tuần"
+
+msgid "report_exceptionDisplay_day_off"
+msgstr "Ngày nghỉ"
+
+msgid "report_exceptionDisplay_Holiday"
+msgstr "Ngày lễ"
+
+msgid "absent_report"
+msgstr "Báo cáo vắng mặt"
+
+msgid "report_exceptionDisplay_missIn"
+msgstr "Không Check-In"
+
+msgid "report_exceptionDisplay_missOut"
+msgstr "Không Check-Out"
+
+msgid "weekday_option_monday"
+msgstr "Thứ hai"
+
+msgid "weekday_option_tuesday"
+msgstr "Thứ ba"
+
+msgid "weekday_option_wednesday"
+msgstr "Thứ tư"
+
+msgid "weekday_option_thursday"
+msgstr "Thứ năm"
+
+msgid "weekday_option_friday"
+msgstr "Thứ sáu"
+
+msgid "weekday_option_saturday"
+msgstr "Thứ bảy"
+
+msgid "weekday_option_sunday"
+msgstr "Chủ nhật"
+
+msgid "attRule_globalRule_basicSetting"
+msgstr "Cài đặt cơ bản"
+
+msgid "attRule_globalRule_weekendSetting"
+msgstr "Cài đặt cuối tuần "
+
+msgid "attRule_globalRule_overtimeSetting"
+msgstr "Cài đặt tăng ca"
+
+msgid "attRule_globalRule_calculationSetting"
+msgstr "Cài đặt tính toán"
+
+msgid "attRule_globalRule_appSetting"
+msgstr "Cài đặt ứng dụng"
+
+msgid "attRule_globalRule_checkInRule"
+msgstr "Quy tắc Check In"
+
+msgid "attRule_globalRule_baseOnSchedule"
+msgstr "Dựa trên lịch trình"
+
+msgid "attRule_globalRule_firstIn"
+msgstr "Vào đầu tiên"
+
+msgid "attRule_globalRule_checkOutRule"
+msgstr "Quy tắc Check Out"
+
+msgid "attRule_globalRule_lastOut"
+msgstr "Ra cuối"
+
+msgid "attRule_globalRule_monday"
+msgstr "Thứ hai"
+
+msgid "attRule_globalRule_workingOnMonday"
+msgstr "Làm việc thứ hai"
+
+msgid "attRule_globalRule_tuesday"
+msgstr "Thứ ba"
+
+msgid "attRule_globalRule_workingOnTuesday"
+msgstr "Làm việc thứ ba"
+
+msgid "attRule_globalRule_wednesday"
+msgstr "Thứ tư"
+
+msgid "attRule_globalRule_workingOnWednesday"
+msgstr "Làm việc thứ tư"
+
+msgid "attRule_globalRule_thursday"
+msgstr "Thứ năm"
+
+msgid "attRule_globalRule_workingOnThursday"
+msgstr "Làm việc thứ năm"
+
+msgid "attRule_globalRule_friday"
+msgstr "Thứ sáu"
+
+msgid "attRule_globalRule_workingOnFriday"
+msgstr "Làm việc thứ sáu"
+
+msgid "attRule_globalRule_saturday"
+msgstr "Thứ bảy"
+
+msgid "attRule_globalRule_workingOnSaturday"
+msgstr "Làm việc thứ bảy"
+
+msgid "attRule_globalRule_sunday"
+msgstr "Chủ nhật"
+
+msgid "attRule_globalRule_workingOnSunday"
+msgstr "Làm việc chủ nhật"
+
+msgid "attRule_globalRule_OTLevel1"
+msgstr "Tăng ca cấp độ 1"
+
+msgid "attRule_globalRule_OTLevel2"
+msgstr "Tăng ca cấp độ 2"
+
+msgid "attRule_globalRule_OTLevel3"
+msgstr "Tăng ca cấp độ 3"
+
+msgid "attRule_globalRule_overtimeRule"
+msgstr "Quy tắc tăng ca"
+
+msgid "attRule_globalRule_duplicatePunchPeriod"
+msgstr "Giai đoạn nhấn trùng lặp"
+
+msgid "attRule_globalRule_weekdayMonday"
+msgstr "Thứ hai"
+
+msgid "attRule_globalRule_weekdayTuesday"
+msgstr "Thứ ba"
+
+msgid "attRule_globalRule_weekdayWednesday"
+msgstr "Thứ tư"
+
+msgid "attRule_globalRule_weekdayThursday"
+msgstr "Thứ năm"
+
+msgid "attRule_globalRule_weekdayFriday"
+msgstr "Thứ sáu"
+
+msgid "attRule_globalRule_weekdaySaturday"
+msgstr "Thứ bảy"
+
+msgid "attRule_globalRule_weekdaySunday"
+msgstr "Chủ nhật"
+
+msgid "attRule_weekendSetting_titleWeekend"
+msgstr "Tiêu đề"
+
+msgid "attRule_weekendSetting_workingOnDay"
+msgstr "Làm việc vào ngày"
+
+msgid "attRule_weekendSetting_OTLV1"
+msgstr "Tăng ca cấp độ 1"
+
+msgid "attRule_weekendSetting_OTLV2"
+msgstr "Tăng ca cấp độ 2"
+
+msgid "attRule_weekendSetting_OTLV3"
+msgstr "Tăng ca cấp độ 3"
+
+msgid "attRule_globalRule_calculationRule"
+msgstr "Quy tắc tính toán"
+
+msgid "attRule_globalRule_lateExceedPrefix"
+msgstr "Khi vượt quá thời gian trễ"
+
+msgid "attRule_globalRule_lateExceedSuffix"
+msgstr "Phút, được tính là vắng mặt"
+
+msgid "attRule_globalRule_earlyLeaveExceedPrefix"
+msgstr "Khi vượt quá thời gian về sớm"
+
+msgid "attRule_globalRule_earlyLeaveExceedSuffix"
+msgstr "Phút, được tính là vắng mặt"
+
+msgid "attRule_globalRule_missIn"
+msgstr "Còn thiếu Check-In từ"
+
+msgid "attRule_globalRule_missOut"
+msgstr "Còn thiếu Check-Out từ"
+
+msgid "attRule_globalRule_calculationItem"
+msgstr "Mục tính toán"
+
+msgid "attRule_globalRule_checkInValue"
+msgstr "Đăng ký vào"
+
+msgid "attRule_globalRule_checkOutValue"
+msgstr "Quy tắc Check Out "
+
+msgid "attRule_globalRule_breakOutValue"
+msgstr "Giải lao"
+
+msgid "attRule_globalRule_breakInValue"
+msgstr "Hết giải lao"
+
+msgid "attRule_globalRule_overtimeInValue"
+msgstr "Tăng ca vào"
+
+msgid "attRule_globalRule_overtimeOutValue"
+msgstr "Tăng ca ra"
+
+msgid "attRule_globalRule_enableCapture"
+msgstr "Chụp"
+
+msgid "attRule_globalRule_notRequired"
+msgstr "Không yêu cầu"
+
+msgid "attRule_globalRule_required"
+msgstr "Yêu cầu "
+
+msgid "attRule_globalRule_enableWorkCode"
+msgstr "Mã công việc"
+
+msgid "attRule_globalRule_enableFunctionKey"
+msgstr "Chức năng bàn phím"
+
+msgid "attRule_globalRule_btnSave"
+msgstr "Lưu"
+
+msgid "schedule_empFrameOption_employee"
+msgstr "Nhân viên "
+
+msgid "schedule_empFrameOption_department"
+msgstr "Bộ phận "
+
+msgid "schedule_empFrameSearch_placeholder_employee"
+msgstr "Nhân viên "
+
+msgid "schedule_empFrameSearch_placeholder_department"
+msgstr "Bộ phận"
+
+msgid "schedule_empFrameSearch_placeholder_allEmployee"
+msgstr "Chọn tất cả nhân viên"
+
+msgid "schedule_action_shiftCover"
+msgstr "Ghi đè ca làm"
+
+msgid "schedule_action_scheduleCover"
+msgstr "Ghi đè lịch trình"
+
+msgid "schedule_timetableFrameSearch_placeholder_timetable"
+msgstr "Thời gian biểu"
+
+msgid "form_helpText_title"
+msgstr "Chú ý"
+
+msgid "shift_helpText_tip1"
+msgstr "1. Điền vào ca làm việc ở bên phải bằng cách chọn bảng thời gian từ bên trái."
+
+msgid "shift_helpText_tip2"
+msgstr "2. Chu kỳ không thể vượt quá 366 khi đơn vị là ngày."
+
+msgid "shift_helpText_tip3"
+msgstr "3. Chu kỳ không thể vượt quá 52 khi đơn vị là tuần."
+
+msgid "shift_helpText_tip4"
+msgstr "4. Chu kỳ không thể vượt quá 12 khi đơn vị là tháng."
+
+msgid "shiftDetail_grid_detailLabel"
+msgstr "Chi tiết"
+
+msgid "shiftList_search_shift"
+msgstr "Ca"
+
+msgid "department_tree_selectAll"
+msgstr "Chọn tất cả"
+
+msgid "department_tree_multipleSelect"
+msgstr "Nhiều lựa chọn"
+
+msgid "department_tree_selectSubDepartment"
+msgstr "Chọn bộ phận phụ "
+
+msgid "calculation_page_empSearch"
+msgstr "Tìm kiếm nhân viên"
+
+msgid "calculation_page_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "calculation_page_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "calculation_page_attCalculate"
+msgstr "Tính toán ngày có mặt"
+
+msgid "emp_field_hireDate"
+msgstr "Ngày thuê"
+
+msgid "deptAttRule_field_overtimeRule"
+msgstr "Quy tắc tăng ca"
+
+msgid "report_searchField_startDate"
+msgstr "Ngày bắt đấu"
+
+msgid "report_searchField_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "report_searchField_employee"
+msgstr "Nhân viên"
+
+msgid "report_column_workDay"
+msgstr "Ngày làm việc"
+
+msgid "report_column_breakDuration"
+msgstr "Giờ giải lao"
+
+msgid "report_column_totalDurationHrs"
+msgstr "Tổng thời gian(Hours)"
+
+msgid "report_column_breakDurationHrs"
+msgstr "Giờ giải lao(Hours)"
+
+msgid "report_column_totalDayOff"
+msgstr "Ngày nghỉ (Days)"
+
+msgid "report_column_totalWeekend"
+msgstr "Cuối tuần (Days)"
+
+msgid "report_column_totalHoliday"
+msgstr "Ngày lễ (Days)"
+
+msgid "report_display_setting"
+msgstr "Cài đặt báo cáo hiển thị"
+
+msgid "short_date_format"
+msgstr "Định dạng ngày"
+
+msgid "short_time_format"
+msgstr "Định dạng thời gian"
+
+msgid "resignEmployee_display"
+msgstr "Hiển thị nhân viên thôi việc"
+
+msgid "multiple_dept"
+msgstr "Cây hiển thị phòng ban"
+
+msgid "reportSetting_tab_basicDisplaySetting"
+msgstr "Hiển thị cơ bản"
+
+msgid "reportSetting_tab_functionKeyDisplay"
+msgstr "Hiển thị chức năng"
+
+msgid "reportSetting_tab_reportItemsDisplay"
+msgstr "Hiển thị mục báo cáo"
+
+msgid "reportSetting_funcKeyField_ID"
+msgstr "ID"
+
+msgid "reportSetting_funcKeyField_value"
+msgstr "Giá trị"
+
+msgid "reportSetting_funcKeyField_name"
+msgstr "Tên"
+
+msgid "reportSetting_itemField_ID"
+msgstr "ID"
+
+msgid "reportSetting_itemField_name"
+msgstr "Tên"
+
+msgid "reportSetting_itemField_minimumUnit"
+msgstr "Đơn vị tối thiểu"
+
+msgid "reportSetting_itemField_roundOff"
+msgstr "Làm tròn"
+
+msgid "reportSetting_itemField_symbol"
+msgstr "Ký tự"
+
+msgid "calculation_item_minimumUnit"
+msgstr "Đơn vị tối thiếu"
+
+msgid "calculation_item_minimumUnitHour"
+msgstr "Giờ"
+
+msgid "calculation_item_minimumUnitMinute"
+msgstr "Phút"
+
+msgid "calculation_item_minimumUnitWorkday"
+msgstr "Ngày làm việc"
+
+msgid "calculation_item_minimumUnitMinuteFormat"
+msgstr "GG:PP"
+
+msgid "calculation_item_numericalPrecision"
+msgstr "Số chính xác"
+
+msgid "calculation_item_roundOffOptionRoundDown"
+msgstr "Làm tròn xuống"
+
+msgid "calculation_item_roundOffOptionRoundOff"
+msgstr "Làm tròn số"
+
+msgid "calculation_item_roundOffOptionRoundUp"
+msgstr "Làm tròn lên"
+
+msgid "symbol_in_report"
+msgstr "Biểu tượng trong báo cáo"
+
+msgid "replace_schedule_as_following_range"
+msgstr "Phạm vi"
+
+msgid "breakTime_number"
+msgstr "Mã giờ giải lao"
+
+msgid "exportForm_itemLabel_exportStyle"
+msgstr "Loại xuất file :"
+
+msgid "exportForm_exportStyle_optionDefault"
+msgstr "Mặc định"
+
+msgid "exportForm_exportStyle_optionEmployeeWise"
+msgstr "Nhân viên tốt"
+
+msgid "exportForm_exportStyle_optionDepartmentWise"
+msgstr "Bộ phận tốt"
+
+msgid "exportForm_exportStyle_optionDateWise"
+msgstr "Ngày tốt"
+
+msgid "exportForm_itemTitle_pageWise"
+msgstr "Trang tốt"
+
+msgid "attCalculation_alert_dateRangeNotFound"
+msgstr "Vui lòng chọn ngày bắt đầu và ngày kết thúc."
+
+msgid "attCalculation_alert_dateRangeInvalid"
+msgstr "Khoảng ngày không hợp lệ"
+
+msgid "attCalculation_alert_employeeNotFound"
+msgstr "Vui lòng chọn nhân viên"
+
+msgid "attCalculation_alert_calculationFinished"
+msgstr "Tính toán xong"
+
+msgid "shift_getDetail_error_notFound"
+msgstr "Không tìm thấy"
+
+msgid "menu_sys_authGroup"
+msgstr "Nhóm"
+
+msgid "menu_sys_authUser"
+msgstr "Người dùng"
+
+msgid "menu_sys_emailSetting"
+msgstr "Cài đặt email"
+
+msgid "menu_sys_alertSetting"
+msgstr "Cài đặt cảnh báo"
+
+msgid "menu_sys_pdfRepprtSetting"
+msgstr ""
+
+msgid "menu_sys_ftpSetting"
+msgstr "Cài đặt Ftp"
+
+msgid "menu_sys_filterBookmark"
+msgstr "Dấu trang"
+
+msgid "menu_sys_databaseBackup"
+msgstr "Sao lưu"
+
+msgid "menu_sys_databaseMigrate"
+msgstr "Chuyển đổi"
+
+msgid "menu_sys_autoExport"
+msgstr "Tự động xuất"
+
+msgid "menu_group_sysMiddlewareTable"
+msgstr "Bảng trung gian"
+
+msgid "menu_sys_middlewareTableDepartment"
+msgstr "Bộ phận"
+
+msgid "menu_sys_middlewareTablePosition"
+msgstr "Vị trí"
+
+msgid "menu_sys_middlewareTableArea"
+msgstr "Khu vực"
+
+msgid "menu_sys_middlewareTableEmployee"
+msgstr "Nhân viên"
+
+msgid "middlewareTable_field_postTime"
+msgstr "Giờ đăng"
+
+msgid "middlewareTable_field_flag"
+msgstr "Cờ"
+
+msgid "middlewareTable_field_updateTime"
+msgstr "Thời gian cập nhật"
+
+msgid "middlewareTable_field_syncResult"
+msgstr "Kết quả"
+
+msgid "emp_field_multipleArea"
+msgstr "Khu vực"
+
+msgid "emp_field_activeStatus"
+msgstr "Trạng thái"
+
+msgid "menu_sys_auxiliarySetting"
+msgstr "Cài đặt phụ trợ"
+
+msgid "menu_sys_companySetting"
+msgstr "Cài đặt công ty"
+
+msgid "menu_line_notify"
+msgstr "Thông báo ứng dụng trực tuyến"
+
+msgid "menu_group_sys_user"
+msgstr "Người dùng"
+
+msgid "menu_group_sys_configuration"
+msgstr "Cấu hình"
+
+msgid "menu_group_sys_database"
+msgstr "Cơ sở dữ liệu"
+
+msgid "menu_group_sys_integration"
+msgstr "Sự tích hợp"
+
+msgid "menu_group_sys_log"
+msgstr "Nhật ký"
+
+msgid "menu_sys_log"
+msgstr "Nhật ký"
+
+msgid "menu_group_sys_task"
+msgstr "Nhiệm vụ"
+
+msgid "menu_sys_intervalSchedule"
+msgstr "Lịch trình"
+
+msgid "menu_sys_crontabSchedule"
+msgstr "Crontab"
+
+msgid "menu_sys_periodicTask"
+msgstr "Nhiệm vụ định kỳ"
+
+msgid "autoExport_manualExport_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "autoExport_manualExport_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "autoExport_manualExport_queryField"
+msgstr "Truy vấn bởi"
+
+msgid "autoExport_task_action_manualExport"
+msgstr "Xuất Thủ công"
+
+msgid "autoExport_task_action_manualExport_description"
+msgstr "Chọn tác vụ để thực hiện bằng thủ công"
+
+msgid "autoExport_task_action_manualExport_help_txt"
+msgstr "Chọn tác vụ để thực hiện bằng thủ công"
+
+msgid "user_action_changePassword"
+msgstr "Đổi mật khẩu"
+
+msgid "user_action_changePasswordConfirmation"
+msgstr "Bạn có chắc chắn thay đổi mật khẩu của người dùng đã chọn không?"
+
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "%(name)s đối tượng với khóa chính %(key)r không tồn tại."
+
+msgid "user_actionChangePassword_successReturn"
+msgstr "Mật khẩu đã thay đổi thành công. "
+
+msgid "user_actionChangePasswordForm_title"
+msgstr "Đổi mật khẩu"
+
+msgid "adminLog_field_objects"
+msgstr "Đối tượng"
+
+msgid "group_field_name"
+msgstr "Tên"
+
+msgid "autoExport_task_error_data"
+msgstr "Dữ liệu không hợp lệ"
+
+msgid "autoExport_task_error_email"
+msgstr "Email không hợp lệ"
+
+msgid "autoExport_task_error_interval"
+msgstr "Khoảng giá trị không hợp lệ"
+
+msgid "autoExport_task_error_time_point"
+msgstr "Khoảng giá trị thời điểm không hợp lệ"
+
+msgid "autoExport_task_min_emp_code_should_be_digit"
+msgstr "Độ dài ID nhân viên"
+
+msgid "autoExport_task_file_prefix_not_exist"
+msgstr "Tên File"
+
+msgid "Invalid password format or unknown hashing algorithm."
+msgstr "Định dạng mật khẩu không hợp lệ hoặc thuật toán băm không xác định"
+
+msgid "password_mismatch_errorMessage"
+msgstr "Hai trường mật khẩu không khớp."
+
+msgid "user_createForm_password"
+msgstr "Mật khẩu"
+
+msgid "user_createForm_passwordConfirmation"
+msgstr "Xác nhận mật khẩu"
+
+msgid "user_createForm_passwordConfirmationHelpTxt"
+msgstr "Nhập mật khẩu giống như trước đây, để xác minh."
+
+msgid "stmp_server_is_required"
+msgstr "Máy chủ SMTP là bắt buộc."
+
+msgid "email_account_is_required"
+msgstr "Tài khoản email là bắt buộc"
+
+msgid "email_password_is_required"
+msgstr "Mật khẩu email là bắt buộc"
+
+msgid "store_path_is_required"
+msgstr "Tập tin SN là bắt buộc."
+
+msgid "store_path_is_wrong"
+msgstr "Đường dẫn lưu trữ sai"
+
+msgid "autoExport_task_error_data: "
+msgstr "Dữ liệu không hợp lệ"
+
+msgid "autoExport_task_min_len_emp_code_should_be_digit"
+msgstr "Độ dài ID nhân viên"
+
+msgid "migrate_transaction_time_invalid_range"
+msgstr "Phạm vi thời gian"
+
+msgid "software_category_is_required"
+msgstr "Thể loại phần mềm được yêu cầu."
+
+msgid "migrate_fields_is_required"
+msgstr "Trường di chuyển là được yêu cầu."
+
+msgid "migrate_database_type_is_required"
+msgstr "Loại cơ sở dữ liệu chuyển đổi là được yêu cầu."
+
+msgid "migrate_database_address_is_required"
+msgstr "Địa chỉ IP của cơ sở dữ liệu chuyển đổi là được yêu cầu."
+
+msgid "migrate_database_port_is_required"
+msgstr "Số cổng của cơ sở dữ liệu chuyển đổi là được yêu cầu."
+
+msgid "migrate_database_name_is_required"
+msgstr "Tên của cơ sở dữ liệu chuyển đổi là được yêu cầu."
+
+msgid "migrate_database_user_is_required"
+msgstr "Tên người dùng của cơ sở dữ liệu chuyển đổi là được yêu cầu."
+
+msgid "migrate_database_password_is_required"
+msgstr "Mật khẩu của cơ sở dữ liệu chuyển đổi là đươc yêu cầu."
+
+msgid "dbMigrate_testConnection_fail"
+msgstr "Kiểm tra kết nối không thành công"
+
+msgid "dbMigrate_testConnection_exception"
+msgstr "Kết nối cơ sở dữ liệu ngoại lệ"
+
+msgid "backup_failed_please_make_sure_sqlcmd_is_configured"
+msgstr "Sao lưu thất bại, vui lòng chắc chắn sql đã được cấu hình"
+
+msgid "backup_failed_please_make_sure_mysqldump_is_configured"
+msgstr "Sao lưu thất bại, vui lòng chắc chắn mysql đã được cấu hình"
+
+msgid "backup_failed_please_make_sure_pg_dump_is_configured"
+msgstr "Sao lưu thất bại, vui lòng đảm bảo pg_dump.exe được cấu hình."
+
+msgid "backup_failed_please_make_sure_exp_is_configured"
+msgstr "Sao lưu thất bại, vui lòng đảm bảo exp.exe được cấu hình."
+
+msgid "dbBackup_action_dbRestoreErrorPSQLNotFount"
+msgstr "Khôi phục lỗi (không tìm thấy PSQL)"
+
+msgid "dbBackup_action_dbRestoreErrorNoSupport"
+msgstr "Khôi phục lỗi (không hỗ trợ)"
+
+msgid "dbBackup_action_dbRestoreErrorFileNoFound"
+msgstr "Khôi phục lỗi (không tìm thấy file)"
+
+msgid "dbBackup_action_dbRestoreErrorIllegalDatabaseName"
+msgstr "Khôi phục lỗi (Tên CSDL không hợp lệ)"
+
+msgid "%(engine)_backup_is_unavailable"
+msgstr "%(engine) sao lưu không có sẵn."
+
+msgid "adminLog_field_user"
+msgstr "Người dùng"
+
+msgid "adminLog_field_action"
+msgstr "Hoạt động"
+
+msgid "adminLog_field_contentType"
+msgstr "Các loại nội dung"
+
+msgid "adminLog_field_actionStatus"
+msgstr "Trạng thái"
+
+msgid "actionStatus_option_fail"
+msgstr "Thất bại"
+
+msgid "actionStatus_option_success"
+msgstr "Thành công"
+
+msgid "adminLog_field_description"
+msgstr "Miêu tả"
+
+msgid "adminLog_field_ipAddress"
+msgstr "Địa chỉ IP"
+
+msgid "adminLog_field_routable"
+msgstr "Định tuyến"
+
+msgid "adminLog_field_operationTime"
+msgstr "Thời gian hoạt động"
+
+msgid "base_model_adminLog"
+msgstr "Nhật ký"
+
+msgid "autoExportTask_field_code"
+msgstr "Mã"
+
+msgid "autoExportTask_field_name"
+msgstr "Tên"
+
+msgid "autoExportTask_field_params"
+msgstr "Thông số"
+
+msgid "base_model_autoExportTask"
+msgstr "Tự động xuất file"
+
+msgid "bookmark_field_title"
+msgstr "Chức vụ"
+
+msgid "bookmark_field_user"
+msgstr "Người sử dụng"
+
+msgid "bookmark_field_contentType"
+msgstr "Các loại nội dung"
+
+msgid "bookmark_field_filtersString"
+msgstr "Bộ lọc"
+
+msgid "bookmark_menu_noBookmarks"
+msgstr "Không có dấu trang"
+
+msgid "bookmark_menu_newBookmark"
+msgstr "Thêm dấu trang"
+
+msgid "bookmark_menu_enterBookmarkTitle"
+msgstr "Nhập tiêu đề đánh dấu"
+
+msgid "bookmark_menu_saveBookmark"
+msgstr "Lưu dấu trang"
+
+msgid "bookmark_field_isShared"
+msgstr "Được chia sẻ"
+
+msgid "bookmark_field_savedTime"
+msgstr "Tiết kiệm thời gian"
+
+msgid "bookmark_saveError_duplicateTitle"
+msgstr "Tiêu đề trùng lặp"
+
+msgid "base_model_bookmark"
+msgstr "Dấu trang"
+
+msgid "base_integrationTable_employee"
+msgstr "Nhân viên"
+
+msgid "base_integrationTable_position"
+msgstr "Chức vụ"
+
+msgid "base_integrationTable_department"
+msgstr "Bộ phận"
+
+msgid "base_integrationTable_area"
+msgstr "Khu vực"
+
+msgid "enableStatus_option_enable"
+msgstr "Kích hoạt"
+
+msgid "enableStatus_option_disable"
+msgstr "Vô hiệu hóa"
+
+msgid "lineNotifySetting_messageType_realTime"
+msgstr "Thời gian thật"
+
+msgid "lineNotifySetting_messageType_intradayAttendanceSummary"
+msgstr "Tóm tắt điểm danh trong ngày"
+
+msgid "lineNotify_field_department"
+msgstr "Bộ phận"
+
+msgid "lineNotify_field_includeSubDepartment"
+msgstr "Bao gồm cả bộ phận"
+
+msgid "lineNotify_field_lineNotifyToken"
+msgstr "Mã thông báo"
+
+msgid "lineNotify_field_lineNotifyTokenHelpTxt"
+msgstr "Nhấp vào kết nối cuối cùng"
+
+msgid "lineNotify_field_messageType"
+msgstr "Các loại tin nhắn"
+
+msgid "lineNotify_field_pushTime"
+msgstr "Thời gian chấm"
+
+msgid "lineNotify_field_isValid"
+msgstr "Có hiệu quả"
+
+msgid "lineNotify_field_remark"
+msgstr "Ghi chú"
+
+msgid "base_model_lineNotifySetting"
+msgstr "Cài đặt dòng thông báo"
+
+msgid "dbMigrate_field_name"
+msgstr "Tên chuyển đổi"
+
+msgid "dbMigrate_field_value"
+msgstr "Chuyển đổi nội dung"
+
+msgid "base_model_dbBackupLog"
+msgstr "Nhật ký sao lưu CSDL"
+
+msgid "dbBackupLog_field_type"
+msgstr "Loại"
+
+msgid "dbBackupLog_field_name"
+msgstr "Tên"
+
+msgid "dbBackupLog_field_operator"
+msgstr "Người vận hành"
+
+msgid "dbBackupLog_field_filePath"
+msgstr "Đường dẫn"
+
+msgid "dbBackupLog_field_time"
+msgstr "Thới gian"
+
+msgid "dbBackupLog_field_status"
+msgstr "Trạng thái"
+
+msgid "dbBackupLog_field_remark"
+msgstr "Ghi chú"
+
+msgid "dbBackupLog_field_frequency"
+msgstr "Tần xuất"
+
+msgid "dbBackupLog_field_pointDay"
+msgstr "Ngày chỉ định"
+
+msgid "dbBackupLog_field_pointTime"
+msgstr "Thời gian chỉ định"
+
+msgid "dbBackupLog_action_dbBackupAuto"
+msgstr "Sao lưu tự động"
+
+msgid "dbBackupLog_action_dbBackupManually"
+msgstr "Sao lưu thủ công"
+
+msgid "dbBackupLog_action_dbBackupManuallyConfirmation"
+msgstr "Xác nhận"
+
+msgid "backup_status_success"
+msgstr "Thành công"
+
+msgid "backup_status_failed"
+msgstr "Thất bại"
+
+msgid "dbBackupLog_action_dbRestoreManually"
+msgstr "Khôi phục thủ công"
+
+msgid "dbBackupLog_field_backupFile"
+msgstr "File sao lưu"
+
+msgid "model_send_email"
+msgstr "Gửi Email"
+
+msgid "sftpSetting_field_authenticMethodOption_password"
+msgstr "Mật khẩu"
+
+msgid "sftpSetting_field_authenticMethodOption_publicKey"
+msgstr "Khóa công cộng"
+
+msgid "sftpSetting_field_hostAddress"
+msgstr "Địa chỉ máy chủ"
+
+msgid "sftpSetting_field_portNumber"
+msgstr "Số Port"
+
+msgid "sftpSetting_field_authenticMethod"
+msgstr "Phương thức xác thực"
+
+msgid "sftpSetting_field_username"
+msgstr "Tên người dùng"
+
+msgid "sftpSetting_field_userPassword"
+msgstr "Mật khẩu"
+
+msgid "sftpSetting_field_userSshKey"
+msgstr "Khóa SSH"
+
+msgid "sftpSetting_field_keyPassword"
+msgstr "Mật khẩu"
+
+msgid "sftp_setting"
+msgstr "Cài đặt SFTP"
+
+msgid "sysParam_field_name"
+msgstr "Tên"
+
+msgid "sysParam_field_type"
+msgstr "Các loại"
+
+msgid "sysParam_field_value"
+msgstr "Giá trị"
+
+msgid "sysParam_default_ruleName"
+msgstr "Quy tắc điểm danh mặc định"
+
+msgid "system_setting"
+msgstr "Cài đặt hệ thống"
+
+msgid "reportExport_dateRange_%(from)s_%(to)s"
+msgstr "Ngày từ %(from)s đến %(to)s"
+
+msgid "reportExport_author"
+msgstr "Tác giả"
+
+msgid "reportExport_createTime"
+msgstr "Thời gian tạo"
+
+msgid "reportExport_page%d"
+msgstr "Trang %d"
+
+msgid "user_createFrom_legendInformation"
+msgstr "Thông tin"
+
+msgid "user_createFrom_legendPermission"
+msgstr "Giấy phép"
+
+msgid "permission_verboseName_add"
+msgstr "Thêm"
+
+msgid "permission_verboseName_view"
+msgstr "Xem"
+
+msgid "permission_verboseName_change"
+msgstr "Chỉnh sửa"
+
+msgid "permission_verboseName_delete"
+msgstr "Xóa"
+
+msgid "permission_verboseName_changePassword"
+msgstr "Đổi mật khẩu"
+
+msgid "permission_verboseName_psnlEmployee"
+msgstr "Nhân viên"
+
+msgid "permission_verboseName_psnlDepartment"
+msgstr "Bộ phận"
+
+msgid "permission_verboseName_psnlPosition"
+msgstr "Vị trí"
+
+msgid "permission_verboseName_psnlArea"
+msgstr "Khu vực"
+
+msgid "permission_verboseName_psnlResign"
+msgstr "Thôi việc"
+
+msgid "permission_verboseName_psnlCertification"
+msgstr "Tài liệu"
+
+msgid "permission_verboseName_psnlEmployeeCertification"
+msgstr "Tài liệu nhân viên"
+
+msgid "permission_verboseName_psnlBioPhoto"
+msgstr "Hình ảnh sinh trắc"
+
+msgid "permission_verboseName_psnlWorkflowNode"
+msgstr "Nút giao công việc"
+
+msgid "permission_verboseName_psnlWorkflowEngine"
+msgstr "Động cơ công việc"
+
+msgid "permission_verboseName_psnlWorkflowRole"
+msgstr "Vai trò công việc"
+
+msgid "permission_verboseName_attDeptAttrule"
+msgstr "Quy tắc bộ phận"
+
+msgid "permission_verboseName_attReportSetting"
+msgstr "Cài đặt báo cáo"
+
+msgid "permission_verboseName_attTimeInterval"
+msgstr "Thời gian biểu"
+
+msgid "permission_verboseName_attShift"
+msgstr "Ca"
+
+msgid "permission_verboseName_attManualLog"
+msgstr "Nhật ký thủ công"
+
+msgid "permission_verboseName_attLeave"
+msgstr "Về sớm"
+
+msgid "permission_verboseName_attOvertime"
+msgstr "Tăng ca"
+
+msgid "permission_verboseName_attLeaveCategory"
+msgstr "Các loại nghỉ việc"
+
+msgid "permission_verboseName_attHoliday"
+msgstr "Ngày lễ"
+
+msgid "permission_verboseName_attCalculateReport"
+msgstr "Báo cáo tính toán"
+
+msgid "permission_verboseName_dailyAttendanceReport"
+msgstr "Báo cáo điểm danh hàng ngày"
+
+msgid "permission_verboseName_employeeSummaryReport"
+msgstr "Tóm tắt điểm danh"
+
+msgid "permission_verboseName_leaveSummaryReport"
+msgstr "Tóm tắt về sớm"
+
+msgid "permission_verboseName_attDetailReport"
+msgstr "Tổng thời gian thẻ"
+
+msgid "permission_verboseName_firstLastReport"
+msgstr "Lần vào đầu tiên và lần ra cuối cùng"
+
+msgid "permission_verboseName_exceptionReport"
+msgstr "Báo cáo ngoại lệ"
+
+msgid "permission_verboseName_departmentSummaryReport"
+msgstr "Tóm tắt bộ phận"
+
+msgid "permission_verboseName_attTimeCardReport"
+msgstr "Báo cáo thời gian thẻ"
+
+msgid "permission_verboseName_attLateReport"
+msgstr "Báo cáo đi muộn"
+
+msgid "permission_verboseName_attEarlyLeaveReport"
+msgstr "Báo cáo về sớm"
+
+msgid "permission_verboseName_attAbsentReport"
+msgstr "Báo cáo vắng mặt"
+
+msgid "permission_verboseName_attMultipleTransactionReport"
+msgstr "Nhiều giao dịch"
+
+msgid "permission_verboseName_attTraining"
+msgstr "Đào tạo"
+
+msgid "permission_verboseName_attBreakTime"
+msgstr "Giờ giải lao"
+
+msgid "permission_verboseName_attSchedule"
+msgstr "Lịch trình"
+
+msgid "permission_verboseName_attSetting"
+msgstr "Cài đặt điểm danh"
+
+msgid "permission_verboseName_attTempSchedule"
+msgstr "Lịch trình tạm thời"
+
+msgid "permission_verboseName_attTrainingType"
+msgstr "Các loại đào tạo"
+
+msgid "permission_verboseName_attChangeSchedule"
+msgstr "Thay đổi lịch trình"
+
+msgid "permission_verboseName_ReportPermission"
+msgstr "Giấy phép báo cáo"
+
+msgid "permission_verboseName_iclockTerminal"
+msgstr "Thiết bị"
+
+msgid "permission_verboseName_iclockTerminalLog "
+msgstr "Nhật ký thiết bị"
+
+msgid "permission_verboseName_iclockCommand"
+msgstr "Lệnh"
+
+msgid "permission_verboseName_iclockUploadLog"
+msgstr "Nhật ký tải lên"
+
+msgid "permission_verboseName_iclockBiometricTemplate"
+msgstr "Mẫu sinh trắc học"
+
+msgid "permission_verboseName_iclockPublicMessage"
+msgstr "Tin nhắn công khai"
+
+msgid "permission_verboseName_iclockPrivateMessage"
+msgstr "Tin nhắn Cá nhân"
+
+msgid "permission_verboseName_iclockTerminalWorkCode"
+msgstr "Mã công việc"
+
+msgid "permission_verboseName_iclockAppList"
+msgstr "Danh sách ứng dụng"
+
+msgid "permission_verboseName_iclockAnnouncement"
+msgstr "Thông báo"
+
+msgid "permission_verboseName_iclockAppNotification"
+msgstr "Thông báo"
+
+msgid "permission_verboseName_iclockAppActionLog"
+msgstr "Nhật ký hoạt động"
+
+msgid "permission_verboseName_sysUser"
+msgstr "Người dùng"
+
+msgid "permission_verboseName_sysGroup"
+msgstr "Nhóm"
+
+msgid "permission_verboseName_sysSFTPSettings"
+msgstr "Cài đặt vân tay"
+
+msgid "permission_verboseName_sysAutoExportTask"
+msgstr "Xuất file tự động"
+
+msgid "permission_verboseName_sysAdministrationLog "
+msgstr "Nhật ký"
+
+msgid "permission_verboseName_sysFilterBookmark"
+msgstr "Đánh dấu"
+
+msgid "permission_verboseName_sysSettingPermission"
+msgstr "Cấu hình"
+
+msgid "permission_verboseName_psnl"
+msgstr "Nhân viên"
+
+msgid "permission_verboseName_iclock"
+msgstr "Thiết bị"
+
+msgid "permission_verboseName_att"
+msgstr "Điểm danh"
+
+msgid "permission_verboseName_payroll"
+msgstr "Tính lương"
+
+msgid "permission_verboseName_sys"
+msgstr "Hệ thống"
+
+msgid "autoExport_task_manualStart"
+msgstr "Ngày bắt đầu"
+
+msgid "autoExport_task_manualEnd"
+msgstr "Ngày kết thúc"
+
+msgid "autoExport_task_queryField"
+msgstr "Tìm kiếm bởi"
+
+msgid "autoExport_task_filePrefix"
+msgstr "Tên file"
+
+msgid "autoExportTask_tab_formatSetting"
+msgstr "Cài đặt định dạng"
+
+msgid "autoExportTask_tab_filterSetting"
+msgstr "Cài đặt lọc dữ liệu"
+
+msgid "autoExportTask_tab_exportSetting"
+msgstr "Cài đặt thời gian xuất dữ liệu"
+
+msgid "autoExportTask_tab_storeSetting"
+msgstr "Cài đặt đường dẫn"
+
+msgid "autoExport_task_departments"
+msgstr "Bộ phận"
+
+msgid "autoExport_task_areas"
+msgstr "Khu vực"
+
+msgid "autoExport_task_code"
+msgstr "Mã"
+
+msgid "autoExport_task_name"
+msgstr "Tên"
+
+msgid "autoExport_task_dataTemplate"
+msgstr "Mẫu dữ liệu"
+
+msgid "autoExport_task_dataTemplateHelpTxt"
+msgstr "(Vui lòng kéo các trường bạn muốn xuất từ bên phải sang hộp văn bản bên dưới.)"
+
+msgid "autoExport_task_shortDate"
+msgstr "Ngày"
+
+msgid "autoExport_task_shortTime"
+msgstr "Thời gian"
+
+msgid "autoExport_task_frequency"
+msgstr "Tần suất"
+
+msgid "frequency_option_none"
+msgstr "Không"
+
+msgid "frequency_option_daily"
+msgstr "Hàng ngày"
+
+msgid "frequency_option_weekly"
+msgstr "Hàng tuần"
+
+msgid "frequency_option_monthly"
+msgstr "Hàng tháng"
+
+msgid "autoExport_task_exportDay"
+msgstr "Ngày"
+
+msgid "autoExport_queryBy_uploadTime"
+msgstr "Thời gian tải lên"
+
+msgid "autoExport_queryBy_punchTime"
+msgstr "Khoảng thời gian chấm"
+
+msgid "autoExport_task_interval"
+msgstr "Khoảng"
+
+msgid "autoExport_task_exportFormat"
+msgstr "Định dạng"
+
+msgid "autoExport_task_exportTime"
+msgstr "Thời điểm"
+
+msgid "autoExport_task_deadline"
+msgstr "Hạn chót"
+
+msgid "autoExport_deadline_previous"
+msgstr "Trước"
+
+msgid "autoExport_deadline_current"
+msgstr "Hiện hành"
+
+msgid "autoExport_task_exportPath"
+msgstr "Đường dẫn"
+
+msgid "autoExport_task_exportPathSuffix"
+msgstr "(Vị trí: \\files\\temp)"
+
+msgid "autoExport_task_ftpServer"
+msgstr "Máy chủ FTP "
+
+msgid "autoExport_task_ftpPath"
+msgstr "Đường dẫn FTP"
+
+msgid "autoExport_task_ftpPathSuffix"
+msgstr "(Định dạng : /Folder/)"
+
+msgid "autoExport_task_exportEmail"
+msgstr "Hộp thư "
+
+msgid "autoExport_task_empCodeLength"
+msgstr "ID Nhân viên"
+
+msgid "autoExport_task_empCodeLengthSuffix"
+msgstr "Độ dài ID nhân viên"
+
+msgid "autoExport_task_departmentCode"
+msgstr "Mã bộ phận"
+
+msgid "autoExport_task_departmentName"
+msgstr "Tên bộ phận"
+
+msgid "autoExport_task_punchTime"
+msgstr "Thời gian chấm"
+
+msgid "autoExport_task_verifyType"
+msgstr "Các loại xác minh"
+
+msgid "autoExport_task_workCode"
+msgstr "Mã công việc"
+
+msgid "autoExport_task_cardNumber"
+msgstr "Số thẻ"
+
+msgid "autoExport_task_areaAlias"
+msgstr "Khu vực"
+
+msgid "autoExport_task_terminalAlias"
+msgstr "Tên thiết bị"
+
+msgid "autoExport_task_terminalSN"
+msgstr "Số seri"
+
+msgid "dataMigrate_front_migrateFrom"
+msgstr "Di chuyển từ"
+
+msgid "dataMigrate_front_databaseType"
+msgstr "Cơ sở dữ liệu"
+
+msgid "db_sqlserver"
+msgstr "MSSQL"
+
+msgid "db_mysql"
+msgstr "MySQL"
+
+msgid "db_oracle"
+msgstr "Oracle"
+
+msgid "db_postgresql"
+msgstr "PostgreSQL"
+
+msgid "db_sqlite"
+msgstr "SQLite"
+
+msgid "dataMigrate_front_databaseAddress"
+msgstr "Địa chỉ cơ sở dữ liệu"
+
+msgid "dataMigrate_front_databasePort"
+msgstr "Cổng cơ sở dữ liệu "
+
+msgid "dataMigrate_front_databaseName"
+msgstr "Tên cơ sở dữ liệu "
+
+msgid "dataMigrate_front_databaseUser"
+msgstr "Người dùng"
+
+msgid "dataMigrate_front_databasePassword"
+msgstr "Mật khẩu"
+
+msgid "dataMigrate_front_migrateFields"
+msgstr "Các trường cần di chuyển"
+
+msgid "dataMigrate_front_transactionPeriod"
+msgstr "Giai đọan chuyển đổi giao dịch"
+
+msgid "dataMigrate_front_migrateStatus"
+msgstr "Trạng thái chuyển đổi"
+
+msgid "dataMigrate_front_btn_testConnect"
+msgstr "Kiểm tra kết nối"
+
+msgid "dataMigrate_front_btn_Migrate"
+msgstr "Chuyển đổi"
+
+msgid "dataMigrate_front_btn_clearConnectInfo"
+msgstr "Thông tin liên kết"
+
+msgid "dataMigrate_front_area_or_zone"
+msgstr "Khu vưc hay vùng"
+
+msgid "dataMigrate_front_startTime"
+msgstr "Thới gian bắt đầu"
+
+msgid "dataMigrate_front_endTime"
+msgstr "Thới gian kết thúc"
+
+msgid "dataMigrate_front_sqliteFile"
+msgstr "Tập tin Sqlite"
+
+msgid "dataMigrate_cache_clean"
+msgstr "Làm sạch Cache"
+
+msgid "dataMigrate_cache_clean_help"
+msgstr "Nếu nó không hoàn thành di chuyển, hãy thử điều này để giải quyết. "
+
+msgid "exportForm_itemLabel_scope"
+msgstr "Phạm vi xuất :"
+
+msgid "exportForm_exportScope_optionCurPage"
+msgstr "Trang hiện tại"
+
+msgid "exportForm_exportScope_optionAll"
+msgstr "Tất cả dữ liệu"
+
+msgid "line_taken_btn"
+msgstr "Nhấn tại đây để vào trang web của dòng sản phẫm và nhận mã thông báo"
+
+msgid "alertSettingPage_label_attendanceAlertSetting"
+msgstr "Cài đặt cảnh báo chấm công"
+
+msgid "alertSettingPage_label_lateExceed"
+msgstr "Khi số lần đi muộn vượt quá"
+
+msgid "alertSettingPage_label_earlyLeaveExceed"
+msgstr "Khi số lần về sớm vượt quá"
+
+msgid "alertSettingPage_label_absentExceed"
+msgstr "Khi số lần nghỉ vượt quá"
+
+msgid "alertSettingPage_exceedUnit_times"
+msgstr "Thời gian"
+
+msgid "alertSettingPage_label_emailSendingFrequency"
+msgstr "Tần xuất gửi"
+
+msgid "alertSettingPage_label_emailSendingDay"
+msgstr "Ngày"
+
+msgid "alertSettingPage_label_emailSendingTime"
+msgstr "Thới gian"
+
+msgid "alertSettingPage_label_sendingDay"
+msgstr "Ngày gửi"
+
+msgid "alertSettingPage_sendingDayOpts_currentDay"
+msgstr "Ngày hiện tại"
+
+msgid "alertSettingPage_sendingDayOpts_nextDay"
+msgstr "ngày tiếp theo"
+
+msgid "alertSettingPage_label_includeToday"
+msgstr "Bao gồm ngày hiện tại"
+
+msgid "alertSettingPage_label_approveAlertSetting"
+msgstr "Cài đặt cảnh báo chấp thuận"
+
+msgid "alertSettingPage_approveAlertOpts_emailAlert"
+msgstr "Cảnh báo email"
+
+msgid "alertSettingPage_approveAlertOpts_popAlert"
+msgstr "Hiển thị cảnh báo"
+
+msgid "alertSettingPage_btn_submit"
+msgstr "Đồng ý"
+
+msgid "backup_database"
+msgstr "Cơ sở dữ liệu"
+
+msgid "backup_database_name"
+msgstr "Tên cơ sở dữ liệu"
+
+msgid "backup_store_path"
+msgstr "Đường dẫn lưu trữ"
+
+msgid "backup_frequency"
+msgstr "Tần xuất"
+
+msgid "frequency_option_oneTimeOnly"
+msgstr "Chỉ 1 lần"
+
+msgid "backup_day"
+msgstr "Ngày"
+
+msgid "backup_time"
+msgstr "Giờ"
+
+msgid "backup_last_backup"
+msgstr "Sao lưu lần cuối"
+
+msgid "backup_file"
+msgstr "File sao lưu"
+
+msgid "btn_save"
+msgstr "Lưu"
+
+msgid "btn_backup"
+msgstr "Sao lưu"
+
+msgid "emailSettingPage_label_smtpServer"
+msgstr "Thiết bị Smtp"
+
+msgid "emailSettingPage_label_smtpServerPort"
+msgstr "Cổng"
+
+msgid "emailSettingPage_label_enableSSL"
+msgstr "SSL"
+
+msgid "emailSettingPage_label_emailAccount"
+msgstr "Tài khoản Email"
+
+msgid "emailSettingPage_help_emailAccount"
+msgstr "tên miền / người dùng tên miền"
+
+msgid "emailSettingPage_label_emailPassword"
+msgstr "Mật khẩu"
+
+msgid "emailSettingPage_label_emailAddress"
+msgstr "Địa chỉ Email"
+
+msgid "emailSettingPage_btn_submit"
+msgstr "Đồng ý"
+
+msgid "auxiliarySetting_deviceCommunicationSetting"
+msgstr "Cài đặt truyền thông thiết bị"
+
+msgid "deviceCommSetting_field_enableRegistration"
+msgstr "Kích hoạt đăng ký thiết bị"
+
+msgid "deviceCommSetting_field_enableRegistrationTitle"
+msgstr "Kích hoạt tùy chọn này sẽ cho phép thiết bị đã được đánh dấu có thể tải lên dữ liệu."
+
+msgid "deviceCommSetting_field_enableNameUploadTitle"
+msgstr "Kích hoạt tải lên tiêu đề tên"
+
+msgid "deviceCommSetting_field_enableNameUpload"
+msgstr "Kích hoạt tải lên tên"
+
+msgid "deviceCommSetting_field_enableCardUploadTitle"
+msgstr "Kích hoạt tải lên tiêu đề thẻ"
+
+msgid "deviceCommSetting_field_enableCardUpload"
+msgstr "Kích hoạt tải lên thẻ"
+
+msgid "auxiliarySetting_otherSetting"
+msgstr "Cài đặt khác"
+
+msgid "otherSetting_field_employeePhotoBackup"
+msgstr "Sao lưu hình ảnh"
+
+msgid "otherSetting_field_employeePhotoBackupTitle"
+msgstr "Đường dẫn sao lưu hình ảnh nhân viên"
+
+msgid "auxiliarySetting_btn_submit"
+msgstr "Đồng ý"
+
+msgid "translation_option_english"
+msgstr "Tiếng Anh"
+
+msgid "translation_option_korean"
+msgstr "Tiếng Hàn"
+
+msgid "translation_option_japanese"
+msgstr "Tiếng Nhật"
+
+msgid "translation_option_spanish"
+msgstr "Tiếng Tây Ban Nha "
+
+msgid "translation_option_thai"
+msgstr " Tiếng Thái"
+
+msgid "translation_option_arabic"
+msgstr "Tiếng A -Rập "
+
+msgid "translation_translateAPI_option_googleTranslate"
+msgstr "Google dịch"
+
+msgid "translation_btn_onlineTranslate"
+msgstr "Phiên dịch trực tuyến"
+
+msgid "database_backup_is_under_processing"
+msgstr "Sao lưu cơ sở dữ liệu đang được xử lý, vui lòng thử lại sau."
+
+msgid "dbMigrate_status_processing"
+msgstr "Đang xử lý"
+
+msgid "dbMigrate_status_finish"
+msgstr "Đã kết thúc"
+
+msgid "dbMigrate_status_exception"
+msgstr "Ngoại lệ"
+
+msgid "dbMigrate_status_pending"
+msgstr "Đang chờ xử lý"
+
+msgid "login_authorize_license_missing"
+msgstr "Không tìm thấy bản quyền."
+
+msgid "login_authorize_md5_error"
+msgstr "Các tập tin hệ thống đã được sửa đổi mà không được phép."
+
+msgid "login_authorize_license_terminal_exceed"
+msgstr "Số lượng thiết bị đã vượt quá số lượng được ủy quyền"
+
+msgid "login_authorize_license_employee_exceed"
+msgstr "Số lượng nhân viên đã vượt quá số lượng được ủy quyền"
+
+msgid "login_authorize_license_app_exceed"
+msgstr "Số lượng ứng dụng đã vượt quá số lượng được ủy quyền"
+
+msgid "login_authorize_database_error"
+msgstr "Bảng cơ sở dữ liệu được đánh dấu là bị lỗi, vui lòng kiểm tra và sửa chữa nó "
+
+msgid "login_authorize_database_connection_failed_%(db_ver)s"
+msgstr "Kết nối CSDL thất bại %(db_ver)s."
+
+msgid "login_authorize_illegal_username"
+msgstr "Tên người dùng không hợp lệ"
+
+msgid "login_authorize_login_failed_%(error)s"
+msgstr "Đăng nhập thất bại, %(error)s"
+
+msgid "login_authorize_login_failed"
+msgstr "Đăng nhập thất bại, tên người dùng hoặc mật khẩu sai."
+
+msgid "login_authorize_invalid_username"
+msgstr "Tên người dùng không hợp lệ"
+
+msgid "login_authorize_illegal_login"
+msgstr "Đăng nhập không hợp lệ"
+
+msgid "login_authorize_license_inactive"
+msgstr "Bản quyền chưa được kích hoạt"
+
+msgid "menu_group_device_deviceManagement"
+msgstr "Thiết bị"
+
+msgid "menu_device_terminal"
+msgstr "Thiết bị"
+
+msgid "menu_device_terminalCommand"
+msgstr "Lệnh thiết bị"
+
+msgid "menu_group_device_terminalMessage"
+msgstr "Tin nhắn"
+
+msgid "menu_device_publicMessage"
+msgstr "Công khai"
+
+msgid "menu_device_privateMessage"
+msgstr "Cá nhân"
+
+msgid "terminal_group_device_dataManagement"
+msgstr "Dữ liệu"
+
+msgid "menu_device_terminalWorkCode"
+msgstr "Mã công việc"
+
+msgid "menu_device_terminalBioData"
+msgstr "Mẫu sinh trắc học"
+
+msgid "menu_device_transaction"
+msgstr "Sự kiện"
+
+msgid "menu_group_device_terminalLog"
+msgstr "Nhật ký"
+
+msgid "menu_device_terminalLog"
+msgstr "Nhật ký thiết bị"
+
+msgid "menu_device_terminalUploadLog"
+msgstr "Nhật ký tải lên"
+
+msgid "menu_group_mobile_application"
+msgstr "Ứng dụng điện thoại"
+
+msgid "menu_mobile_appList"
+msgstr "Tài khoản"
+
+msgid "menu_mobile_announcement"
+msgstr "Thông báo"
+
+msgid "menu_mobile_notification"
+msgstr "Chú ý"
+
+msgid "menu_mobile_appActionLog"
+msgstr "Nhật ký hoạt động"
+
+msgid "menu_group_deviceConfiguration"
+msgstr "Cấu hình thiết bị"
+
+msgid "menu_iclock_deviceConfig"
+msgstr "Cấu hình thiết bị"
+
+msgid "privateMessage_field_employee"
+msgstr "Nhân viên"
+
+msgid "privateMessage_field_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "privateMessage_field_duration"
+msgstr "Thời lượng"
+
+msgid "privateMessage_field_content"
+msgstr "Nội dung"
+
+msgid "privateMsg_action_add"
+msgstr "Thêm"
+
+msgid "privateMsg_action_addDescription"
+msgstr "Thêm"
+
+msgid "privateMsg_action_addHelpTxt"
+msgstr "Thêm"
+
+msgid "send_message"
+msgstr "Gửi tin nhắn"
+
+msgid "are_you_sure_to_send_the_message"
+msgstr "Bạn có chắc chắn gửi tin nhắn không ?"
+
+msgid "publicMessage_field_terminal"
+msgstr "Thiết bị"
+
+msgid "publicMessage_field_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "publicMessage_field_duration"
+msgstr "Thời lượng"
+
+msgid "publicMessage_field_content"
+msgstr "Nội dung"
+
+msgid "publicMsg_action_add"
+msgstr "Thêm"
+
+msgid "publicMsg_action_addDescription"
+msgstr "Thêm mô tả"
+
+msgid "publicMsg_action_addHelpTxt"
+msgstr "Thêm"
+
+msgid "terminal_op_reboot"
+msgstr "Khởi động lại"
+
+msgid "terminal_op_rebootDescription"
+msgstr "Khởi động lại thiết bị"
+
+msgid "terminal_op_rebootHelp"
+msgstr "Khởi động lại thiết bị"
+
+msgid "are_you_sure_to_reboot_the_selected_terminal"
+msgstr "Bạn có chắc chắn khởi động lại (các) thiết bị đã chọn không?"
+
+msgid "terminal_action_reUploadData"
+msgstr "Tải lại dữ liệu"
+
+msgid "terminal_action_reUploadDataDescription"
+msgstr "Tải lên lại dữ liệu người dùng từ thiết bị"
+
+msgid "terminal_action_reUploadDataHelpTxt"
+msgstr "Tải lên lại dữ liệu người dùng từ thiết bị"
+
+msgid "reUploadData_field_employee"
+msgstr "Nhân viên"
+
+msgid "reUploadData_field_employeeCode"
+msgstr "Mã nhân viên"
+
+msgid "are_you_sure_to_re-upload_the_data_for_selected_terminal"
+msgstr "Bạn có chắc chắn tải lên lại dữ liệu cho thiết bị được chọn(s)?"
+
+msgid "reUploadData_field_transaction"
+msgstr "Sự kiện"
+
+msgid "reUploadTransaction_form_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "reUploadTransaction_form_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "terminal_op_reUploadTransaction"
+msgstr "Tải lên sự kiện"
+
+msgid "terminal_op_reUploadTransactionDescription"
+msgstr "Tải lên mô tả sự kiện"
+
+msgid "terminal_op_reUploadTransactionHelp"
+msgstr "Tải lên trợ giúp sự kiện"
+
+msgid "reloadData_field_employee"
+msgstr "Nhân viên"
+
+msgid "reloadData_field_employeePhoto"
+msgstr "Hình ảnh nhân viên"
+
+msgid "reloadData_field_fingerprint"
+msgstr "Vân tay"
+
+msgid "reloadData_field_face"
+msgstr "Khuôn mặt"
+
+msgid "reloadData_field_palm"
+msgstr "Lòng bàn tay"
+
+msgid "reloadData_field_fingerVein"
+msgstr "Vein ngón tay"
+
+msgid "reloadData_field_bioPhoto"
+msgstr "Hình ảnh-Bio"
+
+msgid "terminal_op_reloadData"
+msgstr "Đồng bộ dữ liệu tới thiết bị"
+
+msgid "terminal_op_reloadDataDescription"
+msgstr "Đồng bộ dữ liệu người dùng từ hệ thống đến thiết bị"
+
+msgid "terminal_op_reloadDataHelp"
+msgstr "Đồng bộ dữ liệu người dùng từ hệ thống đến thiết bị"
+
+msgid "clearAttendanceData_form_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "clearAttendanceData_form_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "clearAttendanceData_form_clearAll"
+msgstr "Xóa tất cả"
+
+msgid "terminal_op_clearData"
+msgstr "Xóa tất cả dữ liệu"
+
+msgid "terminal_op_clearDataDescription"
+msgstr "Xóa tất cả dữ liệu trong thiết bị bao gồm (dữ liệu người dùng, giao dịch, ảnh, v.v.) "
+
+msgid "terminal_op_clearDataHelp"
+msgstr "Xóa tất cả dữ liệu trong thiết bị bao gồm (dữ liệu người dùng, giao dịch, ảnh, v.v.) "
+
+msgid "are_you_sure_to_clear_all_the_data_in_selected_terminal"
+msgstr "Bạn có chắc chắn xóa tất cả dữ liệu trong thiết bị {0} đã chọn(s)?"
+
+msgid "terminal_op_clearAttendanceData"
+msgstr "Xóa dữ liệu điểm danh"
+
+msgid "terminal_op_clearAttendanceDataDescription"
+msgstr "Xóa dữ liệu điểm danh"
+
+msgid "terminal_op_clearAttendanceDataHelp"
+msgstr "Xóa dữ liệu điểm danh"
+
+msgid "are_you_sure_to_clear_all_the_transactions_in_selected_terminal"
+msgstr "Bạn có chắc chắn xóa tất cả các giao dịch trong thiết bị {0} đã chọn (s)?"
+
+msgid "terminal_op_readInformation"
+msgstr "Đọc thông tin"
+
+msgid "terminal_op_readInformationDescription"
+msgstr "Đọc thông tin"
+
+msgid "terminal_op_readInformationHelp"
+msgstr "Đọc thông tin"
+
+msgid "are_you_sure_to_read_information_from_selected_terminal"
+msgstr "Bạn có chắc chắn đọc thông tin từ thiết bị được chọn"
+
+msgid "terminal_op_deleteCapture"
+msgstr "Xóa ảnh chụp"
+
+msgid "terminal_op_deleteCaptureDescription"
+msgstr "Xóa tất cả ảnh chụp trong thiết bị"
+
+msgid "terminal_op_deleteCaptureHelp"
+msgstr "Xóa tất cả ảnh chụp trong thiết bị"
+
+msgid "are_you_sure_to_clear_the_capture_of_selected_terminal"
+msgstr "Bạn có chắc muốn xóa ảnh chụp được chọn{0}thiết bị (s)"
+
+msgid "terminal_op_clearAll"
+msgstr "Xóa tất cả"
+
+msgid "terminal_op_clearAllHelpTxt"
+msgstr "Thao tác này sẽ xóa tất cả dữ liệu trong thiết bị, dữ liệu bao gồm giao dịch, dữ liệu người dùng, chụp ảnh và v.v.."
+
+msgid "terminal_op_clearAllDescription"
+msgstr "Xóa tất cả mô tả"
+
+msgid "terminal_op_clearAllConfirmation"
+msgstr "Xác nhận"
+
+msgid "duplicate_punch_period"
+msgstr "Giai đoạn nhấn trùng lặp (p)"
+
+msgid "minutes/seconds"
+msgstr "Phút"
+
+msgid "terminal_op_duplicatePunchPeriod"
+msgstr "Giai đoạn chấm trùng lặp"
+
+msgid "terminal_op_duplicatePunchPeriodDescription"
+msgstr "Giai đoạn chấm trùng lặp"
+
+msgid "terminal_op_duplicatePunchPeriodHelp"
+msgstr "Giai đoạn nhấn trùng lặp"
+
+msgid "terminal_capture"
+msgstr "Chụp ảnh"
+
+msgid "capture_no_photo"
+msgstr "Không có ảnh"
+
+msgid "capture_take_photo_no_save"
+msgstr "Chụp ảnh nhưng không lưu"
+
+msgid "capture_verify_photo_and_save"
+msgstr "Xác nhận ảnh và lưu"
+
+msgid "capture_verify_successfully_and_save"
+msgstr "Xác nhận thành công và lưu"
+
+msgid "capture_verify_failed_and_save"
+msgstr "Xác nhận thất bại và lưu"
+
+msgid "terminal_op_captureSetting"
+msgstr "Cài đặt chụp ảnh"
+
+msgid "terminal_op_captureSettingDescription"
+msgstr "Sửa đổi cài đặt để kích hoạt hoặc vô hiệu việc lưu ảnh chụp."
+
+msgid "terminal_op_captureSettingHelp"
+msgstr "Sửa đổi cài đặt để kích hoạt hoặc vô hiệu việc lưu ảnh chụp."
+
+msgid "terminal_captureUpload"
+msgstr "Tải lên ảnh chụp"
+
+msgid "captureUpload_disabled"
+msgstr "Vô hiệu hóa"
+
+msgid "captureUpload_enabled"
+msgstr "Kích hoạt"
+
+msgid "terminal_op_captureUpload"
+msgstr "Tải lên ảnh chụp"
+
+msgid "terminal_op_captureUploadDescription"
+msgstr "Tải lên ảnh chụp"
+
+msgid "terminal_op_captureUploadHelp"
+msgstr "Tải lên ảnh chụp"
+
+msgid "upgradeFirmware_upgradeFile"
+msgstr "File nâng cấp"
+
+msgid "terminal_op_upgradeFirmware"
+msgstr "Nâng cấp Firmware"
+
+msgid "terminal_op_upgradeFirmwareDescription"
+msgstr "Nâng cấp Firmware"
+
+msgid "action_transactionCorrection_start"
+msgstr "Thời gian bắt đầu"
+
+msgid "action_transactionCorrection_end"
+msgstr "Thời gian kết thúc"
+
+msgid "terminal_op_transactionCorrection"
+msgstr "Điều chỉnh sự kiện"
+
+msgid "terminal_op_transactionCorrectionHelpTxt"
+msgstr "Xác nhận số lượng sự kiện trong thiết bị"
+
+msgid "terminal_op_transactionCorrectionDescription"
+msgstr "Xác nhận số lượng giao dịch trong thiết bị"
+
+msgid "terminal_op_pullFile"
+msgstr "Tải tập tin"
+
+msgid "terminal_op_pullFileDescription"
+msgstr "Tải xuống tệp từ thiết bị, thường sử dụng để bảo trì thiết bị, vui lòng sử dụng chức năng này trong thời gian miễn phí thiết bị, "
+
+msgid "terminal_op_pullFileHelpTxt"
+msgstr "Tải xuống tệp từ thiết bị, thường sử dụng để bảo trì thiết bị, vui lòng sử dụng chức năng này trong thời gian miễn phí thiết bị, "
+
+msgid "terminal_op_clearCommand"
+msgstr "Xóa lệnh"
+
+msgid "terminal_op_clearCommandDescription"
+msgstr "Xóa tất cả các lệnh đang chờ xử lý"
+
+msgid "terminal_op_clearCommandHelpTxt"
+msgstr "Xóa tất cả các lệnh đang chờ xử lý"
+
+msgid "terminal_op_clearCommandConfirmation"
+msgstr "Xác nhận"
+
+msgid "action_pullFile_filePath"
+msgstr "Đường dẫn"
+
+msgid "terminal_op_enrollRemotely"
+msgstr "Điều khiển đăng ký"
+
+msgid "terminal_op_enrollRemotelyDescription"
+msgstr "Đăng ký sinh trắc học từ thiết bị"
+
+msgid "terminal_op_enrollRemotelyHelpTxt"
+msgstr "Đăng ký sinh trắc học từ thiết bị"
+
+msgid "enrollRemotely_field_bioType"
+msgstr "Loại"
+
+msgid "enrollRemotely_bioType_card"
+msgstr "Thẻ"
+
+msgid "enrollRemotely_bioType_fingerprint"
+msgstr "Vân tay"
+
+msgid "enrollRemotely_bioType_face"
+msgstr "Khuôn mặt"
+
+msgid "enrollRemotely_bioType_palm"
+msgstr "Lòng bàn tay"
+
+msgid "enrollRemotely_field_empCode"
+msgstr "Mã nhân viên"
+
+msgid "enrollRemotely_field_finger"
+msgstr "Vân tay"
+
+msgid "enrollRemotely_finger_leftHandLittle"
+msgstr "Ngón út trái"
+
+msgid "enrollRemotely_finger_leftHandRing"
+msgstr "Ngón nhẫn trái"
+
+msgid "enrollRemotely_finger_leftHandMiddle"
+msgstr "Ngón giữa trái"
+
+msgid "enrollRemotely_finger_leftHandFore"
+msgstr "Ngón trỏ trái"
+
+msgid "enrollRemotely_finger_leftHandThumb"
+msgstr "Ngón cái trái"
+
+msgid "enrollRemotely_finger_rightHandThumb"
+msgstr "Ngón cái phải"
+
+msgid "enrollRemotely_finger_rightHandFore"
+msgstr "Ngón trỏ phải"
+
+msgid "enrollRemotely_finger_rightHandMiddle"
+msgstr "Ngón giữa phải"
+
+msgid "enrollRemotely_finger_rightHandRing"
+msgstr "Ngón nhẫn phải"
+
+msgid "enrollRemotely_finger_rightHandLittle"
+msgstr "Ngón út phải"
+
+msgid "terminal_op_newArea"
+msgstr "Khu vực mới"
+
+msgid "terminal_op_newAreaDescription"
+msgstr "Mô tả"
+
+msgid "terminal_op_newAreaHelpTxt"
+msgstr "Thêm khu vực"
+
+msgid "terminal_field_numberReduce"
+msgstr "Số lượng giảm"
+
+msgid "terminal_field_numberReduceHelpText"
+msgstr "0 - 999"
+
+msgid "loopDelTransaction_helpText_tip1"
+msgstr "1.Khi giao dịch thiết bị đầy sẽ loại bỏ số lượng cơ sở giao dịch trên giá trị đầu vào (0 có nghĩa là không bị xóa)."
+
+msgid "terminal_op_loopDelTransaction"
+msgstr "Xóa sự kiện lặp"
+
+msgid "terminal_op_loopDelTransactionDescription"
+msgstr "Xóa vòng lặp giao dịch"
+
+msgid "terminal_op_loopDelTransactionHelpTxt"
+msgstr "Xóa vòng lặp giao dịch"
+
+msgid "terminalNewArea_error_duplicateAreaCode"
+msgstr "Lặp mã khu vực"
+
+msgid "terminal_field_alias"
+msgstr "Tên thiết bị"
+
+msgid "terminal_field_sn"
+msgstr "Số sê -ri"
+
+msgid "terminal_state"
+msgstr "Trạng thái"
+
+msgid "op_menu_group_dataClean"
+msgstr "Xóa dữ liệu"
+
+msgid "op_menu_group_dataTransfer"
+msgstr "Truyền dữ liệu"
+
+msgid "op_menu_group_terminalMenu"
+msgstr "Menu Thiết bị"
+
+msgid "upload_file"
+msgstr "Tải lên File"
+
+msgid "usb_data_upload"
+msgstr "Tải lên sự kiện từ USB"
+
+msgid "file_format_incorrect"
+msgstr "Định dạng File không đúng"
+
+msgid "device_not_found"
+msgstr "Không tìm thấy thiết bị "
+
+msgid "system_error"
+msgstr "Lỗi hệ thống"
+
+msgid "read_file_failed"
+msgstr "Đọc file thất bại"
+
+msgid "row_%(row_num)s_data_incorrect"
+msgstr "Hàng %(row_num)s không chính xác."
+
+msgid "transaction_column_employeeName"
+msgstr "Tên"
+
+msgid "transaction_column_employeeLastName"
+msgstr "Họ"
+
+msgid "transaction_column_employeeDepartment"
+msgstr "Bộ phận"
+
+msgid "transaction_column_employeePosition"
+msgstr "Vị trí"
+
+msgid "transaction_punch_date"
+msgstr "Ngày"
+
+msgid "transaction_punch_time"
+msgstr "Giờ"
+
+msgid "terminalWorkCode_field_terminal"
+msgstr "Thiết bị"
+
+msgid "send_work_code"
+msgstr "Gửi đi thiết bị"
+
+msgid "send_work_code_to_terminal"
+msgstr "Gửi mã công đến thiết bị."
+
+msgid "remove_work_code"
+msgstr "Xóa khỏi thiết bị"
+
+msgid "remove_work_code_from_terminal"
+msgstr "Xóa mã công việc khỏi thiết bị."
+
+msgid "bio_fingerprint"
+msgstr "Vân tay"
+
+msgid "bio_face"
+msgstr "Khuôn mặt"
+
+msgid "bio_finger_vein"
+msgstr "Vein ngón tay"
+
+msgid "bio_palm"
+msgstr "Lòng bàn tay"
+
+msgid "terminal_verifyOption_password"
+msgstr "Mật khẩu"
+
+msgid "terminal_verifyOption_fingerprint"
+msgstr "Vân tay"
+
+msgid "terminal_verifyOption_badge"
+msgstr "ID Nhân viên"
+
+msgid "terminal_verifyOption_card"
+msgstr "Thẻ"
+
+msgid "terminal_verifyOption_fingerprintOrPassword"
+msgstr "Vân tay/Mật khẩu"
+
+msgid "terminal_verifyOption_fingerprintOrCard"
+msgstr "Vân tay/thẻ"
+
+msgid "terminal_verifyOption_passwordOrCard"
+msgstr "Mật khẩu/Thẻ"
+
+msgid "terminal_verifyOption_badgeAndFingerprint"
+msgstr "ID Nhân viên & Vân tay"
+
+msgid "terminal_verifyOption_fingerprintAndPassword"
+msgstr "Vân tay & Mật khẩu"
+
+msgid "terminal_verifyOption_fingerprintAndCard"
+msgstr "Vân tay & Thẻ"
+
+msgid "terminal_verifyOption_passwordAndCard"
+msgstr "Mật khẩu & Thẻ"
+
+msgid "terminal_verifyOption_fingerprintAndPasswordAndCard"
+msgstr "Vân tay & Mật khẩu & Thẻ"
+
+msgid "terminal_verifyOption_badgeAndFingerprintAndPassword"
+msgstr "ID Nhân viên & Vân tay & Mật khẩu"
+
+msgid "terminal_verifyOption_fingerprintAndCardOrFingerprintAndBadge"
+msgstr "Vân tay & Thẻ & ID Nhân viên"
+
+msgid "terminal_verifyOption_face"
+msgstr "Khuôn mặt"
+
+msgid "terminal_verifyOption_faceAndFingerprint"
+msgstr "Khuôn mặt & Vân tay"
+
+msgid "terminal_verifyOption_faceAndPassword"
+msgstr "Khuôn mặt & Mật khẩu"
+
+msgid "terminal_verifyOption_faceAndCard"
+msgstr "Khuôn mặt & Thẻ"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndCard"
+msgstr "Khuôn mặt & Vân tay & Thẻ"
+
+msgid "terminal_verifyOption_faceAndFingerprintAndPassword"
+msgstr "Khuôn mặt & Vân tay & Mật khẩu"
+
+msgid "terminal_verifyOption_fingerVein"
+msgstr "Vein ngón tay"
+
+msgid "terminal_verifyOption_fingerVeinAndPassword"
+msgstr "Vein ngón tay & Mật khẩu"
+
+msgid "terminal_verifyOption_fingerVeinAndCard"
+msgstr "Vein ngón tay & Thẻ"
+
+msgid "terminal_verifyOption_fingerVeinAndPasswordAndCard"
+msgstr "Vein ngón tay & Mật khẩu & Thẻ"
+
+msgid "terminal_verifyOption_palm"
+msgstr "Lòng bàn tay"
+
+msgid "terminal_verifyOption_palmAndCard"
+msgstr "Lòng bàn tay & Thẻ"
+
+msgid "terminal_verifyOption_palmAndFace"
+msgstr "Lòng bàn tay & Khuôn mặt"
+
+msgid "terminal_verifyOption_palmAndFingerprint"
+msgstr "Lòng bàn tay & Vân tay"
+
+msgid "terminal_verifyOption_palmAndFingerprintAndFace"
+msgstr "Lòng bàn tay & Vân tay & Thẻ"
+
+msgid "terminal_verifyOption_gps"
+msgstr "GPS"
+
+msgid "terminal_verifyOption_aiCamera"
+msgstr "Camera AI"
+
+msgid "terminal_verifyOption_other"
+msgstr "Khác"
+
+msgid "transaction_punchState_checkIn"
+msgstr "Check in"
+
+msgid "transaction_punchState_checkOut"
+msgstr "Check out"
+
+msgid "transaction_punchState_breakOut"
+msgstr "Giải lao"
+
+msgid "transaction_punchState_breakIn"
+msgstr "Hết giải lao"
+
+msgid "transaction_punchState_overtimeIn"
+msgstr "Tăng ca vào"
+
+msgid "transaction_punchState_overtimeOut"
+msgstr "Tăng ca ra"
+
+msgid "transaction_punchState_noStatus"
+msgstr "Không trạng thái"
+
+msgid "terminalCommand_returnValue_successful"
+msgstr "Thành công"
+
+msgid "terminalCommand_returnValue_parameterIncorrect"
+msgstr "Tham số không chính xác"
+
+msgid "terminalCommand_returnValue_userPhotoTransferError"
+msgstr "Lỗi chuyển ảnh người dùng"
+
+msgid "terminalCommand_returnValue_readOrWriteError"
+msgstr "Lỗi đọc và viết thiết bị"
+
+msgid "terminalCommand_returnValue_bioTemplateTransferError"
+msgstr "Lỗi chuyển mẫu sinh trắc học"
+
+msgid "terminalCommand_returnValue_userNotExist"
+msgstr "Người dùng không tồn tại"
+
+msgid "terminalCommand_returnValue_illegalFPTemplateFormat"
+msgstr "Định dạng mẫu FP không hợp lệ"
+
+msgid "terminalCommand_returnValue_illegalFPTemplate"
+msgstr "Mẫu FP không hợp lệ"
+
+msgid "terminalCommand_returnValue_capacityLimitation"
+msgstr "Giới hạn luu trữ thiết bị"
+
+msgid "terminalCommand_returnValue_deviceNotSupport"
+msgstr "Thiết bị không hỗ trợ"
+
+msgid "terminalCommand_returnValue_timeout"
+msgstr "Hết giờ"
+
+msgid "terminalCommand_returnValue_dataException"
+msgstr "Dữ liệu ngoại lệ"
+
+msgid "terminalCommand_returnValue_deviceBusy"
+msgstr "Thiết bị bận"
+
+msgid "terminalCommand_returnValue_dataTooLong"
+msgstr "Dữ liệu quá dài"
+
+msgid "terminalCommand_returnValue_memoryError"
+msgstr "Lỗi bộ nhớ thiết bị"
+
+msgid "terminalCommand_returnValue_gettingServerDataFailed"
+msgstr "Lấy dữ liệu máy chủ không thành công"
+
+msgid "deviceLog_action_powerOn"
+msgstr "Bật nguồn"
+
+msgid "deviceLog_action_powerOff"
+msgstr "Tắt nguồn"
+
+msgid "deviceLog_action_verifyFailed"
+msgstr "Xác nhận thất bại"
+
+msgid "deviceLog_action_alarm"
+msgstr "Báo thức"
+
+msgid "deviceLog_action_enterMenu"
+msgstr "Vào Menu"
+
+msgid "deviceLog_action_modifySetting"
+msgstr "Cập nhập cài đặt"
+
+msgid "deviceLog_action_enrollFP"
+msgstr "Đăng ký vân tay"
+
+msgid "deviceLog_action_enrollPassword"
+msgstr "Đăng ký mật khẩu"
+
+msgid "deviceLog_action_enrollCard"
+msgstr "Đăng ký thẻ "
+
+msgid "deviceLog_action_deleteUser"
+msgstr "Xóa người dùng"
+
+msgid "deviceLog_action_deleteFP"
+msgstr "Xóa vân tay"
+
+msgid "deviceLog_action_deletePassword"
+msgstr "Xóa mật khẩu"
+
+msgid "deviceLog_action_deleteCard"
+msgstr "Xóa thẻ"
+
+msgid "deviceLog_action_cleanData"
+msgstr "Xóa dữ liệu"
+
+msgid "deviceLog_action_generateMFCard"
+msgstr "Tạo thẻ MF"
+
+msgid "deviceLog_action_enrollMFCard"
+msgstr "Đăng ký thẻ MF"
+
+msgid "deviceLog_action_deleteMFCard"
+msgstr "Xóa thẻ MF"
+
+msgid "deviceLog_action_clearMFCard"
+msgstr "Xóa thẻ MF"
+
+msgid "deviceLog_action_migrateDataEnrollment2Card"
+msgstr "Chuyển dữ liệu đăng ký vào thẻ"
+
+msgid "deviceLog_action_migrateDataCard2Device"
+msgstr "Sao chép ngày trong thẻ vào thiết bị"
+
+msgid "deviceLog_action_setupTime"
+msgstr "Thiết lập thời gian"
+
+msgid "deviceLog_action_restoreSetting"
+msgstr "Khôi phục cài đặt máy chủ"
+
+msgid "deviceLog_action_deleteAccessEntry"
+msgstr "Xóa mục truy cập lối vào"
+
+msgid "deviceLog_action_clearAdminPrivilege"
+msgstr "Xóa quyền quản trị"
+
+msgid "deviceLog_action_updateAccessSetting"
+msgstr "Cập nhật cài đặt kiểm soát truy cập"
+
+msgid "deviceLog_action_updateUserAccessSetting"
+msgstr "Cập nhật cài đặt kiểm soát truy cập"
+
+msgid "deviceLog_action_updateAccessTimeZone"
+msgstr "Cập nhật vùng thời gian"
+
+msgid "deviceLog_action_updateUnlockingCombination"
+msgstr "Cập nhật cài đặt kết hợp mở khóa"
+
+msgid "deviceLog_action_unlock"
+msgstr "Mở khóa"
+
+msgid "deviceLog_action_enrollNewUser"
+msgstr "Đăng ký người dùng mới"
+
+msgid "deviceLog_action_updateFP"
+msgstr "Cập nhật dấu vân tay"
+
+msgid "deviceLog_action_duressAlarm"
+msgstr "Báo động (bắt buộc)"
+
+msgid "deviceLog_action_antiPassBack"
+msgstr "Chống quay ngược"
+
+msgid "deviceLog_action_deleteAttPhoto"
+msgstr "Xóa ảnh chấm công"
+
+msgid "deviceLog_action_updateOtherUser"
+msgstr "Cập nhật người dùng khác"
+
+msgid "deviceLog_action_holiday"
+msgstr "Ngày lễ"
+
+msgid "deviceLog_action_registerUserPhoto"
+msgstr "Đăng ký ảnh người dùng"
+
+msgid "deviceLog_action_updateUserPhoto"
+msgstr "Cập nhập ảnh người dùng"
+
+msgid "deviceLog_action_updateUserName"
+msgstr "Đăng ký tên người dùng"
+
+msgid "deviceLog_action_updateUserPrivilege"
+msgstr "Đăng ký quyền người dùng"
+
+msgid "deviceLog_action_updatePalm"
+msgstr "Cập nhập lòng bàn tay"
+
+msgid "deviceLog_action_deletePalm"
+msgstr "Xóa lòng bàn tay"
+
+msgid "iclock_model_deviceConfig"
+msgstr "Cáu hình thiết bị"
+
+msgid "deviceConfig_deviceCommunicationSetting"
+msgstr "Cài đặt truyền thông thiết bị"
+
+msgid "deviceConfig_field_enableRegistration"
+msgstr "kích hoạt đăng ký"
+
+msgid "deviceConfig_field_enableResignedFilterHelpText"
+msgstr "Bộ lọc nhân viên đã từ chức, khi đã từ chức tải lên dữ liệu nhân viên từ thiết bị, hệ thống sẽ gửi lại lệnh xóa để xóa khỏi thiết bị."
+
+msgid "deviceConfig_field_enableResignedFilter"
+msgstr "Bộ lọc đã từ chức"
+
+msgid "deviceConfig_field_autoAdd"
+msgstr "Thêm tự động"
+
+msgid "deviceConfig_field_enableNameUpload"
+msgstr "Kích hoạt tải lên tên"
+
+msgid "deviceConfig_field_enableNameUploadHelpTxt"
+msgstr "Cho phép tải lên tên người dùng từ thiết bị"
+
+msgid "deviceConfig_field_enableCardUpload"
+msgstr "Kích hoạt tải lên thẻ"
+
+msgid "deviceConfig_field_enableCardUploadHelpTxt"
+msgstr "Cho phép tải lên số thẻ người dùng từ thiết bị"
+
+msgid "deviceConfig_deviceDataRetentionSetting"
+msgstr "Cài đặt lưu trữ dữ liệu"
+
+msgid "deviceConfig_field_transactionRetention"
+msgstr "Sự kiện"
+
+msgid "deviceConfig_field_transactionRetentionHelpTxt"
+msgstr "90 - 9999 Ngày"
+
+msgid "deviceConfig_field_commandRetention"
+msgstr "Lệnh"
+
+msgid "deviceConfig_field_commandRetentionHelpTxt"
+msgstr "5 - 9999 Ngày"
+
+msgid "deviceConfig_field_devLogRetention"
+msgstr "Nhật ký thiết bị"
+
+msgid "deviceConfig_field_devLogRetentionHelpTxt"
+msgstr "15 - 9999 Ngày"
+
+msgid "deviceConfig_field_uploadLogRetention"
+msgstr "Tải lên nhật ký"
+
+msgid "deviceConfig_field_uploadLogRetentionHelpTxt"
+msgstr "15 - 9999 Ngày"
+
+msgid "deviceConfig_field_retentionUnit"
+msgstr "Đơn vị lưu trữ"
+
+msgid "deviceConfig_bioPhotoApprovalPolicy"
+msgstr "Chính sách phê duyệt ảnh sinh trắc học"
+
+msgid "deviceConfig_field_editBioPhotoPolicy"
+msgstr "Chỉnh sửa ảnh sinh trắc học"
+
+msgid "deviceConfig_field_importBioPhotoPolicy"
+msgstr "Nhập ảnh sinh trắc học"
+
+msgid "deviceConfig_field_mobileBioPhotoPolicy"
+msgstr "Đăng ký ảnh qua điện thoại"
+
+msgid "deviceConfig_field_deviceBioPhotoPolicy"
+msgstr "Tải ảnh từ thiết bị"
+
+msgid "employee_disabled"
+msgstr "Nhân viên bị vô hiệu hóa"
+
+msgid "employee_not_found"
+msgstr "Không tìm thấy nhân viên"
+
+msgid "terminal_not_found"
+msgstr "Không tìm thấy thiết bị"
+
+msgid "license_active_customerInfoForm_country"
+msgstr "Quốc gia"
+
+msgid "license_active_customerInfoForm_city"
+msgstr "Thành phố"
+
+msgid "license_active_customerInfoForm_company"
+msgstr "Công ty"
+
+msgid "license_active_customerInfoForm_industry"
+msgstr "Công nghiệp"
+
+msgid "license_active_customerInfoForm_contactPerson"
+msgstr "Người liên hệ"
+
+msgid "license_active_customerInfoForm_supplier"
+msgstr "Nhà cung cấp"
+
+msgid "license_active_customerInfoForm_telephone"
+msgstr "Số điện thoại"
+
+msgid "license_active_customerInfoForm_email"
+msgstr "Hôp thư "
+
+msgid "license_active_customerInfoForm_address"
+msgstr "Địa chỉ"
+
+msgid "license_active_customerInfoForm_snFile"
+msgstr "Tập tin SN"
+
+msgid "license_active_snFileImportHelpTxt"
+msgstr "Tên File nên được kết thúc bằng -SN.xml"
+
+msgid "license_active_generatingUPKFailed"
+msgstr "Tạo UPK thất bại"
+
+msgid "license_active_systemFileWasModified"
+msgstr "Tập tin hệ thống đã được sửa đổi, vui lòng không sửa đổi tập tin đã được ủy quyền."
+
+msgid "license_active_licenseFileUnavailable"
+msgstr "Tập tin bản quyền không có sẵn"
+
+msgid "license_active_activeSuccessful"
+msgstr "Hoạt động thành công"
+
+msgid "license_active_onlineActiveFailedServerNoResponse"
+msgstr "Hoạt động trực tuyến không thành công, máy chủ cấp phép không phản hồi."
+
+msgid "license_active_snFileIsRequired"
+msgstr "Tập tin SN là bắt buộc"
+
+msgid "license_active_onlineActiveFailedServerNoConfigured"
+msgstr "Hoạt động trực tuyến không thành công, máy chủ cấp phép không có cấu hình."
+
+msgid "online_active_onlineActiveFailed"
+msgstr "Hoạt động trực tuyến không thành công."
+
+msgid "onlineActive_error_inactiveLicense"
+msgstr "Bản quyền chưa kích hoạt"
+
+msgid "license_active_onlineActiveSuccessful"
+msgstr "Hoạt động thành công"
+
+msgid "license_active_onlineActiveFailedException"
+msgstr "Hoạt động trực tuyến không thành công, hệ thống ngoại tuyến."
+
+msgid "license_active_snFileIsWrong"
+msgstr "Tệp SN bị sai"
+
+msgid "license_active_snFileUPKNotFound"
+msgstr "Không tìm thấy UPK trong tập tin SN"
+
+msgid "license_active_UPKFileGeneratingException"
+msgstr "Tạo tập tin UPK không thành công, hệ thống ngoại tuyến."
+
+msgid "license_active_licenseImportForm_licenseFile"
+msgstr "Tập tin bản quyền"
+
+msgid "license_active_licenseImportForm_licenseFileHelpTxt"
+msgstr "Tên tập tin nên được kết thúc bằng -License.xml"
+
+msgid "online_active_licenseNotFoundCanNotUpgrade"
+msgstr "Không tìm thấy bản quyền, không thể nâng cấp."
+
+msgid "online_active_licenseUpgradeFailed"
+msgstr "Nâng cấp bản quyền thất bại."
+
+msgid "online_active_licenseNotFound"
+msgstr "Không tìm thấy bản quyền"
+
+msgid "license_expiredDate_permanent"
+msgstr "Dài hạn"
+
+msgid "license_capacity_unlimited"
+msgstr "Vô hạn"
+
+msgid "terminal_field_ipAddress"
+msgstr "IP Thiết bị"
+
+msgid "terminal_field_realIPAddress"
+msgstr "Địa chỉ thực"
+
+msgid "terminal_field_timezone"
+msgstr "Múi giờ"
+
+msgid "terminal_field_area"
+msgstr "Khu vực"
+
+msgid "terminal_field_heartbeat"
+msgstr "Yêu cầu nhịp độ"
+
+msgid "terminal_field_heartbeatHelpTxt"
+msgstr "Giây"
+
+msgid "terminal_field_transferMode"
+msgstr "Chế độ truyền"
+
+msgid "deviceModel_option_attendance"
+msgstr "Chấm công"
+
+msgid "deviceModel_option_accessController"
+msgstr "Kiểm soát truy cập"
+
+msgid "deviceModel_option_informationScreen"
+msgstr "Màn hình thông tin"
+
+msgid "deviceModel_option_AICamera"
+msgstr "Camera AI"
+
+msgid "transferMode_option_realTime"
+msgstr "Thời gian thực"
+
+msgid "transferMode_option_timing"
+msgstr "Đồng bộ thời gian"
+
+msgid "dataSources_option_terminal"
+msgstr "Thiết bị"
+
+msgid "dataSources_option_manualLog"
+msgstr "Nhật ký thủ công"
+
+msgid "dataSources_option_mobile"
+msgstr "Điện thoại"
+
+msgid "terminal_field_transferInterval"
+msgstr "Khoảng thời gian chuyển đổi"
+
+msgid "terminal_field_transferIntervalHelpTxt"
+msgstr "Phút"
+
+msgid "bioData_field_employee"
+msgstr "Nhân viên"
+
+msgid "bioData_field_bioTemplate"
+msgstr "Bản mẫu"
+
+msgid "bioData_field_bioIndex"
+msgstr "Chỉ số sinh học"
+
+msgid "bioData_field_templateIndex"
+msgstr "Chỉ số mẫu"
+
+msgid "bioData_field_bioType"
+msgstr "Các loại sinh trắc học"
+
+msgid "bioData_field_algorithmMajorVersion"
+msgstr "Phiên bản chính"
+
+msgid "bioData_field_algorithmMinorVersion"
+msgstr "Phiên bản phụ"
+
+msgid "bioData_field_algorithmFormat"
+msgstr "Định dạng"
+
+msgid "bioData_field_isValid"
+msgstr "Hợp lệ"
+
+msgid "bioData_field_isDuress"
+msgstr "Bị ép buộc"
+
+msgid "bioData_field_createTime"
+msgstr "Thời gian tạo"
+
+msgid "bioData_field_updateTime"
+msgstr "Cập nhập thời gian"
+
+msgid "bioData_field_enrollTerminal"
+msgstr "Số sê-ri"
+
+msgid "iclock_model_bioData"
+msgstr "Dữ liệu sinh trắc học"
+
+msgid "privateMessage_field_lastSend"
+msgstr "Gửi lần cuối"
+
+msgid "iclock_model_privateMessage"
+msgstr "Tin nhắn cá nhân"
+
+msgid "publicMessage_field_lastSend"
+msgstr "Gửi lần cuối"
+
+msgid "iclock_model_publicMessage"
+msgstr "Tin nhắn công khai"
+
+msgid "terminal_field_state"
+msgstr "Trạng thái"
+
+msgid "terminal_field_transferTime"
+msgstr "Thời gian chuyển đổi"
+
+msgid "terminal_field_productType"
+msgstr "Các loại sản phẩm"
+
+msgid "terminal_field_isAttendance"
+msgstr "Điểm danh"
+
+msgid "terminal_field_enableAccessControl"
+msgstr "Kích hoạt kiểm soát"
+
+msgid "terminal_field_isRegistration"
+msgstr "Thiết bị đăng ký"
+
+msgid "terminal_field_purpose"
+msgstr "Mục đích"
+
+msgid "terminal_field_accessControllerType"
+msgstr "Bộ điều khiển truy cập"
+
+msgid "terminal_field_authentication"
+msgstr "Chế độ xác minh"
+
+msgid "terminal_field_style"
+msgstr "Các loại"
+
+msgid "terminal_field_uploadFlag"
+msgstr "Tải lên cờ"
+
+msgid "terminal_field_firmwareVersion"
+msgstr "Phiên bản firmware"
+
+msgid "terminal_field_pushProtocolVersion"
+msgstr "Phiên bản giao thức"
+
+msgid "terminal_field_pushVersion"
+msgstr "Phiên bản push"
+
+msgid "terminal_field_language"
+msgstr "Ngôn ngữ"
+
+msgid "terminal_field_isTft"
+msgstr "Có phải Tft"
+
+msgid "terminal_field_terminalName"
+msgstr "Mã thiết bị"
+
+msgid "terminal_field_platform"
+msgstr "Nền tảng"
+
+msgid "terminal_field_oemVendor"
+msgstr "Người bán"
+
+msgid "terminal_field_logStamp"
+msgstr "Nhật ký tem"
+
+msgid "terminal_field_operationLogStamp"
+msgstr "Tem nhật ký hoạt động"
+
+msgid "terminal_field_captureStamp"
+msgstr "Tem ảnh chụp"
+
+msgid "terminal_field_userCount"
+msgstr "Người dùng"
+
+msgid "terminal_field_userCapacity"
+msgstr "Dung lượng người dùng"
+
+msgid "terminal_field_photoFuncOn"
+msgstr "Chụp ảnh"
+
+msgid "terminal_field_transactionCount"
+msgstr "Sự kiện"
+
+msgid "terminal_field_transactionCapacity"
+msgstr "Dung lượng sự kiện"
+
+msgid "terminal_field_fpFuncOn"
+msgstr "Kích hoạt vân tay"
+
+msgid "terminal_field_fingerprintCount"
+msgstr "Vân tay"
+
+msgid "terminal_field_fingerprintCapacity"
+msgstr "Dung lượng vân tay"
+
+msgid "terminal_field_fingerprintAlgorithmVersion"
+msgstr "Thuật toán vân tay"
+
+msgid "terminal_field_faceFuncOn"
+msgstr "kích hoạt khuôn mặt"
+
+msgid "terminal_field_faceCount"
+msgstr "Khuôn mặt"
+
+msgid "terminal_field_faceCapacity"
+msgstr "Dung lượng khuôn mặt"
+
+msgid "terminal_field_faceAlgorithmVersion"
+msgstr "Thuật toán khuôn mặt"
+
+msgid "terminal_field_fingerVeinFuncOn"
+msgstr "Kích hoạt vein ngón tay"
+
+msgid "terminal_field_fingerVeinCount"
+msgstr "Vein ngón tay"
+
+msgid "terminal_field_fingerVeinCapacity"
+msgstr "Dung lượng vein ngón tay"
+
+msgid "terminal_field_fingerVeinAlgorithmVersion"
+msgstr "Thuật toán vein ngón tay"
+
+msgid "terminal_field_palmFuncOn"
+msgstr "Kích hoạt lòng bàn tay"
+
+msgid "terminal_field_palmCount"
+msgstr "Lòng bàn tay"
+
+msgid "terminal_field_palmCapacity"
+msgstr "Dung lượng lòng bàn tay"
+
+msgid "terminal_field_palmAlgorithmVersion"
+msgstr "Thuật toán lòng bàn tay"
+
+msgid "terminal_field_lockFunc"
+msgstr "Hỗ trợ kiểm soát truy cập"
+
+msgid "terminal_field_lastActivity"
+msgstr "Hoạt động lần cuối"
+
+msgid "terminal_field_uploadTime"
+msgstr "Thời gian tải lên"
+
+msgid "terminal_field_syncTime"
+msgstr "Đồng bộ lần cuối"
+
+msgid "terminal_field_cmdCount"
+msgstr "Lệnh"
+
+msgid "iclock_model_terminal"
+msgstr "Thiết bị"
+
+msgid "command_field_terminal"
+msgstr "Thiết bị"
+
+msgid "command_field_content"
+msgstr "Nội dung"
+
+msgid "command_field_commit_time"
+msgstr "Thời gian cam kết"
+
+msgid "command_field_transferTime"
+msgstr "Thời gian chuyển đổi"
+
+msgid "command_field_returnTime"
+msgstr "Thời gian trả lại"
+
+msgid "command_field_returnValue"
+msgstr "Giá trị trả lại"
+
+msgid "iclock_model_terminalCommand"
+msgstr "Lệnh"
+
+msgid "menu_device_errorCommandLog"
+msgstr "Nhật ký lệnh lỗi"
+
+msgid "terminal_model_errorCommandLog"
+msgstr "Nhật ký lỗi"
+
+msgid "errorCommandLog_field_terminal"
+msgstr "Thiết bị"
+
+msgid "errorCommandLog_field_errorCode"
+msgstr "Mã lỗi"
+
+msgid "errorCommandLog_field_errorMsg"
+msgstr "Tin nhắn lỗi"
+
+msgid "errorCommandLog_field_dataOrigin"
+msgstr "Lệnh lỗi"
+
+msgid "errorCommandLog_field_cmd"
+msgstr "ID lệnh "
+
+msgid "errorCommandLog_field_additional"
+msgstr "Tin nhắn bổ sung"
+
+msgid "errorCommandLog_field_uploadTime"
+msgstr "Thời gian tải lên"
+
+msgid "terminalEmployee_field_sn"
+msgstr "Số sê-ri"
+
+msgid "terminalEmployee_field_employeeCode"
+msgstr "ID nhân viên"
+
+msgid "terminalEmployee_field_privilege"
+msgstr "Đặc quyền"
+
+msgid "iclock_model_terminalEmployee"
+msgstr "Nhân viên"
+
+msgid "terminalLog_field_terminal"
+msgstr "Thiết bị"
+
+msgid "terminalLog_field_timezone"
+msgstr "Múi giờ"
+
+msgid "terminalLog_field_administrator"
+msgstr "Quản trị viên"
+
+msgid "terminalLog_field_actionName"
+msgstr "Hoạt động"
+
+msgid "terminalLog_field_actionTime"
+msgstr "Thời gian hoạt động"
+
+msgid "terminalLog_field_object"
+msgstr "Đối tượng"
+
+msgid "terminalLog_field_param1"
+msgstr "Tham số 1"
+
+msgid "terminalLog_field_param2"
+msgstr "Tham số 2"
+
+msgid "terminalLog_field_param3"
+msgstr "Tham số 3"
+
+msgid "terminalLog_field_uploadTime"
+msgstr "Thời gian tải lên"
+
+msgid "iclock_model_terminalLog"
+msgstr "Nhật ký thiết bị"
+
+msgid "terminalParameter_field_terminal"
+msgstr "Thiết bị"
+
+msgid "terminalParameter_field_type"
+msgstr "Các loại"
+
+msgid "terminalParameter_field_name"
+msgstr "Tên"
+
+msgid "terminalParameter_field_value"
+msgstr "Giá trị"
+
+msgid "iclock_model_terminalParameter"
+msgstr "Tham số thiết bị"
+
+msgid "transaction_field_employeeCode"
+msgstr "ID nhân viên"
+
+msgid "transaction_field_employee"
+msgstr "Nhân viên"
+
+msgid "transaction_field_punchTime"
+msgstr "Thời gian chấm"
+
+msgid "transaction_field_punchState"
+msgstr "Trạng thái chấm"
+
+msgid "transaction_field_verifyType"
+msgstr "Các loại xác nhận"
+
+msgid "transaction_field_workCode"
+msgstr "Mã công việc"
+
+msgid "transaction_field_terminalSN"
+msgstr "Số sê-ri"
+
+msgid "transaction_terminal_alias"
+msgstr "Tên thiết bị"
+
+msgid "transaction_field_terminal"
+msgstr "Thiết bị"
+
+msgid "transaction_field_areaAlias"
+msgstr "Khu vực"
+
+msgid "transaction_field_longitude"
+msgstr "Kinh độ"
+
+msgid "transaction_field_latitude"
+msgstr "Vĩ độ"
+
+msgid "transaction_field_gpsLocation"
+msgstr "GPS"
+
+msgid "transaction_field_mobile"
+msgstr "Điện thoại"
+
+msgid "transaction_field_source"
+msgstr "Nguồn"
+
+msgid "transaction_field_purpose"
+msgstr "Mục đích"
+
+msgid "transaction_field_crcCode"
+msgstr "Mã CRC"
+
+msgid "transaction_field_isAttendance"
+msgstr "Điểm danh"
+
+msgid "transaction_field_reserved"
+msgstr "Đã được đặt trước"
+
+msgid "transaction_field_uploadTime"
+msgstr "Thời gian tải lên"
+
+msgid "transaction_field_synchronizedStatus"
+msgstr "Trạng thái đồng bộ"
+
+msgid "transaction_field_synchronized_time"
+msgstr "Thời gian đồng bộ"
+
+msgid "iclock_model_transaction"
+msgstr "Sự kiện"
+
+msgid "terminalUploadLog_field_terminal"
+msgstr "Thiết bị"
+
+msgid "terminalUploadLog_field_event"
+msgstr "Sự kiện"
+
+msgid "terminalUploadLog_field_content"
+msgstr "Nội dung"
+
+msgid "terminalUploadLog_field_count"
+msgstr "Đếm"
+
+msgid "terminalUploadLog_field_errorCount"
+msgstr "Bộ điếm lỗi"
+
+msgid "terminalUploadLog_field_uploadTime"
+msgstr "Thời gian tải lên"
+
+msgid "iclock_model_terminalUploadLog"
+msgstr "Tải lên nhật ký thiết bị"
+
+msgid "terminalWorkCode_field_code"
+msgstr "Mã"
+
+msgid "terminalWorkCode_field_alias"
+msgstr "Tên"
+
+msgid "terminalWorkCode_field_lastActivity"
+msgstr "Hoạt động lần cuối"
+
+msgid "iclock_model_terminalWorkCode"
+msgstr "Mã công việc"
+
+msgid "employee_photo"
+msgstr "Hình ảnh"
+
+msgid "biometric_template"
+msgstr "Mẫu sinh trắc học"
+
+msgid "fingerprint"
+msgstr "Vân tay"
+
+msgid "attendance_capture"
+msgstr "Chụp ảnh"
+
+msgid "transaction_field_firstName"
+msgstr "Tên"
+
+msgid "transaction_field_lastName"
+msgstr "Họ"
+
+msgid "transaction_field_department"
+msgstr "Bộ phận"
+
+msgid "transaction_field_position"
+msgstr "Vị trí"
+
+msgid "transaction_field_punchDate"
+msgstr "Ngày chấm"
+
+msgid "transaction_field_area"
+msgstr "Khu vực"
+
+msgid "chart_present"
+msgstr "Hiện tại"
+
+msgid "chart_today"
+msgstr "Hôm nay"
+
+msgid "chart_absent"
+msgstr "Vắng mặt"
+
+msgid "dashboard_exception"
+msgstr "Ngoại lệ điểm danh"
+
+msgid "dashboard_history"
+msgstr "Lịch sử"
+
+msgid "chart_late"
+msgstr "Muộn"
+
+msgid "chart_early_leave"
+msgstr "Về sớm"
+
+msgid "dashboard_real_time_monitor"
+msgstr "Giám sát thời gian thực"
+
+msgid "symbol_p"
+msgstr "P"
+
+msgid "announcement_filed_subject"
+msgstr "Chủ đề"
+
+msgid "announcement_filed_content"
+msgstr "Nội dung"
+
+msgid "announcement_filed_emp"
+msgstr "ID Nhân viên"
+
+msgid "mobile_action_publicNotice"
+msgstr "Đẩy thông báo công khai"
+
+msgid "mobile_action_publicNoticeHelpTxt"
+msgstr "Đẩy thông báo công khai"
+
+msgid "mobile_action_publicNoticeDescription"
+msgstr "Đẩy thông báo công khai"
+
+msgid "mobile_action_privateNotice"
+msgstr "Đẩy thông báo công khai"
+
+msgid "mobile_action_privateNoticeHelpTxt"
+msgstr "Đẩy vào thông báo công khai"
+
+msgid "mobile_action_privateNoticeDescription"
+msgstr "Đẩy vào thông báo cá nhân"
+
+msgid "title_required"
+msgstr "Tiêu đề được yêu cầu"
+
+msgid "content_required"
+msgstr "Nội dung được yêu cầu"
+
+msgid "appNotice_field_content"
+msgstr "Nội dung"
+
+msgid "mobile_action_pushNotification"
+msgstr "Đẩy thông báo"
+
+msgid "mobile_action_pushNotificationHelpTxt"
+msgstr "Thông báo đẩy"
+
+msgid "mobile_action_pushNotificationDescription"
+msgstr "Thông báo đẩy"
+
+msgid "applist_action_forceOffline"
+msgstr "Buộc offline"
+
+msgid "force_offline_confirm {0} {1}"
+msgstr "Bạn có chắc chắn buộc thiết bị ngoại tuyến {0} {1}"
+
+msgid "app_account_disable_confirm {0} {1}"
+msgstr "Bạn có chắc chắn tắt thiết bị {0} {1}"
+
+msgid "app_account_enable_confirm {0} {1}"
+msgstr "Bạn có chắc chắn kích hoạt thiết bị {0} {1}"
+
+msgid "applist_action_disable"
+msgstr "Vô hiệu hóa"
+
+msgid "applist_action_enable"
+msgstr "Kích hoạt"
+
+msgid "announce_all_emp"
+msgstr "Tất cả"
+
+msgid "announcement_filed_sender"
+msgstr "Người gửi"
+
+msgid "announcement_category_public"
+msgstr "Công khai"
+
+msgid "announcement_category_private"
+msgstr "Cá nhân"
+
+msgid "appOS_option_ios"
+msgstr "IOS"
+
+msgid "appOS_option_android"
+msgstr "Android"
+
+msgid "activeStatus_option_active"
+msgstr "Hoạt động"
+
+msgid "activeStatus_option_inactive"
+msgstr "Không hoạt động"
+
+msgid "notification_category_leave"
+msgstr "Rời khỏi"
+
+msgid "notification_category_overtime"
+msgstr "Tăng ca"
+
+msgid "notification_category_manualLog"
+msgstr "Nhật ký thủ công"
+
+msgid "notification_category_training"
+msgstr "Đào tạo"
+
+msgid "notification_category_schedule"
+msgstr "Lịch trình"
+
+msgid "notification_category_announcement"
+msgstr "Thông báo"
+
+msgid "notification_category_exception"
+msgstr "Ngoại lệ"
+
+msgid "notification_subCategory_publicAnnouncement"
+msgstr "Thông báo công khai"
+
+msgid "notification_subCategory_privateAnnouncement"
+msgstr "Thông báo cá nhân"
+
+msgid "notification_subCategory_late"
+msgstr "Muộn"
+
+msgid "notification_subCategory_earlyLeave"
+msgstr "Về sớm"
+
+msgid "notification_subCategory_absent"
+msgstr "Vắng mặt"
+
+msgid "notification_readStatus_unread"
+msgstr "Chưa đọc"
+
+msgid "notification_readStatus_read"
+msgstr "Đọc"
+
+msgid "appActionLog_status_exception"
+msgstr "Ngoại lệ"
+
+msgid "appActionLog_status_successful"
+msgstr "Thành công"
+
+msgid "announcement_field_category"
+msgstr "Thể loại"
+
+msgid "announcement_field_sender"
+msgstr "Người gửi"
+
+msgid "announcement_field_systemSender"
+msgstr "Hệ thống người gửi"
+
+msgid "announcement_field_noticeTime"
+msgstr "Thời gian thông báo"
+
+msgid "app_model_announcement"
+msgstr "Thông báo"
+
+msgid "actionLog_field_user"
+msgstr "Người dùng"
+
+msgid "actionLog_field_client"
+msgstr "Khách hàng"
+
+msgid "actionLog_field_action"
+msgstr "Hoạt động"
+
+msgid "actionLog_field_params"
+msgstr "Thông số"
+
+msgid "actionLog_field_describe"
+msgstr "Miêu tả"
+
+msgid "actionLog_field_status"
+msgstr "Trạng thái"
+
+msgid "actionLog_field_actionTime"
+msgstr "Thời gian hoạt động"
+
+msgid "actionLog_field_remoteIp"
+msgstr "Ip điều khiển"
+
+msgid "app_model_actionLog"
+msgstr "Nhật ký hoạt động"
+
+msgid "appList_field_userName"
+msgstr "Tên người dùng"
+
+msgid "appList_field_loginTime"
+msgstr "Thời gian đăng nhập"
+
+msgid "appList_field_lastActive"
+msgstr "Hoạt động lần trước"
+
+msgid "appList_field_token"
+msgstr "Mã thông báo"
+
+msgid "appList_field_deviceToken"
+msgstr "Thiết bị mã thông báo"
+
+msgid "appList_field_clientId"
+msgstr "ID Khách hàng"
+
+msgid "appList_field_clientCategory"
+msgstr "Danh mục khách hàng"
+
+msgid "appList_field_runStatus"
+msgstr "Trạng thái hoạt động"
+
+msgid "appList_field_accessStatus"
+msgstr "Trạng thái ứng dụng"
+
+msgid "app_model_appList"
+msgstr "Danh sách ứng dụng"
+
+msgid "appNotice_field_receiver"
+msgstr "Người nhận"
+
+msgid "appNotice_field_sender"
+msgstr "Người gửi"
+
+msgid "appNotice_field_systemSender"
+msgstr "Hệ thống người gửi"
+
+msgid "appNotice_field_category"
+msgstr "Thể loại"
+
+msgid "appNotice_field_subCategory"
+msgstr "Tiểu mục"
+
+msgid "appNotice_field_source"
+msgstr "Nguồn"
+
+msgid "appNotice_field_sendTime"
+msgstr "Thời gian gửi"
+
+msgid "appNotice_field_readStatus"
+msgstr "Trạng thái đọc"
+
+msgid "appNotice_field_readTime"
+msgstr "Thời gian đọc"
+
+msgid "app_model_notification"
+msgstr "Chú ý"
+
+msgid "menu_mobile_gpsEmployee"
+msgstr "GPS cho nhân viên"
+
+msgid "mobile_model_gpsForEmployee"
+msgstr "GPS cho nhân viên"
+
+msgid "gpsForEmployee_action_addGPSForEmployee"
+msgstr "Thêm"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeHelpTxt"
+msgstr "Thêm"
+
+msgid "gpsForEmployee_action_addGPSForEmployeeDescription"
+msgstr "Thêm"
+
+msgid "gpsForEmployee_field_employee"
+msgstr "Nhân viên"
+
+msgid "gpsForEmployee_field_longitude"
+msgstr "Kinh độ"
+
+msgid "gpsForEmployee_field_latitude"
+msgstr "Vĩ độ"
+
+msgid "gpsForEmployee_field_location"
+msgstr "Vị trí"
+
+msgid "gpsForEmployee_field_distance"
+msgstr "Khoảng cách (mét)"
+
+msgid "gpsForEmployee_field_distanceHelpTxt"
+msgstr "Mét"
+
+msgid "gpsForEmployee_field_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "gpsForEmployee_field_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "gpsForEmployee_error_dateOverlap"
+msgstr "Phạm vi ngày chồng chéo nhau"
+
+msgid "menu_mobile_gpsDepartment"
+msgstr "GPS cho bộ phận"
+
+msgid "mobile_model_gpsForDepartment"
+msgstr "GPS cho bộ phận"
+
+msgid "gpsForDepartment_action_addGPSForDepartment"
+msgstr "Thêm"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentHelpTxt"
+msgstr "Thêm"
+
+msgid "gpsForDepartment_action_addGPSForDepartmentDescription"
+msgstr "Thêm"
+
+msgid "gpsForDepartment_field_department"
+msgstr "Bộ phận"
+
+msgid "gpsForDepartment_field_longitude"
+msgstr "Kinh độ"
+
+msgid "gpsForDepartment_field_latitude"
+msgstr "Vĩ độ"
+
+msgid "gpsForDepartment_field_location"
+msgstr "Vị trí"
+
+msgid "gpsForDepartment_field_distance"
+msgstr "Khoảng cách (mét)"
+
+msgid "gpsForDepartment_field_distanceHelpTxt"
+msgstr "Mét"
+
+msgid "gpsForDepartment_field_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "gpsForDepartment_field_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "gpsForDepartment_error_dateOverlap"
+msgstr "Phạm vi ngày chồng chéo nhau"
+
+msgid "gps_distance_invalid"
+msgstr "Không hợp lệ"
+
+msgid "gps_date_invalid_range"
+msgstr "Phạm vi ngày không hợp lệ"
+
+msgid "gps_latitude_invalid_range"
+msgstr "Giá trị vĩ độ phải trong phạm vi [-90,90]"
+
+msgid "departmentGps_select_dept"
+msgstr "Vui lòng chọn bộ phận."
+
+msgid "appClockIn_error_networkNotStable"
+msgstr "Mạng không ổn định, hãy thử lại."
+
+msgid "appClockIn_error_outOfLocation"
+msgstr "Ra khỏi vị trí"
+
+msgid "mobile_scheduleApply_employeeScheduleOverlap_%(emp)s"
+msgstr "Nhân viên %(emp)s Lịch trình ứng dụng là chồng chéo"
+
+msgid "menu_group_psnl_organization"
+msgstr "Cơ quan"
+
+msgid "menu_psnl_department"
+msgstr "Bộ phận"
+
+msgid "menu_psnl_position"
+msgstr "Vị trí"
+
+msgid "menu_psnl_area"
+msgstr "Khu vực"
+
+msgid "menu_group_psnl_employeeInformation"
+msgstr "Nhân viên"
+
+msgid "menu_psnl_employee"
+msgstr "Nhân viên"
+
+msgid "menu_psnl_resign"
+msgstr "Từ chức"
+
+msgid "menu_psnl_certification"
+msgstr "Tài liệu"
+
+msgid "menu_psnl_employeeCertification"
+msgstr "Tài liệu nhân viên"
+
+msgid "menu_iclock_bioPhoto"
+msgstr "Hình ảnh-Bio"
+
+msgid "menu_group_workflow"
+msgstr "Quy trình công việc"
+
+msgid "menu_workflow_workflowRole"
+msgstr "Vai trò"
+
+msgid "menu_workflow_workflowEngine"
+msgstr "Động cơ"
+
+msgid "menu_workflow_workflowNode"
+msgstr "Nút"
+
+msgid "menu_group_configuration"
+msgstr "Cấu hình"
+
+msgid "area_action_adjustEmployee"
+msgstr "Điều chỉnh nhân viên"
+
+msgid "area_action_adjustEmployeeHelpTxt"
+msgstr "Điều chỉnh nhân viên đến khu vực được chọn"
+
+msgid "area_action_adjustEmployeeDescription"
+msgstr "Điều chỉnh nhân viên"
+
+msgid "select_none_employee"
+msgstr "Vui lòng chọn nhân viên"
+
+msgid "bioPhoto_field_userPhoto"
+msgstr "Ảnh người dùng"
+
+msgid "bioPhoto_field_bioPhoto"
+msgstr "Hình ảnh-Bio"
+
+msgid "bioPhoto_field_approvalState"
+msgstr "Trạng thái phê duyệt"
+
+msgid "bioPhoto_approvalState_approvalPassed"
+msgstr "Phê duyệt đã được chấp nhận"
+
+msgid "bioPhoto_approvalState_reject"
+msgstr "Từ chối"
+
+msgid "bioPhoto_field_remark"
+msgstr "Ghi chú"
+
+msgid "biophoto_approve"
+msgstr "Phê duyệt"
+
+msgid "approval_can_not_approve_again"
+msgstr "Phê duyệt không thể phê duyệt lại"
+
+msgid "photo_of_%(emp_code)s_already_approval_passed"
+msgstr "Hình ảnh của nhân viên (%(emp_code)s) đã được phê duyệt"
+
+msgid "photo_of_%(emp_code)s_already_exist"
+msgstr "Hình ảnh của nhân viên (%(emp_code)s) đã tồn tại)"
+
+msgid "photo_of_%(emp_code)s_is_not_found"
+msgstr "Hình ảnh của nhân viên %(emp_code)s) không tìm thấy"
+
+msgid "bioPhoto_action_qrCode"
+msgstr "Mã QR"
+
+msgid "dataImport_action_importBioPhoto"
+msgstr "Nhập Bio-Photo"
+
+msgid "dataImport_action_importBioPhotoHelpTxt"
+msgstr "Nhập bio-photo cho nhân viên."
+
+msgid "dataImport_action_importBioPhotoDescription"
+msgstr "Nhập bio-photo cho nhân viên."
+
+msgid "bioPhotoImport_error_noPhotoSelected"
+msgstr "Vui lòng chọn ảnh để tải lên."
+
+msgid "bioPhotoImport_error_userNoFound_{pin}"
+msgstr "Nhân viên({pin}) không tìm thấy."
+
+msgid "bioPhotoImport_button_upload"
+msgstr "Tải lên"
+
+msgid "bioPhotoImport_button_clear"
+msgstr "Xóa"
+
+msgid "bioPhotoImport_helpText_tip1"
+msgstr "1.Tên của ảnh phải là ID nhân viên."
+
+msgid "department_action_adjustEmployee"
+msgstr "Điều chỉnh nhân viên"
+
+msgid "dataImport_action_import"
+msgstr "Nhập"
+
+msgid "resign_action_disableAttendance"
+msgstr "Vô hiệu chấm công"
+
+msgid "department_action_adjustEmployeeHelpTxt"
+msgstr "Điều chỉnh nhân viên đến bộ phận được chọn"
+
+msgid "department_action_adjustEmployeeDescription"
+msgstr "Điều chỉnh nhân viên"
+
+msgid "dataImport_field_file"
+msgstr "Tập tin"
+
+msgid "data_import_fileHelpTxt"
+msgstr "Hỗ trợ .xls"
+
+msgid "dataImport_action_importEmployee"
+msgstr "Nhập nhân viên"
+
+msgid "dataImport_action_importEmployeeHelpTxt"
+msgstr "Nhập nhân viên qua tệp excel"
+
+msgid "dataImport_action_importEmployeeDescription"
+msgstr "Nhập nhân viên qua tệp excel"
+
+msgid "dataImport_action_importDocument"
+msgstr "Nhập tài liệu"
+
+msgid "dataImport_action_importDocumentHelpTxt"
+msgstr "Nhập tài liệu cài đặt cảnh báo hết hạn qua tệp excel"
+
+msgid "dataImport_action_importDocumentDescription"
+msgstr "Nhập tài liệu cài đặt cảnh báo hết hạn qua tệp excel"
+
+msgid "dataImport_action_importPhoto"
+msgstr "Nhập ảnh"
+
+msgid "dataImport_action_importPhotoHelpTxt"
+msgstr "Nhập ảnh nhân viên cho nhân viên."
+
+msgid "dataImport_action_importPhotoDescription"
+msgstr "Nhập ảnh nhân viên cho nhân viên."
+
+msgid "empPhotoImport_error_noPhoto"
+msgstr "Không ảnh"
+
+msgid "empPhotoImport_error_{pin}NotFound"
+msgstr "Không tìm thấy"
+
+msgid "empPhotoImport_error_{pin}SizeExceed25KB"
+msgstr "Vượt quá 25KB"
+
+msgid "empPhotoImport_button_upload"
+msgstr "Tải lên"
+
+msgid "empPhotoImport_button_clear"
+msgstr "Xóa"
+
+msgid "empPhotoImport_helpText_title"
+msgstr "Tiêu đề"
+
+msgid "empPhotoImport_helpText_tip1"
+msgstr "1.Tên của ảnh phải là ID nhân viên."
+
+msgid "empPhotoImport_helpText_tip2"
+msgstr "2.Kích thước ảnh tối đa 25kb."
+
+msgid "dataImport_field_overwrite"
+msgstr "Ghi đè"
+
+msgid "dataImport_field_ignoreError"
+msgstr "Bỏ qua lỗi"
+
+msgid "employee_action_resynchronize2Device"
+msgstr "Đồng bộ lại với thiết bị"
+
+msgid "employee_action_resynchronize2DeviceConfirmation"
+msgstr "Bạn có chắc muốn đồng bộ lại dữ liệu người dùng đến thiết bị?"
+
+msgid "dataRange_option_all"
+msgstr "Tất cả"
+
+msgid "dataRange_option_specified"
+msgstr "Đặc tính"
+
+msgid "reUploadFromDevice_field_device"
+msgstr "Thiết bị"
+
+msgid "reUploadFromDevice_field_deviceSN"
+msgstr "SN"
+
+msgid "eUploadFromDevice_field_deviceSNHelpTxt"
+msgstr "Hỗ trợ sử dụng ',' để thêm nhiều số sê-ri thiết bị, nếu giá trị trống sẽ lấy các thiết bị dựa trên khu vực của nhân viên"
+
+msgid "employee_action_reUploadFromDevice"
+msgstr "Tải lên từ thiết bị"
+
+msgid "employee_action_reUploadFromDeviceConfirmation"
+msgstr "Bạn có chắc muốn tải lên dữ liệu người dùng từ thiết bị?"
+
+msgid "employeeResign_field_date"
+msgstr "Ngày thôi việc"
+
+msgid "employeeResign_field_leaveType"
+msgstr "Loại thôi việc"
+
+msgid "employeeResign_field_reason"
+msgstr "Lý do"
+
+msgid "employeeResign_field_disableAttendanceFunction"
+msgstr "Vô hiệu chấm công"
+
+msgid "employee_action_resignation"
+msgstr "Thôi việc"
+
+msgid "employee_action_transferDepartment"
+msgstr "Chuyển bộ phận"
+
+msgid "transferDepartment_field_remarks"
+msgstr "Ghi chú"
+
+msgid "employee_actionError_areaIsRequired"
+msgstr "Khu vực là bắt buộc"
+
+msgid "employee_action_transferArea"
+msgstr "Chuyển khu vực"
+
+msgid "transferArea_field_remarks"
+msgstr "Nhận xét"
+
+msgid "employee_action_transferPosition"
+msgstr "Chuyển vị trí"
+
+msgid "transferPosition_field_remarks"
+msgstr "Nhận xét"
+
+msgid "employee_action_passProbation"
+msgstr "Hoàn thành thử việc"
+
+msgid "employee_action_passProbationConfirmation"
+msgstr "Bạn có chắc nhân viên đã hoàn thành thử việc?"
+
+msgid "bio_templateType_fingerprint"
+msgstr "Vân tay"
+
+msgid "bio_templateType_face"
+msgstr "Khuôn mặt"
+
+msgid "bio_templateType_fingerVein"
+msgstr "Vein ngón tay"
+
+msgid "bio_templateType_palm"
+msgstr "Lòng bàn tay"
+
+msgid "delete_biometric_templates"
+msgstr "Xóa mẫu sinh trắc học"
+
+msgid "enable_mobile_application"
+msgstr "Kích hoạt"
+
+msgid "are_you_sure_to_enable_mobile_application {0} {1}"
+msgstr "Bạn có chắc chắn để kích hoạt ứng dụng di động {0} {1}"
+
+msgid "disable_mobile_application"
+msgstr "Vô hiệu hóa"
+
+msgid "are_you_sure_to_disable_mobile_application {0} {1}"
+msgstr "Bạn có chắc chắn tắt ứng dụng di động{0} {1}"
+
+msgid "position_action_adjustEmployee"
+msgstr "Điều chỉnh nhân viên"
+
+msgid "position_action_adjustEmployeeHelpTxt"
+msgstr "Điều chỉnh nhân viên đến vị trí đã chọn"
+
+msgid "position_action_adjustEmployeeDescription"
+msgstr "Điều chỉnh nhân viên"
+
+msgid "resign_field_employee"
+msgstr "Nhân viên"
+
+msgid "resign_field_resignDate"
+msgstr "Ngày từ chức"
+
+msgid "resign_field_resignType"
+msgstr "Các loại từ chức"
+
+msgid "resign_field_disableAttendanceFunction"
+msgstr "Vô hiệu hóa chức năng điềm danh"
+
+msgid "resign_field_resignReason"
+msgstr "Lý do từ chức"
+
+msgid "resign_action_addEmployeeResign"
+msgstr "Thêm"
+
+msgid "resign_action_addEmployeeResignHelpTxt"
+msgstr "Thêm"
+
+msgid "resign_action_addEmployeeResignDescription"
+msgstr "Thêm"
+
+msgid "resign_action_reinstatement"
+msgstr "Phục hồi"
+
+msgid "resign_action_reinstatementHelpTxt"
+msgstr "Phục hồi"
+
+msgid "resign_action_reinstatementDescription"
+msgstr "Phục hồi"
+
+msgid "are_you_sure_to_reinstatement"
+msgstr "Bạn có chắc chắn muốn phục hồi {0} {1}?"
+
+msgid "are_you_sure_to_disable_attendance_function {0} {1}"
+msgstr "Bạn có chắc chắn để tắt chức năng điểm danh{0} {1}"
+
+msgid "area_field_code"
+msgstr "Mã vùng"
+
+msgid "area_field_name"
+msgstr "Tên khu vực"
+
+msgid "area_field_parentArea"
+msgstr "Thư mục gốc"
+
+msgid "area_field_resignEmployeeCount"
+msgstr "Số nhân viên từ chức"
+
+msgid "area_field_employeeCount"
+msgstr "Số lượng nhân viên"
+
+msgid "area_field_deviceCount"
+msgstr "Số lượng thiết bị"
+
+msgid "area_name_defaultValue"
+msgstr "Không được ủy quyền"
+
+msgid "error_data_on_row(%(index)s)_area_code_is_empty."
+msgstr "Lỗi trên hàng %(index)s, mã vùng trống "
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_code_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của mã vùng là %(length)s"
+
+msgid "the_%(index)s_rows_area_name_can_not_be_empty"
+msgstr "Lỗi trên hàng %(index)s, tên khu vực trống"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum is %(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của tên khu vực là %(length)s"
+
+msgid "the_%(index)s_rows_of_data_can_not_be_set_higher_authorities_to_%(index_name)s_sector_or_sub-sector_of_its_own"
+msgstr "%(index)s các hàng dữ liệu không thể được đặt quyền cao hơn khu vực %(index_name)s hoặc phân ngành của chính nó."
+
+msgid "section_%s(index)_of_data_is_incorrect_add_fail"
+msgstr "Lỗi cơ sở dữ liệu: SQL(%(index)s)"
+
+msgid "some_certification_still_use_by_personnel_and_cannot_be_cancelled"
+msgstr "Xóa thất bại, nó được sử dụng bởi nhân viên"
+
+msgid "certification_field_code"
+msgstr "Mã xác nhận"
+
+msgid "certification_field_name"
+msgstr "Tên xác nhận"
+
+msgid "error_data_on_row(%(index)s)the_certification_code_is_empty"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, mã xác nhận trống "
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_code_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, độ dài tối đa của mã chứng nhận là %(length)s "
+
+msgid "error_data_on_row(%(index)s)_the_format_should_be_%(male)s/%(female)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, định dạng phải là %(male)s/%(female)s"
+
+msgid "certification_name_%(index)s_rows_of_data_can_not_be_empty"
+msgstr "Dữ liệu lỗi trên hàng %(index)s tên xác nhận để trống"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_certification_name_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, độ dài tối đa của tên xác nhận là %(length)s"
+
+msgid "department_field_code"
+msgstr "Mã bộ phận"
+
+msgid "department_filed_name"
+msgstr "Tên bộ phận"
+
+msgid "department_field_parentDepartment"
+msgstr "Thư mục gốc"
+
+msgid "default_department"
+msgstr "Bộ phận"
+
+msgid "department_filed_employeeCount"
+msgstr "Số lượng nhân viên"
+
+msgid "department_filed_resignedCount"
+msgstr "Số lượng nhân viên từ chức"
+
+msgid "error_data_on_row(%(index)s)_department_code_is_empty"
+msgstr "Lỗi trên hàng %(index)s, mã bộ phận trống"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_code_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, độ dài tối đa của mã bộ phận là %(length)s"
+
+msgid "error_data_on_row(%(index)s_the_department_name_can_not_be_empty"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, tên bộ phận trống"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_department_name_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, độ dài tối đa của tên bộ phận là %(length)s"
+
+msgid "op_menu_group_import"
+msgstr "Nhập"
+
+msgid "op_menu_group_adjustment"
+msgstr "Điều chỉnh"
+
+msgid "op_menu_group_app"
+msgstr "Ứng dụng"
+
+msgid "op_menu_group_more"
+msgstr "Khác"
+
+msgid "emp_field_fingerprint"
+msgstr "Vân tay"
+
+msgid "emp_field_face"
+msgstr "Khuôn mặt"
+
+msgid "emp_field_palm"
+msgstr "Lòng bàn tay"
+
+msgid "emp_field_vlFace"
+msgstr "Khuôn mặt"
+
+msgid "emp_field_area"
+msgstr "Khu vực"
+
+msgid "emp_field_cardNumber"
+msgstr "Số thẻ"
+
+msgid "area_code"
+msgstr "Số khu vực"
+
+msgid "emp_field_birthday"
+msgstr "Ngày sinh"
+
+msgid "emp_field_gender"
+msgstr "Giới tính"
+
+msgid "emp_field_mobile"
+msgstr "Di động"
+
+msgid "emp_field_email"
+msgstr "Hộp thư "
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_empty"
+msgstr "Lỗi trên hàng %(index)s mã nhân viên trống"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_employee_code_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của mã nhân viên là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_first_name_is_empty"
+msgstr "Tên của nhân viên trống trên hàng (%(index)s) "
+
+msgid "error_data_on_row(%(index)s)_the_length_of_first_name_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của tên là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_last_name_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của họ là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_code_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của mã vị trí là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_position_name_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của tên vị trí là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_card_name_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của số thẻ là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_mobile_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của thiết bị di động là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_email_maximum_is_%(length)s"
+msgstr "Lỗi trên hàng %(index)s, độ dài tối đa của email là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_email_type_is_wrong"
+msgstr "Loại email trong hàng %(index)s sai "
+
+msgid "error_data_on_row(%(index)s)_the_format_of_birthday_should_be_yyyy-mm-dd"
+msgstr "Ngày sinh trong hàng %(index)s nên là yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_hire_date_should_be_yyyy-mm-dd"
+msgstr "Ngày được thuê trong hàng %(index)s phải là yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_area_name_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, độ dài tối đa Tên khu vực là %(length)s"
+
+msgid "employeeCert_field_employee"
+msgstr "Nhân viên"
+
+msgid "employeeCert_field_expireOn"
+msgstr "Ngày hết hạn"
+
+msgid "employeeCert_field_emailAlert"
+msgstr "Email cảnh báo"
+
+msgid "employeeCert_field_before"
+msgstr "Cảnh báo trước"
+
+msgid "empCert_action_addEmployeeCert"
+msgstr "Thêm"
+
+msgid "empCert_action_addEmployeeCertHelpTxt"
+msgstr "Thêm"
+
+msgid "empCert_action_addEmployeeCertDescription"
+msgstr "Thêm"
+
+msgid "certification"
+msgstr "Xác nhận"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_does_not_exists"
+msgstr "Dữ liệu lỗi trên hàng %(index)s ID nhân viên không tồn tại"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_is_empty"
+msgstr "Dữ liệu lỗi trên hàng %(index)s Xác nhận trống"
+
+msgid "error_data_on_row(%(index)s)_the_certification_code_does_not_exists"
+msgstr "Dữ liệu lỗi trên hàng %(index)s Mã xác nhận không tồn tại"
+
+msgid "error_data_on_row(%(index)s)_the_expire_on_is_wrong"
+msgstr "Dữ liệu lỗi trên hàng %(index)s Ngày hết hạn là sai"
+
+msgid "error_data_on_row(%(index)s)_the_email_alert_is_wrong_the_format_should_be_%(no)s/%(yes)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s cảnh báo Email sai, định dạng phải là %(no)s/%(yes)s"
+
+msgid "error_data_on_row(%(index)s)"
+msgstr "Dữ liệu lỗi trên hàng %(index)s"
+
+msgid "position_field_code"
+msgstr "Mã vị trí"
+
+msgid "position_field_name"
+msgstr "Tên vị trí"
+
+msgid "position_field_parentPosition"
+msgstr "Thư mục gốc"
+
+msgid "position_field_employeeCount"
+msgstr "Số lượng nhân viên"
+
+msgid "position_field_resignedCount"
+msgstr "Số lượng nhân viên từ chức"
+
+msgid "position_default_value"
+msgstr "Vị trí"
+
+msgid "error_data_on_row(%(index)s)_the_position_code_is_empty"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, mã vị trí trống"
+
+msgid "error_data_on_row(%(index)s)_the_position_name_is_empty"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, tên vị trí trống"
+
+msgid "error_data_on_row(%s)_the_format_should_be_yyyy-mm-dd"
+msgstr "Dữ liệu lỗi trên hàng %s, định dạng phải là yyyy-mm-dd"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_resign_reason_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, độ dài của Lý do từ chức tối đa là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_employee_code_is_not_exist"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, số nhân viên không tồn tại"
+
+msgid "error_data_on_row(%(index)s)_the_resign_date_is_empty"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, ngày từ chức trống"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_resignation_type_should_be_%(expect)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, định dạng của Loại từ chức phải là %(expect)s"
+
+msgid "error_data_on_row(%(index)s)_the_resignation_type_is_empty"
+msgstr "Loại từ chức trống trên hàng (%(index)s)"
+
+msgid "error_data_on_row(%(index)s)_the_format_of_disable_attendance_function_should_be%(expect)s"
+msgstr "Dữ liệu lỗi trên hàng %(index)s, tên vị trí trống %(expect)s"
+
+msgid "department_field_name"
+msgstr "Tên bộ phận"
+
+msgid "date_import_typeOptionIgnore"
+msgstr "Bỏ qua"
+
+msgid "date_import_typeOptionOverwrite"
+msgstr "Ghi đè"
+
+msgid "devicePrivilege_option_employee"
+msgstr "Nhân viên"
+
+msgid "devicePrivilege_option_registrar"
+msgstr "Ghi danh"
+
+msgid "devicePrivilege_option_systemAdministrator"
+msgstr "Hệ thống ban quản trị"
+
+msgid "devicePrivilege_option_superAdministrator"
+msgstr "Siêu quản trị viên"
+
+msgid "employee_genderOption_male"
+msgstr "Nam"
+
+msgid "employee_genderOption_female"
+msgstr "Nữ"
+
+msgid "employee_employmentStatusOption_permanent"
+msgstr "Dài hạn"
+
+msgid "employee_employmentStatusOption_temporary"
+msgstr "Tạm thời"
+
+msgid "employee_appStatusOption_enable"
+msgstr "Kích hoạt"
+
+msgid "employee_appStatusOption_disable"
+msgstr "Vô hiệu hóa"
+
+msgid "employee_appRoleOption_employee"
+msgstr "Nhân viên"
+
+msgid "employee_appRoleOption_administrator"
+msgstr "Quản trị viên"
+
+msgid "employee_verificationOption_applyGroupMode"
+msgstr "Áp dụng chế độ nhóm"
+
+msgid "employee_verificationOption_any"
+msgstr "Bất kì"
+
+msgid "employee_verificationOption_fingerprintOrPasswordOrBadge"
+msgstr "Vân tay/Mật khẩu/Thẻ"
+
+msgid "employee_verificationOption_fingerprintOnly"
+msgstr "Vân tay"
+
+msgid "employee_verificationOption_userIDOnly"
+msgstr "Chỉ người dùng ID"
+
+msgid "employee_verificationOption_password"
+msgstr "Mật khẩu"
+
+msgid "employee_verificationOption_badgeOnly"
+msgstr "Chỉ có thẻ"
+
+msgid "employee_verificationOption_fingerprintOrPassword"
+msgstr "Vân tay/Mật khẩu"
+
+msgid "employee_verificationOption_fingerprintOrBadge"
+msgstr "Vân tay/Thẻ"
+
+msgid "employee_verificationOption_passwordOrBadge"
+msgstr "Mật khẩu/Thẻ"
+
+msgid "employee_verificationOption_fingerprintAndPassword"
+msgstr "Vân tay&Mật khẩu"
+
+msgid "employee_verificationOption_fingerprintAndBadge"
+msgstr "Vân tay & Thẻ"
+
+msgid "employee_verificationOption_passwordAndBadge"
+msgstr "Mật khẩu & Thẻ"
+
+msgid "employee_verificationOption_userIDAndFingerprint"
+msgstr "Người dùng ID&Vân tay"
+
+msgid "employee_verificationOption_fingerprintAndPasswordAndBadge"
+msgstr "Vân tay & Mật khẩu & Thẻ "
+
+msgid "employee_verificationOption_userIDAndFingerprintPassword"
+msgstr "Người dùng ID&Vân tay &Mật khẩu"
+
+msgid "employee_verificationOption_fingerprintAndBadgeOrUserID"
+msgstr "Vân tay & Thẻ / Người dùng ID"
+
+msgid "employee_verificationOption_faceOnly"
+msgstr "Chỉ khuôn mặt"
+
+msgid "employee_verificationOption_faceAndFingerprint"
+msgstr "Khuôn mặt & Vân tay"
+
+msgid "employee_verificationOption_faceAndPassword"
+msgstr "Khuôn mặt & Mật khẩu"
+
+msgid "employee_verificationOption_faceAndCard"
+msgstr "Khuôn mặt & Thẻ"
+
+msgid "employee_verificationOption_faceAndFingerprintAndCard"
+msgstr "Khuôn mặt & Vân tay & Thẻ"
+
+msgid "employee_verificationOption_faceAndFingerprintAndPassword"
+msgstr "Khuôn mặt & Vân tay & Mật khẩu"
+
+msgid "employee_verificationOption_fingerVein"
+msgstr "Vein ngón tay"
+
+msgid "employee_verificationOption_fingerVeinAndPassword"
+msgstr "Vein ngón tay & Mật khẩu"
+
+msgid "employee_verificationOption_fingerVeinAndCard"
+msgstr "Vein ngón tay & Thẻ"
+
+msgid "employee_verificationOption_fingerVeinAndPasswordAndCard"
+msgstr "Vein ngón tay & Mật khẩu & Thẻ"
+
+msgid "employee_verificationOption_palm"
+msgstr "Lòng bàn tay"
+
+msgid "employee_verificationOption_palmAndCard"
+msgstr "Lòng bàn tay & Thẻ"
+
+msgid "employee_verificationOption_palmAndFace"
+msgstr "Lòng bàn tay & Khuôn mặt"
+
+msgid "employee_verificationOption_palmAndFingerprint"
+msgstr "Lòng bàn tay & Vân tay"
+
+msgid "employee_verificationOption_palmAndFingerprintAndFace"
+msgstr "Lòng bàn tay & Vân tay & Khuôn mặt"
+
+msgid "resign_typeOption_pending"
+msgstr "Đang chờ xử lý"
+
+msgid "resign_typeOption_processing"
+msgstr "Đang xử lý"
+
+msgid "resign_typeOption_done"
+msgstr "Hoàn thành"
+
+msgid "resign_typeOption_quit"
+msgstr "Thoát"
+
+msgid "resign_typeOption_dismissed"
+msgstr "Bỏ qua"
+
+msgid "resign_typeOption_resign"
+msgstr "Từ chức"
+
+msgid "resign_typeOption_transfer"
+msgstr "Chuyển đổi"
+
+msgid "resign_typeOption_retainJobWithoutSalary"
+msgstr "Giữ lại công việc mà không có lương"
+
+msgid "approve_pending"
+msgstr "Đang chờ xử lý"
+
+msgid "approve_approval_passed"
+msgstr "Phê duyệt đã qua"
+
+msgid "approve_rejected"
+msgstr "Từ chối"
+
+msgid "approve_auto_approved"
+msgstr "Tự động phê duyệt"
+
+msgid "module_parameter_error"
+msgstr "Lỗi tham số"
+
+msgid "invalid_file_format"
+msgstr "Định dạng tập tin không hợp lệ"
+
+msgid "please_select_file"
+msgstr "Vui lòng chọn nhân viên"
+
+msgid "the_%(index)s_field_is_requird"
+msgstr "Các %(index)s một trường là bắt buộc"
+
+msgid "invalid_file_format:%(index)s"
+msgstr "Định dạng tập tin không hợp lệ:%(index)s"
+
+msgid "file_sheet_shoulb_be_one"
+msgstr "Các tập tin chỉ nên là một trang"
+
+msgid "file_data_must_be_more_than_two"
+msgstr "Tập tin  cần ít nhất một hàng dữ liệu"
+
+msgid "no_matched_fields"
+msgstr "Không có trường phù hợp trong tập tin"
+
+msgid "file_data_cannot_be_empty"
+msgstr "Tập tin nhập vào không tìm thấy"
+
+msgid "there_was_a_database_error_when_importing_please_check_the_validity_of_the_data"
+msgstr "Lỗi cơ sở dữ liệu"
+
+msgid "area_field_isDefault"
+msgstr "Mặc định"
+
+msgid "parent_can_not_itself"
+msgstr "Thư mục gốc không thể là chính nó"
+
+msgid "psnl_model_area"
+msgstr "Khu vực"
+
+msgid "%(name)s_still_has_sub-areas_and_cannot_be_cancelled"
+msgstr "%(name)s chứa khu vực phụ không thể bị xóa."
+
+msgid "%(name)s_still_has_personnel_and_cannot_be_cancelled"
+msgstr "%(name)s chứa nhân viên không thể bị xóa."
+
+msgid "%(name)s_still_has_use_by_device_and_cannot_be_cancelled"
+msgstr "%(name)s chứa thiết bị không thể xóa được."
+
+msgid "default_area_can_not_be_removed"
+msgstr "Không thể xóa khu vực mặc định"
+
+msgid "assigned_time"
+msgstr "Thời gian được giao"
+
+msgid "model_assign_area_to_employee"
+msgstr "Nhân viên"
+
+msgid "bioPhoto_field_employee"
+msgstr "Nhân viên"
+
+msgid "bioPhoto_field_firstName"
+msgstr "Tên"
+
+msgid "bioPhoto_field_lastName"
+msgstr "Họ"
+
+msgid "bioPhoto_field_email"
+msgstr "Hộp thư "
+
+msgid "bioPhoto_field_enrollSN"
+msgstr "Số sê-ri"
+
+msgid "bioPhoto_field_registerPhoto"
+msgstr "Đăng ký ảnh"
+
+msgid "bioPhoto_field_registerTime"
+msgstr "Thời gian đăng ký"
+
+msgid "bioPhoto_field_approvalPhoto"
+msgstr "Phê duyệt ảnh"
+
+msgid "bioPhoto_field_commitPhoto"
+msgstr "Hình ảnh"
+
+msgid "bioPhoto_field_commitTime"
+msgstr "Thời gian cam kết"
+
+msgid "bioPhoto_field_approvalTime"
+msgstr "Thời gian phê duyệt"
+
+msgid "iclock_model_bioPhoto"
+msgstr "Hình ảnh-Bio"
+
+msgid "psnl_model_certification"
+msgstr "Tài liệu"
+
+msgid "document_is_using_can_not_delete."
+msgstr "Tài liệu đang được dùng, không thể xóa"
+
+msgid "department_field_isDefault"
+msgstr "Mặc định"
+
+msgid "can_not_set_parent_to_its_own"
+msgstr "Không thể cài thư mục gốc"
+
+msgid "%(name)s_still_has_sub-departments_and_cannot_be_cancelled."
+msgstr "%(name)s chứa bộ phận phụ không thể bị xóa."
+
+msgid "default_department_can_not_be_removed."
+msgstr "Bộ phận mặc định không được phép xóa"
+
+msgid "psnl_model_department"
+msgstr "Bộ phận"
+
+msgid "emp_field_localizedName"
+msgstr "Tên địa phương"
+
+msgid "emp_field_passport_number"
+msgstr "Số hộ chiếu."
+
+msgid "emp_field_driver_license_automobile"
+msgstr "Giấy phép ô tô"
+
+msgid "emp_field_driver_license_motorcycle"
+msgstr "Giấy phép xe máy"
+
+msgid "emp_field_photo"
+msgstr "Hình ảnh"
+
+msgid "emp_field_selfPassword"
+msgstr "Mât khẩu cá nhân"
+
+msgid "emp_field_devicePassword"
+msgstr "PIN"
+
+msgid "emp_field_devicePrivilege"
+msgstr "Đặc quyền thiết bị"
+
+msgid "emp_field_accessGroup"
+msgstr "Nhóm truy cập"
+
+msgid "emp_field_accessTimezone"
+msgstr "Vùng giờ truy cập"
+
+msgid "emp_field_address"
+msgstr "Địa chỉ"
+
+msgid "emp_field_postcode"
+msgstr "Mã bưu điện"
+
+msgid "emp_field_officeTel"
+msgstr "Số điện thoại văn phòng"
+
+msgid "emp_field_contactTel"
+msgstr "Số điện thoại liên lạc"
+
+msgid "emp_field_national"
+msgstr "Quốc gia"
+
+msgid "emp_field_religion"
+msgstr "Tôn giáo"
+
+msgid "emp_field_title"
+msgstr "Chức vụ"
+
+msgid "emp_field_enrollSN"
+msgstr "Thiết bị ghi danh"
+
+msgid "emp_field_SSN"
+msgstr "SSN"
+
+msgid "emp_field_updateTime"
+msgstr "Thời gian cập nhập"
+
+msgid "emp_field_verifyMode"
+msgstr "Chế độ xác minh"
+
+msgid "emp_field_city"
+msgstr "Thành phố"
+
+msgid "emp_field_isAdmin"
+msgstr "Quản trị viên"
+
+msgid "emp_field_type"
+msgstr "Các loại việc làm"
+
+msgid "emp_field_enableAtt"
+msgstr "Cho phép điểm danh"
+
+msgid "emp_field_enableOvertime"
+msgstr "Cho phép tăng ca"
+
+msgid "emp_field_enableHoliday"
+msgstr "Cho phép nghỉ lễ"
+
+msgid "emp_field_workflowRole"
+msgstr "Vai trò quy trình công việc"
+
+msgid "employee_certification"
+msgstr "Chứng chỉ nhân sự"
+
+msgid "emp_field_appStatus"
+msgstr "Trạng thái"
+
+msgid "emp_field_appRole"
+msgstr "Vai trò ứng dụng"
+
+msgid "emp_field_lastLogin"
+msgstr "Lần đăng nhập cuối"
+
+msgid "emp_field_isActive"
+msgstr "Hoạt động"
+
+msgid "the_card_number_already_exists_if_you_want_to_re-issue_a_card, first_remove_the_original_holder_%(index)s_of_the_card."
+msgstr "Số thẻ đã tồn tại, nếu bạn muốn cấp lại thẻ, trước tiên, vui lòng xóa chủ thẻ gốc %(index)s của thẻ"
+
+msgid "the_code_%(code)s_of_employee_is_not_found"
+msgstr "Nhân viên (%(code)s) không tìm thấy."
+
+msgid "clear_workflowrole_fail:%(message)s"
+msgstr "Xóa vai trò quy trình công việc không thành công:%(message)s "
+
+msgid "add_workflowrole_exception:%(message)s"
+msgstr "Ngoại lệ%(message)s"
+
+msgid "model_employee"
+msgstr "Nhân viên"
+
+msgid "invalid_picture_format"
+msgstr "Định dạng ảnh không hợp lệ"
+
+msgid "personnel_photo_size_must_not_exceed_16kb"
+msgstr "Kích thước tối đa của ảnh là 16KB"
+
+msgid "employeeCert_field_cert"
+msgstr "Tài liệu"
+
+msgid "pnsl_model_empProfile"
+msgstr "Hồ sơ nhân viên"
+
+msgid "position_field_isDefault"
+msgstr "Mặc định"
+
+msgid "psnl_model_position"
+msgstr "Chức vụ"
+
+msgid "can_not_set_parent_to_its_own."
+msgstr "Thư mục gốc không thể là chính nó"
+
+msgid "%(name)s_still_has_sub-positions_and_cannot_be_cancelled"
+msgstr "%(name)s Vị trí chứa đựng vị trí phụ không thể được di chuyển"
+
+msgid "default_position_can_not_be_removed."
+msgstr "Vị trí mặc định không thể được di chuyển"
+
+msgid "psnl_model_resign"
+msgstr "Từ chức"
+
+msgid "data_import_labelFile"
+msgstr "Nhập tập tin :"
+
+msgid "date_import_labelExistingData"
+msgstr "Dữ liệu hiện có:"
+
+msgid "data_import_fileTemplateDemo"
+msgstr "Bản Demo mẫu:"
+
+msgid "data_import_fileTemplateDownload"
+msgstr "Tải bản mẫu"
+
+msgid "data_import_description"
+msgstr "Miêu tả"
+
+msgid "data_import_areaImportRequired1"
+msgstr "1.Tiêu đề trong mẫu chức vụ được yêu cầu"
+
+msgid "data_import_areaImportRequired2"
+msgstr "2.Mã, Tên là các trường bắt buộc"
+
+msgid "data_import_areaImportRequired3"
+msgstr "3.Khu vực chính phải là mã khu vực"
+
+msgid "data_import_areaImportRequired4"
+msgstr "4.Tất cả các giá trị cột phải là định dạng văn bản"
+
+msgid "bioPhoto_action_qrCodeRefresh"
+msgstr "Làm mới"
+
+msgid "bioPhoto_action_qrCodeDownload"
+msgstr "Tải xuống"
+
+msgid "data_import_certificationImportRequired1"
+msgstr "1.Tiêu đề trong bản mẫu được yêu cầu"
+
+msgid "data_import_certificationImportRequired2"
+msgstr "2.Mã và tên chứng nhận là bắt buộc"
+
+msgid "data_import_certificationImportRequired3"
+msgstr "3.Tất cả các giá trị cột phải là định dạng văn bản"
+
+msgid "data_import_departmentImportRequired1"
+msgstr "1.Tiêu đề trong bản mẫu được yêu cầu"
+
+msgid "data_import_departmentImportRequired2"
+msgstr "2.Mã, Tên là các trường bắt buộc"
+
+msgid "data_import_departmentImportRequired3"
+msgstr "3.Bộ phận gốc phải là mã bộ phận"
+
+msgid "data_import_departmentImportRequired4"
+msgstr "4.Tất cả các giá trị cột phải là định dạng văn bản"
+
+msgid "departmentList_search_department"
+msgstr "Bộ phận"
+
+msgid "data_import_employeeImportRequired1"
+msgstr "1.Tiêu đề trong bản mẫu được yêu cầu"
+
+msgid "data_import_employeeImportRequired2"
+msgstr "2.ID nhân viên, tên, số phòng ban là các trường bắt buộc"
+
+msgid "data_import_employeeImportRequired3"
+msgstr "3.Tất cả các giá trị cột phải là định dạng văn bản"
+
+msgid "data_import_employeeImportRequired4"
+msgstr "4.Số thẻ phải là duy nhất"
+
+msgid "personnel_profile"
+msgstr "Hồ sơ"
+
+msgid "register_fingerprint"
+msgstr "Đăng ký vân tay"
+
+msgid "fingerprint_registration"
+msgstr "Ghi danh"
+
+msgid "download_driver"
+msgstr "Tải xuống Driver"
+
+msgid "(Optimal Size 120×140 Pixel)"
+msgstr "(Kích thước tối ưu 120 × 140 Pixel)"
+
+msgid "employee_title_clickToUploadPhoto"
+msgstr "Tải lên ảnh"
+
+msgid "employee_title_UploadPhoto"
+msgstr "Tải lên ảnh"
+
+msgid "employee_label_fingerprintRegistered"
+msgstr "Vân tay đã đăng ký"
+
+msgid "employee_btn_fingerprintEnroll"
+msgstr "Đăng ký vân tay"
+
+msgid "employee_title_clickToUploadBioPhoto"
+msgstr "Tải lên ảnh"
+
+msgid "employee_basicInformation_setting"
+msgstr "Cài đặt cơ bản"
+
+msgid "employee_moreDetail_setting"
+msgstr "Cài đặt nâng cao"
+
+msgid "employee_attendance_settings"
+msgstr "Cài đặt chấm công"
+
+msgid "employee_document_settings"
+msgstr "Cài đặt tài liệu"
+
+msgid "employee_accessController_settings"
+msgstr "Cài đặt kiểm soát"
+
+msgid "employee_app_setting"
+msgstr "Cài đặt ứng dụng"
+
+msgid "payroll_setting"
+msgstr "Cài đặt tính lương"
+
+msgid "employee_deviceRelate_setting"
+msgstr "Cài đặt thiết bị"
+
+msgid "employee_editPage_addCert"
+msgstr "Thêm"
+
+msgid "registered_fingerprint:"
+msgstr "Dấu vân tay đã đăng ký:"
+
+msgid "employee_field_employeeCode"
+msgstr "ID nhân viên"
+
+msgid "employee_field_employeeFirstName"
+msgstr "Tên"
+
+msgid "employee_frame_employeeSearchPlaceholder"
+msgstr "Nhân viên"
+
+msgid "employee_frame_selectedEmployee"
+msgstr "Đã chọn"
+
+msgid "data_import_employeecertificationImportRequired1"
+msgstr "1.Tiêu đề trong bản mẫu được yêu cầu"
+
+msgid "data_import_employeecertificationImportRequired2"
+msgstr "2.Chứng nhận, nhân viên, cảnh báo, email là các trường bắt buộc "
+
+msgid "data_import_employeecertificationImportRequired3"
+msgstr "3.Tất cả các giá trị cột phải là định dạng văn bản "
+
+msgid "data_import_positionImportRequired1"
+msgstr "1.Tiêu đề trong bản mẫu được yêu cầu "
+
+msgid "data_import_positionImportRequired2"
+msgstr "2.Mã, Tên là các trường bắt buộc "
+
+msgid "data_import_positionImportRequired3"
+msgstr "3.Vị trí chính phải là mã vị trí "
+
+msgid "data_import_positionImportRequired4"
+msgstr "4.Tất cả các giá trị cột phải là định dạng văn bản "
+
+msgid "data_import_resignImportRequired1"
+msgstr "1.Tiêu đề trong bản mẫu được yêu cầu "
+
+msgid "data_import_resignImportRequired2"
+msgstr "2.ID nhân viên, ngày từ chức, loại từ chức là các trường bắt buộc "
+
+msgid "data_import_resignImportRequired3"
+msgstr "3.Tất cả các giá trị cột phải là định dạng văn bản "
+
+msgid "BioTime 8.0"
+msgstr ""
+
+msgid "mobile_photo_register"
+msgstr "Đăng ký hình ảnh "
+
+msgid "mobile_onlineRegister_employeeCode"
+msgstr "Mã nhân viên"
+
+msgid "mobile_employee_first_name"
+msgstr "Tên"
+
+msgid "mobile_employee_last_name"
+msgstr "Họ"
+
+msgid "mobile_employee_email"
+msgstr "Hộp thư "
+
+msgid "mobile_onlineRegister_remark"
+msgstr "Nhận xét"
+
+msgid "mobile_photo_enroll"
+msgstr "Ghi danh"
+
+msgid "lng_option_simpledChinese"
+msgstr "Tiếng Trung giản thể"
+
+msgid "lng_option_traditionalChinese"
+msgstr "Tiếng Trung phồn thể"
+
+msgid "lng_option_english"
+msgstr "English"
+
+msgid "lng_option_arabic"
+msgstr "العربيّة"
+
+msgid "lng_option_spanish"
+msgstr "Español"
+
+msgid "lng_option_spanishArgentinian"
+msgstr "Español(Argentinian)"
+
+msgid "lng_option_spanishColombian"
+msgstr "Español(Colombian)"
+
+msgid "lng_option_spanishMexican"
+msgstr "Español(Mexican)"
+
+msgid "lng_option_russian"
+msgstr "Pусский язык"
+
+msgid "lng_option_thai"
+msgstr "ภาษาไทย"
+
+msgid "lng_option_indonesian"
+msgstr "Bahasa Indonesia"
+
+msgid "lng_option_vietnamese"
+msgstr "Tiếng việt"
+
+msgid "lng_option_korean"
+msgstr "한국어"
+
+msgid "lng_option_french"
+msgstr "Le français"
+
+msgid "lng_option_german"
+msgstr "Deutsch"
+
+msgid "lng_option_persian"
+msgstr "فارسی"
+
+msgid "menu_personnel"
+msgstr "Nhân viên"
+
+msgid "ADMS"
+msgstr "ADMS"
+
+msgid "menu_terminal"
+msgstr "Thiết bị"
+
+msgid "menu_attendance"
+msgstr "Điểm danh"
+
+msgid "menu_system"
+msgstr "Hệ thống"
+
+msgid "menu_group_employee_request"
+msgstr "Yêu cầu"
+
+msgid "menu_request_employee_leave"
+msgstr "Rời khỏi"
+
+msgid "menu_request_employee_overtime"
+msgstr "Tăng ca"
+
+msgid "menu_request_employee_manual_log"
+msgstr "Nhật ký thủ công"
+
+msgid "menu_request_employee_training"
+msgstr "Đào tạo"
+
+msgid "menu_group_employee_approval"
+msgstr "Phê duyệt"
+
+msgid "menu_approve_employee_leave"
+msgstr "Rời khỏi"
+
+msgid "menu_approve_employee_overtime"
+msgstr "Tăng ca"
+
+msgid "menu_approve_employee_manual_log"
+msgstr "Nhật ký thủ công"
+
+msgid "menu_approve_employee_training"
+msgstr "Đào tạo"
+
+msgid "menu_approve_employee_changeschedule"
+msgstr "Thay đổi lịch trình"
+
+msgid "menu_group_employee_report"
+msgstr "Báo cáo"
+
+msgid "menu_staff_scheduledLogReport"
+msgstr "Nhật ký theo lịch trình"
+
+msgid "menu_staff_detailReport"
+msgstr "Tổng thời gian thẻ"
+
+msgid "menu_staff_employeeSummaryReport"
+msgstr "Tóm tắt điểm danh"
+
+msgid "menu_staff_multipleTransactionReport"
+msgstr "Đa sự kiện"
+
+msgid "menu_staff_breakTimeReport"
+msgstr "Giờ giải lao"
+
+msgid "menu_staff_timeCardReport"
+msgstr "Thời gian thẻ"
+
+msgid "staff_leave_actionDelete"
+msgstr "Thêm"
+
+msgid "staff_changeSchedule_empCode"
+msgstr "ID nhân viên"
+
+msgid "staff_changeSchedule_firstName"
+msgstr "Tên"
+
+msgid "staff_changeSchedule_lastName"
+msgstr "Họ"
+
+msgid "staff_changeSchedule_attDate"
+msgstr "Ngày"
+
+msgid "staff_changeSchedule_previousTimeInterval"
+msgstr "Thời gian biểu trước đó"
+
+msgid "staff_changeSchedule_adjustTimeInterval"
+msgstr "Thời gian biểu"
+
+msgid "staff_changeSchedule_applyTime"
+msgstr "Thời gian áp dụng"
+
+msgid "staff_changeSchedule_lastApprover"
+msgstr "Người phê duyệt cuối cùng"
+
+msgid "staff_changeSchedule_workflowCurrentStateName"
+msgstr "Trạng thái hiện tại"
+
+msgid "staff_changeSchedule_approvalState"
+msgstr "Trạng thái phê duyệt"
+
+msgid "attendance_analyze"
+msgstr "Phân tích chấm công"
+
+msgid "csv_export"
+msgstr "Xuất ra Csv"
+
+msgid "pdf_export"
+msgstr "Xuất ra PDF"
+
+msgid "xlsx_export"
+msgstr "Xuất ra Xlsx"
+
+msgid "staff_search_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "staff_search_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "staff_approval_approvalState"
+msgstr "Trạng thái phê duyệt"
+
+msgid "staff_approval_approvalStatePending"
+msgstr "Đang chờ xử lý"
+
+msgid "staff_approval_approvalStateApproved"
+msgstr "Phê duyệt"
+
+msgid "staff_approval_approvalStateRejected"
+msgstr "Từ chối"
+
+msgid "staff_search_searchTitle"
+msgstr "Tìm kiếm"
+
+msgid "staff_search_clearTitle"
+msgstr "Tìm kiếm rõ ràng"
+
+msgid "staff_leave_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "staff_leave_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "staff_leave_leaveCategory"
+msgstr "Thể loại"
+
+msgid "staff_leave_applyReason"
+msgstr "Lý do"
+
+msgid "staff_leave_empCode"
+msgstr "ID Nhân viên"
+
+msgid "staff_leave_firstName"
+msgstr "Tên"
+
+msgid "staff_leave_lastName"
+msgstr "Họ"
+
+msgid "staff_leave_applyTime"
+msgstr "Thời gian áp dụng"
+
+msgid "staff_leave_lastApprover"
+msgstr "Người phê duyệt cuối cùng"
+
+msgid "staff_leave_workflowCurrentStateName"
+msgstr "Tình trạng hiện tại"
+
+msgid "staff_leave_approvalState"
+msgstr "Trạng thái phê duyệt"
+
+msgid "staff_search_category"
+msgstr "Thể loại"
+
+msgid "staff_leave_actionAdd"
+msgstr "Thêm"
+
+msgid "staff_manualLog_empCode"
+msgstr "ID nhân viên"
+
+msgid "staff_manualLog_firstName"
+msgstr "Tên"
+
+msgid "staff_manualLog_lastName"
+msgstr "Họ"
+
+msgid "staff_manualLog_applyTime"
+msgstr "Thời gian áp dụng"
+
+msgid "staff_manualLog_punchTime"
+msgstr "Thời gian chấm công"
+
+msgid "staff_manualLog_punchState"
+msgstr "Trạng thái chấm công"
+
+msgid "staff_manualLog_workCode"
+msgstr "Mã công việc"
+
+msgid "staff_manualLog_lastApprover"
+msgstr "Người phê duyệt cuối cùng"
+
+msgid "staff_manualLog_workflowCurrentStateName"
+msgstr "Trạng thái hiện tại"
+
+msgid "staff_manualLog_approvalState"
+msgstr "Trạng thái phê duyệt"
+
+msgid "staff_manualLog_actionDelete"
+msgstr "Xóa"
+
+msgid "staff_manualLog_actionAdd"
+msgstr "Thêm"
+
+msgid "staff_manualLog_applyReason"
+msgstr "Lý do"
+
+msgid "staff_overtime_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "staff_overtime_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "staff_overtime_overtimeType"
+msgstr "Các loại tăng ca"
+
+msgid "staff_overtime_applyReason"
+msgstr "Lý do"
+
+msgid "normal_overtime"
+msgstr "Tăng ca thường"
+
+msgid "weekend_overtime"
+msgstr "Cuối tuần tăng ca"
+
+msgid "holiday_overtime"
+msgstr "Ngày lễ tăng ca"
+
+msgid "staff_overtime_actionDelete"
+msgstr "Xóa"
+
+msgid "staff_overtime_empCode"
+msgstr "ID nhân viên"
+
+msgid "staff_overtime_firstName"
+msgstr "Tên"
+
+msgid "staff_overtime_lastName"
+msgstr "Họ"
+
+msgid "staff_overtime_applyTime"
+msgstr "Thời gian áp dụng"
+
+msgid "staff_overtime_lastApprover"
+msgstr "Người phê duyệt cuối cùng"
+
+msgid "staff_overtime_workflowCurrentStateName"
+msgstr "Trạng thái hiện tại"
+
+msgid "staff_overtime_approvalSate"
+msgstr "Trạng thái phê duyệt"
+
+msgid "staff_overtime_actionAdd"
+msgstr "Thêm"
+
+msgid "search_start_date"
+msgstr "Ngày bắt đầu"
+
+msgid "search_end_date"
+msgstr "Ngày kết thúc"
+
+msgid "timetable"
+msgstr "Thời gian biểu"
+
+msgid "userProfile_itemLabel_language"
+msgstr "Ngôn ngữ"
+
+msgid "staffSetPwdForm_itemLabel_oldPwd"
+msgstr "Mật khẩu cũ"
+
+msgid "staffSetPwdForm_itemLabel_newPwd"
+msgstr "Mật khẩu mới"
+
+msgid "staffSetPwdForm_itemLabel_confirmPwd"
+msgstr "Xác nhận mật khẩu"
+
+msgid "staff_training_empCode"
+msgstr "ID nhân viên"
+
+msgid "staff_training_firstName"
+msgstr "Tên"
+
+msgid "staff_training_lastName"
+msgstr "Họ"
+
+msgid "staff_training_applyTime"
+msgstr "Thời gian áp dụng"
+
+msgid "staff_training_trainingCategory"
+msgstr "Các loại đào tạo"
+
+msgid "staff_training_startTime"
+msgstr "Thời gian bắt đầu"
+
+msgid "staff_training_endTime"
+msgstr "Thời gian kết thúc"
+
+msgid "staff_training_lastApprover"
+msgstr "Người phê duyệt cuối cùng"
+
+msgid "staff_training_workflowCurrentStateName"
+msgstr "Trạng thái hiện tại"
+
+msgid "staff_training_approvalState"
+msgstr "Trạng thái phê duyệt"
+
+msgid "staff_training_actionDelete"
+msgstr "Xóa"
+
+msgid "staff_training_actionAdd"
+msgstr "Thêm"
+
+msgid "the_old_pwd_is_required"
+msgstr "Mật khẩu cũ là bắt buộc."
+
+msgid "the_new_pwd_is_required"
+msgstr "Mật khẩu mới là bắt buộc."
+
+msgid "the_two_password_are_different"
+msgstr "Xác nhận mật khẩu không khớp"
+
+msgid "the_old_pwd_is_wrong"
+msgstr "Mật khẩu sai"
+
+msgid "setting_employee_pwd_failed"
+msgstr "Thay đổi mật khẩu không thành công"
+
+msgid "system_exception_illegal_login"
+msgstr "Yêu cầu không được phép"
+
+msgid "system_operation_changePasswordHelpTxt"
+msgstr "Chỉnh sửa mật khẩu."
+
+msgid "model_action_add"
+msgstr "Thêm"
+
+msgid "model_action_modify"
+msgstr "Chỉnh sửa"
+
+msgid "system_welcome"
+msgstr "Chào mừng"
+
+msgid "system_userMenu_op_language"
+msgstr "Ngôn ngữ"
+
+msgid "system_userMenu_op_changePassword"
+msgstr "Mật khẩu"
+
+msgid "system_userMenu_op_about"
+msgstr "Thông tin"
+
+msgid "system_userMenu_op_logout"
+msgstr "Đăng xuất"
+
+msgid "filter_title_search"
+msgstr "Tìm kiếm theo bộ lọc"
+
+msgid "filter_title_clear"
+msgstr "Xóa các bộ lọc"
+
+msgid "user_username"
+msgstr "Tên người dùng"
+
+msgid "user_password"
+msgstr "Mật khẩu"
+
+msgid "software_version"
+msgstr "Phiên bản phần mềm"
+
+msgid "authorized_information"
+msgstr "Thông tin được ủy quyền"
+
+msgid "label_customer_code"
+msgstr "Mã khách hàng"
+
+msgid "label_used_devices"
+msgstr "Thiết bị đã qua sử dụng"
+
+msgid "label_used_employees"
+msgstr "Nhân viên đã qua sử dụng"
+
+msgid "label_used_apps"
+msgstr "Ứng dụng đã qua sử dụng"
+
+msgid "label_authorized_date"
+msgstr "Ngày ủy quyền"
+
+msgid "label_expired_date"
+msgstr "Ngày hết hạn"
+
+msgid "label_authorized_company"
+msgstr "Công ty ủy quyền"
+
+msgid "license_activation"
+msgstr "Kích hoạt giấy phép"
+
+msgid "online_activation"
+msgstr "Kích hoạt trực tuyến"
+
+msgid "download_upk"
+msgstr "Tải xuống UPK"
+
+msgid "offline_activation"
+msgstr "Kích hoạt trực tuyến"
+
+msgid "online_upgrade_license"
+msgstr "Nâng cấp trực tuyến"
+
+msgid "export_license"
+msgstr "Xuất giấy phép"
+
+msgid "import_license"
+msgstr "Nhập giấy phép"
+
+msgid "aboutPage_title_licenseMigration"
+msgstr "Di chuyển license"
+
+msgid "server_information"
+msgstr "Thông tin máy chủ"
+
+msgid "label_machine"
+msgstr "Thiết bị"
+
+msgid "label_processor"
+msgstr "Bộ xử lý"
+
+msgid "label_platform"
+msgstr "Nền tảng"
+
+msgid "label_ram_total"
+msgstr "RAM"
+
+msgid "label_ram_free"
+msgstr "Miễn phí RAM"
+
+msgid "user_authenticate"
+msgstr "Xác thực"
+
+msgid "user_login"
+msgstr "Đặng nhập quản trị viên"
+
+msgid "employee_self"
+msgstr "Tự phục vụ"
+
+msgid "login_username"
+msgstr "Tên người dùng"
+
+msgid "login_pwd"
+msgstr "Mật khẩu"
+
+msgid "btn_user_login"
+msgstr "Đăng nhập"
+
+msgid "btn_fp_login"
+msgstr "Vân tay"
+
+msgid "loginPage_title_driverInstallTip"
+msgstr "Vui lòng cài đặt trình điều khiển vân tay."
+
+msgid "login_emp_number"
+msgstr "ID nhân viên"
+
+msgid "login_emp_pwd"
+msgstr "Mật khẩu"
+
+msgid "btn_emp_login"
+msgstr "Đăng nhập"
+
+msgid "login_about_btn_title"
+msgstr "Nhấn vào đây để kiểm tra chi tiết giấy phép."
+
+msgid "Copyright ©2018 ZKTECO CO.,LTD.All rights reserved."
+msgstr ""
+
+msgid "system_about"
+msgstr "Thông tin"
+
+msgid "last_approver"
+msgstr "Người phê duyệt cuối cùng"
+
+msgid "tool_filters"
+msgstr "Bộ lọc"
+
+msgid "employee_code_not_found_please_register_from_system_first"
+msgstr "Không tìm thấy ID nhân viên, vui lòng đăng ký từ hệ thống trước."
+
+msgid "employee_photo_not_found"
+msgstr "Không tìm thấy hình ảnh nhân viên"
+
+msgid "save_photo_failed_please_check_your_photo"
+msgstr "Lưu ảnh thất bại, vui lòng kiểm tra lại ảnh của bạn."
+
+msgid "workflowRole_field_employee"
+msgstr "Nhân viên"
+
+msgid "workflowRole_field_role"
+msgstr "Vai trò tiến trình công việc"
+
+msgid "workflow_action_assignEmployee"
+msgstr "Gán nhân viên"
+
+msgid "workflow_action_assignEmployeeHelpTxt"
+msgstr "Phân công nhân viên vào vai trò quy trình làm việc"
+
+msgid "workFlowRoleAssignEmployee_error_noneEmployee"
+msgstr "Lỗi không có nhân viên"
+
+msgid "workFlowRoleAssignEmployee_error_noneWorkflowRole"
+msgstr "Lỗi không có vai trò"
+
+msgid "workflowEngine_field_code"
+msgstr "Mã"
+
+msgid "workflowEngine_field_name"
+msgstr "Tên"
+
+msgid "workflowEngine_field_startDate"
+msgstr "Ngày bắt đầu"
+
+msgid "workflowEngine_field_endDate"
+msgstr "Ngày kết thúc"
+
+msgid "workflowEngine_field_departments"
+msgstr "Bộ phận"
+
+msgid "workflowEngine_field_contentType"
+msgstr "Các loại nội dung"
+
+msgid "workflow_model_workflowNode"
+msgstr "Nút quy trình công việc"
+
+msgid "workflowEngine_field_applicantPosition"
+msgstr "Vị trí"
+
+msgid "workflow_node_is_required"
+msgstr "Nút quy trình công việc là bắt buộc"
+
+msgid "workflow_node_and_workflow_node_name_is_required"
+msgstr "Quy trình node và tên là bắt buộc"
+
+msgid "workflow_node_is_unique"
+msgstr "Nút quy trình công việc là duy nhất"
+
+msgid "workflowEngine_field_employee"
+msgstr "Nhân viên"
+
+msgid "node_code"
+msgstr "Số nút"
+
+msgid "node_name"
+msgstr "Tên nút"
+
+msgid "workflow_node_approver"
+msgstr "Người phê duyệt"
+
+msgid "workflow_node_notifier"
+msgstr "Thông báo"
+
+msgid "employee_count"
+msgstr "Số lượng nhân viên"
+
+msgid "approval_field_approvalStatus"
+msgstr "Trạng thái phê duyệt"
+
+msgid "workflowEngine_field_description"
+msgstr "Miêu tả"
+
+msgid "workflowEngine_field_reflectObject"
+msgstr "Phản ánh đối tượng"
+
+msgid "workflowEngine_field_type"
+msgstr "Các loại quy trình công việc"
+
+msgid "workflowEngine_field_informType"
+msgstr "Loại thông báo"
+
+msgid "workflowEngine_informTypeOption_none"
+msgstr "Không"
+
+msgid "workflowEngine_informTypeOption_email"
+msgstr "Hộp thư"
+
+msgid "workflowEngine_informTypeOption_alert"
+msgstr "Cảnh báo"
+
+msgid "workflowEngine_informTypeOption_email&alert"
+msgstr "Email & cảnh báo"
+
+msgid "workflow_engine_time_invalid_range"
+msgstr "Thời gian nghỉ không hợp lệ, thời gian kết thúc phải muộn hơn thời gian bắt đầu."
+
+msgid "the_workflow_is_already_used"
+msgstr "Quy trình công việc đã được sử dụng."
+
+msgid "workflow_model_workflowEngine"
+msgstr "Động cơ quy trình công việc"
+
+msgid "is_last_node"
+msgstr "Là nút cuối cùng"
+
+msgid "the_user_is_not_allow_to_approve_this_task_node"
+msgstr "Người dùng không được phép phê duyệt nút nhiệm vụ này."
+
+msgid "the_user_does_not_have_the_privileges_to_operate_over_this_workflows_node"
+msgstr "Người dùng không có quyền để hoạt động trên nút quy trình công việc này."
+
+msgid "the_user_is_not_allow_to_reject_this_task_node"
+msgstr "Người dùng không được phép từ chối nút nhiệm vụ này."
+
+msgid "workflow_node_instance"
+msgstr "Ví dụ nút quy trình công việc"
+
+msgid "workflow_code"
+msgstr "Số quy trình công việc"
+
+msgid "workflow_name"
+msgstr "Tên quy trình công việc"
+
+msgid "issue_date"
+msgstr "Ngày phát hành"
+
+msgid "workflow_description"
+msgstr "Sự miêu tả"
+
+msgid "content_type"
+msgstr "Các loại quy trình công việc"
+
+msgid "inform_type"
+msgstr "Loại thông báo"
+
+msgid "del_flag"
+msgstr "Xóa cờ"
+
+msgid "the_workflow_is_inactive_is_not_posible_to_realize_any_action"
+msgstr "Ứng dụng đã được phê duyệt"
+
+msgid "workflow_instance"
+msgstr "Sơ đồ quy trình công việc"
+
+msgid "workflowNode_scopeOption_ownDepartment"
+msgstr "Bộ phận riêng"
+
+msgid "workflowNode_scopeOption_all"
+msgstr "Tất cả"
+
+msgid "workflowNode_field_code"
+msgstr "Mã số"
+
+msgid "workflowNode_field_name"
+msgstr "Tên"
+
+msgid "workflowNode_field_orderID"
+msgstr "Số thứ tự ID"
+
+msgid "workflowNode_field_approverType"
+msgstr "Các loại người phê duyệt"
+
+msgid "workflowNode_field_approver"
+msgstr "Người phê duyệt"
+
+msgid "workflowNode_field_notifierType"
+msgstr "Loại thông báo"
+
+msgid "workflowNode_field_notifier"
+msgstr "Thông báo"
+
+msgid "workflowNode_field_approverScope"
+msgstr "Phạm vi phê duyệt"
+
+msgid "workflowNode_field_notifyScope"
+msgstr "Phạm vi thông báo"
+
+msgid "workflow_engine_name"
+msgstr "Tên quy trình công việc"
+
+msgid "the_workflow_node_is_already_used"
+msgstr "Nút quy trình công việc đã được sử dụng."
+
+msgid "workflowRole_field_code"
+msgstr "Mã"
+
+msgid "workflowRole_field_name"
+msgstr "Tên vai trò"
+
+msgid "workflowRole_field_description"
+msgstr "Sự miêu tả"
+
+msgid "workflow_model_workflowRole"
+msgstr "Vai trò quy trình công việc"
+
+msgid "%(name)s_has_already_associated_some_employees_and_cannot_be_deleted_for_now"
+msgstr "%(name)s chứa thiết bị không thể xóa được."
+
+msgid "%(name)s_still_used_by_workflownode_and_cannot_be_cancelled"
+msgstr "%(name)s vẫn được sử dụng bởi quy trình công việc và không thể bị hủy."
+
+msgid "node_state"
+msgstr "Trạng thái nút"
+
+msgid "notifier_type_no_selected"
+msgstr "Vui lòng chọn loại thông báo."
+
+msgid "name"
+msgstr "Tên"
+
+msgid "remark"
+msgstr "Ghi chú"
+
+msgid "information_workflow"
+msgstr "Thông tin"
+
+msgid "workflow_content_type"
+msgstr "Các loại nội dung"
+
+msgid "instance_issue_date"
+msgstr "Ngày phát hành"
+
+msgid "approve"
+msgstr "Phê duyệt"
+
+msgid "remark_is_missing"
+msgstr "Mất ghi chú"
+
+msgid "workflow_instance_id_is_missing"
+msgstr "Không tìm thấy nút ví dụ quy trình công việc"
+
+msgid "workflow_instance_id_is_empty"
+msgstr "Không tìm thấy nút ví dụ quy trình công việc"
+
+msgid "workflow_instance_does_not_exists"
+msgstr "Không tìm thấy nút ví dụ quy trình công việc "
+
+msgid "did_not_have_match_workflow"
+msgstr "Không có quy trình công việc phù hợp"
+
+msgid "verity_type"
+msgstr "Các loại xác thực"
+
+msgid "lineNotify_field_messageHead"
+msgstr "Đầu tin nhắn"
+
+msgid "lineNotify_field_messageTail"
+msgstr "Đuôi tin nhắn"
+
+msgid "export_title_departments"
+msgstr "Bộ phận"
+
+msgid "export_title_positions"
+msgstr "Vị trí"
+
+msgid "export_title_areas"
+msgstr "Khu vực"
+
+msgid "export_title_employees"
+msgstr "Nhân viên"
+
+msgid "export_title_resigns"
+msgstr "Từ chức"
+
+msgid "export_title_certifications"
+msgstr "Tài liệu"
+
+msgid "export_title_employeecertifications"
+msgstr "Tài liệu nhân viên"
+
+msgid "export_title_terminals"
+msgstr "Thiết bị"
+
+msgid "export_title_terminalcommands"
+msgstr "Lệnh thiết bị"
+
+msgid "export_title_publicmessages"
+msgstr "Công khai"
+
+msgid "export_title_privatemessages"
+msgstr "Cá nhân"
+
+msgid "export_title_terminalworkcodes"
+msgstr "Mã công việc"
+
+msgid "export_title_biodatas"
+msgstr "Mẫu sinh trắc học"
+
+msgid "export_title_terminallogs"
+msgstr "Nhật ký thiết bị"
+
+msgid "export_title_terminaluploadlogs"
+msgstr "Tải lên nhật ký"
+
+msgid "export_title_break_times"
+msgstr "Giờ giải lao"
+
+msgid "export_title_time_intervals"
+msgstr "Thời gian biểu"
+
+msgid "export_title_att_shifts"
+msgstr " Ca"
+
+msgid "export_title_att_schedules"
+msgstr "Lịch trình"
+
+msgid "export_title_temp_schedules"
+msgstr "Lịch trình tạm thời"
+
+msgid "export_title_employeeschedule_report"
+msgstr "Lịch trình nhân viên"
+
+msgid "export_title_manual_logs"
+msgstr "Nhật ký thủ công"
+
+msgid "export_title_leaves"
+msgstr "Rời khỏi"
+
+msgid "export_title_overtimes"
+msgstr "Tăng ca"
+
+msgid "export_title_trainings"
+msgstr "Đào tạo"
+
+msgid "export_title_holiday"
+msgstr "Ngày lễ"
+
+msgid "export_title_leave_categorys"
+msgstr "Các loại rời khỏi"
+
+msgid "export_title_training_categorys"
+msgstr "Các loại đào tạo"
+
+msgid "export_title_transactions"
+msgstr "Sự kiện"
+
+msgid "export_field_employee_area"
+msgstr "Khu vực"
+
+msgid "export_field_device_count"
+msgstr "Đếm thiết bị"
+
+msgid "export_field_employee"
+msgstr "Nhân viên"
+
+msgid "export_field_employee_name"
+msgstr "Tên"
+
+msgid "new_schedule"
+msgstr "Điều chỉnh lịch trình"
+
+msgid "new_schedule_description"
+msgstr "Thêm lịch trình"
+
+msgid "new_schedule_help_txt"
+msgstr "Thêm lịch trình"
+
+msgid "the_default_category_name_cannot_be_deleted"
+msgstr "Danh mục mặc định không thể bị xóa"
+
+msgid "the_used_category_cannot_be_deleted"
+msgstr "Danh mục đã sử dụng không thể bị xóa"
+
+msgid "base_setting"
+msgstr "Cài đặt hệ thống"
+
+msgid "calculation_rule"
+msgstr "Muộn"
+
+msgid "permission_verboseName_attTransaction"
+msgstr "Sự kiện"
+
+msgid "autoExport_task_min_len_emp_code"
+msgstr "Chiều dài ID nhân viên"
+
+msgid "menu_device_remoteupgrade"
+msgstr "Thiết bị"
+
+msgid "remoteUpgrade_field_terminal"
+msgstr "Thiết bị"
+
+msgid "remoteUpgrade_field_password"
+msgstr "Mật khẩu"
+
+msgid "remoteUpgrade_action_add"
+msgstr "Thêm"
+
+msgid "remoteUpgrade_action_addDescription"
+msgstr "Thêm"
+
+msgid "remoteUpgrade_action_addHelpTxt"
+msgstr "Thêm"
+
+msgid "upgrade_file_error"
+msgstr "Tải lên tập tin"
+
+msgid "please_select_device"
+msgstr "Vui lòng chọn nhân viên"
+
+msgid "password_is_required"
+msgstr "Tập tin SN là bắt buộc."
+
+msgid "password_is_error"
+msgstr "Hai trường mật khẩu không khớp."
+
+msgid "set_upgrade_password_first"
+msgstr "Mật khẩu"
+
+msgid "please_select_upgrade_file"
+msgstr "Vui lòng chọn tập tin nâng cấp"
+
+msgid "remoteUpgrade_field_upgrade_file"
+msgstr "Nâng cấp tập tin"
+
+msgid "remoteUpgrade_field_commit_time"
+msgstr "Cam kết thời gian"
+
+msgid "remoteUpgrade_field_transferTime"
+msgstr "Thời gian chuyển đổi"
+
+msgid "remoteUpgrade_field_returnTime"
+msgstr "Quay trở lại thời gian"
+
+msgid "remoteUpgrade_field_returnValue"
+msgstr "Trở về giá trị"
+
+msgid "iclock_model_RemoteUpgrade"
+msgstr "Nâng cấp từ xa"
+
+msgid "clear_cache_when_it_does_not_work_after_a_minute"
+msgstr "Xóa bộ nhớ cache khi nó không hoạt động sau một phút"
+
+msgid "deviceLanguage_option_simpledChinese"
+msgstr "Tiếng Trung"
+
+msgid "deviceLanguage_option_English"
+msgstr "Tiếng Anh"
+
+msgid "deviceLanguage_option_Spanish"
+msgstr "Tiếng Tây Ban Nha"
+
+msgid "deviceLanguage_option_French"
+msgstr "Tiếng Pháp"
+
+msgid "deviceLanguage_option_Arabic"
+msgstr "Tiếng Ả RẬp"
+
+msgid "deviceLanguage_option_Portuguese"
+msgstr "Tiếng Bồ Đào Nha"
+
+msgid "deviceLanguage_option_Russian"
+msgstr "Tiếng Nga"
+
+msgid "deviceLanguage_option_German"
+msgstr "Tiếng Đức"
+
+msgid "deviceLanguage_option_Persian"
+msgstr "Tiếng Ba Tư"
+
+msgid "deviceLanguage_option_Thai"
+msgstr "Tiếng Thái"
+
+msgid "deviceLanguage_option_Indonesian"
+msgstr "Tiếng Indonesia"
+
+msgid "deviceLanguage_option_Japanese"
+msgstr "Tiếng Nhật "
+
+msgid "deviceLanguage_option_Korean"
+msgstr "Tiếng Hàn "
+
+msgid "deviceLanguage_option_Vietnamese"
+msgstr "Tiếng Việt "
+
+msgid "deviceLanguage_option_Turkish"
+msgstr " Tiếng Thổ Nhĩ Kỳ"
+
+msgid "deviceLanguage_option_Hebrew"
+msgstr "Tiếng Do Thái"
+
+msgid "deviceLanguage_option_Czech"
+msgstr "Tiếng Cộng Hóa Séc "
+
+msgid "deviceLanguage_option_Dutch"
+msgstr "Tiếng Hà Lan "
+
+msgid "deviceLanguage_option_Italian"
+msgstr "Tiếng Ý "
+
+msgid "deviceLanguage_option_Slovak"
+msgstr "Tiếng Slovak"
+
+msgid "deviceLanguage_option_Greek"
+msgstr " Tiếng Hy Lạp "
+
+msgid "deviceLanguage_option_Polish"
+msgstr "Tiếng Ba Lan"
+
+msgid "deviceLanguage_option_traditionalChinese"
+msgstr " Truyền thống Trung Quốc "
+
+msgid "adminLog_action_login"
+msgstr "Đăng nhập"
+
+msgid "adminLog_action_logout"
+msgstr "Đăng xuất"
+
+msgid "adminLog_action_add"
+msgstr "Thêm"
+
+msgid "adminLog_action_change"
+msgstr "Thay đổi"
+
+msgid "adminLog_action_delete"
+msgstr "Xóa"
+
+msgid "app_download"
+msgstr "Tải xuống ứng dụng"
+
+msgid "minimum_ahead_overtime_invalid"
+msgstr "Thời gian làm sớm tăng ca tối thiểu không hợp lệ"
+
+msgid "minimum_above_overtime_invalid"
+msgstr "Thời gian ra trễ tăng ca tối thiểu không hợp lệ"
+
+msgid "delete_default_user_alert"
+msgstr "Không thể xóa người dùng quản trị viên"
+
+msgid "delete_user_self_alert"
+msgstr "Không thể xóa người dùng hiện tại"
+
+msgid "biophoto_upload"
+msgstr "Tải lên hình ảnh"
+
+msgid "biophoto_upload_employee_not_exist"
+msgstr "Nhân viên không tồn tại: "
+
+msgid "biophoto_upload_error_photo"
+msgstr "Lỗi hình ảnh: "
+
+msgid "biophoto_upload_other_errors"
+msgstr "Các lỗi khác: "
+
+msgid "biophoto_upload_ignore_error"
+msgstr "Bỏ qua lỗi"
+
+msgid "biophoto_upload_select_files"
+msgstr "Chọn tập tin"
+
+msgid "biophoto_upload_start"
+msgstr "Bắt đầu"
+
+msgid "staff_training_applyReason"
+msgstr "Lý do"
+
+msgid "there_is_already_a_workflow_for_this_time_interval"
+msgstr "Quy trình công việc trùng lặp cho khoảng thời gian này"
+
+msgid "holiday_duration_invalid"
+msgstr "Ngày lễ chồng chéo."
+
+msgid "migrate_sqlite_file_is_required"
+msgstr "Tập tin cơ sở dữ liệu Sqlite là bắt buộc."
+
+msgid "the_employee_%(emp)s_is_already_has_document_%(certification)s"
+msgstr "Nhân viên%(emp)s đã có tài liệu%(certification)s "
+
+msgid "biophoto_upload_too_many_image_selected"
+msgstr "Quá nhiều hình ảnh được chọn, vui lòng giới hạn ở mức 500 hoặc ít hơn. "
+
+msgid "autoExport_task_time"
+msgstr "Giờ"
+
+msgid "autoExport_task_date"
+msgstr "Ngày"
+
+msgid "no_record"
+msgstr "Không dữ liệu"
+
+msgid "autoExport_task_punchState"
+msgstr "Trạng thái chấm công"
+
+msgid "adjust_timeinterval"
+msgstr "Thời gian biểu"
+
+msgid "app_login_failed"
+msgstr "Đăng nhập thất bại."
+
+msgid "appLogin_param_client_missing"
+msgstr "Không có thông số người dùng."
+
+msgid "appLogin_incorrect_username_or_password"
+msgstr "Tên người dùng hoặc mật khẩu không đúng"
+
+msgid "appLogin_illegal_request"
+msgstr "Yêu cầu không hợp lệ."
+
+msgid "app_account_disabled"
+msgstr "Vô hiệu tài khoản."
+
+msgid "app_account_disable, please_contact_admin_to_enable"
+msgstr "Tài khoản bị vô hiệu, vui lòng liên hệ quản trị viên để kích hoạt."
+
+msgid "appLogin_request_blocked"
+msgstr "Yêu cầu bị khóa."
+
+msgid "app_client_already_block_by_administrator"
+msgstr "Ứng dung người dùng bị khóa bởi quản trị viên."
+
+msgid "app_client_blocked"
+msgstr "Ứng dụng người dùng bị khóa."
+
+msgid "system_exception"
+msgstr "Ngoại lệ hệ thống."
+
+msgid "appLogin_request_params_can_not_find_username"
+msgstr "Không tìm thấy người dùng."
+
+msgid "appLogin_params_exception"
+msgstr "Params Exception."
+
+msgid "app_sign_out_successful"
+msgstr "Đăng xuất thành công."
+
+msgid "appLogout_illegal_request"
+msgstr "Yêu cầu không hợp lệ."
+
+msgid "biotime_app_password_reset"
+msgstr "Đặt lại mật khẩu ứng dụng BioTime."
+
+msgid "app_password_reset_failed"
+msgstr "Đặt lại mật khẩu thất bại."
+
+msgid "reset_password_must_to_do_on_the_mobile_with_use"
+msgstr "Đặt lại mật khẩu phải thực hiện trên điện thoại kích hoạt."
+
+msgid "illegal_operation, please_contact_with_administrator"
+msgstr "Vận hành không hợp lệ, Vui lòng liên hệ quản trị viên."
+
+msgid "app_password_reset_user_not_exists"
+msgstr "Người dùng không tồn tại."
+
+msgid "app_password_reset_user_not_found"
+msgstr "Không tìm thấy người dùng."
+
+msgid "app_manuallog_wrong_data"
+msgstr "Sai dữ liệu."
+
+msgid "app_manuallog_work_code_not_found"
+msgstr "Mã công việc không tìm thấy."
+
+msgid "app_manuallog_data_exception"
+msgstr "Ngoại lệ dữ liệu."
+
+msgid "app_manuallog_request_already_processing"
+msgstr "Yêu cầu đang thực thi."
+
+msgid "request_already_processing"
+msgstr "Yêu cầu đang thực thi."
+
+msgid "object_not_found"
+msgstr "Không tìm thấy mục tiêu."
+
+msgid "object_id_not_found"
+msgstr "Không tìm thấy ID mục tiêu."
+
+msgid "app_application_remove_success"
+msgstr "Gỡ thành công."
+
+msgid "app_application_remove_rejected"
+msgstr "Từ chối xóa ứng dụng."
+
+msgid "app_attendance_date_today"
+msgstr "Hôm nay"
+
+msgid "app_attendance_date_yesterday"
+msgstr "Hôm qua"
+
+msgid "app_attendance_date_this_week"
+msgstr "Tuần này"
+
+msgid "app_attendance_date_last_week"
+msgstr "Tuần trước"
+
+msgid "app_attendance_date_this_month"
+msgstr "Tháng này"
+
+msgid "app_attendance_date_last_month"
+msgstr "Tháng trước"
+
+msgid "app_attendance_date_user-defined"
+msgstr "Đã xác định người dùng"
+
+msgid "app_clockIn_invalid_punch_time"
+msgstr "Thời gian chấm không hợp lệ"
+
+msgid "app_clockIn_invalid_gps"
+msgstr "Thông tin GPS không hợp lệ"
+
+msgid "app_clockIn_gps_required"
+msgstr "Thông tin GPS là bắt buộc"
+
+msgid "app_clockIn_upload_failed"
+msgstr "Tải lên thất bại"
+
+msgid "app_clockIn_invalid_workcode"
+msgstr "Mã công việc không hợp lệ"
+
+msgid "companySettingPage_label_logoReview"
+msgstr "Xem qua logo"
+
+msgid "companySettingPage_size_200x75"
+msgstr "Kích thước 200 x 75"
+
+msgid "companySettingPage_label_companySetting"
+msgstr "Cài đặt công ty"
+
+msgid "companySettingPage_label_companyLogo"
+msgstr "Logo công ty"
+
+msgid "companySettingPage_placeholder_upload"
+msgstr "Click để tải lên logo"
+
+msgid "companySettingPage_label_logoDisplay"
+msgstr "Hiển thị Logo"
+
+msgid "companySettingPage_posOption_notDisplay"
+msgstr "Không hiển thị"
+
+msgid "companySettingPage_posOption_left"
+msgstr "Trái"
+
+msgid "companySettingPage_posOption_center"
+msgstr "Trung tâm"
+
+msgid "companySettingPage_posOption_right"
+msgstr "Phải"
+
+msgid "companySettingPage_label_companyName"
+msgstr "Tên công ty"
+
+msgid "companySettingPage_label_companyNameDisplay"
+msgstr "Hiển thị tên công ty"
+
+msgid "companySettingPage_btn_submit"
+msgstr "Đồng ý"
+
+msgid "task_(%(task_code)s)_export_success"
+msgstr "Task %(task_code)s export success"
+
+msgid "company_logo_setting"
+msgstr "Cài đặt logo"
+
+msgid "company_name_setting"
+msgstr "Cài đặt tên"
+
+msgid "area_tree_selectAll"
+msgstr "Chọn tất cả"
+
+msgid "area_tree_multipleSelect"
+msgstr "Nhiều lựa chọn"
+
+msgid "area_tree_selectSubArea"
+msgstr "Chọn khu vực con"
+
+msgid "please_input_a_valid_number"
+msgstr "Vui lòng thêm số hợp lệ"
+
+msgid "report_exportColumnTitle_statics"
+msgstr "Thống kê"
+
+msgid "menu_sys_languageTranslate"
+msgstr "Chuyển ngôn ngữ"
+
+msgid "language_translate_field_lan"
+msgstr "Ngôn ngữ"
+
+msgid "language_translate_field_name"
+msgstr "Tên ngôn ngữ"
+
+msgid "language_translate_field_build"
+msgstr "Được tích hợp sẵn"
+
+msgid "auto_deduct"
+msgstr "Tự khấu trừ"
+
+msgid "required_punch"
+msgstr "Yêu cầu trạng thái"
+
+msgid "training_name"
+msgstr "Tên"
+
+msgid "minimum_unit"
+msgstr "Đơn vị nhỏ nhất"
+
+msgid "unit"
+msgstr "Đơn vị"
+
+msgid "round_off"
+msgstr "Làm tròn"
+
+msgid "report_symbol"
+msgstr "Ký tự"
+
+msgid "reference"
+msgstr "Tài liệu tham khảo"
+
+msgid "translated"
+msgstr "Dịch"
+
+msgid "language_key"
+msgstr "Khóa"
+
+msgid "original_password"
+msgstr "Mật khẩu"
+
+msgid "front_end_minutes"
+msgstr "Phút"
+
+msgid "att_action_approve"
+msgstr "Phê duyệt"
+
+msgid "report_item_min_unit_empty"
+msgstr "Không có đơn vị"
+
+msgid "report_item_min_unit_invalid"
+msgstr "Đơn vị không hợp lệ"
+
+msgid "menu_sys_indTableLog"
+msgstr "Bảng trung gian"
+
+msgid "IndTableLog_field_contentType"
+msgstr "Loại nội dung"
+
+msgid "IndTableLog_field_postTime"
+msgstr "Thời gian đăng"
+
+msgid "IndTableLog_field_postCount"
+msgstr "Số lượng bài viết"
+
+msgid "IndTableLog_field_updateTime"
+msgstr "Cập nhật thời gian"
+
+msgid "IndTableLog_field_updateStatus"
+msgstr "Cập nhật trạng thái"
+
+msgid "IndTableLog_field_updateDescription"
+msgstr "Mô tả"
+
+msgid "base_inmedit_field_invalid"
+msgstr "Không hợp lệ"
+
+msgid "base_inmedit_field_error"
+msgstr "Lỗi"
+
+msgid "base_inmedit_field_succ"
+msgstr "Thành công"
+
+msgid "indtable_code_or_name_required {0}{1}"
+msgstr "Mã hoặc tên là bắt buộc {0}{1}"
+
+msgid "indtabel_data_insert_error {0}{1}"
+msgstr "Mã hoặc tên là bắt buộc {0}{1}"
+
+msgid "system_translate_btnRestart"
+msgstr "Khởi động lại"
+
+msgid "system_translate_btnDownload"
+msgstr "Tải"
+
+msgid "select_download_language"
+msgstr "Ngôn ngữ"
+
+msgid "fingerprint_download"
+msgstr "Tải xuống vân tay"
+
+msgid "drive_download"
+msgstr "Tải xuống driver"
+
+msgid "confirm_be_sure"
+msgstr "Xác nhận"
+
+msgid "confirm_not_modify_audited"
+msgstr "Hồ sơ đã được kiểm toán không thể được sửa đổi."
+
+msgid "employeeSave_error_duplicateCard_{emp}"
+msgstr "Thẻ trùng lặp với {emp}"
+
+msgid "breakTime_validationError_durationGreatThanPeriod"
+msgstr "Thời hạn vượt quá thời gian."
+
+msgid "time_unit_day"
+msgstr "Ngày(s)"
+
+msgid "time_unit_hour"
+msgstr "Giờ(s)"
+
+msgid "time_unit_minute"
+msgstr "Phút(s)"
+
+msgid "timeTable_helpText_tip2"
+msgstr "2. Thẻ thời gian khả dụng phải là >= Bắt đầu check-in và < Kết thúc check-out"
+
+msgid "timeInterval_field_dayChange"
+msgstr "Thời gian thay đổi ngày"
+
+msgid "timeInterval_error_invalidFieldValue"
+msgstr "Giá trị của {field} không hợp lệ"
+
+msgid "timeInterval_error_flexibleWorkTime_{duration}"
+msgstr "Thời gian làm việc cần trong khoảng 0- {thời gian}."
+
+msgid "timeInterval_error_invalidCheckIn/Out"
+msgstr "Thời gian check-in không thễ trễ hơn thời gian check-out"
+
+msgid "availablePunch_policy_any"
+msgstr "Bất kì"
+
+msgid "availablePunch_policy_punchStateBased"
+msgstr "Dựa trên trạng thái chấm"
+
+msgid "menu_sys_pdfReportSetting"
+msgstr "Xuất PDF"
+
+msgid "pdfExport_pageSize"
+msgstr "Kích thước trang"
+
+msgid "pdfExport_orientation"
+msgstr "Xoay"
+
+msgid "pdfExport_footerLeft"
+msgstr "Mép dưới trái"
+
+msgid "pdfExport_footerRight"
+msgstr "Mép dưới phảit"
+
+msgid "pdfExport_auto"
+msgstr "Tự động"
+
+msgid "pdfExport_orientation_portrait"
+msgstr "Chân dung"
+
+msgid "pdfExport_orientation_landscape"
+msgstr "Toàn cảnh"
+
+msgid "pdfExport_blank"
+msgstr "Trống"
+
+msgid "pdfExport_pageToPage"
+msgstr "Trang/tổng số trang"
+
+msgid "pdfExport_author"
+msgstr "Tác giả"
+
+msgid "pdfExport_time"
+msgstr "Thời gian"
+
+msgid "user_createFrom_isStaffNoCheckMsg"
+msgstr "Nếu trường này không được chọn, người dùng này sẽ không cho phép đăng nhập"
+
+msgid "permission_verboseName_iclockTransaction"
+msgstr "Giao dịch"
+
+msgid "permission_verboseName_iclockEmployeeGps"
+msgstr "Hàng rào địa lý của nhân viên"
+
+msgid "permission_verboseName_iclockDepartmentGps"
+msgstr "Hàng rào địa lý của Bộ phận"
+
+msgid "permission_verboseName_iclockDeviceConfig"
+msgstr "Cấu hình"
+
+msgid "permission_verboseName_SyncEmployee"
+msgstr "Bảng trung gian nhân viên"
+
+msgid "permission_verboseName_SyncJob"
+msgstr "Bảng trung gian vị trí"
+
+msgid "permission_verboseName_SyncDepartment"
+msgstr "Bảng trung gian bộ phận"
+
+msgid "permission_verboseName_SyncArea"
+msgstr "Bảng trung gian khu vực"
+
+msgid "permission_verboseName_payrollReportPermission"
+msgstr "Quyền hạn xuất báo cáo"
+
+msgid "autoExport_departments_helpTxt"
+msgstr "Xuất tất cả theo mặc định"
+
+msgid "autoExport_areas_helpTxt"
+msgstr "Xuất tất cả theo mặc định"
+
+msgid "autoExport_exportFormat_helpTxt"
+msgstr "Hỗ trợ .xls .csv .txt "
+
+msgid "btn_view"
+msgstr "Xem"
+
+msgid "btn_hide"
+msgstr "Ẩn"
+
+msgid "btn_apply"
+msgstr "Áp dụng"
+
+msgid "login_authorize_incorrectUPK"
+msgstr "UPK sai"
+
+msgid "gps_start_and_end_required"
+msgstr "Yêu cầu ngày bắt đầu và ngày kết thúc"
+
+msgid "lng_option_cambodian"
+msgstr "Tiếng Khmer។"
+
+msgid "lng_option_ukrainian"
+msgstr "Tiếng Ukraine"
+
+msgid "Hello"
+msgstr "Xin chào"
+
+msgid "lineNotify_field_sendPhoto"
+msgstr "Gửi hình ảnh tham dự"
+
+msgid "Enter Number"
+msgstr "Nhập số"
+
+msgid "Enter Keyword"
+msgstr "Nhập từ khóa"
+
+msgid "device"
+msgstr "Thiết bị"
+
+msgid "area_or_zone"
+msgstr "Khu vực"
+
+msgid "position"
+msgstr "Vị trí"
+
+msgid "Choice Date"
+msgstr "Chọn ngày"
+
+msgid "Now"
+msgstr "Hiện tại"
+
+msgid "Date Range"
+msgstr "Phạm vi ngày"
+
+msgid "module"
+msgstr "Mô-đun "
+
+msgid "year"
+msgstr "Năm"
+
+msgid "month"
+msgstr "Tháng"
+
+msgid "day"
+msgstr "Ngày"
+
+msgid "From"
+msgstr "Từ"
+
+msgid "To"
+msgstr "Đến"
+
+msgid "att_action_revoke"
+msgstr "Thu hồi"
+
+msgid "revoke_reason"
+msgstr "Lí do thu hồi"
+
+msgid "only_approved_records_can_be_revoked"
+msgstr "Chỉ có thể thu hồi hồ sơ đã được phê duyệt"
+
+msgid "revoke_remark_is_required"
+msgstr "Lý do thu hồi là bắt buộc"
+
+msgid "application_has_approved_node"
+msgstr "Ứng dụng này đang kiểm toán, không thể sửa đổi."
+
+msgid "terminal_state_online"
+msgstr "Trực tuyến"
+
+msgid "terminal_state_offline"
+msgstr "Ngoại tuyến"
+
+msgid "terminal_state_unauthorized"
+msgstr "Chưa được xác thực"
+
+msgid "terminal_state_communication"
+msgstr "Đã giao tiếp"
+
+msgid "emp_field_fingervein"
+msgstr "Ven ngón tay"
+
+msgid "used_holiday_can_not_be_removed"
+msgstr "Ngày lễ này đã được sử dụng cho kỳ nghỉ kiểm soát truy cập, vui lòng xóa khỏi kiểm soát truy cập trước."
+
+msgid "user_group_field_name"
+msgstr "Tên nhóm"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_department_code_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng (%(index)s), độ dài tối đa của mã ưu việt là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_position_code_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng (%(index)s), độ dài tối đa của mã ưu việt là %(length)s"
+
+msgid "error_data_on_row(%(index)s)_the_length_of_parent_area_code_maximum_is_%(length)s"
+msgstr "Dữ liệu lỗi trên hàng (%(index)s), độ dài tối đa của mã ưu việt là %(length)s"
+
+msgid "msg_all_saved_filters"
+msgstr "Tất cả các bộ lọc đã lưu"
+
+msgid "msg_customize_filters"
+msgstr "Tùy chỉnh bộ lọc của bạn"
+
+msgid "dbBackupLog_field_isBackupPhoto"
+msgstr "Cần sao lưu ảnh"
+
+msgid "dbBackupLog_field_isRestorePhoto"
+msgstr "Cần khôi phục ảnh"
+
+msgid "Null"
+msgstr "Vô giá trị"
+
+msgid "%(obj)s_is_already_used_in_%(objs)s_and_can_not_delete"
+msgstr "%(obj)s đang sử dụng trong %(objs)s và không thể xóa."
+
+msgid "this_field_can_not_include_space_tab_or_enter"
+msgstr "Trường này không thể bao gồm tab khoảng trống hoặc nhập."
+
+msgid "the_breaktime_%(n1)s_and_%(n2)s_has_intersection"
+msgstr "Thời gian nghỉ %(n1)s và %(n2)s có giao nhau"

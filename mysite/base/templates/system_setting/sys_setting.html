@@ -1,0 +1,302 @@
+{% load i18n %}
+<div class="system-setting-form">
+    <form action="" id="id_systemSettingForm" class="layui-form" lay-filter="systemSettingForm" >
+    {% csrf_token %}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card" style="height: 200px">
+                    <div class="layui-row layui-col-space15" id="system_settings_id">
+                        <div class="layui-col-md12" style="padding-top: 0;">
+                            <div class="layui-card-body" style="height: 100px">
+                                <div class="layui-card-header"><i class="fa fa-clock-o"></i><span style="padding-left: 5px">{% trans 'System_settings_Idle_Time' %}</span></div>
+                                <div class="layui-card-body" style="margin: 0 0 0 10px">
+                                    <div class="layui-form-item layui-col-space15">
+                                        <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                            <div class="layui-input-inline">
+                                                <input type="checkbox" id="idletime-status" name="idletime_enable" lay-skin="primary"  lay-filter="idletime" title="{% trans 'Enable' %} ">
+                                            </div>
+                                            <div class="layui-inline">
+                                               Idle Time: <input type="number" name="idle_time" id="idletime" value="0" min="15" max="86400"> Seconds
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space15" id="system_settings_id">
+                        <div class="layui-col-md12" style="padding-top: 0;">
+                            <div class="layui-card-body" style="height: 100px">
+                                <div class="layui-card-header"><i class="fa fa-building-o"></i><span style="padding-left: 5px">{% trans 'System_settings_Multi_Company' %}</span></div>
+                                <div class="layui-card-body" style="margin: 0 0 0 10px">
+                                    <div class="layui-form-item layui-col-space15">
+                                        <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                            <div class="layui-input-inline">
+                                                <input type="checkbox" name="multicompany_enable" lay-skin="primary" title="{% trans 'Enable' %} ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space15" id="system_settings_id">
+                        <div class="layui-col-md12" style="padding-top: 0;">
+                            <div class="layui-card-body" style="height: 100px">
+                                <div class="layui-card-header"><i class="fa fa-building-o"></i><span style="padding-left: 5px">{% trans 'System_settings_Middleware_table' %}</span></div>
+                                <div class="layui-card-body" style="margin: 0 0 0 10px">
+                                    <div class="layui-form-item layui-col-space15">
+                                        <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                            <div class="layui-input-inline">
+                                                <input type="checkbox" name="middleware_table_enable" lay-skin="primary" title="{% trans 'Enable' %} ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if allow_auto_upgrade %}
+                    <div class="layui-row layui-col-space15" id="system_settings_id">
+                        <div class="layui-col-md12" style="padding-top: 0;">
+                            <div class="layui-card-body" style="height: 100px">
+                                <div class="layui-card-header"><i class="fa fa-arrow-up"></i><span style="padding-left: 5px">{% trans 'System_settings_Auto_Upgrade' %}</span></div>
+                                <div class="layui-card-body" style="margin: 0 0 0 10px">
+                                    <div class="layui-form-item layui-col-space15">
+                                        <div class="layui-inline" style="padding-left: 47px; position: relative; top: 11px">
+                                            <div class="layui-input-inline">
+                                                <input type="checkbox" name="autoupgrade_enable" lay-skin="primary" title="{% trans 'Enable' %} ">
+                                            </div>
+                                            <div class="layui-inline">
+                                                Auto Upgrade: <input type="time" name="autoupgrade_time" id="autoupgrade_time" value="02:00" >
+                                            </div>
+                                            <div class="layui-inline">
+                                                <a href="javascript:void(0)" class="layui-btn" lay-submit="" lay-filter="checkForUpdates" id="checkForUpdates" style="margin-left: 20px">Check for Updates</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif%}
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" >
+                <div class="layui-input-block layui-inline">
+                    <button class="layui-btn" id="systemsubmit" lay-submit="" lay-filter="system_Submit">{% trans 'btn_submit' %}</button>
+                </div>
+        </div>
+    </form>
+</div>
+<style>
+    #system_settings_id {
+        background: white;
+        padding-bottom: 24px;
+    }
+    span.form_label {
+        color: #333;
+    }
+    .layui-form-checkbox[lay-skin=primary] span {
+        color: #333;
+    }
+    .layui-form-checkbox span {
+        font-size: 12px;
+    }
+    @media screen and (min-width: 1900px) {
+        .layui-form-checkbox span {
+            font-size: 14px;
+        }
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    #systemsubmit {
+        margin-top: 30px;
+        margin-left: -80px;
+        }
+
+</style>
+<script>
+    var upgrade = () => {
+        $.ajax({
+            url: "/base/upgrade/"
+            ,type: "GET"
+            ,dataType: "json"
+            ,success: function(response, xhr){}
+            ,error: function(xhr, error, e){}
+        });
+    }
+    function countdownAlert(countdownSeconds, msg) {
+        var intervalId;
+        var countdownAlert = layer.alert(msg + countdownSeconds + ' Seconds.', {
+            title: ' ',
+            time: countdownSeconds * 1000,
+            closeBtn: 0,
+            btn: [gettext('btn_confirm')],
+            success: function(layero) {
+                intervalId = setInterval(function() {
+                    countdownSeconds--;
+                    layero.find('.layui-layer-content').text(msg + countdownSeconds + ' Seconds.');
+                    if (countdownSeconds <= 0) {
+                        clearInterval(intervalId);
+                    }
+                }, 1000);
+            },
+            end: function() {
+                clearInterval(intervalId);
+                window.location.reload();
+            }
+        });
+    }
+
+   layui.use('form', function () {
+        var form = layui.form, $ = layui.jquery ;
+        var maxHeight = window.innerHeight - 140;
+        $('.system-setting-form').css({
+        'height': maxHeight,
+        'overflow-y': 'auto',
+        'overflow-x':'hidden'
+        });
+
+    form.render();
+    var val_dict
+    form.on('checkbox(idletime)', function(data) {
+        const numberField = $("#idletime");
+            if (data.elem.checked) {
+                numberField.attr("disabled", false);
+            } else {
+                numberField.attr("disabled", true);
+                numberField.val(0)
+            }
+    });
+
+    form.on('submit(checkForUpdates)', (data) => {
+        var loadIndex = layer.load();
+        $.ajax({
+            url: "/base/check_for_updates/"
+            ,type: "GET"
+            ,dataType: "json"
+            ,success: function(response, xhr){
+                layer.close(loadIndex);
+                if (response.update_available === true) {
+                    if (response.version_changes?.length){
+                        showUpdatePopup(response.version_changes);
+                    }
+                    else{
+                        layer.open({
+                            title: 'Upgrade'
+                            , area: ['auto', 'auto']
+                            , content: "Are you sure you want to Upgrade?"
+                            , closeBtn: 1
+                            , btn: [gettext('btn_confirm'), gettext('btn_cancel')]
+                            , success: function (layero, index) {}
+                            , yes: function (index, layero) {
+                                layer.close(index);
+                                upgrade()
+                                fetch("/logout/")
+                                var msg = 'Upgrade will be in '
+                                countdownAlert(3, msg);
+                            }
+                        });
+                    }
+                } else {
+                    layer.msg('Software is upto date');
+                }
+            }
+            ,error: function(xhr, error, e){
+                layer.close(loadIndex);
+            }
+        });
+    })
+
+    form.on('submit(system_Submit)', function(data){
+            var csrf = data.field['csrfmiddlewaretoken'];
+            var value = {
+                sys_setting: true
+                ,idletime_enable: data.field['idletime_enable']
+                ,idle_time: data.field['idle_time']
+                ,multicompany_enable: data.field['multicompany_enable']
+                ,middleware_table_enable: data.field['middleware_table_enable']
+                ,autoupgrade_enable: data.field['autoupgrade_enable']
+                ,autoupgrade_time: data.field['autoupgrade_time']
+            };
+
+                var loadIndex = layer.load();
+
+
+                const numberInput = $("#idletime");
+                const val = numberInput.val();
+                if ($("#idletime-status").is(":checked") && (val < 15 || val > 86400)) {
+                    layer.close(loadIndex);
+                    layer.msg('Idle Time must be within the range of 15 Seconds to 24 Hours.');
+                    return false
+                } else
+                {
+                    $.ajax({
+                        url: "/base/api/systemSetting/"
+                        ,type: "POST"
+                        ,time: 3000
+                        ,data: {'name': 'sys_setting', value: JSON.stringify(value), csrfmiddlewaretoken: csrf}
+                        ,dataType: "json"
+                        ,success: function(response, xhr){
+                            layer.close(loadIndex);
+                            layer.msg(gettext('save_successful'), {icon: 6});
+                            if (val_dict !== undefined){
+                                var msg = 'Auto logout will be in '
+                                if (value['idle_time'] !== val_dict['idle_time']){
+                                     fetch("/logout/")
+                                     countdownAlert(3, msg);
+                                } else if (!(('multicompany_enable' in val_dict && value['multicompany_enable'] === 'on') || (!('multicompany_enable' in val_dict) && value['multicompany_enable'] !== 'on'))) {
+                                    fetch("/base/server_reload")
+                                    if ('{{ platform }}' !== 'windows') {
+                                        fetch("/logout/")
+                                        countdownAlert(3, msg);
+                                    } else {
+                                        location.reload()
+                                    }
+
+                                }
+                            }
+                        }
+                        ,error: function(xhr, error, e){
+                            layer.close(loadIndex);
+                            if(xhr.responseJSON.value){
+                                layer.msg(gettext(xhr.responseJSON.value[0]), {icon: 5});
+                            }else{
+                                layer.msg(gettext('save_failed'), {icon: 5});
+                            }
+                        }
+                    });
+                return false
+            }
+        });
+        $.ajax({
+            url: "/base/api/systemSetting/?name=sys_setting"
+            , type: "GET"
+            , dataType: "json"
+            , success: function (response, xhr) {
+                var val = response.data[0];
+                if (val) {
+                    val_dict = JSON.parse(val.value);
+                    form.val('systemSettingForm', val_dict);
+                    if (val_dict.idletime_enable !== true) {
+                        document.getElementById("idletime").disabled = true;
+                    }
+                } else {
+                        document.getElementById("idletime").disabled = true;
+                }
+            }
+            , error: function (xhr, error, e) {
+            }
+        });
+    });
+</script>

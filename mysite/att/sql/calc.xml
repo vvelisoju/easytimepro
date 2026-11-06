@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlgroup>
+    <sql id = "get_leave">
+        <content engine = "default">
+            <![CDATA[
+                select al.abstractexception_ptr_id, al.start_time, al.end_time, al.employee_id, lc.report_symbol,
+                    lc.category_name, al.category_id
+                from att_leave al
+                left join att_leavecategory lc on al.category_id = lc.id
+                left join workflow_abstractexception wa on al.abstractexception_ptr_id = wa.id
+                where wa.audit_status = 2 %(and)s
+                order by al.start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and al.end_time>='%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and al.start_time<='%(end_date)s'
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select al.abstractexception_ptr_id, al.start_time, al.end_time, al.employee_id, lc.report_symbol,
+                    lc.category_name, al.category_id
+                from att_leave al
+                left join att_leavecategory lc on al.category_id = lc.id
+                left join workflow_abstractexception wa on al.abstractexception_ptr_id = wa.id
+                where wa.audit_status = 2 %(and)s
+                order by al.start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and al.end_time >= to_date('%(start_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and al.start_time <= to_date('%(end_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                select al.abstractexception_ptr_id,
+                al."start_time"::timestamp(0) without time zone,
+                al."end_time"::timestamp(0) without time zone,
+                al.employee_id, lc."report_symbol", lc."category_name", al."category_id"
+                from att_leave al
+                left join att_leavecategory lc on al."category_id" = lc."id"
+                left join workflow_abstractexception wa on al."abstractexception_ptr_id" = wa."id"
+                where wa.audit_status = 2 %(and)s
+                order by al."start_time"
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and al."end_time">='%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and al."start_time"<='%(end_date)s'
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "get_training">
+        <content engine = "default">
+            <![CDATA[
+                select at.abstractexception_ptr_id, at.start_time, at.end_time, at.employee_id, atc.report_symbol,
+                    atc.category_name, at.category_id
+                from att_training at
+                left join att_trainingcategory atc on at.category_id = atc.id
+                left join workflow_abstractexception wa on at.abstractexception_ptr_id = wa.id
+                where wa.audit_status = 2 %(and)s
+                order by start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and end_time >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and start_time <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select at.abstractexception_ptr_id, at.start_time, at.end_time, at.employee_id, atc.report_symbol,
+                    atc.category_name, at.category_id
+                from att_training at
+                left join att_trainingcategory atc on at.category_id = atc.id
+                left join workflow_abstractexception wa on at.abstractexception_ptr_id = wa.id
+                where wa.audit_status = 2 %(and)s
+                order by start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and end_time >= to_date('%(start_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and start_time <= to_date('%(end_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "get_overtime">
+        <content engine = "default">
+            <![CDATA[
+                select abstractexception_ptr_id, employee_id, start_time, end_time, overtime_type
+                from att_overtime ao
+                left join workflow_abstractexception wa on ao.abstractexception_ptr_id = wa.id
+                where wa.audit_status = 2 %(and)s
+                order by start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and end_time >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and start_time <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select abstractexception_ptr_id, employee_id, start_time, end_time, overtime_type
+                from att_overtime ao
+                left join workflow_abstractexception wa on ao.abstractexception_ptr_id = wa.id
+                where wa.audit_status = 2 %(and)s
+                order by start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and end_time >= to_date('%(start_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and start_time <= to_date('%(end_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "get_schedule">
+        <content engine = "default">
+            <![CDATA[
+               select employee_id, start_date, end_date, shift_id, id
+                    from att_attschedule 
+                    where %(and)s
+                    order by att_attschedule.start_date  
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and end_date >='%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and start_date <='%(end_date)s'
+                ]]>
+            </part>
+            
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select employee_id, start_date, end_date, shift_id, id
+                    from att_attschedule 
+                    where %(and)s
+                    order by att_attschedule.start_date    
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and end_date >= to_date('%(start_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and start_date <= to_date('%(end_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+               select employee_id, "start_date", "end_date", "shift_id", id
+                    from att_attschedule
+                    where %(and)s
+                    order by att_attschedule."start_date"
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and "end_date" >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and "start_date" <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "get_temp_schedule">
+        <content engine = "default">
+            <![CDATA[
+                select ts.employee_id, ts.id, ts.time_interval_id, (
+                        select sum(ab.required_duration)
+                        from att_timeinterval_break_time tb
+						left join att_breaktime ab on ab.id = tb.breaktime_id
+						where tb.timeinterval_id = ts.time_interval_id
+						group by tb.timeinterval_id
+                ) as break_time, ts.start_time, ts.end_time, ti.in_start, ti.in_end, ti.out_start, ti.out_end,
+                ts.rule_flag, ts.work_type, ti.work_type, ti.use_mode, ti.alias, ti.work_time_duration, ti.work_day
+                from att_tempschedule ts
+                left join att_timeinterval ti on ts.time_interval_id = ti.id
+                where 1=1  %(and)s
+                order by ts.start_time
+            ]]>
+        <part id = "emp">
+            <![CDATA[
+                and %(emp)s
+            ]]>
+        </part>
+        <part id = "start_date">
+            <![CDATA[
+                and ts.end_time>='%(start_date)s'
+            ]]>
+        </part>
+        <part id = "end_date">
+            <![CDATA[
+                and ts.start_time<='%(end_date)s'
+            ]]>
+        </part>
+        </content>
+        <content engine = "mysql">
+                <![CDATA[
+                select ts.employee_id, ts.id, ts.time_interval_id, (
+                        select sum(ab.required_duration)
+                        from att_timeinterval_break_time tb
+						left join att_breaktime ab on ab.id = tb.breaktime_id
+						where tb.timeinterval_id = ts.time_interval_id
+						group by tb.timeinterval_id
+                ) as break_time, ts.start_time, ts.end_time,
+                str_to_date(time_format(ti.in_start,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') as in_start,
+                str_to_date(time_format(ti.in_end,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') as in_end,
+                str_to_date(time_format(ti.out_start,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') as out_start,
+                str_to_date(time_format(ti.out_end,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') as out_end,
+                ts.rule_flag, ts.work_type, ti.work_type, ti.use_mode, ti.alias, ti.work_time_duration, ti.work_day
+                from att_tempschedule ts
+                left join att_timeinterval ti on ts.time_interval_id = ti.id
+                where 1=1  %(and)s
+                order by ts.start_time
+                
+                ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and ts.end_time >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and ts.start_time <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select ts.employee_id, ts.id, ts.time_interval_id, (
+                        select sum(ab.required_duration)
+                        from att_timeinterval_break_time tb
+						left join att_breaktime ab on ab.id = tb.breaktime_id
+						where tb.timeinterval_id = ts.time_interval_id
+						group by tb.timeinterval_id
+                ) as break_time, ts.start_time, ts.end_time, ti.in_start, ti.in_end, ti.out_start, ti.out_end,
+                ts.rule_flag, ts.work_type, ti.work_type, ti.use_mode, ti.alias, ti.work_time_duration, ti.work_day
+                from att_tempschedule ts
+                left join att_timeinterval ti on ts.time_interval_id = ti.id
+                where 1=1  %(and)s
+                order by ts.start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and ts.end_time >= to_date('%(start_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and ts.start_time <= to_date('%(end_date)s','yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                select ts.employee_id, ts.id, ts.time_interval_id, (
+                        select sum(ab.required_duration)
+                        from att_timeinterval_break_time tb
+						left join att_breaktime ab on ab.id = tb.breaktime_id
+						where tb.timeinterval_id = ts.time_interval_id
+						group by tb.timeinterval_id
+                ) as break_time,
+                ts."start_time"::timestamp(0) without time zone,
+                ts."end_time"::timestamp(0) without time zone,
+                ti.in_start, ti.in_end, ti.out_start, ti.out_end,
+                ts.rule_flag, ts.work_type, ti.work_type, ti.use_mode, ti.alias, ti.work_time_duration, ti.work_day
+                from att_tempschedule ts
+                left join att_timeinterval ti on ts.time_interval_id = ti.id
+                where 1=1  %(and)s
+                order by ts.start_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    and %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and ts."end_time" >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and ts."start_time" <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "get_shift_detail">
+        <content engine = "default">
+            <![CDATA[
+                select asd.shift_id, asd.day_index, asd.time_interval_id, (
+                    select sum(ab.required_duration) from att_timeinterval_break_time tb
+						left join att_breaktime ab on ab.id = tb.breaktime_id
+						where tb.timeinterval_id = asd.time_interval_id
+						group by tb.timeinterval_id
+                ) as break_time,
+                ti.in_time, ti.out_time, ti.in_start, ti.in_end, ti.out_start, ti.out_end,
+                ti.use_mode, ti.critical_time, ti.work_type, ti.alias, ti.work_time_duration, ti.work_day
+                from att_shiftdetail asd
+                left join att_timeinterval ti on asd.time_interval_id = ti.id
+                order by asd.shift_id, asd.day_index, asd.in_time
+            ]]>
+            <part id = " ">
+                <![CDATA[
+                
+                ]]>
+            </part>
+        </content>
+        <content engine = "mysql">
+            <![CDATA[
+                select asd.shift_id, asd.day_index, asd.time_interval_id, (
+                    select sum(ab.required_duration) from att_timeinterval_break_time tb
+						left join att_breaktime ab on ab.id = tb.breaktime_id
+						where tb.timeinterval_id = asd.time_interval_id
+						group by tb.timeinterval_id
+                ) as break_time,
+                str_to_date(time_format(ti.in_time,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') in_time,
+                str_to_date(time_format(ti.out_time,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') out_time,
+                str_to_date(time_format(ti.in_start,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') in_start,
+                str_to_date(time_format(ti.in_end,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') in_end,
+                str_to_date(time_format(ti.out_start,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') out_start,
+                str_to_date(time_format(ti.out_end,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') out_end,
+                ti.use_mode,
+                str_to_date(time_format(ti.critical_time,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') critical_time,
+                ti.work_type, ti.alias, ti.work_time_duration, ti.work_day
+                from att_shiftdetail asd
+                left join att_timeinterval ti on asd.time_interval_id = ti.id
+                order by asd.shift_id, asd.day_index, asd.in_time
+            ]]>
+            <part id = " ">
+                <![CDATA[
+                
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "get_initial_record">
+        <content engine = "default">
+            <![CDATA[
+                select it.id, pe.id, it.punch_time, it.punch_state, 0 as counter
+                    from iclock_transaction it
+                    left join personnel_employee pe on pe.emp_code = it.emp_code
+                    where %(and)s
+                    order by it.punch_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and it.punch_time >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and it.punch_time <= '%(end_date)s' 
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select it.id, pe.id, it.punch_time, it.punch_state, 0 as counter
+                from iclock_transaction it
+                    left join personnel_employee pe on pe.emp_code = it.emp_code
+                    where %(and)s 
+                    order by it.punch_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and it.punch_time >= to_date('%(start_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and it.punch_time <= to_date('%(end_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                select it.id, pe.id, it.punch_time::timestamp(0) without time zone,
+                    it.punch_state, 0 as counter
+                from iclock_transaction it
+                    left join personnel_employee pe on pe.emp_code = it.emp_code
+                    where %(and)s
+                    order by it.punch_time
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and it.punch_time >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and it.punch_time <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "delete_attdetail">
+        <content engine = "default">
+            <![CDATA[
+                delete from att_attdetail
+                    where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and att_date >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and att_date <= '%(end_date)s'
+                ]]>
+            </part>
+            
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                delete from att_attdetail
+                 where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and att_date >= to_date('%(start_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and att_date <= to_date('%(end_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                delete from att_attdetail
+                    where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and "att_date" >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and "att_date" <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "delete_attexception">
+        <content engine = "default">
+            <![CDATA[
+                delete from att_attexception
+                    where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and starttime >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and endtime <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                delete from att_attexception
+                 where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and starttime >= to_date('%(start_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and endtime <= to_date('%(end_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                delete from att_attexception
+                    where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and "starttime" >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and "endtime" <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "delete_schetransaction">
+        <content engine = "default">
+            <![CDATA[
+                delete from att_schetransaction
+                    where %(and)s   
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                    and att_date >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and att_date <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                delete from att_schetransaction
+                 where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and att_date >= to_date('%(start_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and att_date <= to_date('%(end_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                delete from att_schetransaction
+                    where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and "att_date" >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and "att_date" <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "delete_multitransaction">
+        <content engine = "default">
+            <![CDATA[
+                delete from att_multipletransaction
+                    where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and att_date >= '%(start_date)s'
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and att_date <= '%(end_date)s'
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                delete from att_multipletransaction
+                 where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+            <part id = "start_date">
+                <![CDATA[
+                     and att_date >= to_date('%(start_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+            <part id = "end_date">
+                <![CDATA[
+                    and att_date <= to_date('%(end_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id="get_emp_department">
+        <content engine = "default">
+            <![CDATA[
+                select pe.id, pe.department_id from personnel_employee pe
+                where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select pe.id, pe.department_id from personnel_employee pe
+                where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                select pe.id, pe.department_id from personnel_employee pe
+                where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id="get_emp_location">
+        <content engine = "default">
+            <![CDATA[
+                select pe.id, pe.location_id from personnel_employee pe
+                where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                select pe.id, pe.location_id from personnel_employee pe
+                where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                select pe.id, pe.location_id from personnel_employee pe
+                where %(and)s
+            ]]>
+            <part id = "emp">
+                <![CDATA[
+                    %(emp)s
+                ]]>
+            </part>
+        </content>
+    </sql>
+    <sql id = "insert_scheduled_transactions">
+        <content engine = "default">
+            <![CDATA[
+                if not exists(
+                    select id from att_schetransaction 
+                    where employee_id = '%(employee_id)s' and att_date= '%(att_date)s' and
+                    punch_time= '%(punch_time)s'
+                )
+                INSERT INTO att_schetransaction(
+                    employee_id, punch_time, punch_state, correct_state, transaction_id,
+                    tid, op, att_date
+                ) 
+                VALUES ('%(employee_id)s', '%(punch_time)s', '%(punch_state)s', '%(correct_state)s',
+                    '%(transaction_id)s', %(tid)s, '%(op)s', '%(att_date)s'
+                )
+            ]]>
+        </content>
+        <content engine = "mysql">
+            <![CDATA[
+                INSERT INTO att_schetransaction(
+                    employee_id, punch_time, punch_state, correct_state, transaction_id,
+                    tid, op, att_date
+                ) 
+                select
+                    %(employee_id)s, '%(punch_time)s', '%(punch_state)s', '%(correct_state)s',
+                    '%(transaction_id)s', %(tid)s, '%(op)s','%(att_date)s'
+                from dual where not exists (
+                    select id from att_schetransaction 
+                    where employee_id = %(employee_id)s and att_date= '%(att_date)s' and
+                    punch_time= '%(punch_time)s'
+                )
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                INSERT INTO att_schetransaction(
+                    employee_id, punch_time, punch_state, correct_state, transaction_id, tid, op, att_date
+                ) 
+                select
+                    '%(employee_id)s', to_date('%(punch_time)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    '%(punch_state)s', '%(correct_state)s', '%(transaction_id)s', %(tid)s,
+                    '%(op)s', to_date('%(att_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                from dual where not exists (
+                    select id from att_schetransaction 
+                    where employee_id = '%(employee_id)s' and 
+                    att_date= to_date('%(att_date)s', 'yyyy-mm-dd hh24:mi:ss') and
+                    punch_time= to_date('%(punch_time)s', 'yyyy-mm-dd hh24:mi:ss')
+                )
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+            insert into att_schetransaction(
+                employee_id, punch_time, "punch_state", "correct_state", "transaction_id", "tid", "op", "att_date"
+            )
+            select
+                '%(employee_id)s', '%(punch_time)s', '%(punch_state)s', '%(correct_state)s',
+                '%(transaction_id)s', %(tid)s, '%(op)s', '%(att_date)s'
+            where not exists(
+                select id from att_schetransaction
+                where employee_id = '%(employee_id)s' and "att_date"= '%(att_date)s'
+                and punch_time= '%(punch_time)s'
+            )
+            ]]>
+        </content>
+    </sql>
+    <sql id = "insert_multiple_transactions">
+        <content engine = "default">
+            <![CDATA[
+                if not exists(
+                    select id from att_multipletransaction
+                    where employee_id = %(employee_id)s and data_type = %(data_type)s
+                    and att_date = '%(att_date)s' and timetable= %(timetable)s and data_index= %(data_index)s
+                )
+                INSERT INTO att_multipletransaction(
+                    employee_id, data_type, att_date, timetable, data_index, in_time, in_transaction,
+                    out_time, out_transaction, total_time, worked_time
+                )
+                VALUES ( %(employee_id)s, %(data_type)s, '%(att_date)s', %(timetable)s, 
+                    %(data_index)s, '%(in_time)s', %(in_transaction)s, '%(out_time)s', 
+                    %(out_transaction)s, %(total_time)s, %(worked_time)s
+                )
+            ]]>
+        </content>
+        <content engine = "mysql">
+            <![CDATA[
+                insert into att_multipletransaction(
+                    employee_id, data_type, att_date, timetable, data_index, in_time, in_transaction,
+                    out_time, out_transaction, total_time, worked_time
+                )
+                select
+                    %(employee_id)s, %(data_type)s,  '%(att_date)s', %(timetable)s, %(data_index)s,
+                    '%(in_time)s', %(in_transaction)s, '%(out_time)s', %(out_transaction)s, %(total_time)s, %(worked_time)s
+                from dual where not exists(
+                    select id from att_multipletransaction
+                    where employee_id = %(employee_id)s and data_type = %(data_type)s
+                    and att_date = '%(att_date)s' and timetable= %(timetable)s and data_index= %(data_index)s
+                )
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                insert into att_multipletransaction(
+                    employee_id, data_type, att_date, timetable, data_index, in_time, in_transaction,
+                    out_time, out_transaction, total_time, worked_time
+                )
+                select
+                    %(employee_id)s, %(data_type)s,
+                    to_date('%(att_date)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    %(timetable)s, %(data_index)s,
+                    to_date('%(in_time)s', 'yyyy-mm-dd hh24:mi:ss'), %(in_transaction)s,
+                    to_date('%(out_time)s', 'yyyy-mm-dd hh24:mi:ss'), %(out_transaction)s,
+                    %(total_time)s, %(worked_time)s
+                from dual where not exists(
+                    select id from att_multipletransaction
+                    where employee_id = %(employee_id)s and data_type = %(data_type)s
+                    and att_date = to_date('%(att_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                    and timetable= %(timetable)s and data_index= %(data_index)s
+                )
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+            insert into att_multipletransaction(
+                employee_id, data_type, att_date, timetable, data_index, in_time, in_transaction,
+                out_time, out_transaction, total_time, worked_time
+            )
+            select
+                %(employee_id)s, %(data_type)s,  '%(att_date)s', %(timetable)s, %(data_index)s,
+                '%(in_time)s', %(in_transaction)s, '%(out_time)s', %(out_transaction)s, %(total_time)s, %(worked_time)s
+            where not exists(
+                select id from att_multipletransaction
+                where employee_id = %(employee_id)s and data_type = %(data_type)s
+                and att_date = '%(att_date)s' and timetable= %(timetable)s and data_index= %(data_index)s
+            )
+            ]]>
+        </content>
+    </sql>
+    <sql id = "insert_attendance_details">
+        <content engine = "default">
+            <![CDATA[
+                if not exists(
+                    select id from att_attdetail 
+                    where employee_id = '%(employee_id)s' and att_date= '%(att_date)s' and 
+                    time_interval_id= %(time_interval_id)s and clock_in_time= '%(clock_in_time)s' 
+                )
+                INSERT INTO att_attdetail(
+                    employee_id, att_date, time_interval_id, check_in_time, check_out_time, clock_in_time, clock_out_time,
+                    schedule_work_day, actual_work_day, no_check_in, no_check_out, late_time, early_leave, absent_time, 
+                    late_count, early_count, absent_count,
+                    overtime, total_work_time, actual_work_time, report_symbol, 
+                    required_in, required_out, duty_duration, normal_ot, weekend_ot, holiday_ot, approval_ot,
+                    exception_detail, break_taken_duration, actual_break_duration, break_duty_duration,
+                    valid_check_in, auto_in, in_transaction, valid_check_out, auto_out, out_transaction,
+                    total_time, short_time,
+                    o_total, o_short, o_overtime, o_late, o_early_leave, o_absent, 
+                    o_normal_ot, o_weekend_ot, o_holiday_ot, timetable_long, timetable_days,
+                    break_late, break_early, break_absent, break_ot, break_worked, leave_time, training_time,
+                    valid_break_out, valid_break_in, data_type
+                )
+                VALUES ('%(employee_id)s', '%(att_date)s', %(time_interval_id)s, '%(check_in_time)s',
+                    '%(check_out_time)s', '%(clock_in_time)s', '%(clock_out_time)s', %(schedule_work_day)s, 
+                    %(actual_work_day)s, '%(no_check_in)s', '%(no_check_out)s', %(late_time)s, %(early_leave)s, 
+                    %(absent_time)s, '%(late_count)s', '%(early_count)s', '%(absent_count)s', %(overtime)s,
+                    '%(total_work_time)s', '%(actual_work_time)s', N'%(report_symbol)s',
+                    '%(required_in)s', '%(required_out)s', '%(duty_duration)s', %(normal_ot)s, %(weekend_ot)s,
+                    %(holiday_ot)s, %(approval_ot)s, '%(exception_detail)s', '%(break_taken_duration)s', '%(actual_break_duration)s',
+                    '%(break_duty_duration)s', '%(valid_check_in)s', '%(auto_in)s', '%(in_transaction)s',
+                    '%(valid_check_out)s', '%(auto_out)s', '%(out_transaction)s', '%(total_time)s', '%(short_time)s',
+                    %(original_total)s,
+                    %(original_short)s, %(original_overtime)s, %(original_late)s, %(original_early_leave)s,
+                    %(original_absent)s, %(original_normal_ot)s, %(original_weekend_ot)s,
+                    %(original_holiday_ot)s, %(timetable_long)s, %(timetable_days)s,
+                    %(break_late)s, %(break_early)s, %(break_absent)s, %(break_ot)s, %(break_worked)s, %(leave)s,
+                    %(training_time)s, '%(valid_break_out)s', '%(valid_break_in)s', %(data_type)s
+                )
+            ]]>
+        </content>
+        <content engine = "mysql">
+            <![CDATA[
+                INSERT INTO att_attdetail(
+                    employee_id, att_date, time_interval_id, check_in_time, check_out_time,
+                    clock_in_time, clock_out_time, schedule_work_day, actual_work_day, no_check_in, no_check_out, 
+                    late_time, early_leave, absent_time,
+                    late_count, early_count, absent_count, overtime,
+                    total_work_time, actual_work_time, report_symbol, required_in, required_out, duty_duration,
+                    normal_ot, weekend_ot, holiday_ot, approval_ot, exception_detail,
+                    break_taken_duration, actual_break_duration, break_duty_duration,
+                    valid_check_in, auto_in, in_transaction, valid_check_out, auto_out, out_transaction,
+                    total_time, short_time, o_total, o_short, o_overtime,
+                    o_late, o_early_leave, o_absent, o_normal_ot, o_weekend_ot, o_holiday_ot, 
+                    timetable_long, timetable_days, break_late, break_early, break_absent, break_ot, break_worked,
+                    leave_time, training_time, valid_break_out, valid_break_in, data_type
+                )
+                select 
+                    %(employee_id)s, '%(att_date)s', %(time_interval_id)s, '%(check_in_time)s',
+                    '%(check_out_time)s', '%(clock_in_time)s', '%(clock_out_time)s', %(schedule_work_day)s,
+                    %(actual_work_day)s, '%(no_check_in)s', '%(no_check_out)s', %(late_time)s, %(early_leave)s,
+                    %(absent_time)s, '%(late_count)s', '%(early_count)s', '%(absent_count)s',
+                    %(overtime)s, '%(total_work_time)s', '%(actual_work_time)s', 
+                    N'%(report_symbol)s', '%(required_in)s', '%(required_out)s','%(duty_duration)s',
+                    %(normal_ot)s, %(weekend_ot)s, %(holiday_ot)s, %(approval_ot)s,
+                    '%(exception_detail)s', '%(break_taken_duration)s', '%(actual_break_duration)s',
+                    '%(break_duty_duration)s', '%(valid_check_in)s', '%(auto_in)s','%(in_transaction)s',
+                    '%(valid_check_out)s', '%(auto_out)s', '%(out_transaction)s', '%(total_time)s', '%(short_time)s',
+                    %(original_total)s, %(original_short)s, %(original_overtime)s,
+                    %(original_late)s, %(original_early_leave)s, %(original_absent)s,
+                    %(original_normal_ot)s, %(original_weekend_ot)s, %(original_holiday_ot)s,
+                    %(timetable_long)s, %(timetable_days)s, %(break_late)s, %(break_early)s, %(break_absent)s,
+                    %(break_ot)s, %(break_worked)s,
+                    %(leave)s, %(training_time)s, '%(valid_break_out)s', '%(valid_break_in)s', %(data_type)s
+                from dual where not exists (
+                    select id from att_attdetail 
+                    where employee_id = '%(employee_id)s' and att_date= '%(att_date)s' 
+                    and time_interval_id= %(time_interval_id)s and clock_in_time= '%(clock_in_time)s'
+                )
+            ]]>
+        </content>
+        <content engine = "oracle">
+            <![CDATA[
+                INSERT INTO att_attdetail(
+                    employee_id, att_date, time_interval_id, check_in_time, check_out_time,
+                    clock_in_time, clock_out_time, schedule_work_day, actual_work_day, no_check_in, no_check_out, 
+                    late_time, early_leave, absent_time,
+                    late_count, early_count, absent_count, overtime,
+                    total_work_time, actual_work_time, report_symbol, required_in, required_out, duty_duration,
+                    normal_ot, weekend_ot, holiday_ot, approval_ot,
+                    exception_detail, break_taken_duration, actual_break_duration, break_duty_duration,
+                    valid_check_in, auto_in, in_transaction, valid_check_out, auto_out, out_transaction,
+                    total_time, short_time, o_total, o_short, o_overtime,
+                    o_late, o_early_leave, o_absent, o_normal_ot, o_weekend_ot, o_holiday_ot,
+                    timetable_long, timetable_days, break_late, break_early, break_absent, break_ot, break_worked,
+                    leave_time, training_time, valid_break_out, valid_break_in, data_type
+                )
+                select '%(employee_id)s', to_date('%(att_date)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    %(time_interval_id)s, to_date('%(check_in_time)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    to_date('%(check_out_time)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    to_date('%(clock_in_time)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    to_date('%(clock_out_time)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    %(schedule_work_day)s, %(actual_work_day)s, '%(no_check_in)s', '%(no_check_out)s',
+                    %(late_time)s, %(early_leave)s, %(absent_time)s, '%(late_count)s', '%(early_count)s', '%(absent_count)s',
+                    %(overtime)s, '%(total_work_time)s', '%(actual_work_time)s',
+                    N'%(report_symbol)s', '%(required_in)s', '%(required_out)s', '%(duty_duration)s',
+                    %(normal_ot)s, %(weekend_ot)s, %(holiday_ot)s, %(approval_ot)s,
+                    '%(exception_detail)s', '%(break_taken_duration)s', '%(actual_break_duration)s', '%(break_duty_duration)s',
+                    to_date('%(valid_check_in)s', 'yyyy-mm-dd hh24:mi:ss'), '%(auto_in)s', '%(in_transaction)s',
+                    to_date('%(valid_check_out)s', 'yyyy-mm-dd hh24:mi:ss'), '%(auto_out)s', '%(out_transaction)s',
+                    '%(total_time)s', '%(short_time)s', %(original_total)s, %(original_short)s,
+                    %(original_overtime)s, %(original_late)s, %(original_early_leave)s,
+                    %(original_absent)s, %(original_normal_ot)s, %(original_weekend_ot)s,
+                    %(original_holiday_ot)s, %(timetable_long)s, %(timetable_days)s,
+                    %(break_late)s, %(break_early)s, %(break_absent)s, %(break_ot)s, %(break_worked)s,
+                    %(leave)s, %(training_time)s,
+                    to_date('%(valid_break_out)s', 'yyyy-mm-dd hh24:mi:ss'),
+                    to_date('%(valid_break_in)s', 'yyyy-mm-dd hh24:mi:ss'), %(data_type)s
+                from dual where not exists (
+                    select id from att_attdetail 
+                    where employee_id = '%(employee_id)s' and att_date= to_date('%(att_date)s', 'yyyy-mm-dd hh24:mi:ss')
+                    and time_interval_id= %(time_interval_id)s and clock_in_time= to_date('%(clock_in_time)s', 'yyyy-mm-dd hh24:mi:ss')
+                )
+            ]]>
+        </content>
+        <content engine = "postgresql">
+            <![CDATA[
+                insert into att_attdetail(
+                    employee_id, "att_date", "time_interval_id", "check_in_time", "check_out_time",
+                    "clock_in_time", "clock_out_time", "schedule_work_day", "actual_work_day", "no_check_in", "no_check_out",
+                    "late_time", "early_leave", "absent_time", "late_count", "early_count", "absent_count",
+                    "overtime", total_work_time, "actual_work_time", "report_symbol",
+                    "required_in", "required_out", "duty_duration", "normal_ot", "weekend_ot", "holiday_ot", "approval_ot",
+                    "exception_detail", break_taken_duration, actual_break_duration, break_duty_duration,
+                    valid_check_in, auto_in, in_transaction,
+                    valid_check_out, auto_out, out_transaction,
+                    total_time, "short_time", o_late, o_early_leave, o_absent, 
+                    o_normal_ot, o_weekend_ot, o_holiday_ot, timetable_long, timetable_days,
+                    break_late, break_early, break_absent, break_ot, break_worked, leave_time, training_time,
+                    valid_break_out, valid_break_in, data_type
+                )
+                select '%(employee_id)s', '%(att_date)s', %(time_interval_id)s,
+                    '%(check_in_time)s', '%(check_out_time)s', '%(clock_in_time)s', '%(clock_out_time)s',
+                    %(schedule_work_day)s, %(actual_work_day)s, '%(no_check_in)s', '%(no_check_out)s', %(late_time)s,
+                    %(early_leave)s, %(absent_time)s, '%(late_count)s', '%(early_count)s', '%(absent_count)s',
+                    %(overtime)s, '%(total_work_time)s', '%(actual_work_time)s',
+                    N'%(report_symbol)s', '%(required_in)s', '%(required_out)s', '%(duty_duration)s',
+                    %(normal_ot)s, %(weekend_ot)s, %(holiday_ot)s, %(approval_ot)s,
+                    '%(exception_detail)s', '%(break_taken_duration)s', '%(actual_break_duration)s', '%(break_duty_duration)s',
+                    '%(valid_check_in)s', %(auto_in)s, '%(in_transaction)s',
+                    '%(valid_check_out)s', %(auto_out)s,'%(out_transaction)s',
+                    '%(total_time)s', '%(short_time)s', %(original_late)s, %(original_early_leave)s, 
+                    %(original_absent)s, %(original_normal_ot)s, %(original_weekend_ot)s, %(original_holiday_ot)s,
+                    %(timetable_long)s, %(timetable_days)s, %(break_late)s, %(break_early)s, %(break_absent)s,
+                    %(break_ot)s, %(break_worked)s,
+                    %(leave)s, %(training_time)s, '%(valid_break_out)s', '%(valid_break_in)s', %(data_type)s
+                where not exists(
+                    select id from att_attdetail
+                    where employee_id = '%(employee_id)s' and "att_date"= '%(att_date)s' 
+                    and "time_interval_id"= %(time_interval_id)s and "clock_in_time"= '%(clock_in_time)s' 
+                )
+            ]]>
+        </content>
+    </sql>
+    <sql id = "get_break_time_detail">
+        <content engine = "default">
+                <![CDATA[
+                    select sbt.timeinterval_id, sbt.breaktime_id,
+                    abt.id, abt.alias,
+                    abt.period_start, abt.period_end,
+                    abt.required_duration,
+                    abt.calc_type,
+                    abt.break_in_early, abt.early_over, abt.early_type,
+                    abt.break_in_late, abt.late_over, abt.late_type,
+                    abt.func_key, abt.available_interval_type, abt. available_interval,
+                    abt.multiple_punch,
+                    abt.minimum_duration
+                    from att_timeinterval_break_time sbt
+                    left join att_breaktime abt on sbt.breaktime_id = abt.id
+                    order by abt.period_start
+                ]]>
+                <part id = " ">
+                    <![CDATA[
+
+                    ]]>
+                </part>
+            </content>
+            <content engine = "mysql">
+                <![CDATA[
+                    select sbt.timeinterval_id, sbt.breaktime_id, abt.id, abt.alias,
+                    str_to_date(time_format(abt.period_start,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') start_time,
+                    str_to_date(time_format(abt.period_end,'1900-01-01 %%H:%%i:%%s'),'%%Y-%%m-%%d %%H:%%i:%%s') end_time,
+                    abt.required_duration, abt.calc_type, abt.break_in_early, abt.early_over, abt.early_type,
+                    abt.break_in_late, abt.late_over, abt.late_type,
+                    abt.func_key, abt.available_interval_type, abt.available_interval,
+                    abt.multiple_punch,
+                    abt.minimum_duration
+                    from att_timeinterval_break_time sbt
+                    left join att_breaktime abt on sbt.breaktime_id = abt.id
+                    order by abt.period_start
+                ]]>
+            </content>
+            <content engine = "oracle">
+                <![CDATA[
+                    select sbt.timeinterval_id, sbt.breaktime_id, abt.id, abt.alias, abt.period_start, abt.period_end,
+                    abt.required_duration, abt.calc_type, abt.break_in_early, abt.early_over, abt.early_type,
+                    abt.break_in_late, abt.late_over, abt.late_type,
+                    abt.func_key, abt.available_interval_type, abt.available_interval,
+                    abt.multiple_punch,
+                    abt.minimum_duration
+                    from att_timeinterval_break_time sbt
+                    left join att_breaktime abt on sbt.breaktime_id = abt.id
+                    order by abt.period_start
+                ]]>
+            </content>
+            <content engine = "postgresql">
+                <![CDATA[
+                    select sbt.timeinterval_id, sbt.breaktime_id, abt.id, abt.alias, abt.period_start, abt.period_end,
+                    abt.required_duration, abt.calc_type, abt.break_in_early, abt.early_over, abt.early_type,
+                    abt.break_in_late, abt.late_over, abt.late_type,
+                    abt.func_key, abt.available_interval_type, abt.available_interval,
+                    abt.multiple_punch,
+                    abt.minimum_duration
+                    from att_timeinterval_break_time sbt
+                    left join att_breaktime abt on sbt.breaktime_id = abt.id
+                    order by abt.period_start
+                ]]>
+                <part id = " ">
+                    <![CDATA[
+
+                    ]]>
+                </part>
+            </content>
+    </sql>
+</sqlgroup>

@@ -1,0 +1,283 @@
+{% load i18n %}
+<div style="width:860px;height:350px;">
+  <div class="layui-row layui-col-space5 employee-row">
+    <div id="id-frame-unselect-container" class="layui-col-md7">
+      <div class="layui-card-header" style="background-color: #f2f2f2">
+        <div class="layui-form employee-frame-search-form">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <div class="layui-input-inline">
+                <div id="empFrame{{ widget.stamp }}" class="layui-form-select tree-select"></div>
+              </div>
+            </div>
+            <div class="layui-inline">
+              <div class="layui-input-inline">
+                <input id="frameSearch{{ widget.stamp }}" type="text" placeholder="{% trans 'employee_frame_employeeSearchPlaceholder' %}" name="frame-search" autocomplete="off"
+                       class="layui-input">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <div class="button-3d" lay-submit="" lay-filter="emp-frame-search" style="background-color: #f2f2f2;">
+                <i class="fa fa-fw fa-search"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-card-body">
+        <table id="id-employee-frame-unselect" class="layui-hide" lay-filter="employee-unselect"></table>
+      </div>
+    </div>
+    <div id="id-frame-selected-container" class="layui-col-md5">
+      <div class="layui-card-header" style="background-color: #f2f2f2">
+        {% trans 'employee_frame_selectedEmployee' %}<span id="selected_count" style="padding: 0 5px;color: #5FB878">0</span>
+      </div>
+      <div class="layui-card-body">
+        <table id="id-employee-frame-selected" class="layui-hide" lay-filter="employee-selected"></table>
+        <input type="hidden" id="employee-frame-selected-container">
+        <input type="hidden" id="employee-frame-selected-container-name">
+        <div id="employee_pool"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function () {
+    var gloable_pm_codes = new Array();
+    var table_data = new Array();
+    var pageData = [];
+    var unselect_opts = {
+      id: "id-employee-frame-unselect"
+      , elem: "#id-employee-frame-unselect"
+      , cellMinWidth: 80
+      , height: '340'
+      , page: {
+        layout: ['limit', 'prev', 'page', 'next', 'count'],
+        curr: 1
+      }
+      , limits: [20, 50, 80, 100, 200]
+      , limit: 50
+      , request: {
+        limitName: "page_size"
+        , pageName: "page"
+      }
+      , text: {
+        none: gettext("none_data")
+      }
+      , cols: [[
+        {field: 'id', width: "40", type: "checkbox"}
+        , {field: 'emp_code', title: "{% trans 'emp_field_employeeCode' %}", width: "80"}
+        , {field: 'first_name', title: "{% trans 'emp_field_firstName' %}", width: "120"}
+        , {field: 'last_name', title: "{% trans 'emp_field_lastName' %}", width: "120"}
+        , {field: 'dept_name', title: "{% trans 'employee_field_department' %}", width: "120"}
+      ]]
+      , url: "/personnel/api/employee/filter_by_area/"
+      , smartReloadModel: true
+      , done: function (res, curr, count) {
+        pageData = res;
+        //this.where = {};
+        //var height = $("#id-frame-unselect-container div.layui-table-view").height();
+        //$("#employee-department-tree-container").height(height);
+        //$("#employee-department-tree").height(height - 5);
+
+        table_data = res.data;
+        //在缓存中找到emp_code ,然后设置data表格中的选中状态
+        //循环所有数据，找出对应关系，设置checkbox选中状态
+        for(var i=0;i<res.data.length;i++){
+            for(var j=0;j<gloable_pm_codes.length;j++){
+                if(res.data[i].id==gloable_pm_codes[j]){
+                    //这里才是真正的有效勾选
+                    res.data[i]["LAY_CHECKED"]='true';
+                    //找到对应数据改变勾选样式，呈现出选中效果
+                    var index= res.data[i]['LAY_TABLE_INDEX'];
+                    $('#id-frame-unselect-container .layui-table tr[data-index=' + index + '] input[type="checkbox"]').prop('checked', true);
+                    $('#id-frame-unselect-container .layui-table tr[data-index=' + index + '] input[type="checkbox"]').next().addClass('layui-form-checked');
+                }
+            }
+        }
+        //设置全选checkbox的选中状态，只有改变LAY_CHECKED的值， table.checkStatus才能抓取到选中的状态
+        var checkStatus = layui.table.checkStatus('employee-unselect');
+        if(checkStatus.isAll){
+            $(' .layui-table-header th[data-field="0"] input[type="checkbox"]').prop('checked', true);
+            $('.layui-table-header th[data-field="0"] input[type="checkbox"]').next().addClass('layui-form-checked');
+        }
+      }
+    };
+    var selected_opts = {
+      id: "id-employee-frame-selected"
+      , elem: "#id-employee-frame-selected"
+      , cellMinWidth: 80
+      , height: '340'
+      , page: false
+      , text: {
+        none: gettext("none_data")
+      }
+      , cols: [[
+        {field: 'id', title: "ID", width: "40", type: "checkbox"}
+        , {field: 'emp_code', title: "{% trans 'emp_field_employeeCode' %}", width: "80", sort: true}
+        , {field: 'first_name', title: "{% trans 'emp_field_firstName' %}", width: "120", sort: true}
+        , {field: 'last_name', title: "{% trans 'emp_field_lastName' %}", width: "120", sort: true}
+        , {field: 'dept_name', title: "{% trans 'employee_field_department' %}", width: "120"}
+      ]]
+      , data: []
+      , smartReloadModel: true
+    };
+    layui.use(['table', 'form', 'element', 'laydate', 'tablePlug'], function () {
+      var table = layui.table, form = layui.form, laydate = layui.laydate, tablePlug = layui.tablePlug;
+      var unselectTB = table.render(unselect_opts);
+      var selectedTB = table.render(selected_opts);
+      var zTree = null;
+      tablePlug.smartReload.enable(true);
+
+      Array.prototype.remove=function(dx)
+      {
+            if(isNaN(dx)||dx>this.length){return false;}
+            for(var i=0,n=0;i<this.length;i++)
+            {
+                if(this[i]!=this[dx])
+                {
+                    this[n++]=this[i]
+                }
+            }
+            this.length-=1
+      };
+
+      function refreshEmployee() {
+        //var nodes = zTree.getCheckedNodes(true);
+        var nodes = $("#empFrame{{widget.stamp}}_hide").find("input[name='empFrame']");
+        var deptID = [];
+        nodes.each(function(index, item){
+          deptID.push($(item).val());
+        });
+        table.reload(unselectTB.config.id, {where: {departments: deptID.join(',')}, page: {curr: 1}});
+      }
+      $.ajax({
+        url: "{% url 'biotime:personnel_department_tree_nodes' %}",
+        type: "GET",
+        dataType: "json",
+        success: function (nodes) {
+          $('#empFrame{{ widget.stamp }}').zTreeSelect({
+            model: 'empFrame'
+            ,name: 'empFrame'
+            ,stamp: '{{ widget.stamp }}'
+            ,input_type: "checkbox"
+            ,data: nodes
+            ,placeholder: "{% trans 'psnl_model_department' %}"
+            ,onClickExt: refreshEmployee
+            ,onCheckExt: refreshEmployee
+          });
+        }
+      });
+      $("#frameSearch{{ widget.stamp }}").keypress(function(event){
+        if (event.keyCode === 13) {
+          var alias = $(this).val();
+          table.reload(unselectTB.config.id, {where: {search: alias}});
+        }
+      });
+      form.on('submit(emp-frame-search)', function (data) {
+        var key_world = data.field['frame-search'];
+        if (key_world && key_world.length > 0) {
+          table.reload(unselectTB.config.id, {
+            where: {
+              search: key_world
+            },
+            page: {
+              curr: 1
+            }
+          });
+        } else {
+          table.reload(unselectTB.config.id, {
+            where: {
+              search: undefined
+            }
+          });
+        }
+      });
+
+      table.on('checkbox(employee-unselect)', function (obj) {
+        var selected = table.checkStatus(selectedTB.config.id).data;
+        var selectedID = [];
+        selected.forEach(function (item, index){
+            selectedID.push(item.id);
+        });
+        var empSelectedID = [];
+        var empSelected = [];
+        if (!obj.checked) {
+          if (obj.type === 'one') {
+            selected.splice(selectedID.indexOf(obj.data.id), 1);
+            for(var i=0;i<gloable_pm_codes.length;i++){
+                  if(gloable_pm_codes[i]==obj.data.id){
+                       gloable_pm_codes.remove(i);
+                   }
+            }
+          } else if (obj.type === 'all') {
+            pageData.data.forEach(function (item, index) {
+                for(var i=0;i<selected.length;i++)
+                {
+                    if(selected[i].id==item.id){
+                        selected.remove(i);
+                        break;
+                    }
+                }
+              {#selected.splice(selectedID.indexOf(item.id), 1);#}
+            });
+            for(var j=0;j<table_data.length;j++){
+                for(var i=0;i<gloable_pm_codes.length;i++){
+                    if(gloable_pm_codes[i]==table_data[j].id){
+                        gloable_pm_codes.remove(i);
+                        break;
+                    }
+                }
+            }
+          }
+          selected.forEach(function (item, index) {
+            empSelectedID.push(item.id);
+            empSelected.push($.extend(item, {LAY_CHECKED: true}));
+          });
+        } else {
+          selected.forEach(function (item, index) {
+              if (item.id !== undefined && empSelectedID.indexOf(item.id) === -1) {
+                  empSelectedID.push(item.id);
+                  empSelected.push($.extend(item, {LAY_CHECKED: true}));
+              }
+          });
+          var curSelect = table.checkStatus(unselectTB.config.id).data;
+          curSelect.forEach(function (item, index) {
+            if (item.id !== undefined && empSelectedID.indexOf(item.id) === -1) {
+              empSelectedID.push(item.id);
+              empSelected.push($.extend(item, {LAY_CHECKED: true}));
+            }
+            if (!gloable_pm_codes.includes(item.id))
+                    gloable_pm_codes.push(item.id);
+          });
+        }
+        table.reload(selectedTB.config.id, {data: empSelected, limit: empSelected.length, initSort: 'id'});
+        var tmp = '';
+        var selectedNames = [];
+        empSelectedID.forEach(function (item, index) {
+          selectedNames.push(empSelected[index].emp_code);
+          tmp += '<input type="hidden" name="employee" value="' + item + '"/>';
+        });
+        $("#employee_pool").html(tmp);
+        $("#selected_count").html(empSelected.length);
+        $("#employee-frame-selected-container").val(empSelectedID.join(','));
+        $("#employee-frame-selected-container-name").val(selectedNames.join(','));
+      });
+      table.on('checkbox(employee-selected)', function (obj) {
+        var selected = table.checkStatus(selectedTB.config.id).data;
+        $("#selected_count").html(selected.length);
+        var selectedIDs = [];
+        var selectedNames = [];
+        var tmp = '';
+        selected.forEach(function (item, index) {
+          selectedIDs.push(item.id);
+          selectedNames.push(item.emp_code);
+          tmp += '<input type="hidden" name="employee" value="' + item.id + '"/>';
+        });
+        $("#employee_pool").html(tmp);
+        $("#employee-frame-selected-container").val(selectedIDs.join(','));
+        $("#employee-frame-selected-container-name").val(selectedNames.join(','));
+      });
+    });
+  });
+</script>

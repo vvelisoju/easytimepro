@@ -1,0 +1,2 @@
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value }}"{% endif %}
+{% if widget.name != None %} lay-verify="{{ widget.name }}"{% endif %}{% include "django/forms/widgets/attrs.html" %} />
